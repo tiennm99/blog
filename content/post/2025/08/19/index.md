@@ -42,6 +42,6 @@ tags: ["ByteByteGo"]
 
 ## Và một số video
 
-![System Design Was HARD - Until You Knew the Trade-Offs](https://www.youtube.com/watch?v=1nENigGr-a0)
+[System Design Was HARD - Until You Knew the Trade-Offs](https://www.youtube.com/watch?v=1nENigGr-a0)
 
 *Chà, vẫn còn nhiều. Hẹn các bạn trong các đợt siêu tổng hợp tiếp theo nhé hehe!!*
