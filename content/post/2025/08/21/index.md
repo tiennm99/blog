@@ -1,7 +1,7 @@
 ---
 title: "Cách xử lý HTTP Timeout khi sử dụng Coolify"
 date: 2025-08-21
-tags: ["Coolify", "Self-hosted", "Issue", "Troubleshooting"]
+tags: ["Coolify", "Traefik", "Issue", "Troubleshooting"]
 ---
 
 *Đăng ảnh của [ByteByteGo](https://bytebytego.com/) được mấy hôm rồi nên nay đổi gió.*
@@ -25,17 +25,65 @@ Có thể bạn đi search và tìm thấy solution là chỉnh git chunk buffer
 git config --global http.postBuffer <một số gì đó khá là to>
 ```
 
-Và... vẫn gặp lại lỗi trên. Solution kia cũng không có gì sai nhưng mà đây không phải vấn đề của git, mà do http timeout ở proxy của Coolify đã timeout quá sớm, chưa kịp để git đẩy hết data lên server. Lỗi này cũng có thể gặp ở các service http khác chứ không riêng gì git.
+## Tại sao git config http.postBuffer không hiệu quả?
 
-Cách giải quyết như sau:
+**Git http.postBuffer là gì?**
+- Đây là buffer size mà git sử dụng khi gửi dữ liệu qua HTTP POST
+- Mặc định git gửi dữ liệu theo từng chunk nhỏ (thường 1MB)
+- Tăng postBuffer có nghĩa là gửi từng chunk lớn hơn, giảm số lần request
 
-Vào phần `Server > (sever của bạn, thường là localhost) > Proxy > Configuration`. Thêm các dòng sau vào `services.traefik.command`:
+**Vì sao trong trường hợp này nó không hiệu quả?**
+
+Vấn đề không nằm ở việc git gửi dữ liệu như thế nào, mà nằm ở **HTTP timeout của proxy Coolify**:
+
+1. **Git vẫn gửi được dữ liệu** lên Traefik proxy
+2. **Traefik proxy chờ phản hồi** từ Git server (GitLab/Gitea)
+3. **Git server cần thời gian xử lý** dữ liệu (compress, index, validate...)
+4. **Traefik timeout trước** khi Git server kịp phản hồi → HTTP 504
+
+Ngay cả khi git gửi chunk lớn hay nhỏ, thời gian xử lý ở Git server vẫn như vậy. Do đó tăng postBuffer không giải quyết được vấn đề timeout ở proxy layer.
+
+## Kiến trúc và nguyên nhân lỗi
+
+**Luồng hoạt động khi git push:**
+
+```
+Git Client → Traefik Proxy → Git Server (GitLab/Gitea)
+     ↑                ↑              ↑
+  postBuffer    readTimeout     Processing time
+```
+
+**Chi tiết từng bước:**
+
+1. **Git client** gửi dữ liệu qua HTTP POST (có thể mất vài giây với repo lớn)
+2. **Traefik proxy** nhận và forward request đến Git server
+3. **Git server** bắt đầu xử lý:
+   - Giải nén objects
+   - Kiểm tra integrity
+   - Cập nhật refs
+   - Chạy git hooks (nếu có)
+4. **Traefik chờ phản hồi** trong thời gian `readTimeout` (mặc định ~30s)
+5. **Nếu Git server xử lý lâu hơn** → Traefik trả về HTTP 504
+
+**Tại sao lỗi này xảy ra với Coolify?**
+- Coolify sử dụng Traefik làm reverse proxy
+- Traefik có `readTimeout` mặc định khá thấp
+- Git operations với large files/repos thường cần > 30s để xử lý
+- Lỗi này không chỉ ảnh hưởng git mà còn các HTTP service khác cần xử lý lâu
+
+## Giải pháp
+
+Vào phần `Server > (server của bạn, thường là localhost) > Proxy > Configuration`. Thêm các dòng sau vào `services.traefik.command`:
 
 ``` yaml
 - '--entrypoints.http.transport.respondingTimeouts.readTimeout=600s'
 - '--entrypoints.https.transport.respondingTimeouts.readTimeout=600s'
 ```
-Ở đây mình để tạm là `600s` (10 phút), nhưng tuỳ trường hợp của bạn, có thể tăng thêm. Nên chọn số vừa phải vì để quá cao cũng không tốt.
+
+**Giải thích**:
+- `readTimeout`: Thời gian tối đa Traefik chờ đọc phản hồi từ backend
+- `600s` (10 phút): Thời gian phù hợp cho các tác vụ git push lớn
+- Có thể điều chỉnh tùy theo kích thước repository và tốc độ mạng của bạn
 
 Full config (mẫu, có thể thay đổi trong các phiên bản sau của Coolify, bạn chỉ nên tham khảo cách thêm mà thôi):
 
@@ -85,8 +133,8 @@ services:
       - '--api.insecure=false'
       - '--providers.docker=true'
       - '--providers.docker.exposedbydefault=false'
-      - '--entrypoints.http.transport.respondingTimeouts.readTimeout=3600s'
-      - '--entrypoints.https.transport.respondingTimeouts.readTimeout=3600s'
+      - '--entrypoints.http.transport.respondingTimeouts.readTimeout=600s'
+      - '--entrypoints.https.transport.respondingTimeouts.readTimeout=600s'
     labels:
       - traefik.enable=true
       - traefik.http.routers.traefik.entrypoints=http
@@ -96,6 +144,16 @@ services:
       - coolify.proxy=true
 ```
 
-Sau đó `Save` và `Restart Proxy`, chờ một tí cho proxy hoạt động trở lại, vậy là xong.
+## Áp dụng thay đổi
 
-Chúc các bạn thành công và sớm push được code nhé hehe!!
+1. **Save**: Lưu cấu hình Traefik
+2. **Restart Proxy**: Khởi động lại proxy để áp dụng timeout mới
+3. **Kiểm tra**: Đợi proxy hoạt động trở lại (thường mất 30-60 giây)
+
+## Lưu ý quan trọng
+
+- **Không nên đặt timeout quá cao**: Có thể gây treo kết nối lâu khi có lỗi thực sự
+- **Test với repository nhỏ trước**: Đảm bảo cấu hình hoạt động đúng
+- **Theo dõi logs**: Kiểm tra logs của Coolify và Traefik để debug nếu cần
+
+Chúc các bạn thành công và sớm push được code nhé!

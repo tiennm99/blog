@@ -12,5 +12,6 @@
   "disabledMcpjsonServers": [
     "context7",
     "serena"
-  ]
+  ],
+  "enableAllProjectMcpServers": false
 }
