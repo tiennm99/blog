@@ -34,7 +34,7 @@ This is a Hugo-based static site blog (miti99.com) built with the hugo-theme-sta
 ### Content Creation Guidelines
 - Use Vietnamese language for main content
 - Keep technical terms in English when appropriate
-- Include relevant tags (max 5 per post)
+- Include relevant tags (max 6-7 per post, use common tags that represent the whole post)
 - Maintain consistent date format: YYYY-MM-DD
 - Store assets in appropriate subdirectories within post folders
 
@@ -107,7 +107,8 @@ categories: [ "Newsletter" ]
 - **Target Audience**: Write for junior developers - use accessible language and explain complex concepts clearly
 - **Technical Term Usage**: Prefer Vietnamese equivalents when they exist and are commonly understood (e.g., "bộ thu gom rác" instead of "garbage collector", "tái cấu trúc" instead of "refactoring", "mùi mã" instead of "code smells")
 - Include "AI-Assisted" tag and "Newsletter" category
-- Maximum 5 tags per newsletter
+- Maximum 6-7 tags per newsletter, use common tags that represent the whole post content
+- **Tag Selection Guidelines**: Choose tags that are commonly used across the blog, represent the main topics/technologies discussed in the post, and help readers find related content. Avoid overly specific or one-off tags.
 - Maintain consistent formatting and structure
 - Verify all links work properly
 
