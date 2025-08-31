@@ -6,7 +6,7 @@ defaultContentLanguage: vi
 hasCJKLanguage: false
 pagination:
   pagerSize: 5
-timeout: 600s
+timeout: 3600s
 enableRobotsTXT: true
 timeZone: Asia/Ho_Chi_Minh
 enableGitInfo: true
