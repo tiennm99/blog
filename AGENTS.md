@@ -155,6 +155,5 @@ Next steps: Review content and publish when ready.
 
 ## Additional Resources
 
-- Newsletter processing rules: `.cursor/rules/newsletter_processor.mdc`
 - Hugo documentation: https://gohugo.io/documentation/
 - Theme documentation: https://github.com/CaiJimmy/hugo-theme-stack
