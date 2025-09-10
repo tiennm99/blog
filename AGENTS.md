@@ -96,16 +96,6 @@ Add new article section before any bonus content, maintaining the same format as
 - **Selection**: Use common, existing tags that represent the whole post
 - **Categories**: Always ["Newsletter"] for newsletter posts
 
-## Configuration Files
-
-```
-config/_default/
-├── hugo.yml        # Main Hugo configuration
-├── params.yml      # Theme parameters
-├── menu.yml        # Site navigation
-└── languages.yml   # Language settings
-```
-
 ## Quality Checklist
 
 Before finalizing any content:
@@ -152,8 +142,3 @@ Next steps: Review content and publish when ready.
 6. **Use relative paths** for internal links and assets
 7. **Check Vietnamese** grammar and diacritics
 8. **Validate** markdown syntax before saving
-
-## Additional Resources
-
-- Hugo documentation: https://gohugo.io/documentation/
-- Theme documentation: https://github.com/CaiJimmy/hugo-theme-stack
