@@ -7,32 +7,21 @@ social:
     params:
       icon: brand-github
 
+  - identifier: gitlab
+    name: GitLab
+    url: https://gitlab.com/miti99
+    params:
+      icon: brand-gitlab
+
   - identifier: facebook
     name: Facebook
     url: https://facebook.com/miti99
     params:
       icon: brand-facebook
 
-  # - identifier: gitlab
-  #   name: GitLab
-  #   url: https://gitlab.com/miti99
-  #   params:
-  #     icon: brand-gitlab
 
   - identifier: linkedin
     name: LinkedIn
     url: https://linkedin.com/in/miti99
     params:
       icon: brand-linkedin
-
-  # - identifier: youtube
-  #   name: YouTube
-  #   url: https://youtube.com/@miti99
-  #   params:
-  #     icon: brand-youtube
-
-  # - identifier: x
-  #   name: X
-  #   url: https://x.com/tienthieusac
-  #   params:
-  #     icon: brand-x

@@ -1,6 +1,4 @@
 goldmark:
-  renderer:
-    unsafe: true
   extensions:
     passthrough:
       enable: true
@@ -13,6 +11,8 @@ goldmark:
         inline:
           - - \(
             - \)
+  renderer:
+    unsafe: true
 
 tableOfContents:
   endLevel: 4
