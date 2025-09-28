@@ -4,8 +4,6 @@ theme: hugo-theme-stack
 title: miti99
 defaultContentLanguage: vi
 hasCJKLanguage: false
-pagination:
-  pagerSize: 5
 timeout: 3600s
 enableRobotsTXT: true
 timeZone: Asia/Ho_Chi_Minh
