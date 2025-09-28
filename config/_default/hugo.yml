@@ -1,12 +1,21 @@
-baseurl: https://miti99.com
-languageCode: vi
-theme: hugo-theme-stack
+# If your site is in 'https', then make sure your base url isn't written using 'http' otherwise your sitemap would
+# contain http (as opposeed to https) URLs. This would affect Google indexing of your URLs.
+baseURL: "https://miti99.com/"
 title: miti99
-defaultContentLanguage: vi
-hasCJKLanguage: false
-pagination:
-  pagerSize: 5
-timeout: 3600s
+copyright: "© [miti99](https://github.com/tiennm99/)"
+theme: [hugo-PaperMod]
+
+enableInlineShortcodes: true
 enableRobotsTXT: true
+buildDrafts: false
+buildFuture: false
+buildExpired: false
+enableEmoji: true
+pygmentsUseClasses: true
+mainsections: ["posts", "papermod"]
+
+languageCode: vi
+defaultContentLanguage: vi
+timeout: 3600s
 timeZone: Asia/Ho_Chi_Minh
 enableGitInfo: true

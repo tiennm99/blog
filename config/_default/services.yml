@@ -1,2 +1,6 @@
+instagram:
+  disableInlineCSS: true
+x:
+  disableInlineCSS: true
 googleAnalytics:
   id: G-SWXREMSL5Q
