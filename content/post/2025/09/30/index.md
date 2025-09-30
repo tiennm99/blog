@@ -106,6 +106,18 @@ Việc sắp xếp giúp xác định các vấn đề như các mục nhập tr
 - Các danh sách đã sắp xếp dễ đọc và dễ bảo trì hơn
 - Cần kiểm tra thứ tự ban đầu có chủ ý trước khi sắp xếp
 
+## [Đánh Giá 26 Năm Thay Đổi Của Java](https://neilmadden.blog/2025/09/12/rating-26-years-of-java-changes/)
+
+[Bài viết nhìn lại chặng đường 26 năm phát triển của ngôn ngữ lập trình Java, đánh giá các thay đổi quan trọng trong ngôn ngữ và thư viện cốt lõi. Tác giả bắt đầu từ Java 1.1.8 năm 1999 và điểm qua những cải tiến lớn như Bộ sưu tập (Collections Framework) ("4/10"), Generics ("8/10"), và java.util.concurrent ("10/10").
+
+Một số tính năng bị chỉ trích như NIO ("0/10") và Streams ("1/10"), trong khi Records ("10/10") và UTF-8 mặc định ("10/10") được khen ngợi. Bài viết bao quát các phiên bản đến Java 25, nhấn mạnh xu hướng phát hành theo thời gian và các tính năng như pattern matching, virtual threads, và mã hóa hậu lượng tử. Mô-đun (Modules) nhận đánh giá rất tệ "-10/10". Bài viết kết thúc bằng lời mời gọi thảo luận về các đánh giá chủ quan này.
+
+**Điểm chính:**
+- Java đã trải qua nhiều thay đổi lớn trong 26 năm phát triển
+- Các cải tiến như Generics, java.util.concurrent và Records được đánh giá cao
+- Một số tính năng như NIO và Streams nhận đánh giá thấp từ cộng đồng
+- Java 25 tiếp tục cải tiến với các tính năng như pattern matching và virtual threads
+
 
 ## Bonus: Một vài ảnh hay ho đến từ [ByteByteGo](https://bytebytego.com/)
 
@@ -116,3 +128,5 @@ Việc sắp xếp giúp xác định các vấn đề như các mục nhập tr
 ![How Apache Kafka Works?](img/5d9faeeb-3428-44c8-94fd-4b52fc287da3_3000x3900.png)
 ![Load Balancers vs API Gateways vs Reverse Proxy](img/45136e24-79ee-4c6d-a53a-89df6afebef6_3000x3900.jpg)
 ![Understanding Load Balancers: Traffic Management at Scale](img/1a1213e2-86cb-4fa8-bf72-e37ffe0da44d_2250x2624.jpg)
+
+*Nhìn chung thì nội dung ngắn gọn, mình tương đối hài lòng, chắc khoảng 80% so với Claude Code với Claude models, nhưng vì miễn phí nên là mình rất ưng ý :)))*
