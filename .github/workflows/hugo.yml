@@ -8,7 +8,7 @@ on:
   workflow_dispatch:
 permissions:
   contents: read
-  pages: write
+  {# pages: write #}
   id-token: write
   deployments: write
 concurrency:
@@ -41,9 +41,9 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: ${{ env.NODE_VERSION }}
-      - name: Setup Pages
+      {# - name: Setup Pages
         id: pages
-        uses: actions/configure-pages@v5
+        uses: actions/configure-pages@v5 #}
       - name: Create directory for user-specific executable files
         run: |
           mkdir -p "${HOME}/.local"
@@ -97,7 +97,7 @@ jobs:
         uses: actions/upload-pages-artifact@v3
         with:
           path: ./public
-  deploy:
+  {# deploy:
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
@@ -106,7 +106,7 @@ jobs:
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v4 #}
   deploy-cloudflare:
     runs-on: ubuntu-latest
     name: Deploy to CloudFlare Pages
