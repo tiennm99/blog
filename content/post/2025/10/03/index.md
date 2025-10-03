@@ -1,7 +1,7 @@
 ---
 title: "Newsletter #59"
 date: 2025-10-03
-tags: ["AI-Assisted", "Technology", "Compression", "Algorithms", "AI", "Programming", "Performance", "Optimization", "CodeAssistant", "AutonomousCoding", "Experience", "WernerVogels"]
+tags: ["AI-Assisted", "Technology", "Compression", "Algorithms", "AI", "Programming", "Performance", "Optimization", "CodeAssistant", "AutonomousCoding", "Experience", "WernerVogels", "KentBeck", "SoftwareCost", "FutureOfProgramming", "EngineeringTaste", "TechnicalTaste", "SeanGoedecke", "SoftwareDesign"]
 categories: ["Newsletter"]
 ---
 
@@ -120,6 +120,41 @@ Như Vogels kết luận: "Lập trình viên lớn tuổi không lo lắng về
 - Kỹ năng sáng tạo được nâng cao khi nền tảng kỹ thuật đã vững chắc
 - Cách tiếp cận hoài nghi lành mạnh với AI tạo sinh từ những bài học trước đây
 - Vai trò lãnh đạo trong việc hướng dẫn nhóm tập trung vào vấn đề thực sự
+
+## [Programming Deflation](https://tidyfirst.substack.com/p/programming-deflation)
+
+Kent Beck phân tích xu hướng "deflation" trong lập trình - khi chi phí viết phần mềm giảm mạnh nhờ AI và công cụ hỗ trợ. Dù có thể dẫn đến ít lập trình viên hơn, xu hướng này cũng mở ra nhiều cơ hội mới nhờ khả năng thử nghiệm dễ dàng và sự bùng nổ của các ứng dụng tự động hóa.
+
+Beck cho rằng thay vì lo lắng về số lượng lập trình viên, chúng ta nên tập trung phát triển kỹ năng như: đánh giá, tích hợp hệ thống và hiểu biết sâu sắc - những yếu tố trở nên khan hiếm khi code hóa rẻ.
+
+Ông nhấn mạnh: "Đừng cố đoán tương lai. Hãy xây dựng năng lực phù hợp với cả hai kịch bản."
+
+**Điểm chính:**
+- AI và công cụ hỗ trợ đang làm giảm đáng kể chi phí phát triển phần mềm
+- Thay vì lo lắng về số lượng lập trình viên, hãy tập trung vào các kỹ năng chuyên sâu
+- Các kỹ năng đánh giá, tích hợp hệ thống trở nên khan hiếm và có giá trị hơn
+- Cần xây dựng năng lực linh hoạt để thích ứng với các kịch bản tương lai khác nhau
+
+## [Thế nào là 'thẩm mỹ tốt' trong kỹ thuật phần mềm?](https://www.seangoedecke.com/taste/)
+
+Bài viết phân tích khái niệm "thẩm mỹ kỹ thuật" (technical taste) trong lập trình, nhấn mạnh rằng đây là khả năng lựa chọn giá trị phù hợp với từng dự án cụ thể, khác biệt so với kỹ năng kỹ thuật thuần túy.
+
+Tác giả Sean Goedecke cho rằng mỗi kỹ sư có một tập hợp các giá trị ưu tiên như hiệu năng, tính đúng đắn, khả năng đọc hiểu, độ linh hoạt... Sự khác biệt trong quan điểm không phải do kém hiểu biết mà do khác nhau trong "thẩm mỹ".
+
+Ví dụ, một người thích dùng `map` và `filter`, người khác ưa vòng lặp `for` – cả hai đều có lý do riêng. Quan trọng là biết khi nào nên chọn gì, tùy theo hoàn cảnh.
+
+"Thẩm mỹ tốt" nghĩa là linh hoạt, không cứng nhắc áp dụng cùng một chuẩn mực cho mọi tình huống. Kỹ sư có thẩm mỹ tốt sẽ cân nhắc các yếu tố như resiliency, scalability, readability... để đưa ra quyết định tối ưu cho từng bài toán cụ thể.
+
+Ngược lại, "thẩm mỹ xấu" thường đến từ sự cố chấp, thiếu linh hoạt – ví dụ như cố gắng áp dụng giải pháp từng thành công ở nơi khác nhưng không phù hợp với bối cảnh hiện tại.
+
+Cuối cùng, để phát triển thẩm mỹ, tác giả khuyên nên làm nhiều loại dự án khác nhau, chú ý đến những gì dễ hay khó, và giữ thái độ cởi mở, tránh hình thành các quan điểm cứng nhắc.
+
+**Điểm chính:**
+- "Thẩm mỹ kỹ thuật" là khả năng lựa chọn giá trị phù hợp với từng dự án cụ thể
+- Mỗi kỹ sư có tập hợp giá trị ưu tiên khác nhau như hiệu năng, tính đúng đắn, khả năng đọc hiểu
+- "Thẩm mỹ tốt" nghĩa là linh hoạt trong việc chọn giải pháp phù hợp với hoàn cảnh
+- Sự cố chấp và thiếu linh hoạt dẫn đến "thẩm mỹ xấu"
+- Để phát triển thẩm mỹ, cần làm nhiều loại dự án khác nhau và giữ thái độ cởi mở
 
 ## Bonus: Một vài ảnh thú vị đến từ [ByteByteGo](https://bytebytego.com/)
 ![Service Discovery 101: The Phonebook for Distributed Systems](img/30caf720-4b66-4f5f-84d2-72c578969944_2250x2624.jpg)
