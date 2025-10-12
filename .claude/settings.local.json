@@ -4,7 +4,8 @@
       "Bash(find:*)",
       "Bash(mkdir:*)",
       "WebFetch",
-      "WebSearch"
+      "WebSearch",
+      "Bash(curl:*)"
     ],
     "deny": [],
     "ask": []
