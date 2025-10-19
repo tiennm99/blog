@@ -19,7 +19,6 @@ social:
     params:
       icon: brand-facebook
 
-
   - identifier: linkedin
     name: LinkedIn
     url: https://linkedin.com/in/miti99
