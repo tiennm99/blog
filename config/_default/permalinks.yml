@@ -1,2 +1,2 @@
-post: /post/:slug/
+# post: /p/:slug/
 page: /:slug/
