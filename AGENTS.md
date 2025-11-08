@@ -11,14 +11,12 @@ This file provides guidance to AI code assistants when working with this Hugo-ba
 - **Timezone**: Asia/Ho_Chi_Minh (UTC+7)
 
 ## Quick Commands
-
 ```bash
-hugo server --gc                    # Local development server
-hugo --gc --minify                  # Production build
+hugo server --gc     # Local development
+hugo --gc --minify   # Production build
 ```
 
 ## Directory Structure
-
 ```
 content/
 └── post/
@@ -31,33 +29,31 @@ content/
 
 > **Note on Assets**: Images and documents from external sources should be referenced directly from their original locations rather than downloaded into subfolders. The only exception is for images or documents that are created by yourself, which can be stored in the appropriate directories.
 
-## Newsletter URL Processing Workflow
+## URL Processing Workflow
 
-When given URLs, automatically create or update daily newsletter posts with Vietnamese summaries.
-
-### Step 1: URL Processing
-1. **Clean URL**: Remove tracking parameters (utm_*, fbclid, gclid, ref, etc.)
+### 1. URL Processing
+1. **Clean URL**: Remove tracking params (utm_*, fbclid, etc.)
 2. **Verify**: Check if URL is accessible (HTTP 200)
 3. **Extract**:
-   - For article URLs: Get article title and main content (do not download images or documents from the URL to local subfolders)
-   - For asset URLs: Identify asset type and prepare for bonus section inclusion
-4. **Check duplicates**: Ensure not already covered in existing newsletters
-5. **Skip if**: Inaccessible or duplicate (notify user)
+   - For articles: Get title and content (don't download assets)
+   - For assets: Identify type for bonus section
+4. **Check duplicates**: Skip if already covered
+5. **Skip if**: Inaccessible or duplicate
 
-### Step 2: Newsletter Management
-1. **Get date**: Current date in YYYY-MM-DD format
-2. **Check existing**: Look for `content/post/YYYY/MM/DD/index.md`
-3. **If exists**: Append new content before any bonus sections
-4. **If new**: Create newsletter with auto-incremented number
+### 2. Newsletter Management
+1. **Get date**: Current date (YYYY-MM-DD)
+2. **Check existing**: `content/post/YYYY/MM/DD/index.md`
+3. **If exists**: Append before bonus sections
+4. **If new**: Create with auto-incremented number
 
-### Step 3: Content Structure
+### 3. Content Structure
 
 #### New Newsletter Template
 ```markdown
 ---
 title: "Newsletter #[number]"
 date: YYYY-MM-DD
-tags: ["AI-Assisted", "Technology", "relevant-tag-3", "relevant-tag-4"]
+tags: ["AI-Assisted", "Technology", "tag-3", "tag-4"]
 categories: ["Newsletter"]
 ---
 
@@ -65,77 +61,55 @@ categories: ["Newsletter"]
 
 ## [Original Article Title](clean_url)
 
-[Vietnamese summary: 2-4 paragraphs, professional tone]
+[Vietnamese summary: 2-4 paragraphs]
 
 **Điểm chính:**
-- [Key point 1 in Vietnamese]
-- [Key point 2 in Vietnamese]
-- [Key point 3 in Vietnamese]
+- [Key point 1]
+- [Key point 2]
+- [Key point 3]
 ```
 
-#### Appending to Existing Newsletter
-Add new article section before any bonus content, maintaining the same format as above.
-
 #### Bonus Content Section
-If the user sends a direct link to an asset (like .png, .jpg, .pdf, .docx), include it in a bonus section at the end of the newsletter using external links. However, if the user sends an article/post URL, do not add any assets from within that post to the bonus section - only extract content as part of the article summary.
-
+For direct asset links (.png, .jpg, .pdf, .docx):
 ```markdown
----
-
 ### Bonus Resources
 
-- [Image: Description of image](image_url)
-- [Document: Description of document](document_url)
+- [Image: Description](image_url)
+- [Document: Description](document_url)
 ```
 
 ## Vietnamese Writing Guidelines
-
-### Language Rules
-- **Primary**: Write in Vietnamese first
-- **Keep English for**:
-  - Technology names (React, Java, Python)
-  - Acronyms (API, REST, HTTP)
-  - Code examples and commands
-  - Common tech terms junior devs know (dev, web, code, framework, debug, etc.)
-
-### Content Standards
-- **Target audience**: Junior developers
+- **Primary**: Vietnamese
+- **English for**: Tech names, acronyms, code, common terms
+- **Audience**: Junior developers
 - **Tone**: Professional but accessible
-- **Length**: 150-300 words per article summary
-- **Structure**: Introduction → Main points → Key takeaways
+- **Length**: 150-300 words per summary
 
 ## Tagging Guidelines
-- **Required**: "AI-Assisted" (for newsletter posts)
-- **Maximum**: 6-7 tags per post
-- **Selection**: Use common, existing tags that represent the whole post
-- **Categories**: Always ["Newsletter"] for newsletter posts
+- **Required**: "AI-Assisted"
+- **Maximum**: 6-7 tags
+- **Categories**: Always ["Newsletter"]
 
 ## Quality Checklist
-
-Before finalizing any content:
-- [ ] Valid Hugo front matter (YAML format)
-- [ ] Correct Vietnamese grammar and diacritics
-- [ ] Clean URLs (no tracking parameters)
-- [ ] Proper markdown syntax
+- [ ] Valid Hugo front matter
+- [ ] Correct Vietnamese grammar
+- [ ] Clean URLs
+- [ ] Proper markdown
 - [ ] Date format: YYYY-MM-DD
 - [ ] Required tags present
-- [ ] Newsletter number is sequential
-- [ ] File in correct directory structure
-- [ ] Asset links properly handled (external links for user-provided assets, no embedded assets from articles)
+- [ ] Sequential newsletter number
+- [ ] Correct directory structure
 
 ## Error Handling
-
 | Issue | Solution |
 |-------|----------|
-| URL inaccessible | Skip and notify user |
-| Duplicate content | Skip and notify user |
-| Date format error | Use current date as fallback |
-| Directory creation failed | Create structure and retry |
-| Content extraction failed | Use title as fallback, flag for review |
+| URL inaccessible | Skip and notify |
+| Duplicate content | Skip and notify |
+| Date error | Use current date |
+| Directory failed | Create and retry |
+| Extraction failed | Use title, flag |
 
 ## Response Format
-
-After processing URLs, provide summary:
 ```
 ✅ Newsletter Processing Complete
 
