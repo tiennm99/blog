@@ -25,7 +25,7 @@ Tác giả kết luận rằng Augment Code đã chọn không fork VS Code đ�
 ### Điểm chính cần lưu ý:
 - Việc fork IDE có thể mang lại lợi ích ngắn hạn nhưng tiềm ẩn nhiều rủi ro dài hạn
 - Các plugin tiêu chuẩn có thể mất nhiều thời gian hơn để hoàn thiện nhưng mang lại trải nghiệm người dùng ổn định hơn
-- Sự cạnh tranh trong lĩnh vực AI coding đang thúc đẩy sự đổi mới và giá trị cho người dùng 
+- Sự cạnh tranh trong lĩnh vực AI coding đang thúc đẩy sự đổi mới và giá trị cho người dùng
 
 ## [Why I'm No Longer Talking to Architects About Microservices](https://blog.container-solutions.com/why-im-no-longer-talking-to-architects-about-microservices)
 
@@ -127,4 +127,4 @@ Tác giả trình bày các khái niệm cốt lõi như Domain/Subdomain, Bound
 
 ## Bonus: Vài ảnh hay ho đến từ [ByteByteGo](https://bytebytego.com/)
 
-![Monolith vs Microservices vs Modular Monoliths](img/66d12ddc-2abe-4a98-82d5-ee177e80487c_1470x1600.png)
+![Monolith vs Microservices vs Modular Monoliths](https://substack-post-media.s3.amazonaws.com/public/images/66d12ddc-2abe-4a98-82d5-ee177e80487c_1470x1600.png)

@@ -179,9 +179,9 @@ Bài viết từ Ham Vocke là một tấm gương phản chiếu về những �
 
 ## Bonus: Vài ảnh hay ho đến từ [ByteByteGo](https://bytebytego.com/)
 
-![How Does SSO Work?](img/4bf62d5c-e538-4fba-8d4f-aa00d0bd064a_3000x3900.jpg)
-![Best Practices in API Design](img/e249b1bd-134e-4242-ac16-1d50daf804d3_3000x3900.jpg)
-![Top Strategies For Reliability and Fault Tolerance](img/82b8257a-93c3-4861-b211-88d57b12bc93_2250x2624.jpg)
+![How Does SSO Work?](https://substack-post-media.s3.amazonaws.com/public/images/4bf62d5c-e538-4fba-8d4f-aa00d0bd064a_3000x3900.png)
+![Best Practices in API Design](https://substack-post-media.s3.amazonaws.com/public/images/e249b1bd-134e-4242-ac16-1d50daf804d3_3000x3900.png)
+![Top Strategies For Reliability and Fault Tolerance](https://substack-post-media.s3.amazonaws.com/public/images/82b8257a-93c3-4861-b211-88d57b12bc93_2250x2624.png)
 
 ## Bonus: Một vài video thú vị
 
@@ -194,7 +194,6 @@ Bài viết từ Ham Vocke là một tấm gương phản chiếu về những �
 
 ## Bonus: Một vài sách thú vị
 
-[Java interview questions and answers - Boosting your java career](doc/Java-Interview-Questions.pdf)
-Nguồn: https://enos.itcollege.ee/~jpoial/allalaadimised/reading/Java-Interview-Questions.pdf
-[Java Puzzlers - Traps, Pitfalls, and Corner Cases](doc/Java%20Puzzlers%20-%20Traps,%20Pitfalls,%20and%20Corner%20Cases%20(2005).pdf)
-Nguồn: https://github.com/shannonasmith/Java_books/blob/main/Java%20Puzzlers%20-%20Traps%2C%20Pitfalls%2C%20and%20Corner%20Cases%20(2005).pdf
+[Java interview questions and answers - Boosting your java career](https://enos.itcollege.ee/~jpoial/allalaadimised/reading/Java-Interview-Questions.pdf)
+
+[Java Puzzlers - Traps, Pitfalls, and Corner Cases](https://github.com/shannonasmith/Java_books/blob/main/Java%20Puzzlers%20-%20Traps%2C%20Pitfalls%2C%20and%20Corner%20Cases%20(2005).pdf)

@@ -27,7 +27,7 @@ Bài viết cũng nhấn mạnh rằng với các nhóm nhỏ (có thể họp t
 - Việc đo lường năng suất là một bài toán phức tạp cần được tiếp cận một cách toàn diện
 - Cần tránh tạo ra những động lực tiêu cực thông qua việc đo lường
 - Nên kết hợp nhiều phương pháp và chỉ số khác nhau
-- Luôn bắt đầu bằng việc xác định rõ mục đích của việc đo lường 
+- Luôn bắt đầu bằng việc xác định rõ mục đích của việc đo lường
 
 ## [In defense of ruthless managers](https://www.seangoedecke.com/ruthless-managers/)
 
@@ -49,7 +49,7 @@ Tuy nhiên, tác giả cũng nhấn mạnh rằng những ưu điểm này chỉ
 - Mỗi kiểu quản lý đều có ưu và nhược điểm riêng
 - Người quản lý tàn nhẫn có thể hiệu quả trong việc thực hiện thay đổi
 - Giao tiếp rõ ràng và dễ dự đoán là những ưu điểm quan trọng
-- Năng lực của người quản lý vẫn là yếu tố quyết định nhất 
+- Năng lực của người quản lý vẫn là yếu tố quyết định nhất
 
 ## [AI ambivalence](https://nolanlawson.com/2025/04/02/ai-ambivalence/)
 
@@ -225,11 +225,11 @@ Bài viết này bổ sung thêm một loại tối ưu hóa quan trọng mà t�
 
 ## Bonus: Vài ảnh hay ho đến từ [ByteByteGo](https://bytebytego.com/)
 
-![REST API Design Best Practices](img/1fe69fe9-1e79-45b8-abc3-1d5ce8af280c_2250x2624.jpg)
-![How to Learn Backend Development?](img/2a933717-1d59-46a6-ba51-76e24ae048fc_1280x1502.gif)
-![The Simplified Git Workflow](img/b9397d70-0232-4a8b-8b3e-edd4c15eb9bb_800x939.gif)
-![Virtualization vs Containerization](img/1bc9340f-de4f-4767-b2f8-f4c6529e9eea_1309x1536.gif)
-![How Netflix Built a Distributed Counter?](img/1e7afaab-de4b-4604-a557-22974fb2e3ea_1280x1532.gif)
+![REST API Design Best Practices](https://substack-post-media.s3.amazonaws.com/public/images/4036e9a7-f2b6-476c-ad5d-48916db3b610_1309x1536.gif)
+![How to Learn Backend Development?](https://substack-post-media.s3.amazonaws.com/public/images/2a933717-1d59-46a6-ba51-76e24ae048fc_1280x1502.gif)
+![The Simplified Git Workflow](https://substack-post-media.s3.amazonaws.com/public/images/b9397d70-0232-4a8b-8b3e-edd4c15eb9bb_800x939.gif)
+![Virtualization vs Containerization](https://substack-post-media.s3.amazonaws.com/public/images/1bc9340f-de4f-4767-b2f8-f4c6529e9eea_1309x1536.gif)
+![How Netflix Built a Distributed Counter?](https://substack-post-media.s3.amazonaws.com/public/images/1e7afaab-de4b-4604-a557-22974fb2e3ea_1280x1532.gif)
 
 ## Bonus 2: Vài video hay ho đến từ [ByteByteGo](https://bytebytego.com/)
 

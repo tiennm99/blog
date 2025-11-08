@@ -152,10 +152,10 @@ Những điểm chính:
 
 ## Bonus: Vài ảnh hay ho đến từ [ByteByteGo](https://bytebytego.com/)
 
-![How does SSO Work?](img/111cec1b-a195-4ff5-963c-714ceecd01ab_1280x1664.gif)
-![How Java Virtual Threads Work?](img/b415d54d-0dbd-428d-a09c-3de0332c0f71_1280x1502.gif)
-![Memcached vs Redis](img/8ef255cc-ebbb-4710-9faf-f366274a2bef_1280x1373.gif)
-![The Shopify Tech Stack](img/2370fff4-b515-484e-a081-4ce73b2c62c2_1280x1566.gif)
+![How does SSO Work?](https://substack-post-media.s3.amazonaws.com/public/images/111cec1b-a195-4ff5-963c-714ceecd01ab_1280x1664.gif)
+![How Java Virtual Threads Work?](https://substack-post-media.s3.amazonaws.com/public/images/b415d54d-0dbd-428d-a09c-3de0332c0f71_1280x1502.gif)
+![Memcached vs Redis](https://substack-post-media.s3.amazonaws.com/public/images/8ef255cc-ebbb-4710-9faf-f366274a2bef_1280x1373.gif)
+![The Shopify Tech Stack](https://substack-post-media.s3.amazonaws.com/public/images/2370fff4-b515-484e-a081-4ce73b2c62c2_1280x1566.gif)
 
 ## Bonus 2: Vài video hay ho đến từ [ByteByteGo](https://bytebytego.com/)
 

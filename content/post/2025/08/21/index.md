@@ -73,7 +73,11 @@ Git Client → Traefik Proxy → Git Server (GitLab/Gitea)
 
 ## Giải pháp
 
-Vào phần `Server > (server của bạn, thường là localhost) > Proxy > Configuration`. Thêm các dòng sau vào `services.traefik.command`:
+Vào phần `Server > (server của bạn, thường là localhost) > Proxy > Configuration`.
+
+![1](img/image.png)
+
+Thêm các dòng sau vào `services.traefik.command`:
 
 ``` yaml
 - '--entrypoints.http.transport.respondingTimeouts.readTimeout=600s'

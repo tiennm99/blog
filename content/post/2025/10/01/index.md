@@ -195,10 +195,10 @@ Claude Code đại diện cho sự thay đổi hướng tới kỹ thuật phầ
 
 ## Bonus: Một vài ảnh hay ho đến từ [ByteByteGo](https://bytebytego.com/)
 
-![How Java Works](img/1e27232c-d4f1-4f4b-94fa-7318d39f6f3e_2360x2960.jpg)
-![How Gitflow Branching Works?](img/9bef6181-7eed-45a9-9c7e-abd6864cc62b_2360x2960.jpg)
-![The Life of a Redis Query](img/9ffab5bc-5857-4544-8e25-2dbf795e6f85_3000x3900.png)
-![Cookies vs Sessions](img/1c2bd03d-66f2-4eb9-8293-7a1d49b9b9b6_2360x2920.jpg)
-![Access Control Clearly Explained](img/26b55058-17ae-453f-8463-4d4e717e489b_2360x2920.jpg)
-![How Git Reset Works?](img/00912640-ad5f-4ec7-aefa-e5eecf67dab0_3000x3900.jpg)
-![Apache Kafka Explained (At the high level)](img/43b73739-a975-42af-999d-8676b1605ed2_3000x3900.png)
+![How Java Works](https://substack-post-media.s3.amazonaws.com/public/images/1e27232c-d4f1-4f4b-94fa-7318d39f6f3e_2360x2960.png)
+![How Gitflow Branching Works?](https://substack-post-media.s3.amazonaws.com/public/images/9bef6181-7eed-45a9-9c7e-abd6864cc62b_2360x2960.png)
+![The Life of a Redis Query](https://substack-post-media.s3.amazonaws.com/public/images/9ffab5bc-5857-4544-8e25-2dbf795e6f85_3000x3900.png)
+![Cookies vs Sessions](https://substack-post-media.s3.amazonaws.com/public/images/1c2bd03d-66f2-4eb9-8293-7a1d49b9b9b6_2360x2920.png)
+![Access Control Clearly Explained](https://substack-post-media.s3.amazonaws.com/public/images/26b55058-17ae-453f-8463-4d4e717e489b_2360x2920.png)
+![How Git Reset Works?](https://substack-post-media.s3.amazonaws.com/public/images/00912640-ad5f-4ec7-aefa-e5eecf67dab0_3000x3900.png)
+![Apache Kafka Explained (At the high level)](https://substack-post-media.s3.amazonaws.com/public/images/43b73739-a975-42af-999d-8676b1605ed2_3000x3900.png)

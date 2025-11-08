@@ -42,7 +42,7 @@ Các nguyên tắc chính của DOP bao gồm: mô hình hóa dữ liệu bất 
 
 Java hiện đại hỗ trợ DOP thông qua nhiều tính năng mới:
 - **Records**: Các lớp dữ liệu nhẹ và bất biến
-- **Sealed Classes**: Hạn chế các kiểu con có thể có để mô hình hóa dữ liệu dự đoán được hơn  
+- **Sealed Classes**: Hạn chế các kiểu con có thể có để mô hình hóa dữ liệu dự đoán được hơn
 - **Pattern Matching và Switch Expressions**: Cho phép kiểm tra kiểu toàn diện và xử lý dữ liệu sạch sẽ
 
 Lợi ích của DOP bao gồm mã nguồn đơn giản và dễ đọc hơn, khả năng bảo trì được cải thiện, giảm sự kết nối chặt chẽ giữa các thành phần hệ thống, dễ dàng kiểm thử các hàm độc lập, và tái cấu trúc an toàn hơn.
@@ -117,4 +117,4 @@ Trong thời đại AI trợ lý lập trình ngày càng phổ biến, một th
 
 ## [Cursor best practices](https://x.com/paraschopra/status/1917466537637859544)
 
-![Cursor best practices](img/Gpw1p1waYAAeAyY.jpg)
+![Cursor best practices](https://pbs.twimg.com/media/Gpw1p1waYAAeAyY?format=jpg)

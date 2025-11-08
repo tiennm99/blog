@@ -49,7 +49,7 @@ Bài viết này hướng dẫn chi tiết về cách kết hợp gRPC với Spr
 
 ## Bonus: Vài ảnh hay ho đến từ [ByteByteGo](https://bytebytego.com/)
 
-![Latency and Partition Tolerance in Distributed Systems](img/39f5b04d-ad39-4bbe-a32f-f47792d4ef62_2250x2682.png)
+![Latency and Partition Tolerance in Distributed Systems](https://substack-post-media.s3.amazonaws.com/public/images/39f5b04d-ad39-4bbe-a32f-f47792d4ef62_2250x2682.png)
 
 ## Bonus 2: Vài video hay ho đến từ [ByteByteGo](https://bytebytego.com/)
 

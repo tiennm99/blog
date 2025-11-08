@@ -72,9 +72,9 @@ Bài viết của Paul Millerd chia sẻ 40 suy nghĩ khi tác giả bước san
 
 ## Bonus: Vài ảnh hay ho đến từ [ByteByteGo](https://bytebytego.com/)
 
-![A Cheatsheet on Comparing Key-Value Stores](img/f7fc4f19-ebd8-45a0-9398-469805bb4a26_1280x1532.gif)
-![A Handy Cheatsheet for the Most Popular Cloud Services](img/0349d8e9-8c8e-4e01-94a8-f2b596069732_1280x1977.jpg)
-![Which Database Should I Use on AWS?](img/89a09e07-6548-4c12-87c6-0486c6177ea7_1308x1536.jpg)
+![A Cheatsheet on Comparing Key-Value Stores](https://substack-post-media.s3.amazonaws.com/public/images/f7fc4f19-ebd8-45a0-9398-469805bb4a26_1280x1532.gif)
+![A Handy Cheatsheet for the Most Popular Cloud Services](https://substack-post-media.s3.amazonaws.com/public/images/16fe4308-ed47-451f-a852-c476ecfb4167_1280x1977.jpeg)
+![Which Database Should I Use on AWS?](https://substack-post-media.s3.amazonaws.com/public/images/89a09e07-6548-4c12-87c6-0486c6177ea7_1308x1536.jpeg)
 
 ## Bonus 2: Vài video hay ho đến từ [ByteByteGo](https://bytebytego.com/)
 

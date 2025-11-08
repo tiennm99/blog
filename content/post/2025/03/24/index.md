@@ -170,12 +170,12 @@ Các điểm chính về văn hóa kỹ thuật của Meta:
    - Sử dụng serverless functions cho các sản phẩm
    - Cho phép các team nhanh chóng thay đổi ưu tiên
 
-2. **Technology openness**: 
+2. **Technology openness**:
    - Sử dụng monorepo cho tất cả dự án
    - Không áp dụng quy tắc sở hữu code nghiêm ngặt
    - Đóng góp nhiều dự án mã nguồn mở (PyTorch, Llama, Presto, RocksDB)
 
-3. **Research in production**: 
+3. **Research in production**:
    - Không có phòng nghiên cứu riêng biệt
    - Các team phát triển sản phẩm trực tiếp thực hiện nghiên cứu
    - Đảm bảo các giải pháp hoạt động ở quy mô lớn
@@ -249,14 +249,13 @@ Kiến trúc này đặc biệt phù hợp cho:
 
 ## Bonus 2: Vài hình ảnh hay ho đến từ [ByteByteGo](https://bytebytego.com/)
 
-![How to Build Idempotent APIs](img/c3beec9e-cd04-4748-ae7e-3299b42883f6_2360x2824.jpg)
-![A Cheatsheet on Non-Functional Requirements](img/369facba-0136-4687-b794-bc58e3139f5c_2250x2752.jpg)
-![12 Algorithms for System Design Interviews](img/2f632296-4214-4ec8-a1d2-280e9b7f2696_1280x1532.gif)
-![How Kubernetes Works?](img/65a92a81-f2c5-4aed-9faa-35a66124cffe_1283x1536.gif)
-![PostgreSQL 101: The Everything Database](img/a6903386-4b5f-450e-b64d-839c6fdf8238_1280x1601.gif)
-![Top 12 Tips for API Security](img/06c5ad46-faaf-479b-bde3-b5de8033b4e9_1280x1664.gif)
+![How to Build Idempotent APIs](https://substack-post-media.s3.amazonaws.com/public/images/c3beec9e-cd04-4748-ae7e-3299b42883f6_2360x2824.png)
+![12 Algorithms for System Design Interviews](https://substack-post-media.s3.amazonaws.com/public/images/2f632296-4214-4ec8-a1d2-280e9b7f2696_1280x1532.gif)
+![How Kubernetes Works?](https://substack-post-media.s3.amazonaws.com/public/images/65a92a81-f2c5-4aed-9faa-35a66124cffe_1283x1536.gif)
+![PostgreSQL 101: The Everything Database](https://substack-post-media.s3.amazonaws.com/public/images/a6903386-4b5f-450e-b64d-839c6fdf8238_1280x1601.gif)
+![Top 12 Tips for API Security](https://substack-post-media.s3.amazonaws.com/public/images/06c5ad46-faaf-479b-bde3-b5de8033b4e9_1280x1664.gif)
 
 
 ## Bonus 3: Vài hình ảnh hay ho đến từ [DesignGurus](https://designgurus.io/)
 
-![System Design Master Template](img/377ca779-5d63-4995-9541-b37008700a8c_800x1073.jpg)
+![System Design Master Template](https://www.designgurus.io/_next/image?url=https%3A%2F%2Fstorage.googleapis.com%2Fdownload%2Fstorage%2Fv1%2Fb%2Fdesigngurus-prod.appspot.com%2Fo%2Fee5726e8e29469477b999c100%3Fgeneration%3D1726724098184989%26alt%3Dmedia&w=3840&q=75&dpl=dpl_3Rx6M949Pc1cQKT3QTdj87FcKNdg)

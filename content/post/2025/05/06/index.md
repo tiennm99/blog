@@ -49,7 +49,7 @@ Tác giả phân loại các trường hợp cần sự can thiệp của lập 
 
 ## [CI/CD DevOps Pipeline Project: Deployment of Java Application on Kubernetes](https://dev.to/prodevopsguytech/cicd-devops-pipeline-project-deployment-of-java-application-on-kubernetes-4fi2)
 
-Bài viết này trình bày chi tiết về việc triển khai một hệ thống CI/CD (Continuous Integration/Continuous Deployment) hoàn chỉnh cho ứng dụng Java trên Kubernetes. Đây là một dự án DevOps toàn diện nhằm tự động hóa toàn bộ vòng đời phát triển phần mềm, từ giai đoạn phát triển đến triển khai.  
+Bài viết này trình bày chi tiết về việc triển khai một hệ thống CI/CD (Continuous Integration/Continuous Deployment) hoàn chỉnh cho ứng dụng Java trên Kubernetes. Đây là một dự án DevOps toàn diện nhằm tự động hóa toàn bộ vòng đời phát triển phần mềm, từ giai đoạn phát triển đến triển khai.
 
 Mục tiêu chính của dự án là tự động hóa quy trình phát triển phần mềm, cải thiện tốc độ, độ tin cậy và hiệu quả đồng thời giảm thiểu sự can thiệp thủ công. Dự án sử dụng nhiều công cụ DevOps phổ biến như Jenkins, Maven, SonarQube, Trivy, Nexus Repository, Docker, Kubernetes, Prometheus và Grafana.
 
@@ -181,4 +181,4 @@ Tác giả kết luận rằng cả những người quá lạc quan và quá bi
 
 ## Bonus: Vài ảnh hay ho đến từ [ByteByteGo](https://bytebytego.com/)
 
-![Object Oriented Programming Fundamentals](img/5321bec2-0079-47e2-92e9-1cd9950227c8_2250x2624.jpg)
+![Object Oriented Programming Fundamentals](https://substack-post-media.s3.amazonaws.com/public/images/5321bec2-0079-47e2-92e9-1cd9950227c8_2250x2624.png)

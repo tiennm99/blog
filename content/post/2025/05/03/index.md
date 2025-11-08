@@ -171,6 +171,6 @@ Một số điểm chính:
 
 ## Bonus: Vài ảnh hay ho đến từ [ByteByteGo](https://bytebytego.com/)
 
-![What is MCP?](img/840e868d-2c83-4b1b-a881-df1da6c6e332_1309x1536.gif)
-![How to Design a System like Instagram](img/6ff106a0-de83-48b0-9eb4-3f8bf0d43a57_1280x1566.gif)
-![How to load your websites at lightning speed](img/214c0c6c-2426-49d0-9fa8-cdb9ce089dcc_1280x1585.gif)
+![What is MCP?](https://substack-post-media.s3.amazonaws.com/public/images/840e868d-2c83-4b1b-a881-df1da6c6e332_1309x1536.gif)
+![How to Design a System like Instagram](https://substack-post-media.s3.amazonaws.com/public/images/6ff106a0-de83-48b0-9eb4-3f8bf0d43a57_1280x1566.gif)
+![How to load your websites at lightning speed](https://substack-post-media.s3.amazonaws.com/public/images/214c0c6c-2426-49d0-9fa8-cdb9ce089dcc_1280x1585.gif)

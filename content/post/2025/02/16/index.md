@@ -57,15 +57,11 @@ Tuần này có kha khá bonus đến từ nhiều nguồn khác nhau
 
 ### Bonus #1: Một vài ebook mình tìm được
 
-- [Designing Distributed Systems](doc/EN-CNTNT-eBook-DesigningDistributedSystems.pdf)
-- [[FINAL] SOTI 2025 Results Press Release](doc/[FINAL]%20SOTI%202025%20Results%20Press%20Release.pdf)
-- [2025 GDC State of the Game Industry report](doc/2025%20GDC%20State%20of%20the%20Game%20Industry%20report.pdf)
-- [Quastor Summaries](doc/Quastor%20Summaries.pdf)
+- [Designing Distributed Systems](https://info.microsoft.com/rs/157-GQE-382/images/EN-CNTNT-eBook-DesigningDistributedSystems.pdf)
+- [Quastor Summaries](https://drive.google.com/file/d/1U7EchvgzCjTtF5JzGVVCFgjXC-qw7lIG/view)
 
 ### Bonus #2: Vài ảnh hay ho đến từ [ByteByteGo](https://bytebytego.com/)
 
-![The Open Source AI Stack](img/1c328642-7222-4127-a6c5-16614e010022_1283x1536.jpg)
-![Cookies Vs Sessions Vs JWT Vs PASETO](img/11b53f30-8dba-4520-9b1a-425b54b9b84a_1280x1585.gif)
-![Algorithms you should know before taking System Design Interviews](img/670b7459-49bc-485c-965a-7dbfb3177894_892x1798.jpg)
-![Top 6 Load Balancing Algorithms](img/a8107d0d-57fb-4f5d-810a-561c09494c49_1604x1536.jpg)
-![How TikTok Manages a 200K File Frontend MonoRepo?](img/2689b510-e5d2-42cd-8852-75a89205de7a_1280x1608.gif)
+![Cookies Vs Sessions Vs JWT Vs PASETO](https://substack-post-media.s3.amazonaws.com/public/images/11b53f30-8dba-4520-9b1a-425b54b9b84a_1280x1585.gif)
+![Algorithms you should know before taking System Design Interviews](https://substack-post-media.s3.amazonaws.com/public/images/fdbcc119-8f5d-4d27-9a4b-2c8bde82b537_4026x8030.jpeg)
+![Top 6 Load Balancing Algorithms](https://substack-post-media.s3.amazonaws.com/public/images/12dffcce-f231-48cc-915f-d53c0f8bce0c_3735x3573.jpeg)

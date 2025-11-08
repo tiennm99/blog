@@ -229,10 +229,10 @@ Họ sẽ phán xét chúng ta giống như chúng ta phán xét những ngườ
 
 ## Bonus: Vài ảnh hay ho đến từ [ByteByteGo](https://bytebytego.com/)
 
-![A Guide to Rate Limiting Strategies](img/c8da4839-d519-43a9-bffb-2c81a2c153f4_2250x2624.jpg)
-![9 Docker Best Practices You Should Know](img/94510aef-adee-4c78-84cf-05dfe5f9d6c0_3000x3900.jpg)
-![Where Do We Cache Data?](img/a5e59510-28d9-423e-bdc4-986d24e58f91_2808x4096.jpg)
+![A Guide to Rate Limiting Strategies](https://substack-post-media.s3.amazonaws.com/public/images/c8da4839-d519-43a9-bffb-2c81a2c153f4_2250x2624.png)
+![9 Docker Best Practices You Should Know](https://substack-post-media.s3.amazonaws.com/public/images/94510aef-adee-4c78-84cf-05dfe5f9d6c0_3000x3900.png)
+![Where Do We Cache Data?](https://substack-post-media.s3.amazonaws.com/public/images/a5e59510-28d9-423e-bdc4-986d24e58f91_2808x4096.jpeg)
 
 ## Bonus: Một vài video hay ho
 
-![All New Java Language Features Since Java 21 #RoadTo25](https://www.youtube.com/watch?v=X0-TGhktFnE)
+[All New Java Language Features Since Java 21 #RoadTo25](https://www.youtube.com/watch?v=X0-TGhktFnE)

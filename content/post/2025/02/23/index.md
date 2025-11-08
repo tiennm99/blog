@@ -49,14 +49,13 @@ Bài viết blog này trên seangoedecke.com thảo luận về hai kiểu làm 
 
 ### Bonus #1: Vài ảnh hay ho đến từ [ByteByteGo](https://bytebytego.com/)
 
-![Top Strategies to Reduce Latency](img/fe9062b4-fd0e-4530-8e20-eea854b8490e_2250x2814.png)
-![The Ultimate API Learning Roadmap](img/9c309ad3-78a8-4511-a6f2-e69c06d5c500_1280x1566.gif)
-![30 Useful AI Apps That Can Help You in 2025](img/8eb12e04-e90d-43e6-a102-dda8bcc24756_1280x1532.gif)
-![10 Essential Components of a Production Web Application](img/a44f9f4b-193d-484e-bbf1-169751104380_1280x1568.gif)
-![How do we design effective and safe APIs?](img/7fb7334f-535e-464a-a513-0e4c76ebc329_1334x1536.jpg)
-![Code First v.s. API First](img/a44f9f4b-193d-484e-bbf1-169751104380_1280x1568.gif)
-![Oauth 2.0 Explained With Simple Terms](img/e64796b4-03d1-4b0f-a60f-999505f15aeb_1280x1661.jpg)
-![Session, Cookie, JWT, Token, SSO, and OAuth 2.0 Explained in One Diagram](img/c1155e03-c3dc-4192-8e05-e6b87dc6a574_1280x1664.gif)
+![Top Strategies to Reduce Latency](https://substack-post-media.s3.amazonaws.com/public/images/fe9062b4-fd0e-4530-8e20-eea854b8490e_2250x2814.png)
+![The Ultimate API Learning Roadmap](https://substack-post-media.s3.amazonaws.com/public/images/9c309ad3-78a8-4511-a6f2-e69c06d5c500_1280x1566.gif)
+![10 Essential Components of a Production Web Application](https://substack-post-media.s3.amazonaws.com/public/images/a44f9f4b-193d-484e-bbf1-169751104380_1280x1568.gif)
+![How do we design effective and safe APIs?](https://substack-post-media.s3.amazonaws.com/public/images/d5155be3-163d-479c-a75e-632e0f98dd36_3006x3453.jpeg)
+![Code First v.s. API First](https://substack-post-media.s3.amazonaws.com/public/images/aad520f5-00d9-4606-af4b-fdb5d1ac63c4_1600x1483.png)
+![Oauth 2.0 Explained With Simple Terms](https://substack-post-media.s3.amazonaws.com/public/images/bb375f63-bf06-4956-b3a3-914fd6aa2d91_1280x1664.jpeg)
+![Session, Cookie, JWT, Token, SSO, and OAuth 2.0 Explained in One Diagram](https://substack-post-media.s3.amazonaws.com/public/images/c1155e03-c3dc-4192-8e05-e6b87dc6a574_1280x1664.gif)
 
 ### Bonus #2: Một vài link hay ho khác
 

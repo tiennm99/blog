@@ -59,8 +59,8 @@ Tác giả khuyến nghị khám phá các chỉ mục tìm kiếm mã nguồn m
 
 ## Bonus: Vài ảnh hay ho đến từ [ByteByteGo](https://bytebytego.com/)
 
-![What is the SOLID Principle?](img/7136a64a-5300-4eed-852f-cdaf6cf73c6a_3000x3900.jpg)
-![Common HTTP Status Codes](img/fe53c806-a56f-4004-97e8-bbc6b5b9eb3d_3000x3900.jpg)
-![How Clean Architecture Works?](img/db0481bd-807d-419c-a71e-913a13cb855e_1280x808.jpg)
-![How does Docker Work?](img/ba21dab1-a39e-4c3a-a815-08d8be09de49_2360x2492.png)
-![A Guide to Top Caching Strategies](img/7f891bc7-8657-47ff-8974-efcfcc0f0bb1_2250x2624.jpg)
+![What is the SOLID Principle?](https://substack-post-media.s3.amazonaws.com/public/images/7136a64a-5300-4eed-852f-cdaf6cf73c6a_3000x3900.png)
+![Common HTTP Status Codes](https://substack-post-media.s3.amazonaws.com/public/images/fe53c806-a56f-4004-97e8-bbc6b5b9eb3d_3000x3900.jpeg)
+![How Clean Architecture Works?](https://substack-post-media.s3.amazonaws.com/public/images/db0481bd-807d-419c-a71e-913a13cb855e_1280x808.jpeg)
+![How does Docker Work?](https://substack-post-media.s3.amazonaws.com/public/images/ba21dab1-a39e-4c3a-a815-08d8be09de49_2360x2492.png)
+![A Guide to Top Caching Strategies](https://substack-post-media.s3.amazonaws.com/public/images/7f891bc7-8657-47ff-8974-efcfcc0f0bb1_2250x2624.png)

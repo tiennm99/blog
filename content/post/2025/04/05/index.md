@@ -372,11 +372,9 @@ Một số điểm chính:
 
 ## Bonus: Vài ảnh hay ho đến từ [ByteByteGo](https://bytebytego.com/)
 
-![24 Good Resources to Learn Software Architecture in 2025](img/e9419479-e915-4401-91db-19a3fbb3f272_1280x1601.jpg)
-![SOAP vs REST vs GraphQL vs RPC](img/972d1d02-396b-4464-b8a3-320b0cbd0f6f_1743x1536.jpg)
-![SQS vs SNS vs EventBridge vs Kinesis](img/3ecf2600-10d8-4180-8328-8d790fbba0cc_1280x1557.gif)
-![Top 5 common ways to improve API performance](img/217bf342-bfd4-4088-bba3-b2734f065a20_1280x1280.gif)
-![xAI's Grok-3 One-Pager](img/https___substack-post-media.s3.amazonaws.com_public_images_cf7e2044-2627-4b70-8f93-247a25fa8db9_1280x1545.gif)
+![SOAP vs REST vs GraphQL vs RPC](https://substack-post-media.s3.amazonaws.com/public/images/6b437484-1fd8-4b59-ba05-46bb3352b053_2904x2559.jpeg)
+![SQS vs SNS vs EventBridge vs Kinesis](https://substack-post-media.s3.amazonaws.com/public/images/3ecf2600-10d8-4180-8328-8d790fbba0cc_1280x1557.gif)
+![Top 5 common ways to improve API performance](https://substack-post-media.s3.amazonaws.com/public/images/217bf342-bfd4-4088-bba3-b2734f065a20_1280x1280.gif)
 
 ## Bonus 2: Vài video hay ho đến từ [Inside Java](https://inside.java/)
 

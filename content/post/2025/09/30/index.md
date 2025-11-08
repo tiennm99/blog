@@ -121,12 +121,12 @@ Một số tính năng bị chỉ trích như NIO ("0/10") và Streams ("1/10"),
 
 ## Bonus: Một vài ảnh hay ho đến từ [ByteByteGo](https://bytebytego.com/)
 
-![Python vs Java](img/aa5ea98b-c832-429d-8e48-63f25b7feb5a_3000x3900.jpg)
-![Design Patterns Cheat Sheet](img/4863d93c-ca2a-4b5a-b0b4-fe3621a6c184_2250x2920.jpg)
-![Design Patterns Cheat Sheet](img/d6d04f12-2adc-4d8e-a9ca-2de16399066f_2250x3376.jpg)
-![CI/CD Simplified Visual Guide](img/a370bb6a-82d3-45ad-b6f4-a2a9a4317402_800x1099.jpg)
-![How Apache Kafka Works?](img/5d9faeeb-3428-44c8-94fd-4b52fc287da3_3000x3900.png)
-![Load Balancers vs API Gateways vs Reverse Proxy](img/45136e24-79ee-4c6d-a53a-89df6afebef6_3000x3900.jpg)
-![Understanding Load Balancers: Traffic Management at Scale](img/1a1213e2-86cb-4fa8-bf72-e37ffe0da44d_2250x2624.jpg)
+![Python vs Java](https://substack-post-media.s3.amazonaws.com/public/images/aa5ea98b-c832-429d-8e48-63f25b7feb5a_3000x3900.jpeg)
+![Design Patterns Cheat Sheet](https://substack-post-media.s3.amazonaws.com/public/images/4863d93c-ca2a-4b5a-b0b4-fe3621a6c184_2250x2920.png)
+![Design Patterns Cheat Sheet](https://substack-post-media.s3.amazonaws.com/public/images/d6d04f12-2adc-4d8e-a9ca-2de16399066f_2250x3376.png)
+![CI/CD Simplified Visual Guide](https://substack-post-media.s3.amazonaws.com/public/images/a370bb6a-82d3-45ad-b6f4-a2a9a4317402_800x1099.jpeg)
+![How Apache Kafka Works?](https://substack-post-media.s3.amazonaws.com/public/images/5d9faeeb-3428-44c8-94fd-4b52fc287da3_3000x3900.png)
+![Load Balancers vs API Gateways vs Reverse Proxy](https://substack-post-media.s3.amazonaws.com/public/images/45136e24-79ee-4c6d-a53a-89df6afebef6_3000x3900.png)
+![Understanding Load Balancers: Traffic Management at Scale](https://substackcdn.com/image/fetch/$s_!4Uyj!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F1a1213e2-86cb-4fa8-bf72-e37ffe0da44d_2250x2624.heic)
 
 *Nhìn chung thì nội dung ngắn gọn, mình tương đối hài lòng, chắc khoảng 80% so với Claude Code với Claude models, nhưng vì miễn phí nên là mình rất ưng ý :)))*

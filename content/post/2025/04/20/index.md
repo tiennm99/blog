@@ -45,10 +45,10 @@ Video này điểm qua những cải tiến nổi bật trong các phiên bản 
 
 ## Bonus: Vài ảnh hay ho đến từ [ByteByteGo](https://bytebytego.com/)
 
-![30 Free APIs for Developers](img/f112df94-df52-4140-98ec-873e5b74d988_1280x1601.gif)
-![The Generative AI Learning Roadmap](img/c3bf4776-744b-4e87-85f8-6dddd6d85597_1280x1566.gif)
-![HTTP/1 -> HTTP/2 -> HTTP/3](img/c1dbb32e-8d1b-4c13-ae48-fe485ad92191_1280x1601.gif)
-![Structure of URL](img/d864f35c-537c-4571-8644-ce20d1a0caa5_1280x1427.gif)
+![30 Free APIs for Developers](https://substack-post-media.s3.amazonaws.com/public/images/f112df94-df52-4140-98ec-873e5b74d988_1280x1601.gif)
+![The Generative AI Learning Roadmap](https://substack-post-media.s3.amazonaws.com/public/images/c3bf4776-744b-4e87-85f8-6dddd6d85597_1280x1566.gif)
+![HTTP/1 -> HTTP/2 -> HTTP/3](https://substack-post-media.s3.amazonaws.com/public/images/c1dbb32e-8d1b-4c13-ae48-fe485ad92191_1280x1601.gif)
+![Structure of URL](https://substack-post-media.s3.amazonaws.com/public/images/d864f35c-537c-4571-8644-ce20d1a0caa5_1280x1427.gif)
 
 ## Bonus 2: Vài video hay ho đến từ [ByteByteGo](https://bytebytego.com/)
 
@@ -56,6 +56,6 @@ Video này điểm qua những cải tiến nổi bật trong các phiên bản 
 
 ## Bonus 3: Vài tài liệu hay ho đến từ [Redis.io](https://redis.io/)
 
-[Cache and Message Broker for Microservices](doc/cache-and-message-broker-for-microservices-solution-brief.pdf)
+[Cache and Message Broker for Microservices](https://redis.io/resources/cache-and-message-broker-for-microservices-solution-brief.pdf)
 
-[Caching at Scale With Redis](doc/caching-at-scale-with-redis-updated-2021-12-04.pdf)
+[Caching at Scale With Redis](https://redis.io/wp-content/uploads/2021/12/caching-at-scale-with-redis-updated-2021-12-04.pdf)

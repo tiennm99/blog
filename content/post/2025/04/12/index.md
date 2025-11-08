@@ -308,7 +308,7 @@ Bài viết phân tích hai phong cách làm việc của kỹ sư phần mềm 
      - Ưu tiên "ship now, improve later"
      - Phù hợp với startup, hackathon
      - Thách thức: tech debt, thiếu edge cases
-   
+
    - Accuracy-Oriented:
      - Tập trung vào tính chính xác và ổn định lâu dài
      - Ưu tiên "make sure it's right before it goes live"
@@ -320,12 +320,12 @@ Bài viết phân tích hai phong cách làm việc của kỹ sư phần mềm 
      - Cần tốc độ để validate ý tưởng
      - Chấp nhận bug và thiếu hiệu quả
      - Phù hợp với speed-oriented engineers
-   
+
    - Scaling (1 → 10):
      - Cần cân bằng giữa tốc độ và ổn định
      - Tập trung vào testing và kiến trúc
      - Cần engineers có thể nhìn xa hơn
-   
+
    - Enterprise (10 → 100):
      - Ưu tiên ổn định và tuân thủ
      - Quy trình và quản trị rõ ràng
@@ -380,7 +380,7 @@ Bài viết dự đoán về tương lai của hệ sinh thái LLM dựa trên c
      - Từ model nhỏ (100M params) đến lớn (1T params)
      - Từ text đơn giản đến đa phương tiện
      - Từ vài cent đến vài đô la mỗi giờ
-   
+
    - Giá trị mang lại:
      - Thay thế công việc có chi phí cao:
        - Quản lý thông tin ($1000-10000/giờ)
@@ -425,4 +425,4 @@ Bài viết kết luận rằng sự kiên trì đúng cách là sự kết hợ
 
 ## Bonus: Vài ảnh hay ho đến từ [ByteByteGo](https://bytebytego.com/)
 
-![Data Consistency Strategies For Microservices](img/ae95d38c-41f8-4eb7-885e-f7fafa4ca45d_2250x2624.jpg)
+![Data Consistency Strategies For Microservices](https://substack-post-media.s3.amazonaws.com/public/images/ae95d38c-41f8-4eb7-885e-f7fafa4ca45d_2250x2624.png)

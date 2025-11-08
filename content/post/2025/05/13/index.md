@@ -29,7 +29,7 @@ John hiện đang đóng góp vào Linux Kernel, triển khai Homa Transport Pro
 
 ### Kết luận:
 
-Thiết kế phần mềm vẫn là một kỹ năng quan trọng và không thể thay thế, ngay cả trong kỷ nguyên AI. Việc hiểu và áp dụng các nguyên tắc thiết kế tốt sẽ giúp tạo ra các hệ thống phần mềm bền vững và dễ bảo trì hơn. 
+Thiết kế phần mềm vẫn là một kỹ năng quan trọng và không thể thay thế, ngay cả trong kỷ nguyên AI. Việc hiểu và áp dụng các nguyên tắc thiết kế tốt sẽ giúp tạo ra các hệ thống phần mềm bền vững và dễ bảo trì hơn.
 
 ## [20 years of Git. Still weird, still wonderful](https://blog.gitbutler.com/20-years-of-git)
 
@@ -53,7 +53,7 @@ Sau 20 năm, Git vẫn đang được sử dụng theo cách mà nó được th
 
 ### Kết luận:
 
-Git đã đi một chặng đường dài từ một dự án cá nhân đơn giản trở thành công cụ không thể thiếu trong phát triển phần mềm. Câu chuyện về sự phát triển của Git không chỉ là câu chuyện về một công cụ, mà còn là câu chuyện về cách một ý tưởng đơn giản có thể thay đổi hoàn toàn cách chúng ta làm việc với code. 
+Git đã đi một chặng đường dài từ một dự án cá nhân đơn giản trở thành công cụ không thể thiếu trong phát triển phần mềm. Câu chuyện về sự phát triển của Git không chỉ là câu chuyện về một công cụ, mà còn là câu chuyện về cách một ý tưởng đơn giản có thể thay đổi hoàn toàn cách chúng ta làm việc với code.
 
 ## [A Modest Critique of Optional Handling](https://mccue.dev/pages//4-5-25-optional-critique)
 
@@ -65,7 +65,7 @@ Trong bài viết này, Ethan McCue đưa ra một phân tích sâu sắc về v
 
 - **Vấn đề với cách sử dụng hiện tại**: Nhiều lập trình viên đang sử dụng Optional như một cách để "giải quyết null", dẫn đến code phức tạp và khó đọc hơn.
 
-- **Hạn chế của Optional**: 
+- **Hạn chế của Optional**:
   - Khó xử lý với checked exceptions
   - Code trở nên phức tạp khi có nhiều Optional lồng nhau
   - Khó khăn trong việc thay đổi biến local trong lambda
@@ -83,7 +83,7 @@ Tác giả cung cấp nhiều ví dụ cụ thể về cách chuyển đổi cod
 
 ### Kết luận:
 
-Mặc dù Optional là một tính năng hữu ích trong Java, nhưng việc sử dụng nó cần được cân nhắc kỹ lưỡng. Thay vì tuân theo các quy tắc cứng nhắc về việc "tránh .isPresent/.get", các lập trình viên nên linh hoạt trong việc chọn cách tiếp cận phù hợp với từng tình huống cụ thể. 
+Mặc dù Optional là một tính năng hữu ích trong Java, nhưng việc sử dụng nó cần được cân nhắc kỹ lưỡng. Thay vì tuân theo các quy tắc cứng nhắc về việc "tránh .isPresent/.get", các lập trình viên nên linh hoạt trong việc chọn cách tiếp cận phù hợp với từng tình huống cụ thể.
 
 ## [Project Loom: Structured Concurrency in Java](https://rockthejvm.com/articles/structured-concurrency-in-java)
 
@@ -93,7 +93,7 @@ Trong bài viết này, Riccardo Cardin từ Rock the JVM chia sẻ một hướ
 
 - **Giới thiệu về Structured Concurrency**: Đây là một cách tiếp cận mới để quản lý đồng thời trong Java, giúp đơn giản hóa việc viết code đồng thời và tránh các vấn đề phổ biến như rò rỉ thread.
 
-- **Cấu hình Project**: 
+- **Cấu hình Project**:
   - Yêu cầu Java 23 với preview features
   - Cấu hình Maven để hỗ trợ structured concurrency
   - Sử dụng SLF4J và Logback cho logging
@@ -125,7 +125,7 @@ Tác giả cung cấp một ví dụ cụ thể về việc triển khai structu
 
 ### Kết luận:
 
-Structured Concurrency trong Project Loom đánh dấu một bước tiến quan trọng trong việc xử lý đồng thời trong Java. Tính năng này không chỉ giúp code dễ viết hơn mà còn an toàn hơn, giảm thiểu các vấn đề phổ biến trong lập trình đồng thời. Với việc được tích hợp vào Java 23, đây là thời điểm tốt để các developer bắt đầu tìm hiểu và áp dụng tính năng này vào các dự án của mình. 
+Structured Concurrency trong Project Loom đánh dấu một bước tiến quan trọng trong việc xử lý đồng thời trong Java. Tính năng này không chỉ giúp code dễ viết hơn mà còn an toàn hơn, giảm thiểu các vấn đề phổ biến trong lập trình đồng thời. Với việc được tích hợp vào Java 23, đây là thời điểm tốt để các developer bắt đầu tìm hiểu và áp dụng tính năng này vào các dự án của mình.
 
 ## [Go's HTTP Server Patterns in Java 25](https://mccue.dev/pages/4-5-25-go-http-server)
 
@@ -133,7 +133,7 @@ Trong bài viết này, Ethan McCue chia sẻ cách triển khai các mẫu HTTP
 
 ### Những điểm chính:
 
-- **Giới thiệu về jdk.httpserver**: 
+- **Giới thiệu về jdk.httpserver**:
   - Module mới trong Java cho phép tạo HTTP server đơn giản
   - Tương tự như cách Go xử lý HTTP server
   - Phù hợp cho phát triển và prototyping
@@ -169,7 +169,7 @@ Tác giả minh họa việc xây dựng một wiki server với các chức nă
 
 ### Kết luận:
 
-Mặc dù `jdk.httpserver` được đánh dấu là "for development only", nó cung cấp một cách tiếp cận đơn giản và hiệu quả để xây dựng HTTP server trong Java, tương tự như cách Go làm. Điều này mở ra khả năng phát triển nhanh các ứng dụng web đơn giản mà không cần đến các framework phức tạp. Tuy nhiên, cho môi trường production, tác giả khuyến nghị sử dụng các server chuyên nghiệp như Jetty. 
+Mặc dù `jdk.httpserver` được đánh dấu là "for development only", nó cung cấp một cách tiếp cận đơn giản và hiệu quả để xây dựng HTTP server trong Java, tương tự như cách Go làm. Điều này mở ra khả năng phát triển nhanh các ứng dụng web đơn giản mà không cần đến các framework phức tạp. Tuy nhiên, cho môi trường production, tác giả khuyến nghị sử dụng các server chuyên nghiệp như Jetty.
 
 ## [Java is dying and it paid off my mortgage](https://alyosha.net/posts/java-is-dying-and-it-paid-off-my-mortgage/)
 
@@ -206,7 +206,7 @@ Tác giả chia sẻ câu chuyện cá nhân:
 
 ### Kết luận:
 
-Bài viết đưa ra một góc nhìn mới về việc theo đuổi sự nghiệp trong lĩnh vực phát triển phần mềm. Thay vì chạy theo các xu hướng công nghệ mới, việc làm chủ các công nghệ đã trưởng thành như Java có thể mang lại sự ổn định và thành công lâu dài. Câu chuyện của tác giả là một minh chứng cho thấy đôi khi những lựa chọn "không phổ biến" lại có thể là lựa chọn tốt nhất cho sự nghiệp. 
+Bài viết đưa ra một góc nhìn mới về việc theo đuổi sự nghiệp trong lĩnh vực phát triển phần mềm. Thay vì chạy theo các xu hướng công nghệ mới, việc làm chủ các công nghệ đã trưởng thành như Java có thể mang lại sự ổn định và thành công lâu dài. Câu chuyện của tác giả là một minh chứng cho thấy đôi khi những lựa chọn "không phổ biến" lại có thể là lựa chọn tốt nhất cho sự nghiệp.
 
 ## [Refining var-handles in Valhalla](https://cr.openjdk.org/~jrose/values/atomic-value-access-api.html)
 
@@ -251,7 +251,7 @@ Tác giả cung cấp pseudocode chi tiết cho việc triển khai:
 
 ### Kết luận:
 
-Việc cải tiến var-handles trong Valhalla là một bước quan trọng để hỗ trợ tốt hơn cho value types trong Java. Cách tiếp cận mới giúp đơn giản hóa việc xử lý atomic operations và cải thiện hiệu suất của ứng dụng. Tuy nhiên, đây là một API phức tạp và chỉ nên được sử dụng bởi các developer có kinh nghiệm. 
+Việc cải tiến var-handles trong Valhalla là một bước quan trọng để hỗ trợ tốt hơn cho value types trong Java. Cách tiếp cận mới giúp đơn giản hóa việc xử lý atomic operations và cải thiện hiệu suất của ứng dụng. Tuy nhiên, đây là một API phức tạp và chỉ nên được sử dụng bởi các developer có kinh nghiệm.
 
 ## [Cấu hình domain .localhost cho ứng dụng local](https://inclouds.space/localhost-domains)
 
@@ -299,11 +299,11 @@ Tác giả đề xuất một số cải tiến trong tương lai:
 
 ### Kết luận:
 
-Cách tiếp cận này mang lại nhiều lợi ích cho việc phát triển và kiểm thử ứng dụng web locally. Nó giúp đơn giản hóa việc truy cập các ứng dụng và tạo ra một môi trường phát triển chuyên nghiệp hơn. Mặc dù cần một số cấu hình ban đầu, nhưng lợi ích mang lại là đáng kể, đặc biệt khi làm việc với nhiều ứng dụng cùng lúc. 
+Cách tiếp cận này mang lại nhiều lợi ích cho việc phát triển và kiểm thử ứng dụng web locally. Nó giúp đơn giản hóa việc truy cập các ứng dụng và tạo ra một môi trường phát triển chuyên nghiệp hơn. Mặc dù cần một số cấu hình ban đầu, nhưng lợi ích mang lại là đáng kể, đặc biệt khi làm việc với nhiều ứng dụng cùng lúc.
 
 ## [AI 50: AI Agents Move Beyond Chat](https://www.sequoiacap.com/article/ai-50-2025/)
 
-![](img/ai-50-2025.webp)
+![](https://sequoiacap.com/wp-content/uploads/sites/6/2025/04/ai-50-2025.png)
 
 Trong bài viết này, Konstantine Buhler từ Sequoia Capital phân tích xu hướng AI năm 2025, đặc biệt là sự chuyển đổi từ AI chỉ trả lời câu hỏi sang AI thực sự thực hiện công việc.
 
@@ -342,8 +342,8 @@ Các công ty trong danh sách AI 50 đã chứng minh:
 
 ### Kết luận:
 
-Năm 2025 đánh dấu bước ngoặt quan trọng trong phát triển AI, chuyển từ công cụ trả lời sang công cụ hành động. Mặc dù vẫn còn thách thức về độ chính xác và bảo mật, nhưng xu hướng phát triển là không thể phủ nhận. Các tiến bộ trong doanh nghiệp sẽ dần lan tỏa sang đời sống hàng ngày, mở ra một kỷ nguyên mới cho AI trong năm 2026. 
+Năm 2025 đánh dấu bước ngoặt quan trọng trong phát triển AI, chuyển từ công cụ trả lời sang công cụ hành động. Mặc dù vẫn còn thách thức về độ chính xác và bảo mật, nhưng xu hướng phát triển là không thể phủ nhận. Các tiến bộ trong doanh nghiệp sẽ dần lan tỏa sang đời sống hàng ngày, mở ra một kỷ nguyên mới cho AI trong năm 2026.
 
 ## Vài ảnh hay ho đến từ [ByteByteGo](https://bytebytego.com/)
 
-![A Cheatsheet On OOP Design Patterns](img/65279cf0-3266-445d-852b-a45d6ac9afa4_2250x2862.jpg)
+![A Cheatsheet On OOP Design Patterns](https://substack-post-media.s3.amazonaws.com/public/images/65279cf0-3266-445d-852b-a45d6ac9afa4_2250x2862.png)

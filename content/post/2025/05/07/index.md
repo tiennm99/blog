@@ -162,8 +162,7 @@ Bảng tra cứu này là một tài nguyên quý giá cho cả sinh viên và c
 
 ## Bonus: Vài ảnh hay ho đến từ [ByteByteGo](https://bytebytego.com/)
 
-![3 Steps to Master Your Software](img/81074d22-5821-4aec-bb2d-0a099d06b6ac_1600x840.jpg)
-![The Ultimate Software Architect Roadmap](img/67c39b9a-9a91-4e57-9e24-7714b4f806dd_1280x1349.gif)
-![What is Retrieval-Augmented Generation (RAG)?](img/027a010d-4cd7-436a-9404-e4865f008df5_1309x1536.gif)
-![How Two-factor Authentication (2FA) Works?](img/fb1b1cd1-eac3-4b66-a391-9ec73f6c37f3_1280x1502.gif)
-![How Amazon S3 Works?](img/3efae3ad-8c45-4fb2-a79f-6b3387b0751e_1280x1601.gif)
+![3 Steps to Master Your Software](https://substack-post-media.s3.amazonaws.com/public/images/81074d22-5821-4aec-bb2d-0a099d06b6ac_1600x840.png)
+![The Ultimate Software Architect Roadmap](https://substack-post-media.s3.amazonaws.com/public/images/67c39b9a-9a91-4e57-9e24-7714b4f806dd_1280x1349.gif)
+![How Two-factor Authentication (2FA) Works?](https://substack-post-media.s3.amazonaws.com/public/images/fb1b1cd1-eac3-4b66-a391-9ec73f6c37f3_1280x1502.gif)
+![How Amazon S3 Works?](https://substack-post-media.s3.amazonaws.com/public/images/3efae3ad-8c45-4fb2-a79f-6b3387b0751e_1280x1601.gif)

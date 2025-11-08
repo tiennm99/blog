@@ -73,7 +73,6 @@ Tóm lại, bài viết cho thấy tiềm năng của LLM trong việc giúp cá
 
 ## Bonus: Vài ảnh hay ho đến từ [ByteByteGo](https://bytebytego.com/)
 
-![What is an AI Agent?](img/0854344c-e671-4c21-8b25-f966772e54b5_1280x1532.gif)
-![Git vs GitHub](img/1112c07d-db40-484e-917b-0071ed7cf354_1280x1532.gif)
-![A Cheatsheet on Database Performance](img/5fd8bdda-52dd-454f-be79-ad548f17810b_1280x1557.gif)
-![18 Common Ports Worth Knowing](img/35ae3f82-afa0-47b9-a2a0-58b6c6d8cfb1_1280x1476.gif)
+![Git vs GitHub](https://substack-post-media.s3.amazonaws.com/public/images/1112c07d-db40-484e-917b-0071ed7cf354_1280x1532.gif)
+![A Cheatsheet on Database Performance](https://substack-post-media.s3.amazonaws.com/public/images/5fd8bdda-52dd-454f-be79-ad548f17810b_1280x1557.gif)
+![18 Common Ports Worth Knowing](https://substack-post-media.s3.amazonaws.com/public/images/35ae3f82-afa0-47b9-a2a0-58b6c6d8cfb1_1280x1476.gif)

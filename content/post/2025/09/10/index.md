@@ -111,9 +111,9 @@ Bài viết từ Avi khám phá các khái niệm và thực tiễn quan trọng
 
 ## Bonus: Vài ảnh hay ho đến từ [ByteByteGo](https://bytebytego.com/)
 
-![A Detailed Guide to Content Delivery Networks](img/f8993d4d-8879-4eeb-9635-3a5aa13816cc_2250x2624.jpg)
-![CI/CD Pipeline Explained](img/607358c5-2e0b-41fc-9cdd-a350e1faf144_3780x4096.jpg)
-![What are some of the most popular versioning strategies?](img/8b1bd4d5-a708-4793-a9e6-aa96db182f54_3000x3900.jpg)
-![The Testing Pyramid](img/c34a8b8b-feff-4473-9eb1-dd399f5a81eb_2360x2664.jpg)
+![A Detailed Guide to Content Delivery Networks](https://substack-post-media.s3.amazonaws.com/public/images/f8993d4d-8879-4eeb-9635-3a5aa13816cc_2250x2624.png)
+![CI/CD Pipeline Explained](https://substack-post-media.s3.amazonaws.com/public/images/607358c5-2e0b-41fc-9cdd-a350e1faf144_3780x4096.jpeg)
+![What are some of the most popular versioning strategies?](https://substack-post-media.s3.amazonaws.com/public/images/8b1bd4d5-a708-4793-a9e6-aa96db182f54_3000x3900.png)
+![The Testing Pyramid](https://substack-post-media.s3.amazonaws.com/public/images/c34a8b8b-feff-4473-9eb1-dd399f5a81eb_2360x2664.jpeg)
 
 *Tổng kết thì mình thấy đợt thử nghiệm này cũng khá ổn. Có điều bài viết còn khá dài dòng và đôi chỗ còn sai sót từ ngữ tiếng Việt một chút. Với cái giá free thì quá được :))) Hẹn gặp lại các bạn trong các bài viết tới.*
