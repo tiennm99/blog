@@ -26,10 +26,10 @@ content/
         └── MM/
             └── DD/
                 ├── index.md     # Blog post content
-                ├── img/         # Images for the post
-                ├── doc/         # PDFs and documents
                 └── data/        # Data files
 ```
+
+> **Note on Assets**: Images and documents from external sources should be referenced directly from their original locations rather than downloaded into subfolders. The only exception is for images or documents that are created by yourself, which can be stored in the appropriate directories.
 
 ## Newsletter URL Processing Workflow
 
@@ -38,7 +38,9 @@ When given URLs, automatically create or update daily newsletter posts with Viet
 ### Step 1: URL Processing
 1. **Clean URL**: Remove tracking parameters (utm_*, fbclid, gclid, ref, etc.)
 2. **Verify**: Check if URL is accessible (HTTP 200)
-3. **Extract**: Get article title and main content
+3. **Extract**:
+   - For article URLs: Get article title and main content (do not download images or documents from the URL to local subfolders)
+   - For asset URLs: Identify asset type and prepare for bonus section inclusion
 4. **Check duplicates**: Ensure not already covered in existing newsletters
 5. **Skip if**: Inaccessible or duplicate (notify user)
 
@@ -74,6 +76,18 @@ categories: ["Newsletter"]
 #### Appending to Existing Newsletter
 Add new article section before any bonus content, maintaining the same format as above.
 
+#### Bonus Content Section
+If the user sends a direct link to an asset (like .png, .jpg, .pdf, .docx), include it in a bonus section at the end of the newsletter using external links. However, if the user sends an article/post URL, do not add any assets from within that post to the bonus section - only extract content as part of the article summary.
+
+```markdown
+---
+
+### Bonus Resources
+
+- [Image: Description of image](image_url)
+- [Document: Description of document](document_url)
+```
+
 ## Vietnamese Writing Guidelines
 
 ### Language Rules
@@ -107,6 +121,7 @@ Before finalizing any content:
 - [ ] Required tags present
 - [ ] Newsletter number is sequential
 - [ ] File in correct directory structure
+- [ ] Asset links properly handled (external links for user-provided assets, no embedded assets from articles)
 
 ## Error Handling
 
@@ -142,3 +157,4 @@ Next steps: Review content and publish when ready.
 6. **Use relative paths** for internal links and assets
 7. **Check Vietnamese** grammar and diacritics
 8. **Validate** markdown syntax before saving
+9. **Handle assets properly**: Use external links for user-provided assets, do not embed assets from articles
