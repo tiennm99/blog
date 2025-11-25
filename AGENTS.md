@@ -126,7 +126,7 @@ Next steps: Review content and publish when ready.
 1. **Always verify** file paths before making changes
 2. **Follow** established directory structure
 3. **Maintain** consistency with existing content
-4. **Test locally** using `hugo server --gc`
+4. **Test locally** using `hugo server --gc` (optional)
 5. **Preserve** front matter structure in markdown files
 6. **Use relative paths** for internal links and assets
 7. **Check Vietnamese** grammar and diacritics
