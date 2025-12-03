@@ -7,7 +7,7 @@ This file provides guidance to AI code assistants when working with this Hugo-ba
 - **Type**: Hugo static site blog with Vietnamese content
 - **Theme**: hugo-theme-stack
 - **Focus**: Technology newsletters, programming tutorials, technical insights
-- **Language**: Vietnamese (with English technical terms where appropriate)
+- **Language**: Vietnamese (with English technical terms where juniors can understand)
 - **Timezone**: Asia/Ho_Chi_Minh (UTC+7)
 
 ## Quick Commands
