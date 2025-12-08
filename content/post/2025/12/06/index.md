@@ -5,7 +5,7 @@ tags: ["AI-Assisted", "Technology", "caching", "database", "performance"]
 categories: ["Newsletter"]
 ---
 
-*Mời bạn thưởng thức Newsletter #64. Bài viết này được thực hiện bởi [Claude Code](https://github.com/anthropics/claude-code), [Claude Code Router](https://github.com/musistudio/claude-code-router), [iFlow Open Platform](https://platform.iflow.cn/) & [Qwen3-Coder-Plus](qwen3-coder-plus)[^qwen3-coder-plus]*
+*Mời bạn thưởng thức Newsletter #64. Bài viết này được thực hiện bởi [Claude Code](https://github.com/anthropics/claude-code), [Claude Code Router](https://github.com/musistudio/claude-code-router), [iFlow Open Platform](https://platform.iflow.cn) & Qwen3-Coder-Plus[^qwen3-coder-plus]*
 
 [^qwen3-coder-plus]: Qwen3-Coder-480B-A35B-Instruct
 
