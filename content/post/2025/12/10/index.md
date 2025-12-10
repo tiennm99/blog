@@ -1,7 +1,7 @@
 ---
 title: "Newsletter #67"
 date: 2025-12-10
-tags: ["AI-Assisted"]
+tags: ["AI-Assisted", "Build Systems", "Configuration Languages", "Agentic Coding", "AI Development", "Refactoring", "Software Engineering"]
 categories: ["Newsletter"]
 ---
 
