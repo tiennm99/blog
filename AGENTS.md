@@ -1,134 +1,205 @@
 # AGENTS.md
 
-This file provides guidance to AI code assistants when working with this Hugo-based blog repository (miti99.com).
+Guide for AI code assistants working with this Hugo blog (miti99.com).
 
-## Project Overview
+## Project Info
 
-- **Type**: Hugo static site blog with Vietnamese content
+- **Type**: Hugo static site with Vietnamese tech content
 - **Theme**: hugo-theme-stack
-- **Focus**: Technology newsletters, programming tutorials, technical insights
-- **Language**: Vietnamese (with English technical terms where juniors can understand)
+- **Language**: Vietnamese (with common English tech terms)
 - **Timezone**: Asia/Ho_Chi_Minh (UTC+7)
 
-## Quick Commands
+## Commands
 ```bash
-hugo server --gc     # Local development
+hugo server --gc     # Local dev
 hugo --gc --minify   # Production build
 ```
 
 ## Directory Structure
 ```
-content/
-└── post/
-    └── YYYY/
-        └── MM/
-            └── DD/
-                ├── index.md     # Blog post content
-                └── data/        # Data files
+content/post/
+└── YYYY/
+    └── MM/
+        └── DD/
+            └── index.md
 ```
 
-> **Note on Assets**: Images and documents from external sources should be referenced directly from their original locations rather than downloaded into subfolders. The only exception is for images or documents that are created by yourself, which can be stored in the appropriate directories.
+---
 
 ## URL Processing Workflow
 
-### 1. URL Processing
-1. **Clean URL**: Remove tracking params (utm_*, fbclid, etc.)
-2. **Verify**: Check if URL is accessible (HTTP 200)
-3. **Extract**:
-   - For articles: Get title and content (don't download assets)
-   - For assets: Identify type for bonus section
-4. **Check duplicates**: Skip if already covered
-5. **Skip if**: Inaccessible or duplicate
+When user sends URLs, process automatically and generate report.
 
-### 2. Newsletter Management
-1. **Get date**: Current date (YYYY-MM-DD)
-2. **Check existing**: `content/post/YYYY/MM/DD/index.md`
-3. **If exists**: Append before bonus sections
-4. **If new**: Create with auto-incremented number
+### Step 1: Prepare URLs
+For each URL:
+1. **Clean**: Remove tracking params (`utm_*`, `fbclid`, etc.)
+2. **Validate**: Check accessibility (HTTP 200)
+3. **Check duplicate**: Search exact URL in project files
+4. **Classify**:
+   - Article URL → Extract for main content
+   - Direct asset (`.png`, `.jpg`, `.pdf`, `.mp4`, etc.) → Bonus section
+5. **Skip if**: Inaccessible, duplicate, or extraction fails
 
-### 3. Content Structure
+### Step 2: Find Today's Post
+1. Get current date: `YYYY-MM-DD`
+2. Check path: `content/post/YYYY/MM/DD/index.md`
+3. **If exists**: Update this file
+4. **If not exists**: Create new file with incremented newsletter number
 
-#### New Newsletter Template
+### Step 3: Determine Newsletter Number
+To find next newsletter number:
+1. Start from current date folder, search backwards:
+   - Current month folders (DD, DD-1, DD-2...)
+   - Previous months (MM-1, MM-2...)
+   - Previous years if needed (YYYY-1, YYYY-2...)
+2. Find most recent `index.md` with "Newsletter #N"
+3. Increment: N + 1
+
+### Step 4: Generate Content
+
+#### For Article URLs
+Extract and generate:
+- **Title**: Original article title
+- **Summary**: 1-2 paragraphs, professional Vietnamese
+  - Max 300 words
+  - Use common English tech terms only
+  - Brief intro to the topic
+  - Give overview for readers
+- **Key points** (optional): 3-5 bullet points if relevant
+
+#### For Asset URLs
+Extract:
+- **Type**: Image, video, PDF, etc.
+- **Title**: File name or detected title
+- Add to Bonus section by type
+
+### Step 5: Write Content
+
+#### New Post Template
 ```markdown
 ---
 title: "Newsletter #[number]"
 date: YYYY-MM-DD
-tags: ["AI-Assisted", "Technology", "tag-3", "tag-4"]
+tags: ["AI-Assisted"]
 categories: ["Newsletter"]
 ---
 
 *Mời bạn thưởng thức Newsletter #[number].*
 
-## [Original Article Title](clean_url)
+## [Article Title](clean_url)
 
-[Vietnamese summary: 2-4 paragraphs]
+[Vietnamese summary - professional, max 300 words]
 
-**Điểm chính:**
+**Điểm chính:** (optional)
 - [Key point 1]
 - [Key point 2]
-- [Key point 3]
 ```
 
-#### Bonus Content Section
-For direct asset links (.png, .jpg, .pdf, .docx):
+#### Update Existing Post
+Insert new articles **before** Bonus section:
 ```markdown
-### Bonus Resources
+[Existing articles...]
 
-- [Image: Description](image_url)
-- [Document: Description](document_url)
+## [New Article Title](clean_url)
+[New summary...]
+
+### Bonus
+
+**Images:**
+![image1](url1)
+
+**Videos:**
+[Video: title](url)
+
+**Documents:**
+[PDF: title](url)
 ```
 
-## Vietnamese Writing Guidelines
-- **Primary**: Vietnamese
-- **English for**: Tech names, acronyms, code, common terms
+### Step 6: Format Bonus Section
+Group assets by type with subheadings:
+```markdown
+### Bonus
+
+**Images:**
+![title](url)
+![title](url)
+
+**Videos:**
+[Video: title](url)
+
+**Documents:**
+[PDF: title](url)
+[DOCX: title](url)
+```
+
+---
+
+## Content Guidelines
+
+### Vietnamese Writing
+- **Primary language**: Vietnamese
+- **English allowed**: Tech terms (API, GitHub, AI, backend, frontend, etc.)
 - **Audience**: Junior developers
-- **Tone**: Professional but accessible
-- **Length**: 150-300 words per summary
+- **Tone**: Professional, clear, accessible
+- **Length**: Max 300 words per summary
 
-## Tagging Guidelines
-- **Required**: "AI-Assisted"
-- **Maximum**: 6-7 tags
-- **Categories**: Always ["Newsletter"]
-
-## Quality Checklist
+### Quality Checklist
 - [ ] Valid Hugo front matter
+- [ ] Title: `"Newsletter #[number]"`
+- [ ] Date: `YYYY-MM-DD` format
+- [ ] Tags: Include `"AI-Assisted"` (other tags added manually later)
+- [ ] Clean URLs (no tracking params)
 - [ ] Correct Vietnamese grammar
-- [ ] Clean URLs
-- [ ] Proper markdown
-- [ ] Date format: YYYY-MM-DD
-- [ ] Required tags present
-- [ ] Sequential newsletter number
-- [ ] Correct directory structure
+- [ ] Proper markdown syntax
+- [ ] Articles before Bonus section
+- [ ] Bonus assets grouped by type
+
+---
 
 ## Error Handling
-| Issue | Solution |
-|-------|----------|
-| URL inaccessible | Skip and notify |
-| Duplicate content | Skip and notify |
-| Date error | Use current date |
-| Directory failed | Create and retry |
-| Extraction failed | Use title, flag |
 
-## Response Format
+| Issue | Action |
+|-------|--------|
+| URL inaccessible | Skip, include in report |
+| Duplicate URL found | Skip, include in report |
+| Content extraction fails | Skip, treat as error |
+| Directory not exist | Create directories |
+| Summary too short | Accept (no minimum length) |
+
+---
+
+## Final Report Format
+
+After processing, provide:
+
 ```
 ✅ Newsletter Processing Complete
 
 📄 File: content/post/YYYY/MM/DD/index.md
-📊 Action: [Created new | Updated existing] Newsletter #[number]
-🔗 URLs processed: [count]
-⚠️ Skipped: [count] (reason)
+📊 Action: [Created new / Updated existing] Newsletter #[number]
 
-Next steps: Review content and publish when ready.
+✅ Processed: [count] URLs
+   - [count] articles added
+   - [count] assets added to Bonus
+
+❌ Failed: [count] URLs
+   - [url]: [reason]
+   - [url]: [reason]
+
+Next: Review content, then use /addtags to add relevant tags.
 ```
 
-## Best Practices for Code Agents
+---
 
-1. **Always verify** file paths before making changes
-2. **Follow** established directory structure
-3. **Maintain** consistency with existing content
-4. **Test locally** using `hugo server --gc` (optional)
-5. **Preserve** front matter structure in markdown files
-6. **Use relative paths** for internal links and assets
-7. **Check Vietnamese** grammar and diacritics
-8. **Validate** markdown syntax before saving
-9. **Handle assets properly**: Use external links for user-provided assets, do not embed assets from articles
+## Best Practices
+
+1. **Always verify** file paths exist before writing
+2. **Preserve** existing content when updating
+3. **Use exact URLs** for duplicate checking
+4. **Generate quality summaries** using AI (Claude/subagents)
+5. **Handle errors gracefully** and report clearly
+6. **Group Bonus assets** by type with subheadings
+7. **Keep front matter minimal** (tags added separately)
+8. **Use relative paths** for internal links
+9. **Validate markdown** before saving
+10. **Process all URLs** in one batch per request
