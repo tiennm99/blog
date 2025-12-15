@@ -47,6 +47,16 @@ Bài viết cung cấp cái nhìn tổng quan nhanh chóng và thực tế về 
 - Các thành phần kiến trúc hệ thống phân tán như microservices, load balancers, CDN
 - Các mẫu độ tin cậy và chiến lược lưu trữ đệm
 
+## [DDD: A Toolbox, Not a Religion](https://threedots.tech/episode/ddd-toolbox-not-religion)
+
+Bài viết nhấn mạnh rằng Domain-Driven Design (DDD) nên được sử dụng một cách thực tiễn - như một tập hợp công cụ để giải quyết sự phức tạp của lĩnh vực nghiệp vụ thực tế, chứ không phải như một giáo điều cứng nhắc. Nội dung cho biết rằng hầu hết các sự cố phần mềm đến từ việc xử lý kém logic nghiệp vụ, chứ không phải từ những lỗi kỹ thuật. Bài viết cảnh báo về việc thiết kế quá mức và giải quyết những vấn đề tưởng tượng, thay vào đó đề xuất việc hiểu rõ lĩnh vực cốt lõi và chỉ áp dụng các mẫu DDD phù hợp. Như Miłosz nói, "DDD là về việc hiểu lĩnh vực bạn đang làm việc và sau đó mô hình hóa nó tốt trong code."
+
+**Điểm chính:**
+- DDD nên được coi là một tập hợp công cụ, không phải là một giáo điều
+- Hầu hết sự cố phần mềm đến từ việc xử lý logic nghiệp vụ kém, không phải lỗi kỹ thuật
+- Tránh thiết kế quá mức và giải quyết vấn đề tưởng tượng
+- Chỉ áp dụng các mẫu DDD phù hợp với lĩnh vực nghiệp vụ thực tế
+
 ### Bonus
 
 **Images:**
