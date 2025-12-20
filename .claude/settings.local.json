@@ -6,7 +6,8 @@
       "WebFetch",
       "WebSearch",
       "Bash(curl:*)",
-      "Bash(sed:*)"
+      "Bash(sed:*)",
+      "Bash(echo:*)"
     ],
     "deny": [],
     "ask": []
