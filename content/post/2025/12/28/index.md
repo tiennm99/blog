@@ -59,6 +59,22 @@ Các chiến lược bao gồm: DNS Round Robin để phân phối traffic ở t
 - Trade-offs giữa complexity và performance
 - Tech giants solutions cho load balancer scaling
 
+## [The High Availability Blueprint: Designing Systems That Never Sleep](https://designgurus.substack.com/p/the-high-availability-blueprint-designing)
+
+High Availability (HA) là kỷ thuật xây dựng hệ thống "không bao giờ ngủ" - dù hardware có chắc chắn sẽ thất bại. Bài viết này giới thiệu các fundamental techniques mà engineers sử dụng để giữ cho hệ thống luôn hoạt động. Core philosophy của HA: "Assume everything will break, and plan for it." Kẻ thù lớn nhất là Single Points of Failure (SPOF) - bất kỳ component nào nếu fails thì toàn bộ hệ thống停止.
+
+Các kỹ thuật cốt lõi bao gồm: Redundancy (nhân bản critical components - two is one, one is none), Load Balancers với Health Checks (tự động remove broken servers khỏi rotation), Database Replication (Leader-Follower architecture để backup data real-time), Failover patterns (Active-Passive đơn giản nhưng lãng phí, Active-Active tối ưu nhưng phức tạp), và Rate Limiting để prevent cascading failures khi traffic spike. Cho Five Nines (99.999% uptime = chỉ 5 phút downtime/năm), cần Geographic Distribution - deploy servers across multiple regions để survive local disasters. Key takeaway: "Two is one, and one is none" - luôn luôn có backup.
+
+**Điểm chính:**
+- HA: mask failures thay vì prevent, user never knows
+- "The Nines": 99% → 99.999%, mỗi nine thêm exponentially expensive
+- SPOF là enemy, redundancy là solution
+- Load balancer health checks tự động detect & route around failures
+- Database replication: Leader-Follower để protect data
+- Failover: Active-Passive (simple) vs Active-Active (efficient)
+- Rate limiting prevent cascading failures
+- Geographic distribution cho five nines availability
+
 ## Bonus
 
 ### Images
