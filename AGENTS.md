@@ -1,19 +1,13 @@
 # AGENTS.md
 
-Guide for AI code assistants working with this Hugo blog (miti99.com).
+Guide for AI code assistants working with this Hugo blog.
 
 ## Project Info
 
 - **Type**: Hugo static site with Vietnamese tech content
 - **Theme**: hugo-theme-stack
-- **Language**: Vietnamese (with common English tech terms)
+- **Language**: Vietnamese (with common English tech words)
 - **Timezone**: Asia/Ho_Chi_Minh (UTC+7)
-
-## Commands
-```bash
-hugo server --gc     # Local dev
-hugo --gc --minify   # Production build
-```
 
 ## Directory Structure
 ```
@@ -138,7 +132,7 @@ Group assets by type with subheadings:
 
 ### Vietnamese Writing
 - **Primary language**: Vietnamese
-- **English allowed**: Tech terms (API, GitHub, AI, backend, frontend, etc.)
+- **English allowed**: Tech terms (API, GitHub, AI, backend, frontend, etc.), but limited, use Vietnamese if possible
 - **Audience**: Junior developers
 - **Tone**: Professional, clear, accessible
 - **Length**: Max 300 words per summary

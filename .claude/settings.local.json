@@ -7,7 +7,8 @@
       "WebSearch",
       "Bash(curl:*)",
       "Bash(sed:*)",
-      "Bash(echo:*)"
+      "Bash(echo:*)",
+      "Bash(powershell:*)"
     ],
     "deny": [],
     "ask": []
