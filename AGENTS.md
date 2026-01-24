@@ -132,7 +132,18 @@ Group assets by type with subheadings:
 
 ### Vietnamese Writing
 - **Primary language**: Vietnamese
-- **English allowed**: Tech terms (API, GitHub, AI, backend, frontend, etc.), but limited, use Vietnamese if possible
+- **English allowed**: ONLY for very common tech terms with no good Vietnamese equivalent (API, GitHub, AI, Rust, Go, HTTP, JSON, etc.)
+- **CRITICAL**: Translate as MUCH as possible to Vietnamese. Even technical concepts should be translated when possible.
+- **Examples of translations**:
+  - error handling → xử lý lỗi
+  - dependency → phụ thuộc  
+  - performance → hiệu năng
+  - deployment → triển khai
+  - scalability → khả năng mở rộng
+  - database → cơ sở dữ liệu
+  - testing → kiểm thử
+  - framework → khung làm việc
+- **AVOID English phrases** when Vietnamese exists: use "Sử dụng" instead of "Use", "Đảm bảo" instead of "Make sure", etc.
 - **Audience**: Junior developers
 - **Tone**: Professional, clear, accessible
 - **Length**: Max 300 words per summary

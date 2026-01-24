@@ -9,7 +9,9 @@
       "Bash(sed:*)",
       "Bash(echo:*)",
       "Bash(powershell:*)",
-      "mcp__web-reader__webReader"
+      "mcp__web-reader__webReader",
+      "mcp__acp__Write",
+      "mcp__acp__Edit"
     ],
     "deny": [],
     "ask": []
