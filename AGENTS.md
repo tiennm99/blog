@@ -56,7 +56,7 @@ Extract and generate:
 - **Title**: Original article title
 - **Summary**: 1-2 paragraphs, professional Vietnamese
   - Max 300 words
-  - Use common English tech terms only
+  - Use common English tech terms only when no Vietnamese equivalent exists
   - Brief intro to the topic
   - Give overview for readers
 - **Key points** (optional): 3-5 bullet points if relevant
@@ -130,23 +130,78 @@ Group assets by type with subheadings:
 
 ## Content Guidelines
 
-### Vietnamese Writing
-- **Primary language**: Vietnamese
-- **English allowed**: ONLY for very common tech terms with no good Vietnamese equivalent (API, GitHub, AI, Rust, Go, HTTP, JSON, etc.)
-- **CRITICAL**: Translate as MUCH as possible to Vietnamese. Even technical concepts should be translated when possible.
-- **Examples of translations**:
-  - error handling → xử lý lỗi
-  - dependency → phụ thuộc  
-  - performance → hiệu năng
-  - deployment → triển khai
-  - scalability → khả năng mở rộng
-  - database → cơ sở dữ liệu
-  - testing → kiểm thử
-  - framework → khung làm việc
-- **AVOID English phrases** when Vietnamese exists: use "Sử dụng" instead of "Use", "Đảm bảo" instead of "Make sure", etc.
+### Language Policy
+
+**PRIMARY LANGUAGE**: Vietnamese (99%)
+**SECONDARY LANGUAGE**: English (1% - only for unavoidable technical terms)
+
+**English Terms Allowed (NO VIETNAMESE EQUIVALENT)**:
+- API, GitHub, AI, Rust, Go, HTTP, JSON, SQL, CI/CD, Docker, Kubernetes
+- Technology names: PostgreSQL, MongoDB, Redis, etc.
+- Company names: Databricks, Snowflake, Google, Microsoft, etc.
+- Product names: HorizonDB, Neon, CrunchyData, etc.
+- Acronyms with no direct translation: MCP, ETL, OLAP, etc.
+
+**TRANSLATE EVERYTHING TO VIETNAMESE**:
+- All technical concepts MUST be translated when Vietnamese equivalent exists
+- All action verbs MUST be in Vietnamese
+- All descriptions MUST be in Vietnamese
+
+**Common Translations**:
+- error handling → xử lý lỗi
+- dependency → phụ thuộc
+- performance → hiệu năng
+- deployment → triển khai
+- scalability → khả năng mở rộng
+- database → cơ sở dữ liệu
+- testing → kiểm thử
+- framework → khung làm việc
+- developer → nhà phát triển/lập trình viên
+- engineer → kỹ sư
+- code → mã nguồn
+- software → phần mềm
+- application → ứng dụng
+- algorithm → thuật toán
+- architecture → kiến trúc
+- feature → tính năng
+- bug → lỗi
+- security → bảo mật
+- authentication → xác thực
+- authorization → phân quyền
+- integration → tích hợp
+- interface → giao diện
+- monitoring → giám sát
+- optimization → tối ưu hóa
+- server → máy chủ
+- client → máy khách
+- distributed system → hệ thống phân tán
+- backup → sao lưu
+- restore → khôi phục
+
+**Action Verbs (ALWAYS USE VIETNAMESE)**:
+- use → sử dụng
+- make sure → đảm bảo
+- check → kiểm tra
+- run → chạy
+- build → xây dựng
+- deploy → triển khai
+- test → kiểm thử
+- debug → gỡ lỗi
+- monitor → giám sát
+- analyze → phân tích
+- optimize → tối ưu hóa
+- configure → cấu hình
+- install → cài đặt
+- update → cập nhật
+- create → tạo
+- delete → xóa
+- manage → quản lý
+
+**Content Requirements**:
 - **Audience**: Junior developers
-- **Tone**: Professional, clear, accessible
+- **Tone**: Professional, clear, accessible, natural Vietnamese
 - **Length**: Max 300 words per summary
+- **Quality Check**: Verify before saving that Vietnamese content is ≥ 99%
 
 ### Quality Checklist
 - [ ] Valid Hugo front matter
@@ -158,6 +213,7 @@ Group assets by type with subheadings:
 - [ ] Proper markdown syntax
 - [ ] Articles before Bonus section
 - [ ] Bonus assets grouped by type
+- [ ] Vietnamese content ≥ 99%
 
 ---
 
