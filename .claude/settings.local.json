@@ -10,6 +10,7 @@
       "Bash(echo:*)",
       "Bash(powershell:*)",
       "mcp__web-reader__webReader",
+      "mcp__web-search-prime__webSearchPrime",
       "mcp__acp__Write",
       "mcp__acp__Edit",
       "mcp__acp__Bash"
