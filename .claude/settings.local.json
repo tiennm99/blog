@@ -1,20 +1,21 @@
 {
   "permissions": {
     "allow": [
+      "Bash(curl:*)",
+      "Bash(echo:*)",
       "Bash(find:*)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
       "Bash(mkdir:*)",
+      "Bash(powershell:*)",
+      "Bash(sed:*)",
       "WebFetch",
       "WebSearch",
-      "Bash(curl:*)",
-      "Bash(sed:*)",
-      "Bash(echo:*)",
-      "Bash(git commit:*)",
-      "Bash(powershell:*)",
-      "mcp__web-reader__webReader",
-      "mcp__web-search-prime__webSearchPrime",
-      "mcp__acp__Write",
+      "mcp__acp__Bash",
       "mcp__acp__Edit",
-      "mcp__acp__Bash"
+      "mcp__acp__Write",
+      "mcp__web-reader__webReader",
+      "mcp__web-search-prime__webSearchPrime"
     ],
     "deny": [],
     "ask": []
