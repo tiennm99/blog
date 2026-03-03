@@ -3,6 +3,7 @@ title: Pages
 description: Danh sách pages đã làm
 menu:
   main:
+    weight: -40
     params:
       icon: list
 ---

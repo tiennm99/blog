@@ -1,16 +1,15 @@
 ---
 title: Referral
-description: Danh sách lời mời services của mình
+description: Referral links for tech services I use
 aliases:
-  - referral
   - invite
 menu:
   main:
-    weight: -90
+    weight: -30
     params:
-      icon: user
+      icon: link
 ---
 
 ## [Z.ai](https://z.ai/subscribe?ic=PLKIAYEIPW)
 
-🚀 You’ve been invited to join the GLM Coding Plan! Enjoy full support for Claude Code, Cline, and 20+ top coding tools — starting at just $10/month. Subscribe now and grab the limited-time deal! Link： https://z.ai/subscribe?ic=PLKIAYEIPW
+🚀 You've been invited to join the GLM Coding Plan! Enjoy full support for Claude Code, Cline, and 20+ top coding tools — starting at just $10/month. Subscribe now and grab the limited-time deal! Link： https://z.ai/subscribe?ic=PLKIAYEIPW
