@@ -62,7 +62,7 @@ This searches backwards from current date to find the most recent newsletter and
 
 **For Article URLs:**
 - Extract title and main content
-- Generate Vietnamese summary (1-2 paragraphs, max 300 words)
+- Generate Vietnamese summary (approximately 300 words, concise and focused)
 - Optionally add 3-5 key points as bullets
 
 **For Asset URLs** (images, videos, PDFs):
@@ -84,7 +84,7 @@ categories: ["Newsletter"]
 
 ## [Article Title](clean_url)
 
-[Vietnamese summary - professional, max 300 words]
+[Vietnamese summary - professional, approximately 300 words]
 
 **Điểm chính:**
 - [Key point 1]

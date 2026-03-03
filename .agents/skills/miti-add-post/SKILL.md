@@ -51,7 +51,7 @@ To find next newsletter number:
 **For Article URLs** - Extract and generate:
 - **Title**: Original article title
 - **Summary**: 1-2 paragraphs, professional Vietnamese
-  - Max 300 words
+  - Approximately 300 words (concise and focused)
   - Use common English tech terms only when no Vietnamese equivalent exists
   - Brief intro to the topic
   - Give overview for readers
@@ -77,7 +77,7 @@ categories: ["Newsletter"]
 
 ## [Article Title](clean_url)
 
-[Vietnamese summary - professional, max 300 words]
+[Vietnamese summary - professional, approximately 300 words]
 
 **Điểm chính:** (optional)
 - [Key point 1]
@@ -174,7 +174,7 @@ Group assets by type with subheadings:
 **Content Requirements**:
 - **Audience**: Junior developers
 - **Tone**: Professional, clear, accessible, natural Vietnamese
-- **Length**: Max 300 words per summary
+- **Length**: Approximately 300 words per summary (concise and focused)
 - **Quality Check**: Verify before saving that Vietnamese content is ≥ 99%
 
 ### Error Handling
