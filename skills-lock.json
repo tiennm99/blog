@@ -5,6 +5,11 @@
       "source": "github/awesome-copilot",
       "sourceType": "github",
       "computedHash": "f29c9486cede6c7b2df0cfb0a2e4aa67446552b991bcf17d1b309e903171f03d"
+    },
+    "skill-creator": {
+      "source": "anthropics/skills",
+      "sourceType": "github",
+      "computedHash": "e513e29a52533c4dd0aff72964c80d2d43c6fe9619ecb8766aabcd117e2b1acd"
     }
   }
 }
