@@ -1,5 +1,5 @@
 ---
-name: add-post
+name: miti-add-post
 description: 'URL processing workflow for Hugo blog newsletter posts. Automatically processes URLs, extracts content, generates Vietnamese summaries, and creates/updates daily newsletter posts with proper formatting.'
 ---
 
