@@ -40,7 +40,7 @@ The site will be available at `http://localhost:1313`
 
 This project uses custom skills for automated workflows:
 
-- **add-post**: URL processing workflow for newsletter posts
+- **miti-add-post**: URL processing workflow for newsletter posts
   - Automatically extracts content from URLs
   - Generates Vietnamese summaries
   - Creates/updates daily newsletter posts
