@@ -8,6 +8,7 @@
       "Bash(curl:*)",
       "Bash(sed:*)",
       "Bash(echo:*)",
+      "Bash(git commit:*)",
       "Bash(powershell:*)",
       "mcp__web-reader__webReader",
       "mcp__web-search-prime__webSearchPrime",
