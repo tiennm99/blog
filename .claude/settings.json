@@ -1,4 +1,8 @@
 {
+  "enabledPlugins": {
+    "skill-creator@claude-plugins-official": true,
+    "commit-commands@claude-plugins-official": true
+  },
   "permissions": {
     "allow": [
       "Bash(.claude/skills/**)",
@@ -30,8 +34,6 @@
       "mcp__acp__Write",
       "mcp__web-reader__webReader",
       "mcp__web-search-prime__webSearchPrime"
-    ],
-    "deny": [],
-    "ask": []
+    ]
   }
 }
