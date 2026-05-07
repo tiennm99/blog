@@ -13,6 +13,8 @@ goldmark:
             - \)
   renderer:
     unsafe: true
+  parser:
+    autoHeadingIDType: github-ascii
 
 tableOfContents:
   endLevel: 4

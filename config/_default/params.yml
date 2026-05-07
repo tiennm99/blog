@@ -4,6 +4,18 @@ featuredImageField: image
 rssFullContent: true
 favicon: /favicon.png
 
+# tsuki theme options
+search:
+  enable: true
+
+home:
+  recentPostsCount: 5
+
+# Stack params below are ignored by tsuki but kept for now in case of rollback.
+# To clean up: remove sidebar, widgets, article.toc/readingTime/license,
+# comments.{disqusjs,utterances,beaudar,remark42,vssue,waline,twikoo,cactus,gitalk,cusdis},
+# imageProcessing, colorScheme, defaultImage, opengraph.twitter
+
 footer:
   since: 2020
   customText: "Made by miti99 with ❤️"
@@ -88,14 +100,22 @@ comments:
     siteName: ""
 
   giscus:
+    enable: true
     repo: tiennm99/blog
-    repoID: R_kgDOILzXrw
+    repoId: R_kgDOILzXrw
     category: Announcements
-    categoryID: DIC_kwDOILzXr84CeYAw
+    categoryId: DIC_kwDOILzXr84CeYAw
     mapping: pathname
+    strict: "0"
+    reactionsEnabled: "1"
+    inputPosition: bottom
+    theme: preferred_color_scheme
+    lang: vi
+    # Legacy Stack keys kept for reference; ignored by tsuki:
+    repoID: R_kgDOILzXrw
+    categoryID: DIC_kwDOILzXr84CeYAw
     lightTheme: light
     darkTheme: dark
-    reactionsEnabled: 1
     emitMetadata: 0
 
   gitalk:

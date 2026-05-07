@@ -1,6 +1,6 @@
 baseurl: https://miti99.com/
 languageCode: vi
-theme: hugo-theme-stack
+theme: tsuki
 title: miti99
 defaultContentLanguage: vi
 hasCJKLanguage: false

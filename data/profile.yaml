@@ -1,0 +1,14 @@
+name: "miti99"
+handle: "tiennm99"
+tagline: "A developer wants to be magician."
+avatar: "img/avatar.png"
+bio: |
+  Vietnamese developer. Writing about code, work, and the small things in between.
+
+links:
+  - icon: github
+    label: GitHub
+    url: https://github.com/tiennm99
+  - icon: rss
+    label: RSS
+    url: /index.xml
