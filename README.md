@@ -1,8 +1,14 @@
-# [miti99](https://miti99.com)
+# miti99
 
-Source code of [my blog](https://miti99.com).
+Source code of my personal blog at [miti99.com](https://miti99.com), built with [Hugo](https://gohugo.io) and the [Stack](https://github.com/CaiJimmy/hugo-theme-stack) theme.
 
-Credits:
+## Quick start
 
-- [Hugo](https://gohugo.io/)
-- [Hugo Theme Stack](https://stack.jimmycai.com/)
+```bash
+git submodule update --init --recursive
+hugo server
+```
+
+## License
+
+Apache-2.0 — see [LICENSE](LICENSE).
