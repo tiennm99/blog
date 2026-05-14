@@ -72,9 +72,29 @@ https://www.byteplus.com/activity/codingplan?ac=MMAUCIS9NT1S&rc=2739UWRE
 
 [![modelark](modelark.png)](https://www.byteplus.com/activity/codingplan?ac=MMAUCIS9NT1S&rc=2739UWRE)
 
-### [BigModel.cn](https://www.bigmodel.cn/invite?icode=rIX6uZrLYfy8fQ6Urca4xf2gad6AKpjZefIo3dVEQyA%3D)
+### [BigModel.cn — Platform Invite](https://www.bigmodel.cn/invite?icode=rIX6uZrLYfy8fQ6Urca4xf2gad6AKpjZefIo3dVEQyA%3D)
 
-Join BigModel.cn via my link for 20M tokens! Explore AGI apps with me. Link: https://www.bigmodel.cn/invite?icode=rIX6uZrLYfy8fQ6Urca4xf2gad6AKpjZefIo3dVEQyA%3D
+General BigModel.cn (Zhipu AI / 智谱 AI) platform invitation — new users get **20M free tokens** to explore the API, playground, and AGI apps.
+
+Link: https://www.bigmodel.cn/invite?icode=rIX6uZrLYfy8fQ6Urca4xf2gad6AKpjZefIo3dVEQyA%3D
+
+### [BigModel.cn — GLM Coding Plan](https://www.bigmodel.cn/glm-coding?ic=VGRZKHKNKW)
+
+The **GLM Coding Plan** is a low-cost subscription that powers Claude Code, Cline, and other AI coding tools using GLM-5.1 / GLM-4.7 models.
+
+**Friend's discount:** Subscribe via my link and get **5% off** your first GLM Coding Plan order.
+
+**My rebate (challenge-based, resets every 30 invitees):**
+
+- **3 friends subscribed** → I receive **10% cashback** of their actual paid amount.
+- **30 friends subscribed** → I receive an **additional 10%** of the total paid amount for those 30 orders.
+- The mission resets for every 30 friends invited — no upper limit.
+
+Rebate credit can be used for anything on BigModel: resource packs, API calls, package subscriptions.
+
+Invitation code: `VGRZKHKNKW`
+
+Link: https://www.bigmodel.cn/glm-coding?ic=VGRZKHKNKW
 
 ## Cloud Storage
 
