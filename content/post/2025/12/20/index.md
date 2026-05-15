@@ -85,7 +85,7 @@ AEAD là tiêu chuẩn mã hóa hiện đại, kết hợp mã hóa xác thực 
 - Thư viện hiện đại như libsodium cung cấp API đơn giản, giảm thiểu lỗi
 - Các thuật toán phổ biến: AES256-GCM và ChaCha20-Poly1305
 
-## [Ceilometer: Khung đo lường thích ứng của Uber](https://www.uber.com/en-IN/blog/ceilometer-ubers-adaptive-benchmarking-framework/)
+## [Ceilometer: Khung đo lường thích ứng của Uber](https://www.uber.com/in/en/blog/ceilometer-ubers-adaptive-benchmarking-framework/)
 
 Ceilometer là khung đo lường thích ứng của Uber, được thiết kế để hỗ trợ quyết định cơ sở hạ tầng và duy trì tiêu chuẩn hiệu suất cao. Hệ thống này có khả năng hoạt động trên nhiều khung kiểm thử khác nhau, bao gồm cả kiểm thử tổng hợp (synthetic), có trạng thái (stateful) và không trạng thái (stateless).
 
@@ -274,7 +274,7 @@ Tác giả Anton Zhiyanov đã dựa trên khóa học Go concurrency của mìn
 - Hỗ trợ đọc trực tuyến và tải PDF
 - Phù hợp cho lập trình viên đã biết cơ bản Go
 
-## [The State of AI Coding 2025 | Greptile](https://www.greptile.com/state-of-ai-coding-2025)
+## [The State of AI Coding 2025 | Greptile](https://www.greptile.com/state-of-ai-coding)
 
 Báo cáo này là một nghiên cứu đa ngành về các xu hướng gần đây trong phát triển phần mềm AI, khám phá tốc độ đội kỹ sư, việc áp dụng công cụ AI, xu hướng tăng trưởng mô hình và điểm chuẩn hiệu suất.
 

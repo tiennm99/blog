@@ -9,7 +9,7 @@ categories: [ "Newsletter" ]
 Chào các bạn, cuối tuần rồi MiTi hơi lười nên không lên bài. Mời các bạn thưởng thức Newsletter #5 nhé!
 </i>
 
-## [5 Advanced Java Reflection Techniques for Dynamic Programming](https://dev.to/aaravjoshi/5-advanced-java-reflection-techniques-for-dynamic-programming-4ph1)
+## [5 Advanced Java Reflection Techniques for Dynamic Programming](https://dev.to/nithinbharathwaj/5-advanced-java-reflection-techniques-for-dynamic-programming-4ph1)
 
 Bài viết "5 Advanced Java Reflection Techniques for Dynamic Programming" của Aarav Joshi đi sâu vào sức mạnh của Java Reflection API, cho phép developer kiểm tra và thao tác cấu trúc của classes và objects trong runtime. Bài viết trình bày 5 kỹ thuật nâng cao: truy cập private members (cẩn trọng); tạo dynamic instances của classes sử dụng tên classes được xác định ở runtime; sử dụng custom annotations để thêm metadata và xử lý nó trong runtime (ví dụ: logging); tạo dynamic proxies để triển khai cross-cutting concerns như logging hoặc transaction management; và thao tác bytecode ở runtime với các thư viện như ByteBuddy để sửa đổi classes trong runtime. Mặc dù các kỹ thuật này mang lại sự linh hoạt và khả năng mở rộng, bài viết nhấn mạnh tầm quan trọng của việc sử dụng chúng một cách thận trọng do các vấn đề tiềm ẩn về maintainability và performance. Reflection là một công cụ mạnh mẽ cho developer Java để tạo ra các ứng dụng dynamic và thích ứng.
 
@@ -29,15 +29,15 @@ Bài viết chỉ ra những giả định ẩn sau các con số độ tin cậ
 
 Bài viết kết thúc bằng cách kêu gọi các kỹ sư xem xét tác động kinh doanh thực tế của các loại lỗi khác nhau và tập trung vào việc cung cấp giá trị nhất quán cho người dùng đồng thời duy trì các hoạt động kỹ thuật bền vững, thay vì mù quáng theo đuổi các con số độ tin cậy tùy ý. Các phương pháp tiếp cận hiện đại đang chuyển sang các số liệu sắc thái hơn như error budget và SLO (Service Level Objectives) dựa trên trải nghiệm người dùng.
 
-## [How to write a good design document](https://grantslatton.com/how-to-design-document)
+## ~~[How to write a good design document](https://grantslatton.com/how-to-design-document)~~
 
-Bài viết "How to Design Document" đưa ra lời khuyên hữu ích về cách viết tài liệu thiết kế hiệu quả. Tài liệu thiết kế, theo tác giả, là một báo cáo kỹ thuật phác thảo chiến lược triển khai của một hệ thống trong bối cảnh trade-offs và constraints. Mục tiêu chính là thuyết phục người đọc (và quan trọng nhất là chính tác giả) rằng thiết kế này là tối ưu trong tình hình hiện tại.
+~~Bài viết "How to Design Document" đưa ra lời khuyên hữu ích về cách viết tài liệu thiết kế hiệu quả. Tài liệu thiết kế, theo tác giả, là một báo cáo kỹ thuật phác thảo chiến lược triển khai của một hệ thống trong bối cảnh trade-offs và constraints. Mục tiêu chính là thuyết phục người đọc (và quan trọng nhất là chính tác giả) rằng thiết kế này là tối ưu trong tình hình hiện tại.~~
 
-Tác giả so sánh việc viết tài liệu thiết kế với việc viết một chứng minh toán học. Để đạt được hiệu quả cao nhất, cần tuân thủ tổ chức tốt, tương tự như tổ chức code. Người viết nên tránh tạo ra "spaghetti design docs" bằng cách đảm bảo mọi câu văn đều liên kết và dễ hiểu. Mục tiêu là không gây bất ngờ cho người đọc, giúp họ cảm thấy giải pháp rõ ràng ngay cả khi nó đòi hỏi nhiều suy nghĩ phức tạp.
+~~Tác giả so sánh việc viết tài liệu thiết kế với việc viết một chứng minh toán học. Để đạt được hiệu quả cao nhất, cần tuân thủ tổ chức tốt, tương tự như tổ chức code. Người viết nên tránh tạo ra "spaghetti design docs" bằng cách đảm bảo mọi câu văn đều liên kết và dễ hiểu. Mục tiêu là không gây bất ngờ cho người đọc, giúp họ cảm thấy giải pháp rõ ràng ngay cả khi nó đòi hỏi nhiều suy nghĩ phức tạp.~~
 
-Bài viết cũng nhấn mạnh tầm quan trọng của việc nắm bắt được tâm lý của người đọc và dự đoán những phản đối có thể xảy ra. Hơn nữa, cần chỉnh sửa để loại bỏ mọi từ ngữ thừa thãi, vì sự chú ý của người đọc là một nguồn tài nguyên hạn chế. Tác giả khuyến khích việc thực hành bằng cách đánh giá các tài liệu khác và chắt lọc ý tưởng thành các tweet ngắn gọn.
+~~Bài viết cũng nhấn mạnh tầm quan trọng của việc nắm bắt được tâm lý của người đọc và dự đoán những phản đối có thể xảy ra. Hơn nữa, cần chỉnh sửa để loại bỏ mọi từ ngữ thừa thãi, vì sự chú ý của người đọc là một nguồn tài nguyên hạn chế. Tác giả khuyến khích việc thực hành bằng cách đánh giá các tài liệu khác và chắt lọc ý tưởng thành các tweet ngắn gọn.~~
 
-Cuối cùng, bài viết gợi ý tổ chức tài liệu thành các bullet point có thể tóm tắt trong một câu duy nhất và sử dụng footnote cho các chi tiết phức tạp để không làm gián đoạn mạch chính của tài liệu.
+~~Cuối cùng, bài viết gợi ý tổ chức tài liệu thành các bullet point có thể tóm tắt trong một câu duy nhất và sử dụng footnote cho các chi tiết phức tạp để không làm gián đoạn mạch chính của tài liệu.~~
 
 ## [Picking your battles when you are hyper-rational](https://newsletter.weskao.com/p/picking-your-battles-hyper-rational)
 

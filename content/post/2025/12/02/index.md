@@ -77,7 +77,7 @@ Predict H dễ hơn A (A cần multiple failures + bad E, trông như freak acci
 - Aviation/child/car examples minh họa constraints.
 - Systems theory: Leveson books, future topics RCA flaws.
 
-## [Multi-Core By Default](https://www.rfleury.com/p/multi-core-by-default)
+## [Multi-Core By Default](https://www.dgtlgrove.com/p/multi-core-by-default)
 
 Tác giả Ryan Fleury lập luận **multi-core nên là default** thay vì special-case trong single-core code, tận dụng core counts cao (8-64) hiện đại. Parallel for/job systems tốn overhead (kernel threads, subdivision, sync, debug khó, lifetime mgmt), scatter control flow. Thay vào đó, bootstrap threads chạy chung EntryPoint (như GPU shaders), dùng LaneIdx()/LaneCount()/LaneSync() phân bổ work uniform (LaneRange), barrier sync, atomic cho reduce (sum), narrow (if LaneIdx()==0) cho serial (I/O, printf).
 

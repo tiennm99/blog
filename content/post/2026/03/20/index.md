@@ -7,18 +7,18 @@ categories: ["Newsletter"]
 
 *Mời bạn thưởng thức Newsletter #92.*
 
-## [Tôi đã trở nên giỏi xử lý sự cố như thế nào](https://tomasztomczyk.com/blog/2026/how-i-became-good-at-leading-incidents/)
+## ~~[Tôi đã trở nên giỏi xử lý sự cố như thế nào](https://tomasztomczyk.com/blog/2026/how-i-became-good-at-leading-incidents/)~~
 
-Tomasz Tomczyk chia sẻ những bài học từ hơn 100 sự cố mà anh đã dẫn dắt trong suốt sự nghiệp, nhấn mạnh rằng quản lý sự cố không chỉ là kỹ năng kỹ thuật mà còn là tư duy phân tích và khả năng lãnh đạo dưới áp lực. Anh cho rằng mỗi sự cố là cơ hội để hiểu sâu hơn về hệ thống và xây dựng văn hóa học hỏi từ thất bại.
+~~Tomasz Tomczyk chia sẻ những bài học từ hơn 100 sự cố mà anh đã dẫn dắt trong suốt sự nghiệp, nhấn mạnh rằng quản lý sự cố không chỉ là kỹ năng kỹ thuật mà còn là tư duy phân tích và khả năng lãnh đạo dưới áp lực. Anh cho rằng mỗi sự cố là cơ hội để hiểu sâu hơn về hệ thống và xây dựng văn hóa học hỏi từ thất bại.~~
 
-Để xử lý sự cố hiệu quả, bạn cần nắm vững quy trình triển khai và toàn bộ ngăn xếp công nghệ từ DNS đến tầng ứng dụng, đồng thời thiết lập hệ thống giám sát toàn diện. Khi xảy ra sự cố, hãy phân công điều tra theo từng chủ đề cụ thể, đưa ra quyết định dứt khoát khi cần vô hiệu hóa tính năng, và cung cấp thông tin cập nhật kịp thời cho các bên liên quan. Việc lập tài liệu các mẫu lỗi phổ biến vào runbook và thực hành qua các bài tập chaos engineering cũng giúp đội nhóm chuẩn bị tốt hơn cho các tình huống thực tế.
+~~Để xử lý sự cố hiệu quả, bạn cần nắm vững quy trình triển khai và toàn bộ ngăn xếp công nghệ từ DNS đến tầng ứng dụng, đồng thời thiết lập hệ thống giám sát toàn diện. Khi xảy ra sự cố, hãy phân công điều tra theo từng chủ đề cụ thể, đưa ra quyết định dứt khoát khi cần vô hiệu hóa tính năng, và cung cấp thông tin cập nhật kịp thời cho các bên liên quan. Việc lập tài liệu các mẫu lỗi phổ biến vào runbook và thực hành qua các bài tập chaos engineering cũng giúp đội nhóm chuẩn bị tốt hơn cho các tình huống thực tế.~~
 
-**Điểm chính:**
-- Nắm vững quy trình triển khai và toàn bộ ngăn xếp công nghệ để nhanh chóng xác định nguyên nhân sự cố
-- Đọc hiểu stack trace và sử dụng công cụ theo dõi lỗi như Sentry để điều tra sâu hơn
-- Xây dựng văn hóa tâm lý an toàn để thất bại trở thành cơ hội học hỏi
-- Phân công điều tra chiến lược và đưa ra quyết định dứt khoát trong thời điểm căng thẳng
-- Lập tài liệu runbook và thực hành game day để chuẩn bị cho các sự cố thực tế
+~~**Điểm chính:**~~
+~~- Nắm vững quy trình triển khai và toàn bộ ngăn xếp công nghệ để nhanh chóng xác định nguyên nhân sự cố~~
+~~- Đọc hiểu stack trace và sử dụng công cụ theo dõi lỗi như Sentry để điều tra sâu hơn~~
+~~- Xây dựng văn hóa tâm lý an toàn để thất bại trở thành cơ hội học hỏi~~
+~~- Phân công điều tra chiến lược và đưa ra quyết định dứt khoát trong thời điểm căng thẳng~~
+~~- Lập tài liệu runbook và thực hành game day để chuẩn bị cho các sự cố thực tế~~
 
 ## [Decision Trees: Sức mạnh bất ngờ của các quy tắc quyết định lồng nhau](https://mlu-explain.github.io/decision-tree/)
 

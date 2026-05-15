@@ -46,7 +46,7 @@ Cleaner cũng có thể kết hợp với AutoCloseable để cung cấp cả c�
 
 Tuy nhiên, cần lưu ý rằng Cleaner chỉ nên được sử dụng khi không thể giải phóng tài nguyên thông qua try-with-resources hoặc gọi phương thức close() một cách tường minh. Cleaner có chi phí cao hơn do sử dụng thread nền và cơ chế PhantomReference, vì vậy nên ưu tiên sử dụng try-with-resources khi có thể.
 
-## [5 Hidden Git Tips for Java Developers](https://blog.payara.fish/5-hidden-git-tips-for-java-developers)
+## [5 Hidden Git Tips for Java Developers](https://www.azul.com/blog/5-hidden-git-tips-for-java-developers/)
 
 Git là công cụ quản lý phiên bản không thể thiếu đối với các lập trình viên Java. Ngoài các lệnh cơ bản như git commit, git push và git pull, Git còn có nhiều tính năng ẩn có thể cải thiện đáng kể quy trình làm việc của bạn. Bài viết từ blog của Payara giới thiệu năm mẹo Git hữu ích dành riêng cho phát triển Java.
 

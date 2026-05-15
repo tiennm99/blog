@@ -19,17 +19,17 @@ Slack Engineering chia sẻ cách họ đã cải thiện thời gian build từ
 - Thiết kế layering đúng cách - builder chỉ nên focus vào business logic, không nên tự implement parallelization
 - Kết quả cuối cùng: build nhanh hơn 6 lần, với best case chỉ 10 phút khi cached và parallelized
 
-## [Things I Don't Like in Configuration Languages](https://medv.io/blog/things-i-dont-like-in-configuration-languages/)
+## ~~[Things I Don't Like in Configuration Languages](https://medv.io/blog/things-i-dont-like-in-configuration-languages/)~~
 
-Anton Medvedev phân tích các vấn đề của nhiều ngôn ngữ configuration khác nhau và giải thích tại sao ông quyết định tạo ra ngôn ngữ MAML (Minimal And Markup Language) của riêng mình. Bài viết cung cấp cái nhìn sâu sắc về ưu và nhược điểm của từng ngôn ngữ configuration từ YAML, JSON đến các ngôn ngữ mới hơn.
+~~Anton Medvedev phân tích các vấn đề của nhiều ngôn ngữ configuration khác nhau và giải thích tại sao ông quyết định tạo ra ngôn ngữ MAML (Minimal And Markup Language) của riêng mình. Bài viết cung cấp cái nhìn sâu sắc về ưu và nhược điểm của từng ngôn ngữ configuration từ YAML, JSON đến các ngôn ngữ mới hơn.~~
 
-**Điểm chính:**
-- YAML có specification quá phức tạp và nhiều features không cần thiết
-- JSON đã chiến thắng như một universal data-interchange format, nhưng có vài điểm nhỏ cần cải thiện
-- TOML thiếu null value và cú pháp array of tables khó hiểu
-- Nhiều ngôn ngữ như Pkl, CUE, Dhall thực chất là full programming languages, không chỉ là markup languages
-- Tác giả tạo MAML dựa trên JSON với strict specification và tên gọi độc đáo
-- MAML giữ tính readable của JSON nhưng thêm comments và multiline strings
+~~**Điểm chính:**~~
+~~- YAML có specification quá phức tạp và nhiều features không cần thiết~~
+~~- JSON đã chiến thắng như một universal data-interchange format, nhưng có vài điểm nhỏ cần cải thiện~~
+~~- TOML thiếu null value và cú pháp array of tables khó hiểu~~
+~~- Nhiều ngôn ngữ như Pkl, CUE, Dhall thực chất là full programming languages, không chỉ là markup languages~~
+~~- Tác giả tạo MAML dựa trên JSON với strict specification và tên gọi độc đáo~~
+~~- MAML giữ tính readable của JSON nhưng thêm comments và multiline strings~~
 
 ## [Here's What's Next in Agentic Coding](https://seconds0.substack.com/p/heres-whats-next-in-agentic-coding/)
 
@@ -58,7 +58,7 @@ Octomind chia sẻ thực tế về việc sử dụng AI agents trong developme
 - AI tốt khi recreating well-known patterns nhưng kém với features phức tạp
 - Specialized agents trong well-defined boundaries có thể deliver value
 
-## [Clarifying the Rule of Three in Refactoring](https://blog.thecodewhisperer.com/permalink/clarifying-the-rule-of-three-in-refactoring)
+## [Clarifying the Rule of Three in Refactoring](https://blog.jbrains.ca/permalink/clarifying-the-rule-of-three-in-refactoring/)
 
 Bài viết giải thích rõ về Rule of Three trong refactoring - một heuristic gây nhiều tranh cãi. Tác giả phân tích mục đích thực sự của quy tắc này và đưa ra góc nhìn linh hoạt hơn về việc khi nào nên remove duplication. Bài viết giúp developer hiểu rõ hơn về trade-offs giữa việc extract abstractions sớm hay muộn.
 

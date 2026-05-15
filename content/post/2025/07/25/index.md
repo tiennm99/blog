@@ -41,15 +41,15 @@ Một số điểm nổi bật bao gồm bài viết của Andy Wingo về "a si
 
 Đặc biệt, tác giả nhấn mạnh sức mạnh của việc viết kỹ thuật rõ ràng và súc tích trong việc truyền đạt những khái niệm phức tạp. Danh sách này không chỉ phản ánh niềm đam mê của tác giả với lý thuyết ngôn ngữ lập trình mà còn cho thấy tầm quan trọng của những tài liệu có thể thay đổi cách nhìn nhận kỹ thuật của chúng ta.
 
-## [LLMs are Making Me Dumber](https://vvvincent.me/llms-are-making-me-dumber/)
+## ~~[LLMs are Making Me Dumber](https://vvvincent.me/llms-are-making-me-dumber/)~~
 
-Vincent Cheng đã đặt ra một câu hỏi thú vị và gây tranh cãi: liệu các mô hình ngôn ngữ lớn (LLMs) có đang khiến chúng ta trở nên "ngu đần" hơn không? Tác giả chia sẻ những quan sát cá nhân về cách AI đang ảnh hưởng đến quá trình học tập và phát triển kỹ năng của mình.
+~~Vincent Cheng đã đặt ra một câu hỏi thú vị và gây tranh cãi: liệu các mô hình ngôn ngữ lớn (LLMs) có đang khiến chúng ta trở nên "ngu đần" hơn không? Tác giả chia sẻ những quan sát cá nhân về cách AI đang ảnh hưởng đến quá trình học tập và phát triển kỹ năng của mình.~~
 
-Tác giả chỉ ra những "đường tắt" trong học tập mà AI mang lại: sử dụng LLMs để hoàn thành các dự án lập trình mà không hiểu sâu về mã nguồn, giải bài tập toán bằng cách để AI tạo ra đáp án, hoặc soạn thảo email mà không luyện tập kỹ năng viết. Những hành vi này có thể dẫn đến việc "thoái hóa" khả năng giải quyết vấn đề và hy sinh độ sâu của việc học để đổi lấy tốc độ đầu ra.
+~~Tác giả chỉ ra những "đường tắt" trong học tập mà AI mang lại: sử dụng LLMs để hoàn thành các dự án lập trình mà không hiểu sâu về mã nguồn, giải bài tập toán bằng cách để AI tạo ra đáp án, hoặc soạn thảo email mà không luyện tập kỹ năng viết. Những hành vi này có thể dẫn đến việc "thoái hóa" khả năng giải quyết vấn đề và hy sinh độ sâu của việc học để đổi lấy tốc độ đầu ra.~~
 
-Tuy nhiên, Vincent cũng thừa nhận những lợi ích ngắn hạn về năng suất và đưa ra những phép so sánh lịch sử với máy tính bỏ túi, GPS hay cuộc cách mạng công nghiệp. Ông nhận ra sự không chắc chắn về tác động dài hạn và đề xuất một chiến lược cân bằng.
+~~Tuy nhiên, Vincent cũng thừa nhận những lợi ích ngắn hạn về năng suất và đưa ra những phép so sánh lịch sử với máy tính bỏ túi, GPS hay cuộc cách mạng công nghiệp. Ông nhận ra sự không chắc chắn về tác động dài hạn và đề xuất một chiến lược cân bằng.~~
 
-Giải pháp mà tác giả đưa ra là có ý thức bảo tồn các kỹ năng cốt lõi như tư duy độc lập, ra quyết định và tập trung dài hạn, đồng thời sử dụng LLMs một cách chiến lược mà vẫn duy trì được tính chủ động cá nhân. Như ông viết: "Việc chuyển giao hoàn toàn sẽ làm tê liệt việc học thực sự nhưng tối đa hóa tốc độ và đầu ra ngắn hạn, và việc tìm ra sự cân bằng phù hợp là rất quan trọng."
+~~Giải pháp mà tác giả đưa ra là có ý thức bảo tồn các kỹ năng cốt lõi như tư duy độc lập, ra quyết định và tập trung dài hạn, đồng thời sử dụng LLMs một cách chiến lược mà vẫn duy trì được tính chủ động cá nhân. Như ông viết: "Việc chuyển giao hoàn toàn sẽ làm tê liệt việc học thực sự nhưng tối đa hóa tốc độ và đầu ra ngắn hạn, và việc tìm ra sự cân bằng phù hợp là rất quan trọng."~~
 
 ## [How Cursor Indexes Codebases Fast](https://read.engineerscodex.com/p/how-cursor-indexes-codebases-fast)
 

@@ -7,7 +7,7 @@ categories: ["Newsletter"]
 
 *Mời bạn thưởng thức Newsletter #80.*
 
-## [Thư Mục Kỹ Năng Của Tác Nhân](https://skills.sh/)
+## [Thư Mục Kỹ Năng Của Tác Nhân](https://www.skills.sh/)
 
 Skills.sh là một hệ sinh thái mở dành cho các kỹ năng của tác nhân trí tuệ nhân tạo, nơi tập hợp hàng ngàn kỹ năng có thể tái sử dụng để nâng cao khả năng của các tác nhân trí tuệ nhân tạo. Mỗi kỹ năng là một khả năng chuyên biệt có thể được cài đặt chỉ với một lệnh duy nhất, giúp các tác nhân trí tuệ nhân tạo tiếp cận các kiến thức quy trình chuẩn hóa.
 

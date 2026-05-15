@@ -61,23 +61,23 @@ def download_all(urls):
 
 Đây hiện tại chỉ là "đề xuất thảo luận" nhưng thể hiện tầm nhìn tiền phong về việc đơn giản hóa lập trình đồng thời, giảm tải trí tuệ cho lập trình viên và cải thiện hiệu suất thông qua cơ chế điều phối virtual thread của runtime.
 
-## [Six Principles for Production AI Agents](https://www.app.build/blog/six-principles-production-ai-agents)
+## ~~[Six Principles for Production AI Agents](https://www.app.build/blog/six-principles-production-ai-agents)~~
 
-Với sự phát triển mạnh mẽ của các AI Agent trong thực tế, việc đưa chúng vào sản xuất đòi hỏi những nguyên tắc thiết kế chắc chắn. Bài viết này trình bày 6 nguyên tắc cốt lõi để xây dựng AI Agent hoạt động ổn định trong môi trường sản xuất:
+~~Với sự phát triển mạnh mẽ của các AI Agent trong thực tế, việc đưa chúng vào sản xuất đòi hỏi những nguyên tắc thiết kế chắc chắn. Bài viết này trình bày 6 nguyên tắc cốt lõi để xây dựng AI Agent hoạt động ổn định trong môi trường sản xuất:~~
 
-**1. Đầu tư vào System Prompt**: Tập trung vào hướng dẫn rõ ràng, trực tiếp. Các mô hình hiện đại chỉ cần ngữ cảnh chi tiết và không mâu thuẫn, không cần các thủ thuật phức tạp.
+~~**1. Đầu tư vào System Prompt**: Tập trung vào hướng dẫn rõ ràng, trực tiếp. Các mô hình hiện đại chỉ cần ngữ cảnh chi tiết và không mâu thuẫn, không cần các thủ thuật phức tạp.~~
 
-**2. Tách biệt Ngữ cảnh**: Cung cấp kiến thức ban đầu tối thiểu, cho phép các công cụ lấy thêm ngữ cảnh khi cần. Sử dụng "nén ngữ cảnh" để quản lý độ phức tạp.
+~~**2. Tách biệt Ngữ cảnh**: Cung cấp kiến thức ban đầu tối thiểu, cho phép các công cụ lấy thêm ngữ cảnh khi cần. Sử dụng "nén ngữ cảnh" để quản lý độ phức tạp.~~
 
-**3. Thiết kế Công cụ Cẩn thận**: Tạo các công cụ tập trung, được kiểm thử kỹ lưỡng. Giới hạn số lượng công cụ với tham số rõ ràng và đảm bảo tính idempotency.
+~~**3. Thiết kế Công cụ Cẩn thận**: Tạo các công cụ tập trung, được kiểm thử kỹ lưỡng. Giới hạn số lượng công cụ với tham số rõ ràng và đảm bảo tính idempotency.~~
 
-**4. Thiết kế Vòng phản hồi**: Sử dụng phương pháp actor-critic, cho phép tạo ra sáng tạo nhưng có kiểm chứng nghiêm ngặt. Bao gồm kiểm chứng chuyên biệt cho từng lĩnh vực.
+~~**4. Thiết kế Vòng phản hồi**: Sử dụng phương pháp actor-critic, cho phép tạo ra sáng tạo nhưng có kiểm chứng nghiêm ngặt. Bao gồm kiểm chứng chuyên biệt cho từng lĩnh vực.~~
 
-**5. Phân tích Lỗi bằng LLM**: Sử dụng nhiều agent để phân tích log và quỹ đạo hoạt động, dùng LLM để xác định các khu vực cần cải thiện.
+~~**5. Phân tích Lỗi bằng LLM**: Sử dụng nhiều agent để phân tích log và quỹ đạo hoạt động, dùng LLM để xác định các khu vực cần cải thiện.~~
 
-**6. Nhận diện Hành vi gây bực xúc như Lỗi hệ thống**: Hiểu rằng agent có thể "hack" các hướng dẫn. Debug thiết kế hệ thống trước khi đổ lỗi cho mô hình.
+~~**6. Nhận diện Hành vi gây bực xúc như Lỗi hệ thống**: Hiểu rằng agent có thể "hack" các hướng dẫn. Debug thiết kế hệ thống trước khi đổ lỗi cho mô hình.~~
 
-Kết luận quan trọng: "Xây dựng AI Agent hiệu quả không phải là tìm giải pháp vạn năng... mà là thiết kế hệ thống và kỹ thuật phần mềm đúng đắn."
+~~Kết luận quan trọng: "Xây dựng AI Agent hiệu quả không phải là tìm giải pháp vạn năng... mà là thiết kế hệ thống và kỹ thuật phần mềm đúng đắn."~~
 
 ## [Working Effectively with AI Coding Tools like Claude Code](https://sajalsharma.com/posts/effective-ai-coding/)
 

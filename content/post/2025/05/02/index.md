@@ -79,18 +79,18 @@ Bài viết trình bày các kỹ thuật để giảm thiểu việc tạo đ�
 
 Tác giả cũng chia sẻ các benchmark so sánh hiệu suất giữa code Java thông thường và code được tối ưu để giảm thiểu garbage, cho thấy sự khác biệt đáng kể về thời gian xử lý và độ trễ. Đây là một bài viết giá trị cho các lập trình viên Java làm việc với các hệ thống yêu cầu hiệu năng cao như tài chính, giao dịch thời gian thực, hoặc xử lý dữ liệu lớn.
 
-## [Microbenchmarks: Java Locks vs Atomic](https://blog.tombert.com/posts/2025-03-04-lock-benchmark/)
+## ~~[Microbenchmarks: Java Locks vs Atomic](https://blog.tombert.com/posts/2025-03-04-lock-benchmark/)~~
 
-Bài viết này trình bày một phân tích chi tiết về hiệu suất của các cơ chế đồng bộ hóa (synchronization) khác nhau trong lập trình đa luồng. Tác giả đã thực hiện benchmark so sánh hiệu năng của nhiều loại lock khác nhau như mutex, spin lock, read-write lock và các giải pháp lock-free, đánh giá chúng trong các tình huống tải khác nhau.
+~~Bài viết này trình bày một phân tích chi tiết về hiệu suất của các cơ chế đồng bộ hóa (synchronization) khác nhau trong lập trình đa luồng. Tác giả đã thực hiện benchmark so sánh hiệu năng của nhiều loại lock khác nhau như mutex, spin lock, read-write lock và các giải pháp lock-free, đánh giá chúng trong các tình huống tải khác nhau.~~
 
-Kết quả benchmark cho thấy sự khác biệt đáng kể giữa các loại lock, với những phát hiện thú vị như:
-1. Spin lock thường hiệu quả hơn mutex trong các tác vụ ngắn với mức độ cạnh tranh thấp
-2. Read-write lock mang lại lợi ích lớn trong các trường hợp đọc nhiều, ghi ít
-3. Các giải pháp lock-free có thể mang lại hiệu suất vượt trội trong một số trường hợp, nhưng lại phức tạp hơn đáng kể trong việc triển khai và bảo trì
+~~Kết quả benchmark cho thấy sự khác biệt đáng kể giữa các loại lock, với những phát hiện thú vị như:~~
+~~1. Spin lock thường hiệu quả hơn mutex trong các tác vụ ngắn với mức độ cạnh tranh thấp~~
+~~2. Read-write lock mang lại lợi ích lớn trong các trường hợp đọc nhiều, ghi ít~~
+~~3. Các giải pháp lock-free có thể mang lại hiệu suất vượt trội trong một số trường hợp, nhưng lại phức tạp hơn đáng kể trong việc triển khai và bảo trì~~
 
-Bài viết cũng thảo luận về các yếu tố ảnh hưởng đến hiệu suất của lock như độ trễ, throughput, khả năng mở rộng theo số lượng luồng, và tác động của cache coherence. Tác giả cung cấp các hướng dẫn thực tế về việc lựa chọn cơ chế đồng bộ hóa phù hợp dựa trên đặc điểm của ứng dụng và mô hình truy cập dữ liệu.
+~~Bài viết cũng thảo luận về các yếu tố ảnh hưởng đến hiệu suất của lock như độ trễ, throughput, khả năng mở rộng theo số lượng luồng, và tác động của cache coherence. Tác giả cung cấp các hướng dẫn thực tế về việc lựa chọn cơ chế đồng bộ hóa phù hợp dựa trên đặc điểm của ứng dụng và mô hình truy cập dữ liệu.~~
 
-Đây là một tài liệu tham khảo giá trị cho các lập trình viên làm việc với hệ thống đa luồng hiệu năng cao, giúp họ đưa ra quyết định sáng suốt khi lựa chọn cơ chế đồng bộ hóa phù hợp với yêu cầu cụ thể của dự án.
+~~Đây là một tài liệu tham khảo giá trị cho các lập trình viên làm việc với hệ thống đa luồng hiệu năng cao, giúp họ đưa ra quyết định sáng suốt khi lựa chọn cơ chế đồng bộ hóa phù hợp với yêu cầu cụ thể của dự án.~~
 
 ## Bonus: Vài ảnh hay ho đến từ [ByteByteGo](https://bytebytego.com/)
 

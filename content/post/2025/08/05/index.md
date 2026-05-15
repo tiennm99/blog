@@ -57,13 +57,13 @@ Thay vì bắt đầu với các khái niệm phức tạp như class, inheritan
 
 Quan điểm này rất đáng suy ngẫm: "Các best practices trong lập trình không cần phải được học thuộc lòng từ sách giáo khoa; chúng có thể trở nên trực quan và rõ ràng thông qua việc tăng dần độ phức tạp của chương trình một cách hợp lý." Đây là một lời nhắc nhở rằng giáo dục lập trình nên tập trung vào việc xây dựng tư duy logic và khả năng giải quyết vấn đề, thay vì ép học sinh ghi nhớ các quy tắc mà họ chưa hiểu được bản chất.
 
-## [How I Write Code That I Don't Hate Reading a Week Later](https://dev.to/resource_bunk_1077cab07da/how-i-write-code-that-i-dont-hate-reading-a-week-later-303b)
+## ~~[How I Write Code That I Don't Hate Reading a Week Later](https://dev.to/resource_bunk_1077cab07da/how-i-write-code-that-i-dont-hate-reading-a-week-later-303b)~~
 
-Một bài viết thực tế và hữu ích về cách viết mã dễ đọc - một kỹ năng quan trọng mà nhiều lập trình viên thường bỏ qua. Tác giả chia sẻ triết lý cốt lõi: "Viết mã như thể bạn sẽ phải debug nó lúc 2 giờ sáng, trong trạng thái buồn ngủ, với deadline cận kề."
+~~Một bài viết thực tế và hữu ích về cách viết mã dễ đọc - một kỹ năng quan trọng mà nhiều lập trình viên thường bỏ qua. Tác giả chia sẻ triết lý cốt lõi: "Viết mã như thể bạn sẽ phải debug nó lúc 2 giờ sáng, trong trạng thái buồn ngủ, với deadline cận kề."~~
 
-Các nguyên tắc chính bao gồm: đặt tên biến và hàm mô tả rõ ràng (ví dụ `parsed_user_profile_data` thay vì chỉ `d`), viết comment giải thích "tại sao" thay vì "cái gì", ưu tiên tính dễ đọc hơn là "sự thông minh" của mã. Thay vì viết những dòng mã phức tạp để khoe kỹ thuật, hãy tách chúng thành nhiều dòng dễ hiểu hơn.
+~~Các nguyên tắc chính bao gồm: đặt tên biến và hàm mô tả rõ ràng (ví dụ `parsed_user_profile_data` thay vì chỉ `d`), viết comment giải thích "tại sao" thay vì "cái gì", ưu tiên tính dễ đọc hơn là "sự thông minh" của mã. Thay vì viết những dòng mã phức tạp để khoe kỹ thuật, hãy tách chúng thành nhiều dòng dễ hiểu hơn.~~
 
-Điểm hay nhất là nguyên tắc viết hàm nhỏ và tập trung: mỗi hàm chỉ làm một việc cụ thể với tên mô tả rõ ràng như `handleLoginFormSubmission()`. Khi mã trở nên rối rắm, hãy dừng lại và tái cấu trúc thay vì cứ thêm độ phức tạp. Tác giả cũng giới thiệu các công cụ hỗ trợ như Prettier, Black cho Python, và thậm chí ChatGPT để giúp tái cấu trúc mã. Đây là những lời khuyên đơn giản nhưng cực kỳ thực tế cho bất kỳ lập trình viên nào muốn code của mình dễ bảo trì hơn.
+~~Điểm hay nhất là nguyên tắc viết hàm nhỏ và tập trung: mỗi hàm chỉ làm một việc cụ thể với tên mô tả rõ ràng như `handleLoginFormSubmission()`. Khi mã trở nên rối rắm, hãy dừng lại và tái cấu trúc thay vì cứ thêm độ phức tạp. Tác giả cũng giới thiệu các công cụ hỗ trợ như Prettier, Black cho Python, và thậm chí ChatGPT để giúp tái cấu trúc mã. Đây là những lời khuyên đơn giản nhưng cực kỳ thực tế cho bất kỳ lập trình viên nào muốn code của mình dễ bảo trì hơn.~~
 
 ## [7 Habits That Quietly Made Me A 10x Developer (No, Not ChatGPT)](https://dev.to/abubakersiddique771/7-habits-that-quietly-made-me-a-10x-developer-no-not-chatgpt-13c4)
 

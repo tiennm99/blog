@@ -7,7 +7,7 @@ categories: ["Newsletter"]
 
 *Mời bạn thưởng thức Newsletter #60.*
 
-## [Diff Algorithms](https://flo.znkr.io/diff)
+## [Diff Algorithms](https://flo.znkr.io/diff/)
 
 Thư viện diff mới được phát triển bằng Go mà tác giả giới thiệu trong bài viết hỗ trợ xử lý chuỗi tùy ý và định dạng đầu ra kiểu unified. Thư viện này thực hiện thuật toán Myers với tiền xử lý, các giải thuật heuristic và hậu xử lý nhằm cân bằng giữa hiệu suất và tính dễ đọc. Các tính năng chính bao gồm hỗ trợ các loại dữ liệu có thể so sánh và không thể so sánh, kết quả có cấu trúc và hành vi có thể tùy chỉnh thông qua các tùy chọn hàm số.
 
@@ -29,7 +29,7 @@ Bài viết từ Netflix Tech Blog về việc xây dựng một nền tảng d�
 - Tối ưu hóa hiệu suất cho các tác vụ đọc/ghi dữ liệu quy mô lớn
 - Giải pháp mở rộng theo chiều ngang để đáp ứng nhu cầu tăng trưởng dữ liệu
 
-## [Vercel vs Cloudflare: Two Philosophies of Building for Developers](https://www.bharath.sh/writing/vercel-vs-cloudflare)
+## [Vercel vs Cloudflare: Two Philosophies of Building for Developers](https://bharath.sh/writing/vercel-vs-cloudflare)
 
 Bài viết so sánh hai nền tảng phát triển web hàng đầu - Vercel và Cloudflare, với hai triết lý khác nhau trong việc phục vụ các nhà phát triển. Vercel, xuất phát từ nền tảng frontend và thiết kế, tập trung vào trải nghiệm phát triển liền mạch và tối ưu hóa tốc độ. Trong khi đó, Cloudflare với nền tảng hạ tầng của mình, nhấn mạnh vào tính minh bạch, kiểm soát và độ tin cậy.
 
@@ -83,16 +83,16 @@ Bài viết khuyên tránh các "buồng vang tiêu cực" nơi việc than vãn
 - "Làm điều này thật khó về mặt xã hội. Ít nhất thì nó đòi hỏi phải trực tiếp thể hiện hình mẫu của điều tốt đẹp"
 - Dành năng lượng cho việc cải thiện hoặc rút lui, chứ không phải sự bi quan
 
-## [My Productivity Rules](https://www.16elt.com/2025/10/08/studying-while-busy/)
+## ~~[My Productivity Rules](https://www.16elt.com/2025/10/08/studying-while-busy/)~~
 
-Bài viết trình bày các mẹo thực tế để nâng cao hiệu suất học tập, nhấn mạnh vào việc lập kế hoạch, quản lý năng lượng, trung thực về nỗ lực, xem xét hàng ngày và giảm thiểu sự phân tâm. Bài viết cung cấp các quy tắc như chuẩn bị ngày mới vào buổi tối trước, nghỉ ngơi khi năng lượng thấp, trung thực về mức độ nỗ lực thực sự, phản chiếu lại tiến độ hàng ngày và loại bỏ các yếu tố gây xao nhãng như điện thoại hay các ứng dụng hấp dẫn.
+~~Bài viết trình bày các mẹo thực tế để nâng cao hiệu suất học tập, nhấn mạnh vào việc lập kế hoạch, quản lý năng lượng, trung thực về nỗ lực, xem xét hàng ngày và giảm thiểu sự phân tâm. Bài viết cung cấp các quy tắc như chuẩn bị ngày mới vào buổi tối trước, nghỉ ngơi khi năng lượng thấp, trung thực về mức độ nỗ lực thực sự, phản chiếu lại tiến độ hàng ngày và loại bỏ các yếu tố gây xao nhãng như điện thoại hay các ứng dụng hấp dẫn.~~
 
-**Điểm chính:**
-- Lập kế hoạch ngày mới vào buổi tối trước để tránh tình trạng trì hoãn buổi sáng
-- Phối hợp cường độ học tập với mức năng lượng trong ngày
-- Trung thực về mức độ nỗ lực thực sự mà bạn bỏ ra
-- Phản chiếu lại tiến độ hàng ngày để cải thiện kế hoạch trong tương lai
-- Loại bỏ các yếu tố gây xao nhãng bằng cách giữ các ứng dụng hấp dẫn ngoài tầm nhìn
+~~**Điểm chính:**~~
+~~- Lập kế hoạch ngày mới vào buổi tối trước để tránh tình trạng trì hoãn buổi sáng~~
+~~- Phối hợp cường độ học tập với mức năng lượng trong ngày~~
+~~- Trung thực về mức độ nỗ lực thực sự mà bạn bỏ ra~~
+~~- Phản chiếu lại tiến độ hàng ngày để cải thiện kế hoạch trong tương lai~~
+~~- Loại bỏ các yếu tố gây xao nhãng bằng cách giữ các ứng dụng hấp dẫn ngoài tầm nhìn~~
 
 ## Bonus: Vài ảnh thú vị đến từ [ByteByteGo](https://bytebytego.com/)
 *Nay mình đã gặp phải một số vấn đề khá phiền vì đã lưu quá nhiều ảnh sưu tầm trong bài viết. Cụ thể là mình mất hơn 17p để build site này khi dùng một máy tính khác :v*

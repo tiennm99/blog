@@ -59,7 +59,7 @@ Thứ ba, thực thi tính duy nhất với chỉ mục băm. Khi lưu trữ cá
 - Chỉ mục băm (32 MB) nhỏ hơn 5 lần so với chỉ mục B-Tree (154 MB) cho URL
 - Hạn chế: không thể tham chiếu bởi khóa ngoại và không hỗ trợ `ON CONFLICT DO UPDATE`
 
-## [Software engineering when machine writes the code](https://www.shayon.dev/post/2026/19/software-engineering-when-the-machine-writes-code)
+## [Software engineering when machine writes the code](https://www.shayon.dev/post/2026/19/software-engineering-when-the-machine-writes-code/)
 
 Shayon Majumdar đã chia sẻ suy nghĩ sâu sắc về tương lai của kỹ thuật phần mềm khi máy móc có thể viết mã. Bài viết bắt đầu bằng việc nhắc lại cuộc khủng hoảng phần mềm năm 1968, khi các nhà khoa học máy tính nhận ra rằng máy tính đã trở nên quá mạnh đối với các phương pháp lập trình hiện có. Ngày nay, chúng ta đối mặt với sự gián đoạn tương tự nhưng theo hướng ngược lại: máy móc có thể viết mã tốt hơn và nhanh hơn con người.
 

@@ -7,7 +7,7 @@ categories: ["Newsletter"]
 
 *~~Dạo gần đây mấy model free trên OpenRouter đang không ổn định lắm, lúc dùng được lúc thì không. Sẵn còn vài $ credit trên đấy nên nay tranh thủ bào nốt rồi chuyển qua iFlow dùng hẳn (cho đến khi iFlow hết free :v).~~ Mời bạn thưởng thức Newsletter #65. ~~Bài viết này được thực hiện bởi [Claude Code](https://github.com/anthropics/claude-code), [Claude Code Router](https://github.com/musistudio/claude-code-router), [OpenRouter](https://openrouter.ai) & [Anthropic: Claude Sonnet 4.5](https://openrouter.ai/anthropic/claude-sonnet-4.5) (model 'xịn' nhe hehe)~~*
 
-## [Scaling Engineering Teams: Lessons from Google, Facebook, and Netflix](https://greenido.wordpress.com/2025/09/25/scaling-engineering-teams-lessons-from-google-facebook-and-netflix)
+## [Scaling Engineering Teams: Lessons from Google, Facebook, and Netflix](https://greenido.dev/2025/09/25/scaling-engineering-teams-lessons-from-google-facebook-and-netflix/)
 
 Bài viết chia sẻ kinh nghiệm quý báu từ tác giả với hơn 10 năm lãnh đạo kỹ thuật tại Google, Facebook và Netflix về cách mở rộng quy mô đội ngũ kỹ thuật từ 10 lên 1000+ engineers. Tác giả tập trung vào ba yếu tố then chốt: đặt mục tiêu với OKRs, xây dựng nền tảng chất lượng code, và nuôi dưỡng văn hóa làm việc.
 

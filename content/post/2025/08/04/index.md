@@ -46,7 +46,7 @@ Nghiên cứu này thách thức giả định phổ biến rằng AI luôn giú
 
 Bài học cho các lập trình viên: AI là công cụ mạnh mẽ nhưng cần được sử dụng một cách chiến lược. Hãy đo lường hiệu quả thực tế và điều chỉnh cách sử dụng AI để đạt được lợi ích tối đa mà không làm giảm chất lượng công việc.
 
-## [Evolution of Uber's Search Platform](https://www.uber.com/en-IN/blog/evolution-of-ubers-search-platform/)
+## [Evolution of Uber's Search Platform](https://www.uber.com/in/en/blog/evolution-of-ubers-search-platform/)
 
 Bài viết này chia sẻ hành trình phát triển nền tảng tìm kiếm của Uber trong suốt 10 năm qua, từ một hệ thống đơn giản ban đầu đến một kiến trúc phức tạp phục vụ hàng triệu yêu cầu mỗi ngày. Đây là ví dụ điển hình cho việc thiết kế hệ thống có khả năng mở rộng theo thời gian.
 

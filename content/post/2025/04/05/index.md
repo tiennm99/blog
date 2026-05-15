@@ -7,7 +7,7 @@ categories: [ "Newsletter" ]
 
 *Mời bạn thưởng thức Newsletter \#10.*
 
-## [Gaining Years of Experience in a Few Months](https://marcgg.com/blog/2025/02/11/high-growth)
+## [Gaining Years of Experience in a Few Months](https://marcgg.com/blog/2025/02/11/high-growth/)
 
 Bài viết của Marc G. Gauthier chia sẻ về cách đạt được nhiều năm kinh nghiệm trong một thời gian ngắn thông qua các dự án thách thức. Đây là một góc nhìn thú vị về sự phát triển nhanh trong sự nghiệp công nghệ.
 

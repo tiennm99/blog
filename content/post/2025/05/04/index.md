@@ -83,7 +83,7 @@ Một số điểm nổi bật bao gồm: không để bị gán nhãn là "frus
 - Chấp nhận để người khác sai ở những chi tiết không quan trọng, tập trung vào mục tiêu chính.
 - Sắp xếp thời gian họp và tương tác hợp lý, tránh các khung giờ kém hiệu quả.
 
-## [Code is the new no-code](https://lumberjack.so/p/code-is-the-new-no-code)
+## [Code is the new no-code](https://lumberjack.so/code-is-the-new-no-code/)
 
 Bài viết phân tích sự chuyển dịch từ các nền tảng no-code sang việc lập trình truyền thống với sự hỗ trợ mạnh mẽ của AI và các mô hình thành phần (component-based) như React. Tác giả cho rằng, dù no-code hứa hẹn giúp mọi người xây dựng phần mềm mà không cần biết lập trình, thực tế các công cụ này vẫn gặp giới hạn về độ phức tạp và khả năng mở rộng.
 

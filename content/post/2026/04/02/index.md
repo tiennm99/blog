@@ -21,7 +21,7 @@ Haseeb Qureshi đã phân tích chi tiết mã nguồn của Claude Code CLI (kh
 - Cờ tính năng biên dịch (Bun) loại bỏ mã chết, gợi ý các tính năng chưa phát hành như `VOICE_MODE` và `KAIROS`
 - Luận điểm cốt lõi: mô hình AI có thể thay thế được, nhưng "harness" (khung vận hành) mới là nơi chứa đựng kinh nghiệm thực chiến
 
-## [AI sẽ đẩy nhanh nợ kỹ thuật của bạn](https://securosis.com/ai/ai-will-accelerate-your-tech-debt)
+## [AI sẽ đẩy nhanh nợ kỹ thuật của bạn](https://securosis.com/ai/ai-will-accelerate-your-tech-debt/)
 
 Chris Farris lập luận rằng đầu tư vào AI sẽ làm trầm trọng thêm vấn đề nợ kỹ thuật đối với các tổ chức chưa sẵn sàng giải quyết những thách thức hạ tầng nền tảng. Nhiều tổ chức đang vận hành trong tình trạng bấp bênh do nhiều năm ưu tiên phát triển tính năng thay vì xây dựng kiến trúc bền vững, rơi vào vòng xoáy mà việc xử lý sự cố liên tục ngốn hết nguồn lực lẽ ra dành cho việc trả nợ kỹ thuật.
 

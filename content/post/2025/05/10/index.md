@@ -182,7 +182,7 @@ Những điểm chính:
 
 Bài viết kết luận rằng mặc dù Jakarta Data chưa có sẵn tính năng specifications, nhưng việc tự triển khai không khó và mang lại nhiều lợi ích. Tác giả cũng gợi ý rằng một tính năng tương tự sẽ được tích hợp trong Jakarta Data 1.1 trong tương lai.
 
-## [There is no Vibe Engineering](https://serce.me/posts/2025-31-03-there-is-no-vibe-engineering)
+## [There is no Vibe Engineering](https://serce.me/posts/2025-03-31-there-is-no-vibe-engineering)
 
 Bài viết này của Sergey Tselovalnikov (SerCe) phân tích về khái niệm "vibe coding" được Andrej Karpathy đề xuất gần đây và đưa ra những nhận định sâu sắc về vai trò thực sự của kỹ sư phần mềm trong thời đại AI. Tác giả phản bác quan điểm cho rằng AI sẽ thay thế hoàn toàn vai trò của kỹ sư phần mềm.
 

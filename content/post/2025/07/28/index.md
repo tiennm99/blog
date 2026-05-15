@@ -27,7 +27,7 @@ Bài viết giải quyết những lo ngại phổ biến như vấn đề "ảo
 
 Điều quan trọng nhất là tác giả nhấn mạnh rằng lập trình viên vẫn phải chịu trách nhiệm đọc hiểu và đánh giá mã được tạo ra, nhưng AI đang trở thành công cụ hỗ trợ năng suất không thể thiếu.
 
-## [Claude 4 Best Practices](https://docs.anthropic.com/en/docs/build-with-claude/prompt-engineering/claude-4-best-practices#general-principles)
+## [Claude 4 Best Practices](https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/claude-prompting-best-practices)
 
 Tài liệu chính thức từ Anthropic về các phương pháp tốt nhất khi làm việc với Claude 4, cung cấp hướng dẫn chi tiết về kỹ thuật prompt engineering để tối ưu hóa hiệu suất và chất lượng đầu ra.
 

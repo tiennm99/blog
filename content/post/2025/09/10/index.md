@@ -7,7 +7,7 @@ categories: ["Newsletter"]
 
 *~~Do dạo này tình hình tài chính cá nhân không tốt lắm, nên mình quyết định huỷ Claude Subscription, và do đó không còn dùng Claude Code nữa. Hiện tại mình đang dùng Roo Code với model Z.AI: GLM 4.5 Air từ OpenRouter.~~ Hi vọng bài viết đủ chất lượng làm hài lòng các bạn. Mời bạn thưởng thức Newsletter #54.*
 
-## [Controlling the Rollout of Large-Scale Monorepo Changes](https://www.uber.com/en-IN/blog/controlling-the-rollout-of-large-scale-monorepo-changes/)
+## [Controlling the Rollout of Large-Scale Monorepo Changes](https://www.uber.com/in/en/blog/controlling-the-rollout-of-large-scale-monorepo-changes/)
 
 Bài viết từ Uber chia sẻ kinh nghiệm thực tế về việc kiểm soát việc triển khai các thay đổi lớn trong hệ thống monorepo quy mô lớn, một thách thức phức tạp mà nhiều công ty công nghệ đối mặt khi phát triển phần mềm.
 

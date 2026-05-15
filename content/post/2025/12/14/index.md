@@ -35,7 +35,7 @@ Bài viết bao gồm các hình ảnh trực quan tương tác và ví dụ c�
 - Hệ thống bias tự điều chỉnh cho các hệ thống viết khác nhau
 - Bao gồm các hình ảnh trực quan tương tác và ví dụ thực tế
 
-## [Evolution and Scale of Uber's Delivery Search Platform](https://www.uber.com/en-IN/blog/evolution-and-scale-of-ubers-delivery-search-platform/)
+## [Evolution and Scale of Uber's Delivery Search Platform](https://www.uber.com/in/en/blog/evolution-and-scale-of-ubers-delivery-search-platform/)
 
 Bài viết chi tiết về việc Uber Eats phát triển hệ thống semantic search để chuyển đổi cách người dùng tìm kiếm nhà hàng, món ăn, và các mặt hàng tạp hóa. Vượt ra ngoài việc matching lexical truyền thống, Uber triển khai kiến trúc neural network hai tháp sử dụng Qwen LLMs làm backbone, được huấn luyện với MRL (Matryoshka Representation Learning) cho các embedding dimensions linh hoạt. Hệ thống xử lý các truy vấn đa ngôn ngữ, từ đồng nghĩa, lỗi chính tả, và hiểu ngữ cảnh trên nhiều vertical.
 

@@ -61,7 +61,7 @@ if (!allGood) {
 
 Đây là một lời nhắc nhở quan trọng về việc hiểu rõ chi phí của các thao tác tưởng chừng như đơn giản trong lập trình Java.
 
-## [Why do video games use kernel-mode anti-cheats?](https://vx-api.gitbook.io/vx-api/my-projects/why-do-video-games-use-kernel-mode-anti-cheats)
+## [Why do video games use kernel-mode anti-cheats?](https://malwaresourcecode.com/home/my-projects/write-ups/why-do-video-games-use-kernel-mode-anti-cheats)
 
 Bài viết này giải thích lý do tại sao các trò chơi video sử dụng phần mềm chống gian lận ở chế độ kernel và cách thức hoạt động của chúng.
 
@@ -166,7 +166,7 @@ Bài viết từ Ham Vocke là một tấm gương phản chiếu về những �
 
 [Java interview questions and answers - Boosting your java career](https://enos.itcollege.ee/~jpoial/allalaadimised/reading/Java-Interview-Questions.pdf)
 
-[Java Puzzlers - Traps, Pitfalls, and Corner Cases](https://github.com/shannonasmith/Java_books/blob/main/Java%20Puzzlers%20-%20Traps%2C%20Pitfalls%2C%20and%20Corner%20Cases%20(2005).pdf)
+~~[Java Puzzlers - Traps, Pitfalls, and Corner Cases](https://github.com/shannonasmith/Java_books/blob/main/Java%20Puzzlers%20-%20Traps%2C%20Pitfalls%2C%20and%20Corner%20Cases%20(2005).pdf)~~
 
 ---
 

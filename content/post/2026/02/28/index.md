@@ -94,7 +94,7 @@ Khuyến nghị và thực hành tốt nhất: Ưu tiên transaction đơn datab
 - Giới hạn shard: quá nhiều shard làm giảm hiệu suất do tổng hợp
 - Transaction cục bộ: ưu tiên single-DB transaction thay vì distributed
 
-## [Go Made Me Fast, Rust Made Me Care, AWS Made Me Pay](https://dev.to/art_light/go-made-me-fast-rust-made-me-care-aws-made-me-pay-2f82)
+## [Go Made Me Fast, Rust Made Me Care, AWS Made Me Pay](https://dev.to/tirixa-hub/go-made-me-fast-rust-made-me-care-aws-made-me-pay-2f82)
 
 Bài viết thảo luận về lựa chọn ngôn ngữ lập trình cho kiến trúc cloud, tập trung vào sự đánh đổi giữa Go và Rust khi hệ thống phát triển từ "hợp lý" thành "đắt tiền". Tác giả chia sẻ kinh nghiệm thực tế về sự khác biệt giữa hai ngôn ngữ trong bối cảnh AWS, nơi chi phí được tính theo chu kỳ CPU, lượng bộ nhớ và lưu lượng mạng.
 
@@ -109,7 +109,7 @@ AWS đóng vai trò như thực tế khắc nghiệt - nó không quan tâm đ�
 - Hybrid approach: Go cho API/business logic, Rust cho high-throughput data paths
 - Sweet spot: Rust tối ưu phần nhạy cảm hiệu năng để giảm hóa đơn AWS
 
-## [The Cloud Is Not Your Computer: Why Go and Rust Developers Secretly Miss the Monolith](https://dev.to/art_light/the-cloud-is-not-your-computer-why-go-and-rust-developers-secretly-miss-the-monolith-594c)
+## [The Cloud Is Not Your Computer: Why Go and Rust Developers Secretly Miss the Monolith](https://dev.to/tirixa-hub/the-cloud-is-not-your-computer-why-go-and-rust-developers-secretly-miss-the-monolith-594c)
 
 Bài viết phân tích sự thật rằng đám mây không phải là máy tính của bạn mà là một cuộc đàm phán phức tạp. Tác giả trải nghiệm qua nhiều nền tảng từ bare metal đến AWS và nhận ra rằng dù viết code Go hay Rust cảm thấy kiểm soát được thì khi triển khai lên cloud, mọi thứ trở nên bất định. Sự khác biệt chính giữa cloud và máy tính cục bộ là: máy tính cục bộ cho cảm giác kiểm soát trực tiếp, còn cloud khiến bạn đang thuê xác suất chứ không phải chạy phần mềm.
 

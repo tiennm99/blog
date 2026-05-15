@@ -5,7 +5,7 @@ tags: ["AI-Assisted", "Algorithms", "Performance", "Data Structures", "AI Tools"
 categories: ["Newsletter"]
 ---
 
-*Chào các bạn, nay lại đến chu kỳ lười biếng của mình rồi (với thật ra thì dạo trước cày kha khá rồi nên nội dung còn lại cũng không nhiều), nên mình sẽ chuyển sang viết khoảng 1-2 bài/tuần tuỳ cảm hứng. Với tuần rồi mình cũng có được idol ✨🌙 của mình giới thiệu cuốn sách [Tìm mình trong thế giới hậu tuổi thơ](https://nhanam.vn/tim-minh-trong-the-gioi-hau-tuoi-tho-nha-nam), cũng khá hay, nếu hứng thú các bạn có thể tìm đọc. Còn giờ thì mời bạn thưởng thức Newsletter #51.*
+*Chào các bạn, nay lại đến chu kỳ lười biếng của mình rồi (với thật ra thì dạo trước cày kha khá rồi nên nội dung còn lại cũng không nhiều), nên mình sẽ chuyển sang viết khoảng 1-2 bài/tuần tuỳ cảm hứng. Với tuần rồi mình cũng có được idol ✨🌙 của mình giới thiệu cuốn sách ~~[Tìm mình trong thế giới hậu tuổi thơ](https://nhanam.vn/tim-minh-trong-the-gioi-hau-tuoi-tho-nha-nam)~~, cũng khá hay, nếu hứng thú các bạn có thể tìm đọc. Còn giờ thì mời bạn thưởng thức Newsletter #51.*
 
 ## [p-fast trie: lexically ordered hash map](https://dotat.at/@/2025-08-04-p-fast-trie.html)
 

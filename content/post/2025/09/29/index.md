@@ -39,21 +39,21 @@ Các preview features bao gồm Structured Concurrency (preview thứ 5) cho con
 - Compact headers và Generational GC: Tối ưu memory và performance.
 - JFR và AOT enhancements: Monitoring và compilation tốt hơn cho production.
 
-## [Some Best Practices for Writing Readable Automation Tests](https://blog.scottlogic.com/2025/09/04/some-best-practices-for-writing-readable-automation-tests.html)
+## ~~[Some Best Practices for Writing Readable Automation Tests](https://blog.scottlogic.com/2025/09/04/some-best-practices-for-writing-readable-automation-tests.html)~~
 
-Bài viết từ Scott Logic Blog hướng dẫn các best practices để viết automation tests dễ đọc, sử dụng Playwright với TypeScript. Đối với lập trình viên junior, automation testing giúp kiểm tra ứng dụng tự động, nhưng code test khó maintain nếu không readable, dẫn đến bugs ẩn hoặc team khó collaborate.
+~~Bài viết từ Scott Logic Blog hướng dẫn các best practices để viết automation tests dễ đọc, sử dụng Playwright với TypeScript. Đối với lập trình viên junior, automation testing giúp kiểm tra ứng dụng tự động, nhưng code test khó maintain nếu không readable, dẫn đến bugs ẩn hoặc team khó collaborate.~~
 
-Về assertions, sử dụng expect() flexible như expect(response.status()).toBeOK() để handle codes thành công khác nhau (200, 201) mà không fail sớm, tập trung vào validations quan trọng. Với locators, ưu tiên .getByRole cho accessibility, dễ inspect qua DevTools bằng tab navigation, thay vì .getByTestID có thể confuse screen readers. Luôn advocate cho HTML roles đúng nếu thiếu.
+~~Về assertions, sử dụng expect() flexible như expect(response.status()).toBeOK() để handle codes thành công khác nhau (200, 201) mà không fail sớm, tập trung vào validations quan trọng. Với locators, ưu tiên .getByRole cho accessibility, dễ inspect qua DevTools bằng tab navigation, thay vì .getByTestID có thể confuse screen readers. Luôn advocate cho HTML roles đúng nếu thiếu.~~
 
-Naming conventions: Sử dụng backticks cho test names động, ví dụ test(`should return a 400 when User Information is '${variable}'`), cho phép interpolation variables. Structure: Tag tests với {tag: 'THW-000'} để filter runs theo tickets, hoặc annotations cho links chi tiết theo Playwright docs, tăng traceability và longevity.
+~~Naming conventions: Sử dụng backticks cho test names động, ví dụ test(`should return a 400 when User Information is '${variable}'`), cho phép interpolation variables. Structure: Tag tests với {tag: 'THW-000'} để filter runs theo tickets, hoặc annotations cho links chi tiết theo Playwright docs, tăng traceability và longevity.~~
 
-Những practices này giúp tests maintainable, accessible và team-friendly. Junior devs nên áp dụng để viết tests rõ ràng, giảm debugging time và cải thiện QA process.
+~~Những practices này giúp tests maintainable, accessible và team-friendly. Junior devs nên áp dụng để viết tests rõ ràng, giảm debugging time và cải thiện QA process.~~
 
-**Điểm chính:**
-- Assertions flexible: Sử dụng toBeOK() cho HTTP success codes đa dạng.
-- Locators accessible: Ưu tiên .getByRole qua DevTools inspection.
-- Dynamic naming: Backticks cho variable interpolation trong test titles.
-- Tagging annotations: Lưu traceability với tickets cho better collaboration.
+~~**Điểm chính:**~~
+~~- Assertions flexible: Sử dụng toBeOK() cho HTTP success codes đa dạng.~~
+~~- Locators accessible: Ưu tiên .getByRole qua DevTools inspection.~~
+~~- Dynamic naming: Backticks cho variable interpolation trong test titles.~~
+~~- Tagging annotations: Lưu traceability với tickets cho better collaboration.~~
 
 ## [Tech Debt: Understanding its Business Impact - Optimism](https://www.optimism.io/blog/tech-debt-understanding-its-business-impact)
 
@@ -70,7 +70,7 @@ Nguyên nhân chính bao gồm áp lực giao hàng nhanh chóng, thiếu kiểm
 - Phương pháp đo lường: metrics code như điểm phức tạp và tỷ lệ nợ.
 - Chiến lược: phân bổ sprint refactor, tích hợp CI/CD testing, và văn hóa coding bền vững.
 
-## [Spec-Driven Development with AI: A New Approach and a Journey into the Past](https://foojay.io/today/spec-driven-development-with-ai-a-new-approach-and-a-journey-into-the-past)
+## [Spec-Driven Development with AI: A New Approach and a Journey into the Past](https://foojay.io/today/spec-driven-development-with-ai-a-new-approach-and-a-journey-into-the-past/)
 
 Bài viết phê phán bản chất tập trung vào code trong phát triển phần mềm truyền thống, nơi yêu cầu thường trở nên lỗi thời, dẫn đến vấn đề bảo trì, đặc biệt khi AI tăng tốc coding mà không giải quyết nguyên nhân gốc rễ. Lấy cảm hứng từ Rational Unified Process (RUP) những năm 2000, tác giả Simon Martinelli đề xuất AI Unified Process (AIUP), một phương pháp dẫn dắt bởi yêu cầu, đặt nhu cầu kinh doanh làm nguồn sự thật duy nhất.
 
@@ -134,7 +134,7 @@ Trade-off: Specialized excel ideal nhưng fail (panic/output sai) nếu dữ li�
 - Specialized nhanh nhưng fragile (panic nếu domain thay đổi); generic robust cho production.
 - Kết luận: Std lib "unreasonably effective" cho pattern phổ biến, ưu tiên robustness hơn specialize.
 
-## [How we made ClickHouse log queries 99.5% faster with resource fingerprinting](https://signoz.io/blog/query-performance-improvement)
+## [How we made ClickHouse log queries 99.5% faster with resource fingerprinting](https://signoz.io/blog/query-performance-improvement/)
 
 Các kỹ sư SigNoz giải quyết truy vấn log chậm trong ClickHouse bằng cách xử lý lưu trữ dữ liệu không hiệu quả. Truyền thống, log từ các pod, service, môi trường đa dạng trộn lẫn qua các block lưu trữ, buộc database quét gần như toàn bộ dữ liệu cho filter mục tiêu, như theo namespace. Ví dụ, truy vấn namespace production trước đây kiểm tra 99.5% block, dẫn đến I/O cao và latency.
 

@@ -13,11 +13,11 @@ Chào các bạn, lại một cuối tuần nữa trôi qua, mời các bạn ch
 
 Video này trên Inside Java Newscast trình bày những phát triển và kế hoạch dự kiến cho Java trong năm 2025, tập trung vào các dự án OpenJDK lớn như Babylon, Loom, Leyden, Lilliput, Panama và Valhalla (ngoại trừ Amber, sẽ được đề cập trong một video khác).
 
-## [Why You Should Learn Kotlin in 2025](https://dev.to/empiree/why-you-should-learn-kotlin-in-2025-47g0)
+## ~~[Why You Should Learn Kotlin in 2025](https://dev.to/empiree/why-you-should-learn-kotlin-in-2025-47g0)~~
 
-Bài viết này trên Dev.to khuyến khích các nhà phát triển tìm hiểu Kotlin vào năm 2025, nhấn mạnh các tính năng hiện đại, khả năng tương tác với Java và các ứng dụng đa dạng của nó. Bài đăng này cũng thảo luận về thị trường việc làm và mức lương tiềm năng cho các nhà phát triển Kotlin.
+~~Bài viết này trên Dev.to khuyến khích các nhà phát triển tìm hiểu Kotlin vào năm 2025, nhấn mạnh các tính năng hiện đại, khả năng tương tác với Java và các ứng dụng đa dạng của nó. Bài đăng này cũng thảo luận về thị trường việc làm và mức lương tiềm năng cho các nhà phát triển Kotlin.~~
 
-## [Mastering Java Logging: Best Practices for Effective Application Monitoring](https://dev.to/aaravjoshi/mastering-java-logging-best-practices-for-effective-application-monitoring-20h7)
+## [Mastering Java Logging: Best Practices for Effective Application Monitoring](https://dev.to/nithinbharathwaj/mastering-java-logging-best-practices-for-effective-application-monitoring-20h7)
 
 Bài viết này trên Dev.to cung cấp hướng dẫn toàn diện về việc thực hiện ghi log hiệu quả trong các ứng dụng Java. Nó bao gồm các khía cạnh thiết yếu như chọn khung ghi log phù hợp, sử dụng các cấp log thích hợp, triển khai ghi log có cấu trúc và nhận biết ngữ cảnh, quản lý hiệu suất và bảo mật, đồng thời thiết lập ghi log tập trung.
 

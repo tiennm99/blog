@@ -38,7 +38,7 @@ Leaders: Support scoping/chunking (commit/file), high-signal PR desc (intent/rat
 - Cognitive: Not bug-hunt, layered reasoning/collaboration.
 - Apply: Clear PRs, automate trivia, cognitive tooling.
 
-## [The Great Software Quality Collapse: How We Normalized Catastrophe](https://techtrenches.substack.com/p/the-great-software-quality-collapse)
+## [The Great Software Quality Collapse: How We Normalized Catastrophe](https://techtrenches.dev/p/the-great-software-quality-collapse)
 
 Bài viết từ Denis Stetskov trên Tech Trenches cảnh báo về **sự sụp đổ chất lượng phần mềm** đang diễn ra theo cấp số nhân. Các ứng dụng phổ biến như VS Code (leak 96GB RAM qua SSH), Microsoft Teams (100% CPU trên máy 32GB), Chrome (16GB cho 50 tabs), Discord (32GB khi share screen) hay Spotify (79GB trên macOS) giờ coi việc ngốn tài nguyên khủng là "bình thường". Các hệ thống lớn cũng thường xuyên hỏng: Windows 11 update làm tê liệt Start Menu, macOS Spotlight ghi 26TB dữ liệu qua đêm, iOS 18 crash khi reply tin nhắn, Android 15 ra mắt với 75+ bug nghiêm trọng.
 
@@ -90,7 +90,7 @@ Nguyên tắc: Manager time >> Engineer time, explicit expectations (examples go
 - Principles: Automate, feedback loops, context-aware.
 - Outcome: High-velocity teams without gaming metrics.
 
-## [Scripts I wrote that I use all the time](https://evanhahn.com/scripts-i-wrote-that-i-use/all-the-time)
+## [Scripts I wrote that I use all the time](https://evanhahn.com/scripts-i-wrote-that-i-use-all-the-time/)
 
 Evan Hahn chia sẻ **hàng tá shell scripts cá nhân** từ dotfiles (10+ năm), dùng hàng ngày để boost productivity. Tất cả open source trên Codeberg, ngắn gọn, giải quyết pain points thường gặp.
 

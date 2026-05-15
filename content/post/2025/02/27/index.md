@@ -36,7 +36,7 @@ Bài viết này cung cấp một cái nhìn tổng quan về một số ngôn n
 
 **Tóm lại:** Bài viết nhấn mạnh rằng việc lựa chọn ngôn ngữ lập trình phù hợp phụ thuộc vào yêu cầu của dự án, kinh nghiệm của nhóm và mục tiêu dài hạn. Mặc dù không có ngôn ngữ nào phù hợp với mọi trường hợp, nhưng việc hiểu rõ điểm mạnh và hạn chế của từng ngôn ngữ có thể giúp đưa ra quyết định thông minh hơn.
 
-## [Discovery Coding](https://jimmyhmiller.github.io/discovery-coding)
+## [Discovery Coding](http://jimmyhmiller.com/discovery-coding)
 
 Bài viết giới thiệu "Discovery Coding" (tạm dịch: Lập trình khám phá) như một phương pháp tiếp cận vấn đề bằng cách viết code trước, thay vì cố gắng thiết kế hoặc suy nghĩ trước. Tác giả so sánh phương pháp này với việc "viết khám phá" trong văn học, nơi tác giả khám phá ra câu chuyện trong quá trình viết.
 

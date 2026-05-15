@@ -35,19 +35,19 @@ Tác giả khuyến khích các lập trình viên nên thành thật với bả
 - Được phép sử dụng công cụ "lạ" nếu nó làm bạn hạnh phúc
 - Sự hài lòng cá nhân cũng quan trọng như tính thực tiễn
 
-## [Ảo tưởng về Copilot](https://deplet.ing/the-copilot-delusion/)
+## ~~[Ảo tưởng về Copilot](https://deplet.ing/the-copilot-delusion/)~~
 
-Bài viết này đưa ra những phê phán sâu sắc về các trợ lý lập trình AI như GitHub Copilot và ảnh hưởng tiêu cực của chúng đến ngành phát triển phần mềm. Tác giả lập luận rằng các công cụ AI này tạo ra mã nguồn mà không có sự hiểu biết thực sự về kiến trúc hệ thống hay những phức tạp kỹ thuật sâu xa.
+~~Bài viết này đưa ra những phê phán sâu sắc về các trợ lý lập trình AI như GitHub Copilot và ảnh hưởng tiêu cực của chúng đến ngành phát triển phần mềm. Tác giả lập luận rằng các công cụ AI này tạo ra mã nguồn mà không có sự hiểu biết thực sự về kiến trúc hệ thống hay những phức tạp kỹ thuật sâu xa.~~
 
-Vấn đề cốt lõi là việc phụ thuộc vào AI làm suy giảm kỹ năng tư duy phản biện và học hỏi của lập trình viên. Khi "gia công tư duy cho AI", chúng ta cũng đang "gia công việc học" cho chúng. Các công cụ này thiếu trực giác về hiệu năng phần cứng, quản lý bộ nhớ, và tối ưu hóa - những yếu tố then chốt trong phát triển phần mềm chất lượng cao.
+~~Vấn đề cốt lõi là việc phụ thuộc vào AI làm suy giảm kỹ năng tư duy phản biện và học hỏi của lập trình viên. Khi "gia công tư duy cho AI", chúng ta cũng đang "gia công việc học" cho chúng. Các công cụ này thiếu trực giác về hiệu năng phần cứng, quản lý bộ nhớ, và tối ưu hóa - những yếu tố then chốt trong phát triển phần mềm chất lượng cao.~~
 
-Tác giả lo ngại về tác động văn hóa trong ngành kỹ thuật phần mềm, có thể tạo ra một thế hệ lập trình viên ưu tiên sản lượng nhanh hơn chất lượng, đe dọa "linh hồn hacker" và sự tò mò kỹ thuật sâu sắc. Nguy cơ là sẽ có nhiều người nghĩ mình giỏi chỉ vì bot của họ vượt qua được CI, nhưng thực tế thiếu hiểu biết căn bản.
+~~Tác giả lo ngại về tác động văn hóa trong ngành kỹ thuật phần mềm, có thể tạo ra một thế hệ lập trình viên ưu tiên sản lượng nhanh hơn chất lượng, đe dọa "linh hồn hacker" và sự tò mò kỹ thuật sâu sắc. Nguy cơ là sẽ có nhiều người nghĩ mình giỏi chỉ vì bot của họ vượt qua được CI, nhưng thực tế thiếu hiểu biết căn bản.~~
 
-**Mối lo ngại chính:**
-- AI tạo mã mà không hiểu kiến trúc hệ thống
-- Suy giảm kỹ năng tư duy phản biện của lập trình viên
-- Thiếu hiểu biết về hiệu năng và tối ưu hóa
-- Nguy cơ tạo ra thế hệ lập trình viên "giỏi trên giấy"
+~~**Mối lo ngại chính:**~~
+~~- AI tạo mã mà không hiểu kiến trúc hệ thống~~
+~~- Suy giảm kỹ năng tư duy phản biện của lập trình viên~~
+~~- Thiếu hiểu biết về hiệu năng và tối ưu hóa~~
+~~- Nguy cơ tạo ra thế hệ lập trình viên "giỏi trên giấy"~~
 
 ## [Tại sao Cline không lập chỉ mục mã nguồn (và đó là điều tốt)](https://cline.bot/blog/why-cline-doesnt-index-your-codebase-and-why-thats-a-good-thing)
 

@@ -8,7 +8,7 @@ draft: false
 
 *Đã lâu rồi mình không viết bài. Và thú thật thì những newsletter dạo trước hơi kiểu "chạy KPI", ~~mình cứ cố cho rất nhiều link vào và để AI Agent làm nốt phần còn lại~~. Lần này mình sẽ chọn lọc bài kĩ hơn, ~~còn viết thì vẫn để AI thôi, vì mình lười hehe =)))~~. Mong các bạn sẽ thích. Chào mừng bạn đến với Newsletter #31.*
 
-## [Claude Code: Best Practices for Agentic Coding](https://www.anthropic.com/engineering/claude-code-best-practices)
+## [Claude Code: Best Practices for Agentic Coding](https://code.claude.com/docs/en/best-practices)
 
 Anthropic vừa ra mắt hướng dẫn thực hành tốt nhất cho Claude Code - một công cụ command-line mạnh mẽ cho lập trình với sự hỗ trợ của AI. Đây là một dự án nghiên cứu linh hoạt và có thể tùy chỉnh cao, giúp các kỹ sư tích hợp AI vào quy trình phát triển phần mềm một cách hiệu quả.
 
@@ -70,36 +70,36 @@ Bài viết từ Skip Labs giới thiệu khái niệm "Event-Hidden Architectur
 
 ---
 
-## [Lessons from Distributed Systems](https://www.16elt.com/2025/04/19/lessons-from-distributed-systems/)
+## ~~[Lessons from Distributed Systems](https://www.16elt.com/2025/04/19/lessons-from-distributed-systems/)~~
 
-Bài viết từ 16elt.com chia sẻ những bài học thực tế từ việc xây dựng và vận hành distributed systems ở quy mô lớn. Tác giả tổng hợp những kinh nghiệm xương máu về các vấn đề thường gặp và cách giải quyết khi làm việc với hệ thống phân tán.
+~~Bài viết từ 16elt.com chia sẻ những bài học thực tế từ việc xây dựng và vận hành distributed systems ở quy mô lớn. Tác giả tổng hợp những kinh nghiệm xương máu về các vấn đề thường gặp và cách giải quyết khi làm việc với hệ thống phân tán.~~
 
-**Điểm chính:**
-- Tách riêng cache clusters: tránh chia sẻ một cache cluster cho nhiều services vì workload nặng từ Service A có thể evict dữ liệu quan trọng của Service B, gây ra performance issues khó chẩn đoán
-- Sử dụng message queues: queues giúp quản lý traffic spikes và service load, cung cấp buffering và resilience giữa các services như "một người trưởng thành có trách nhiệm" ngăn chặn service overload
-- Đo lường end-to-end latency: không chỉ xem xét service response times mà còn cả "dequeue latency" - thời gian messages chờ trong queue trước khi được xử lý
-- Design for failure: expect và plan cho network và service failures tiềm tàng, implement retry policies, circuit breakers, dead-letter queues cho failed messages
-- Đảm bảo idempotency: assume message duplicates sẽ xảy ra, thiết kế hệ thống handle repeated events một cách graceful vì message queues guarantee 'at least once' delivery
-- Distributed systems đòi hỏi proactive design, robust monitoring và resilient architecture để quản lý complexity và potential failure points
-- Monitoring và observability là chìa khóa để hiểu được hành vi thực của hệ thống trong production environment
+~~**Điểm chính:**~~
+~~- Tách riêng cache clusters: tránh chia sẻ một cache cluster cho nhiều services vì workload nặng từ Service A có thể evict dữ liệu quan trọng của Service B, gây ra performance issues khó chẩn đoán~~
+~~- Sử dụng message queues: queues giúp quản lý traffic spikes và service load, cung cấp buffering và resilience giữa các services như "một người trưởng thành có trách nhiệm" ngăn chặn service overload~~
+~~- Đo lường end-to-end latency: không chỉ xem xét service response times mà còn cả "dequeue latency" - thời gian messages chờ trong queue trước khi được xử lý~~
+~~- Design for failure: expect và plan cho network và service failures tiềm tàng, implement retry policies, circuit breakers, dead-letter queues cho failed messages~~
+~~- Đảm bảo idempotency: assume message duplicates sẽ xảy ra, thiết kế hệ thống handle repeated events một cách graceful vì message queues guarantee 'at least once' delivery~~
+~~- Distributed systems đòi hỏi proactive design, robust monitoring và resilient architecture để quản lý complexity và potential failure points~~
+~~- Monitoring và observability là chìa khóa để hiểu được hành vi thực của hệ thống trong production environment~~
 
 ---
 
-## [Better Error Handling: Từ Try/Catch đến Modern Approaches](https://meowbark.dev/Better-error-handling)
+## ~~[Better Error Handling: Từ Try/Catch đến Modern Approaches](https://meowbark.dev/Better-error-handling)~~
 
-Bài viết từ meowbark.dev khám phá các phương pháp xử lý lỗi hiện đại trong software development, từ traditional try/catch cho đến các kỹ thuật tiên tiến như Go-style error handling và monadic Result types. Tác giả phân tích ưu nhược điểm của từng approach và đưa ra khuyến nghị về cách chọn lựa phương pháp phù hợp.
+~~Bài viết từ meowbark.dev khám phá các phương pháp xử lý lỗi hiện đại trong software development, từ traditional try/catch cho đến các kỹ thuật tiên tiến như Go-style error handling và monadic Result types. Tác giả phân tích ưu nhược điểm của từng approach và đưa ra khuyến nghị về cách chọn lựa phương pháp phù hợp.~~
 
-**Điểm chính:**
-- Ba approaches chính cho error handling: traditional try/catch, Go-style return tuples, và monadic Result types
-- Challenges của error handling truyền thống: thiếu type safety, unpredictable error control flow, limited type system integration
-- Go-style approach: return errors như part của tuple, explicitly handle failure scenarios, cung cấp clear error context
-- Monadic Result approach: treat errors as values, sử dụng container types như `Result<T,E>`, enable functional-style error chaining
-- Best practices quan trọng: phân biệt recoverable và unrecoverable errors, wrap external library errors sớm, sử dụng type-safe error handling mechanisms
-- Cân nhắc performance và developer experience khi chọn strategy
-- Recommended techniques: sử dụng libraries như `neverthrow` cho robust error management, implement error mapping và transformation
-- Tạo centralized error handling layers để quản lý lỗi một cách systematic
-- Chọn error handling strategy cân bằng giữa type safety, readability, và team expertise
-- Duy trì clear error communication và recovery mechanisms trong suốt application
+~~**Điểm chính:**~~
+~~- Ba approaches chính cho error handling: traditional try/catch, Go-style return tuples, và monadic Result types~~
+~~- Challenges của error handling truyền thống: thiếu type safety, unpredictable error control flow, limited type system integration~~
+~~- Go-style approach: return errors như part của tuple, explicitly handle failure scenarios, cung cấp clear error context~~
+~~- Monadic Result approach: treat errors as values, sử dụng container types như `Result<T,E>`, enable functional-style error chaining~~
+~~- Best practices quan trọng: phân biệt recoverable và unrecoverable errors, wrap external library errors sớm, sử dụng type-safe error handling mechanisms~~
+~~- Cân nhắc performance và developer experience khi chọn strategy~~
+~~- Recommended techniques: sử dụng libraries như `neverthrow` cho robust error management, implement error mapping và transformation~~
+~~- Tạo centralized error handling layers để quản lý lỗi một cách systematic~~
+~~- Chọn error handling strategy cân bằng giữa type safety, readability, và team expertise~~
+~~- Duy trì clear error communication và recovery mechanisms trong suốt application~~
 
 ---
 

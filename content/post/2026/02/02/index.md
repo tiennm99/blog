@@ -17,7 +17,7 @@ Cốt lõi của phương pháp là định lượng hóa hình dạng của m�
 
 Bài viết cũng đề cập đến các tối ưu hóa hiệu năng quan trọng như sử dụng k-d trees để tăng tốc độ tra cứu ký tự, caching với quantization để giảm tải tính toán, và chuyển xử lý sang GPU để đạt 60 FPS trên mobile. Đây là một bài viết kỹ thuật thú vị với nhiều ý tưởng có thể áp dụng cho các vấn đề khác về xử lý hình dạng đa chiều.
 
-## [From Bare Metal to Containers: A Developer's Guide to Execution Environments](https://buildsoftwaresystems.com/post/guide-to-execution-environments)
+## [From Bare Metal to Containers: A Developer's Guide to Execution Environments](https://buildsoftwaresystems.com/post/guide-to-execution-environments/)
 
 Bài viết này cung cấp cái nhìn toàn diện về các loại môi trường thực thi (execution environments) mà nhà phát triển phần mềm thường gặp, từ physical machine cho đến containers và virtual environments. Mỗi loại môi trường được trình bày rõ ràng với cơ chế cách ly, ưu nhược điểm và trường hợp sử dụng phù hợp.
 

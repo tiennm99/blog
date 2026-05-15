@@ -5,7 +5,7 @@ tags: ["AI-Assisted"]
 categories: ["Newsletter"]
 ---
 
-*~~Lâu rồi chưa pay 1 cái gì liên quan đến AI (từ thời Claude subscription để thử nghiệm Claude Code). Nay mới mua thử gói [GLM Coding Plan](https://z.ai/subscribe) của [Z.ai](https://z.ai) để trải nghiệm. Gói này hiện cho phép dùng model mới nhất của Z.ai là GLM-4.7. Từ nay mình sẽ tranh thủ dùng [Claude Code](https://claude.com/product/claude-code) với [Z.ai API](https://z.ai/model-api) để 'bào' cho xứng đáng số tiền bỏ ra^^.~~ Mời bạn thưởng thức Newsletter #74.*
+*Lâu rồi chưa pay 1 cái gì liên quan đến AI (từ thời Claude subscription để thử nghiệm Claude Code). Nay mới mua thử gói [GLM Coding Plan](https://z.ai/subscribe) của [Z.ai](https://z.ai) để trải nghiệm. Gói này hiện cho phép dùng model mới nhất của Z.ai là GLM-4.7. Từ nay mình sẽ tranh thủ dùng [Claude Code](https://claude.com/product/claude-code) với [Z.ai API](https://z.ai/model-api) để 'bào' cho xứng đáng số tiền bỏ ra^^. Mời bạn thưởng thức Newsletter #74.*
 
 ## [Goodbye Microservices: From 100s of problem children to 1 superstar](https://www.twilio.com/en-us/blog/developers/best-practices/goodbye-microservices)
 
@@ -104,7 +104,7 @@ Tác giả worry về decline trong consideration, không phải tools. Design v
 - Code essential cho execution, không all
 - Worry decline consideration, không tools
 
-## [How we saved 70% CPU and 60% memory in Refinery]((https://www.honeycomb.io/blog/how-we-saved-70-cpu-60-memory-refinery)
+## [How we saved 70% CPU and 60% memory in Refinery](https://www.honeycomb.io/blog/how-we-saved-70-cpu-60-memory-refinery)
 
 Honeycomb optimize Refinery telemetry pipeline: giảm 70% CPU và 60% memory. Root cause là dynamic attributes calculation - parse attributes nhiều lần, create intermediate allocations inefficiencies.
 
@@ -120,7 +120,7 @@ Profiling trước khi optimize critical - find bottlenecks first. Trade-off: co
 - Profiling trước khi optimize
 - Trade-off: phức tạp hơn nhưng worth it
 
-## [From Junior to Senior: 7 API Design Patterns That Scale]((https://designgurus.substack.com/p/from-junior-to-senior-7-api-design)
+## [From Junior to Senior: 7 API Design Patterns That Scale](https://designgurus.substack.com/p/from-junior-to-senior-7-api-design)
 
 7 architectural decisions cho scalable APIs - khác biệt junior/senior. Junior focus logic, senior focus system communication. API là critical component của distributed systems.
 

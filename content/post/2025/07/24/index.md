@@ -110,7 +110,7 @@ Các module cấp cao nên phụ thuộc vào abstraction, không phải concret
 
 **Kết luận thực tế**: Các nguyên tắc SOLID không chỉ là lý thuyết mà là công cụ thực tế giúp viết mã sạch, có thể mở rộng và bảo trì. Việc áp dụng đúng các nguyên tắc này giúp hệ thống phần mềm linh hoạt hơn trước những thay đổi và yêu cầu mới.
 
-## [A year on, Valkey charts path to v9 after break from Redis](https://www.theregister.com/2025/05/15/a_year_of_valkey)
+## [A year on, Valkey charts path to v9 after break from Redis](https://www.theregister.com/software/2025/05/15/a-year-on-valkey-charts-path-to-v9-after-break-from-redis/852499)
 
 Sau một năm tách khỏi Redis, Valkey đã chứng tỏ sức sống mạnh mẽ và đang vạch ra lộ trình phát triển bền vững. Dự án này được sinh ra từ sự phản đối với việc Redis Labs thay đổi giấy phép gây tranh cãi, dẫn đến làn sóng các contributor rời bỏ Redis, bao gồm Madelyn Olson - hiện là đồng maintainer của Valkey.
 

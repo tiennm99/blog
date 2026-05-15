@@ -25,7 +25,7 @@ Tóm lại, theo Sean, LLM là công cụ giá trị nếu được sử dụng 
 
 Chris Kiehl là một lập trình viên phần mềm hiện đang làm việc tại Amazon. Anh đã viết cuốn sách "Lập trình hướng dữ liệu trong Java" và tạo ra Gooey, một công cụ chuyển đổi hầu hết các chương trình dòng lệnh Python thành ứng dụng GUI đầy đủ chức năng chỉ với một dòng code. Bốn năm trước, Kiehl đã đăng một danh sách các chủ đề về phát triển phần mềm mà anh đã thay đổi quan điểm sau khi làm việc trong ngành công nghiệp. Đây là một bản cập nhật về quan điểm của Kiehl - những điều anh đã thay đổi suy nghĩ, những ý kiến anh đã tiếp thu trong quá trình làm việc, và những điều anh vẫn giữ nguyên quan điểm.
 
-## [Looking Under the Lamppost (On Problem-Solving)](https://www.edbatista.com/2025/01/looking-under-the-lamppost-on-problem-solving.html)
+## [Looking Under the Lamppost (On Problem-Solving)](https://edbatista.com/2025/01/looking-under-the-lamppost-on-problem-solving.html)
 
 Ed Batista mở đầu bài viết bằng một câu chuyện ngụ ngôn quen thuộc: một người đàn ông tìm chìa khóa dưới cột đèn, dù biết đã đánh rơi ở chỗ tối hơn. Câu chuyện này là phép ẩn dụ cho cách chúng ta thường tiếp cận việc giải quyết vấn đề. Thay vì đối mặt với vấn đề cần giải quyết, chúng ta lại tập trung vào vấn đề muốn giải quyết.
 

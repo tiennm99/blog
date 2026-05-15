@@ -256,7 +256,7 @@ Tác giả đề xuất một số cải tiến trong tương lai:
 
 Cách tiếp cận này mang lại nhiều lợi ích cho việc phát triển và kiểm thử ứng dụng web locally. Nó giúp đơn giản hóa việc truy cập các ứng dụng và tạo ra một môi trường phát triển chuyên nghiệp hơn. Mặc dù cần một số cấu hình ban đầu, nhưng lợi ích mang lại là đáng kể, đặc biệt khi làm việc với nhiều ứng dụng cùng lúc.
 
-## [AI 50: AI Agents Move Beyond Chat](https://www.sequoiacap.com/article/ai-50-2025/)
+## [AI 50: AI Agents Move Beyond Chat](https://sequoiacap.com/article/ai-50-2025/)
 
 ![](https://sequoiacap.com/wp-content/uploads/sites/6/2025/04/ai-50-2025.png)
 

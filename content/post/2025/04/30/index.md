@@ -36,7 +36,7 @@ Tác giả giới thiệu một số cấu trúc dữ liệu súc tích quan tr�
 
 Bài viết cũng đề cập đến các ứng dụng thực tế như xử lý XML, DNA và AST của ngôn ngữ lập trình, cùng với các thư viện Rust hiện có như `vers`, `sucds` và `fm-index`. Đây là một lĩnh vực đầy tiềm năng cho các ứng dụng cần xử lý dữ liệu lớn với bộ nhớ hạn chế.
 
-## [The art of engineering team focus: less is more](https://resources.github.com/developer-productivity/engineering-team-focus/)
+## [The art of engineering team focus: less is more](https://github.com/resources/insights/engineering-team-focus)
 
 Bài viết từ GitHub Resources trình bày một quan điểm ngược với trực giác thông thường: để đội ngũ kỹ thuật làm việc hiệu quả hơn, họ cần làm ít việc hơn cùng một lúc. Tác giả lập luận rằng việc phân tán nguồn lực vào nhiều tác vụ song song thường dẫn đến hiệu suất thấp hơn, không phải cao hơn.
 

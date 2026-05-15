@@ -11,7 +11,7 @@ Chào các bạn, đến hẹn lại lên, đây là Newsletter #2 của mình. 
 Thôi không vòng vo nữa, vào ngay Newsletter #2 của MiTi nào.
 </i>
 
-## [Some things to expect in 2025](https://lwn.net/Articles/1003780)
+## [Some things to expect in 2025](https://lwn.net/Articles/1003780/)
 
 Bài viết dự đoán một số xu hướng và sự kiện có thể xảy ra trong cộng đồng Linux và phần mềm tự do năm 2025. Đầu tiên, sched-ext sẽ trở thành yếu tố thay đổi cuộc chơi, cho phép tải trình lập lịch CPU từ không gian người dùng thông qua BPF, thúc đẩy sự sáng tạo và thử nghiệm. Mã Rust sẽ được tích hợp nhiều hơn vào kernel, mang lại các tính năng mà người dùng cuối có thể không nhận ra. Bài viết cảnh báo về một nỗ lực backdoor tương tự như XZ có thể xuất hiện, và các dự án chỉ có một người duy trì sẽ bị coi là rủi ro hơn.
 
@@ -31,7 +31,7 @@ Bài viết trình bày chi tiết các thuật toán rate limiting phổ biến
 
 Để chọn thuật toán phù hợp, cần hiểu rõ đặc điểm traffic (dự đoán được, đột biến, hỗn hợp), mức độ chính xác cần thiết, giới hạn tài nguyên (bộ nhớ, CPU, khả năng mở rộng) và trải nghiệm người dùng. Bài viết nhấn mạnh rằng rate limiting không chỉ là việc thiết lập giới hạn mà còn là thiết kế các hệ thống hiệu quả, công bằng và thân thiện với người dùng. Các triển khai cho từng loại rate limiter với Java & Redis sẽ được phát hành hàng tuần.
 
-## [Why does Cloudflare Pages have such a generous Free tier?](https://mattsayar.com/why-does-cloudflare-pages-have-such-a-generous-free-tier)
+## [Why does Cloudflare Pages have such a generous Free tier?](https://mattsayar.com/why-does-cloudflare-pages-have-such-a-generous-free-tier/)
 
 Bài viết của Matt Sayar khám phá lý do tại sao Cloudflare Pages lại có một gói miễn phí hào phóng trong bối cảnh nhiều dịch vụ hosting hiện nay cung cấp các gói miễn phí tương tự. Cloudflare Pages nổi bật với băng thông không giới hạn, điều mà ít nền tảng nào khác có thể cạnh tranh. Các dịch vụ như GitHub Pages, GitLab Pages và Netlify đều có giới hạn băng thông, trong khi Cloudflare cho phép người dùng thoải mái phát triển trang web mà không lo lắng về chi phí phát sinh.
 

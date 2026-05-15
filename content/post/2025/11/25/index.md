@@ -20,7 +20,7 @@ Khác biệt cốt lõi: RDBMS ưu tiên point lookups (O(log n)), OTF ưu tiên
 - Giảm IO qua file skipping dựa stats min/max, partition pruning.
 - Phù hợp analytical workloads lớn, không cần traditional secondary indexes.
 
-## [What's The Deal With GitHub Spec Kit](https://den.dev/blog/github-spec-kit)
+## [What's The Deal With GitHub Spec Kit](https://den.dev/blog/github-spec-kit/)
 
 Den Delimarsky giới thiệu GitHub Spec Kit, công cụ thực nghiệm cho Phát triển Dựa trên Đặc tả (SDD) sử dụng LLM để làm phần mềm ổn định hơn. Thay vì lập trình theo cảm hứng ngẫu nhiên, đặc tả (specs) định nghĩa rõ "cái gì" và "tại sao" (không chi tiết kỹ thuật), giúp LLM sinh code nhất quán, dễ lặp lại/ so sánh các triển khai (ví dụ Swift so Objective-C).
 
@@ -47,7 +47,7 @@ Cách tiếp cận "no-bs" giúp developer junior nhanh chóng áp dụng AI: m�
 - AI viết 100% code cho dự án thực tế, tăng productivity đáng kể.
 - Tránh overengineering; focus vào getting sh*t done qua natural conversation.
 
-## [JIT: so you want to be faster than an interpreter on modern CPUs](https://www.pinaraf.info/2025/10/jit-so-you-want-to-be-faster-than-an-interpreter-on-modern-cpus)
+## [JIT: so you want to be faster than an interpreter on modern CPUs](https://www.pinaraf.info/2025/10/jit-so-you-want-to-be-faster-than-an-interpreter-on-modern-cpus/)
 
 Pinaraf giải thích tại sao JIT compiler khó vượt interpreter trên CPU hiện đại (Zen 2+), nhờ OoO execution, superscalar và branch prediction. Ví dụ pseudo-code cho thấy CPU reorder instructions, speculate branches để tránh idle. Interpreter truyền thống dùng switch gây branch misprediction; optimized dùng computed gotos (như Python +15-20% speed, PostgreSQL) để linearize code, dễ predict hơn.
 

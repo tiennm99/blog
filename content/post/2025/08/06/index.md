@@ -27,7 +27,7 @@ Tác giả hướng dẫn chi tiết cách tạo thủ công cấu trúc thư m�
 
 Điểm quan trọng nhất mà tác giả nhấn mạnh là "Sức mạnh của Git không đến từ sự phức tạp, mà từ tính đơn giản và thanh lịch trong thiết kế." Việc hiểu rõ kiến trúc bên trong này giúp các lập trình viên sử dụng Git hiệu quả hơn và giải quyết các vấn đề phức tạp một cách tự tin.
 
-## [Why I'm Betting Against AI Agents in 2025 (Despite Building Them)](https://utkarshkanwat.com/writing/betting-against-agents/)
+## [Why I'm Betting Against AI Agents in 2025 (Despite Building Them)](https://utkarshkanwat.com/writing/betting-against-agents)
 
 Utkarsh Kanwat, một lập trình viên đang xây dựng các tác nhân AI, đưa ra góc nhìn khá táo bạo khi "đặt cược chống lại" xu hướng AI agents trong năm 2025. Bài viết này không phải là lời phê phán mù quáng mà là phân tích thực tế về những thách thức cốt lõi mà AI agents đang đối mặt.
 

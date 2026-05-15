@@ -19,22 +19,22 @@ Sự xuất hiện của Agentic AI đang tạo ra những thay đổi đáng k�
 - Cơ hội mới đang mở ra cho những người có thể kết hợp AI agent vào quy trình làm việc
 - Việc thích nghi sớm với xu hướng này có thể tạo ra lợi thế cạnh tranh trong sự nghiệp
 
-## [Sự Phát Triển Của Garbage Collectors: Từ CMS Của Java Đến ZGC](https://codemia.io/blog/path/The-Evolution-of-Garbage-Collectors-From-Javas-CMS-to-ZGC-and-a-JVM-vs-Go-vs-Rust-Latency-Shootout)
+## ~~[Sự Phát Triển Của Garbage Collectors: Từ CMS Của Java Đến ZGC](https://codemia.io/blog/path/The-Evolution-of-Garbage-Collectors-From-Javas-CMS-to-ZGC-and-a-JVM-vs-Go-vs-Rust-Latency-Shootout)~~
 
-Quản lý bộ nhớ là một chủ đề quan trọng trong lập trình, đặc biệt là trong các ngôn ngữ như Java, Go và Rust. Bài viết này khám phá sự tiến hóa của garbage collectors (GC) từ Concurrent Mark-Sweep (CMS) truyền thống của Java đến Z Garbage Collector (ZGC) hiện đại.
+~~Quản lý bộ nhớ là một chủ đề quan trọng trong lập trình, đặc biệt là trong các ngôn ngữ như Java, Go và Rust. Bài viết này khám phá sự tiến hóa của garbage collectors (GC) từ Concurrent Mark-Sweep (CMS) truyền thống của Java đến Z Garbage Collector (ZGC) hiện đại.~~
 
-ZGC là một bước tiến lớn trong việc giảm thiểu thời gian tạm dừng của ứng dụng (pause times), với mục tiêu giữ thời gian tạm dừng dưới 10ms bất kể kích thước heap. Điều này tạo ra sự khác biệt lớn về hiệu suất so với các GC thế hệ trước như CMS.
+~~ZGC là một bước tiến lớn trong việc giảm thiểu thời gian tạm dừng của ứng dụng (pause times), với mục tiêu giữ thời gian tạm dừng dưới 10ms bất kể kích thước heap. Điều này tạo ra sự khác biệt lớn về hiệu suất so với các GC thế hệ trước như CMS.~~
 
-Bài viết cũng so sánh hiệu suất về độ trễ giữa các nền tảng:
-- JVM (với ZGC): Giảm đáng kể thời gian tạm dừng nhờ cải tiến trong thiết kế GC
-- Go: GC hiệu quả với độ trễ thấp nhờ thuật toán concurrent và tri-color marking
-- Rust: Tránh hoàn toàn GC nhờ mô hình ownership, mang lại hiệu suất dự đoán được mà không có chi phí GC
+~~Bài viết cũng so sánh hiệu suất về độ trễ giữa các nền tảng:~~
+~~- JVM (với ZGC): Giảm đáng kể thời gian tạm dừng nhờ cải tiến trong thiết kế GC~~
+~~- Go: GC hiệu quả với độ trễ thấp nhờ thuật toán concurrent và tri-color marking~~
+~~- Rust: Tránh hoàn toàn GC nhờ mô hình ownership, mang lại hiệu suất dự đoán được mà không có chi phí GC~~
 
-**Điểm chính:**
-- ZGC giúp giảm thời gian tạm dừng của ứng dụng xuống dưới 10ms
-- Go sử dụng thuật toán marking hiệu quả để giữ độ trễ thấp
-- Rust loại bỏ hoàn toàn nhu cầu GC nhờ ownership model
-- Việc lựa chọn ngôn ngữ ảnh hưởng đáng kể đến hiệu suất và trải nghiệm người dùng
+~~**Điểm chính:**~~
+~~- ZGC giúp giảm thời gian tạm dừng của ứng dụng xuống dưới 10ms~~
+~~- Go sử dụng thuật toán marking hiệu quả để giữ độ trễ thấp~~
+~~- Rust loại bỏ hoàn toàn nhu cầu GC nhờ ownership model~~
+~~- Việc lựa chọn ngôn ngữ ảnh hưởng đáng kể đến hiệu suất và trải nghiệm người dùng~~
 
 ## [Mới Trong Java 25: Generational Shenandoah GC Không Còn Là Tính Năng Thử Nghiệm](https://theperfparlor.com/2025/09/14/new-in-java25-generational-shenandoah-gc-is-no-longer-experimental/)
 
@@ -108,7 +108,7 @@ Việc sắp xếp giúp xác định các vấn đề như các mục nhập tr
 
 ## [Đánh Giá 26 Năm Thay Đổi Của Java](https://neilmadden.blog/2025/09/12/rating-26-years-of-java-changes/)
 
-[Bài viết nhìn lại chặng đường 26 năm phát triển của ngôn ngữ lập trình Java, đánh giá các thay đổi quan trọng trong ngôn ngữ và thư viện cốt lõi. Tác giả bắt đầu từ Java 1.1.8 năm 1999 và điểm qua những cải tiến lớn như Bộ sưu tập (Collections Framework) ("4/10"), Generics ("8/10"), và java.util.concurrent ("10/10").
+Bài viết nhìn lại chặng đường 26 năm phát triển của ngôn ngữ lập trình Java, đánh giá các thay đổi quan trọng trong ngôn ngữ và thư viện cốt lõi. Tác giả bắt đầu từ Java 1.1.8 năm 1999 và điểm qua những cải tiến lớn như Bộ sưu tập (Collections Framework) ("4/10"), Generics ("8/10"), và java.util.concurrent ("10/10").
 
 Một số tính năng bị chỉ trích như NIO ("0/10") và Streams ("1/10"), trong khi Records ("10/10") và UTF-8 mặc định ("10/10") được khen ngợi. Bài viết bao quát các phiên bản đến Java 25, nhấn mạnh xu hướng phát hành theo thời gian và các tính năng như pattern matching, virtual threads, và mã hóa hậu lượng tử. Mô-đun (Modules) nhận đánh giá rất tệ "-10/10". Bài viết kết thúc bằng lời mời gọi thảo luận về các đánh giá chủ quan này.
 
