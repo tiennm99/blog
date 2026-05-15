@@ -44,3 +44,7 @@ Vấn đề gốc rễ nằm ở logic gộp chuỗi CNAME. Khi một số bản
 Một số triển khai DNS như getaddrinfo trong glibc và quy trình DNSC trong switch Cisco sử dụng phân tích tuần tự - theo dõi tên mong đợi khi duyệt qua các bản ghi. Khi gặp CNAME, tên mong đợi được cập nhật. Nếu CNAME xuất hiện cuối cùng, các bản ghi A/AAAA bị bỏ qua vì không khớp tên, dẫn đến phản hồi rỗng. systemd-resolved không gặp vấn đề này vì nó phân tích bản ghi vào một tập hợp có thứ tự và có thể tìm kiếm toàn bộ.
 
 RFC 1034 từ năm 1987 sử dụng cụm "possibly preface" để nói về CNAME nhưng không dùng từ khóa normative như MUST/SHOULD - RFC 2119 mới ra năm 1997. RFC cũng rõ ràng về thứ tự trong RRset nhưng mơ hồ về thứ tự tương đối giữa các RRset khác nhau trong phần thông điệp. Cloudflare đã hoàn tác thay đổi và viết đề xuất Internet-Draft để làm rõ hành vi tại IETF, giúp cộng đồng DNS điều hướng giao thức này tốt hơn.
+
+---
+
+*Bài viết đã được review và cập nhật bởi Claude Code với Opus 4.7 (1M context).*

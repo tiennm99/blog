@@ -182,3 +182,7 @@ Tác giả kết luận rằng cả những người quá lạc quan và quá bi
 ## Bonus: Vài ảnh hay ho đến từ [ByteByteGo](https://bytebytego.com/)
 
 ![Object Oriented Programming Fundamentals](https://substack-post-media.s3.amazonaws.com/public/images/5321bec2-0079-47e2-92e9-1cd9950227c8_2250x2624.png)
+
+---
+
+*Bài viết đã được review và cập nhật bởi Claude Code với Opus 4.7 (1M context).*

@@ -5,7 +5,7 @@ tags: ["AI-Assisted", "Cursor", "Prompt Engineering", "AI Coding", "System Promp
 categories: ["Newsletter"]
 ---
 
-*Do vẫn chưa xong phần task với Claude Code + Serena MCP trong bài hôm qua, nên nay lại quay lại chuỗi Newsletter nhàm chán với AI nhé!! Mời bạn thưởng thức Newsletter #38 hehe :>*
+*Do vẫn chưa xong phần task với ~~Claude Code + Serena MCP~~ trong bài hôm qua, nên nay lại quay lại chuỗi Newsletter nhàm chán với AI nhé!! Mời bạn thưởng thức Newsletter #38 hehe :>*
 
 ## [9 Lessons From Cursor's System Prompt](https://byteatatime.dev/posts/cursor-prompt-analysis/)
 
@@ -86,3 +86,7 @@ Bài viết bắt đầu bằng việc nhắc nhở rằng SQL là ngôn ngữ k
 Một điểm quan trọng mà tác giả nhấn mạnh là các mô hình chi phí không phải lúc nào cũng dự đoán chính xác về số lượng tuple, thời gian thực thi, và hiệu suất truy vấn. Ví dụ, full table scan có thể hiệu quả hơn index scan khi cần truy xuất một phần lớn dữ liệu, và PostgreSQL có thể điều chỉnh động loại join dựa trên điều kiện lọc.
 
 Các chiến lược tối ưu hóa thực tế bao gồm sử dụng index một cách chiến lược, phân tích hiệu suất thực tế so với ước tính, tận dụng extended statistics để cải thiện kế hoạch truy vấn, và sử dụng các công cụ như Plan Explorer để trực quan hóa việc thực thi truy vấn. Tác giả kết luận rằng "extended statistics có thể giúp có được dự đoán tốt hơn" về hiệu suất truy vấn và tối ưu hóa mô hình chi phí, nhấn mạnh việc tối ưu hóa truy vấn vừa là kỹ năng kỹ thuật vừa là "nghệ thuật" đòi hỏi hiểu biết tinh tế về hành vi hệ thống cơ sở dữ liệu.
+
+---
+
+*Bài viết đã được review và cập nhật bởi Claude Code với Opus 4.7 (1M context).*

@@ -64,3 +64,7 @@ Tác giả khuyến nghị khám phá các chỉ mục tìm kiếm mã nguồn m
 ![How Clean Architecture Works?](https://substack-post-media.s3.amazonaws.com/public/images/db0481bd-807d-419c-a71e-913a13cb855e_1280x808.jpeg)
 ![How does Docker Work?](https://substack-post-media.s3.amazonaws.com/public/images/ba21dab1-a39e-4c3a-a815-08d8be09de49_2360x2492.png)
 ![A Guide to Top Caching Strategies](https://substack-post-media.s3.amazonaws.com/public/images/7f891bc7-8657-47ff-8974-efcfcc0f0bb1_2250x2624.png)
+
+---
+
+*Bài viết đã được review và cập nhật bởi Claude Code với Opus 4.7 (1M context).*

@@ -76,3 +76,7 @@ Nghiên cứu cho thấy sự chênh lệch đáng kể trong hoạt động tá
 Những lập trình viên có kinh nghiệm không chỉ thực hiện nhiều tái cấu trúc hơn mà còn áp dụng đa dạng kỹ thuật tái cấu trúc khác nhau, tuy nhiên lại ít ghi chép lại các tác vụ này hơn so với junior developer. Đây là một paradox thú vị cho thấy "công việc vô hình" thường được thực hiện bởi những người có kinh nghiệm nhất nhưng lại ít được ghi nhận.
 
 Matusov đưa ra lời khuyên thực tế cho các engineering leader: biến tái cấu trúc thành thực hành của toàn team thay vì chỉ dựa vào senior developer, công nhận "công việc vô hình" như tái cấu trúc trong đánh giá hiệu suất, khuyến khích documentation ở tất cả cấp độ kinh nghiệm, và sử dụng pair programming cùng review checklist để hỗ trợ việc tái cấu trúc. Kết luận quan trọng là tái cấu trúc chủ yếu được thực hiện bởi senior developer, nhưng team cần tạo ra cấu trúc khuyến khích tất cả mọi người tham gia bảo trì chất lượng mã.
+
+---
+
+*Bài viết đã được review và cập nhật bởi Claude Code với Opus 4.7 (1M context).*

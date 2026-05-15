@@ -72,3 +72,7 @@ Tiếp theo là DNS resolution - browser không thể gửi request đến tên 
 Response sau đó được parse để xây dựng DOM tree - parser chuyển tags như `<h1>` thành tokens và builds a DOM tree. DOM là in-memory model của document, là shared contract giữa HTML parser, CSS selector engine, và JavaScript runtime. Cuối cùng là rendering pipeline: Layout (reflow) để calculate sizes và positions, Paint để fill pixels, rồi Composite để stitch layers together trên GPU. Mỗi loại change triggers các stages khác nhau - changing colors thường chỉ repaint, trong khi changing sizes forces layout và paint để recompute.
 
 **Đánh giá**: *Không biết vì sao nhưng mình cảm thấy bài viết này khá tốt^^ Chắc do hôm qua update lại file Agents.md, để cố gắng phát huy :)))*
+
+---
+
+*Bài viết đã được review và cập nhật bởi Claude Code với Opus 4.7 (1M context).*

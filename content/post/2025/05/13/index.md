@@ -208,51 +208,6 @@ Tác giả chia sẻ câu chuyện cá nhân:
 
 Bài viết đưa ra một góc nhìn mới về việc theo đuổi sự nghiệp trong lĩnh vực phát triển phần mềm. Thay vì chạy theo các xu hướng công nghệ mới, việc làm chủ các công nghệ đã trưởng thành như Java có thể mang lại sự ổn định và thành công lâu dài. Câu chuyện của tác giả là một minh chứng cho thấy đôi khi những lựa chọn "không phổ biến" lại có thể là lựa chọn tốt nhất cho sự nghiệp.
 
-## [Refining var-handles in Valhalla](https://cr.openjdk.org/~jrose/values/atomic-value-access-api.html)
-
-Trong bài viết này, John Rose trình bày một phân tích sâu về việc cải tiến var-handles trong Project Valhalla, đặc biệt là về cách xử lý atomic value access trong Java.
-
-### Những điểm chính:
-
-- **Vấn đề với var-handles hiện tại**:
-  - Cần đồng bộ hóa giữa interpreter, JIT và JNI
-  - Phải tuân thủ các quy tắc layout của biến
-  - Xử lý phức tạp với các loại layout khác nhau
-
-- **Các loại layout trong Valhalla**:
-  - `REFERENCE`: Con trỏ quản lý (32 hoặc 64 bit, có thể null)
-  - `NON_ATOMIC_FLAT`: Biến có nhiều trường con, thường lớn hơn 64 bit
-  - `ATOMIC_FLAT`: Biến đóng gói trong 64 bit, có thể có các trường con nhỏ
-  - `NULLABLE_ATOMIC_FLAT`: Tương tự ATOMIC_FLAT nhưng có thêm null flag
-  - `NULLABLE_NON_ATOMIC_FLAT`: Tương tự NON_ATOMIC_FLAT với null flag
-  - `BUFFERED`: Trường hợp đặc biệt cho giá trị read-only
-
-- **Đề xuất cải tiến**:
-  - Thêm các phương thức truy vấn mới:
-    - `isFlat`: Kiểm tra biến có được flatten hay không
-    - `isConsistent`: Kiểm tra tính atomic của biến
-    - `isPortableAtomic`: Kiểm tra khả năng hỗ trợ CAS
-  - Thêm phương thức `copyConsistentValue` để xử lý atomic operations
-  - Tách biệt logic xử lý field và memory transfer
-
-- **Lợi ích của cải tiến**:
-  - Code dễ hiểu và bảo trì hơn
-  - Tách biệt rõ ràng giữa các concerns
-  - Hỗ trợ tốt hơn cho GC
-  - Xử lý atomic operations an toàn hơn
-
-### Ứng dụng thực tế:
-
-Tác giả cung cấp pseudocode chi tiết cho việc triển khai:
-- Xử lý get/set value
-- Quản lý buffer riêng tư
-- Xử lý các trường con
-- Đảm bảo tính atomic
-
-### Kết luận:
-
-Việc cải tiến var-handles trong Valhalla là một bước quan trọng để hỗ trợ tốt hơn cho value types trong Java. Cách tiếp cận mới giúp đơn giản hóa việc xử lý atomic operations và cải thiện hiệu suất của ứng dụng. Tuy nhiên, đây là một API phức tạp và chỉ nên được sử dụng bởi các developer có kinh nghiệm.
-
 ## [Cấu hình domain .localhost cho ứng dụng local](https://inclouds.space/localhost-domains)
 
 Trong bài viết này, Charles Chamberlain chia sẻ một cách tiếp cận thú vị để cấu hình các domain tùy chỉnh cho các ứng dụng web chạy trên máy local, thay vì phải nhớ và gõ các port khác nhau.
@@ -347,3 +302,7 @@ Năm 2025 đánh dấu bước ngoặt quan trọng trong phát triển AI, chuy
 ## Vài ảnh hay ho đến từ [ByteByteGo](https://bytebytego.com/)
 
 ![A Cheatsheet On OOP Design Patterns](https://substack-post-media.s3.amazonaws.com/public/images/65279cf0-3266-445d-852b-a45d6ac9afa4_2250x2862.png)
+
+---
+
+*Bài viết đã được review và cập nhật bởi Claude Code với Opus 4.7 (1M context).*

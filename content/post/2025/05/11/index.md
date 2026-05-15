@@ -234,3 +234,7 @@ Bài viết này bổ sung thêm một loại tối ưu hóa quan trọng mà t�
 ## Bonus 2: Vài video hay ho đến từ [ByteByteGo](https://bytebytego.com/)
 
 [Why Everyone's Talking About MCP?](https://www.youtube.com/watch?v=_d0duu3dED4)
+
+---
+
+*Bài viết đã được review và cập nhật bởi Claude Code với Opus 4.7 (1M context).*

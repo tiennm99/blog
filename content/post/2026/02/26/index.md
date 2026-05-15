@@ -72,3 +72,7 @@ Bài viết chia sẻ một quy trình thực tế để sử dụng AI coding h
 **Images:**
 ![Git pull vs. git fetch](https://substack-post-media.s3.amazonaws.com/public/images/625a6789-c32d-4a27-a5f5-c174fb920637_2360x2960.png)
 ![Top Authentication Techniques](https://substackcdn.com/image/fetch/$s_!-Lov!,w_1100,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fcf928dd3-de16-4605-a702-762df269c9f2_2250x2862.png)
+
+---
+
+*Bài viết đã được review và cập nhật bởi Claude Code với Opus 4.7 (1M context).*

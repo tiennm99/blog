@@ -136,3 +136,7 @@ Kiểm tra va chạm O(n²) cặp đôi nhưng có early-exit mạnh: đường 
 
 **Videos:**
 [What is a Data Lakehouse?](https://www.youtube.com/watch?v=taSmwcqdkQk)
+
+---
+
+*Bài viết đã được review và cập nhật bởi Claude Code với Opus 4.7 (1M context).*

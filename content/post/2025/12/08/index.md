@@ -5,7 +5,7 @@ tags: ["AI-Assisted", "Technology", "Engineering", "Leadership", "Scaling", "Inf
 categories: ["Newsletter"]
 ---
 
-*Dạo gần đây mấy model free trên OpenRouter đang không ổn định lắm, lúc dùng được lúc thì không. Sẵn còn vài $ credit trên đấy nên nay tranh thủ bào nốt rồi chuyển qua iFlow dùng hẳn (cho đến khi iFlow hết free :v). Mời bạn thưởng thức Newsletter #65. Bài viết này được thực hiện bởi [Claude Code](https://github.com/anthropics/claude-code), [Claude Code Router](https://github.com/musistudio/claude-code-router), [OpenRouter](https://openrouter.ai) & [Anthropic: Claude Sonnet 4.5](https://openrouter.ai/anthropic/claude-sonnet-4.5) (model 'xịn' nhe hehe)*
+*~~Dạo gần đây mấy model free trên OpenRouter đang không ổn định lắm, lúc dùng được lúc thì không. Sẵn còn vài $ credit trên đấy nên nay tranh thủ bào nốt rồi chuyển qua iFlow dùng hẳn (cho đến khi iFlow hết free :v).~~ Mời bạn thưởng thức Newsletter #65. ~~Bài viết này được thực hiện bởi [Claude Code](https://github.com/anthropics/claude-code), [Claude Code Router](https://github.com/musistudio/claude-code-router), [OpenRouter](https://openrouter.ai) & [Anthropic: Claude Sonnet 4.5](https://openrouter.ai/anthropic/claude-sonnet-4.5) (model 'xịn' nhe hehe)~~*
 
 ## [Scaling Engineering Teams: Lessons from Google, Facebook, and Netflix](https://greenido.wordpress.com/2025/09/25/scaling-engineering-teams-lessons-from-google-facebook-and-netflix)
 
@@ -130,3 +130,7 @@ Core message là taste emerges từ việc try multiple approaches, discard what
 ![Which Protocols Run on TCP and UDP](https://substackcdn.com/image/fetch/$s_!ZdF6!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fef416976-ae0f-48f5-86e1-0189c0b9be88_2360x2664.png)
 
 **Đánh giá:** *Uầy, đang process url cuối thì hit limit mất rồi. Ban đầu còn 2$ (cỡ 52k) mà process được có 7 urls, tính ra là ~7.5k vnđ/bài. Khá là chát đó chứ :v Mà kết quả thì cũng chưa ưng ý lắm, vẫn còn lạm dụng tiếng Anh. Nhìn vào bài cuối là thấy rõ. Cũng có thể là vấn đề ở file AGENTS.md của mình, để mình optimize lại sau vậy. Dù gì thì mình cũng đã đạt được mục đích là tranh thủ bào để quay lại xài đồ free rồi :v Hẹn gặp lại các bạn trong các bài viết tiếp theo :D.*
+
+---
+
+*Bài viết đã được review và cập nhật bởi Claude Code với Opus 4.7 (1M context).*

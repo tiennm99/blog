@@ -5,7 +5,7 @@ tags: ["AI-Assisted"]
 categories: ["Newsletter"]
 ---
 
-*Mời bạn thưởng thức Newsletter #69. Bài viết này được thực hiện bởi [Claude Code](https://github.com/anthropics/claude-code), [Claude Code Router](https://github.com/musistudio/claude-code-router), [iFlow Open Platform](https://platform.iflow.cn) & GLM-4.6*
+*Mời bạn thưởng thức Newsletter #69. ~~Bài viết này được thực hiện bởi [Claude Code](https://github.com/anthropics/claude-code), [Claude Code Router](https://github.com/musistudio/claude-code-router), [iFlow Open Platform](https://platform.iflow.cn) & GLM-4.6~~*
 
 ## [Netflix Xây Dựng Đồ Thị Phân Phân Phối Thời Gian Thực (Phần 1)](https://netflixtechblog.com/how-and-why-netflix-built-a-real-time-distributed-graph-part-1-ingesting-and-processing-data-80113e124acc)
 
@@ -111,3 +111,7 @@ Zero-copy là kỹ thuật truyền file từ đĩa đến network socket mà gi
 ![HTTP vs. HTTPS](https://substackcdn.com/image/fetch/$s_!JV_9!,w_1100,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fa95473e0-5a68-43c6-841e-540a6b198d6d_2360x2960.png)
 ![Forward Proxy versus Reverse Proxy](https://substackcdn.com/image/fetch/$s_!5rGo!,w_550,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fac99f98d-49a7-4933-b06f-8da0901d210e_800x939.gif)
 ![Things Every Developer Should Know: Concurrency is NOT parallelism](https://substackcdn.com/image/fetch/$s_!qtkE!,w_550,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F4646c2e2-a6fb-44e7-a091-73fcbd8fa498_800x1040.gif)
+
+---
+
+*Bài viết đã được review và cập nhật bởi Claude Code với Opus 4.7 (1M context).*

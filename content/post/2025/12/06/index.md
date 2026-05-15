@@ -5,9 +5,9 @@ tags: ["AI-Assisted", "Technology", "caching", "database", "performance"]
 categories: ["Newsletter"]
 ---
 
-*Mời bạn thưởng thức Newsletter #64. Bài viết này được thực hiện bởi [Claude Code](https://github.com/anthropics/claude-code), [Claude Code Router](https://github.com/musistudio/claude-code-router), [iFlow Open Platform](https://platform.iflow.cn) & Qwen3-Coder-Plus[^qwen3-coder-plus]*
+*Mời bạn thưởng thức Newsletter #64. ~~Bài viết này được thực hiện bởi [Claude Code](https://github.com/anthropics/claude-code), [Claude Code Router](https://github.com/musistudio/claude-code-router), [iFlow Open Platform](https://platform.iflow.cn) & Qwen3-Coder-Plus[^qwen3-coder-plus]~~*
 
-[^qwen3-coder-plus]: Qwen3-Coder-480B-A35B-Instruct
+[^qwen3-coder-plus]: ~~Qwen3-Coder-480B-A35B-Instruct~~
 
 ## [Caching](https://planetscale.com/blog/caching)
 
@@ -32,30 +32,6 @@ Caching đóng vai trò cực kỳ quan trọng trong việc xây dựng các h�
 - Hit rate cần được tối đa hóa để tăng hiệu quả
 - Hai nguyên lý quan trọng là Temporal và Spatial Locality
 - LRU là chiến lược thay thế phổ biến trong ngành
-
-## [Big O Notation](https://samwho.dev/big-o/)
-
-Big O notation là cách để mô tả hiệu suất thuật toán bằng cách phân tích cách thời gian thực thi thay đổi khi kích thước đầu vào tăng lên. Đây là một khái niệm rất quan trọng trong lập trình và khoa học máy tính, giúp các lập trình viên đánh giá và so sánh hiệu quả của các thuật toán khác nhau.
-
-Big O notation mô tả mối quan hệ giữa đầu vào của một hàm và thời gian thực tế (wall-clock time) của nó. Khi phân tích độ phức tạp thời gian, Big O notation (trừ khi có ghi chú khác) sẽ mô tả tình huống xấu nhất có thể xảy ra.
-
-Các loại độ phức tạp thời gian phổ biến bao gồm:
-
-**O(1) - Constant time (Thời gian hằng số)**: Thời gian thực thi không tăng khi kích thước đầu vào tăng. Đây là trường hợp lý tưởng khi thuật toán luôn thực hiện số lượng phép toán không đổi bất kể đầu vào có lớn đến mức nào.
-
-**O(log n) - Logarithmic time (Thời gian logarit)**: Ở mỗi bước, thuật toán sẽ loại bỏ một phần khả năng có thể xảy ra. Đây là đặc điểm của các thuật toán chia để trị như tìm kiếm nhị phân (binary search).
-
-**O(n) - Linear time (Thời gian tuyến tính)**: Thời gian thực thi tăng tỷ lệ thuận với kích thước đầu vào. Nếu đầu vào tăng gấp đôi thì thời gian thực thi cũng tăng gấp đôi.
-
-**O(n²) - Quadratic time (Thời gian bậc hai)**: Thời gian thực thi tăng theo bình phương của kích thước đầu vào. Đây thường là kết quả của các vòng lặp lồng nhau, cần tránh khi làm việc với tập dữ liệu lớn.
-
-Những lỗi phổ biến mà lập trình viên thường gặp là tạo ra các vòng lặp lồng nhau gây ra độ phức tạp bậc hai hoặc sử dụng các phép toán có độ phức tạp O(n) bên trong vòng lặp. Luôn kiểm thử mã nguồn trước và sau khi thay đổi để đảm bảo rằng bạn thực sự đang cải thiện hiệu suất.
-
-**Điểm chính:**
-- Big O notation giúp đánh giá hiệu suất thuật toán theo kích thước đầu vào
-- Các loại phổ biến: O(1), O(log n), O(n), O(n²)
-- Big O thường mô tả trường hợp xấu nhất
-- Tránh lồng vòng lặp để giảm độ phức tạp
 
 ## [Consistent Hashing](https://eli.thegreenplace.net/2025/consistent-hashing/)
 
@@ -203,3 +179,7 @@ Tác giả lưu ý rằng nhiều khái niệm đã xuất hiện trong nhiều 
 ![Top Service-to-Service Communication Patterns](https://substackcdn.com/image/fetch/$s_!uW-M!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fd7494e44-82ec-43fc-bd7f-eabea7776dd1_2250x2624.png)
 
 *Đánh giá: Nhìn chung đây vẫn là một bài viết tương đối chất lượng. Tuy nhiên phần tóm tắt còn hơi dài, sẽ cần cải thiện thêm*
+
+---
+
+*Bài viết đã được review và cập nhật bởi Claude Code với Opus 4.7 (1M context).*

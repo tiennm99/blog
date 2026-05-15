@@ -5,7 +5,7 @@ tags: [ "AI-Assisted", "Productivity", "Career", "Paul Graham", "Essay" ]
 categories: [ "Newsletter" ]
 ---
 
-*Bài post được thực hiện bởi Cline + Kimi K2. Mời bạn thưởng thức Newsletter #45.*
+*~~Bài post được thực hiện bởi Cline + Kimi K2.~~ Mời bạn thưởng thức Newsletter #45.*
 
 ## [The Best](https://www.paulgraham.com/best.html)
 
@@ -198,3 +198,7 @@ Câu trả lời thực sự nằm ở giả thuyết thứ hai, nhưng có mộ
 Bài học cho các lập trình viên: Những thuật ngữ mà chúng ta sử dụng hàng ngày thường có nguồn gốc lịch sử phong phú. Việc hiểu nguồn gốc của các khái niệm giúp chúng ta hiểu sâu sắc hơn về cách thức hoạt động của máy tính và lý do tại sao các ngôn ngữ lập trình được thiết kế theo cách hiện tại.
 
 *Sau khi trải nghiệm lại với nhiều url thì có vẻ Cline + Kimi K2 đã tràn context, sau khi compact thì quên mất một số context, vì vậy rất dễ bị nhầm, cần nhắc lại nhiều lần về việc đây là Windows nên phải dùng các lệnh PowerShell hỗ trợ thay vì các lệnh Linux. Ngoài ra còn có vài sai lầm ngớ ngẩn như tóm tắt... sai url :>*
+
+---
+
+*Bài viết đã được review và cập nhật bởi Claude Code với Opus 4.7 (1M context).*

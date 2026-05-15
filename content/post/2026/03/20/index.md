@@ -107,3 +107,7 @@ Kết quả thú vị nhất là quản lý theo kết quả — định nghĩa 
 - Tự trị hoàn toàn gây ra trùng lặp công việc và hỗn loạn khi thiếu ràng buộc
 - Tác nhân AI có khả năng mở rộng vai trò tự nhiên khi được trao quyền tự quyết theo mục tiêu
 - Điều phối tác nhân AI phản chiếu quản lý nhóm người: nhóm giỏi cần mục tiêu rõ ràng, không cần vi quản lý
+
+---
+
+*Bài viết đã được review và cập nhật bởi Claude Code với Opus 4.7 (1M context).*

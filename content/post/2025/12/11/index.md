@@ -5,7 +5,7 @@ tags: ["AI-Assisted", "debugging", "open-source", "programming-languages", "syst
 categories: ["Newsletter"]
 ---
 
-*Mời bạn thưởng thức Newsletter #68. Bài viết này được thực hiện bởi [Claude Code](https://github.com/anthropics/claude-code), [Claude Code Router](https://github.com/musistudio/claude-code-router), [iFlow Open Platform](https://platform.iflow.cn) & GLM-4.6 (Bài này mình config CCR dùng nhiều models trên iFlow Platform)*
+*Mời bạn thưởng thức Newsletter #68. ~~Bài viết này được thực hiện bởi [Claude Code](https://github.com/anthropics/claude-code), [Claude Code Router](https://github.com/musistudio/claude-code-router), [iFlow Open Platform](https://platform.iflow.cn) & GLM-4.6 (Bài này mình config CCR dùng nhiều models trên iFlow Platform)~~*
 
 ## [Conscious Debugging: 10 Chiến lược Hiệu quả Thực sự Hoạt động 🐛](https://thetshaped.dev/p/conscious-debugging-10-effective-debugging-strategies-debug-like-pro)
 
@@ -160,3 +160,7 @@ Các nền tảng cho việc thực thi hiệu quả bao gồm: sự rõ ràng v
 
 **Videos:**
 [Why is Kafka Popular?](https://www.youtube.com/watch?v=7_wkWQ9rB5I)
+
+---
+
+*Bài viết đã được review và cập nhật bởi Claude Code với Opus 4.7 (1M context).*

@@ -7,24 +7,6 @@ categories: ["Newsletter"]
 
 *Mời bạn thưởng thức Newsletter #81.*
 
-## [Những thách thức của soft delete](https://atlas9.dev/blog/soft-delete.html)
-
-Bài viết này phân tích các vấn đề thường gặp khi triển khai soft delete (xóa mềm) trong cơ sở dữ liệu, đặc biệt là khi sử dụng cột `archived_at`. Tác giả chia sẻ kinh nghiệm thực tế về việc cách tiếp cận này có vẻ đơn giản ban đầu nhưng lại tạo ra nhiều phức tạp theo thời gian.
-
-Vấn đề chính là các bảng cơ sở dữ liệu sẽ chứa lượng lớn dữ liệu "chết" - những bản ghi đã bị xóa nhưng vẫn lưu lại. 99% các bản ghi lưu trữ sẽ không bao giờ được đọc lại, nhưng lại chiếm dụng không gian lưu trữ và làm chậm các truy vấn. Điều này đặc biệt nghiêm trọng khi có hàng triệu bản ghi chết tích tụ theo thời gian.
-
-Ngoài ra, việc có dữ liệu sống và dữ liệu lưu trữ nằm cạnh nhau trong cùng một bảng còn làm phức tạp hóa truy vấn, chỉ mục, và cả mã nguồn ứng dụng. Các nhà phát triển phải luôn nhớ lọc bỏ dữ liệu lưu trữ, và có nguy cơ dữ liệu cũ bị rò rỉ vào kết quả khi không mong muốn.
-
-Bài viết đề xuất một số giải pháp thay thế:
-
-- **Sử dụng trigger trong PostgreSQL**: Trigger tự động sao chép bản ghi sang bảng lưu trữ riêng trước khi xóa. Cách này giúp giữ bảng chính sạch sẽ, dữ liệu lưu trữ được tách biệt, dễ dàng dọn dẹp sau khoảng thời gian retention.
-
-- **Application-level archiving**: Gửi sự kiện khi xóa bản ghi để một service khác lưu trữ dữ liệu vào S3 hoặc nơi khác. Ưu điểm là ứng dụng chính đơn giản hơn, nhưng nhược điểm là phức tạp hơn về infrastructure và có thể mất dữ liệu nếu có bug.
-
-- **WAL-based Change Data Capture**: Sử dụng Write-Ahead Log của PostgreSQL để phát ra các thay đổi và lưu trữ bản ghi bị xóa. Phương pháp này không cần thay đổi mã nguồn hay thêm trigger, nhưng đòi hỏi operational complexity cao hơn.
-
-Tác giả kết luận rằng nếu bắt đầu dự án mới và cần soft delete, anh sẽ ưu tiên sử dụng trigger-based approach vì sự cân bằng giữa độ đơn giản và hiệu quả.
-
 ## [Câu hỏi phỏng vấn Java - Tại sao không nên sử dụng static initializer?](https://javabulletin.substack.com/p/java-interview-question-why-you-should)
 
 Bài viết giải thích lý do tại sao developer nên tránh sử dụng static initializer (`static { ... }`) trong Java, mặc dù nó có vẻ tiện lợi cho việc khởi tạo dữ liệu tĩnh phức tạp.
@@ -234,3 +216,7 @@ Tuy nhiên, bài viết tập trung vào bài học về việc lập trình v�
 ![HTTP/2 over TCP vs HTTP/3 over QUIC](https://substackcdn.com/image/fetch/$s_!4V7B!,w_1100,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fc9589feb-6f59-4971-9da4-26712d1a2ca1_2360x2960.png)
 ![How Git Really Stores Your Data](https://substackcdn.com/image/fetch/$s_!ihnd!,w_1100,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Ffe954900-e8d8-40d0-a4b1-2f8e14068882_2360x2960.png)
 ![How NAT Works](https://substackcdn.com/image/fetch/$s_!5SHy!,w_1100,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fcbddfb5f-a652-4749-b0b9-210102774f4f_2360x2960.png)
+
+---
+
+*Bài viết đã được review và cập nhật bởi Claude Code với Opus 4.7 (1M context).*

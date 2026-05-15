@@ -102,3 +102,7 @@ Tác giả nhấn mạnh rằng các quy tắc này phù hợp nhất với các
 Trang qr.blinry.org là một nguồn tài liệu giáo dục tuyệt vời giải thích cách thức hoạt động của mã QR một cách dễ hiểu. Website hướng dẫn cách đọc và giải mã QR code bằng tay mà không cần máy tính hay điện thoại, giúp người dùng hiểu sâu về cấu trúc bên trong của mã QR.
 
 Trang web trình bày các thành phần cơ bản của QR code như finder pattern (mẫu tìm kiếm), separator (đường phân cách), alignment pattern (mẫu căn chỉnh), và quiet zone (vùng trống). Ngoài ra, nó còn giải thích chi tiết về mask pattern (mẫu mặt nạ), encoding (mã hóa), và các phương pháp sửa lỗi. Đây là tài liệu hữu ích cho những ai muốn tìm hiểu về công nghệ QR code từ góc độ kỹ thuật.
+
+---
+
+*Bài viết đã được review và cập nhật bởi Claude Code với Opus 4.7 (1M context).*

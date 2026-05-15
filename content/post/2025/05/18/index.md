@@ -114,3 +114,5 @@ Bài viết trên ShiftMag chia sẻ góc nhìn chân thực về hành trình v
 - Văn hóa không đổ lỗi (blameless culture) giúp nhân viên cảm thấy an toàn khi đặt câu hỏi và thừa nhận điểm yếu
 
 ---
+
+*Bài viết đã được review và cập nhật bởi Claude Code với Opus 4.7 (1M context).*

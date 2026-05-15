@@ -5,7 +5,7 @@ tags: [ "AI-Assisted", "Lập trình", "Tái cấu trúc mã" ]
 categories: [ "Newsletter" ]
 ---
 
-*Bài này mình thay đổi tool sử dụng thành Qwen Code và model sử dụng là Qwen 3 Coder, dùng qua api của OpenRouter. Thử nghiệm một tí xem thế nào. Mời bạn thưởng thức Newsletter #43.*
+*~~Bài này mình thay đổi tool sử dụng thành Qwen Code và model sử dụng là Qwen 3 Coder, dùng qua api của OpenRouter. Thử nghiệm một tí xem thế nào.~~ Mời bạn thưởng thức Newsletter #43.*
 
 ## [Augmented Coding: Beyond the Vibes](https://tidyfirst.substack.com/p/augmented-coding-beyond-the-vibes)
 
@@ -386,3 +386,7 @@ Việc xóa tests không có nghĩa là chống lại testing - đó là việc 
 Quan trọng nhất, điều này đòi hỏi một mindset shift: từ "càng nhiều tests càng tốt" sang "càng ít tests có ý nghĩa càng tốt".
 
 *Mình thấy Cline+Kimi K2 cũng gen dài (có thể do prompt như đã nói ở trên), nhưng được cái là response khá nhanh, vì vậy ít ra không phải đợi lâu. Phần prompt mình sẽ thử cải thiện trong tương lai "xa". Còn mai mình sẽ thử Roo Code + Qwen 3 Coder/Kimi K2 trước. Hẹn gặp lại các bạn ở post ngày mai nhé*
+
+---
+
+*Bài viết đã được review và cập nhật bởi Claude Code với Opus 4.7 (1M context).*

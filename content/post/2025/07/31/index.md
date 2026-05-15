@@ -70,3 +70,7 @@ Hristo Bogoev tạo ra SQL Noir, một trò chơi giáo dục web sáng tạo gi
 Trò chơi này có gameplay tương tác nơi người dùng giải quyết tội phạm và bí ẩn bằng cách sử dụng các truy vấn SQL, chạy hoàn toàn trên trình duyệt web và được phân loại là trò chơi giáo dục. SQL Noir tập trung vào việc làm cho việc học SQL trở nên hấp dẫn và thú vị hơn thông qua phương pháp tiếp cận dựa trên câu chuyện.
 
 Mục tiêu của trò chơi là biến đổi việc học SQL từ định dạng tutorial truyền thống thành trải nghiệm nhập vai, giải quyết vấn đề giúp làm cho các kỹ năng cơ sở dữ liệu dễ tiếp cận và thú vị hơn. Đây là một ví dụ xuất sắc của gamification trong giáo dục công nghệ, cho thấy cách các khái niệm kỹ thuật phức tạp có thể được truyền đạt thông qua trải nghiệm học tập tương tác và giải trí.
+
+---
+
+*Bài viết đã được review và cập nhật bởi Claude Code với Opus 4.7 (1M context).*

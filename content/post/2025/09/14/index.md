@@ -236,3 +236,7 @@ Họ sẽ phán xét chúng ta giống như chúng ta phán xét những ngườ
 ## Bonus: Một vài video hay ho
 
 [All New Java Language Features Since Java 21 #RoadTo25](https://www.youtube.com/watch?v=X0-TGhktFnE)
+
+---
+
+*Bài viết đã được review và cập nhật bởi Claude Code với Opus 4.7 (1M context).*

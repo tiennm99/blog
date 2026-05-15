@@ -128,3 +128,7 @@ Tác giả trình bày các khái niệm cốt lõi như Domain/Subdomain, Bound
 ## Bonus: Vài ảnh hay ho đến từ [ByteByteGo](https://bytebytego.com/)
 
 ![Monolith vs Microservices vs Modular Monoliths](https://substack-post-media.s3.amazonaws.com/public/images/66d12ddc-2abe-4a98-82d5-ee177e80487c_1470x1600.png)
+
+---
+
+*Bài viết đã được review và cập nhật bởi Claude Code với Opus 4.7 (1M context).*

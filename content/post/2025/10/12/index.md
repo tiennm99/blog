@@ -19,17 +19,6 @@ Tác giả nhấn mạnh rằng "các cách cài đặt khác nhau cho cùng m�
 - Hỗ trợ cả kiểu dữ liệu có thể và không thể so sánh, cho phép tùy chỉnh thông qua các tùy chọn hàm số
 - Tính dễ đọc của diff phụ thuộc lớn vào các kỹ thuật hậu xử lý như các thuật toán heuristic
 
-## [Periodic Table of System Design Principles](https://github.com/jarulraj/periodic-table)
-
-Repository GitHub này trình bày một "bảng tuần hoàn" các nguyên tắc thiết kế hệ thống định kỳ. Mục tiêu là cung cấp một từ vựng ngắn gọn, chia sẻ để hiểu và thảo luận về các lựa chọn thiết kế trong các lĩnh vực khác nhau của hệ thống máy tính. Repository chứa một bộ sưu tập gồm hơn 40 nguyên tắc thiết kế mục đích chung được tổ chức thành các nhóm theo chủ đề như Cấu trúc, Hiệu quả, Ngữ nghĩa, v.v. Mỗi nguyên tắc có một ký hiệu ngắn để tham khảo nhanh chóng và tập trung vào "ý định thiết kế" thay vì các cơ chế cụ thể.
-
-**Điểm chính:**
-- Bộ sưu tập gồm hơn 40 nguyên tắc thiết kế hệ thống mục đích chung
-- Các nguyên tắc được tổ chức thành các nhóm theo chủ đề (Cấu trúc, Hiệu quả, Ngữ nghĩa, v.v.)
-- Mỗi nguyên tắc có ký hiệu ngắn để tham khảo nhanh
-- Tập trung vào "ý định thiết kế" thay vì các cơ chế cụ thể
-- Ví dụ được lấy từ các bài báo có ảnh hưởng trong các lĩnh vực hệ thống
-
 ## [Building a Resilient Data Platform with Write-Ahead Log at Netflix](https://netflixtechblog.com/building-a-resilient-data-platform-with-write-ahead-log-at-netflix-127b6712359a)
 
 Bài viết từ Netflix Tech Blog về việc xây dựng một nền tảng dữ liệu có độ bền cao bằng cách sử dụng kỹ thuật Write-Ahead Log (WAL). Netflix chia sẻ cách họ thiết kế và triển khai hệ thống WAL để đảm bảo tính toàn vẹn và độ tin cậy của dữ liệu trong môi trường phân tán quy mô lớn.
@@ -50,18 +39,6 @@ Bài viết so sánh hai nền tảng phát triển web hàng đầu - Vercel v�
 - Mỗi nền tảng có cách tiếp cận phù hợp với mô hình kinh doanh của họ
 - Cả hai nền tảng đang hội tụ khi đối mặt với các yêu cầu mới về điện toán biên và AI
 - Cả hai đều đang cạnh tranh để giành được sự quan tâm của cộng đồng nhà phát triển
-
-## [90%](https://lucumr.pocoo.org/2025/9/29/90-percent/)
-
-Armin Ronacher chia sẻ rằng khoảng 90% mã code cho một dự án hạ tầng gần đây tại công ty mới của ông được tạo ra bởi AI. Ông nhấn mạnh rằng mặc dù AI đóng vai trò lớn, ông vẫn giữ trách nhiệm về kiến trúc, độ tin cậy và chất lượng mã code cuối cùng. Bài viết đề cập đến việc sử dụng các công cụ như Claude và Codex để tạo code, ưa thích SQL thô hơn là ORMs và sử dụng thiết kế OpenAPI-first. AI giúp tăng tốc nghiên cứu, tái cấu trúc và thiết lập hạ tầng. Tuy nhiên, bất chấp tính hữu ích của nó, AI có thể tạo ra mã code kém chất lượng nếu không được hướng dẫn cẩn thận; sự giám sát của con người là điều cần thiết. Cách tiếp cận này cho phép thử nghiệm nhanh hơn và hệ thống tốt hơn được tổ chức.
-
-**Điểm chính:**
-- AI được sử dụng rộng rãi để tạo code, đặc biệt với các công cụ như Claude và Codex
-- Ưa thích SQL thô hơn là ORMs và sử dụng thiết kế OpenAPI-first
-- AI giúp tăng tốc nghiên cứu, tái cấu trúc và thiết lập hạ tầng
-- Mặc dù hữu ích, AI có thể tạo ra code kém nếu không có hướng dẫn cẩn thận; cần giám sát của con người
-- Cách tiếp cận này cho phép thử nghiệm nhanh hơn và hệ thống tốt hơn được tổ chức
-- Code được tạo bởi AI đã trở thành hiện thực cho nhiều lập trình viên, nhưng cần phán đoán lành nghề để vẫn hiệu quả và an toàn
 
 ## [Distracting Software Engineers Is Way More Harmful Than Most Managers Think](https://workweave.dev/blog/distracting-software-engineers-is-more-harmful-than-managers-think-even-in-the-ai-times)
 
@@ -137,3 +114,7 @@ Built in 1043990 ms
 *Nên mình quyết định đổi sang sử dụng url gốc thay vì thêm hình vào repo. Điểm yếu là có thể ảnh sẽ bị gỡ, và không được xử lý để giảm kích thước, làm tăng thời gian load lên. Mình sẽ cố gắng update lại các ảnh trong các post trước đây luôn (vào một ngày nào đó đẹp trời và mình siêng năng :3)*
 
 ![TCP vs UDP](https://substackcdn.com/image/fetch/$s_!KwvJ!,w_1100,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F8ac50da4-feb8-4781-8bb2-e74244aa889f_2250x2814.png)
+
+---
+
+*Bài viết đã được review và cập nhật bởi Claude Code với Opus 4.7 (1M context).*

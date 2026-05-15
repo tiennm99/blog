@@ -5,7 +5,7 @@ tags: ["AI-Assisted", "Technology", "DevOps", "Monorepo", "Software-Engineering"
 categories: ["Newsletter"]
 ---
 
-*Do dạo này tình hình tài chính cá nhân không tốt lắm, nên mình quyết định huỷ Claude Subscription, và do đó không còn dùng Claude Code nữa. Hiện tại mình đang dùng Roo Code với model Z.AI: GLM 4.5 Air từ OpenRouter. Hi vọng bài viết đủ chất lượng làm hài lòng các bạn. Mời bạn thưởng thức Newsletter #54.*
+*~~Do dạo này tình hình tài chính cá nhân không tốt lắm, nên mình quyết định huỷ Claude Subscription, và do đó không còn dùng Claude Code nữa. Hiện tại mình đang dùng Roo Code với model Z.AI: GLM 4.5 Air từ OpenRouter.~~ Hi vọng bài viết đủ chất lượng làm hài lòng các bạn. Mời bạn thưởng thức Newsletter #54.*
 
 ## [Controlling the Rollout of Large-Scale Monorepo Changes](https://www.uber.com/en-IN/blog/controlling-the-rollout-of-large-scale-monorepo-changes/)
 
@@ -117,3 +117,7 @@ Bài viết từ Avi khám phá các khái niệm và thực tiễn quan trọng
 ![The Testing Pyramid](https://substack-post-media.s3.amazonaws.com/public/images/c34a8b8b-feff-4473-9eb1-dd399f5a81eb_2360x2664.jpeg)
 
 *Tổng kết thì mình thấy đợt thử nghiệm này cũng khá ổn. Có điều bài viết còn khá dài dòng và đôi chỗ còn sai sót từ ngữ tiếng Việt một chút. Với cái giá free thì quá được :))) Hẹn gặp lại các bạn trong các bài viết tới.*
+
+---
+
+*Bài viết đã được review và cập nhật bởi Claude Code với Opus 4.7 (1M context).*

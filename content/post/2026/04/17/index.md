@@ -105,3 +105,7 @@ Obie Fernandez, CTO tại ZAR, chia sẻ cách anh biến Claude Code thành m�
 ![CLI vs MCP](https://substackcdn.com/image/fetch/$s_!70vn!,w_1100,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F71e475fe-34fa-44f8-a564-02f946456588_2508x3042.png)
 ![Comparing 5 Major Coding Agents](https://substackcdn.com/image/fetch/$s_!INti!,w_1100,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F29e4bde9-65ea-4d95-bc99-1802e4f74448_2484x3002.png)
 ![JWT Visualized](https://substackcdn.com/image/fetch/$s_!ujMG!,w_1100,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F1fd50345-af15-4236-ab47-73225d1aa660_800x803.jpeg)
+
+---
+
+*Bài viết đã được review và cập nhật bởi Claude Code với Opus 4.7 (1M context).*

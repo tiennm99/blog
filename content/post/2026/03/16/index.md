@@ -72,3 +72,7 @@ Stripe nhấn mạnh rằng thanh toán yêu cầu độ chính xác 100% — đ
 ![How OAuth 2 Works](https://substackcdn.com/image/fetch/$s_!ipY-!,w_1100,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F2931d40e-cce8-4ecd-a520-b5f80679c315_2528x3626.png)
 ![How Distributed Tracing Works at the High Level?](https://substackcdn.com/image/fetch/$s_!Ehq9!,w_1100,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F4f417b56-c66c-45fd-8308-dab9af381ced_2252x2752.png)
 ![Top 4 API Gateway Use Cases](https://substackcdn.com/image/fetch/$s_!4UUW!,w_1100,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F0357d808-5db9-4e18-8262-8dee58fd697d_2508x3000.jpeg)
+
+---
+
+*Bài viết đã được review và cập nhật bởi Claude Code với Opus 4.7 (1M context).*

@@ -152,3 +152,7 @@ Tác giả quyết định build road system của riêng mình vì curiosity v�
 
 **Hình ảnh:**
 ![12 Architectural Concepts Developers Should Know](https://substackcdn.com/image/fetch/w_1100,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F7712ce10-d199-49ef-94f9-e983e47a92d9_2360x2852.png)
+
+---
+
+*Bài viết đã được review và cập nhật bởi Claude Code với Opus 4.7 (1M context).*

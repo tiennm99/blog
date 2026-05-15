@@ -99,19 +99,6 @@ Bộ kỹ năng bao gồm nhiều chủ đề: phong cách mã nguồn, cấu tr
 - Đo lường tỷ lệ giảm lỗi cho từng kỹ năng (ví dụ: phong cách mã nguồn giảm 40%, tài liệu giảm 53%)
 - Triết lý: kỹ năng AI do AI tạo ra là vô dụng — cần con người chỉnh sửa và đánh giá
 
-## [Những điều tôi tin](https://leerob.com/beliefs)
-
-Lee Robinson (VP trải nghiệm nhà phát triển tại Cursor) chia sẻ tuyên ngôn cá nhân gồm mười một nguyên tắc nghề nghiệp cốt lõi. Xuyên suốt bài viết là triết lý ưu tiên hành động: giao sản phẩm nhanh quan trọng hơn chiến lược hoàn hảo, đội nhỏ vượt trội đội lớn, và các đội ứng dụng AI sẽ vượt xa tổ chức truyền thống. Robinson nhấn mạnh việc áp dụng sản phẩm quan trọng hơn việc triển khai mã nguồn.
-
-Về phát triển bản thân, tác giả tin rằng thành công đến từ sự quyết tâm chứ không phải tài năng bẩm sinh, và cải thiện đều đặn mỗi ngày là con đường phát triển sự nghiệp. Về giao tiếp, viết rõ ràng phản ánh tư duy rõ ràng — mọi chuyên gia đều cần cải thiện kỹ năng viết. Về lãnh đạo, ảnh hưởng quan trọng hơn chức danh, và chất lượng tuyển dụng là điều phân biệt lãnh đạo giỏi với lãnh đạo xuất sắc.
-
-**Điểm chính:**
-- Ưu tiên giao sản phẩm nhanh — đội nhỏ ứng dụng AI sẽ vượt xa tổ chức truyền thống
-- Thành công đến từ sự quyết tâm và cải thiện đều đặn, không phải tài năng bẩm sinh
-- Viết rõ ràng phản ánh tư duy rõ ràng — lãnh đạo phải loại bỏ sự mơ hồ
-- Bản mẫu truyền đạt tốt hơn tài liệu — chỉ quảng bá dự án mà mình thực sự tin tưởng
-- Luôn giả định thiện ý — đối xử với phê bình như phản hồi có giá trị
-
 ## [Những thủ thuật lập trình nhỏ rất quan trọng](https://will-keleher.com/posts/small-programming-tricks-matter/)
 
 Will Keleher lập luận rằng năng suất kỹ sư được cải thiện đáng kể nhờ tích lũy những "mẩu kiến thức nhỏ" — các kỹ thuật và công cụ cụ thể không cần nền tảng sâu nhưng cải thiện công việc hàng ngày ngay lập tức. Tác giả chia sẻ nhiều ví dụ thực tế: tìm kiếm mờ lịch sử lệnh bằng `fzf` với Ctrl+R, chạy truy vấn `SELECT` không cần `FROM` để kiểm thử nhanh, dùng `EXPLAIN ANALYZE` để tối ưu truy vấn, biểu thức chính quy với ranh giới từ (`\b`), và "Git pickaxe" (`git log -S`) để tìm commit thêm/xóa chuỗi cụ thể.
@@ -137,3 +124,7 @@ Phần phổ quát bao gồm các phím tắt chỉnh sửa dòng lệnh (Ctrl+W
 - `set -e` và `set -u` là hai dòng an toàn bắt buộc khi viết shell script
 - Mở rộng dấu ngoặc nhọn: `cp file{,.bak}` sao lưu, `mkdir -p project/{src,tests,docs}` tạo nhiều thư mục
 - Triết lý: chọn một thủ thuật, ép bản thân dùng một tuần, rồi chọn thủ thuật tiếp theo
+
+---
+
+*Bài viết đã được review và cập nhật bởi Claude Code với Opus 4.7 (1M context).*

@@ -351,3 +351,7 @@ Scott Logic đề xuất một cách tiếp cận thực tiễn để hiện đ�
 **Ví dụ thực tiễn**: Thay vì viết lại toàn bộ hệ thống đăng ký khách hàng, có thể sử dụng CDC để bắt sự kiện "khách hàng mới được tạo" và kích hoạt các dịch vụ hiện đại như gửi email chào mừng, cập nhật CRM, hoặc phân tích dữ liệu.
 
 Cách tiếp cận này mang lại sự cân bằng giữa việc tận dụng đầu tư hiện có và phát triển khả năng mới, giúp tổ chức tiến hóa kiến trúc một cách có kiểm soát và hiệu quả.
+
+---
+
+*Bài viết đã được review và cập nhật bởi Claude Code với Opus 4.7 (1M context).*

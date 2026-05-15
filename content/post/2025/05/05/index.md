@@ -160,3 +160,7 @@ Những điểm chính:
 ## Bonus 2: Vài video hay ho đến từ [ByteByteGo](https://bytebytego.com/)
 
 [What Are AI Agents Really About?](https://www.youtube.com/watch?v=eHEHE2fpnWQ)
+
+---
+
+*Bài viết đã được review và cập nhật bởi Claude Code với Opus 4.7 (1M context).*

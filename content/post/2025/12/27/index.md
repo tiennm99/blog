@@ -5,7 +5,7 @@ tags: ["AI-Assisted"]
 categories: ["Newsletter"]
 ---
 
-*Lâu rồi chưa pay 1 cái gì liên quan đến AI (từ thời Claude subscription để thử nghiệm Claude Code). Nay mới mua thử gói [GLM Coding Plan](https://z.ai/subscribe) của [Z.ai](https://z.ai) để trải nghiệm. Gói này hiện cho phép dùng model mới nhất của Z.ai là GLM-4.7. Từ nay mình sẽ tranh thủ dùng [Claude Code](https://claude.com/product/claude-code) với [Z.ai API](https://z.ai/model-api) để 'bào' cho xứng đáng số tiền bỏ ra^^. Mời bạn thưởng thức Newsletter #74.*
+*~~Lâu rồi chưa pay 1 cái gì liên quan đến AI (từ thời Claude subscription để thử nghiệm Claude Code). Nay mới mua thử gói [GLM Coding Plan](https://z.ai/subscribe) của [Z.ai](https://z.ai) để trải nghiệm. Gói này hiện cho phép dùng model mới nhất của Z.ai là GLM-4.7. Từ nay mình sẽ tranh thủ dùng [Claude Code](https://claude.com/product/claude-code) với [Z.ai API](https://z.ai/model-api) để 'bào' cho xứng đáng số tiền bỏ ra^^.~~ Mời bạn thưởng thức Newsletter #74.*
 
 ## [Goodbye Microservices: From 100s of problem children to 1 superstar](https://www.twilio.com/en-us/blog/developers/best-practices/goodbye-microservices)
 
@@ -155,3 +155,7 @@ Good API design = stable foundation, poor design = bottleneck.
 ![Hub, Switch, & Router Explained](https://substackcdn.com/image/fetch/$s_!BXWB!,w_1100,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F09a8b52f-2b80-4762-92cd-c5d18d5a7a3c_2360x2960.png)
 
 **Đánh giá**: *Z.ai xử lý 1 url tương đối nhanh, ban đầu mình cũng thấy khá ok, tuy nhiên thêm càng nhiều thì có vẻ càng bị dài & lạm dụng tiếng Anh. Mình đã phải yêu cầu tóm gọn lại một xíu. Hi vọng sẽ cải thiện được sau (vì lỡ mua rùi và non-refundable hiuhiu)*
+
+---
+
+*Bài viết đã được review và cập nhật bởi Claude Code với Opus 4.7 (1M context).*

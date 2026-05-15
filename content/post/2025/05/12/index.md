@@ -409,58 +409,6 @@ Bài viết kết thúc với thông điệp: Nếu bạn đã từng tự hỏi
 
 ---
 
-## [How Seasoned Developers Can Achieve Great Results with AI Coding Agents](https://manuel.kiessling.net/2025/03/31/how-seasoned-developers-can-achieve-great-results-with-ai-coding-agents/)
-
-Bài viết khám phá cách các kỹ sư phần mềm kỳ cựu có thể tận dụng hiệu quả các trợ lý lập trình AI như Cursor để đạt được kết quả vượt trội trong công việc phát triển phần mềm.
-
-### Ba biện pháp chính để làm việc hiệu quả với AI
-
-1. **Yêu cầu được cấu trúc tốt**
-   - Cung cấp thông tin chi tiết về phạm vi dự án
-   - Mô tả rõ ràng kiến trúc hệ thống hiện có
-   - Xác định vai trò của từng thành phần trong hệ thống
-   - Đưa ra các yêu cầu cụ thể về chức năng
-
-2. **Công cụ bảo vệ tự động**
-   - Tích hợp các công cụ kiểm tra chất lượng mã nguồn
-   - Sử dụng kiểm thử tự động để xác minh chức năng
-   - Áp dụng phân tích tĩnh để đảm bảo tuân thủ tiêu chuẩn
-   - Cung cấp lệnh kiểm thử để AI tự xác minh kết quả
-
-3. **Tạo khung làm việc với file**
-   - Tạo các file stub với cấu trúc cơ bản
-   - Xác định rõ namespace và cấu trúc thư mục
-   - Cung cấp các mẫu code cơ bản
-   - Đảm bảo tính nhất quán trong toàn bộ dự án
-
-### Kết quả thực tế
-
-- **Tăng tốc phát triển**: Tạo giao diện người dùng hoàn chỉnh trong vài phút
-- **Giảm lỗi**: Tự động tuân thủ các tiêu chuẩn mã hóa
-- **Mở rộng kiến thức**: Phát triển hiệu quả ngay cả với công nghệ mới
-- **Tự động hóa**: AI có thể tự động thêm tính năng mới dựa trên yêu cầu đơn giản
-
-### Trường hợp điển hình: Giám sát nền tảng
-
-Một ví dụ thực tế là ứng dụng "Platform Problem Monitoring" được phát triển bằng Python để giám sát hệ thống ELK-stack, mặc dù tác giả không có nhiều kinh nghiệm với Python. Ứng dụng này được tạo ra hoàn toàn bởi AI dựa trên:
-
-- Tài liệu yêu cầu chi tiết (371 dòng)
-- Cấu trúc thư mục rõ ràng
-- Tích hợp các công cụ kiểm tra chất lượng tự động
-- Tự động hóa quy trình kiểm thử
-
-### Kết luận
-
-Những kỹ sư phần mềm giàu kinh nghiệm có lợi thế đặc biệt khi làm việc với AI nhờ:
-1. Khả năng xác định và mô tả vấn đề chính xác
-2. Hiểu biết sâu về kiến trúc phần mềm
-3. Kinh nghiệm trong việc đánh giá chất lượng mã nguồn
-4. Khả năng hướng dẫn AI đi đúng hướng
-
-Bài viết khẳng định rằng thay vì thay thế các kỹ sư phần mềm, AI đang trở thành công cụ mạnh mẽ giúp họ làm việc hiệu quả hơn, đặc biệt khi kết hợp với kinh nghiệm và kiến thức chuyên môn sâu rộng.
-
----
-
 ## [On the Biology of a Large Language Model](https://transformer-circuits.pub/2025/attribution-graphs/biology.html)
 
 Nghiên cứu đột phá từ Anthropic về cơ chế hoạt động bên trong mô hình ngôn ngữ lớn Claude 3.5 Haiku, sử dụng phương pháp theo dõi mạch (circuit tracing) để lập bản đồ cách thức xử lý thông tin của AI.
@@ -514,3 +462,7 @@ Nghiên cứu đột phá từ Anthropic về cơ chế hoạt động bên tron
 ### Kết luận
 
 Nghiên cứu này cung cấp cái nhìn sâu sắc chưa từng có về cách thức hoạt động bên trong của các mô hình ngôn ngữ lớn. Bằng cách lập bản đồ các mạch thần kinh nhân tạo, các nhà nghiên cứu đã tiết lộ cách AI xử lý thông tin, đưa ra quyết định và tạo ra phản hồi. Những hiểu biết này không chỉ có giá trị học thuật mà còn mở ra hướng phát triển mới cho các mô hình AI an toàn, đáng tin cậy và hiệu quả hơn trong tương lai.
+
+---
+
+*Bài viết đã được review và cập nhật bởi Claude Code với Opus 4.7 (1M context).*

@@ -5,7 +5,7 @@ tags: ["AI-Assisted", "Build Systems", "Configuration Languages", "Agentic Codin
 categories: ["Newsletter"]
 ---
 
-*Bài viết này mình đã thử cải thiện AGENTS.md lại. Kết quả mình tự đánh giá ở cuối bài nhé. Mời bạn thưởng thức Newsletter #67.*
+*~~Bài viết này mình đã thử cải thiện AGENTS.md lại. Kết quả mình tự đánh giá ở cuối bài nhé.~~ Mời bạn thưởng thức Newsletter #67.*
 
 ## [Build better software to build software better](https://slack.engineering/build-better-software-to-build-software-better/)
 
@@ -80,3 +80,7 @@ Bài viết giải thích rõ về Rule of Three trong refactoring - một heuri
 [Design a Web Crawler: FAANG Interview Question](https://www.youtube.com/watch?v=6u25GckPhLU)
 
 **Đánh giá:** *Process url tạm ổn, đã bớt dùng tiếng Anh nhưng lại có một chút... tiếng Trung :| Process phần bonus thì hơi lủng. Chủ yếu là do khi gửi url AI thì AI khó mà tìm ra được tiêu đề phù hợp, thậm chí còn ghi trật lất không liên quan nữa.*
+
+---
+
+*Bài viết đã được review và cập nhật bởi Claude Code với Opus 4.7 (1M context).*

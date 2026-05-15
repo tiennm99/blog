@@ -119,3 +119,7 @@ Thách thức chính trong các công ty công nghệ lớn không phải là k�
 Tải trọng nhận thức mà các kỹ sư phải đối mặt là rất lớn - họ phải liên tục xem xét các tương tác phức tạp giữa các tính năng, dẫn đến tình huống "việc hoàn thành bất kỳ thứ gì đều thực sự rất, rất khó". Đây không phải là dấu hiệu của sự không hiệu quả mà là kết quả của việc quản lý cẩn thận các hệ sinh thái công nghệ ngày càng phức tạp.
 
 Lý do kinh tế cũng đóng vai trò quan trọng: các tính năng biên có thể tạo ra doanh thu đáng kể. "1% doanh thu của Google Ads hoặc AWS S3 là một số tiền lớn", vì vậy các công ty được khời gợi để thêm độ phức tạp nhằm tối đa hóa lợi nhuận tài chính. Điều này tạo ra một chu kỳ mà độ phức tạp tiếp tục gia tăng, và sự chậm chạp cảm nhận được thực chất là việc điều hướng chiến lược trong bối cảnh công nghệ phức tạp với mức độ rủi ro kinh tế đáng kể.
+
+---
+
+*Bài viết đã được review và cập nhật bởi Claude Code với Opus 4.7 (1M context).*

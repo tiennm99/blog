@@ -120,3 +120,7 @@ Các tác nhân sẽ tiếp tục là tiêu đề chính. Chúng ta sẽ thấy 
 - Vibe Coding trưởng thành: kỹ sư tập trung vào xem xét/đánh giá/hình thành khái niệm, biết mã trở thành yếu tố phân biệt
 - "AI rác" tạo thị trường cao cấp cho nội dung con người; các nền tảng áp dụng tiêu chuẩn siêu dữ liệu "Được ký bởi Con người"
 - Bằng chứng sinh trắc học về nhân tính trở thành yêu cầu để chống spam tác nhân
+
+---
+
+*Bài viết đã được review và cập nhật bởi Claude Code với Opus 4.7 (1M context).*

@@ -5,7 +5,7 @@ tags: ["AI-Assisted", "Technology", "UUID", "Database", "Java", "Java25", "JDK",
 categories: ["Newsletter"]
 ---
 
-*Hôm nay mình lại thử nghiệm tiếp [OpenCode](https://opencode.ai/). Kết quả là khi mình gửi 1 url thì nó... stuck luôn :v. Vì vậy mình chuyển qua thử GitHub Copilot, với OpenRouter. Kết quả ban đầu cho thấy GitHub Copilot không detect được Newsletter số trước, nó đánh lại từ #1. Và tags cũng ghi chữ thường, không đúng format mình expect. Mình không ưng ý nên xoá đi, thử lại với OpenAI Codex, kết quả thì để đọc được trang web nó đã hỏi mình n thứ, vả lại còn đòi chạy mấy lệnh python để đọc web, xong cài package bằng pip trực tiếp nữa. Mình thấy không oke với chuyện này nên chuyển qua xài thử [Claude Code Router](https://github.com/musistudio/claude-code-router), chạy Claude Code nhưng với API từ OpenRouter, với model `xAI: Grok 4 Fast`. Bài đầu tiên thấy tóm tắt khá dài. Thôi thì mời bạn thưởng thức Newsletter #56 nhé.*
+*~~Hôm nay mình lại thử nghiệm tiếp [OpenCode](https://opencode.ai/). Kết quả là khi mình gửi 1 url thì nó... stuck luôn :v. Vì vậy mình chuyển qua thử GitHub Copilot, với OpenRouter. Kết quả ban đầu cho thấy GitHub Copilot không detect được Newsletter số trước, nó đánh lại từ #1. Và tags cũng ghi chữ thường, không đúng format mình expect. Mình không ưng ý nên xoá đi, thử lại với OpenAI Codex, kết quả thì để đọc được trang web nó đã hỏi mình n thứ, vả lại còn đòi chạy mấy lệnh python để đọc web, xong cài package bằng pip trực tiếp nữa. Mình thấy không oke với chuyện này nên chuyển qua xài thử [Claude Code Router](https://github.com/musistudio/claude-code-router), chạy Claude Code nhưng với API từ OpenRouter, với model `xAI: Grok 4 Fast`. Bài đầu tiên thấy tóm tắt khá dài.~~ Thôi thì mời bạn thưởng thức Newsletter #56 nhé.*
 
 ## [I love UUID, I hate UUID](https://blog.epsiolabs.com/i-love-uuid-i-hate-uuid)
 
@@ -167,3 +167,7 @@ Kết luận với call to action, bài viết kêu gọi focus trên ngôn ng�
 - Phê phán hype: Ưu tiên language/compiler cải thiện hơn billion investment misguided.
 
 *Đánh giá sơ bộ thì combo này ổn áp, chạy ổn định, không hỏi prompt linh tinh để xử lý việc đọc WebFetch, kết quả thì hơi dài dòng, nhiều lỗi vặt, mình sẽ thử thêm một số model khác trong các bài viết sắp tới để tìm được 1 combo vừa free lại chất lượng :D*
+
+---
+
+*Bài viết đã được review và cập nhật bởi Claude Code với Opus 4.7 (1M context).*

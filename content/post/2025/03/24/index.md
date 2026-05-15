@@ -259,3 +259,7 @@ Kiến trúc này đặc biệt phù hợp cho:
 ## Bonus 3: Vài hình ảnh hay ho đến từ [DesignGurus](https://designgurus.io/)
 
 ![System Design Master Template](https://www.designgurus.io/_next/image?url=https%3A%2F%2Fstorage.googleapis.com%2Fdownload%2Fstorage%2Fv1%2Fb%2Fdesigngurus-prod.appspot.com%2Fo%2Fee5726e8e29469477b999c100%3Fgeneration%3D1726724098184989%26alt%3Dmedia&w=3840&q=75&dpl=dpl_3Rx6M949Pc1cQKT3QTdj87FcKNdg)
+
+---
+
+*Bài viết đã được review và cập nhật bởi Claude Code với Opus 4.7 (1M context).*

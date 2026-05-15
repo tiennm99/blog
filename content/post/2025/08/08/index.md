@@ -219,3 +219,7 @@ Val Town mang đến một quan điểm thú vị và có phần gây tranh cãi
 **Phương pháp được khuyến nghị**: Sử dụng các công cụ AI như "Townie" một cách chiến lược, duy trì "kiểm soát chặt chẽ" với mã do AI tạo ra, ưu tiên hiểu biết và học hỏi hơn việc tạo ra nhanh chóng.
 
 Bài viết nhấn mạnh rằng mặc dù vibe coding có thể hữu ích, nhưng nó không phải là sự thay thế cho chuyên môn kỹ thuật phần mềm thực sự. Đây là một lời nhắc nhở cân bằng về việc sử dụng AI trong phát triển phần mềm.
+
+---
+
+*Bài viết đã được review và cập nhật bởi Claude Code với Opus 4.7 (1M context).*

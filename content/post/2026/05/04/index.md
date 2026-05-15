@@ -141,3 +141,7 @@ Hai nguyên tắc nổi bật nhất: **"Skill Issue" Reframe** — khi agent m�
 - Mỗi quy tắc trong `AGENTS.md` phải xuất phát từ sự cố thực tế, không phải phòng ngừa suy đoán
 - Giữ file hướng dẫn dưới 60 dòng — như checklist phi công, không phải tài liệu toàn diện
 - Tách agent lập kế hoạch khỏi agent thực thi để tránh tự đánh giá thiên lệch
+
+---
+
+*Bài viết đã được review và cập nhật bởi Claude Code với Opus 4.7 (1M context).*

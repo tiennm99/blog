@@ -95,3 +95,7 @@ Bài viết cũng thảo luận về các yếu tố ảnh hưởng đến hiệ
 ## Bonus: Vài ảnh hay ho đến từ [ByteByteGo](https://bytebytego.com/)
 
 ![API Protocols 101](https://substack-post-media.s3.amazonaws.com/public/images/ad16adef-3082-42bd-ac99-9a569ad2e33b_2250x2624.png)
+
+---
+
+*Bài viết đã được review và cập nhật bởi Claude Code với Opus 4.7 (1M context).*

@@ -5,7 +5,7 @@ tags: ["AI-Assisted", "Technology", "Software Architecture", "Books", "Engineeri
 categories: ["Newsletter"]
 ---
 
-*Dùng api free của iFlow cũng nhiều rồi, nên nay mình dùng thử cli của iFlow - [iFlow CLI](https://github.com/iflow-ai/iflow-cli) xem sao, model được dùng là GLM-4.6. Mời bạn thưởng thức Newsletter #66.*
+*~~Dùng api free của iFlow cũng nhiều rồi, nên nay mình dùng thử cli của iFlow - [iFlow CLI](https://github.com/iflow-ai/iflow-cli) xem sao, model được dùng là GLM-4.6.~~ Mời bạn thưởng thức Newsletter #66.*
 
 ## [The Ultimate List of Best Software Architecture Books (2026)](https://www.workingsoftware.dev/the-ultimate-list-of-software-architecture-books/?&aid=recmw058VtqAJCyyK)
 
@@ -107,3 +107,7 @@ Den Delimarsky lập luận về sự cần thiết của việc trở thành "f
 - High agency - attitude "We'll figure this out - let's get to work" - là yếu tố khác biệt quan trọng
 
 **Đánh giá**: *Phần đầu iFlow CLI làm khá tốt, nhưng mà càng về sau thì càng lạm dụng tiếng Anh nhiều. Điểm cộng là iFlow CLI có thể access nhiều url, bằng cách bypass sử dụng proxy (Tuy nhiên proxy của Trung Quốc nên nhìn cũng hơi ghê). Trong quá trình sử dụng thì cũng thấy nhiều dòng để toàn tiếng Trung Quốc làm khó hiểu và hơi rén :v Mình sẽ cố gắng cải thiện AGENTS.md và thử lại sau.*
+
+---
+
+*Bài viết đã được review và cập nhật bởi Claude Code với Opus 4.7 (1M context).*

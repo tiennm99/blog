@@ -5,7 +5,7 @@ tags: ["AI-Assisted", "Technology", "Career", "Agentic AI", "Professional Develo
 categories: ["Newsletter"]
 ---
 
-*Bài viết này được thực hiện bởi [Claude Code Router](https://github.com/musistudio/claude-code-router) với model `qwen3-coder` chạy trên [iFlow Platform](https://platform.iflow.cn/docs/api-mode). Mời bạn thưởng thức Newsletter #57.*
+*~~Bài viết này được thực hiện bởi [Claude Code Router](https://github.com/musistudio/claude-code-router) với model `qwen3-coder` chạy trên [iFlow Platform](https://platform.iflow.cn/docs/api-mode).~~ Mời bạn thưởng thức Newsletter #57.*
 
 ## [Agentic AI và Sự Thay Đổi Nghề Nghiệp](https://medium.com/@elliotgraebert/agentic-ai-has-changed-my-career-2c6e3dd29708)
 
@@ -130,3 +130,7 @@ Một số tính năng bị chỉ trích như NIO ("0/10") và Streams ("1/10"),
 ![Understanding Load Balancers: Traffic Management at Scale](https://substackcdn.com/image/fetch/$s_!4Uyj!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F1a1213e2-86cb-4fa8-bf72-e37ffe0da44d_2250x2624.heic)
 
 *Nhìn chung thì nội dung ngắn gọn, mình tương đối hài lòng, chắc khoảng 80% so với Claude Code với Claude models, nhưng vì miễn phí nên là mình rất ưng ý :)))*
+
+---
+
+*Bài viết đã được review và cập nhật bởi Claude Code với Opus 4.7 (1M context).*

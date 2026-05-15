@@ -142,3 +142,7 @@ Tìm kiếm: memtable → segments newest-first. Compaction giữ small. LSM ưu
 - Sparse indices + sorting: Fast lookup/range, memory efficient.
 - Memtable + WAL + SSTables: Crash-safe, write-optimized.
 - LSM Trees: Base cho KV stores scale (LevelDB, RocksDB, DynamoDB).
+
+---
+
+*Bài viết đã được review và cập nhật bởi Claude Code với Opus 4.7 (1M context).*

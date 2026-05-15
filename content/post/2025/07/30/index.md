@@ -86,3 +86,7 @@ Repository sử dụng định dạng `.mdc` (Markdown with Configuration) độ
 Đặc điểm nổi bật là các quy tắc được thiết kế để có thể tái sử dụng giữa các dự án, rõ ràng và có thể thực hiện được, đồng thời tương thích với cả Cursor và Claude Code. Hướng dẫn sử dụng đơn giản: với Cursor, copy file `.mdc` vào `.cursor/rules/`, với Claude Code thì import quy tắc vào `CLAUDE.md`.
 
 Triết lý cốt lõi được thể hiện qua việc "định dạng thống nhất có nghĩa là bạn có thể sử dụng cùng file quy tắc trong cả hai công cụ mà không cần sửa đổi". Repository hướng tới việc tạo ra một phương pháp chuẩn hóa và cộng tác trong việc làm việc với AI coding assistant, giúp cộng đồng chia sẻ và cải thiện các best practice một cách có hệ thống.
+
+---
+
+*Bài viết đã được review và cập nhật bởi Claude Code với Opus 4.7 (1M context).*

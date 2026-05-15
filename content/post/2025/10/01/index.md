@@ -5,7 +5,7 @@ tags: ["AI-Assisted", "Technology", "Productivity", "Decision Making", "Software
 categories: ["Newsletter"]
 ---
 
-*Hôm nay mình có thử gắn [Claude Code Router](https://github.com/musistudio/claude-code-router) với model `openai/gpt-oss-120b` trên [NVIDIA NIM](https://build.nvidia.com/) nhưng bị lỗi gì đấy, sau cùng thì không được output gì. Vì vậy chúng ta lại quay lại với model `qwen3-coder` chạy trên [iFlow Platform](https://platform.iflow.cn/docs/api-mode) nhé. Mời bạn thưởng thức Newsletter #58.*
+*~~Hôm nay mình có thử gắn [Claude Code Router](https://github.com/musistudio/claude-code-router) với model `openai/gpt-oss-120b` trên [NVIDIA NIM](https://build.nvidia.com/) nhưng bị lỗi gì đấy, sau cùng thì không được output gì. Vì vậy chúng ta lại quay lại với model `qwen3-coder` chạy trên [iFlow Platform](https://platform.iflow.cn/docs/api-mode) nhé.~~ Mời bạn thưởng thức Newsletter #58.*
 
 ## [How Software Engineers Make Productive Decisions (without slowing the team down)](https://strategizeyourcareer.com/p/how-software-engineers-make-productive-decisions)
 
@@ -202,3 +202,7 @@ Claude Code đại diện cho sự thay đổi hướng tới kỹ thuật phầ
 ![Access Control Clearly Explained](https://substack-post-media.s3.amazonaws.com/public/images/26b55058-17ae-453f-8463-4d4e717e489b_2360x2920.png)
 ![How Git Reset Works?](https://substack-post-media.s3.amazonaws.com/public/images/00912640-ad5f-4ec7-aefa-e5eecf67dab0_3000x3900.png)
 ![Apache Kafka Explained (At the high level)](https://substack-post-media.s3.amazonaws.com/public/images/43b73739-a975-42af-999d-8676b1605ed2_3000x3900.png)
+
+---
+
+*Bài viết đã được review và cập nhật bởi Claude Code với Opus 4.7 (1M context).*

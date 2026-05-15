@@ -61,3 +61,7 @@ Kế hoạch optimize: pre-check constants, inline functions, reduce branches. J
 - JIT thắng bằng inline/precompute constants, loại dispatch cho linear code.
 
 *Bài viết này mình dùng CCR với model `x-ai/grok-4.1-fast:free`. Có vẻ chưa tốt lắm, nhiều phần còn tiếng Anh thô. Mình sẽ cố gắng cải thiện hơn*
+
+---
+
+*Bài viết đã được review và cập nhật bởi Claude Code với Opus 4.7 (1M context).*

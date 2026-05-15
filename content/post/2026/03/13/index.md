@@ -33,23 +33,6 @@ Một bài viết ngắn nhưng thú vị từ matklad về việc wrap code và
 - VS Code và Emacs đều không hỗ trợ tốt relative wrapping
 - Soft-wrapping không thể wrap đúng nếu không hiểu ý nghĩa text (ví dụ markdown lists)
 
-## [How I Use Claude Code](https://boristane.com/blog/how-i-use-claude-code/)
-
-Boris Tane chia sẻ workflow 9 tháng sử dụng Claude Code với nguyên tắc cốt lõi: **không bao giờ để Claude viết code cho đến khi đã review và approve plan**. Workflow gồm 3 phase:
-
-**Phase 1 - Research:** Yêu cầu Claude đọc sâu codebase và viết báo cáo vào `research.md`. Từ khóa quan trọng: "deeply", "in great details", "intricacies" - để Claude không chỉ đọc hời hợt.
-
-**Phase 2 - Planning:** Tạo `plan.md` chi tiết, sau đó thêm inline notes để sửa, reject approaches, thêm constraints. Chu trình annotation này lặp 1-6 lần với guard "don't implement yet".
-
-**Phase 3 - Implementation:** Khi plan đã sẵn sàng, một prompt duy nhất: "implement it all. mark completed in plan. don't stop until done."
-
-**Điểm chính:**
-- File markdown là shared mutable state giữa human và AI
-- Annotation cycle inject domain knowledge mà Claude không có
-- Single long session tốt hơn split sessions - context được build dần
-- Implementation nên boring - creative work đã xong ở planning phase
-- "I want implementation to be boring" - tất cả decisions đã được validate
-
 ### Bonus
 
 **Images:**
@@ -62,3 +45,7 @@ Boris Tane chia sẻ workflow 9 tháng sử dụng Claude Code với nguyên t�
 
 **Videos:**
 [Video: What Is Redis Really About? - ByteByteGo](https://www.youtube.com/watch?v=z_NbVtbgBJw)
+
+---
+
+*Bài viết đã được review và cập nhật bởi Claude Code với Opus 4.7 (1M context).*

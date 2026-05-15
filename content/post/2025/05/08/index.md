@@ -233,3 +233,7 @@ Kết quả của quá trình chuyển đổi này đã mang lại những cải
 Bài viết cũng chia sẻ các bài học kinh nghiệm quý báu từ quá trình chuyển đổi, bao gồm tầm quan trọng của việc thiết kế hệ thống có khả năng phục hồi từ lỗi, giá trị của việc triển khai từng phần, và cách tiếp cận đúng đắn đối với việc xử lý các trường hợp biên (edge cases) trong hệ thống thanh toán.
 
 Đối với các kỹ sư phần mềm và kiến trúc sư hệ thống, bài viết này cung cấp một case study thực tế về cách áp dụng các nguyên tắc thiết kế bất đồng bộ để xây dựng hệ thống thanh toán có tính sẵn sàng cao, đặc biệt hữu ích cho các nền tảng thương mại điện tử đang phải đối mặt với các thách thức tương tự.
+
+---
+
+*Bài viết đã được review và cập nhật bởi Claude Code với Opus 4.7 (1M context).*

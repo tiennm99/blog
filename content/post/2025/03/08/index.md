@@ -104,3 +104,7 @@ Bài viết này cung cấp một cái nhìn sâu sắc về cách tiếp cận 
 ### Bonus 2: Vài ảnh hay ho đến từ [ByteByteGo](https://bytebytego.com/)
 
 ![JWT 101: Key to Stateless Authentication](https://substack-post-media.s3.amazonaws.com/public/images/fc4c9cac-3046-4b45-9dd8-7dccc79b4e2c_1280x1608.gif)
+
+---
+
+*Bài viết đã được review và cập nhật bởi Claude Code với Opus 4.7 (1M context).*

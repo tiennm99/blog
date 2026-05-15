@@ -60,3 +60,7 @@ Bài viết blog này trên seangoedecke.com thảo luận về hai kiểu làm 
 ### Bonus #2: Một vài link hay ho khác
 
 - [Self-hosted Alternatives to Popular Software](https://openalternative.co/self-hosted)
+
+---
+
+*Bài viết đã được review và cập nhật bởi Claude Code với Opus 4.7 (1M context).*

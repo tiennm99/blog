@@ -113,3 +113,7 @@ Daniel Lemire thực hiện một thí nghiệm thú vị để đo giới hạn
 ![How Single Sign-On (SSO) Works](https://substackcdn.com/image/fetch/$s_!c4WE!,w_1100,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fd86cd367-494f-4031-9793-f27e6142e54b_2508x3000.png)
 ![How LLMs Use AI Agents with Deep Research](https://substackcdn.com/image/fetch/$s_!em-f!,w_1100,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F7e7e23e9-2a5a-4b06-a3fa-ccb6c5493f1d_2508x3000.png)
 ![How hackers steal passwords](https://substackcdn.com/image/fetch/$s_!kRPi!,w_1100,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F3d3b2bb9-fc09-48d9-89b7-52bc37098af9_2360x2960.png)
+
+---
+
+*Bài viết đã được review và cập nhật bởi Claude Code với Opus 4.7 (1M context).*

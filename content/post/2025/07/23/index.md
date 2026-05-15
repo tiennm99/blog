@@ -118,3 +118,7 @@ Trong thời đại AI trợ lý lập trình ngày càng phổ biến, một th
 ## [Cursor best practices](https://x.com/paraschopra/status/1917466537637859544)
 
 ![Cursor best practices](https://pbs.twimg.com/media/Gpw1p1waYAAeAyY?format=jpg)
+
+---
+
+*Bài viết đã được review và cập nhật bởi Claude Code với Opus 4.7 (1M context).*

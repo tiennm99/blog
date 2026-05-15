@@ -193,3 +193,7 @@ Thư viện đơn giản lại có nhiều lợi ích: dễ hiểu, dễ tin, d�
 - Một số thư viện thực sự cần xử lý mọi trường hợp; lời khuyên này không áp dụng
 - Hỏi: "customer" là ai? Tình huống phổ biến nhất là gì? 80% có thể là điểm bắt đầu hợp lý
 - Đôi khi câu trả lời tốt nhất là "hay là chúng ta không làm cái đó?"
+
+---
+
+*Bài viết đã được review và cập nhật bởi Claude Code với Opus 4.7 (1M context).*

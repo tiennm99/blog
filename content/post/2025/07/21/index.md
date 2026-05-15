@@ -6,7 +6,7 @@ categories: ["Newsletter"]
 draft: false
 ---
 
-*Đã lâu rồi mình không viết bài. Và thú thật thì những newsletter dạo trước hơi kiểu "chạy KPI", mình cứ cố cho rất nhiều link vào và để AI Agent làm nốt phần còn lại. Lần này mình sẽ chọn lọc bài kĩ hơn, còn viết thì vẫn để AI thôi, vì mình lười hehe =))). Mong các bạn sẽ thích. Chào mừng bạn đến với Newsletter #31.*
+*Đã lâu rồi mình không viết bài. Và thú thật thì những newsletter dạo trước hơi kiểu "chạy KPI", ~~mình cứ cố cho rất nhiều link vào và để AI Agent làm nốt phần còn lại~~. Lần này mình sẽ chọn lọc bài kĩ hơn, ~~còn viết thì vẫn để AI thôi, vì mình lười hehe =)))~~. Mong các bạn sẽ thích. Chào mừng bạn đến với Newsletter #31.*
 
 ## [Claude Code: Best Practices for Agentic Coding](https://www.anthropic.com/engineering/claude-code-best-practices)
 
@@ -102,3 +102,5 @@ Bài viết từ meowbark.dev khám phá các phương pháp xử lý lỗi hi�
 - Duy trì clear error communication và recovery mechanisms trong suốt application
 
 ---
+
+*Bài viết đã được review và cập nhật bởi Claude Code với Opus 4.7 (1M context).*

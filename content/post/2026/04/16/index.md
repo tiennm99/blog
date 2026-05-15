@@ -88,3 +88,7 @@ Sản phẩm cuối cùng hiển thị bảy thuật toán chạy đua đồng t
 ![12 Claude Code Features Every Engineer Should Know](https://substackcdn.com/image/fetch/w_1100,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F438c4c2f-0fa8-4748-9953-b63fd69674f4_2508x3000.png)
 ![How does REST API work?](https://substackcdn.com/image/fetch/w_1100,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F75e97a13-b186-4f16-ab59-f9a96867f744_1899x1536.jpeg)
 ![7 Key Load Balancer Use Cases](https://substackcdn.com/image/fetch/w_1100,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F0169578f-af50-4b3a-b8ed-542ee7ebf80f_2250x2814.png)
+
+---
+
+*Bài viết đã được review và cập nhật bởi Claude Code với Opus 4.7 (1M context).*

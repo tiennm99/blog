@@ -107,3 +107,7 @@ Hoàn thành lệnh bổ sung cho các tính năng hiện có như hoàn thành 
 
 **Videos:**
 [Tác Nhân Trí Tuệ Nhân Tạo Là Gì & Chúng Hoạt Động Như Thế Nào?](https://www.youtube.com/watch?v=oP6DS_x5K0Y)
+
+---
+
+*Bài viết đã được review và cập nhật bởi Claude Code với Opus 4.7 (1M context).*

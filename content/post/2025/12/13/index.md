@@ -117,3 +117,7 @@ Các thời gian chờ trì hoãn cập nhật phụ thuộc theo một khoảng
 - Đơn giản thực hiện: chỉ cần cấu hình cooldown days
 - Miễn phí với Dependabot, Renovate và các công cụ tương tự
 - Có thể ngăn chặn 80-90% sự tiếp xúc với nỗ lực tối thiểu
+
+---
+
+*Bài viết đã được review và cập nhật bởi Claude Code với Opus 4.7 (1M context).*

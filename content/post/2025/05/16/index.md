@@ -172,3 +172,5 @@ Shrivu Shankar đã có bài phân tích chi tiết về những thách thức v
 Mặc dù MCP đã tạo ra một tiêu chuẩn quan trọng để kết nối các công cụ với AI, vẫn còn nhiều thách thức cần giải quyết, đặc biệt là về bảo mật và trải nghiệm người dùng. Sự phát triển trong tương lai sẽ cần tập trung vào việc cải thiện các khía cạnh này để đảm bảo tính hữu ích và an toàn của hệ sinh thái MCP.
 
 ---
+
+*Bài viết đã được review và cập nhật bởi Claude Code với Opus 4.7 (1M context).*

@@ -110,3 +110,7 @@ Thay vào đó, tác giả khuyến nghị sử dụng `if (a) assert(b);` để
 Cách tiếp cận này làm cho mã nguồn dễ đọc và trực quan hơn bằng cách sử dụng cấu trúc conditional đơn giản thay vì các phép toán logic phức tạp. Đây là một ví dụ nhỏ nhưng hiệu quả về cách cải thiện khả năng đọc mã thông qua việc thay đổi cú pháp đơn giản.
 
 Bài viết thể hiện triết lý thiết kế của TigerBeetle trong việc ưu tiên sự rõ ràng và đơn giản trong mã nguồn, giúp các lập trình viên dễ dàng hiểu và bảo trì hệ thống.
+
+---
+
+*Bài viết đã được review và cập nhật bởi Claude Code với Opus 4.7 (1M context).*

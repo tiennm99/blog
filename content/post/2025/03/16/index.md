@@ -82,3 +82,7 @@ RKG đặt câu hỏi: Liệu công ty của bạn đã sẵn sàng tận dụng
 6. Xác định vai trò nào sẽ được tăng cường và vai trò nào sẽ bị thay thế bởi AI
 
 RKG nhấn mạnh rằng đây không phải là những thay đổi nhỏ mà là sự "tái lập" toàn diện công ty - một quá trình cực kỳ khó khăn, đặc biệt đối với những công ty lớn và thành công. Tuy nhiên, đây là cách duy nhất để chuẩn bị cho một tương lai mà "có lẽ mọi người trên trái đất sẽ có khả năng hoàn thành nhiều việc hơn người có tác động lớn nhất ngày nay" (trích dẫn Sam Altman).
+
+---
+
+*Bài viết đã được review và cập nhật bởi Claude Code với Opus 4.7 (1M context).*

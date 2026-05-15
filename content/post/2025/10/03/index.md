@@ -161,3 +161,7 @@ Cuối cùng, để phát triển thẩm mỹ, tác giả khuyên nên làm nhi�
 ![Service Discovery 101: The Phonebook for Distributed Systems](https://substackcdn.com/image/fetch/$s_!CEQb!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F30caf720-4b66-4f5f-84d2-72c578969944_2250x2624.heic)
 
 *Bài viết trong kho của mình đã hết rồi. Có lẽ phải chờ một thời gian để mình tích luỹ lại sau đó mới tiếp tục được nhé. Hẹn gặp lại các bạn sau.*
+
+---
+
+*Bài viết đã được review và cập nhật bởi Claude Code với Opus 4.7 (1M context).*

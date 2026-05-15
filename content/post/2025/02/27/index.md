@@ -129,3 +129,7 @@ Bài viết cung cấp hướng dẫn chi tiết về cách triển khai thuật
 ## Bonus?
 
 Huhu, đợt này hỏng có bonus nào hết nha mọi người :<
+
+---
+
+*Bài viết đã được review và cập nhật bởi Claude Code với Opus 4.7 (1M context).*

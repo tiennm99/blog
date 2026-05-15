@@ -128,3 +128,7 @@ Mục tiêu không phải là loại bỏ sự hỗ trợ của AI, mà là tạ
 - Tốc độ quá nhanh phá vỡ bản chất cộng tác của pair programming
 - Cần thiết kế tương tác cân bằng, tôn trọng quá trình nhận thức con người
 - Quy trình bất đồng bộ và chế độ turn-based hiệu quả hơn
+
+---
+
+*Bài viết đã được review và cập nhật bởi Claude Code với Opus 4.7 (1M context).*

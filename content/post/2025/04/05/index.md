@@ -379,3 +379,7 @@ Một số điểm chính:
 ## Bonus 2: Vài video hay ho đến từ [Inside Java](https://inside.java/)
 
 [Project Loom and Virtual Threads: Next Phases](https://inside.java/2025/02/22/devoxxbelgium-loom-next/)
+
+---
+
+*Bài viết đã được review và cập nhật bởi Claude Code với Opus 4.7 (1M context).*

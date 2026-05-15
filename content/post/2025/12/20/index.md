@@ -5,7 +5,7 @@ tags: ["AI-Assisted"]
 categories: ["Newsletter"]
 ---
 
-*Gầy đây mình mới biết [OpenRouter đã hỗ trợ tích hợp Claude Code](https://openrouter.ai/docs/guides/guides/claude-code-integration), nên nay dùng thử. Bài viết này được thực hiện bởi [Claude Code](https://claude.com/product/claude-code) + [Open Router](https://openrouter.ai/) + [Z.AI: GLM 4.5 Air (free)](https://openrouter.ai/z-ai/glm-4.5-air:free). Mời bạn thưởng thức Newsletter #73.*
+*~~Gầy đây mình mới biết [OpenRouter đã hỗ trợ tích hợp Claude Code](https://openrouter.ai/docs/guides/guides/claude-code-integration), nên nay dùng thử. Bài viết này được thực hiện bởi [Claude Code](https://claude.com/product/claude-code) + [Open Router](https://openrouter.ai/) + [Z.AI: GLM 4.5 Air (free)](https://openrouter.ai/z-ai/glm-4.5-air:free).~~ Mời bạn thưởng thức Newsletter #73.*
 
 ## [System Design Deep Dive: Time Series Databases (TSDBs) Explained](https://designgurus.substack.com/p/system-design-deep-dive-time-series)
 
@@ -309,3 +309,7 @@ Báo cáo này cung cấp dữ liệu quý giá cho các nhà phát triển, qu�
 
 
 **Đánh giá:** *Tốc độ xử lý urls rất chậm, mình mất cực nhiều thời gian so với trước kia để xử lý 1 url. Tóm tắt khi ngắn khi dài, lại còn đôi khi lẫn lộn kí tự tiếng Trung vào nữa (có vẻ là do model của Z.AI)*
+
+---
+
+*Bài viết đã được review và cập nhật bởi Claude Code với Opus 4.7 (1M context).*

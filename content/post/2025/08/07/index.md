@@ -104,3 +104,7 @@ Kỹ thuật chính bao gồm việc cung cấp ràng buộc và yêu cầu cụ
 Ví dụ prompt được tinh chỉnh của tác giả bao gồm: sử dụng ThreadLocal cho dữ liệu tạm thời, ưu tiên toán học đơn giản thay vì thư viện, chỉ định yêu cầu định dạng offset cụ thể, và khuyến nghị dùng `intern()` cho Strings. Khi test trên nhiều nền tảng AI (Gemini, Claude, Grok, GitHub Copilot), kết quả cho thấy prompt chi tiết luôn mang lại mã nguồn chất lượng cao hơn.
 
 Điểm thú vị là không AI nào ban đầu gợi ý sử dụng byte[] cho lưu trữ, cho thấy tầm quan trọng của việc hướng dẫn cụ thể. Bài viết nhấn mạnh rằng prompt engineering chu đáo là chìa khóa để thu được giải pháp mã nguồn tối ưu từ AI, không chỉ đơn thuần yêu cầu "viết code tốt hơn".
+
+---
+
+*Bài viết đã được review và cập nhật bởi Claude Code với Opus 4.7 (1M context).*

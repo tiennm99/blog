@@ -101,22 +101,6 @@ Bài viết từ Wouter Coekaerts đi sâu vào những lỗ hổng kỹ thuật
 
 Tác giả lập luận rằng trong khi một số lỗ hổng trong hệ thống kiểu là cố ý (để tương thích ngược), thì những lỗ hổng khác là tình cờ. Những lỗ hổng này có thể dẫn đến lỗi runtime mà vượt qua được kiểm tra kiểu tại compile-time - một vấn đề đáng quan tâm cho các lập trình viên Java.
 
-## [The Pragmatic Engineer 2025 Survey: What's in your tech stack? Part 1](https://newsletter.pragmaticengineer.com/p/the-pragmatic-engineer-2025-survey)
-
-Khảo sát từ The Pragmatic Engineer cung cấp cái nhìn tổng quan về các công cụ và xu hướng công nghệ trong ngành phát triển phần mềm năm 2025 qua góc nhìn của gần 3,000 kỹ sư phần mềm.
-
-**Phương pháp khảo sát**: Được thực hiện vào tháng 4 và 5 năm 2025 với 2,997 phản hồi hợp lệ từ các chuyên gia công nghệ, chủ yếu là kỹ sư phần mềm có 5-20 năm kinh nghiệm.
-
-**Công cụ AI**: 85% người tham gia sử dụng ít nhất một công cụ AI. Các công cụ phổ biến nhất bao gồm GitHub Copilot (dẫn đầu), Cursor (đang tăng trưởng nhanh), Claude và ChatGPT.
-
-**Ngôn ngữ lập trình**: TypeScript, Python và Swift là những ngôn ngữ được sử dụng nhiều nhất, trong khi Rust, Go và Ruby on Rails là những ngôn ngữ được yêu thích nhất.
-
-**Công cụ được yêu thích và ghét nhất**: VS Code, các sản phẩm JetBrains và Cursor là những công cụ được yêu thích nhất. JIRA là công cụ bị ghét nhiều nhất một cách áp đảo.
-
-**Cơ sở hạ tầng**: GitHub dẫn đầu về version control, AWS vẫn là cloud provider chủ đạo, và GitHub Actions là công cụ CI/CD phổ biến nhất.
-
-Khảo sát chỉ ra sự đổi mới nhanh chóng trong các công cụ phát triển AI, sự thay đổi chậm hơn trong các danh mục công nghệ đã thiết lập, và việc các lập trình viên ngày càng sẵn sàng thử nghiệm các công cụ mới.
-
 ## [The Pragmatic Engineer 2025 Survey: What's in your tech stack? Part 2](https://newsletter.pragmaticengineer.com/p/the-pragmatic-engineer-2025-survey-part-2)
 
 Phần 2 của khảo sát tập trung vào các công cụ và cơ sở hạ tầng mà kỹ sư phần mềm sử dụng hàng ngày, tiết lộ những xu hướng thú vị trong lựa chọn công nghệ.
@@ -132,20 +116,6 @@ Phần 2 của khảo sát tập trung vào các công cụ và cơ sở hạ t�
 **Quan sát đáng chú ý**: Các công cụ Microsoft thống trị nhiều danh mục, công cụ quản lý dự án được đề cập thường xuyên như IDE, và PostgreSQL vẫn là lựa chọn cơ sở dữ liệu thực dụng mặc định.
 
 Khảo sát này cung cấp cái nhìn sâu sắc về sở thích công nghệ hiện tại và xu hướng từ khoảng 3,000 kỹ sư phần mềm.
-
-## [How to Vibe Code as a Senior Engineer](https://blog.alexmaccaw.com/how-to-vibe-code-as-a-senior-engineer/)
-
-Alex MacCaw giới thiệu khái niệm "vibe coding" - một phương pháp phát triển phần mềm mới tận dụng các mô hình AI để tăng tốc đáng kể quá trình viết mã.
-
-**Định nghĩa cốt lõi**: Vibe coding là việc sử dụng các mô hình AI tiên tiến để thực hiện phần lớn công việc viết mã, trong khi kỹ sư senior cung cấp hướng dẫn, kiến trúc và định hướng chiến lược. Phương pháp này có thể biến những dự án kéo dài hàng tuần thành chỉ vài giờ.
-
-**Yêu cầu thiết yếu**: Để vibe coding hiệu quả cần có scaffold dự án mạnh mẽ, các quy tắc viết mã được định nghĩa rõ ràng, quản lý ngữ cảnh chính xác, sử dụng các mô hình AI hàng đầu (Claude Opus 4, Gemini 2.5 Pro), và editor mã thông minh (khuyến nghị Cursor).
-
-**Chiến lược prompt engineering**: Luôn bắt đầu với kế hoạch chi tiết, cực kỳ cụ thể về kết quả mong muốn, cung cấp ví dụ và ngữ cảnh rõ ràng, sử dụng các ràng buộc rõ ràng, và duy trì phạm vi dự án chặt chẽ.
-
-**Hạn chế chính của AI coding**: Quản lý ngữ cảnh tự động kém, xử lý kiểu TypeScript yếu, thiếu "thẩm mỹ" kiến trúc, và xu hướng tưởng tượng ra hoặc lệch khỏi mục tiêu dự định.
-
-Tác giả nhấn mạnh đây có thể là "màn biểu diễn cuối cùng" của việc viết mã được hướng dẫn bởi con người trước khi AI có thể trở nên hoàn toàn tự động, khuyến khích các kỹ sư nắm bắt và thành thạo phương pháp mới này.
 
 ## [Why do software developers love complexity?](https://kyrylo.org/software/2025/08/21/why-do-software-developers-love-complexity.html)
 
@@ -197,3 +167,7 @@ Bài viết từ Ham Vocke là một tấm gương phản chiếu về những �
 [Java interview questions and answers - Boosting your java career](https://enos.itcollege.ee/~jpoial/allalaadimised/reading/Java-Interview-Questions.pdf)
 
 [Java Puzzlers - Traps, Pitfalls, and Corner Cases](https://github.com/shannonasmith/Java_books/blob/main/Java%20Puzzlers%20-%20Traps%2C%20Pitfalls%2C%20and%20Corner%20Cases%20(2005).pdf)
+
+---
+
+*Bài viết đã được review và cập nhật bởi Claude Code với Opus 4.7 (1M context).*

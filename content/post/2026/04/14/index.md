@@ -53,17 +53,6 @@ Anthropic vừa thực hiện nghiên cứu định tính đa ngôn ngữ lớn 
 - Mong muốn năng suất thường ẩn chứa khao khát sâu hơn — tự động hoá email thực chất là muốn dành thời gian cho gia đình
 - Đây là nghiên cứu định tính đa ngôn ngữ lớn nhất từ trước đến nay về kỳ vọng của con người với AI
 
-## [Cách Slack xây dựng lại hệ thống thông báo](https://slack.engineering/how-slack-rebuilt-notifications/)
-
-Hệ thống thông báo của Slack từng là một trong ba nguyên nhân hàng đầu gây ra phiếu hỗ trợ khách hàng, do có bốn mô hình tư duy xung đột giữa desktop và mobile, cài đặt không đồng bộ, và các tuỳ chọn nâng cao nằm rải rác. Thay vì vá víu hệ thống cũ, đội ngũ Slack quyết định thiết kế lại toàn bộ.
-
-Giải pháp mới tách biệt "thông báo gì" khỏi "thông báo như thế nào" — người dùng có thể xem tất cả hoạt động nhưng chỉ nhận push notification cho lượt mention. Mô hình tuỳ chọn được thống nhất thành ba lựa chọn rõ ràng: tất cả bài mới, chỉ mention, hoặc tắt tiếng. Về kỹ thuật, đội ngũ di chuyển hàng triệu người dùng từ bốn hệ thống xung đột sang một mô hình thống nhất bằng chiến lược đọc thời gian thực để đảm bảo tương thích ngược, đồng thời xây lại giao diện mobile bằng React hiện đại.
-
-**Điểm chính:**
-- Mức độ tương tác với cài đặt tăng 5 lần sau khi ra mắt và duy trì ổn định nhiều tuần sau đó
-- Tách biệt "nội dung thông báo" và "cách gửi thông báo" giúp người dùng kiểm soát tốt hơn
-- Phiếu hỗ trợ khách hàng giảm đáng kể nhờ giao diện cài đặt đơn giản và nhất quán đa nền tảng
-
 ## [Mở rộng monolith lên 1 triệu dòng mã: 113 bài học thực tế từ Tech Lead đến CTO](https://www.semicolonandsons.com/articles/scaling-a-monolith-to-1m-loc-113-pragmatic-lessons-from-tech-lead-to-cto)
 
 Bài viết tổng hợp 113 bài học thực tế từ hành trình mở rộng một monolith lên 1 triệu dòng mã, đúc kết từ kinh nghiệm đi từ vị trí Tech Lead đến CTO. Tác giả nhấn mạnh rằng các quyết định kiến trúc có ảnh hưởng lớn hơn nhiều so với tối ưu hoá nhỏ lẻ — thay vì vội vàng thêm cache, hãy sửa gốc vấn đề như truy vấn cơ sở dữ liệu kém, thiếu index, hoặc quản lý bộ nhớ không hợp lý.
@@ -148,3 +137,7 @@ Các kỹ sư thành công dựng quy trình có cấu trúc thay vì prompt tu�
 ![REST vs gRPC](https://substackcdn.com/image/fetch/$s_!LrVm!,w_1100,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F7a20a0cb-3142-4c32-b772-f002f1a288fd_2880x3862.jpeg)
 ![Session-Based vs JWT-Based Authentication](https://substackcdn.com/image/fetch/$s_!6SID!,w_1100,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F14a25337-0104-4c6c-b91a-3a2cd6afd6e4_2508x3000.png)
 ![A Cheat Sheet on The Most-Used Linux Commands](https://substackcdn.com/image/fetch/$s_!LuLK!,w_1100,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fa8dd9e12-2979-4040-a138-08723094b8cf_2536x3436.jpeg)
+
+---
+
+*Bài viết đã được review và cập nhật bởi Claude Code với Opus 4.7 (1M context).*

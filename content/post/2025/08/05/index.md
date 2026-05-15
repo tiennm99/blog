@@ -5,7 +5,7 @@ tags: [ "AI-Assisted", "Survey", "Tech Stack", "AI Tools", "Developer Tools" ]
 categories: [ "Newsletter" ]
 ---
 
-*Bài viết này sẽ quay lại dùng Claude Code nha :D (chân ái là đây, chỉ khi nào ngại tốn token mới phải nhảy sang agent khác). Mời bạn thưởng thức Newsletter #46.*
+*~~Bài viết này sẽ quay lại dùng Claude Code nha :D (chân ái là đây, chỉ khi nào ngại tốn token mới phải nhảy sang agent khác).~~ Mời bạn thưởng thức Newsletter #46.*
 
 ## [The Pragmatic Engineer 2025 Survey: What's in your tech stack?](https://newsletter.pragmaticengineer.com/p/the-pragmatic-engineer-2025-survey)
 
@@ -74,3 +74,7 @@ Một bài viết thẳng thắn về những thói quen thực tế giúp nâng
 Các thói quen khác bao gồm: ghi chép có cấu trúc trước khi debug (ép bản thân suy nghĩ rõ ràng), xây dựng công cụ nhỏ cá nhân (CLI scripts, automation tools), timeboxing cho công việc phức tạp (khối 90 phút không bị gián đoạn), học workflow từ người khác chứ không chỉ copy code, và retrospective hàng tuần với 3 câu hỏi: gì đã tốt, gì đã làm chậm tiến độ, gì sẽ cải thiện tuần sau. Đây là những thói quen đơn giản nhưng có tác động lâu dài đến năng suất làm việc.
 
 *Claude Code thật sự là chân ái :D Xử lý nhanh, tóm tắt gọn, càng ngày càng tốt. Thật tuyệt vời!*
+
+---
+
+*Bài viết đã được review và cập nhật bởi Claude Code với Opus 4.7 (1M context).*

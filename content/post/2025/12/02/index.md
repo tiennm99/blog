@@ -5,7 +5,7 @@ tags: ["AI-Assisted", "Technology", "Multi-Core", "Performance", "Programming", 
 categories: ["Newsletter"]
 ---
 
-*Mời bạn thưởng thức Newsletter #62. Bài viết này được thực hiện bởi VSCode Chat + OpenRouter + xAI: Grok 4.1 Fast (free)*
+*Mời bạn thưởng thức Newsletter #62. ~~Bài viết này được thực hiện bởi VSCode Chat + OpenRouter + xAI: Grok 4.1 Fast (free)~~*
 
 ## [Claude Skills are awesome, maybe a bigger deal than MCP](https://simonwillison.net/2025/Oct/16/claude-skills/)
 
@@ -112,3 +112,7 @@ Quy trình: Plan/oracle → small chunks (UI/backend) → cleanup/docs/refactor 
 ![A Guide to Microservices Architecture for Building Scalable Systems](https://substackcdn.com/image/fetch/$s_!lKZF!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fde422306-ef24-4d81-ac91-cb24ff284706_2250x2624.heic)
 
 *Kết quả của combo này mình đánh giá khoảng 4-6đ, cấu trúc ổn, chốt được nội dung cốt lõi tuy nhiên còn dùng nhiều từ tiếng Anh. Ưu điểm là sẵn có trong VSCode, tận dụng được built-in feature của VSCode, không phải chạy thêm Terminal*
+
+---
+
+*Bài viết đã được review và cập nhật bởi Claude Code với Opus 4.7 (1M context).*

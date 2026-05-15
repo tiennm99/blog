@@ -5,7 +5,7 @@ tags: ["AI-Assisted", "Technology", "Security", "Gaming", "Programming", "Algori
 categories: ["Newsletter"]
 ---
 
-*Bài này mình thử nghiệm tổng hợp tất cả code agent rules trước đây về thành 1 file AGENTS.md duy nhất, sau đó trỏ CLAUDE.md đọc file này. Mời bạn thưởng thức Newsletter #53.*
+*~~Bài này mình thử nghiệm tổng hợp tất cả code agent rules trước đây về thành 1 file AGENTS.md duy nhất, sau đó trỏ CLAUDE.md đọc file này.~~ Mời bạn thưởng thức Newsletter #53.*
 
 ## [Anti-cheat, Secure Boot & TPM](https://andrewmoore.ca/blog/post/anticheat-secure-boot-tpm/)
 
@@ -126,3 +126,7 @@ Thảo luận trên Reddit về cách các công ty FAANG áp dụng "vibe codin
 - Context management và prompt engineering là kỹ năng quan trọng mới
 
 *Đánh giá hiệu quả của AGENTS.md: Chưa được tốt lắm, còn chứa tiếng Anh nhiều. Mình sẽ cố gắng cải thiện thêm trong các bài viết tới. Hẹn gặp lại*
+
+---
+
+*Bài viết đã được review và cập nhật bởi Claude Code với Opus 4.7 (1M context).*

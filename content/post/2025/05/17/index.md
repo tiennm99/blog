@@ -112,3 +112,5 @@ Bài viết từ Simon Safar thảo luận về cách sử dụng PostgreSQL nh�
 Bài viết khuyến khích các nhà phát triển xem xét PostgreSQL như một giải pháp "đổ dữ liệu vào trước, tổ chức sau" thay vì cố gắng thiết kế schema hoàn hảo ngay từ đầu.
 
 ---
+
+*Bài viết đã được review và cập nhật bởi Claude Code với Opus 4.7 (1M context).*

@@ -105,3 +105,7 @@ Tác giả sử dụng ví dụ về Epic — công ty nắm 42% thị trường
 - Chi phí phần mềm cao tạo ra độc quyền và các mô hình kinh doanh problem như enshittification
 - Sự dồi dào của phần mềm sẽ cho phép bất kỳ ai cũng có thể tạo ra công cụ kỹ thuật số mà họ cần
 - Các kỹ năng cốt lõi của software engineering sẽ trở nên quan trọng hơn ngay cả khi viết code bằng tay trở nên ít liên quan hơn
+
+---
+
+*Bài viết đã được review và cập nhật bởi Claude Code với Opus 4.7 (1M context).*

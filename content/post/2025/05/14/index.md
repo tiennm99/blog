@@ -39,23 +39,6 @@ Một số điểm chính:
 - Có kỹ năng viết lách tốt
 - Luôn duy trình việc học tập, ngay cả ở tuổi 60+
 
-## [Git is More Popular than Linux: Torvalds](https://news.itsfoss.com/torvalds-on-git/)
-
-## [20 years of Git. Still weird, still wonderful.](https://blog.gitbutler.com/20-years-of-git/)
-
-Nhân dịp kỷ niệm 20 năm ngày Linus Torvalds thực hiện commit đầu tiên cho Git (7/4/2005), chúng ta cùng nhìn lại hành trình phát triển của hệ thống quản lý phiên bản đã thay đổi cách thức phát triển phầm mềm trên toàn thế giới <mcreference link="https://github.blog/open-source/git/git-turns-20-a-qa-with-linus-torvalds/" index="1">1</mcreference>.
-
-Git được phát triển trong hoàn cảnh đặc biệt khi dự án Linux kernel không thể tiếp tục sử dụng BitKeeper do vấn đề bản quyền. Mặc dù chỉ mất 10 ngày để viết phiên bản đầu tiên, Torvalds đã dành 4 tháng trước đó để suy nghĩ về thiết kế và giải pháp <mcreference link="https://about.gitlab.com/blog/2025/04/07/celebrating-gits-20th-anniversary-with-creator-linus-torvalds/" index="2">2</mcreference>. Ban đầu, Git chỉ được xem như một giải pháp thay thế tạm thời, nhưng đã nhanh chóng phát triển thành công cụ quản lý mã nguồn phổ biến nhất trong lịch sử.
-
-Điều thú vị là Torvalds chỉ duy trì Git trong vài tháng đầu tiên trước khi chuyển giao cho Junio Hamano, người đã tham gia dự án ngay từ tuần đầu tiên và tiếp tục duy trì Git trong suốt 19 năm qua <mcreference link="https://about.gitlab.com/blog/2025/04/14/journey-through-gits-20-year-history/" index="3">3</mcreference>. Hiện nay, Git đã trở thành nền tảng cho sự phát triển của nhiều dịch vụ và công cụ quan trọng trong ngành công nghệ phần mềm.
-
-Một số điểm chính:
-- Phiên bản đầu tiên được phát triển trong 10 ngày nhưng có 4 tháng chuẩn bị về thiết kế
-- Junio Hamano tiếp quản dự án sau vài tháng và duy trì trong 19 năm
-- Git ban đầu chỉ là một "content tracker" đơn giản
-- Thiết kế phi tập trung của Git đã tạo nên cuộc cách mạng trong phát triển phần mềm
-- Torvalds vẫn thường xuyên sử dụng 5 lệnh Git cơ bản: merge, blame, log, commit và pull <mcreference link="https://gigazine.net/gsc_news/en/20250408-git-20-years-linus-torvalds" index="4">4</mcreference>
-
 ## [RDEL #87: How do AI coding tools actually change developer work?](https://rdel.substack.com/p/rdel-87-how-do-ai-coding-tools-actually)
 
 Một nghiên cứu thú vị từ Microsoft và Institute for Work Life về tác động của GitHub Copilot đối với công việc của các lập trình viên trong môi trường thực tế. Nghiên cứu được thực hiện trong 3 tuần với 228 kỹ sư tại một công ty phần mềm toàn cầu lớn, chia thành ba nhóm: nhóm mới được cấp quyền truy cập Copilot, nhóm không sử dụng công cụ AI, và nhóm đã đang sử dụng Copilot.
@@ -85,3 +68,7 @@ Một số điểm chính:
 - Tùy chỉnh macro để tách biệt môi trường phát triển
 - Tối ưu hóa thời gian biên dịch và chiến lược materialization
 - Giải pháp có thể áp dụng cho nhiều nền tảng cloud khác nhau
+
+---
+
+*Bài viết đã được review và cập nhật bởi Claude Code với Opus 4.7 (1M context).*

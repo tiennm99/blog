@@ -373,3 +373,7 @@ Một số điểm chính:
 ## Bonus: Vài video hay ho đến từ [Inside Java](https://inside.java/)
 
 [Garbage Collection in Java - The progress since JDK 8](https://inside.java/2025/02/15/devoxxbelgium-gc-progress/)
+
+---
+
+*Bài viết đã được review và cập nhật bởi Claude Code với Opus 4.7 (1M context).*

@@ -77,3 +77,7 @@ Bài viết nhấn mạnh rằng Domain-Driven Design (DDD) nên được sử d
 
 **Videos:**
 [How Does a URL Shortener Work?](https://www.youtube.com/watch?v=HHUi8F_qAXM)
+
+---
+
+*Bài viết đã được review và cập nhật bởi Claude Code với Opus 4.7 (1M context).*

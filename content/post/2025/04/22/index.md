@@ -55,3 +55,6 @@ Bài viết này hướng dẫn chi tiết về cách kết hợp gRPC với Spr
 
 [8 Most Important Tips for Designing Fault-Tolerant System](https://www.youtube.com/watch?v=3Lis4w4_bBc)
 
+---
+
+*Bài viết đã được review và cập nhật bởi Claude Code với Opus 4.7 (1M context).*

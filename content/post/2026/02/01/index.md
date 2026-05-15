@@ -217,3 +217,7 @@ US Bureau of Labor Statistics vẫn expect software developer jobs grow ~15%, ch
 ![5 Leader Election Algorithms Powering Modern Databases](https://substackcdn.com/image/fetch/$s_!MJUT!,w_1100,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F06243bf8-f149-4075-bc81-99af15be3579_6001x7802.png)
 ![A Guide to Database Sharding](https://substackcdn.com/image/fetch/$s_!Xrbz!,w_1100,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F8c99d0d5-8e5b-4e82-bb28-9fbd470e3bc6_2250x2624.png)
 ![Modern Storage Systems](https://substackcdn.com/image/fetch/$s_!NCWv!,w_1100,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F0adc9c84-37f2-4a96-96a6-f7f26bbd1b7e_2360x2960.jpeg)
+
+---
+
+*Bài viết đã được review và cập nhật bởi Claude Code với Opus 4.7 (1M context).*

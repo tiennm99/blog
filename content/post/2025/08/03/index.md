@@ -12,7 +12,7 @@ tags:
 categories: ["Newsletter"]
 ---
 
-_Như đã đề cập, hôm nay mình sẽ thử Newsletter với Roo Code. Các post tiếp theo sẽ dùng Roo Code + Qwen 3 Coder. Mời bạn thưởng thức Newsletter #44._
+_~~Như đã đề cập, hôm nay mình sẽ thử Newsletter với Roo Code. Các post tiếp theo sẽ dùng Roo Code + Qwen 3 Coder.~~ Mời bạn thưởng thức Newsletter #44._
 
 ## [Cursor Unveils Game-Changing Web App for AI Coding Agents](https://opentools.ai/news/cursor-unveils-game-changing-web-app-for-ai-coding-agents)
 
@@ -230,3 +230,7 @@ Khi gặp vấn đề với Git, thay vì chỉ dựa vào các câu trả lời
 Những công cụ này không chỉ tiết kiệm thời gian mà còn giúp workflow Git trở nên chuyên nghiệp và hiệu quả hơn, đặc biệt khi làm việc với các dự án lớn hoặc trong môi trường nhóm.
 
 _Sau khi trải nghiệm mình nhận thấy Kimi K2 luôn phản hồi nhanh hơn Qwen 3 Coder, dù dùng Cline hay Roo Code, và Roo Code gọi nhiều request hơn Cline, tuy nhiên độ hài lòng về kết quả thì cũng xêm xêm. Vì OpenRouter limit dựa trên số lần request chứ không phải tổng lượng token nên có lẽ mình sẽ chọn Cline + Kimi K2 để dùng tạm mỗi khi Claude Code chạm quota._
+
+---
+
+*Bài viết đã được review và cập nhật bởi Claude Code với Opus 4.7 (1M context).*

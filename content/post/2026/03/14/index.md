@@ -129,3 +129,7 @@ Dù YAML v1.2 (2009) đã loại bỏ hành vi này để tương thích với J
 - `NO` trong YAML bị hiểu là `false` do quy tắc boolean từ đặc tả v1.1
 - YAML v1.2 đã sửa lỗi này từ năm 2009 nhưng hầu hết thư viện chưa cập nhật
 - Giải pháp: dùng dấu ngoặc kép, thẻ `!!str`, hoặc thư viện tương thích v1.2
+
+---
+
+*Bài viết đã được review và cập nhật bởi Claude Code với Opus 4.7 (1M context).*

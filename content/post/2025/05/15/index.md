@@ -322,3 +322,7 @@ Pinterest search có những đặc thù riêng biệt so với traditional text
 - **Iterative Improvement**: Search relevance improvement là continuous process requiring ongoing optimization
 
 Đây là example tuyệt vời về cách major tech platforms leverage LLMs để solve real-world problems, demonstrating practical applications của AI trong improving user experience at scale.
+
+---
+
+*Bài viết đã được review và cập nhật bởi Claude Code với Opus 4.7 (1M context).*

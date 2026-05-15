@@ -127,3 +127,7 @@ Bài viết này chia sẻ kinh nghiệm đóng góp vào Forgejo - một mã ng
 ![How does Docker Work?](https://substackcdn.com/image/fetch/$s_!SUjA!,w_1100,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fd91a5538-a69e-468c-bf83-058bb78753ca_2360x2770.png)
 ![Containerization Explained: From Build to Runtime](https://substackcdn.com/image/fetch/$s_!4qBZ!,w_1100,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Ff0945414-9cea-4e64-8dd4-3abcc404f73e_2360x2960.png)
 ![Must-Know Message Broker Patterns](https://substackcdn.com/image/fetch/$s_!n8BK!,w_1100,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fa51a75cc-09a9-4fed-af8a-c32a64f8ab60_2250x2624.png)
+
+---
+
+*Bài viết đã được review và cập nhật bởi Claude Code với Opus 4.7 (1M context).*

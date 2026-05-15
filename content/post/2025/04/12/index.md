@@ -426,3 +426,7 @@ Bài viết kết luận rằng sự kiên trì đúng cách là sự kết hợ
 ## Bonus: Vài ảnh hay ho đến từ [ByteByteGo](https://bytebytego.com/)
 
 ![Data Consistency Strategies For Microservices](https://substack-post-media.s3.amazonaws.com/public/images/ae95d38c-41f8-4eb7-885e-f7fafa4ca45d_2250x2624.png)
+
+---
+
+*Bài viết đã được review và cập nhật bởi Claude Code với Opus 4.7 (1M context).*

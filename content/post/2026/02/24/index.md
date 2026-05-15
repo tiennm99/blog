@@ -41,23 +41,6 @@ Bài viết cũng thảo luận về các bẫy cần tránh như lời nhắc m
 - Sử dụng ba tầng giới hạn: Luôn làm, Hỏi trước, Không bao giờ làm
 - Coi đặc tả như vòng lặp lặp lại với kiểm tra và tinh chỉnh liên tục
 
-## [Challenging projects every programmer should try](https://austinhenley.com/blog/challengingprojects.html)
-
-Austin Z. Henley, Giáo sư Đảng ngữ tại Đại học Carnegie Mellon, đã chia sẻ danh sách các dự án thử thách mà mọi lập trình viên nên thử. Bài viết xuất phát từ thực tế rằng nhiều sinh viên và nhà phát triển chuyên nghiệp muốn bắt đầu dự án phụ nhưng không biết nên xây dựng gì. Austin đưa ra những dự án đã dạy cho ông rất nhiều kiến thức, và có thể xây dựng nhiều lần với mỗi lần học được những điều mới.
-
-Bài viết liệt kê sáu dự án chính: Trình soạn thảo văn bản, Trò chơi 2D (Space Invaders), Trình biên dịch (Tiny BASIC), Hệ điều hành thu nhỏ, Bảng tính, và Trình mô phỏng máy chơi game console. Mỗi dự án đều có những thử thách riêng giúp nhà phát triển làm chủ các kỹ năng quan trọng. Ví dụ, Trình soạn thảo văn bản dạy về cấu trúc dữ liệu như dây thừng, bộ đệm khoảng, bảng mảnh để lưu trữ văn bản hiệu quả, cùng với các mẫu thiết kế như Memento và Command cho hoàn tác/làm lại. Space Invaders giúp hiểu vòng lặp trò chơi, xử lý đầu vào người dùng, và mẫu nhà máy để quản lý đối tượng trò chơi.
-
-Dự án trình biên dịch được Austin mô tả là "mở mắt nhất" - dạy về phân tích từ vựng, phân tích cú pháp, phân tích đệ quy giảm dần, cây cú pháp trừu tượng, phân tích ngữ nghĩa, và tạo mã. Hệ điều hành thu nhỏ giúp hiểu biên dịch chéo, nạp khởi động, quản lý bộ nhớ, lập lịch, và hệ thống tệp. Hai dự án nâng cao hơn là Bảng tính (kết hợp thử thách từ trình soạn thảo văn bản và trình biên dịch) và Trình mô phỏng máy chơi game console (kết hợp trình biên dịch, hệ điều hành, và engine trò chơi).
-
-Bài viết cũng bao gồm danh sách các gợi ý dự án từ cộng đồng như cơ sở dữ liệu từ đầu, trình dò tia, bản sao MS Paint, trình đồ họa vector, bộ giải mã hình ảnh, ứng dụng web phòng chat, và tiện ích dòng lệnh. Mỗi dự án đều có phần "Đọc thêm" với các tài nguyên để học sâu hơn.
-
-**Điểm chính:**
-- 6 dự án thử thách: Trình soạn thảo văn bản, Trò chơi 2D, Trình biên dịch, Hệ điều hành thu nhỏ, Bảng tính, Trình mô phỏng
-- Trình soạn thảo văn bản dạy cấu trúc dữ liệu (dây thừng, bộ đệm khoảng, bảng mảnh) và mẫu hoàn tác/làm lại
-- Space Invaders bao gồm vòng lặp trò chơi, xử lý đầu vào, mẫu nhà máy, máy trạng thái
-- Dự án trình biên dịch khám phá phân tích từ vựng, phân tích cú pháp, cây cú pháp, phân tích ngữ nghĩa, tạo mã
-- Hệ điều hành thu nhỏ giúp hiểu biên dịch chéo, nạp khởi động, quản lý bộ nhớ, lập lịch
-
 ## [Unconventional PostgreSQL Optimizations](https://hakibenita.com/postgresql-unconventional-optimizations)
 
 Haki Benita đã chia sẻ các kỹ thuật tối ưu hóa PostgreSQL phi truyền thống mà các nhà phát triển thường không nghĩ đến. Bài viết bắt đầu với thực tế rằng khi tối ưu hóa cơ sở dữ liệu, developers thường dùng những công cụ cũ kỹ: viết lại truy vấn, thêm chỉ mục, phi chuẩn hóa, phân tích, dọn dẹp, lặp lại. Các kỹ thuật truyền thống hiệu quả, nhưng đôi khi sáng tạo có thể mang lại kết quả tốt hơn.
@@ -121,3 +104,7 @@ Các phương pháp tốt bao gồm: rõ ràng và cụ thể, cung cấp ngữ 
 - Vấn đề "kim trong đống rơm": mô hình hiểu tốt hơn ở đầu/cuối prompt
 - 5 kỹ thuật chính: zero-shot, few-shot, chain-of-thought, role prompting, prompt chaining
 - Nguyên tắc: rõ ràng, ngữ cảnh đủ, định dạng đầu ra, dùng ví dụ chiến lược, lặp lại
+
+---
+
+*Bài viết đã được review và cập nhật bởi Claude Code với Opus 4.7 (1M context).*

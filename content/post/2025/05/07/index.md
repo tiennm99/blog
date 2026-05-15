@@ -166,3 +166,7 @@ Bảng tra cứu này là một tài nguyên quý giá cho cả sinh viên và c
 ![The Ultimate Software Architect Roadmap](https://substack-post-media.s3.amazonaws.com/public/images/67c39b9a-9a91-4e57-9e24-7714b4f806dd_1280x1349.gif)
 ![How Two-factor Authentication (2FA) Works?](https://substack-post-media.s3.amazonaws.com/public/images/fb1b1cd1-eac3-4b66-a391-9ec73f6c37f3_1280x1502.gif)
 ![How Amazon S3 Works?](https://substack-post-media.s3.amazonaws.com/public/images/3efae3ad-8c45-4fb2-a79f-6b3387b0751e_1280x1601.gif)
+
+---
+
+*Bài viết đã được review và cập nhật bởi Claude Code với Opus 4.7 (1M context).*
