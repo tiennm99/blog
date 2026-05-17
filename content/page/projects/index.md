@@ -109,6 +109,7 @@ _(Danh sách này được tạo tự động, sắp xếp theo tên repo)_
 | [tiennm99/vngeoguessr](https://github.com/tiennm99/vngeoguessr) | GeoGuessr clone for Vietnamese locations — Mapillary panoramas, Turf.js boundaries, Upstash REST leaderboards | [https://vngeoguessr.vercel.app](https://vngeoguessr.vercel.app) |
 | [tiennm99/webcv](https://github.com/tiennm99/webcv) |  | [https://tiennm99.github.io/webcv/](https://tiennm99.github.io/webcv/) |
 | [tiennm99/webgl-heart](https://github.com/tiennm99/webgl-heart) |  | [https://tiennm99.github.io/webgl-heart/](https://tiennm99.github.io/webgl-heart/) |
+| [tiennm99/xr2s25fe](https://github.com/tiennm99/xr2s25fe) | Personal device-upgrade datasheet — iPhone XR (2018) to Galaxy S25 FE (2025), rendered six ways: blueprint + five Apple-style formats. | [https://tiennm99.github.io/xr2s25fe/](https://tiennm99.github.io/xr2s25fe/) |
 | [tienthieusac/tienthieusac.github.io](https://github.com/tienthieusac/tienthieusac.github.io) | Tiên Thiếu Sắc | [https://tienthieusac.github.io/](https://tienthieusac.github.io/) |
 
 <!-- PROJECTS_LIST_END -->
