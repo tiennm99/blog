@@ -41,9 +41,10 @@ This project uses custom skills for automated workflows:
 - **mt-add-url**: Meta entry for adding URLs — classifies each URL and auto-dispatches to the right handler (the default entry when adding URLs to the newsletter)
 - **mt-add-post**: Article handler — adds an article/blog URL to the newsletter main content
 - **mt-add-video**: YouTube handler — adds a YouTube link to the newsletter Bonus → Videos
+- **mt-add-image**: Image handler — adds an image to Bonus → Images; for Substack images finds the source post (ByteByteGo + configured publications) via RSS/sitemap to label it, else asks for a label
 - **mt-add-tags**: Add/update tags in Hugo post frontmatter
 
-Shared scripts (`add-url.js`, `url-utils.js`, `find-newsletter-number.js`) and the shared post-mechanics reference live under `.claude/skills/mt-add-url/`. Image support is planned as a future `mt-add-image` handler; until then `mt-add-url` asks how to handle non-article/non-YouTube URLs.
+Shared scripts (`add-url.js`, `url-utils.js`, `find-newsletter-number.js`) and the shared post-mechanics reference live under `.claude/skills/mt-add-url/`. `mt-add-url` dispatches `article`/`youtube`/`image`; other types (direct video files, documents, unknown) prompt the user to add or extend a handler.
 
 Refer to `.claude/skills/` for skill implementations.
 

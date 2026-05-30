@@ -10,8 +10,9 @@ description: 'Meta entry for adding URLs to the Hugo blog newsletter. Use whenev
 **Supported routes (this version):**
 - `article` → `mt-add-post`
 - `youtube` → `mt-add-video`
+- `image` → `mt-add-image`
 
-Everything else (`image`, direct `video` file, `document`, or anything unrecognized) is **not supported yet** → ask the user how to handle it. Image support is planned as a future `mt-add-image` skill.
+Everything else (direct `video` file, `document`, or anything unrecognized) is **not supported yet** → ask the user how to handle it.
 
 ## Workflow
 
@@ -37,7 +38,8 @@ Output (JSON): `{ original_url, clean_url, http_status, accessible, duplicate, r
 |-------|--------|
 | `article` | Invoke the **`mt-add-post`** skill, passing `clean_url` |
 | `youtube` | Invoke the **`mt-add-video`** skill, passing `clean_url` |
-| `image` / `video` / `document` / anything else | **Fallback** — see step 4 |
+| `image` | Invoke the **`mt-add-image`** skill, passing `clean_url` |
+| `video` (direct file) / `document` / anything else | **Fallback** — see step 4 |
 
 Dispatch by calling the Skill tool for the chosen handler with `clean_url` as the argument. The handler completes the write end-to-end.
 
@@ -45,11 +47,11 @@ Dispatch by calling the Skill tool for the chosen handler with `clean_url` as th
 
 ### 4. Fallback for unsupported types
 
-When `route` is not `article` or `youtube`, do NOT write anything automatically. Use `AskUserQuestion`:
+When `route` is not `article`, `youtube`, or `image`, do NOT write anything automatically. Use `AskUserQuestion`:
 
 - **Question:** "URL type `<route>` isn't supported yet (`<clean_url>`). How do you want to handle it?"
 - **Options:**
-  - "Add a new skill" — e.g. create `mt-add-image` for images. (Recommended for a type you'll reuse.)
+  - "Add a new skill" — e.g. a handler for this type. (Recommended for a type you'll reuse.)
   - "Update an existing skill" — extend a handler to support this URL type.
   - "Skip this URL" — leave it out of the newsletter.
 
