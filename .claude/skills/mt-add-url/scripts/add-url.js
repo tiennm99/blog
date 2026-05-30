@@ -9,6 +9,7 @@ const path = require("path");
 const {
   cleanUrl,
   isSubstackImage,
+  fetchWithTimeout,
   checkAccessibility,
   checkDuplicate,
   classifyType,
@@ -21,7 +22,7 @@ if (!url) {
 }
 
 const PROJECT_ROOT = path.resolve(__dirname, "../../../..");
-const CONTENT_DIR = path.join(PROJECT_ROOT, "content");
+const CONTENT_DIR = path.join(PROJECT_ROOT, "content", "post");
 
 const YT_HOSTS = new Set(["youtube.com", "www.youtube.com", "m.youtube.com"]);
 
@@ -60,13 +61,10 @@ function canonicalWatchUrl(videoId) {
 // Fetch title/author via YouTube oEmbed (no API key). Best-effort: any failure
 // returns {} so the route stays `youtube` and the skill can fall back.
 async function fetchYouTubeMeta(watchUrl) {
+  const endpoint = `https://www.youtube.com/oembed?url=${encodeURIComponent(watchUrl)}&format=json`;
+  const res = await fetchWithTimeout(endpoint);
+  if (!res || !res.ok) return {};
   try {
-    const controller = new AbortController();
-    const timeout = setTimeout(() => controller.abort(), 10000);
-    const endpoint = `https://www.youtube.com/oembed?url=${encodeURIComponent(watchUrl)}&format=json`;
-    const res = await fetch(endpoint, { redirect: "follow", signal: controller.signal });
-    clearTimeout(timeout);
-    if (!res.ok) return {};
     const data = await res.json();
     return { title: data.title, author: data.author_name };
   } catch {

@@ -21,10 +21,10 @@ function cleanUrl(rawUrl) {
     });
     return parsed.toString();
   } catch {
-    // If URL parsing fails, do basic string cleanup
-    return rawUrl.replace(/[?&](utm_[^&]*|fbclid|gclid|msclkid|mc_eid|aid|ref|ref_src|ref_url|source|ck_subscriber_id|igshid|yclid|vero_id)=[^&]*/gi, "")
-      .replace(/\?&/, "?")
-      .replace(/[?&]$/, "");
+    // Unparseable input (not a real URL): the per-param string surgery above
+    // would mangle the query (drop the `?`, leave a dangling `&`), so leave it
+    // untouched rather than corrupt it.
+    return rawUrl;
   }
 }
 
@@ -77,21 +77,26 @@ function bareUrl(targetUrl) {
   }
 }
 
+// fetch() with an abort timeout. Returns the Response on success, or null on
+// network error / timeout. Callers decide what to read (.text/.json/.status).
+// Centralizes the AbortController + clearTimeout dance so every caller cleans
+// up the timer (via finally) on both the success and failure paths.
+async function fetchWithTimeout(targetUrl, { method = "GET", timeoutMs = 10000, headers } = {}) {
+  const controller = new AbortController();
+  const timer = setTimeout(() => controller.abort(), timeoutMs);
+  try {
+    return await fetch(targetUrl, { method, redirect: "follow", signal: controller.signal, headers });
+  } catch {
+    return null;
+  } finally {
+    clearTimeout(timer);
+  }
+}
+
 // Check if URL is accessible (returns HTTP status code as a string).
 async function checkAccessibility(targetUrl) {
-  try {
-    const controller = new AbortController();
-    const timeout = setTimeout(() => controller.abort(), 10000);
-    const res = await fetch(targetUrl, {
-      method: "HEAD",
-      redirect: "follow",
-      signal: controller.signal,
-    });
-    clearTimeout(timeout);
-    return res.status.toString();
-  } catch {
-    return "000";
-  }
+  const res = await fetchWithTimeout(targetUrl, { method: "HEAD" });
+  return res ? res.status.toString() : "000";
 }
 
 function escapeRegExp(s) {
@@ -116,16 +121,21 @@ function collectMarkdown(dir, acc = []) {
 
 // Check whether a URL identity already exists in the stored markdown.
 // Pure JS (no external `grep` dependency, works the same from any shell) and
-// boundary-aware: the identity must be followed by a delimiter (close paren,
-// quote, whitespace, query/fragment, the image dimension separator `_`, etc.)
-// so a URL that is merely a PREFIX of a stored longer URL (e.g. /p/foo vs
-// /p/foo-bar) is NOT a false duplicate.
+// boundary-aware so a needle that is merely a PREFIX of a stored longer string
+// is NOT a false duplicate. The two identity kinds need different boundaries:
+//   - Substack image UUID: the next char must not extend the hex id, so all of
+//     <uuid>.png (cover image, no size suffix), <uuid>_WxH and <uuid>) match.
+//   - URL: must be followed by a path/punctuation delimiter so /p/foo does not
+//     match a stored /p/foo-bar.
 function checkDuplicate(targetUrl, contentDir) {
   const needle = bareUrl(targetUrl);
   if (!needle) return false;
-  // Allow an optional trailing slash (bareUrl strips it, stored URLs may keep
-  // it) before the delimiter.
-  const boundary = new RegExp(escapeRegExp(needle) + `/?(?:[)\\]\\s"'?#<_&,]|$)`, "m");
+  const isUuid = new RegExp(`^${UUID}$`, "i").test(needle);
+  // For URLs, allow an optional trailing slash (bareUrl strips it, stored URLs
+  // may keep it) before the delimiter.
+  const boundary = isUuid
+    ? new RegExp(escapeRegExp(needle) + `(?![0-9a-f])`, "i")
+    : new RegExp(escapeRegExp(needle) + `/?(?:[)\\]\\s"'?#<_&,]|$)`, "m");
   for (const file of collectMarkdown(contentDir)) {
     let text;
     try { text = fs.readFileSync(file, "utf-8"); } catch { continue; }
@@ -149,6 +159,7 @@ module.exports = {
   IDENTITY_PARAMS,
   isSubstackImage,
   substackImageUuid,
+  fetchWithTimeout,
   checkAccessibility,
   checkDuplicate,
   classifyType,
