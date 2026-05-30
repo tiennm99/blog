@@ -43,6 +43,7 @@ This project uses custom skills for automated workflows:
 - **mt-add-video**: YouTube handler — adds a YouTube link to the newsletter Bonus → Videos
 - **mt-add-image**: Image handler — adds an image to Bonus → Images; for Substack images finds the source post (ByteByteGo + configured publications) via RSS/sitemap to label it, else asks for a label
 - **mt-add-tags**: Add/update tags in Hugo post frontmatter
+- **mt-webfetch**: Fallback web fetcher (defuddle proxy) — use only when the built-in WebFetch is blocked
 
 Shared scripts (`add-url.js`, `url-utils.js`, `find-newsletter-number.js`) and the shared post-mechanics reference live under `.claude/skills/mt-add-url/`. `mt-add-url` dispatches `article`/`youtube`/`image`; other types (direct video files, documents, unknown) prompt the user to add or extend a handler.
 

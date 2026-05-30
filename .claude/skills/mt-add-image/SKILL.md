@@ -21,7 +21,13 @@ A clean image URL (passed by `mt-add-url`, or given directly).
 ```bash
 node .claude/skills/mt-add-image/scripts/detect-image-source.js "<url>"
 ```
-→ `{ isSubstack, uuid?, innerUrl? }`. Skip the URL if it's a duplicate/inaccessible (the meta skill already checks; if invoked directly, sanity-check first).
+→ `{ isSubstack, uuid?, innerUrl? }`.
+
+When invoked **directly** (not via `mt-add-url`), first run the router to get accessibility + duplicate status and skip accordingly:
+```bash
+node ../mt-add-url/scripts/add-url.js "<url>"   # expect route:image; skip if duplicate/!accessible
+```
+(When dispatched by `mt-add-url`, that check already ran — don't repeat it.)
 
 ### 2a. Substack image (`isSubstack: true` with `uuid`)
 Find the source post:

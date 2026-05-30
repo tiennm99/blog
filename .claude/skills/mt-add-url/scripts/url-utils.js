@@ -1,8 +1,9 @@
-// Shared URL helpers for the mt-add-post skill.
-// Used by add-url.js (the meta router entry point).
+// Shared URL helpers for the mt-* newsletter skills.
+// Owned by the mt-add-url meta router; reused by handlers (e.g. mt-add-image).
 // CommonJS so plain `node script.js` works without a build step.
 
-const { execFileSync } = require("child_process");
+const fs = require("fs");
+const path = require("path");
 
 // Remove common tracking parameters (utm_* plus a fixed set of known trackers).
 function cleanUrl(rawUrl) {
@@ -27,6 +28,24 @@ function cleanUrl(rawUrl) {
   }
 }
 
+// --- Substack image helpers (shared by add-url.js routing and mt-add-image) ---
+const SUBSTACK_IMAGE_HOSTS = ["substackcdn.com", "substack-post-media.s3.amazonaws.com"];
+const UUID = "[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}";
+
+// A Substack-hosted image (CDN wrapper or raw S3), regardless of file extension.
+function isSubstackImage(targetUrl) {
+  let host = "";
+  try { host = new URL(targetUrl).host.toLowerCase(); } catch { /* non-URL */ }
+  return SUBSTACK_IMAGE_HOSTS.includes(host) || /substack-post-media/i.test(targetUrl);
+}
+
+// The stable image identity is the S3 image UUID under public/images/<uuid>.
+// Works whether the path separators are raw (/) or percent-encoded (%2F).
+function substackImageUuid(targetUrl) {
+  const m = targetUrl.match(new RegExp(`images(?:%2F|/)(${UUID})`, "i"));
+  return m ? m[1].toLowerCase() : null;
+}
+
 // Some sites carry the resource identity in a query param, not the path
 // (e.g. YouTube /watch?v=ID). Stripping the query for these collapses every
 // item to the same bare URL, causing false-positive duplicates. Preserve the
@@ -37,9 +56,15 @@ const IDENTITY_PARAMS = {
   "m.youtube.com": "v",
 };
 
-// Extract the bare URL (scheme + host + path) — used for stricter duplicate checks.
-// Keeps the host's identity query param when one is defined above.
+// Reduce a URL to a stable identity used for duplicate detection:
+// - Substack image  → its S3 UUID (transform/size variants share one identity)
+// - YouTube         → scheme+host+path + the v= video id
+// - everything else → scheme + host + path
 function bareUrl(targetUrl) {
+  if (isSubstackImage(targetUrl)) {
+    const uuid = substackImageUuid(targetUrl);
+    if (uuid) return uuid;
+  }
   try {
     const p = new URL(targetUrl);
     let bare = `${p.protocol}//${p.host}${p.pathname}`.replace(/\/$/, "");
@@ -69,28 +94,52 @@ async function checkAccessibility(targetUrl) {
   }
 }
 
-// Check if URL already exists under contentDir.
-// Compare by bare URL so stored copies with different tracking params
-// still register as duplicates. contentDir is passed by the caller so this
-// module stays decoupled from any specific project layout.
-function checkDuplicate(targetUrl, contentDir) {
+function escapeRegExp(s) {
+  return s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+}
+
+// Recursively collect *.md files under a directory (the content tree is small).
+function collectMarkdown(dir, acc = []) {
+  let entries;
   try {
-    const needle = bareUrl(targetUrl);
-    // execFileSync (no shell) — the needle is URL-derived and could otherwise
-    // carry shell metacharacters; passing args directly avoids any injection.
-    execFileSync("grep", ["-rF", needle, contentDir], { stdio: "pipe" });
-    return true;
+    entries = fs.readdirSync(dir, { withFileTypes: true });
   } catch {
-    return false;
+    return acc; // missing dir → nothing to compare against
   }
+  for (const e of entries) {
+    const full = path.join(dir, e.name);
+    if (e.isDirectory()) collectMarkdown(full, acc);
+    else if (e.isFile() && e.name.toLowerCase().endsWith(".md")) acc.push(full);
+  }
+  return acc;
+}
+
+// Check whether a URL identity already exists in the stored markdown.
+// Pure JS (no external `grep` dependency, works the same from any shell) and
+// boundary-aware: the identity must be followed by a delimiter (close paren,
+// quote, whitespace, query/fragment, the image dimension separator `_`, etc.)
+// so a URL that is merely a PREFIX of a stored longer URL (e.g. /p/foo vs
+// /p/foo-bar) is NOT a false duplicate.
+function checkDuplicate(targetUrl, contentDir) {
+  const needle = bareUrl(targetUrl);
+  if (!needle) return false;
+  // Allow an optional trailing slash (bareUrl strips it, stored URLs may keep
+  // it) before the delimiter.
+  const boundary = new RegExp(escapeRegExp(needle) + `/?(?:[)\\]\\s"'?#<_&,]|$)`, "m");
+  for (const file of collectMarkdown(contentDir)) {
+    let text;
+    try { text = fs.readFileSync(file, "utf-8"); } catch { continue; }
+    if (text.includes(needle) && boundary.test(text)) return true;
+  }
+  return false;
 }
 
 // Classify URL type by file extension. Returns image|video|document|article.
 function classifyType(targetUrl) {
   const lower = targetUrl.toLowerCase();
-  if (/\.(png|jpg|jpeg|gif|webp|svg)(\?.*)?$/.test(lower)) return "image";
-  if (/\.(mp4|webm|mov|avi)(\?.*)?$/.test(lower)) return "video";
-  if (/\.(pdf|doc|docx|xls|xlsx)(\?.*)?$/.test(lower)) return "document";
+  if (/\.(png|jpg|jpeg|gif|webp|svg|avif|heic|heif|bmp|tiff?)(\?.*)?$/.test(lower)) return "image";
+  if (/\.(mp4|webm|mov|avi|mkv)(\?.*)?$/.test(lower)) return "video";
+  if (/\.(pdf|docx?|xlsx?|pptx?)(\?.*)?$/.test(lower)) return "document";
   return "article";
 }
 
@@ -98,6 +147,8 @@ module.exports = {
   cleanUrl,
   bareUrl,
   IDENTITY_PARAMS,
+  isSubstackImage,
+  substackImageUuid,
   checkAccessibility,
   checkDuplicate,
   classifyType,

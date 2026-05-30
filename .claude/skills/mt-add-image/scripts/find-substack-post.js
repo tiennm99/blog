@@ -58,7 +58,8 @@ function decodeEntities(s) {
     .replace(/&quot;/g, '"')
     .replace(/&#0?39;|&apos;/g, "'")
     .replace(/&nbsp;/g, " ")
-    .replace(/&#(\d+);/g, (_, n) => String.fromCharCode(+n))
+    .replace(/&#x([0-9a-fA-F]+);/g, (_, n) => String.fromCodePoint(parseInt(n, 16)))
+    .replace(/&#(\d+);/g, (_, n) => String.fromCodePoint(+n))
     .trim();
 }
 
@@ -124,9 +125,13 @@ function postTitleFromHtml(html) {
   return t ? decodeEntities(t[1].trim()) : "";
 }
 
+// Total post fetches allowed across ALL publications during a --deep crawl.
+const DEEP_FETCH_BUDGET = 40;
+
 // Deep fallback: crawl the sitemap back ~3 months, fetch posts most-recent-first
-// (capped), and look for the UUID. Heavier than RSS — only used on RSS miss.
-async function searchSitemap(publication, id, maxFetch = 40, monthsBack = 3) {
+// (up to `maxFetch` from the shared budget), and look for the UUID. Heavier than
+// RSS — only used on RSS miss.
+async function searchSitemap(publication, id, maxFetch, monthsBack = 3) {
   const xml = await fetchText(`https://${publication}/sitemap.xml`);
   if (!xml) return { hit: null, scanned: 0, cutoff: null };
 
@@ -195,20 +200,25 @@ async function main() {
     if (hit) return console.log(JSON.stringify(hit, null, 2));
   }
 
-  // Deep fallback: sitemap crawl up to ~3 months back.
+  // Deep fallback: sitemap crawl up to ~3 months back, sharing one global
+  // fetch budget across all publications so coverage can't blow up as the
+  // publications list grows.
   if (deep) {
     let totalScanned = 0;
     let lastCutoff = null;
     for (const pub of publications) {
-      const { hit, scanned, cutoff } = await searchSitemap(pub, uuid);
+      const remaining = DEEP_FETCH_BUDGET - totalScanned;
+      if (remaining <= 0) break;
+      const { hit, scanned, cutoff } = await searchSitemap(pub, uuid, remaining);
       totalScanned += scanned;
-      lastCutoff = cutoff;
+      lastCutoff = cutoff || lastCutoff;
       if (hit) return console.log(JSON.stringify(hit, null, 2));
     }
     return console.log(JSON.stringify({
       found: false,
       source: "sitemap",
       scanned: totalScanned,
+      budget: DEEP_FETCH_BUDGET,
       cutoff: lastCutoff,
     }, null, 2));
   }

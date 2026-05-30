@@ -1,6 +1,6 @@
 # Newsletter Post Mechanics (shared)
 
-Shared procedure used by the newsletter handler skills (`mt-add-post`, `mt-add-video`, …).
+Shared procedure used by the newsletter handler skills (`mt-add-post`, `mt-add-video`, `mt-add-image`).
 All shared scripts live in `.claude/skills/mt-add-url/scripts/`.
 
 **Project Context:**
@@ -38,6 +38,8 @@ categories: ["Newsletter"]
 
 ## 4. Section insertion (no clobbering)
 
+**Never rewrite the whole `index.md`.** Always insert by anchoring an Edit on an existing string (e.g. `### Bonus`, `**Videos:**`) and prepending/appending around it. Multiple URLs targeting the same day's post must be applied **sequentially** so one edit doesn't clobber another.
+
 **Articles go before the `### Bonus` section; Bonus assets go inside it.**
 
 To insert an article safely, anchor the Edit on `### Bonus` and prepend:
@@ -66,7 +68,7 @@ If the post has **no `### Bonus`** yet:
 **Documents:**
 [PDF: title](url)
 ```
-When a subsection (e.g. `**Videos:**`) already exists, append under it; otherwise create it.
+When a subsection (e.g. `**Videos:**`) already exists, append under it; otherwise create it. Keep subsections in this order: **Images** → **Videos** → **Documents**.
 
 ## 5. Language guidelines
 

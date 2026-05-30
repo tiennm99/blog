@@ -1,6 +1,6 @@
 ---
 name: mt-add-url
-description: 'Meta entry for adding URLs to the Hugo blog newsletter. Use whenever the user provides one or more URLs to add to their newsletter (articles, YouTube videos, etc.). Classifies each URL and auto-dispatches to the right handler skill (mt-add-post for articles, mt-add-video for YouTube). For unsupported types it asks the user how to proceed. This is the default entry point for newsletter URL processing.'
+description: 'Meta entry for adding URLs to the Hugo blog newsletter. Use whenever the user provides one or more URLs to add to their newsletter (articles, YouTube videos, images, etc.). Classifies each URL and auto-dispatches to the right handler skill (mt-add-post for articles, mt-add-video for YouTube, mt-add-image for images). For unsupported types it asks the user how to proceed. This is the default entry point for newsletter URL processing.'
 ---
 
 ## Overview
@@ -66,6 +66,7 @@ Aggregate across all URLs:
 ✅ Dispatched: [count]
    - [count] → mt-add-post (articles)
    - [count] → mt-add-video (YouTube)
+   - [count] → mt-add-image (images)
 
 ⏭️  Skipped: [count]
    - [url]: duplicate / inaccessible
@@ -76,5 +77,5 @@ Aggregate across all URLs:
 
 ## Notes
 
-- Handlers (`mt-add-post`, `mt-add-video`) remain directly invocable for single-purpose use, but `mt-add-url` is the normal entry point when a user pastes a URL.
+- Handlers (`mt-add-post`, `mt-add-video`, `mt-add-image`) remain directly invocable for single-purpose use, but `mt-add-url` is the normal entry point when a user pastes a URL.
 - Shared mechanics (numbering, post find/create, Bonus insertion, language rules) are defined once in `references/newsletter-post-mechanics.md`; handlers reference it.

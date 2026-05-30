@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-// Meta URL router for the mt-add-post skill — the single entry per URL.
+// Meta URL router for the mt-add-url skill — the single entry per URL.
 // Usage: node add-url.js "<url>"
 // Outputs: JSON { original_url, clean_url, http_status, accessible,
 //                 duplicate, route, title?, author? }
@@ -8,6 +8,7 @@
 const path = require("path");
 const {
   cleanUrl,
+  isSubstackImage,
   checkAccessibility,
   checkDuplicate,
   classifyType,
@@ -80,7 +81,13 @@ async function main() {
   // For YouTube, dedup/store against the canonical watch URL so youtu.be and
   // shorts links collapse onto the same identity-param key as watch URLs.
   const effectiveUrl = yt.isYouTube ? canonicalWatchUrl(yt.videoId) : cleanedUrl;
-  const route = yt.isYouTube ? "youtube" : classifyType(cleanedUrl);
+  // Route order: YouTube → Substack image (by host, not extension, so f_auto /
+  // .avif / .heic / extensionless CDN URLs still route to the image handler) →
+  // file-extension classification.
+  let route;
+  if (yt.isYouTube) route = "youtube";
+  else if (isSubstackImage(cleanedUrl)) route = "image";
+  else route = classifyType(cleanedUrl);
 
   const httpStatus = await checkAccessibility(cleanedUrl);
   const accessible = httpStatus === "200";

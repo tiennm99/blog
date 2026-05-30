@@ -20,23 +20,6 @@ function extractNewsletterNumber(filePath) {
   }
 }
 
-// Get current date in Asia/Ho_Chi_Minh timezone
-function getCurrentDate() {
-  const now = new Date();
-  const formatter = new Intl.DateTimeFormat("en-CA", {
-    timeZone: "Asia/Ho_Chi_Minh",
-    year: "numeric",
-    month: "2-digit",
-    day: "2-digit",
-  });
-  const parts = formatter.formatToParts(now);
-  return {
-    year: parts.find((p) => p.type === "year").value,
-    month: parts.find((p) => p.type === "month").value,
-    day: parts.find((p) => p.type === "day").value,
-  };
-}
-
 // Scan all year/month/day directories for newsletter posts
 function findMostRecentNewsletter() {
   let maxNumber = 0;
