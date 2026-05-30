@@ -38,11 +38,26 @@ function cleanUrl(rawUrl) {
   }
 }
 
-// Extract the bare URL (scheme + host + path) — used for stricter duplicate checks
+// Some sites carry the resource identity in a query param, not the path
+// (e.g. YouTube /watch?v=ID). Stripping the query for these collapses every
+// item to the same bare URL, causing false-positive duplicates. Preserve the
+// identity param for those hosts.
+const IDENTITY_PARAMS = {
+  "youtube.com": "v",
+  "www.youtube.com": "v",
+  "m.youtube.com": "v",
+};
+
+// Extract the bare URL (scheme + host + path) — used for stricter duplicate checks.
+// Keeps the host's identity query param when one is defined above.
 function bareUrl(targetUrl) {
   try {
     const p = new URL(targetUrl);
-    return `${p.protocol}//${p.host}${p.pathname}`.replace(/\/$/, "");
+    let bare = `${p.protocol}//${p.host}${p.pathname}`.replace(/\/$/, "");
+    const idParam = IDENTITY_PARAMS[p.host.toLowerCase()];
+    const idValue = idParam ? p.searchParams.get(idParam) : null;
+    if (idValue) bare += `?${idParam}=${idValue}`;
+    return bare;
   } catch {
     return targetUrl.split("?")[0].replace(/\/$/, "");
   }
