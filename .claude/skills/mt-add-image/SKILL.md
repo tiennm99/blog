@@ -28,13 +28,21 @@ Find the source post:
 ```bash
 node .claude/skills/mt-add-image/scripts/find-substack-post.js --uuid <uuid>
 ```
-- `found: true` → label = `caption` if non-empty, else `postTitle`.
-- `found: false` → retry with the deeper sitemap crawl (slower — scans ~3 months, warn the user it may take ~15s):
+- `found: false` → retry with the deeper sitemap crawl (slower — scans ~3 months; warn the user it may take ~15s):
   ```bash
   node .claude/skills/mt-add-image/scripts/find-substack-post.js --uuid <uuid> --deep
   ```
-  - `found: true` → label as above.
-  - `found: false` → no automatic label; go to step 3 (ask). The result reports `scanned` + `cutoff` — mention how far back it looked.
+  The result reports `scanned` + `cutoff` — mention how far back it looked.
+- `found: false` after `--deep` → no source post; go to step 3 (ask) and/or step 4 (add publication).
+
+**When `found: true` — pick the label (confirm-from-candidates):**
+ByteByteGo doesn't attach captions to images (verified: empty `alt`, no `<figcaption>`), and image order can't be mapped to titles automatically because sponsor/video items interleave. So the script returns `candidates` — the issue's topic titles from the post's TOC. Pick the label this way:
+1. If `caption` is non-empty (some publications do caption images) → propose it as the default.
+2. Otherwise present `candidates` to the user via `AskUserQuestion` (the correct title is in this list):
+   - "Image is from **[postTitle]** (`postUrl`). Which title matches it?"
+   - Offer the candidates. If there are more than 4, show them as a numbered list in text and ask the user to pick a number (AskUserQuestion allows max 4 options).
+   - Always include a "Type my own" escape.
+3. Label = the user's pick (or the typed value). Localize to Vietnamese where natural; keep proper nouns.
 
 ### 2b. Non-Substack image (`isSubstack: false`)
 Best-effort only (no reverse-image-search): if you happen to know the page that contains the image, WebFetch it and read the OpenGraph title / nearby caption. Usually there's no containing page from just an image URL → go to step 3.
@@ -58,13 +66,13 @@ Create `### Bonus` / `**Images:**` if missing.
 ```
 ✅ Image added to Newsletter #[number] (Bonus → Images)
 📄 content/post/YYYY/MM/DD/index.md
-🏷️  label: "[label]"  (source: rss | sitemap | opengraph | user-input)
+🏷️  label: "[label]"  (source: candidate-pick | caption | user-input; post: [postTitle])
 🖼️  [clean_image_url]
 ```
 
 ## Checklist
 
 - [ ] Source detected (substack + uuid, or non-substack)
-- [ ] Label resolved by priority (caption → post title → your input)
+- [ ] Label confirmed (caption if present, else user picked from candidates, else typed)
 - [ ] Entry under Bonus → **Images** (section/subsection created if missing)
 - [ ] Label localized to Vietnamese where natural (keep proper nouns)

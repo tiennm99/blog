@@ -76,6 +76,30 @@ function itemLink(item) {
   return m ? m[1].trim() : "";
 }
 
+// Extract candidate topic titles from a post's TOC bullet list. ByteByteGo does
+// not attach captions to images — the topic titles live only in the "in this
+// issue" bullets. We can't reliably map image→title automatically (sponsor /
+// video items interleave and break positional order), so we surface these
+// candidates for the user to pick from. Light filtering keeps the list short:
+// dedupe, drop sub-point explanations ("Term: long sentence") and over-long
+// lines. The correct title is always present; the user selects it.
+function extractCandidates(html) {
+  const seen = new Set();
+  const out = [];
+  const re = /<li[^>]*>\s*(?:<p[^>]*>)?([\s\S]*?)(?:<\/p>)?\s*<\/li>/g;
+  let m;
+  while ((m = re.exec(html))) {
+    const text = stripTags(m[1]);
+    if (!text) continue;
+    if (text.length < 6 || text.length > 70) continue;     // titles are short; long lines are sub-point explanations
+    const key = text.toLowerCase();
+    if (seen.has(key)) continue;                           // content is duplicated in the page
+    seen.add(key);
+    out.push(text);
+  }
+  return out;
+}
+
 // If the UUID sits inside a <figure>…</figure>, return that figure's
 // <figcaption> text. Cover images live in <enclosure> (no figure) → "".
 function captionForUuid(item, id) {
@@ -134,6 +158,7 @@ async function searchSitemap(publication, id, maxFetch = 40, monthsBack = 3) {
         postTitle: postTitleFromHtml(html),
         postUrl: c.url,
         caption: captionForUuid(html, id),
+        candidates: extractCandidates(html),
       },
       scanned,
       cutoff: cutoff.toISOString().slice(0, 10),
@@ -157,6 +182,7 @@ async function searchRss(publication, id) {
       postTitle,
       postUrl: itemLink(item),
       caption,
+      candidates: extractCandidates(item),
     };
   }
   return null;
