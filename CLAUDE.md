@@ -38,8 +38,12 @@ The site will be available at `http://localhost:1313`
 
 This project uses custom skills for automated workflows:
 
-- **mt-add-post**: URL processing workflow for newsletter posts
+- **mt-add-url**: Meta entry for adding URLs — classifies each URL and auto-dispatches to the right handler (the default entry when adding URLs to the newsletter)
+- **mt-add-post**: Article handler — adds an article/blog URL to the newsletter main content
+- **mt-add-video**: YouTube handler — adds a YouTube link to the newsletter Bonus → Videos
 - **mt-add-tags**: Add/update tags in Hugo post frontmatter
+
+Shared scripts (`add-url.js`, `url-utils.js`, `find-newsletter-number.js`) and the shared post-mechanics reference live under `.claude/skills/mt-add-url/`. Image support is planned as a future `mt-add-image` handler; until then `mt-add-url` asks how to handle non-article/non-YouTube URLs.
 
 Refer to `.claude/skills/` for skill implementations.
 

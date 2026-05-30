@@ -1,20 +1,10 @@
-#!/usr/bin/env node
-// URL preparation script for mt-add-post skill
-// Usage: node prepare-url.js "<url>"
-// Outputs: JSON with status, clean_url, type, accessible, duplicate
+// Shared URL helpers for the mt-add-post skill.
+// Used by add-url.js (the meta router entry point).
+// CommonJS so plain `node script.js` works without a build step.
 
-const { execSync } = require("child_process");
-const path = require("path");
+const { execFileSync } = require("child_process");
 
-const url = process.argv[2];
-if (!url) {
-  console.error("Usage: node prepare-url.js <url>");
-  process.exit(1);
-}
-
-const PROJECT_ROOT = path.resolve(__dirname, "../../../..");
-
-// Remove common tracking parameters
+// Remove common tracking parameters (utm_* plus a fixed set of known trackers).
 function cleanUrl(rawUrl) {
   const EXACT_TRACKING = new Set([
     "fbclid", "gclid", "msclkid", "mc_eid",
@@ -23,7 +13,6 @@ function cleanUrl(rawUrl) {
   ]);
   try {
     const parsed = new URL(rawUrl);
-    // Strip any utm_* param plus known exact trackers
     [...parsed.searchParams.keys()].forEach((k) => {
       if (k.toLowerCase().startsWith("utm_") || EXACT_TRACKING.has(k.toLowerCase())) {
         parsed.searchParams.delete(k);
@@ -63,7 +52,7 @@ function bareUrl(targetUrl) {
   }
 }
 
-// Check if URL is accessible (returns HTTP status code)
+// Check if URL is accessible (returns HTTP status code as a string).
 async function checkAccessibility(targetUrl) {
   try {
     const controller = new AbortController();
@@ -80,22 +69,24 @@ async function checkAccessibility(targetUrl) {
   }
 }
 
-// Check if URL already exists in project content.
-// Compare by bare URL (no query string) so stored copies with different tracking
-// params still register as duplicates.
-function checkDuplicate(targetUrl) {
+// Check if URL already exists under contentDir.
+// Compare by bare URL so stored copies with different tracking params
+// still register as duplicates. contentDir is passed by the caller so this
+// module stays decoupled from any specific project layout.
+function checkDuplicate(targetUrl, contentDir) {
   try {
-    const contentDir = path.join(PROJECT_ROOT, "content");
     const needle = bareUrl(targetUrl);
-    execSync(`grep -rF "${needle}" "${contentDir}"`, { stdio: "pipe" });
+    // execFileSync (no shell) — the needle is URL-derived and could otherwise
+    // carry shell metacharacters; passing args directly avoids any injection.
+    execFileSync("grep", ["-rF", needle, contentDir], { stdio: "pipe" });
     return true;
   } catch {
     return false;
   }
 }
 
-// Classify URL type by extension
-function classifyUrl(targetUrl) {
+// Classify URL type by file extension. Returns image|video|document|article.
+function classifyType(targetUrl) {
   const lower = targetUrl.toLowerCase();
   if (/\.(png|jpg|jpeg|gif|webp|svg)(\?.*)?$/.test(lower)) return "image";
   if (/\.(mp4|webm|mov|avi)(\?.*)?$/.test(lower)) return "video";
@@ -103,22 +94,11 @@ function classifyUrl(targetUrl) {
   return "article";
 }
 
-// Main
-async function main() {
-  const cleanedUrl = cleanUrl(url);
-  const httpStatus = await checkAccessibility(cleanedUrl);
-  const accessible = httpStatus === "200";
-  const duplicate = checkDuplicate(cleanedUrl);
-  const type = classifyUrl(cleanedUrl);
-
-  console.log(JSON.stringify({
-    original_url: url,
-    clean_url: cleanedUrl,
-    http_status: httpStatus,
-    accessible,
-    duplicate,
-    type,
-  }, null, 2));
-}
-
-main();
+module.exports = {
+  cleanUrl,
+  bareUrl,
+  IDENTITY_PARAMS,
+  checkAccessibility,
+  checkDuplicate,
+  classifyType,
+};
