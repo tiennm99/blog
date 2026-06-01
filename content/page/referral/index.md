@@ -72,6 +72,18 @@ https://www.byteplus.com/activity/codingplan?ac=MMAUCIS9NT1S&rc=2739UWRE
 
 [![modelark](modelark.png)](https://www.byteplus.com/activity/codingplan?ac=MMAUCIS9NT1S&rc=2739UWRE)
 
+### [OpenCode Go](https://opencode.ai/go?ref=HE42WGS8BM)
+
+Invite friends to OpenCode Go. Earn **$5** when a friend subscribes, and they'll get **$5** too.
+
+- Share your referral link.
+- Your friend joins and subscribes to Go.
+- You both get a **$5 usage credit** to apply toward your Go usage limits.
+
+Referral code: `HE42WGS8BM`
+
+Link: https://opencode.ai/go?ref=HE42WGS8BM
+
 ### [BigModel.cn — Platform Invite](https://www.bigmodel.cn/invite?icode=rIX6uZrLYfy8fQ6Urca4xf2gad6AKpjZefIo3dVEQyA%3D)
 
 General BigModel.cn (Zhipu AI / 智谱 AI) platform invitation — new users get **20M free tokens** to explore the API, playground, and AGI apps.
