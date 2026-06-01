@@ -37,6 +37,18 @@ Link: https://claudekit.cc/?ref=BWA910UK
 
 ## AI Coding Platforms & LLM APIs
 
+### [OpenCode Go](https://opencode.ai/go?ref=HE42WGS8BM)
+
+Invite friends to OpenCode Go. Earn **$5** when a friend subscribes, and they'll get **$5** too.
+
+- Share your referral link.
+- Your friend joins and subscribes to Go.
+- You both get a **$5 usage credit** to apply toward your Go usage limits.
+
+Referral code: `HE42WGS8BM`
+
+Link: https://opencode.ai/go?ref=HE42WGS8BM
+
 ### [Z.ai](https://z.ai/subscribe?ic=PLKIAYEIPW)
 
 🚀 You've been invited to join the GLM Coding Plan! Enjoy full support for Claude Code, Cline, and 20+ top coding tools — starting at just $10/month. Subscribe now and grab the limited-time deal! Link： https://z.ai/subscribe?ic=PLKIAYEIPW
@@ -71,18 +83,6 @@ Your referral link contains your unique code: CNBFyw28zF0dZoj
 https://www.byteplus.com/activity/codingplan?ac=MMAUCIS9NT1S&rc=2739UWRE
 
 [![modelark](modelark.png)](https://www.byteplus.com/activity/codingplan?ac=MMAUCIS9NT1S&rc=2739UWRE)
-
-### [OpenCode Go](https://opencode.ai/go?ref=HE42WGS8BM)
-
-Invite friends to OpenCode Go. Earn **$5** when a friend subscribes, and they'll get **$5** too.
-
-- Share your referral link.
-- Your friend joins and subscribes to Go.
-- You both get a **$5 usage credit** to apply toward your Go usage limits.
-
-Referral code: `HE42WGS8BM`
-
-Link: https://opencode.ai/go?ref=HE42WGS8BM
 
 ### [BigModel.cn — Platform Invite](https://www.bigmodel.cn/invite?icode=rIX6uZrLYfy8fQ6Urca4xf2gad6AKpjZefIo3dVEQyA%3D)
 
