@@ -11,7 +11,7 @@
 
 const fs = require("fs");
 const path = require("path");
-const { fetchWithTimeout } = require("../../mt-add-url/scripts/url-utils.js");
+const { fetchWithTimeout } = require("./url-utils.js");
 const {
   itemTitle,
   itemLink,
@@ -33,7 +33,7 @@ if (!uuid || uuid === true) {
   process.exit(1);
 }
 
-const CONFIG = path.resolve(__dirname, "../config/substack-publications.json");
+const CONFIG = path.resolve(__dirname, "./config/substack-publications.json");
 function loadPublications() {
   try {
     return JSON.parse(fs.readFileSync(CONFIG, "utf-8"));

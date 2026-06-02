@@ -5,7 +5,7 @@ description: 'Meta entry for adding URLs to the Hugo blog newsletter. Use whenev
 
 ## Overview
 
-`mt-add-url` is the **meta dispatcher**: it classifies each URL and auto-invokes the matching handler skill. Handlers (`mt-add-post`, `mt-add-video`, `mt-add-image`) own the actual content writing. Shared scripts live in `.claude/skills/mt-add-url/scripts/`; shared post mechanics in `references/newsletter-post-mechanics.md`.
+`mt-add-url` is the **meta dispatcher**: it classifies each URL and auto-invokes the matching handler skill. Handlers (`mt-add-post`, `mt-add-video`, `mt-add-image`) own the actual content writing. Shared scripts live in `scripts/newsletter/`; shared post mechanics in `references/newsletter-post-mechanics.md`.
 
 **Supported routes (this version):**
 - `article` → `mt-add-post`
@@ -20,7 +20,7 @@ Everything else (direct `video` file, `document`, or anything unrecognized) is *
 
 For every URL the user provides:
 ```bash
-node .claude/skills/mt-add-url/scripts/add-url.js "<url>"
+node scripts/newsletter/add-url.js "<url>"
 ```
 Output (JSON): `{ original_url, clean_url, http_status, accessible, duplicate, route, title?, author? }`.
 

@@ -1,7 +1,7 @@
 # Newsletter Post Mechanics (shared)
 
 Shared procedure used by the newsletter handler skills (`mt-add-post`, `mt-add-video`, `mt-add-image`).
-All shared scripts live in `.claude/skills/mt-add-url/scripts/`.
+All shared scripts live in `scripts/newsletter/`.
 
 **Project Context:**
 - Hugo static site, theme `hugo-theme-stack`
@@ -18,7 +18,7 @@ Get current date in `YYYY-MM-DD` (UTC+7). Check `content/post/YYYY/MM/DD/index.m
 ## 2. Newsletter number
 
 ```bash
-node .claude/skills/mt-add-url/scripts/find-newsletter-number.js
+node scripts/newsletter/find-newsletter-number.js
 ```
 Searches backwards from today for the most recent newsletter and returns the next number. Only needed when **creating** a new post.
 

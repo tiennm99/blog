@@ -7,7 +7,7 @@ description: 'Image handler for the Hugo blog newsletter. Adds an image URL to t
 
 `mt-add-image` is the **image handler**: given an image URL, it resolves a human-readable **label** and inserts `![label](image_url)` into today's newsletter **Bonus → Images**. It does not classify/route — that is `mt-add-url`'s job.
 
-Shared scripts: `.claude/skills/mt-add-url/scripts/`. Shared procedure: `../mt-add-url/references/newsletter-post-mechanics.md` — **follow it** for post find/create, Bonus insertion, and language rules.
+Shared scripts: `scripts/newsletter/`. Shared procedure: `../mt-add-url/references/newsletter-post-mechanics.md` — **follow it** for post find/create, Bonus insertion, and language rules.
 
 **Label priority:** figure caption → source post title → your typed input.
 
@@ -19,24 +19,24 @@ A clean image URL (passed by `mt-add-url`, or given directly).
 
 ### 1. Detect source
 ```bash
-node .claude/skills/mt-add-image/scripts/detect-image-source.js "<url>"
+node scripts/newsletter/detect-image-source.js "<url>"
 ```
 → `{ original_url, clean_url, isSubstack, uuid?, innerUrl? }`.
 
 When invoked **directly** (not via `mt-add-url`), first run the router to get accessibility + duplicate status and skip accordingly:
 ```bash
-node ../mt-add-url/scripts/add-url.js "<url>"   # expect route:image; skip if duplicate/!accessible
+node scripts/newsletter/add-url.js "<url>"   # expect route:image; skip if duplicate/!accessible
 ```
 (When dispatched by `mt-add-url`, that check already ran — don't repeat it.)
 
 ### 2a. Substack image (`isSubstack: true` with `uuid`)
 Find the source post:
 ```bash
-node .claude/skills/mt-add-image/scripts/find-substack-post.js --uuid <uuid>
+node scripts/newsletter/find-substack-post.js --uuid <uuid>
 ```
 - `found: false` → retry with the deeper sitemap crawl (slower — fetches posts ~3 months back, capped at 40 fetches total across all publications; warn the user it may take a while):
   ```bash
-  node .claude/skills/mt-add-image/scripts/find-substack-post.js --uuid <uuid> --deep
+  node scripts/newsletter/find-substack-post.js --uuid <uuid> --deep
   ```
   On a miss the result reports `scanned` (posts fetched), `budget` (the 40-fetch cap), and `cutoff` (oldest date looked at) — mention how far back it looked.
 - `found: false` after `--deep` → no source post; go to step 3 (ask) and/or step 4 (add publication).
@@ -58,7 +58,7 @@ If no label was detected, use `AskUserQuestion`:
 - "Couldn't detect a name for this image (`<clean_url>`). What label should I use?" (free-text).
 
 ### 4. Add-publication offer (Substack miss only)
-If a Substack image wasn't found and the user tells you which publication it's from, offer to append that host to `.claude/skills/mt-add-image/config/substack-publications.json`, then retry step 2a. This grows coverage for next time.
+If a Substack image wasn't found and the user tells you which publication it's from, offer to append that host to `scripts/newsletter/config/substack-publications.json`, then retry step 2a. This grows coverage for next time.
 
 ### 5. Insert into Bonus → Images
 Follow `../mt-add-url/references/newsletter-post-mechanics.md` to find/create today's post, then add under **Images**:

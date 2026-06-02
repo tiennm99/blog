@@ -9,7 +9,7 @@ description: 'YouTube video handler for the Hugo blog newsletter. Adds a YouTube
 
 Scope: **YouTube links only** (`watch`, `youtu.be`, `shorts`). Direct video files (`.mp4` etc.) are not handled here — they go through `mt-add-url`'s fallback.
 
-Shared scripts: `.claude/skills/mt-add-url/scripts/`. Shared procedure: `../mt-add-url/references/newsletter-post-mechanics.md` — **follow it** for post find/create, numbering, Bonus insertion, and language rules.
+Shared scripts: `scripts/newsletter/`. Shared procedure: `../mt-add-url/references/newsletter-post-mechanics.md` — **follow it** for post find/create, numbering, Bonus insertion, and language rules.
 
 ## Input
 
@@ -19,7 +19,7 @@ A clean YouTube URL (passed by `mt-add-url`, or given directly).
 
 1. **Classify / fetch title** — run the router to get the canonical URL + title:
    ```bash
-   node .claude/skills/mt-add-url/scripts/add-url.js "<url>"
+   node scripts/newsletter/add-url.js "<url>"
    ```
    Confirm `route: youtube`; skip if `duplicate` or not `accessible`. Use the returned `clean_url` (canonical `watch?v=ID`) and `title`.
    - If `title` is missing (oEmbed failed), fetch the title via WebFetch on the watch URL.

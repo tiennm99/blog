@@ -6,7 +6,7 @@
 const fs = require("fs");
 const path = require("path");
 
-const PROJECT_ROOT = path.resolve(__dirname, "../../../..");
+const PROJECT_ROOT = path.resolve(__dirname, "../..");
 const CONTENT_DIR = path.join(PROJECT_ROOT, "content", "post");
 
 // Extract newsletter number from file content

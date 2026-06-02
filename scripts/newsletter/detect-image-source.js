@@ -11,7 +11,7 @@ const {
   cleanUrl,
   isSubstackImage,
   substackImageUuid,
-} = require("../../mt-add-url/scripts/url-utils.js");
+} = require("./url-utils.js");
 
 const url = process.argv[2];
 if (!url) {

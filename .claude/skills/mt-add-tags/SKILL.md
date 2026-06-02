@@ -49,7 +49,7 @@ Read the full post body. Identify:
 
 Before generating, run:
 ```bash
-node .claude/skills/mt-add-tags/scripts/list-existing-tags.js
+node scripts/newsletter/list-existing-tags.js
 ```
 When a proposed tag matches an existing one case-insensitively, use the existing casing.
 -->

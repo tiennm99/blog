@@ -21,7 +21,7 @@ if (!url) {
   process.exit(1);
 }
 
-const PROJECT_ROOT = path.resolve(__dirname, "../../../..");
+const PROJECT_ROOT = path.resolve(__dirname, "../..");
 const CONTENT_DIR = path.join(PROJECT_ROOT, "content", "post");
 
 const YT_HOSTS = new Set(["youtube.com", "www.youtube.com", "m.youtube.com"]);

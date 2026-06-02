@@ -7,13 +7,13 @@ description: 'Article handler for the Hugo blog newsletter. Adds a single articl
 
 `mt-add-post` is the **article handler**: given a clean article/blog URL, it extracts the content, writes a Vietnamese summary, and inserts it into today's newsletter main content. It does **not** classify or route URLs — that is `mt-add-url`'s job. For YouTube/images/other types, use `mt-add-url`.
 
-Shared scripts: `.claude/skills/mt-add-url/scripts/`. Shared procedure: `../mt-add-url/references/newsletter-post-mechanics.md` (find/create today's post, newsletter numbering, section insertion, language rules) — **follow it** for all post mechanics.
+Shared scripts: `scripts/newsletter/`. Shared procedure: `../mt-add-url/references/newsletter-post-mechanics.md` (find/create today's post, newsletter numbering, section insertion, language rules) — **follow it** for all post mechanics.
 
 ## Input
 
 A clean article URL (passed by `mt-add-url`, or given directly). If a raw URL is provided directly, you may run the classifier to clean/dedup it first:
 ```bash
-node .claude/skills/mt-add-url/scripts/add-url.js "<url>"
+node scripts/newsletter/add-url.js "<url>"
 ```
 Trust `route: article`; skip if `duplicate` or not `accessible`.
 
