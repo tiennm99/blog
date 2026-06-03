@@ -23,7 +23,7 @@ My passes:
 
 Friend's passes:
 
-- https://claude.ai/referral/7RBJExZ7LA
+- ~~https://claude.ai/referral/7RBJExZ7LA~~ — **out of stock as of 2026-05-31**
 
 ### [ClaudeKit](https://claudekit.cc/?ref=BWA910UK)
 
