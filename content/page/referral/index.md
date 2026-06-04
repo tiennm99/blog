@@ -57,12 +57,12 @@ Link: https://opencode.ai/go?ref=HE42WGS8BM
 
 ### [MiniMax](https://platform.minimax.io/subscribe/token-plan?code=CAQ5sxHAq6&source=link)
 
-🎁 MiniMax Token Plan Referral Program until **Jul 1, 2026**. **$45.00 API Voucher Reward** per successful paid referral.
+🎁 MiniMax Token Plan Referral Program until **Jul 1, 2026**.
 
 **How it works:**
 
 - **For Referred Users:** Use a referral link to get **10% off** your subscription and become a dev ambassador.
-- **For Referrers:** Earn **10% back in API vouchers** for every successful paid referral, usable across all MiniMax models. Plus priority access to events and model previews.
+- **For Referrers:** Earn **10% back in API voucher** for every successful paid referral, usable across all MiniMax models. Plus priority access to events and model previews. [View details](https://platform.minimax.io/subscribe/token-plan?code=CAQ5sxHAq6&source=link)
 
 [![minimax](minimax.png)](https://platform.minimax.io/subscribe/token-plan?code=CAQ5sxHAq6&source=link)
 
