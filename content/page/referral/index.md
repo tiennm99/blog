@@ -57,12 +57,14 @@ Link: https://opencode.ai/go?ref=HE42WGS8BM
 
 ### [MiniMax](https://platform.minimax.io/subscribe/token-plan?code=CAQ5sxHAq6&source=link)
 
-🎁 MiniMax Token Plan New Year Mega Offer — Token Plan Referral Program until **May 1, 2026**.
+🎁 MiniMax Token Plan Referral Program until **Jul 1, 2026**. **$45.00 API Voucher Reward** per successful paid referral.
 
-- Friends get **10% OFF** any Token Plan subscription and become a dev ambassador (join the dev community).
-- I earn **10% back in API vouchers** for every successful paid referral, usable across all MiniMax models — plus priority access to events and model previews.
+**How it works:**
 
-Vouchers work with M2.7, Speech 2.8, Image-01, Hailuo video, and Music-2.5.
+- **For Referred Users:** Use a referral link to get **10% off** your subscription and become a dev ambassador.
+- **For Referrers:** Earn **10% back in API vouchers** for every successful paid referral, usable across all MiniMax models. Plus priority access to events and model previews.
+
+[![minimax](minimax.png)](https://platform.minimax.io/subscribe/token-plan?code=CAQ5sxHAq6&source=link)
 
 Referral code: `CAQ5sxHAq6`
 
