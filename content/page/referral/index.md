@@ -1,7 +1,7 @@
 ---
 title: Referral
 description: Referral links for tech services I use
-tags: ["Referral", "AI Tools", "Claude Code", "Cloud Storage"]
+tags: ["Referral", "AI Tools", "Claude Code", "Cloud Storage", "Cloud Computing", "Alibaba Cloud"]
 aliases:
   - invite
 menu:
@@ -107,6 +107,25 @@ Rebate credit can be used for anything on BigModel: resource packs, API calls, p
 Invitation code: `VGRZKHKNKW`
 
 Link: https://www.bigmodel.cn/glm-coding?ic=VGRZKHKNKW
+
+## Cloud Computing
+
+### [Alibaba Cloud](https://www.alibabacloud.com/campaign/benefits?referral_code=A92LU5)
+
+Alibaba Cloud is one of the world's largest cloud computing platforms — offering 50+ products including ECS, OSS, RDS, Redis, MongoDB, and networking.
+
+**New user benefits (via referral):**
+
+- Up to **$1,700** in free trial credits (individual) or **$8,500** (enterprise)
+- **12-month free** ECS (Elastic Compute Service) trial
+- **50+** products available in free trial
+- New-user coupons and discounts on first orders
+
+**How it works:** Sign up via the referral link as a new user → complete identity verification → access free trials and promotions.
+
+Referral code: `A92LU5`
+
+Link: https://www.alibabacloud.com/campaign/benefits?referral_code=A92LU5
 
 ## Cloud Storage
 
