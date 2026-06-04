@@ -11,6 +11,8 @@ menu:
       icon: link
 ---
 
+Many thanks to those who subscribe via my referral links! 🙏
+
 ## Claude Ecosystem
 
 ### [Claude Code Guest Pass](https://claude.ai/referral/ZkoAngod1A)
