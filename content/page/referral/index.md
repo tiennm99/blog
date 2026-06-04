@@ -108,6 +108,18 @@ Invitation code: `VGRZKHKNKW`
 
 Link: https://www.bigmodel.cn/glm-coding?ic=VGRZKHKNKW
 
+### [Xiaomi MiMo](https://platform.xiaomimimo.com?ref=T8ESAY)
+
+Xiaomi MiMo Open Platform — running Xiaomi's flagship MiMo V2.5 and the rest of the lineup. Sign up with my code and you'll instantly get **$2** in API credits.
+
+After signup, enter the code at the bottom-left of the console. Credits valid **40 days**.
+
+Referral code: `T8ESAY`
+
+Link: https://platform.xiaomimimo.com?ref=T8ESAY
+
+[![mimo](mimo.png)](https://platform.xiaomimimo.com?ref=T8ESAY)
+
 ## Cloud Computing
 
 ### [Alibaba Cloud](https://www.alibabacloud.com/campaign/benefits?referral_code=A92LU5)
