@@ -39,18 +39,6 @@ Link: https://claudekit.cc/?ref=BWA910UK
 
 ## AI Coding Platforms & LLM APIs
 
-### [OpenCode Go](https://opencode.ai/go?ref=HE42WGS8BM)
-
-Invite friends to OpenCode Go. Earn **$5** when a friend subscribes, and they'll get **$5** too.
-
-- Share your referral link.
-- Your friend joins and subscribes to Go.
-- You both get a **$5 usage credit** to apply toward your Go usage limits.
-
-Referral code: `HE42WGS8BM`
-
-Link: https://opencode.ai/go?ref=HE42WGS8BM
-
 ### [Z.ai](https://z.ai/subscribe?ic=PLKIAYEIPW)
 
 🚀 You've been invited to join the GLM Coding Plan! Enjoy full support for Claude Code, Cline, and 20+ top coding tools — starting at just $10/month. Subscribe now and grab the limited-time deal! Link： https://z.ai/subscribe?ic=PLKIAYEIPW
@@ -70,6 +58,18 @@ Referral code: `CAQ5sxHAq6`
 
 Link: https://platform.minimax.io/subscribe/token-plan?code=CAQ5sxHAq6&source=link
 
+### [OpenCode Go](https://opencode.ai/go?ref=HE42WGS8BM)
+
+Invite friends to OpenCode Go. Earn **$5** when a friend subscribes, and they'll get **$5** too.
+
+- Share your referral link.
+- Your friend joins and subscribes to Go.
+- You both get a **$5 usage credit** to apply toward your Go usage limits.
+
+Referral code: `HE42WGS8BM`
+
+Link: https://opencode.ai/go?ref=HE42WGS8BM
+
 ### [Synthetic](https://synthetic.new/?referral=CNBFyw28zF0dZoj)
 
 Thanks for helping us grow!
@@ -81,6 +81,18 @@ Share Your Referral Link
 https://synthetic.new/?referral=CNBFyw28zF0dZoj
 
 Your referral link contains your unique code: CNBFyw28zF0dZoj
+
+### [Xiaomi MiMo](https://platform.xiaomimimo.com?ref=T8ESAY)
+
+Xiaomi MiMo Open Platform — running Xiaomi's flagship MiMo V2.5 and the rest of the lineup. Sign up with my code and you'll instantly get **$2** in API credits.
+
+After signup, enter the code at the bottom-left of the console. Credits valid **40 days**.
+
+Referral code: `T8ESAY`
+
+Link: https://platform.xiaomimimo.com?ref=T8ESAY
+
+[![mimo](mimo.png)](https://platform.xiaomimimo.com?ref=T8ESAY)
 
 ### [ModelArk](https://www.byteplus.com/activity/codingplan?ac=MMAUCIS9NT1S&rc=2739UWRE)
 
@@ -111,18 +123,6 @@ Rebate credit can be used for anything on BigModel: resource packs, API calls, p
 Invitation code: `VGRZKHKNKW`
 
 Link: https://www.bigmodel.cn/glm-coding?ic=VGRZKHKNKW
-
-### [Xiaomi MiMo](https://platform.xiaomimimo.com?ref=T8ESAY)
-
-Xiaomi MiMo Open Platform — running Xiaomi's flagship MiMo V2.5 and the rest of the lineup. Sign up with my code and you'll instantly get **$2** in API credits.
-
-After signup, enter the code at the bottom-left of the console. Credits valid **40 days**.
-
-Referral code: `T8ESAY`
-
-Link: https://platform.xiaomimimo.com?ref=T8ESAY
-
-[![mimo](mimo.png)](https://platform.xiaomimimo.com?ref=T8ESAY)
 
 ## Cloud Computing
 
