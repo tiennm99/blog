@@ -24,6 +24,7 @@ _(Danh sách này được tạo tự động, sắp xếp theo tên repo)_
 | Name | Description | URL |
 | --- | --- | --- |
 | [abhisheknaiidu/awesome-github-profile-readme](https://github.com/abhisheknaiidu/awesome-github-profile-readme) | 😎 A curated list of awesome GitHub Profile which updates in real time | [https://bit.ly/awesome-gh](https://bit.ly/awesome-gh) |
+| [BerriAI/litellm](https://github.com/BerriAI/litellm) | Python SDK, Proxy Server (AI Gateway) to call 100+ LLM APIs in OpenAI (or native) format, with cost tracking, guardrails, loadbalancing and logging. [Bedrock, Azure, OpenAI, VertexAI, Cohere, Anthropic, Sagemaker, HuggingFace, VLLM, NVIDIA NIM] | [https://docs.litellm.ai/docs/](https://docs.litellm.ai/docs/) |
 | [bkfcduchoa/bkfcduchoa.github.io](https://github.com/bkfcduchoa/bkfcduchoa.github.io) |  | [https://bkfcduchoa.github.io/](https://bkfcduchoa.github.io/) |
 | [coollabsio/coolify](https://github.com/coollabsio/coolify) | An open-source, self-hostable PaaS alternative to Vercel, Heroku & Netlify that lets you easily deploy static sites, databases, full-stack applications and 280+ one-click services on your own servers. | [https://coolify.io](https://coolify.io) |
 | [gohugoio/hugoThemesSiteBuilder](https://github.com/gohugoio/hugoThemesSiteBuilder) | The source for https://themes.gohugo.io | [https://themes.gohugo.io](https://themes.gohugo.io) |
@@ -65,6 +66,7 @@ _(Danh sách này được tạo tự động, sắp xếp theo tên repo)_
 | [tiennm99/is-a-good-dev](https://github.com/tiennm99/is-a-good-dev) | Register for your is-a-good.dev domain! | [https://is-a-good.dev](https://is-a-good.dev) |
 | [tiennm99/ja-netfilter](https://github.com/tiennm99/ja-netfilter) | A javaagent framework | [https://ja-netfilter.com](https://ja-netfilter.com) |
 | [tiennm99/java-design-patterns](https://github.com/tiennm99/java-design-patterns) | Design patterns implemented in Java | [https://java-design-patterns.com](https://java-design-patterns.com) |
+| [tiennm99/litellm](https://github.com/tiennm99/litellm) | Python SDK, Proxy Server (AI Gateway) to call 100+ LLM APIs in OpenAI (or native) format, with cost tracking, guardrails, loadbalancing and logging. [Bedrock, Azure, OpenAI, VertexAI, Cohere, Anthropic, Sagemaker, HuggingFace, VLLM, NVIDIA NIM] | [https://docs.litellm.ai/docs/](https://docs.litellm.ai/docs/) |
 | [tiennm99/loldle](https://github.com/tiennm99/loldle) | LoLdle-style League of Legends daily champion guessing game — data auto-updated from my loldle-data repo | [https://tiennm99.github.io/loldle/](https://tiennm99.github.io/loldle/) |
 | [tiennm99/lombok](https://github.com/tiennm99/lombok) | Very spicy additions to the Java programming language. | [https://projectlombok.org/](https://projectlombok.org/) |
 | [tiennm99/loto](https://github.com/tiennm99/loto) | Lô Tô (Vietnamese lottery bingo) number board — Next.js web app | [https://tiennm99.github.io/loto/](https://tiennm99.github.io/loto/) |
