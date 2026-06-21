@@ -49,6 +49,7 @@ _(Danh sách này được tạo tự động, sắp xếp theo tên repo)_
 | [tiennm99/cowork-complete-guide](https://github.com/tiennm99/cowork-complete-guide) | Practice repo for the Complete Guide to Claude Cowork course | [https://tiennm99.github.io/cowork-complete-guide/](https://tiennm99.github.io/cowork-complete-guide/) |
 | [tiennm99/cv](https://github.com/tiennm99/cv) | My personal CV written in Typst with RenderCV. | [https://tiennm99.github.io/cv/](https://tiennm99.github.io/cv/) |
 | [tiennm99/cv-latex](https://github.com/tiennm99/cv-latex) | [Archived — see cv] My CV written in LaTeX. Replaced by cv (Typst). | [https://tiennm99.github.io/cv-latex/](https://tiennm99.github.io/cv-latex/) |
+| [tiennm99/dating](https://github.com/tiennm99/dating) | Warm-witty dating JD and CV site built with SvelteKit | [https://tiennm99.github.io/dating/](https://tiennm99.github.io/dating/) |
 | [tiennm99/demngayxaem](https://github.com/tiennm99/demngayxaem) | Đếm ngày xa em — a small relationship 'days-apart' counter website. | [https://tiennm99.github.io/demngayxaem/](https://tiennm99.github.io/demngayxaem/) |
 | [tiennm99/dental-visit](https://github.com/tiennm99/dental-visit) | Small website created for a dental visit appointment. | [https://tiennm99.github.io/dental-visit/](https://tiennm99.github.io/dental-visit/) |
 | [tiennm99/dobattu](https://github.com/tiennm99/dobattu) | Website đổi tên quán ăn Ốc Rốt thành Đô Bất Tử | [https://tiennm99.github.io/dobattu/](https://tiennm99.github.io/dobattu/) |
