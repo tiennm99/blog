@@ -1,7 +1,7 @@
 ---
 title: Referral
 description: Referral links for tech services I use
-tags: ["Referral", "AI Tools", "Claude Code", "Cloud Storage", "Cloud Computing", "Alibaba Cloud"]
+tags: ["Referral", "AI Tools", "Claude Code", "Cloud Storage", "Cloud Computing", "Alibaba Cloud", "Database", "Aiven"]
 aliases:
   - invite
 menu:
@@ -142,6 +142,18 @@ Alibaba Cloud is one of the world's largest cloud computing platforms — offeri
 Referral code: `A92LU5`
 
 Link: https://www.alibabacloud.com/campaign/benefits?referral_code=A92LU5
+
+## Managed Data Platforms
+
+### [Aiven](https://console.aiven.io/signup?referral_code=dgxaaojd772ygmk7bjr6)
+
+Aiven is a managed open-source data platform (Database-as-a-Service) — fully hosted databases, streaming, and analytics services deployable across all major clouds. Offerings include PostgreSQL, MySQL, Apache Kafka, ClickHouse, OpenSearch, Valkey, and more, managed from a single console. It is not a VPS or compute provider — you consume ready-to-use data services, not virtual machines.
+
+Sign up via my referral link and start the Aiven trial to get an extra **$100.00 USD** in credits to spend.
+
+Referral code: `dgxaaojd772ygmk7bjr6`
+
+Link: https://console.aiven.io/signup?referral_code=dgxaaojd772ygmk7bjr6
 
 ## Cloud Storage
 
