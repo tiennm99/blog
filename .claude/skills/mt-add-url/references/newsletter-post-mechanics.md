@@ -41,11 +41,12 @@ categories: ["Newsletter"]
 **Never rewrite the whole `index.md`.** Always insert by anchoring an Edit on an existing string (e.g. `### Bonus`, `**Videos:**`) and prepending/appending around it. Multiple URLs targeting the same day's post must be applied **sequentially** so one edit doesn't clobber another.
 
 **Articles go before the `### Bonus` section; Bonus assets go inside it.**
+Article headings must use the original source title. Do not translate/localize article titles; keep the source-language wording, capitalization, punctuation, and proper nouns from metadata (`og:title`, page title, or fetcher frontmatter). Summaries and key points stay Vietnamese.
 
 To insert an article safely, anchor the Edit on `### Bonus` and prepend:
 ```
 old_string: "### Bonus"
-new_string: "## [New Article Title](clean_url)\n\n[Summary]\n\n**Điểm chính:**\n- ...\n\n### Bonus"
+new_string: "## [Original Article Title](clean_url)\n\n[Summary]\n\n**Điểm chính:**\n- ...\n\n### Bonus"
 ```
 
 If the post has **no `### Bonus`** yet:
