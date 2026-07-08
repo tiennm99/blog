@@ -1,7 +1,7 @@
 ---
 title: "Newsletter #85"
 date: 2026-02-28
-tags: ["AI-Assisted"]
+tags: ["AI-Assisted", "Newsletter", "Claude Code", "Java", "Databases", "Go", "Cloud"]
 categories: ["Newsletter"]
 ---
 

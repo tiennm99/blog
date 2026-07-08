@@ -1,7 +1,7 @@
 ---
 title: "Newsletter #75"
 date: 2025-12-28
-tags: ["AI-Assisted"]
+tags: ["AI-Assisted", "Newsletter", "System Design", "Microservices", "Linux", "Load Balancing", "High Availability"]
 categories: ["Newsletter"]
 ---
 

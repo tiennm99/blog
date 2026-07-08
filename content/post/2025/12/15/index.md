@@ -1,7 +1,7 @@
 ---
 title: "Newsletter #72"
 date: 2025-12-15
-tags: ["AI-Assisted"]
+tags: ["AI-Assisted", "Newsletter", "Compilers", "System Design", "Replication", "DDD", "Software Architecture"]
 categories: ["Newsletter"]
 ---
 

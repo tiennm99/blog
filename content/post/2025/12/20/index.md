@@ -1,7 +1,7 @@
 ---
 title: "Newsletter #73"
 date: 2025-12-20
-tags: ["AI-Assisted"]
+tags: ["AI-Assisted", "Newsletter", "Go", "Databases", "Performance", "Caching", "System Design"]
 categories: ["Newsletter"]
 ---
 

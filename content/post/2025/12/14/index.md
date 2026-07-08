@@ -1,7 +1,7 @@
 ---
 title: "Newsletter #71"
 date: 2025-12-14
-tags: ["AI-Assisted"]
+tags: ["AI-Assisted", "Newsletter", "SQL", "Algorithms", "Go", "API Design", "Code Review"]
 categories: ["Newsletter"]
 ---
 

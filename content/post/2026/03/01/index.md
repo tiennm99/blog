@@ -1,7 +1,7 @@
 ---
 title: "Newsletter #86"
 date: 2026-03-01
-tags: ["AI-Assisted"]
+tags: ["AI-Assisted", "Newsletter", "Software Architecture", "Code Review", "Performance", "AI Adoption", "Game Development"]
 categories: ["Newsletter"]
 ---
 

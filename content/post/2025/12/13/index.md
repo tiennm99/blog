@@ -1,7 +1,7 @@
 ---
 title: "Newsletter #70"
 date: 2025-12-13
-tags: ["AI-Assisted"]
+tags: ["AI-Assisted", "Newsletter", "Developer Productivity", "Engineering Career", "Testing", "Code Quality", "AI Coding"]
 categories: ["Newsletter"]
 ---
 

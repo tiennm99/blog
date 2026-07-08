@@ -1,7 +1,7 @@
 ---
 title: "Newsletter #11"
 date: 2025-04-12
-tags: [ "AI-Assisted" ]
+tags: ["AI-Assisted", "Newsletter", "Data Engineering", "Software Architecture", "Leadership", "Code Quality", "Java"]
 categories: [ "Newsletter" ]
 ---
 

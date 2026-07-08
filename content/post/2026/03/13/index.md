@@ -1,7 +1,7 @@
 ---
 title: "Newsletter #88"
 date: 2026-03-13
-tags: ["AI-Assisted"]
+tags: ["AI-Assisted", "Newsletter", "Debugging", "Web Performance", "Frontend", "Code Quality", "Browser Rendering"]
 categories: ["Newsletter"]
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: "Newsletter #9"
 date: 2025-04-01
-tags: [ "AI-Assisted" ]
+tags: ["AI-Assisted", "Newsletter", "Infrastructure", "Java", "Go", "Redis", "Observability"]
 categories: [ "Newsletter" ]
 ---
 

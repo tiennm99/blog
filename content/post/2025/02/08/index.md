@@ -1,7 +1,7 @@
 ---
 title: "Newsletter #1"
 date: 2025-02-08
-tags: [ "AI-Assisted" ]
+tags: ["AI-Assisted", "Newsletter", "Databases", "Java", "JVM", "Performance", "Concurrency"]
 categories: [ "Newsletter" ]
 ---
 

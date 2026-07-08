@@ -1,7 +1,7 @@
 ---
 title: "Newsletter #4"
 date: 2025-02-27
-tags: [ "AI-Assisted" ]
+tags: ["AI-Assisted", "Newsletter", "Java", "Programming Languages", "Redis", "Engineering Career", "Game Development"]
 categories: [ "Newsletter" ]
 ---
 

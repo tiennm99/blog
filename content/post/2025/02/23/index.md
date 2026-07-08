@@ -1,7 +1,7 @@
 ---
 title: "Newsletter #3"
 date: 2025-02-23
-tags: [ "AI-Assisted" ]
+tags: ["AI-Assisted", "Newsletter", "Java", "JVM", "Redis", "Database Sharding", "Career"]
 categories: [ "Newsletter" ]
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: "Newsletter #74"
 date: 2025-12-27
-tags: ["AI-Assisted"]
+tags: ["AI-Assisted", "Newsletter", "Software Architecture", "Databases", "Cloud Cost", "Performance", "API Design"]
 categories: ["Newsletter"]
 ---
 

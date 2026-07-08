@@ -1,7 +1,7 @@
 ---
 title: "Newsletter #2"
 date: 2025-02-16
-tags: [ "AI-Assisted" ]
+tags: ["AI-Assisted", "Newsletter", "Databases", "Redis", "Rate Limiting", "Cloudflare", "LLMs"]
 categories: [ "Newsletter" ]
 ---
 

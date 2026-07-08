@@ -1,7 +1,7 @@
 ---
 title: "Newsletter #14"
 date: 2025-04-30
-tags: [ "AI-Assisted" ]
+tags: ["AI-Assisted", "Newsletter", "Algorithms", "Data Structures", "Performance", "AI Inference", "Git"]
 categories: [ "Newsletter" ]
 ---
 

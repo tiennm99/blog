@@ -1,7 +1,7 @@
 ---
 title: "Newsletter #12"
 date: 2025-04-20
-tags: [ "AI-Assisted" ]
+tags: ["AI-Assisted", "Newsletter", "Software Architecture", "Distributed Systems", "Java", "Networking", "System Design"]
 categories: [ "Newsletter" ]
 ---
 

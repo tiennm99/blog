@@ -1,7 +1,7 @@
 ---
 title: "Newsletter #76"
 date: 2026-01-05
-tags: ["AI-Assisted"]
+tags: ["AI-Assisted", "Newsletter", "Networking", "gRPC", "Software Engineering", "AI", "Career"]
 categories: ["Newsletter"]
 ---
 

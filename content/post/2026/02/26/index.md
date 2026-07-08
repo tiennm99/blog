@@ -1,7 +1,7 @@
 ---
 title: "Newsletter #84"
 date: 2026-02-26
-tags: ["AI-Assisted"]
+tags: ["AI-Assisted", "Newsletter", "AI Coding", "Performance", "Go", "Clean Architecture", "Software Engineering"]
 categories: ["Newsletter"]
 ---
 

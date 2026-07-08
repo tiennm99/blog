@@ -1,7 +1,7 @@
 ---
 title: "Newsletter #81"
 date: 2026-02-18
-tags: ["AI-Assisted"]
+tags: ["AI-Assisted", "Newsletter", "Java", "Go", "Performance", "AI Agents", "Code Quality"]
 categories: ["Newsletter"]
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: "Newsletter #78"
 date: 2026-02-01
-tags: ["AI-Assisted"]
+tags: ["AI-Assisted", "Newsletter", "Software Engineering", "Databases", "Garbage Collection", "Performance", "AI Coding"]
 categories: ["Newsletter"]
 ---
 

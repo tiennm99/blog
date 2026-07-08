@@ -1,7 +1,7 @@
 ---
 title: "Newsletter #8"
 date: 2025-03-24
-tags: [ "AI-Assisted" ]
+tags: ["AI-Assisted", "Newsletter", "Distributed Systems", "Databases", "Microservices", "Infrastructure", "System Design"]
 categories: [ "Newsletter" ]
 ---
 

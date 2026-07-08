@@ -1,7 +1,7 @@
 ---
 title: "Newsletter #77"
 date: 2026-01-24
-tags: ["AI-Assisted"]
+tags: ["AI-Assisted", "Newsletter", "Java", "Go", "Kotlin", "Rust", "Error Handling"]
 categories: ["Newsletter"]
 ---
 

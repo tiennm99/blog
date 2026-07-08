@@ -1,7 +1,7 @@
 ---
 title: "Newsletter #69"
 date: 2025-12-12
-tags: ["AI-Assisted"]
+tags: ["AI-Assisted", "Newsletter", "Software Architecture", "Java", "Linux", "AI Agents", "Productivity"]
 categories: ["Newsletter"]
 ---
 

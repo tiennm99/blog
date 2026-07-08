@@ -1,7 +1,7 @@
 ---
 title: "Newsletter #92"
 date: 2026-03-20
-tags: ["AI-Assisted"]
+tags: ["AI-Assisted", "Newsletter", "AI Infrastructure", "Security", "Redis", "Compression", "AI Agents"]
 categories: ["Newsletter"]
 ---
 

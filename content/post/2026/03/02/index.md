@@ -1,7 +1,7 @@
 ---
 title: "Newsletter #87"
 date: 2026-03-02
-tags: ["AI-Assisted"]
+tags: ["AI-Assisted", "Newsletter", "AI", "Engineering Culture", "Rate Limiting", "AI Agents", "Software Engineering"]
 categories: ["Newsletter"]
 ---
 

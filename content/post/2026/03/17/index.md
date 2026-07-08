@@ -1,7 +1,7 @@
 ---
 title: "Newsletter #91"
 date: 2026-03-17
-tags: ["AI-Assisted"]
+tags: ["AI-Assisted", "Newsletter", "Go", "Performance", "Concurrency", "AI Coding", "Algorithms"]
 categories: ["Newsletter"]
 ---
 

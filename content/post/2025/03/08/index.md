@@ -1,7 +1,7 @@
 ---
 title: "Newsletter #6"
 date: 2025-03-08
-tags: [ "AI-Assisted" ]
+tags: ["AI-Assisted", "Newsletter", "LLMs", "Java", "Redis", "Rate Limiting", "Problem Solving"]
 categories: [ "Newsletter" ]
 ---
 

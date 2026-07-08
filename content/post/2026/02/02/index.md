@@ -1,7 +1,7 @@
 ---
 title: "Newsletter #79"
 date: 2026-02-02
-tags: ["AI-Assisted"]
+tags: ["AI-Assisted", "Newsletter", "Developer Tools", "Containers", "Claude Code", "LLMs", "Web Browsers"]
 categories: ["Newsletter"]
 ---
 

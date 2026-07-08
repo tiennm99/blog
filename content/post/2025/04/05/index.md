@@ -1,7 +1,7 @@
 ---
 title: "Newsletter #10"
 date: 2025-04-05
-tags: [ "AI-Assisted" ]
+tags: ["AI-Assisted", "Newsletter", "Engineering Culture", "Git", "Java", "Code Review", "Algorithms"]
 categories: [ "Newsletter" ]
 ---
 

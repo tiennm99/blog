@@ -1,7 +1,7 @@
 ---
 title: "Newsletter #83"
 date: 2026-02-24
-tags: ["AI-Assisted"]
+tags: ["AI-Assisted", "Newsletter", "Data Engineering", "PostgreSQL", "AI Agents", "Prompt Engineering", "Software Engineering"]
 categories: ["Newsletter"]
 ---
 

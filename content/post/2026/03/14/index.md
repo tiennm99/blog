@@ -1,7 +1,7 @@
 ---
 title: "Newsletter #89"
 date: 2026-03-14
-tags: ["AI-Assisted"]
+tags: ["AI-Assisted", "Newsletter", "AI Agents", "Go", "Rate Limiting", "Error Handling", "Java"]
 categories: ["Newsletter"]
 ---
 

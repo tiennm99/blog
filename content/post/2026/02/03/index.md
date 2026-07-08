@@ -1,7 +1,7 @@
 ---
 title: "Newsletter #80"
 date: 2026-02-03
-tags: ["AI-Assisted"]
+tags: ["AI-Assisted", "Newsletter", "AI Agents", "Go", "Databases", "Developer Tools", "IntelliJ IDEA"]
 categories: ["Newsletter"]
 ---
 

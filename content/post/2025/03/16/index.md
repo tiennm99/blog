@@ -1,7 +1,7 @@
 ---
 title: "Newsletter #7"
 date: 2025-03-16
-tags: [ "AI-Assisted" ]
+tags: ["AI-Assisted", "Newsletter", "LLMs", "AI Coding", "Cursor", "Security", "Engineering Culture"]
 categories: [ "Newsletter" ]
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: "Newsletter #13"
 date: 2025-04-22
-tags: [ "AI-Assisted" ]
+tags: ["AI-Assisted", "Newsletter", "Distributed Systems", "Java", "Spring Boot", "gRPC", "Performance"]
 categories: [ "Newsletter" ]
 ---
 

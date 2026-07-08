@@ -1,7 +1,7 @@
 ---
 title: "Newsletter #82"
 date: 2026-02-19
-tags: ["AI-Assisted"]
+tags: ["AI-Assisted", "Newsletter", "Web Development", "Engineering Career", "Graphics", "DNS", "Software Engineering"]
 categories: ["Newsletter"]
 ---
 
