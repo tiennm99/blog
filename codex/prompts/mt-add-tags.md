@@ -30,7 +30,7 @@ Produce **2-3** for regular posts, **6-7** for newsletter posts (title starts wi
 - Good tags: specific, short (1-3 words), useful for finding related content.
 - Draw from: tool/tech names (`GitHub Actions`, `Docker`, `PostgreSQL`, `Rust`, `Go`), concepts (`CI/CD`, `Caching`, `System Design`, `Performance`, `Security`), content markers (`AI-Assisted`, `Newsletter`, `Tutorial`, `Deep Dive`), domains (`DevOps`, `Backend`, `Database`, `Infrastructure`, `Algorithms`).
 - Avoid overly generic tags (`Technology`, `Software`, `Programming`) unless truly broad; avoid tags not in the content; max 7.
-- Newsletter posts: keep `AI-Assisted` and derive 5-6 from the issue's main topics → 6-7 total.
+- Newsletter posts: keep `AI-Assisted` and derive 5-6 from the newsletter's main topics → 6-7 total.
 
 ### 5. Confirm with user
 ```

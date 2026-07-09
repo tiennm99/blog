@@ -37,7 +37,7 @@ node scripts/newsletter/find-substack-post.js --uuid <uuid>
 - Still `found: false` → go to step 3 (ask) and/or step 4 (add publication).
 
 **When `found: true` — pick the label:**
-ByteByteGo attaches no captions and image order can't be auto-mapped, so the script returns `candidates` (the issue's topic titles).
+ByteByteGo attaches no captions and image order can't be auto-mapped, so the script returns `candidates` (the newsletter post's topic titles).
 1. If `caption` is non-empty → propose it as default.
 2. Otherwise present `candidates` to the user: "Image is from **[postTitle]** (`postUrl`). Which title matches it?" Offer the candidates (numbered list if many). Always include a "Type my own" escape.
 3. Label = user's pick (or typed). Localize to Vietnamese where natural; keep proper nouns.

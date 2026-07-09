@@ -42,7 +42,7 @@ node scripts/newsletter/find-substack-post.js --uuid <uuid>
 - `found: false` after `--deep` → no source post; go to step 3 (ask) and/or step 4 (add publication).
 
 **When `found: true` — pick the label (confirm-from-candidates):**
-ByteByteGo doesn't attach captions to images (verified: empty `alt`, no `<figcaption>`), and image order can't be mapped to titles automatically because sponsor/video items interleave. So the script returns `candidates` — the issue's topic titles from the post's TOC. Pick the label this way:
+ByteByteGo doesn't attach captions to images (verified: empty `alt`, no `<figcaption>`), and image order can't be mapped to titles automatically because sponsor/video items interleave. So the script returns `candidates` — the newsletter post's topic titles from the post's TOC. Pick the label this way:
 1. If `caption` is non-empty (some publications do caption images) → propose it as the default.
 2. Otherwise present `candidates` to the user via `AskUserQuestion` (the correct title is in this list):
    - "Image is from **[postTitle]** (`postUrl`). Which title matches it?"

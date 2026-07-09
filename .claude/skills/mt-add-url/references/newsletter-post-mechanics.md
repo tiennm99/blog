@@ -22,6 +22,10 @@ node scripts/newsletter/find-newsletter-number.js
 ```
 Searches backwards from today for the most recent newsletter and returns the next number. Only needed when **creating** a new post.
 
+## 2a. Terminology
+
+Refer to each numbered publication as a **newsletter**, not an issue. Use wording like `Newsletter #120`, `add newsletter 120`, or `add Newsletter #120` in reports and commit messages.
+
 ## 3. New post template
 
 ```markdown
@@ -90,7 +94,7 @@ When a subsection (e.g. `**Videos:**`) already exists, append under it; otherwis
 
 ## 6. Error handling
 
-| Issue | Action |
+| Problem | Action |
 |-------|--------|
 | URL inaccessible | Skip, note in report |
 | Duplicate URL | Skip, note in report |

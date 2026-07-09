@@ -73,7 +73,7 @@ Produce **2-3 tags** for regular posts, **6-7 tags** for newsletter posts (title
 - Tags that don't appear in or relate to the actual content
 - More than 7 tags — trim to the most distinctive ones
 
-**Newsletter posts** (title starts with "Newsletter #"): keep `AI-Assisted` and derive 5-6 tags from the main topics covered in that issue, totalling 6-7 tags.
+**Newsletter posts** (title starts with "Newsletter #"): keep `AI-Assisted` and derive 5-6 tags from the main topics covered in that newsletter, totalling 6-7 tags.
 
 ### 5. Confirm with user
 
