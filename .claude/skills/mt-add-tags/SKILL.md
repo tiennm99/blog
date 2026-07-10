@@ -11,6 +11,7 @@ This skill analyzes Hugo blog post content and generates a relevant list of tags
 - Blog: Vietnamese tech content at `content/post/YYYY/MM/DD/index.md`
 - Tags: Mix of English (tech terms, tools, concepts) and Vietnamese where natural
 - Target: **2-3 tags** for regular posts, **6-7 tags** for newsletter posts
+- User-facing questions and reports: English unless the user explicitly requests another language
 
 ## Workflow
 
@@ -29,7 +30,7 @@ Read the frontmatter. Check the `tags` field:
 
 - **Missing or empty** → generate fresh tags
 - **Only generic tags** like `["AI-Assisted"]` or `["Newsletter"]` alone → these are placeholders; offer to generate richer tags
-- **Already has 5+ meaningful tags** → show them and ask: *"Post đã có [N] tags: [...]. Bạn có muốn cập nhật không?"* Default: **yes**
+- **Already has 5+ meaningful tags** → show them and ask: *"Post already has [N] tags: [...]. Do you want to update them?"* Default: **yes**
 
 ### 3. Analyze post content
 
@@ -80,10 +81,10 @@ Produce **2-3 tags** for regular posts, **6-7 tags** for newsletter posts (title
 Present the proposed tags before writing:
 
 ```
-Đề xuất tags cho "[post title]":
+Suggested tags for "[post title]":
 ["Tag1", "Tag2", "Tag3", "Tag4", "Tag5", "Tag6"]
 
-Bạn có muốn áp dụng không? [Y/n]
+Apply these tags? [Y/n]
 ```
 
 Wait for confirmation. If the user says no or wants changes, revise accordingly.
@@ -113,6 +114,6 @@ git status --short | grep "content/post/" | awk '{print $2}' | head -1
 
 If a post file is found and its tags look minimal (only 1-2 tags, or only `AI-Assisted`/`Newsletter`), say:
 
-> "Post `content/post/.../index.md` chỉ có tags: [...]. Bạn có muốn thêm tags trước khi commit không? [Y/n]"
+> "Post `content/post/.../index.md` only has these tags: [...]. Add richer tags before committing? [Y/n]"
 
 Default is **yes** — proceed to generate and confirm tags unless the user declines.

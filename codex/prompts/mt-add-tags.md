@@ -9,7 +9,7 @@ Analyze a Hugo blog post and generate relevant tags, then write them to the fron
 
 Target (optional): `$ARGUMENTS`
 
-Blog: Vietnamese tech content at `content/post/YYYY/MM/DD/index.md`. Tags: mix of English (tech terms) and Vietnamese where natural.
+Blog: Vietnamese tech content at `content/post/YYYY/MM/DD/index.md`. Tags: mix of English (tech terms) and Vietnamese where natural. Keep user-facing questions and reports in English unless the user explicitly requests another language.
 
 ## Workflow
 
@@ -20,7 +20,7 @@ If `$ARGUMENTS` names a post (date, path, or title), use it. Otherwise use today
 Read the frontmatter `tags`:
 - Missing/empty → generate fresh.
 - Only generic (`["AI-Assisted"]` or `["Newsletter"]`) → placeholders; offer richer tags.
-- Already 5+ meaningful → show them, ask "Post đã có [N] tags: [...]. Bạn có muốn cập nhật không?" (default yes).
+- Already 5+ meaningful → show them, ask "Post already has [N] tags: [...]. Do you want to update them?" (default yes).
 
 ### 3. Analyze post content
 Read the full body. Identify main topics, technologies, languages/frameworks/tools, core concepts, and content type.
@@ -34,10 +34,10 @@ Produce **2-3** for regular posts, **6-7** for newsletter posts (title starts wi
 
 ### 5. Confirm with user
 ```
-Đề xuất tags cho "[post title]":
+Suggested tags for "[post title]":
 ["Tag1", "Tag2", "Tag3", ...]
 
-Bạn có muốn áp dụng không? [Y/n]
+Apply these tags? [Y/n]
 ```
 Wait for confirmation; revise if requested.
 

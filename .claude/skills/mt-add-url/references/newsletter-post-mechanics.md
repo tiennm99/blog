@@ -75,7 +75,9 @@ If the post has **no `### Bonus`** yet:
 ```
 When a subsection (e.g. `**Videos:**`) already exists, append under it; otherwise create it. Keep subsections in this order: **Images** → **Videos** → **Documents**.
 
-## 5. Language guidelines
+## 5. Post content language guidelines
+
+These rules apply only to text written into `content/post/**/index.md`. Keep user-facing questions, status updates, reports, and final responses in English unless the user explicitly requests another language.
 
 **Primary**: Vietnamese (99%) | **Secondary**: English (1% — unavoidable technical terms only)
 

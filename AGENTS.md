@@ -6,8 +6,11 @@ Canonical instructions for AI coding tools (Claude Code, OpenCode, Codex) workin
 
 - **Type**: Hugo static site with Vietnamese tech content
 - **Theme**: hugo-theme-stack
-- **Language**: Vietnamese (with common English tech words)
+- **Post content language**: Vietnamese (with common English tech words)
+- **User communication**: English by default; use another language only when the user explicitly requests it
 - **Timezone**: Asia/Ho_Chi_Minh (UTC+7)
+
+Vietnamese language requirements apply only to content written into Hugo posts, including summaries and localized labels. Keep questions, status updates, reports, and final responses in English unless the user asks for another language.
 
 ## Directory Structure
 
