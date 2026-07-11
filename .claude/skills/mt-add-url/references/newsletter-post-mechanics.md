@@ -92,6 +92,11 @@ These rules apply only to text written into `content/post/**/index.md`. Keep use
 - Action verbs: use → sử dụng, check → kiểm tra, build → xây dựng, test → kiểm thử
 - Any other term: translate if a common Vietnamese equivalent exists
 
+**Preserve original source language:**
+- Article headings and image labels must retain the source wording, capitalization, and punctuation.
+- Do not translate or localize article headings or image labels unless the user explicitly asks.
+- Video titles follow the `mt-add-video` handler's localization rules.
+
 **Content requirements:** audience = junior developers; tone = professional, clear, accessible; verify content is ≥99% Vietnamese before saving.
 
 ## 6. Error handling

@@ -10,7 +10,7 @@ Canonical instructions for AI coding tools (Claude Code, OpenCode, Codex) workin
 - **User communication**: English by default; use another language only when the user explicitly requests it
 - **Timezone**: Asia/Ho_Chi_Minh (UTC+7)
 
-Vietnamese language requirements apply only to content written into Hugo posts, including summaries and localized labels. Keep questions, status updates, reports, and final responses in English unless the user asks for another language.
+Vietnamese language requirements apply only to prose written into Hugo posts, including summaries. Preserve article titles and image labels in their original source language, wording, capitalization, and punctuation; translate them only when the user explicitly asks. Keep questions, status updates, reports, and final responses in English unless the user asks for another language.
 
 ## Directory Structure
 

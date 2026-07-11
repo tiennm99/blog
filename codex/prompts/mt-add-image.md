@@ -13,6 +13,8 @@ Shared scripts: `scripts/newsletter/` (run from repo root). Shared procedure: `.
 
 **Label priority:** figure caption → source post title → user-typed input.
 
+**Label language:** Preserve the selected label's original source-language wording, capitalization, and punctuation. Do not translate or localize it unless the user explicitly asks. Preserve user-typed labels exactly as entered.
+
 ## Workflow
 
 ### 1. Detect source
@@ -40,7 +42,7 @@ node scripts/newsletter/find-substack-post.js --uuid <uuid>
 ByteByteGo attaches no captions and image order can't be auto-mapped, so the script returns `candidates` (the newsletter post's topic titles).
 1. If `caption` is non-empty → propose it as default.
 2. Otherwise present `candidates` to the user: "Image is from **[postTitle]** (`postUrl`). Which title matches it?" Offer the candidates (numbered list if many). Always include a "Type my own" escape.
-3. Label = user's pick (or typed). Localize to Vietnamese where natural; keep proper nouns.
+3. Label = user's pick (or typed). Preserve its original language, wording, capitalization, and punctuation; do not translate unless the user explicitly asks.
 
 ### 2b. Non-Substack image (`isSubstack: false`)
 Best-effort only: if you know the containing page, fetch it and read the OpenGraph title / nearby caption. Usually none → go to step 3.
@@ -71,4 +73,4 @@ Create `### Bonus` / `**Images:**` if missing.
 - [ ] Source detected (substack + uuid, or non-substack)
 - [ ] Label confirmed (caption, else user pick from candidates, else typed)
 - [ ] Entry under Bonus → **Images** (section/subsection created if missing)
-- [ ] Label localized to Vietnamese where natural (keep proper nouns)
+- [ ] Label preserves original source language, wording, capitalization, and punctuation unless the user requested translation

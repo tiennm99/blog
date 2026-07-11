@@ -11,6 +11,8 @@ Shared scripts: `scripts/newsletter/`. Shared procedure: `../mt-add-url/referenc
 
 **Label priority:** figure caption → source post title → your typed input.
 
+**Label language:** Preserve the selected label's original source-language wording, capitalization, and punctuation. Do not translate or localize it unless the user explicitly asks. Preserve user-typed labels exactly as entered.
+
 ## Input
 
 A clean image URL (passed by `mt-add-url`, or given directly).
@@ -48,7 +50,7 @@ ByteByteGo doesn't attach captions to images (verified: empty `alt`, no `<figcap
    - "Image is from **[postTitle]** (`postUrl`). Which title matches it?"
    - Offer the candidates. If there are more than 4, show them as a numbered list in text and ask the user to pick a number (AskUserQuestion allows max 4 options).
    - Always include a "Type my own" escape.
-3. Label = the user's pick (or the typed value). Localize to Vietnamese where natural; keep proper nouns.
+3. Label = the user's pick (or the typed value). Preserve its original language, wording, capitalization, and punctuation; do not translate unless the user explicitly asks.
 
 ### 2b. Non-Substack image (`isSubstack: false`)
 Best-effort only (no reverse-image-search): if you happen to know the page that contains the image, WebFetch it and read the OpenGraph title / nearby caption. Usually there's no containing page from just an image URL → go to step 3.
@@ -81,4 +83,4 @@ Create `### Bonus` / `**Images:**` if missing.
 - [ ] Source detected (substack + uuid, or non-substack)
 - [ ] Label confirmed (caption if present, else user picked from candidates, else typed)
 - [ ] Entry under Bonus → **Images** (section/subsection created if missing)
-- [ ] Label localized to Vietnamese where natural (keep proper nouns)
+- [ ] Label preserves original source language, wording, capitalization, and punctuation unless the user requested translation
