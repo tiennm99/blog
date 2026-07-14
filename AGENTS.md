@@ -65,22 +65,24 @@ The newsletter workflow adds URLs (articles, YouTube videos, images) to today's 
   - `mt-add-image` — image → Bonus → Images (labels Substack images via source-post lookup)
   - `mt-add-tags` — add/update tags in post frontmatter
   - `mt-webfetch` — fallback web fetcher (defuddle proxy); use only when built-in WebFetch is blocked
-- **Codex** — no skill auto-dispatch. Run `/prompts:mt-add-url <url>` (installed prompts; see "Using Codex" below), or read this file and call the `scripts/newsletter/*.js` scripts directly.
+- **Codex** — discovers the repository-scoped adapters in `.agents/skills/`. Ask it to add a URL for implicit routing or invoke `$mt-add-url` explicitly.
 
 `mt-add-url` dispatches `article` / `youtube` / `image`; other types (direct video files, documents, unknown) prompt the user to add or extend a handler.
 
-Skill implementations live in `.claude/skills/`.
+Canonical skill implementations live in `.claude/skills/`; Codex adapters in `.agents/skills/` reference them so behavior stays in one place.
 
 ### Using Codex
 
-Codex has no skill auto-dispatch and loads custom prompts only from `~/.codex/prompts/`. Install the repo's prompt sources once, then invoke them as slash commands:
+Codex automatically discovers checked-in skills from `.agents/skills/`. No install or copy step is required. Start Codex at the repository root, then either describe the task normally or explicitly mention a skill:
 
-- **Linux/macOS:** `bash codex/install.sh`
-- **Windows:** `pwsh codex/install.ps1` (or `powershell codex/install.ps1`)
+- `$mt-add-url <url>` — classify and dispatch one or more URLs
+- `$mt-add-post <url>` — add an article directly
+- `$mt-add-video <url>` — add a YouTube video directly
+- `$mt-add-image <url>` — add an image directly
+- `$mt-add-tags [post]` — add or update tags
+- `$mt-webfetch <url>` — fallback after the built-in fetch fails
 
-Then in a Codex session at the repo root: `/prompts:mt-add-url <url>` (also `/prompts:mt-add-post`, `mt-add-video`, `mt-add-image`, `mt-add-tags`, `mt-webfetch`).
-
-The installer **copies** prompts (not symlinks — Windows symlinks need admin/Developer Mode). **Re-run it after editing any `codex/prompts/*.md`** so `~/.codex/prompts/` re-syncs. Even without installing, Codex can read this file and call the `scripts/newsletter/*.js` scripts directly.
+Codex detects skill changes automatically; restart Codex if an update does not appear.
 
 ---
 
