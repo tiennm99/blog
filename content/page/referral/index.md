@@ -43,6 +43,15 @@ Link: https://claudekit.cc/?ref=BWA910UK
 
 🚀 You've been invited to join the GLM Coding Plan! Enjoy full support for Claude Code, Cline, and 20+ top coding tools — starting at just $10/month. Subscribe now and grab the limited-time deal! Link： https://z.ai/subscribe?ic=PLKIAYEIPW
 
+### [Kimi](https://kimi-bot.com/activities/viral-referral/share?scenario=invite&from=share_poster&invitation_code=C8CJ6F)
+
+Boost me and we both win! Sign up or subscribe to Kimi (Moonshot AI) and we each get a guaranteed benefit — up to **1-Year Membership Credits**.
+
+- **Sign up:** https://kimi-bot.com/activities/viral-referral/share?scenario=invite&from=share_poster&invitation_code=C8CJ6F
+- **Subscribe:** https://kimi-bot.com/activities/viral-referral/share?scenario=subscribe&from=share_poster&invitation_code=C8CJ6F
+
+Invitation code: `C8CJ6F`
+
 ### [MiniMax](https://platform.minimax.io/subscribe/token-plan?code=CAQ5sxHAq6&source=link)
 
 🎁 MiniMax Token Plan Referral Program until **Jul 1, 2026**.
