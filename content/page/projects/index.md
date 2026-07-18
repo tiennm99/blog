@@ -88,6 +88,7 @@ _(Danh sách này được tạo tự động, sắp xếp theo tên repo)_
 | [tiennm99/pikachu](https://github.com/tiennm99/pikachu) | Pikachu tile-matching puzzle game — Phaser 3 + Next.js + TypeScript | [https://tiennm99.github.io/pikachu/](https://tiennm99.github.io/pikachu/) |
 | [tiennm99/programming-fengshui](https://github.com/tiennm99/programming-fengshui) | Map programming languages to Ngũ Hành (Five Elements) by Linguist colors. Classic and HSL-classifier modes. | [https://tiennm99.github.io/programming-fengshui/](https://tiennm99.github.io/programming-fengshui/) |
 | [tiennm99/quycongdongvi](https://github.com/tiennm99/quycongdongvi) | Website của Quỹ cộng đồng Vị | [https://tiennm99.github.io/quycongdongvi/](https://tiennm99.github.io/quycongdongvi/) |
+| [tiennm99/reigen](https://github.com/tiennm99/reigen) | reigen | [https://tiennm99.github.io/reigen](https://tiennm99.github.io/reigen) |
 | [tiennm99/rplace](https://github.com/tiennm99/rplace) | Collaborative pixel-art canvas (r/place clone). Svelte 5 + Hono on Cloudflare Workers + Durable Object SQLite. | [https://rplace.miti99.workers.dev/](https://rplace.miti99.workers.dev/) |
 | [tiennm99/rubik](https://github.com/tiennm99/rubik) | Interactive 3x3 Rubik's cube in the browser — drag faces, scramble, timer, undo. Three.js + Svelte 5 + Vite. | [https://tiennm99.github.io/rubik/](https://tiennm99.github.io/rubik/) |
 | [tiennm99/sokoban](https://github.com/tiennm99/sokoban) | From-scratch Sokoban puzzle game — Svelte 5 + Vite, all 155 Microban levels, undo, progress tracking | [https://tiennm99.github.io/sokoban/](https://tiennm99.github.io/sokoban/) |
@@ -116,6 +117,7 @@ _(Danh sách này được tạo tự động, sắp xếp theo tên repo)_
 | [tiennm99/vngeoguessr](https://github.com/tiennm99/vngeoguessr) | GeoGuessr clone for Vietnamese locations — Mapillary panoramas, Turf.js boundaries, Upstash REST leaderboards | [https://vngeoguessr.vercel.app](https://vngeoguessr.vercel.app) |
 | [tiennm99/webcv](https://github.com/tiennm99/webcv) |  | [https://tiennm99.github.io/webcv/](https://tiennm99.github.io/webcv/) |
 | [tiennm99/webgl-heart](https://github.com/tiennm99/webgl-heart) |  | [https://tiennm99.github.io/webgl-heart/](https://tiennm99.github.io/webgl-heart/) |
+| [tiennm99/wolzard](https://github.com/tiennm99/wolzard) |  | [https://tiennm99.github.io/wolzard](https://tiennm99.github.io/wolzard) |
 | [tiennm99/xr2s25fe](https://github.com/tiennm99/xr2s25fe) | Personal device-upgrade datasheet — iPhone XR (2018) to Galaxy S25 FE (2025), rendered six ways: blueprint + five Apple-style formats. | [https://tiennm99.github.io/xr2s25fe/](https://tiennm99.github.io/xr2s25fe/) |
 | [tienthieusac/tienthieusac.github.io](https://github.com/tienthieusac/tienthieusac.github.io) | Tiên Thiếu Sắc | [https://tienthieusac.github.io/](https://tienthieusac.github.io/) |
 
