@@ -23,10 +23,6 @@ My passes:
 
 - ~~https://claude.ai/referral/ZkoAngod1A~~ — **out of stock as of 2026-04-30**
 
-Friend's passes:
-
-- ~~https://claude.ai/referral/7RBJExZ7LA~~ — **out of stock as of 2026-05-31**
-
 ### [ClaudeKit](https://claudekit.cc/?ref=BWA910UK)
 
 ClaudeKit is a platform providing tools and resources to work with Claude AI more effectively — including prompt templates, workflows, and extensions.
