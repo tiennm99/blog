@@ -75,6 +75,7 @@ _(Danh sách này được tạo tự động, sắp xếp theo tên repo)_
 | [tiennm99/loldle](https://github.com/tiennm99/loldle) | LoLdle-style League of Legends daily champion guessing game — data auto-updated from my loldle-data repo | [https://tiennm99.github.io/loldle/](https://tiennm99.github.io/loldle/) |
 | [tiennm99/lombok](https://github.com/tiennm99/lombok) | Very spicy additions to the Java programming language. | [https://projectlombok.org/](https://projectlombok.org/) |
 | [tiennm99/loto](https://github.com/tiennm99/loto) | Lô Tô (Vietnamese lottery bingo) number board — Next.js web app | [https://tiennm99.github.io/loto/](https://tiennm99.github.io/loto/) |
+| [tiennm99/mai-birthday-2021](https://github.com/tiennm99/mai-birthday-2021) | Birthday page for Trúc Mai (2021) | [https://tiennm99.github.io/mai-birthday-2021/](https://tiennm99.github.io/mai-birthday-2021/) |
 | [tiennm99/mathmax](https://github.com/tiennm99/mathmax) | MathMax — Toán tương tác cho học sinh THCS Việt Nam (lớp 6-9). Static site. | [https://tiennm99.github.io/mathmax/](https://tiennm99.github.io/mathmax/) |
 | [tiennm99/miti-loki](https://github.com/tiennm99/miti-loki) | Cloudflare Worker that forwards log messages to Grafana Cloud Loki. | [https://miti-loki.miti99.workers.dev/](https://miti-loki.miti99.workers.dev/) |
 | [tiennm99/miti-telegram](https://github.com/tiennm99/miti-telegram) | Cloudflare Worker that forwards incoming messages to my Telegram account | [https://miti-telegram.miti99.workers.dev](https://miti-telegram.miti99.workers.dev) |
@@ -116,7 +117,7 @@ _(Danh sách này được tạo tự động, sắp xếp theo tên repo)_
 | [tiennm99/vngeoguessr](https://github.com/tiennm99/vngeoguessr) | GeoGuessr clone for Vietnamese locations — Mapillary panoramas, Turf.js boundaries, Upstash REST leaderboards | [https://vngeoguessr.vercel.app](https://vngeoguessr.vercel.app) |
 | [tiennm99/webcv](https://github.com/tiennm99/webcv) |  | [https://tiennm99.github.io/webcv/](https://tiennm99.github.io/webcv/) |
 | [tiennm99/webgl-heart](https://github.com/tiennm99/webgl-heart) |  | [https://tiennm99.github.io/webgl-heart/](https://tiennm99.github.io/webgl-heart/) |
-| [tiennm99/wolzard](https://github.com/tiennm99/wolzard) |  | [https://tiennm99.github.io/wolzard](https://tiennm99.github.io/wolzard) |
+| [tiennm99/wolzard](https://github.com/tiennm99/wolzard) |  | [https://tiennm99.github.io/wolzard/](https://tiennm99.github.io/wolzard/) |
 | [tiennm99/xr2s25fe](https://github.com/tiennm99/xr2s25fe) | Personal device-upgrade datasheet — iPhone XR (2018) to Galaxy S25 FE (2025), rendered six ways: blueprint + five Apple-style formats. | [https://tiennm99.github.io/xr2s25fe/](https://tiennm99.github.io/xr2s25fe/) |
 | [tienthieusac/tienthieusac.github.io](https://github.com/tienthieusac/tienthieusac.github.io) | Tiên Thiếu Sắc | [https://tienthieusac.github.io/](https://tienthieusac.github.io/) |
 
