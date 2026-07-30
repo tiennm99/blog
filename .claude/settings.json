@@ -1,9 +1,4 @@
 {
-  "enabledPlugins": {
-    "commit-commands@claude-plugins-official": false,
-    "skill-creator@claude-plugins-official": false,
-    "superpowers@claude-plugins-official": false
-  },
   "permissions": {
     "allow": [
       "Bash(.claude/skills/**)",
@@ -39,6 +34,6 @@
       "mcp__web-reader__webReader",
       "mcp__web-search-prime__webSearchPrime"
     ],
-    "defaultMode": "acceptEdits"
+    "defaultMode": "auto"
   }
 }
