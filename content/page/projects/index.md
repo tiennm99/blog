@@ -78,6 +78,7 @@ _(Danh sách này được tạo tự động, sắp xếp theo tên repo)_
 | [tiennm99/miti-loki](https://github.com/tiennm99/miti-loki) | Cloudflare Worker that forwards log messages to Grafana Cloud Loki. | [https://miti-loki.miti99.workers.dev/](https://miti-loki.miti99.workers.dev/) |
 | [tiennm99/miti-telegram](https://github.com/tiennm99/miti-telegram) | Cloudflare Worker that forwards incoming messages to my Telegram account | [https://miti-telegram.miti99.workers.dev](https://miti-telegram.miti99.workers.dev) |
 | [tiennm99/miti99](https://github.com/tiennm99/miti99) | Source of miti99.com — personal blog (VN/EN) built with Hugo + Stack theme. | [https://miti99.com](https://miti99.com) |
+| [tiennm99/miti99bot](https://github.com/tiennm99/miti99bot) | Plug-n-play Telegram bot framework in Go, self-hosted on Coolify + MongoDB Atlas with cron, games, schedules, and paper trading modules. | [https://t.me/miti99bot](https://t.me/miti99bot) |
 | [tiennm99/nntv](https://github.com/tiennm99/nntv) | Night Ninja: Twilight Voyage — turn-based stealth puzzle. Ninja rabbit rescues carrot princess from veggie guards. | [https://tiennm99.github.io/nntv/](https://tiennm99.github.io/nntv/) |
 | [tiennm99/ocrot](https://github.com/tiennm99/ocrot) | Website mừng bạn Thân trở thành ông chủ quán ăn Ốc Rốt | [https://tiennm99.github.io/ocrot/](https://tiennm99.github.io/ocrot/) |
 | [tiennm99/open-domains](https://github.com/tiennm99/open-domains) | Free subdomains for personal sites, open-source projects, and more. | [https://open-domains.net](https://open-domains.net) |
