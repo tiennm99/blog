@@ -1,7 +1,7 @@
 ---
 title: Referral
 description: Referral links for tech services I use
-tags: ["Referral", "AI Tools", "Claude Code", "Cloud Storage", "Cloud Computing", "Alibaba Cloud", "Database", "Aiven"]
+tags: ["Referral", "AI Tools", "AI Gateway", "LLM API", "OrcaRouter", "Claude Code", "Cloud Storage", "Cloud Computing", "Alibaba Cloud", "Database", "Aiven"]
 aliases:
   - invite
 menu:
@@ -34,6 +34,24 @@ Referral code: `BWA910UK`
 Link: https://claudekit.cc/?ref=BWA910UK
 
 ## AI Coding Platforms & LLM APIs
+
+### [OrcaRouter](https://www.orcarouter.ai/ref/ref_3976ba42abf37dc55c1d)
+
+OrcaRouter lets you access 200+ AI models through one OpenAI-compatible API with automatic routing and failover.
+
+Sign up through my referral link: https://www.orcarouter.ai/ref/ref_3976ba42abf37dc55c1d
+
+Referral code: `ref_3976ba42abf37dc55c1d`
+
+**TL;DR — current offers checked Aug 5, 2026 (UTC+7):**
+
+- **Kimi K3:** Get $5 in credit as a new user before **Aug 6**; a payment card is required.
+- **Tencent HY3:** Get $5 in credit before **Aug 21**.
+- **Claude Opus 5:** Get a 60% deposit match, up to $500, when you join before **Aug 24**.
+- **Free DeepSeek models:** Get 100 initial V4 Flash calls and 30 initial V4 Pro calls with no published deadline.
+- **Grok 4.5:** The offer is sold out, but its waitlist is still open.
+
+Offers can change quickly, so check the [live offers page](https://www.orcarouter.ai/offers) before claiming.
 
 ### [Z.ai](https://z.ai/subscribe?ic=PLKIAYEIPW)
 
