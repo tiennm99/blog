@@ -18,7 +18,7 @@ Get current date in `YYYY-MM-DD` (UTC+7). Check `content/post/YYYY/MM/DD/index.m
 ## 2. Newsletter number
 
 ```bash
-node scripts/newsletter/find-newsletter-number.js
+go run ./scripts/newsletter find-newsletter-number
 ```
 Searches backwards from today for the most recent newsletter and returns the next number. Only needed when **creating** a new post.
 

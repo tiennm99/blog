@@ -20,7 +20,7 @@ Everything else (direct `video` file, `document`, or anything unrecognized) is *
 
 For every URL the user provides:
 ```bash
-node scripts/newsletter/add-url.js "<url>"
+go run ./scripts/newsletter add-url "<url>"
 ```
 Output (JSON): `{ original_url, clean_url, http_status, accessible, duplicate, route, title?, author? }`.
 

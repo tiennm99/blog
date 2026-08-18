@@ -21,24 +21,24 @@ A clean image URL (passed by `mt-add-url`, or given directly).
 
 ### 1. Detect source
 ```bash
-node scripts/newsletter/detect-image-source.js "<url>"
+go run ./scripts/newsletter detect-image-source "<url>"
 ```
 → `{ original_url, clean_url, isSubstack, uuid?, innerUrl? }`.
 
 When invoked **directly** (not via `mt-add-url`), first run the router to get accessibility + duplicate status and skip accordingly:
 ```bash
-node scripts/newsletter/add-url.js "<url>"   # expect route:image; skip if duplicate/!accessible
+go run ./scripts/newsletter add-url "<url>"   # expect route:image; skip if duplicate/!accessible
 ```
 (When dispatched by `mt-add-url`, that check already ran — don't repeat it.)
 
 ### 2a. Substack image (`isSubstack: true` with `uuid`)
 Find the source post:
 ```bash
-node scripts/newsletter/find-substack-post.js --uuid <uuid>
+go run ./scripts/newsletter find-substack-post --uuid <uuid>
 ```
 - `found: false` → retry with the deeper sitemap crawl (slower — fetches posts ~3 months back, capped at 40 fetches total across all publications; warn the user it may take a while):
   ```bash
-  node scripts/newsletter/find-substack-post.js --uuid <uuid> --deep
+  go run ./scripts/newsletter find-substack-post --uuid <uuid> --deep
   ```
   On a miss the result reports `scanned` (posts fetched), `budget` (the 40-fetch cap), and `cutoff` (oldest date looked at) — mention how far back it looked.
 - `found: false` after `--deep` → no source post; go to step 3 (ask) and/or step 4 (add publication).

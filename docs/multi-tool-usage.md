@@ -1,6 +1,6 @@
 # Multi-tool usage (Claude Code · OpenCode · Codex)
 
-This repo is usable from three AI coding tools off **one shared engine**. The newsletter scripts live in `scripts/newsletter/` and every tool calls them as `node scripts/newsletter/*.js` from the repo root. Project instructions live once in `AGENTS.md`.
+This repo is usable from three AI coding tools off **one shared engine**. The newsletter engine lives in `scripts/newsletter/` (Go, stdlib only) and every tool calls it as `go run ./scripts/newsletter <command>` from the repo root. Project instructions live once in `AGENTS.md`.
 
 ## Per-tool setup & invocation
 
@@ -10,7 +10,7 @@ This repo is usable from three AI coding tools off **one shared engine**. The ne
 | **OpenCode** | `AGENTS.md` (auto-read) | `.claude/skills/` auto-discovered via the `skill` tool, governed by `opencode.json` | None beyond `opencode.json` (committed) | Ask to add a URL; pick/`skill` `mt-add-url` |
 | **Codex** | `AGENTS.md` (auto-read) | Repository skills discovered from `.agents/skills/` | None (works as-is) | Ask to add a URL or invoke `$mt-add-url` |
 
-**Shared engine:** all three call `node scripts/newsletter/*.js` from repo root — no per-tool script copies.
+**Shared engine:** all three call `go run ./scripts/newsletter <command>` from repo root — no per-tool script copies.
 
 ### Notes per tool
 

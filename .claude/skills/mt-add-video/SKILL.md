@@ -19,7 +19,7 @@ A clean YouTube URL (passed by `mt-add-url`, or given directly).
 
 1. **Classify / fetch title** — run the router to get the canonical URL + title:
    ```bash
-   node scripts/newsletter/add-url.js "<url>"
+   go run ./scripts/newsletter add-url "<url>"
    ```
    Confirm `route: youtube`; skip if `duplicate` or not `accessible`. Use the returned `clean_url` (canonical `watch?v=ID`) and `title`.
    - If `title` is missing (oEmbed failed), fetch the title via WebFetch on the watch URL.

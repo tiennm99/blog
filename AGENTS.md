@@ -39,15 +39,15 @@ The site will be available at `http://localhost:1313`
 
 ## Shared Engine
 
-All portable newsletter scripts live in **`scripts/newsletter/`** and are invoked from the repo root with plain Node (stdlib only, no deps):
+The portable newsletter engine lives in **`scripts/newsletter/`** (Go, stdlib only, no deps — one binary, one subcommand per task) and is invoked from the repo root with `go run`:
 
 ```bash
-node scripts/newsletter/add-url.js "<url>"              # classify + dedup a URL → JSON route
-node scripts/newsletter/find-newsletter-number.js       # next newsletter number
-node scripts/newsletter/list-existing-tags.js           # existing tag frequencies
-node scripts/newsletter/detect-image-source.js "<url>"  # detect Substack image + uuid
-node scripts/newsletter/find-substack-post.js --uuid <uuid>
-node scripts/newsletter/fetch-via-defuddle.js "<url>"   # fallback fetch (defuddle proxy)
+go run ./scripts/newsletter add-url "<url>"              # classify + dedup a URL → JSON route
+go run ./scripts/newsletter find-newsletter-number       # next newsletter number
+go run ./scripts/newsletter list-existing-tags           # existing tag frequencies
+go run ./scripts/newsletter detect-image-source "<url>"  # detect Substack image + uuid
+go run ./scripts/newsletter find-substack-post --uuid <uuid>
+go run ./scripts/newsletter fetch-via-defuddle "<url>"   # fallback fetch (defuddle proxy)
 ```
 
 These are shared by all three tools — no tool-specific copies.

@@ -28,7 +28,7 @@ Use this skill only after a WebFetch attempt returned one of:
 1. Confirm WebFetch already failed on the target URL
 2. Run the fetch script:
    ```bash
-   node scripts/newsletter/fetch-via-defuddle.js "<target_url>"
+   go run ./scripts/newsletter fetch-via-defuddle "<target_url>"
    ```
    Alternatively, use WebFetch with the defuddle-prefixed URL:
    ```
@@ -70,7 +70,7 @@ Never loop. Never retry more than once.
 User wanted to extract content from https://example.com/article
 WebFetch returned: "Request failed with status code 403"
 → Trigger mt-webfetch
-→ node scripts/newsletter/fetch-via-defuddle.js "https://example.com/article"
+→ go run ./scripts/newsletter fetch-via-defuddle "https://example.com/article"
 → Parse markdown output
 → Summarize as usual
 ```

@@ -39,7 +39,7 @@ The Stack theme is pulled in as a git submodule under `themes/hugo-theme-stack/`
 
 ## Working with AI tools
 
-This repo runs from Claude Code, OpenCode, or Codex off one shared script engine (`scripts/newsletter/`) and one instruction file (`AGENTS.md`). Repository-scoped Codex skills use the official `.agents/skills/` format; no installer is required. Setup, invocation per tool, and how to pick one and remove the rest: see [docs/multi-tool-usage.md](docs/multi-tool-usage.md).
+This repo runs from Claude Code, OpenCode, or Codex off one shared engine (`scripts/newsletter/`, Go via `go run`) and one instruction file (`AGENTS.md`). Repository-scoped Codex skills use the official `.agents/skills/` format; no installer is required. Setup, invocation per tool, and how to pick one and remove the rest: see [docs/multi-tool-usage.md](docs/multi-tool-usage.md).
 
 ## License
 

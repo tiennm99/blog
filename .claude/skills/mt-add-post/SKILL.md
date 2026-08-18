@@ -13,7 +13,7 @@ Shared scripts: `scripts/newsletter/`. Shared procedure: `../mt-add-url/referenc
 
 A clean article URL (passed by `mt-add-url`, or given directly). If a raw URL is provided directly, you may run the classifier to clean/dedup it first:
 ```bash
-node scripts/newsletter/add-url.js "<url>"
+go run ./scripts/newsletter add-url "<url>"
 ```
 Trust `route: article`; skip if `duplicate` or not `accessible`.
 

@@ -50,7 +50,7 @@ Read the full post body. Identify:
 
 Before generating, run:
 ```bash
-node scripts/newsletter/list-existing-tags.js
+go run ./scripts/newsletter list-existing-tags
 ```
 When a proposed tag matches an existing one case-insensitively, use the existing casing.
 -->
