@@ -34,3 +34,18 @@ Method: identical args to `node scripts/newsletter/<script>.js` and `go run ./sc
 ## Verdict
 
 All matrix cases pass. Go engine is behavior-equivalent for skill consumption. Proceed to cutover.
+
+## Post-cutover validation addendum (old-post URLs, 2026-08-18)
+
+Ran the Go engine against URLs stored in old posts (2020 and 2025/02):
+
+| Case | Result |
+|------|--------|
+| 2025/02 article, plain + tracker-variant | duplicate:true both, trackers stripped |
+| 2025/02 YouTube stored watch URL + youtu.be variant | both canonicalize, duplicate:true, oEmbed title |
+| 2025/02 S3 image (add-url + detect-image-source) | route:image, duplicate:true, uuid extracted |
+| 18-month-old uuid via find-substack-post | `{found:false}` — correct, outside RSS window |
+| 404 negative control | duplicate:false, http_status 404 |
+| 2020 URL stored as markdown autolink `<https://…>` | **duplicate:false — defect found** |
+
+Defect: the URL boundary set (`)]"'?#<_&,`, inherited verbatim from the JS) lacked `>`, so URLs stored in autolink form never dedup. Pre-existing JS behavior, not a port regression. Fixed post-cutover by adding `>` to the set in `url_utils.go`; regression-checked prefix-probe (still false), stored full URL (still true), deterministic outputs (unchanged).

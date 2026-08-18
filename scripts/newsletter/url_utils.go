@@ -196,7 +196,8 @@ func uuidBoundaryOK(text string, end int) bool {
 
 // urlBoundaryOK: an optional trailing slash (bareURL strips it, stored URLs may
 // keep it), then a path/punctuation delimiter, whitespace, or end of text — so
-// /p/foo does not match a stored /p/foo-bar.
+// /p/foo does not match a stored /p/foo-bar. The '>' delimiter covers URLs
+// stored in markdown autolink form <https://…>, which older posts use.
 func urlBoundaryOK(text string, end int) bool {
 	if end < len(text) && text[end] == '/' {
 		end++
@@ -208,7 +209,7 @@ func urlBoundaryOK(text string, end int) bool {
 	case ' ', '\t', '\n', '\r', '\f', '\v':
 		return true
 	default:
-		return strings.IndexByte(`)]"'?#<_&,`, c) != -1
+		return strings.IndexByte(`)]"'?#<>_&,`, c) != -1
 	}
 }
 
