@@ -71,7 +71,6 @@ _(Danh sách này được tạo tự động, sắp xếp theo tên repo)_
 | [tiennm99/lombok](https://github.com/tiennm99/lombok) | Very spicy additions to the Java programming language. | [https://projectlombok.org/](https://projectlombok.org/) |
 | [tiennm99/loto](https://github.com/tiennm99/loto) | Lô Tô (Vietnamese lottery bingo) number board — Next.js web app | [https://tiennm99.github.io/loto/](https://tiennm99.github.io/loto/) |
 | [tiennm99/mai-birthday-2021](https://github.com/tiennm99/mai-birthday-2021) | Birthday page for Trúc Mai (2021) | [https://tiennm99.github.io/mai-birthday-2021/](https://tiennm99.github.io/mai-birthday-2021/) |
-| [tiennm99/mathmax](https://github.com/tiennm99/mathmax) | MathMax — Toán tương tác cho học sinh THCS Việt Nam (lớp 6-9). Static site. | [https://tiennm99.github.io/mathmax/](https://tiennm99.github.io/mathmax/) |
 | [tiennm99/miti-loki](https://github.com/tiennm99/miti-loki) | Cloudflare Worker that forwards log messages to Grafana Cloud Loki. | [https://miti-loki.miti99.workers.dev/](https://miti-loki.miti99.workers.dev/) |
 | [tiennm99/miti-telegram](https://github.com/tiennm99/miti-telegram) | Cloudflare Worker that forwards incoming messages to my Telegram account | [https://miti-telegram.miti99.workers.dev](https://miti-telegram.miti99.workers.dev) |
 | [tiennm99/miti99](https://github.com/tiennm99/miti99) | Source of miti99.com — personal blog (VN/EN) built with Hugo + Stack theme. | [https://miti99.com](https://miti99.com) |
@@ -108,6 +107,7 @@ _(Danh sách này được tạo tự động, sắp xếp theo tên repo)_
 | [tiennm99dev/ai-coding-workflow-labs](https://github.com/tiennm99dev/ai-coding-workflow-labs) | Experiments with AI-assisted coding workflows — ClaudeKit, Superpowers, BMAD, oh-my-claudecode, gstack, and course work, merged with full history | [https://tiennm99dev.github.io/ai-coding-workflow-labs/](https://tiennm99dev.github.io/ai-coding-workflow-labs/) |
 | [tiennm99dev/artemis-demo-agent](https://github.com/tiennm99dev/artemis-demo-agent) | Vietnamese VNG hackathon demo agent for lost-and-found matching and an internal marketplace | [https://artemis-lime.vercel.app](https://artemis-lime.vercel.app) |
 | [tiennm99dev/chudaibi](https://github.com/tiennm99dev/chudaibi) | Chú đại bi, từ bộ Kinh Nhật Tụng của chùa Hoằng Pháp | [https://thuvienhoangphap.github.io/chudaibi/](https://thuvienhoangphap.github.io/chudaibi/) |
+| [tiennm99dev/mathmax](https://github.com/tiennm99dev/mathmax) | MathMax — Toán tương tác cho học sinh THCS Việt Nam (lớp 6-9). Static site. | [https://tiennm99dev.github.io/mathmax/](https://tiennm99dev.github.io/mathmax/) |
 | [tiennm99dev/wolzard](https://github.com/tiennm99dev/wolzard) |  | [https://tiennm99dev.github.io/wolzard/](https://tiennm99dev.github.io/wolzard/) |
 | [tienthieusac/tienthieusac.github.io](https://github.com/tienthieusac/tienthieusac.github.io) | Tiên Thiếu Sắc | [https://tienthieusac.github.io/](https://tienthieusac.github.io/) |
 
