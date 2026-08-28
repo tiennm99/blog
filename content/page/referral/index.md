@@ -23,15 +23,20 @@ My passes:
 
 - ~~https://claude.ai/referral/ZkoAngod1A~~ — **out of stock as of 2026-04-30**
 
-### [ClaudeKit](https://claudekit.cc/?ref=BWA910UK)
+### [AgentKit](https://agentkit.best/?ref=BWA910UK)
 
-ClaudeKit is a platform providing tools and resources to work with Claude AI more effectively — including prompt templates, workflows, and extensions.
+AgentKit — formerly **ClaudeKit** (`claudekit.cc`) — packages production-ready skills, slash commands, subagents, and workflows for coding agents such as Claude Code, Codex, and GitHub Copilot, so sessions stay consistent instead of restarting from scratch every time.
+
+- **AgentKit Engineer** ($99) — 60+ skills and 30+ workflows plus engineer subagents covering frontend, backend, databases, DevOps, code review, and debugging.
+- **AgentKit Marketing** ($99) — 12+ MCP integrations and marketing subagents for lead research, programmatic SEO, content, and CRM outreach.
+- **Bundle** ($149) — both kits. Combined, they ship 108+ skills, 95+ commands, and 45 subagents (17 engineer + 28 marketing).
+- **AgentKit App** — a macOS/Windows desktop control center for the `ak` CLI (license activation, kit/skill installs, status line builder), currently waitlist-only.
 
 Sign up via the referral link to get **20% off** your first purchase!
 
 Referral code: `BWA910UK`
 
-Link: https://claudekit.cc/?ref=BWA910UK
+Link: https://agentkit.best/?ref=BWA910UK
 
 ## AI Coding Platforms & LLM APIs
 
