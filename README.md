@@ -1,4 +1,4 @@
-# miti99
+# blog
 
 Source of [miti99.com](https://miti99.com) — personal blog (VN/EN) built with [Hugo](https://gohugo.io) and the [Stack](https://github.com/CaiJimmy/hugo-theme-stack) theme.
 

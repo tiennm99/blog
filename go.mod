@@ -1,3 +1,3 @@
-module github.com/tiennm99/miti99
+module github.com/tiennm99/blog
 
 go 1.26
