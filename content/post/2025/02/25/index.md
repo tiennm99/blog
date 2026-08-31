@@ -187,4 +187,4 @@ Có thể thấy task của cùng 1 user sẽ được thực thi trong cùng 1 
 
 Vẫn rất hi vọng bài viết này sẽ hữu ích với bạn trong việc tìm ra một giải pháp khi muốn giữ thứ tự thực thi task của một user.
 
-Toàn bộ source code bạn có thể tìm thấy trên GitHub của mình: [https://github.com/tiennm99/taskbus](https://github.com/tiennm99/taskbus)
+Toàn bộ source code bạn có thể tìm thấy trên GitHub của mình: [https://github.com/tiennm99/jvm-labs/tree/main/taskbus](https://github.com/tiennm99/jvm-labs/tree/main/taskbus) (trước đây là repo riêng `tiennm99/taskbus`, nay đã gộp vào `jvm-labs`)
