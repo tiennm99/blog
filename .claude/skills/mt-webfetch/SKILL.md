@@ -1,6 +1,6 @@
 ---
 name: mt-webfetch
-description: "Fallback web content fetcher using defuddle.md as a proxy. Use ONLY when the built-in WebFetch tool has already failed with 403 Forbidden, bot detection, Cloudflare challenge, empty content, or similarly blocked response. Defuddle fetches the page server-side from a different IP and returns clean markdown with YAML frontmatter. Do NOT use as a first-choice fetcher — try WebFetch first. Does NOT bypass paywalls, login walls, or pages that require JavaScript execution."
+description: "Fallback web content fetchers for pages that blocked the built-in fetch. Use ONLY when the built-in WebFetch tool has already failed with 403 Forbidden, bot detection, Cloudflare challenge, empty content, or similarly blocked response. Tries defuddle.md first, then a reader proxy — both fetch the page server-side from a different IP and return clean markdown. Do NOT use as a first-choice fetcher — try WebFetch first. Does NOT bypass paywalls, login walls, or pages that require JavaScript execution."
 ---
 
 ## Scope
@@ -9,9 +9,9 @@ This skill handles: fetching public web pages that blocked WebFetch due to bot-d
 
 This skill does NOT handle:
 - Paywalled or login-gated content
-- Pages requiring client-side JavaScript execution (defuddle's hosted service does HTTP fetch, not headless rendering)
+- Pages requiring client-side JavaScript execution (these proxies do HTTP fetch, not headless rendering)
 - URLs that return 404 / are actually dead
-- Sites that also block defuddle.md's outbound IP
+- Sites that block every fetcher in the chain below
 
 If WebFetch succeeded, do not use this skill.
 
@@ -26,7 +26,7 @@ Use this skill only after a WebFetch attempt returned one of:
 ## Workflow
 
 1. Confirm WebFetch already failed on the target URL
-2. Run the fetch script:
+2. **Tier 1 — defuddle.** Run the fetch script:
    ```bash
    go run ./scripts/newsletter fetch-via-defuddle "<target_url>"
    ```
@@ -34,8 +34,15 @@ Use this skill only after a WebFetch attempt returned one of:
    ```
    WebFetch(url: "https://defuddle.md/<target_url>", prompt: "<extraction prompt>")
    ```
-3. Parse the returned markdown (has YAML frontmatter with title/description/etc.)
-4. If defuddle also returns empty or an error, stop and report failure to user — do not keep retrying.
+3. **Tier 2 — reader proxy.** If tier 1 returns an error (commonly `502 / empty body`) or a body with no usable content, try a reader proxy through WebFetch:
+   ```
+   WebFetch(url: "https://r.jina.ai/<target_url>", prompt: "<extraction prompt>")
+   ```
+   Tier 1 and tier 2 fail independently — a site blocking one often still serves the other, so always attempt tier 2 before giving up.
+4. Parse the returned markdown (tier 1 has YAML frontmatter with title/description/etc.)
+5. If every tier fails, stop and report which tiers were tried and what each returned — do not keep retrying.
+
+Attempt each tier at most once. The whole chain is: built-in WebFetch → defuddle → reader proxy → report failure.
 
 ## How defuddle works
 
@@ -49,12 +56,14 @@ The response is plain markdown. Use it directly when summarizing / extracting co
 
 ## Failure modes and exit
 
-Give up after one retry. If defuddle returns:
-- HTTP 4xx/5xx → report "both WebFetch and defuddle failed to fetch <url>" and move on
-- Empty markdown body → same
-- Only frontmatter with no body → report as inaccessible
+Give up once every tier has been tried once. Treat these as a tier failure and move to the next tier:
+- HTTP 4xx/5xx
+- Empty markdown body
+- Only frontmatter with no body
 
-Never loop. Never retry more than once.
+When the last tier fails, report it plainly — name each tier and its result (e.g. "WebFetch 403, defuddle 502, reader proxy empty") so the user can decide whether to paste the text or supply another source. If a fetcher fails repeatedly across sessions for the same host family, say so: that is a signal to reorder or extend the chain, not to keep retrying.
+
+Never loop. Never retry a tier more than once.
 
 ## Security policy
 
@@ -70,7 +79,10 @@ Never loop. Never retry more than once.
 User wanted to extract content from https://example.com/article
 WebFetch returned: "Request failed with status code 403"
 → Trigger mt-webfetch
-→ go run ./scripts/newsletter fetch-via-defuddle "https://example.com/article"
-→ Parse markdown output
-→ Summarize as usual
+→ Tier 1: go run ./scripts/newsletter fetch-via-defuddle "https://example.com/article"
+   → success: parse markdown output, summarize as usual
+   → "502 / empty body": continue
+→ Tier 2: WebFetch(url: "https://r.jina.ai/https://example.com/article", prompt: ...)
+   → success: parse markdown output, summarize as usual
+   → failure: report "WebFetch 403, defuddle 502, reader proxy failed" and stop
 ```

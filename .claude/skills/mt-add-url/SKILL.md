@@ -29,8 +29,8 @@ Output (JSON): `{ original_url, clean_url, http_status, accessible, duplicate, r
 
 ### 2. Skip non-actionable URLs
 
-- `accessible: false` → skip, note in report.
 - `duplicate: true` → skip, note in report (already in a newsletter).
+- `accessible: false` → **not an automatic skip.** The classifier does a plain fetch, so a bot-blocked host (403, Cloudflare challenge) reports `accessible: false` even when the page is public and the fallback fetchers can read it. Dispatch on `route` as normal and let the handler's fetch chain decide; only report the URL as skipped when every fetcher in `mt-webfetch` has failed. A `404`/dead URL is a genuine skip.
 
 ### 3. Dispatch on route
 

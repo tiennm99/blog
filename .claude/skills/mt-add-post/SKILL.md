@@ -1,13 +1,13 @@
 ---
 name: mt-add-post
-description: 'Article handler for the Hugo blog newsletter. Adds a single article/blog URL to today''s newsletter as a main-content entry with the original source title and a Vietnamese summary. Normally invoked by the mt-add-url meta skill after classification, but can be used directly for a known article URL.'
+description: 'Article handler for the Hugo blog newsletter. Adds a single article/blog URL to the target newsletter post as a main-content entry with the original source title and a Vietnamese summary. Normally invoked by the mt-add-url meta skill after classification, but can be used directly for a known article URL.'
 ---
 
 ## Overview
 
-`mt-add-post` is the **article handler**: given a clean article/blog URL, it extracts the source title and content, writes a Vietnamese summary, and inserts it into today's newsletter main content. It does **not** classify or route URLs — that is `mt-add-url`'s job. For YouTube/images/other types, use `mt-add-url`.
+`mt-add-post` is the **article handler**: given a clean article/blog URL, it extracts the source title and content, writes a Vietnamese summary, and inserts it into the target newsletter post's main content (today's post unless the user pinned another one). It does **not** classify or route URLs — that is `mt-add-url`'s job. For YouTube/images/other types, use `mt-add-url`.
 
-Shared scripts: `scripts/newsletter/`. Shared procedure: `../mt-add-url/references/newsletter-post-mechanics.md` (find/create today's post, newsletter numbering, section insertion, language rules) — **follow it** for all post mechanics.
+Shared scripts: `scripts/newsletter/`. Shared procedure: `../mt-add-url/references/newsletter-post-mechanics.md` (resolve/create the target post, newsletter numbering, section insertion, language rules) — **follow it** for all post mechanics.
 
 ## Input
 
@@ -19,8 +19,8 @@ Trust `route: article`; skip if `duplicate` or not `accessible`.
 
 ## Workflow
 
-1. **Post mechanics** — follow `../mt-add-url/references/newsletter-post-mechanics.md` to find/create today's post and (if new) get the newsletter number + apply the template.
-2. **Extract** the original article title and main content. Preserve the source title exactly enough to remain recognizable: do not translate/localize it; keep source-language wording, capitalization, punctuation, and proper nouns from metadata (`og:title`, page title, or fetcher frontmatter).
+1. **Post mechanics** — follow `../mt-add-url/references/newsletter-post-mechanics.md` to resolve/create the target post and (if new) get the newsletter number + apply the template.
+2. **Extract** the original article title and main content. Try `WebFetch` first; if the host blocks it (403, Cloudflare challenge, empty body), work through the `mt-webfetch` fallback chain before giving up. A `accessible: false` from the router is not by itself a reason to skip — many public tech blogs block plain fetches but serve the fallback fetchers fine. Preserve the source title exactly enough to remain recognizable: do not translate/localize it; keep source-language wording, capitalization, punctuation, and proper nouns from metadata (`og:title`, page title, or fetcher frontmatter).
 3. **Summarize in Vietnamese** — 1-2 paragraphs, max 300 words, professional tone for junior developers. Optionally add 3-5 key points.
 4. **Write** the main-content block and insert it **before** the `### Bonus` section (or append at end of file if there is no Bonus yet — do not create an empty Bonus):
 

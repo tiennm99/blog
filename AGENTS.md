@@ -47,7 +47,7 @@ go run ./scripts/newsletter find-newsletter-number       # next newsletter numbe
 go run ./scripts/newsletter list-existing-tags           # existing tag frequencies
 go run ./scripts/newsletter detect-image-source "<url>"  # detect Substack image + uuid
 go run ./scripts/newsletter find-substack-post --uuid <uuid>
-go run ./scripts/newsletter fetch-via-defuddle "<url>"   # fallback fetch (defuddle proxy)
+go run ./scripts/newsletter fetch-via-defuddle "<url>"   # fallback fetch (tier 1 of the fetch chain)
 ```
 
 These are shared by all three tools — no tool-specific copies.
@@ -56,7 +56,7 @@ These are shared by all three tools — no tool-specific copies.
 
 ## Newsletter Workflow Routing
 
-The newsletter workflow adds URLs (articles, YouTube videos, images) to today's newsletter post and manages tags. How it surfaces depends on the tool:
+The newsletter workflow adds URLs (articles, YouTube videos, images) to the target newsletter post — today's post, or an earlier unpublished draft the user pins for the session — and manages tags. How it surfaces depends on the tool:
 
 - **Claude Code / OpenCode** — invoke skills (both read `.claude/skills/<name>/SKILL.md` natively):
   - `mt-add-url` — meta dispatcher: classifies each URL, auto-invokes the right handler. **Default entry for adding URLs.**
@@ -64,7 +64,7 @@ The newsletter workflow adds URLs (articles, YouTube videos, images) to today's 
   - `mt-add-video` — YouTube link → Bonus → Videos
   - `mt-add-image` — image → Bonus → Images (labels Substack images via source-post lookup)
   - `mt-add-tags` — add/update tags in post frontmatter
-  - `mt-webfetch` — fallback web fetcher (defuddle proxy); use only when built-in WebFetch is blocked
+  - `mt-webfetch` — fallback web fetch chain (defuddle, then a reader proxy); use only when built-in WebFetch is blocked
 - **Codex** — discovers the repository-scoped adapters in `.agents/skills/`. Ask it to add a URL for implicit routing or invoke `$mt-add-url` explicitly.
 
 `mt-add-url` dispatches `article` / `youtube` / `image`; other types (direct video files, documents, unknown) prompt the user to add or extend a handler.

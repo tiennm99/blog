@@ -1,11 +1,11 @@
 ---
 name: mt-add-video
-description: 'YouTube video handler for the Hugo blog newsletter. Adds a YouTube link to today''s newsletter Bonus → Videos section as a Vietnamese title link plus a 1-2 sentence Vietnamese summary. Normally invoked by the mt-add-url meta skill after classification, but can be used directly for a known YouTube URL. Handles YouTube links only (not direct video files).'
+description: 'YouTube video handler for the Hugo blog newsletter. Adds a YouTube link to the target newsletter post''s Bonus → Videos section as a Vietnamese title link plus a 1-2 sentence Vietnamese summary. Normally invoked by the mt-add-url meta skill after classification, but can be used directly for a known YouTube URL. Handles YouTube links only (not direct video files).'
 ---
 
 ## Overview
 
-`mt-add-video` is the **YouTube handler**: given a YouTube link, it adds the video to today's newsletter **Bonus → Videos** as a Vietnamese title link with a 1-2 sentence Vietnamese summary. It does **not** classify or route — that is `mt-add-url`'s job.
+`mt-add-video` is the **YouTube handler**: given a YouTube link, it adds the video to the target newsletter post's **Bonus → Videos** (today's post unless the user pinned another one) as a Vietnamese title link with a 1-2 sentence Vietnamese summary. It does **not** classify or route — that is `mt-add-url`'s job.
 
 Scope: **YouTube links only** (`watch`, `youtu.be`, `shorts`). Direct video files (`.mp4` etc.) are not handled here — they go through `mt-add-url`'s fallback.
 
@@ -32,7 +32,7 @@ A clean YouTube URL (passed by `mt-add-url`, or given directly).
    - Worst case, derive a single sentence from the title.
    Keep it to 1-2 sentences (KISS).
 
-4. **Post mechanics** — follow `../mt-add-url/references/newsletter-post-mechanics.md` to find/create today's post and locate the Bonus section.
+4. **Post mechanics** — follow `../mt-add-url/references/newsletter-post-mechanics.md` to resolve/create the target post and locate the Bonus section.
 
 5. **Insert under Bonus → Videos:**
    ```markdown
