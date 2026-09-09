@@ -9,18 +9,26 @@ All shared scripts live in `scripts/newsletter/`.
 - Timezone: Asia/Ho_Chi_Minh (UTC+7)
 - Content path: `content/post/YYYY/MM/DD/index.md`
 
-## 1. Find / create today's post
+## 1. Find / create the target post
 
-Get current date in `YYYY-MM-DD` (UTC+7). Check `content/post/YYYY/MM/DD/index.md`:
+The target defaults to today's date but the user can pin a different one.
+
+**Target date resolution:**
+- Default: current date in `YYYY-MM-DD` (UTC+7).
+- **Pinned target:** when the user names a post or date to keep working on — typically an unpublished draft started on an earlier day ("keep adding to the 7/9 post") — that post is the target for the rest of the session, including across a date rollover mid-session. Do not silently start a new post for the new day; if a pin might have lapsed, ask before creating one.
+
+Check `content/post/YYYY/MM/DD/index.md` for the resolved target date:
 - **Exists** → update this file.
 - **Missing** → create it (new newsletter number; template below). Create directories as needed.
+
+The newsletter number always comes from the target post, not from today's date.
 
 ## 2. Newsletter number
 
 ```bash
 go run ./scripts/newsletter find-newsletter-number
 ```
-Searches backwards from today for the most recent newsletter and returns the next number. Only needed when **creating** a new post.
+Searches backwards from today for the most recent newsletter and returns the next number. Only needed when **creating** a new post — when the target post already exists, read its number from its own `title`.
 
 ## 2a. Terminology
 

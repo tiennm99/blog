@@ -1,6 +1,6 @@
 ---
 name: mt-add-video
-description: Add a YouTube URL to today's Hugo newsletter Bonus Videos section with a Vietnamese title and summary. Use directly for a known YouTube URL or when dispatched by mt-add-url.
+description: Add a YouTube URL to the target Hugo newsletter post's Bonus Videos section with a Vietnamese title and summary. Use directly for a known YouTube URL or when dispatched by mt-add-url.
 ---
 
 # Add a newsletter video

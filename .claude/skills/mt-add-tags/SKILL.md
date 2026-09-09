@@ -17,7 +17,7 @@ This skill analyzes Hugo blog post content and generates a relevant list of tags
 
 ### 1. Find the target post
 
-If the user specifies a post (date, path, or title), use that. Otherwise, use today's post:
+If the user specifies a post (date, path, or title), use that. If the session has been working on a pinned post (an unpublished draft from an earlier day), use that one. Otherwise, use today's post:
 ```
 content/post/YYYY/MM/DD/index.md  (today's date in Asia/Ho_Chi_Minh UTC+7)
 ```
