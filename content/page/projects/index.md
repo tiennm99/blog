@@ -60,7 +60,6 @@ _(Danh sách này được tạo tự động, sắp xếp theo tên repo)_
 | [tiennm99/hurt](https://github.com/tiennm99/hurt) | Small website inspired by the film 'Thắp sáng anh, sưởi ấm em' — a little unusual, just for fun. | [https://tiennm99.github.io/hurt/](https://tiennm99.github.io/hurt/) |
 | [tiennm99/is-a-dev](https://github.com/tiennm99/is-a-dev) | Grab your own sweet-looking '.is-a.dev' subdomain. | [https://is-a.dev](https://is-a.dev) |
 | [tiennm99/is-a-good-dev](https://github.com/tiennm99/is-a-good-dev) | Register for your is-a-good.dev domain! | [https://is-a-good.dev](https://is-a-good.dev) |
-| [tiennm99/ja-netfilter](https://github.com/tiennm99/ja-netfilter) | A javaagent framework | [https://ja-netfilter.com](https://ja-netfilter.com) |
 | [tiennm99/java-design-patterns](https://github.com/tiennm99/java-design-patterns) | Design patterns implemented in Java | [https://java-design-patterns.com](https://java-design-patterns.com) |
 | [tiennm99/litellm](https://github.com/tiennm99/litellm) | Python SDK, Proxy Server (AI Gateway) to call 100+ LLM APIs in OpenAI (or native) format, with cost tracking, guardrails, loadbalancing and logging. [Bedrock, Azure, OpenAI, VertexAI, Cohere, Anthropic, Sagemaker, HuggingFace, VLLM, NVIDIA NIM] | [https://docs.litellm.ai/docs/](https://docs.litellm.ai/docs/) |
 | [tiennm99/llmapikey](https://github.com/tiennm99/llmapikey) | Pending/archived: free capped OpenRouter API key giveaway paused until a suitable LLM gateway/provider is found. | [https://llmapikey.vercel.app](https://llmapikey.vercel.app) |
