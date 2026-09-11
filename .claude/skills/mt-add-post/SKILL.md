@@ -21,17 +21,13 @@ Trust `route: article`; skip if `duplicate` or not `accessible`.
 
 1. **Post mechanics** — follow `../mt-add-url/references/newsletter-post-mechanics.md` to resolve/create the target post and (if new) get the newsletter number + apply the template.
 2. **Extract** the original article title and main content. Try `WebFetch` first; if the host blocks it (403, Cloudflare challenge, empty body), work through the `mt-webfetch` fallback chain before giving up. A `accessible: false` from the router is not by itself a reason to skip — many public tech blogs block plain fetches but serve the fallback fetchers fine. Preserve the source title exactly enough to remain recognizable: do not translate/localize it; keep source-language wording, capitalization, punctuation, and proper nouns from metadata (`og:title`, page title, or fetcher frontmatter).
-3. **Summarize in Vietnamese** — 1-2 paragraphs, max 300 words, professional tone for junior developers. Optionally add 3-5 key points.
+3. **Summarize in Vietnamese** — 1-2 paragraphs, max 300 words, professional tone for junior developers. Summary paragraphs only; do not add a key-points bullet list.
 4. **Write** the main-content block and insert it **before** the `### Bonus` section (or append at end of file if there is no Bonus yet — do not create an empty Bonus):
 
 ```markdown
 ## [Original article title](clean_url)
 
 [Tóm tắt tiếng Việt — tối đa 300 từ]
-
-**Điểm chính:**
-- [Ý chính 1]
-- [Ý chính 2]
 ```
 
 5. **Report**:
@@ -48,5 +44,6 @@ Trust `route: article`; skip if `duplicate` or not `accessible`.
 - [ ] Tags include `"AI-Assisted"`
 - [ ] URL is clean (no tracking params)
 - [ ] Heading uses the original source article title, not a Vietnamese translation
+- [ ] Summary paragraphs only, no key-points bullet list
 - [ ] Vietnamese content ≥99%, grammar correct
 - [ ] Article inserted before the Bonus section
