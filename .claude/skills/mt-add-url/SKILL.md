@@ -59,9 +59,18 @@ Act on the user's choice. If they choose add/update, proceed to design that skil
 
 ### 5. Final report
 
+Close with the target post's TL;DR tally, then the per-URL detail. Read the tally from the post itself so it reflects everything the post now holds, not just this batch:
+
+```bash
+go run ./scripts/newsletter post-stats content/post/YYYY/MM/DD/index.md
+```
+
 Aggregate across all URLs:
 ```
 ✅ Newsletter URL Dispatch Complete
+
+📊 Newsletter #[number]: [articles] articles · [videos] videos · [images] images
+   (omit zero counts; documents too when present)
 
 ✅ Dispatched: [count]
    - [count] → mt-add-post (articles)
@@ -74,6 +83,8 @@ Aggregate across all URLs:
 ❓ Unsupported: [count]
    - [url] (route: [route]): [user decision]
 ```
+
+The tally is report-only — never write it into `index.md`. See *Post tally* in `references/newsletter-post-mechanics.md`.
 
 ## Notes
 

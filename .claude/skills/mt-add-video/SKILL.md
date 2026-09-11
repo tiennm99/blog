@@ -48,7 +48,9 @@ A clean YouTube URL (passed by `mt-add-url`, or given directly).
    ✅ Video added to Newsletter #[number] (Bonus → Videos)
    📄 content/post/YYYY/MM/DD/index.md
    🎬 [Vietnamese title] — [clean_url]
+   📊 [tally]
    ```
+   The tally comes from `post-stats` — see *Post tally* in the shared post mechanics.
 
 ## Checklist
 

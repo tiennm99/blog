@@ -84,7 +84,9 @@ Create `### Bonus` / `**Images:**` if missing.
 📄 content/post/YYYY/MM/DD/index.md
 🏷️  label: "[label]"  (source: candidate-pick | caption | user-input; post: [postTitle])
 🖼️  [clean_image_url]
+📊 [tally]
 ```
+The tally comes from `post-stats` — see *Post tally* in the shared post mechanics.
 
 ## Checklist
 
