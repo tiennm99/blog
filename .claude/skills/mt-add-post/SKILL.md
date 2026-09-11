@@ -35,7 +35,9 @@ Trust `route: article`; skip if `duplicate` or not `accessible`.
 ✅ Article added to Newsletter #[number]
 📄 content/post/YYYY/MM/DD/index.md
 🔗 [clean_url]
+📊 [tally]
 ```
+The tally comes from `post-stats` — see *Post tally* in the shared post mechanics.
 
 ## Checklist
 

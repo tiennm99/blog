@@ -48,6 +48,7 @@ go run ./scripts/newsletter list-existing-tags           # existing tag frequenc
 go run ./scripts/newsletter detect-image-source "<url>"  # detect Substack image + uuid
 go run ./scripts/newsletter find-substack-post --uuid <uuid>
 go run ./scripts/newsletter fetch-via-defuddle "<url>"   # fallback fetch (tier 1 of the fetch chain)
+go run ./scripts/newsletter post-stats <post-path>       # count a post's articles/images/videos/documents
 ```
 
 These are shared by all three tools — no tool-specific copies.

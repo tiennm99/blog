@@ -83,6 +83,23 @@ If the post has **no `### Bonus`** yet:
 ```
 When a subsection (e.g. `**Videos:**`) already exists, append under it; otherwise create it. Keep subsections in this order: **Images** → **Videos** → **Documents**.
 
+## 4a. Post tally (report line)
+
+After every successful insertion, report the target post's running totals so the user can see what the post now holds:
+
+```bash
+go run ./scripts/newsletter post-stats content/post/YYYY/MM/DD/index.md
+```
+Output (JSON): `{ post, newsletter, articles, images, videos, documents, total }`.
+
+Render it as a single TL;DR line in the handler's report, omitting zero counts:
+
+```
+📊 4 articles · 2 videos · 1 image
+```
+
+Use the counts the command returns — do not tally by hand. This is a **report-only** line: never write it into `index.md`.
+
 ## 5. Post content language guidelines
 
 These rules apply only to text written into `content/post/**/index.md`. Keep user-facing questions, status updates, reports, and final responses in English unless the user explicitly requests another language.

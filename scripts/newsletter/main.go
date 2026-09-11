@@ -23,6 +23,7 @@ Commands:
   detect-image-source <url>                  detect Substack image + uuid
   find-substack-post --uuid <uuid> [--deep]  find the post embedding an image uuid
   fetch-via-defuddle <url>                   fallback fetch via defuddle.md proxy
+  post-stats <path/to/index.md>              count the post's articles/images/videos/documents
 `)
 }
 
@@ -57,6 +58,8 @@ func main() {
 		runFindSubstackPost(args)
 	case "fetch-via-defuddle":
 		runFetchViaDefuddle(args)
+	case "post-stats":
+		runPostStats(args)
 	default:
 		fmt.Fprintf(os.Stderr, "unknown command: %s\n", os.Args[1])
 		usage()
