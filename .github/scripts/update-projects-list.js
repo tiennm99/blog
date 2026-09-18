@@ -15,14 +15,14 @@
 import fs from "node:fs/promises";
 import path from "node:path";
 
-import { GitHubProjects } from "./lib/github-api.mjs";
+import { GitHubProjects } from "./lib/github-api.js";
 import {
   injectBlock,
   renderContributed,
   renderDemo,
   renderStarred,
   resolveUrl,
-} from "./lib/render-projects.mjs";
+} from "./lib/render-projects.js";
 
 const PAGE = "content/page/projects/index.md";
 
@@ -33,8 +33,8 @@ const UNSTABLE_OWNERS = new Set(["tiennm99dev"]);
 
 /**
  * Most recently pushed first; a repo with no timestamp sorts last.
- * @param {import("./lib/github-api.mjs").Repo} a
- * @param {import("./lib/github-api.mjs").Repo} b
+ * @param {import("./lib/github-api.js").Repo} a
+ * @param {import("./lib/github-api.js").Repo} b
  * @returns {number}
  */
 const byRecentPush = (a, b) => (b.pushedAt || "").localeCompare(a.pushedAt || "");

@@ -3,7 +3,7 @@
 /**
  * Public URL of a repo: its declared homepage, else its GitHub Pages URL when
  * Pages is enabled. Returns an empty string when the repo has neither.
- * @param {import("./github-api.mjs").Repo} repo
+ * @param {import("./github-api.js").Repo} repo
  * @returns {string}
  */
 export function resolveUrl(repo) {
@@ -48,7 +48,7 @@ function table(headers, rows) {
 
 /**
  * Repos with at least one star, most-starred first.
- * @param {import("./github-api.mjs").Repo[]} repos
+ * @param {import("./github-api.js").Repo[]} repos
  * @returns {string[]}
  */
 export function renderStarred(repos) {
@@ -63,7 +63,7 @@ export function renderStarred(repos) {
 
 /**
  * Repos with a live demo URL.
- * @param {import("./github-api.mjs").Repo[]} repos
+ * @param {import("./github-api.js").Repo[]} repos
  * @returns {string[]}
  */
 export function renderDemo(repos) {
@@ -77,7 +77,7 @@ export function renderDemo(repos) {
 
 /**
  * Repos owned by others, by merged pull request count.
- * @param {import("./github-api.mjs").Contribution[]} contributions
+ * @param {import("./github-api.js").Contribution[]} contributions
  * @returns {string[]}
  */
 export function renderContributed(contributions) {
