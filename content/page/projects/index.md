@@ -10,11 +10,11 @@ menu:
       icon: list
 ---
 
-Vài projects mình làm, và vài repo mình có góp chút công sức. Bấm vào xem thử nhé :)
+Vài projects mình làm, và có đóng góp. Xem thử nếu hứng thú nhé :D
 
-## Có star
+## Project nổi bật (có star)
 
-Mấy repo được người ta bấm sao. Không nhiều, nhưng mà vui.
+Dù không biết người ta star vì điều gì nữa 🤡🤡
 
 <!-- PROJECTS_STARRED_START -->
 
@@ -31,14 +31,14 @@ Mấy repo được người ta bấm sao. Không nhiều, nhưng mà vui.
 
 <!-- PROJECTS_STARRED_END -->
 
-## Có link
+## Project có demo
 
-Những cái có URL để bấm vào xem trực tiếp. URL có thể là:
+Vài có URL để bấm vào xem trực tiếp (demo). URL có thể là:
 
 - Website tĩnh / app host trên [GitHub Pages](https://pages.github.com/), [Cloudflare Pages](https://pages.cloudflare.com/), [Vercel](https://vercel.com/), [Netlify](https://www.netlify.com/)...
 - [Cloudflare Workers](https://workers.cloudflare.com/) hoặc serverless endpoint khác
 - Telegram bot ([t.me/...](https://t.me/))
-- Custom domain, hoặc bất kỳ hình thức deploy nào khác
+- Custom domain, hoặc một số hình thức deploy khác
 
 <!-- PROJECTS_LINKED_START -->
 
@@ -103,10 +103,9 @@ Những cái có URL để bấm vào xem trực tiếp. URL có thể là:
 
 <!-- PROJECTS_LINKED_END -->
 
-## Mình có đóng góp
+## Project đã đóng góp
 
-Repo của người khác, mình gửi PR và được merge. Toàn là mấy project mình dùng
-hàng ngày rồi thấy chỗ nào sửa được thì sửa thôi.
+Project của người khác/tổ chức khác mà mình gửi PR và được merge. Một số khá là đỉnh đấy :D
 
 <!-- PROJECTS_CONTRIBUTED_START -->
 
@@ -135,5 +134,3 @@ hàng ngày rồi thấy chỗ nào sửa được thì sửa thôi.
 | [DavidNiessen/SimpleGuicePlugin](https://github.com/DavidNiessen/SimpleGuicePlugin) | An example for dependency injection (Google Guice) in a Spigot plugin | 1 | 2 |
 
 <!-- PROJECTS_CONTRIBUTED_END -->
-
-_(Mấy danh sách này được tạo tự động mỗi ngày)_
