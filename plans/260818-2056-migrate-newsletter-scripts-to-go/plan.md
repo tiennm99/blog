@@ -1,6 +1,7 @@
 # Migrate Newsletter Scripts from Node.js to Go
 
 **Status:** COMPLETED (2026-08-18) — all 3 phases done; parity report in `plans/reports/parity-260818-newsletter-go-migration-report.md`
+**Superseded:** 2026-09-18 — the Go engine this plan delivered was ported back to JavaScript by `plans/260918-0647-migrate-newsletter-engine-to-javascript/`. Body left unchanged; it records the reasoning as it stood.
 **Created:** 2026-08-18
 **Scope:** Port the 8-file shared engine in `scripts/newsletter/` (~740 LoC JS, stdlib-only) to a single Go package with 6 subcommands, verify behavior parity, cut over all skill/doc call sites, delete the JS.
 
