@@ -15,7 +15,7 @@
 import fs from "node:fs/promises";
 import path from "node:path";
 
-import { GitHubClient } from "./lib/github-api.mjs";
+import { GitHubProjects } from "./lib/github-api.mjs";
 import {
   injectBlock,
   renderContributed,
@@ -42,7 +42,7 @@ async function main() {
     process.exit(1);
   }
 
-  const gh = new GitHubClient(token, user);
+  const gh = new GitHubProjects(token, user);
   const ownedLogins = await gh.fetchOwnedLogins();
   const [ownedRepos, contributions] = await Promise.all([
     gh.fetchOwnedRepos(ownedLogins),

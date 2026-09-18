@@ -1,8 +1,10 @@
 // GitHub API access for the projects list: owned namespaces, their repos, and
 // the repos the user contributed merged pull requests to.
+//
+// Built on the `octokit` SDK, which supplies auth, REST and GraphQL cursor
+// pagination, retry and rate-limit backoff.
 
-const API = "https://api.github.com";
-const GRAPHQL = `${API}/graphql`;
+import { Octokit } from "octokit";
 
 /**
  * @typedef {object} Repo
@@ -26,69 +28,18 @@ const GRAPHQL = `${API}/graphql`;
  * @property {number} mergedPrs
  */
 
-/** Minimal GitHub client bound to one token and one user. */
-export class GitHubClient {
+/** Projects-list queries for one user. */
+export class GitHubProjects {
   /**
    * @param {string} token Personal access token with `repo` and `read:org`.
    * @param {string} user Login whose projects are listed.
    */
   constructor(token, user) {
-    this.token = token;
     this.user = user;
-  }
-
-  /** @returns {Record<string, string>} */
-  get restHeaders() {
-    return {
-      Authorization: `Bearer ${this.token}`,
-      Accept: "application/vnd.github+json",
-      "X-GitHub-Api-Version": "2022-11-28",
-      "User-Agent": `${this.user}-projects-updater`,
-    };
-  }
-
-  /**
-   * Fetch every page of a REST collection endpoint.
-   * @param {string} pathAndQuery Path starting with `/`, query without `page`.
-   * @returns {Promise<object[]>}
-   */
-  async restPaged(pathAndQuery) {
-    const all = [];
-    const sep = pathAndQuery.includes("?") ? "&" : "?";
-    for (let page = 1; page <= 20; page += 1) {
-      const res = await fetch(`${API}${pathAndQuery}${sep}page=${page}`, {
-        headers: this.restHeaders,
-      });
-      if (!res.ok) {
-        throw new Error(`REST ${pathAndQuery} ${res.status}: ${await res.text()}`);
-      }
-      const batch = await res.json();
-      if (!Array.isArray(batch) || batch.length === 0) break;
-      all.push(...batch);
-      if (batch.length < 100) break;
-    }
-    return all;
-  }
-
-  /**
-   * @param {string} query
-   * @param {Record<string, unknown>} variables
-   * @returns {Promise<object>}
-   */
-  async graphql(query, variables) {
-    const res = await fetch(GRAPHQL, {
-      method: "POST",
-      headers: {
-        Authorization: `Bearer ${this.token}`,
-        "Content-Type": "application/json",
-        "User-Agent": `${this.user}-projects-updater`,
-      },
-      body: JSON.stringify({ query, variables }),
+    this.octokit = new Octokit({
+      auth: token,
+      userAgent: `${user}-projects-updater`,
     });
-    if (!res.ok) throw new Error(`GraphQL ${res.status}: ${await res.text()}`);
-    const body = await res.json();
-    if (body.errors) throw new Error(`GraphQL errors: ${JSON.stringify(body.errors)}`);
-    return body.data;
   }
 
   /**
@@ -99,10 +50,14 @@ export class GitHubClient {
   async fetchOwnedLogins() {
     let memberships;
     try {
-      memberships = await this.restPaged("/user/memberships/orgs?state=active&per_page=100");
+      memberships = await this.octokit.paginate(
+        this.octokit.rest.orgs.listMembershipsForAuthenticatedUser,
+        { state: "active", per_page: 100 },
+      );
     } catch (err) {
       throw new Error(
-        `Cannot read organization memberships (the token needs the read:org scope): ${err.message}`,
+        "Cannot read organization memberships (the token needs the read:org scope)",
+        { cause: err },
       );
     }
     const logins = new Set([this.user.toLowerCase()]);
@@ -122,11 +77,19 @@ export class GitHubClient {
   async fetchOwnedRepos(ownedLogins) {
     const byName = new Map();
     for (const login of ownedLogins) {
-      const endpoint =
-        login === this.user.toLowerCase()
-          ? `/users/${login}/repos?type=owner&sort=updated&per_page=100`
-          : `/orgs/${login}/repos?type=all&sort=updated&per_page=100`;
-      for (const r of await this.restPaged(endpoint)) {
+      const isSelf = login === this.user.toLowerCase();
+      const listed = isSelf
+        ? await this.octokit.paginate(this.octokit.rest.repos.listForUser, {
+            username: login,
+            type: "owner",
+            per_page: 100,
+          })
+        : await this.octokit.paginate(this.octokit.rest.repos.listForOrg, {
+            org: login,
+            type: "all",
+            per_page: 100,
+          });
+      for (const r of listed) {
         if (r.private) continue;
         if (!byName.has(r.full_name)) byName.set(r.full_name, fromRest(r));
       }
@@ -136,29 +99,22 @@ export class GitHubClient {
 
   /**
    * Repos the user has merged pull requests in, with the per-repo count.
-   * Uses the search API, which caps at 1000 results.
+   * Backed by the search API, which caps at 1000 results.
    * @returns {Promise<Contribution[]>}
    */
   async fetchMergedPrContributions() {
+    const result = await this.octokit.graphql.paginate(MERGED_PR_QUERY, {
+      q: `is:pr is:merged is:public author:${this.user}`,
+    });
+
     const counts = new Map();
     const repos = new Map();
-    let cursor = null;
-    for (let i = 0; i < 10; i += 1) {
-      const data = await this.graphql(MERGED_PR_QUERY, {
-        q: `is:pr is:merged is:public author:${this.user}`,
-        cursor,
-      });
-      const search = data?.search;
-      if (!search) break;
-      for (const node of search.nodes) {
-        const repo = node?.repository;
-        if (!repo || repo.isPrivate) continue;
-        const key = repo.nameWithOwner;
-        counts.set(key, (counts.get(key) || 0) + 1);
-        if (!repos.has(key)) repos.set(key, fromGraphql(repo));
-      }
-      if (!search.pageInfo.hasNextPage) break;
-      cursor = search.pageInfo.endCursor;
+    for (const node of result.search.nodes) {
+      const repo = node?.repository;
+      if (!repo || repo.isPrivate) continue;
+      const key = repo.nameWithOwner;
+      counts.set(key, (counts.get(key) || 0) + 1);
+      if (!repos.has(key)) repos.set(key, fromGraphql(repo));
     }
     return [...counts.entries()].map(([key, mergedPrs]) => ({
       repo: repos.get(key),
@@ -167,8 +123,10 @@ export class GitHubClient {
   }
 }
 
+// `$cursor` and the `pageInfo` selection are what octokit.graphql.paginate
+// drives; it concatenates `nodes` across pages.
 const MERGED_PR_QUERY = `
-query($q: String!, $cursor: String) {
+query paginate($q: String!, $cursor: String) {
   search(query: $q, type: ISSUE, first: 100, after: $cursor) {
     pageInfo { hasNextPage endCursor }
     nodes {
