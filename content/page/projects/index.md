@@ -10,15 +10,11 @@ menu:
       icon: list
 ---
 
-Projects nổi bật của mình, chia thành ba danh sách. Tất cả đều là repo public, và
-đều được **tạo tự động bằng script** (`.github/scripts/update-projects-list.mjs`,
-chạy mỗi ngày qua GitHub Actions) — không sửa tay phần trong bảng.
+Vài projects mình làm, và vài repo mình có góp chút công sức. Bấm vào xem thử nhé :)
 
-## 1. Projects có star
+## Có star
 
-Repo mình sở hữu — trên tài khoản cá nhân hoặc trong org do mình làm owner — có ít
-nhất 1 star. Sắp xếp theo số star giảm dần, cùng số star thì repo cập nhật gần
-đây hơn lên trước. Fork không được tính.
+Mấy repo được người ta bấm sao. Không nhiều, nhưng mà vui.
 
 <!-- PROJECTS_STARRED_START -->
 
@@ -35,17 +31,14 @@ nhất 1 star. Sắp xếp theo số star giảm dần, cùng số star thì rep
 
 <!-- PROJECTS_STARRED_END -->
 
-## 2. Projects có link
+## Có link
 
-Repo mình sở hữu và có URL để bấm vào xem trực tiếp, không cần star. Danh sách này
-có thể trùng với danh sách trên. URL có thể là:
+Những cái có URL để bấm vào xem trực tiếp. URL có thể là:
 
 - Website tĩnh / app host trên [GitHub Pages](https://pages.github.com/), [Cloudflare Pages](https://pages.cloudflare.com/), [Vercel](https://vercel.com/), [Netlify](https://www.netlify.com/)...
 - [Cloudflare Workers](https://workers.cloudflare.com/) hoặc serverless endpoint khác
 - Telegram bot ([t.me/...](https://t.me/))
 - Custom domain, hoặc bất kỳ hình thức deploy nào khác
-
-Sắp xếp theo lần cập nhật gần nhất.
 
 <!-- PROJECTS_LINKED_START -->
 
@@ -110,11 +103,10 @@ Sắp xếp theo lần cập nhật gần nhất.
 
 <!-- PROJECTS_LINKED_END -->
 
-## 3. Projects mình đóng góp
+## Mình có đóng góp
 
-Repo của người khác (không phải của mình, cũng không thuộc org mình làm owner) mà
-mình có pull request đã được merge. Sắp xếp theo số PR đã merge giảm dần, cùng số
-PR thì repo cập nhật gần đây hơn lên trước.
+Repo của người khác, mình gửi PR và được merge. Toàn là mấy project mình dùng
+hàng ngày rồi thấy chỗ nào sửa được thì sửa thôi.
 
 <!-- PROJECTS_CONTRIBUTED_START -->
 
@@ -129,7 +121,7 @@ PR thì repo cập nhật gần đây hơn lên trước.
 | [zfoo-project/zfoo](https://github.com/zfoo-project/zfoo) | 💡Extremely fast enterprise server framework, can be used in RPC,  game server,  web server. | 3 | 2014 |
 | [old-free-domains/register](https://github.com/old-free-domains/register) | Free subdomains for personal sites, open-source projects, and more. | 2 | 598 |
 | [onyx-dot-app/documentation](https://github.com/onyx-dot-app/documentation) | Documentation for the Onyx Software | 1 | 33 |
-| [oraios/serena](https://github.com/oraios/serena) | A powerful MCP toolkit for coding, providing semantic retrieval and editing capabilities  - the IDE for your agent | 1 | 29547 |
+| [oraios/serena](https://github.com/oraios/serena) | A powerful MCP toolkit for coding, providing semantic retrieval and editing capabilities  - the IDE for your agent | 1 | 29548 |
 | [sirmalloc/ccstatusline](https://github.com/sirmalloc/ccstatusline) | 🚀 Beautiful highly customizable statusline for Claude Code CLI with powerline support, themes, and more. | 1 | 12930 |
 | [ripienaar/free-for-dev](https://github.com/ripienaar/free-for-dev) | A list of SaaS, PaaS and IaaS offerings that have free tiers of interest to devops and infradev | 1 | 137712 |
 | [Bogdanp/awesome-advent-of-code](https://github.com/Bogdanp/awesome-advent-of-code) | A collection of awesome resources related to the yearly Advent of Code challenge. | 1 | 3225 |
@@ -143,3 +135,5 @@ PR thì repo cập nhật gần đây hơn lên trước.
 | [DavidNiessen/SimpleGuicePlugin](https://github.com/DavidNiessen/SimpleGuicePlugin) | An example for dependency injection (Google Guice) in a Spigot plugin | 1 | 2 |
 
 <!-- PROJECTS_CONTRIBUTED_END -->
+
+_(Mấy danh sách này được tạo tự động mỗi ngày)_
