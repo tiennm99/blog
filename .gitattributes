@@ -1,7 +1,1 @@
-* text=auto eol=crlf
-
-*.sh text eol=lf
-
-# The newsletter parity suite compares engine stdout to committed golden files
-# byte for byte, so these must stay LF on every checkout.
-scripts/newsletter/** text eol=lf
+* text=auto eol=lf
