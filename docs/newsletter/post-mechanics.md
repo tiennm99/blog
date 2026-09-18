@@ -1,7 +1,7 @@
 # Newsletter Post Mechanics (shared)
 
-Shared procedure used by the newsletter handler skills (`mt-add-post`, `mt-add-video`, `mt-add-image`).
-All shared scripts live in `scripts/newsletter/`.
+Shared procedure used by the newsletter handler skills (`mt-add-article`, `mt-add-video`, `mt-add-image`).
+The shared engine lives in `scripts/newsletter/` — see [engine-commands.md](engine-commands.md) for every command and the `npm ci` prerequisite.
 
 **Project Context:**
 - Hugo static site, theme `hugo-theme-stack`
@@ -26,7 +26,7 @@ The newsletter number always comes from the target post, not from today's date.
 ## 2. Newsletter number
 
 ```bash
-go run ./scripts/newsletter find-newsletter-number
+node scripts/newsletter find-newsletter-number
 ```
 Searches backwards from today for the most recent newsletter and returns the next number. Only needed when **creating** a new post — when the target post already exists, read its number from its own `title`.
 
@@ -88,7 +88,7 @@ When a subsection (e.g. `**Videos:**`) already exists, append under it; otherwis
 After every successful insertion, report the target post's running totals so the user can see what the post now holds:
 
 ```bash
-go run ./scripts/newsletter post-stats content/post/YYYY/MM/DD/index.md
+node scripts/newsletter post-stats content/post/YYYY/MM/DD/index.md
 ```
 Output (JSON): `{ post, newsletter, articles, images, videos, documents, total }`.
 
