@@ -1,0 +1,8 @@
+{
+  "original_url": "https://a.invalid/clip.mp4",
+  "clean_url": "https://a.invalid/clip.mp4",
+  "http_status": "000",
+  "accessible": false,
+  "duplicate": false,
+  "route": "video"
+}

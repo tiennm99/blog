@@ -1,0 +1,8 @@
+{
+  "original_url": "https://link.invalid/story",
+  "clean_url": "https://link.invalid/story",
+  "http_status": "000",
+  "accessible": false,
+  "duplicate": true,
+  "route": "article"
+}

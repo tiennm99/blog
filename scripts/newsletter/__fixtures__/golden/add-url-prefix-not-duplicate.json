@@ -1,0 +1,8 @@
+{
+  "original_url": "https://prefix.invalid/posts/the-long",
+  "clean_url": "https://prefix.invalid/posts/the-long",
+  "http_status": "000",
+  "accessible": false,
+  "duplicate": false,
+  "route": "article"
+}

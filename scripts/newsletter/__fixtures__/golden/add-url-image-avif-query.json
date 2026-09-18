@@ -1,0 +1,8 @@
+{
+  "original_url": "https://cdn.invalid/image/fetch/f_auto/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F12345678-1234-1234-1234-123456789abc_100x100.avif?x=1",
+  "clean_url": "https://cdn.invalid/image/fetch/f_auto/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F12345678-1234-1234-1234-123456789abc_100x100.avif?x=1",
+  "http_status": "000",
+  "accessible": false,
+  "duplicate": false,
+  "route": "image"
+}
