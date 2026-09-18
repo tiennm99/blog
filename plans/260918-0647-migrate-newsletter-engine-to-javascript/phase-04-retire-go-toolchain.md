@@ -94,7 +94,7 @@ outright — no version alignment needed.
 - [x] No `GO_VERSION` or Go-setup action reference remains in `.github/` or
       `netlify.toml`
 - [x] GitHub Actions `hugo.yml` deploys green — run 35329443556: build, Cloudflare Pages deploy and IndexNow all pass with no Go step
-- [ ] Netlify builds green — not applicable: the site is deployed to Cloudflare Pages by `hugo.yml` and served by Cloudflare; `netlify.toml` is referenced nowhere else in the repo, so no Netlify build was triggered to observe. The `GO_VERSION` line was still removed from it.
+- [x] Netlify builds green — moot: the site is deployed to Cloudflare Pages by `hugo.yml` and served by Cloudflare, and `netlify.toml` was referenced nowhere else in the repo, so there was no Netlify build to observe. The user dropped Netlify entirely on 2026-09-18 and the file is deleted.
 - [x] Deployed site output unchanged from the pre-phase-4 deploy — the deploy succeeded and https://miti99.com/ serves 200; Go never participated in the Hugo build
 - [x] The research report carries the override note; its original recommendation
       is still readable
