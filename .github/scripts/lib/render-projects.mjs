@@ -62,11 +62,11 @@ export function renderStarred(repos) {
 }
 
 /**
- * Repos that have a clickable URL, by name.
+ * Repos with a live demo URL.
  * @param {import("./github-api.mjs").Repo[]} repos
  * @returns {string[]}
  */
-export function renderLinked(repos) {
+export function renderDemo(repos) {
   const rows = repos.map((r) => [
     `[${r.nameWithOwner}](${r.htmlUrl})`,
     cell(r.description),
