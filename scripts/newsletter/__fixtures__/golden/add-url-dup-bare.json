@@ -1,0 +1,8 @@
+{
+  "original_url": "https://bare2.invalid/article",
+  "clean_url": "https://bare2.invalid/article",
+  "http_status": "000",
+  "accessible": false,
+  "duplicate": true,
+  "route": "article"
+}

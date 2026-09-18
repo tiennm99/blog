@@ -1,0 +1,8 @@
+{
+  "original_url": "https://substack-post-media.s3.invalid/public/images/aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee_1280x720.png",
+  "clean_url": "https://substack-post-media.s3.invalid/public/images/aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee_1280x720.png",
+  "http_status": "000",
+  "accessible": false,
+  "duplicate": true,
+  "route": "image"
+}

@@ -1,0 +1,8 @@
+{
+  "original_url": "https://slash.invalid/post/",
+  "clean_url": "https://slash.invalid/post/",
+  "http_status": "000",
+  "accessible": false,
+  "duplicate": true,
+  "route": "article"
+}

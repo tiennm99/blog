@@ -1,0 +1,16 @@
+{
+  "candidates": [
+    "How documents are turned into searchable passages",
+    "How LLMs find the meaning behind different words",
+    "How close is close enough",
+    "Why searching every passage is too expensive",
+    "Following connections to the the right neighborhood",
+    "How much searching is enough",
+    "What happens when the answer changes",
+    "Dot product reflects both alignment and length.",
+    "Pre-filtering identifies eligible records before similarity ranking."
+  ],
+  "caption": "",
+  "itemLink": "https://blog.bytebytego.com/p/how-llms-can-find-a-needle-in-a-haystack",
+  "itemTitle": "How LLMs Can Find a Needle in a Haystack"
+}

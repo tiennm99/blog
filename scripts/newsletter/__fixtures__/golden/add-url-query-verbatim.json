@@ -1,0 +1,8 @@
+{
+  "original_url": "https://a.invalid/path?a=%20x&flag&b=%7ez&utm_source=drop",
+  "clean_url": "https://a.invalid/path?a=%20x&flag&b=%7ez",
+  "http_status": "000",
+  "accessible": false,
+  "duplicate": false,
+  "route": "article"
+}

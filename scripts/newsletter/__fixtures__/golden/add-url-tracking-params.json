@@ -1,0 +1,8 @@
+{
+  "original_url": "https://a.invalid/article?utm_source=x&utm_medium=y&fbclid=abc&keep=1&ref=z&s=1",
+  "clean_url": "https://a.invalid/article?keep=1",
+  "http_status": "000",
+  "accessible": false,
+  "duplicate": false,
+  "route": "article"
+}
