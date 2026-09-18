@@ -3,13 +3,13 @@
 //
 //   1. Starred   — public repos I own (personal account or an org I administer)
 //                  with at least one star, by stars then most recent push.
-//   2. Linked    — public repos I own that have a clickable URL (homepage or
-//                  GitHub Pages), no star requirement, by most recent push.
-//                  May overlap list 1.
+//   2. Demo      — public repos I own with a live URL (homepage or GitHub
+//                  Pages), no star requirement, by most recent push. May
+//                  overlap list 1.
 //   3. Contributed — public repos owned by someone else, by how many of my pull
 //                  requests were merged there, then most recent push.
 //
-// Forks are excluded from lists 1 and 2: their homepage belongs to upstream,
+// Forks are excluded from the two owned lists: their homepage belongs to upstream,
 // not to me. Private repos are excluded everywhere — the page is public.
 
 import fs from "node:fs/promises";
@@ -19,7 +19,7 @@ import { GitHubProjects } from "./lib/github-api.mjs";
 import {
   injectBlock,
   renderContributed,
-  renderLinked,
+  renderDemo,
   renderStarred,
   resolveUrl,
 } from "./lib/render-projects.mjs";
@@ -55,7 +55,7 @@ async function main() {
     .filter((r) => r.stars > 0)
     .sort((a, b) => b.stars - a.stars || byRecentPush(a, b));
 
-  const linked = mine.filter((r) => resolveUrl(r) !== "").sort(byRecentPush);
+  const demo = mine.filter((r) => resolveUrl(r) !== "").sort(byRecentPush);
 
   const contributed = contributions
     .filter((c) => !ownedLogins.has(c.repo.owner.toLowerCase()))
@@ -64,10 +64,10 @@ async function main() {
   const file = path.resolve(PAGE);
   const current = await fs.readFile(file, "utf8");
   let next = injectBlock(current, "PROJECTS_STARRED", renderStarred(starred));
-  next = injectBlock(next, "PROJECTS_LINKED", renderLinked(linked));
+  next = injectBlock(next, "PROJECTS_DEMO", renderDemo(demo));
   next = injectBlock(next, "PROJECTS_CONTRIBUTED", renderContributed(contributed));
 
-  const summary = `${starred.length} starred, ${linked.length} linked, ${contributed.length} contributed`;
+  const summary = `${starred.length} starred, ${demo.length} demo, ${contributed.length} contributed`;
   if (next === current) {
     console.log(`No changes (${summary}).`);
     return;
