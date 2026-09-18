@@ -38,7 +38,7 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.PAGES_FETCH_TOKEN }}
           GH_USER: tiennm99
-        run: node .github/scripts/update-projects-list.mjs
+        run: node .github/scripts/update-projects-list.js
 
       - name: Commit and push
         run: |

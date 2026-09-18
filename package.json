@@ -9,7 +9,7 @@
   },
   "scripts": {
     "lint": "eslint .",
-    "projects:refresh": "node .github/scripts/update-projects-list.mjs"
+    "projects:refresh": "node .github/scripts/update-projects-list.js"
   },
   "dependencies": {
     "octokit": "^5.0.5"
