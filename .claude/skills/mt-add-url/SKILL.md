@@ -1,14 +1,14 @@
 ---
 name: mt-add-url
-description: 'Meta entry for adding URLs to the Hugo blog newsletter. Use whenever the user provides one or more URLs to add to their newsletter (articles, YouTube videos, images, etc.). Classifies each URL and auto-dispatches to the right handler skill (mt-add-post for articles, mt-add-video for YouTube, mt-add-image for images). For unsupported types it asks the user how to proceed. This is the default entry point for newsletter URL processing.'
+description: 'Meta entry for adding URLs to the Hugo blog newsletter. Use whenever the user provides one or more URLs to add to their newsletter (articles, YouTube videos, images, etc.). Classifies each URL and auto-dispatches to the right handler skill (mt-add-article for articles, mt-add-video for YouTube, mt-add-image for images). For unsupported types it asks the user how to proceed. This is the default entry point for newsletter URL processing.'
 ---
 
 ## Overview
 
-`mt-add-url` is the **meta dispatcher**: it classifies each URL and auto-invokes the matching handler skill. Handlers (`mt-add-post`, `mt-add-video`, `mt-add-image`) own the actual content writing. Shared scripts live in `scripts/newsletter/`; shared post mechanics in `references/newsletter-post-mechanics.md`.
+`mt-add-url` is the **meta dispatcher**: it classifies each URL and auto-invokes the matching handler skill. Handlers (`mt-add-article`, `mt-add-video`, `mt-add-image`) own the actual content writing. The shared engine lives in `scripts/newsletter/` — see [docs/newsletter/engine-commands.md](../../../docs/newsletter/engine-commands.md) for every command it offers, and `docs/newsletter/post-mechanics.md` for shared post mechanics.
 
 **Supported routes (this version):**
-- `article` → `mt-add-post`
+- `article` → `mt-add-article`
 - `youtube` → `mt-add-video`
 - `image` → `mt-add-image`
 
@@ -20,7 +20,7 @@ Everything else (direct `video` file, `document`, or anything unrecognized) is *
 
 For every URL the user provides:
 ```bash
-go run ./scripts/newsletter add-url "<url>"
+node scripts/newsletter add-url "<url>"
 ```
 Output (JSON): `{ original_url, clean_url, http_status, accessible, duplicate, route, title?, author? }`.
 
@@ -30,13 +30,13 @@ Output (JSON): `{ original_url, clean_url, http_status, accessible, duplicate, r
 ### 2. Skip non-actionable URLs
 
 - `duplicate: true` → skip, note in report (already in a newsletter).
-- `accessible: false` → **not an automatic skip.** The classifier does a plain fetch, so a bot-blocked host (403, Cloudflare challenge) reports `accessible: false` even when the page is public and the fallback fetchers can read it. Dispatch on `route` as normal and let the handler's fetch chain decide; only report the URL as skipped when every fetcher in `mt-webfetch` has failed. A `404`/dead URL is a genuine skip.
+- `accessible: false` → **not an automatic skip.** The classifier does a plain fetch, so a bot-blocked host (403, Cloudflare challenge) reports `accessible: false` even when the page is public and the fallback fetchers can read it. Dispatch on `route` as normal and let the handler's fetch chain decide; only report the URL as skipped when every fetcher in `mt-fetch-url` has failed. A `404`/dead URL is a genuine skip.
 
 ### 3. Dispatch on route
 
 | route | Action |
 |-------|--------|
-| `article` | Invoke the **`mt-add-post`** skill, passing `clean_url` |
+| `article` | Invoke the **`mt-add-article`** skill, passing `clean_url` |
 | `youtube` | Invoke the **`mt-add-video`** skill, passing `clean_url` |
 | `image` | Invoke the **`mt-add-image`** skill, passing `clean_url` |
 | `video` (direct file) / `document` / anything else | **Fallback** — see step 4 |
@@ -62,7 +62,7 @@ Act on the user's choice. If they choose add/update, proceed to design that skil
 Close with the target post's TL;DR tally, then the per-URL detail. Read the tally from the post itself so it reflects everything the post now holds, not just this batch:
 
 ```bash
-go run ./scripts/newsletter post-stats content/post/YYYY/MM/DD/index.md
+node scripts/newsletter post-stats content/post/YYYY/MM/DD/index.md
 ```
 
 Aggregate across all URLs:
@@ -73,7 +73,7 @@ Aggregate across all URLs:
    (omit zero counts; documents too when present)
 
 ✅ Dispatched: [count]
-   - [count] → mt-add-post (articles)
+   - [count] → mt-add-article (articles)
    - [count] → mt-add-video (YouTube)
    - [count] → mt-add-image (images)
 
@@ -84,9 +84,9 @@ Aggregate across all URLs:
    - [url] (route: [route]): [user decision]
 ```
 
-The tally is report-only — never write it into `index.md`. See *Post tally* in `references/newsletter-post-mechanics.md`.
+The tally is report-only — never write it into `index.md`. See *Post tally* in `docs/newsletter/post-mechanics.md`.
 
 ## Notes
 
-- Handlers (`mt-add-post`, `mt-add-video`, `mt-add-image`) remain directly invocable for single-purpose use, but `mt-add-url` is the normal entry point when a user pastes a URL.
-- Shared mechanics (numbering, post find/create, Bonus insertion, language rules) are defined once in `references/newsletter-post-mechanics.md`; handlers reference it.
+- Handlers (`mt-add-article`, `mt-add-video`, `mt-add-image`) remain directly invocable for single-purpose use, but `mt-add-url` is the normal entry point when a user pastes a URL.
+- Shared mechanics (numbering, post find/create, Bonus insertion, language rules) are defined once in `docs/newsletter/post-mechanics.md`; handlers reference it.

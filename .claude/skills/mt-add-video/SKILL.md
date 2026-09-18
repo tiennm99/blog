@@ -9,7 +9,7 @@ description: 'YouTube video handler for the Hugo blog newsletter. Adds a YouTube
 
 Scope: **YouTube links only** (`watch`, `youtu.be`, `shorts`). Direct video files (`.mp4` etc.) are not handled here — they go through `mt-add-url`'s fallback.
 
-Shared scripts: `scripts/newsletter/`. Shared procedure: `../mt-add-url/references/newsletter-post-mechanics.md` — **follow it** for post find/create, numbering, Bonus insertion, and language rules.
+Shared scripts: `scripts/newsletter/`. Shared procedure: `docs/newsletter/post-mechanics.md` — **follow it** for post find/create, numbering, Bonus insertion, and language rules.
 
 ## Input
 
@@ -19,7 +19,7 @@ A clean YouTube URL (passed by `mt-add-url`, or given directly).
 
 1. **Classify / fetch title** — run the router to get the canonical URL + title:
    ```bash
-   go run ./scripts/newsletter add-url "<url>"
+   node scripts/newsletter add-url "<url>"
    ```
    Confirm `route: youtube`; skip if `duplicate` or not `accessible`. Use the returned `clean_url` (canonical `watch?v=ID`) and `title`.
    - If `title` is missing (oEmbed failed), fetch the title via WebFetch on the watch URL.
@@ -32,7 +32,7 @@ A clean YouTube URL (passed by `mt-add-url`, or given directly).
    - Worst case, derive a single sentence from the title.
    Keep it to 1-2 sentences (KISS).
 
-4. **Post mechanics** — follow `../mt-add-url/references/newsletter-post-mechanics.md` to resolve/create the target post and locate the Bonus section.
+4. **Post mechanics** — follow `docs/newsletter/post-mechanics.md` to resolve/create the target post and locate the Bonus section.
 
 5. **Insert under Bonus → Videos:**
    ```markdown
