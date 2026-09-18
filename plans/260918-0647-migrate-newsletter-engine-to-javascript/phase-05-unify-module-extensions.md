@@ -96,8 +96,8 @@ it silently degrades to `any` and the repo loses the typing it adopted JSDoc for
 - [x] `npm run lint` clean
 - [x] `npm run projects:refresh` resolves all modules (auth failure is acceptable
       locally; a module-resolution failure is not)
-- [ ] `update-projects.yml` completes green on a manual dispatch — not exercised: nothing pushed
-- [ ] The projects page content it generates is unchanged — not exercised: needs a GitHub token and a workflow run
+- [x] `update-projects.yml` completes green on a manual dispatch — run 35329575936
+- [x] The projects page content it generates is unchanged — the run produced its usual `chore(projects): refresh projects list` commit containing only upstream star-count drift and the existing tie ordering, no structural change
 
 ## Risk assessment
 

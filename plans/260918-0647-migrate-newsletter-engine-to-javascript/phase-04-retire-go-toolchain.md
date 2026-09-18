@@ -93,9 +93,9 @@ outright — no version alignment needed.
 - [x] `go.mod` gone; no `go.sum` was ever present
 - [x] No `GO_VERSION` or Go-setup action reference remains in `.github/` or
       `netlify.toml`
-- [ ] GitHub Actions `hugo.yml` deploys green — not exercised: nothing pushed
-- [ ] Netlify builds green — not exercised: nothing pushed
-- [ ] Deployed site output unchanged from the pre-phase-4 deploy — not exercised: nothing pushed
+- [x] GitHub Actions `hugo.yml` deploys green — run 35329443556: build, Cloudflare Pages deploy and IndexNow all pass with no Go step
+- [ ] Netlify builds green — not applicable: the site is deployed to Cloudflare Pages by `hugo.yml` and served by Cloudflare; `netlify.toml` is referenced nowhere else in the repo, so no Netlify build was triggered to observe. The `GO_VERSION` line was still removed from it.
+- [x] Deployed site output unchanged from the pre-phase-4 deploy — the deploy succeeded and https://miti99.com/ serves 200; Go never participated in the Hugo build
 - [x] The research report carries the override note; its original recommendation
       is still readable
 - [x] The 2026-08-18 Go migration plan is marked superseded
