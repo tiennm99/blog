@@ -120,6 +120,17 @@ engine does not call the GitHub API.
 
 1. **`scripts/newsletter/` stays Go.** No GitHub API, no deps, no latency problem,
    three agent runtimes served identically. Preserve the no-`go.sum` invariant.
+
+   > **Superseded 2026-09-18.** The user reviewed this recommendation the same
+   > day and chose to migrate the engine to JavaScript anyway, to collapse the
+   > repo onto one language and replace the hand-rolled HTML/XML regexes with a
+   > real parser. Carried out by
+   > `plans/260918-0647-migrate-newsletter-engine-to-javascript/`; parity proven
+   > in `plans/reports/parity-260918-newsletter-js-migration-report.md`. The
+   > recommendation above is left as written — it records what the evidence
+   > supported at the time, and its strongest objection (a bare clone no longer
+   > runs the engine without `npm ci`) is carried forward as risk R1 in that
+   > plan.
 2. **`.github/scripts/` stays JavaScript; migrate to `octokit`.** Add a root
    `package.json` (+ lockfile) with `octokit` as the single dependency, plus
    ESLint and JSDoc per repo policy. Expected outcome: `lib/github-api.mjs`
@@ -132,6 +143,10 @@ engine does not call the GitHub API.
    web pages → Go.
 
 ### Fix first (latent, found while scouting)
+
+> **Resolved 2026-09-18 by removal.** Go was retired from the repo along with the
+> engine, so there are no pins left to align.
+
 
 `go.mod` declares `go 1.26`, but `hugo.yml` pins `GO_VERSION: 1.25.5` and
 `netlify.toml` sets `GO_VERSION = "1.25.5"`. Running any `go` command in those
