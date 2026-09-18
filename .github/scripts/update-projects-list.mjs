@@ -5,7 +5,7 @@
 //                  with at least one star, by stars then most recent push.
 //   2. Demo      — public repos I own with a live URL (homepage or GitHub
 //                  Pages), no star requirement, by most recent push. May
-//                  overlap list 1.
+//                  overlap list 1. Skips the in-development namespaces below.
 //   3. Contributed — public repos owned by someone else, by how many of my pull
 //                  requests were merged there, then most recent push.
 //
@@ -25,6 +25,11 @@ import {
 } from "./lib/render-projects.mjs";
 
 const PAGE = "content/page/projects/index.md";
+
+// Namespaces whose deployments are previews of work in progress, so linking to
+// them as a demo would misrepresent them. They still qualify for the other two
+// lists.
+const UNSTABLE_OWNERS = new Set(["tiennm99dev"]);
 
 /**
  * Most recently pushed first; a repo with no timestamp sorts last.
@@ -55,7 +60,11 @@ async function main() {
     .filter((r) => r.stars > 0)
     .sort((a, b) => b.stars - a.stars || byRecentPush(a, b));
 
-  const demo = mine.filter((r) => resolveUrl(r) !== "").sort(byRecentPush);
+  const demo = mine
+    .filter(
+      (r) => resolveUrl(r) !== "" && !UNSTABLE_OWNERS.has(r.owner.toLowerCase()),
+    )
+    .sort(byRecentPush);
 
   const contributed = contributions
     .filter((c) => !ownedLogins.has(c.repo.owner.toLowerCase()))
