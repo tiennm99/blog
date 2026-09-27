@@ -9,366 +9,63 @@ categories: [ "Newsletter" ]
 
 ## [Gaining Years of Experience in a Few Months](https://marcgg.com/blog/2025/02/11/high-growth/)
 
-Bài viết của Marc G. Gauthier chia sẻ về cách đạt được nhiều năm kinh nghiệm trong một thời gian ngắn thông qua các dự án thách thức. Đây là một góc nhìn thú vị về sự phát triển nhanh trong sự nghiệp công nghệ.
+Marc G. Gauthier, cựu Phó chủ tịch phụ trách kỹ thuật của Drivy, viết bài này như phần tiếp nối cho câu hỏi về tốc độ học hỏi trong sự nghiệp: có những giai đoạn ngắn mà ta học được nhiều hơn hẳn bình thường, cảm giác như tích lũy nhiều năm kinh nghiệm chỉ trong vài tháng. Với tác giả, đó là lúc Drivy được Getaround mua lại năm 2019, khi ông phải cùng lúc xử lý các bài toán về kỹ thuật, kiến trúc, giao tiếp, quản lý, kinh doanh và sản phẩm dưới áp lực lớn cùng hạn chót gấp. Ông phân biệt trải nghiệm này với việc đơn thuần "bước ra khỏi vùng an toàn", vì nó vượt quá năng lực hiện tại, rủi ro thất bại cao hơn và không thể duy trì lâu dài.
 
-Một số điểm chính:
-
-1. **Các vùng phát triển:**
-   - Vùng thoải mái (Comfort Zone): An toàn nhưng có nguy cơ tụt hậu
-   - Vùng học tập (Learning Zone): Phát triển bền vững và ổn định
-   - Vùng tăng trưởng nhanh (Fast Growth Zone): Đạt được nhiều năm kinh nghiệm trong thời gian ngắn
-   - Vùng kiệt sức (Burnout Zone): Hậu quả của việc ở quá lâu trong vùng tăng trưởng nhanh
-
-2. **Chu kỳ phát triển:**
-   - Học tập <-> Tăng trưởng: Duy trì học tập liên tục, tận dụng cơ hội
-   - Học tập -> Tăng trưởng -> Thoải mái -> Quay lại học tập: Sử dụng thời gian thoải mái để phục hồi
-   - Thoải mái <-> Học tập: Cho phép nghỉ ngơi nhưng không nên ở quá lâu
-
-3. **Kinh nghiệm cá nhân:**
-   - Trải nghiệm từ việc Drivy được mua lại bởi Getaround
-   - Phải giải quyết nhiều vấn đề phức tạp cùng lúc
-   - Áp lực cao và deadline gấp
-   - Đạt được nhiều thành tựu trong thời gian ngắn
-
-4. **Điều kiện để tăng trưởng nhanh:**
-   - Cơ hội thách thức bản thân
-   - Môi trường phù hợp
-   - Sức khỏe và năng lượng tốt
-   - Hỗ trợ từ gia đình và đồng nghiệp
-
-5. **Lưu ý quan trọng:**
-   - Không nên duy trì tăng trưởng nhanh quá lâu
-   - Cần cân bằng giữa phát triển và sức khỏe
-   - Tận dụng cơ hội khi có thể
-   - Biết khi nào cần nghỉ ngơi và phục hồi
+Để minh họa, tác giả chia công việc thành bốn vùng: vùng thoải mái (an toàn nhưng dễ tụt hậu về lâu dài), vùng học tập (thử thách vừa sức, nơi nên ở trong phần lớn sự nghiệp), vùng tăng trưởng nhanh (một năm bằng nhiều năm, nhưng không bền vững và không phải ai cũng có cơ hội), và vùng kiệt sức nếu ở lại vùng tăng trưởng quá lâu. Ông gợi ý vài cách luân chuyển hợp lý giữa các vùng, chẳng hạn xen kẽ học tập với tăng trưởng, hoặc dùng vùng thoải mái để hồi sức sau một giai đoạn căng thẳng rồi quay lại học tập, miễn là đừng ở vùng thoải mái quá lâu. Lời khuyên chốt lại: khi gặp cơ hội đưa bạn vào vùng tăng trưởng nhanh, hãy tập trung tận dụng, nhưng luôn để ý sức khỏe, vì mọi lợi ích đều vô nghĩa nếu bạn kiệt sức.
 
 ## [Writing Better Commit Messages](https://refactoringenglish.com/chapters/commit-messages/)
 
-Bài viết của Michael Lynch chia sẻ về cách viết commit message hiệu quả và dễ hiểu. Đây là một hướng dẫn chi tiết giúp cải thiện chất lượng commit message trong quá trình phát triển phần mềm.
+Michael Lynch, trong một chương của cuốn sách Refactoring English, cho rằng commit message thường bị xem nhẹ, dẫn đến những dòng vô nghĩa kiểu "Fix bug" hay "Update UI". Theo tác giả, người đọc quan trọng nhất của commit message là người đánh giá mã nguồn, sau đó mới đến đồng đội, khách hàng sử dụng thư viện, những người điều tra lỗi trong tương lai và các công cụ tự động như trình tạo ghi chú phát hành. Vì vậy, hãy đặt thông tin quan trọng nhất lên đầu theo cấu trúc "kim tự tháp ngược" của nghề báo, và dùng tiêu đề mục để chia nhỏ những commit message dài.
 
-Một số điểm chính:
-
-1. **Cấu trúc cơ bản:**
-   - Subject line ngắn gọn, rõ ràng (dưới 50 ký tự)
-   - Body message chi tiết (wrap ở 72 ký tự)
-   - Sử dụng thì hiện tại đơn (imperative mood)
-   - Không cần dấu chấm ở cuối subject line
-
-2. **Nội dung quan trọng:**
-   - Giải thích WHY thay vì WHAT
-   - Mô tả context của thay đổi
-   - Liên kết đến issues hoặc tickets liên quan
-   - Ghi chú về side effects nếu có
-
-3. **Best Practices:**
-   - Mỗi commit một mục đích
-   - Tách commits logic và format
-   - Sử dụng các prefix chuẩn (fix:, feat:, etc.)
-   - Review commit message trước khi push
-
-4. **Các lỗi thường gặp:**
-   - Message quá ngắn hoặc không rõ ràng
-   - Không giải thích lý do thay đổi
-   - Mix nhiều thay đổi không liên quan
-   - Sử dụng ngôn ngữ không chuyên nghiệp
-
-5. **Tools và Conventions:**
-   - Sử dụng Conventional Commits
-   - Tích hợp commit hooks để validate
-   - Dùng tools như commitlint
-   - Template cho commit message
+Dòng đầu tiên là phần quan trọng nhất vì nó hiện ra trong `git log --oneline` và lịch sử thay đổi trên GitHub; nó nên mô tả tác động của thay đổi (ví dụ "ngăn hỏng cơ sở dữ liệu khi nhiều người đăng ký cùng lúc") thay vì cách triển khai. Phần thân nên giải thích thay đổi ảnh hưởng thế nào tới người dùng, và quan trọng hơn cả là động cơ: vì sao cần thay đổi và những ràng buộc nào dẫn đến giải pháp này. Tùy trường hợp, có thể bổ sung thông tin về thay đổi phá vỡ tương thích, liên kết tham khảo không hiển nhiên, lý do thêm thư viện phụ thuộc mới, tham chiếu tới issue, hướng dẫn và giới hạn của việc kiểm thử, các phương án đã cân nhắc. Ngược lại, nên bỏ những gì đã rõ ràng trong mã nguồn, các thảo luận ngắn hạn và đường dẫn bản xem trước; còn những chi tiết thiết yếu để bảo trì thì phải nằm ngay trong mã nguồn.
 
 ## [The Rotation Program That Keeps This Startup's Engineers Learning — and Not Leaving](https://review.firstround.com/the-rotation-program-that-keeps-this-startups-engineers-learning-and-not-leaving/)
 
-Bài viết chia sẻ về chương trình luân chuyển nhân sự (rotation program) tại Checkr, một startup đã giúp giữ chân kỹ sư bằng cách tạo cơ hội học hỏi và phát triển liên tục. Đây là một case study thú vị về cách xây dựng văn hóa học tập và phát triển trong công ty công nghệ.
+Bài phỏng vấn của First Round Review với Krista Moroder, Phó chủ tịch phụ trách kỹ thuật tại Checkr, kể về chương trình luân chuyển đã giúp giữ tỷ lệ nghỉ việc trong tổ chức của bà gần như bằng 0. Từng là giáo viên, Moroder mang theo một bài học từ phòng giáo viên: dán nhãn cạnh tên những học sinh có thầy cô đồng hành để phát hiện em nào đang bị bỏ sót. Bà tái hiện ý tưởng này bằng một bảng tính theo dõi từng kỹ sư, vì theo bà, kỹ sư rời đi sau hai, ba năm thường không chỉ vì cổ phần mà vì chán khi ngừng học hỏi, và nỗi sợ tụt hậu trước làn sóng AI càng làm điều đó rõ hơn.
 
-Một số điểm chính:
-
-1. **Lý do triển khai chương trình:**
-   - Giảm tỷ lệ nhân viên nghỉ việc (attrition rate gần 0%)
-   - Tạo cơ hội học hỏi liên tục cho kỹ sư
-   - Giữ chân nhân tài có kinh nghiệm
-   - Tận dụng kiến thức chuyên môn trong nội bộ
-
-2. **Cách triển khai:**
-   - Cho phép kỹ sư làm việc tạm thời ở các team khác
-   - Tập trung vào các dự án ưu tiên của công ty
-   - Kết hợp với quá trình phát triển nghề nghiệp
-   - Duy trì sự cân bằng giữa ổn định và luân chuyển
-
-3. **Quy trình quản lý:**
-   - Theo dõi và đánh giá hiệu quả của mỗi kỹ sư
-   - Đảm bảo mỗi team có "anchor people" ổn định
-   - Kiểm soát số lượng người luân chuyển cùng lúc
-   - Đánh giá nhu cầu thực tế của dự án
-
-4. **Thách thức và giải pháp:**
-   - Quản lý lo ngại về việc mất nhân sự chủ chốt
-   - Xây dựng niềm tin giữa các team
-   - Tuyển dụng người có tinh thần hợp tác
-   - Tập trung vào phát triển toàn diện
-
-5. **Kết quả và bài học:**
-   - 60% kỹ sư cấp cao ở lại hơn 6 năm
-   - Tăng khả năng thích ứng với thay đổi
-   - Phát triển kỹ năng đa dạng cho nhân viên
-   - Xây dựng văn hóa học tập liên tục
+Chương trình gồm ba bước: lập bảng "nhãn dán" với ba cột (tham gia luân chuyển hoặc nhóm đặc nhiệm liên phòng ban, từng làm ở nhiều nhóm, được đào tạo cho vai trò mới) với mục tiêu mỗi kỹ sư có ít nhất một ô được đánh dấu trước năm thứ ba; đối chiếu bảng với các ưu tiên hằng quý để điều người sang nơi cần; và trao đổi kỹ trước khi chuyển hẳn. Khoảng một nửa số lượt luân chuyển kết thúc bằng việc ở lại nhóm mới, và một nhóm đặc nhiệm về AI đã trở thành nhóm chính thức. Để thuyết phục các quản lý chịu nhường người giỏi nhất, bà lập luận rằng không thể thiếu ai đó là dấu hiệu của vấn đề kế nhiệm, và cả tổ chức cần cùng đạt điểm A. Kết quả: khoảng 60% kỹ sư từ cấp staff trở lên đã gắn bó từ sáu năm trở lên.
 
 ## [Judge Your Coworkers](https://blog.staysaasy.com/p/judge-your-coworkers)
 
-Bài viết của Stay SaaSy thảo luận về tầm quan trọng của việc đánh giá đồng nghiệp một cách xây dựng trong môi trường công ty. Đây là một góc nhìn thú vị về cách xây dựng văn hóa trách nhiệm và phát triển trong tổ chức.
+Bài viết của Stay SaaSy cảnh báo về trạng thái mà tác giả gọi là "tầm thường được bảo đảm lẫn nhau" (Mutually Assured Mediocrity): mọi người đều ở mức trung bình nên ngầm thỏa thuận không phê bình nhau vì sợ bị lộ điểm yếu của chính họ. Tác giả mô tả quá trình này diễn ra dần dần khi công ty lớn lên: các bộ phận mới xuất hiện, câu "bạn không hiểu công việc của chúng tôi, hãy lo phần của bạn" trở thành lá chắn, lãnh đạo né phán xét người khác để khỏi bị phán xét, và cuối cùng chính người dám nói thật lại bị trừng phạt.
 
-Một số điểm chính:
-
-1. **Tại sao cần đánh giá đồng nghiệp:**
-   - Hiểu rõ công việc của nhau để hợp tác hiệu quả
-   - Quan trọng với vai trò lãnh đạo và team cross-functional
-   - Cần thiết để phát hiện và xử lý vấn đề hiệu suất
-   - Giúp học hỏi và phát triển từ nhau
-
-2. **Quy tắc cơ bản:**
-   - Không công khai chỉ trích đồng nghiệp
-   - Feedback được chia sẻ riêng tư với quản lý
-   - Theo dõi và xử lý vấn đề một cách kín đáo
-   - Không mong đợi đồng nghiệp hoàn hảo
-
-3. **Cách thực hiện hiệu quả:**
-   - Thiết lập kỳ vọng về việc đánh giá đồng nghiệp
-   - Hỏi ý kiến định kỳ về hiệu suất của đồng nghiệp
-   - Tận dụng các cuộc trò chuyện để dạy và học
-   - Hiểu rõ vai trò và trách nhiệm của nhau
-
-4. **Xử lý các tình huống:**
-   - Khi đồng nghiệp làm tốt: Học hỏi từ thành công của họ
-   - Khi có vấn đề: Tìm hiểu nguyên nhân và hỗ trợ cải thiện
-   - Khi có hiểu lầm: Làm rõ vai trò và kỳ vọng
-   - Khi cần hỗ trợ: Bù đắp điểm yếu của nhau
-
-5. **Lưu ý quan trọng:**
-   - Tránh văn hóa "không đổ lỗi" thái quá
-   - Lãnh đạo cấp cao cần có quan điểm về hiệu suất đồng nghiệp
-   - Tận dụng cơ hội học hỏi về vai trò khác
-   - Cân bằng giữa trách nhiệm và phát triển
+Để tránh điều đó, tác giả đề xuất khuyến khích nhân viên đánh giá đồng nghiệp một cách lành mạnh, với ba nguyên tắc: không phán xét đồng nghiệp công khai mà chỉ chia sẻ riêng với quản lý trực tiếp hoặc trong phần đánh giá chéo; việc xử lý hiệu suất luôn diễn ra kín đáo; và không ai được hứa có đồng nghiệp hoàn hảo. Người quản lý nên nói rõ từ đầu kỳ vọng nhân viên có quan điểm về hiệu suất của đồng nghiệp, rồi định kỳ 6–12 tháng hỏi lại. Khi họ khen ai đó, đây là dịp dạy thế nào là làm tốt và sự khác biệt giữa các cấp bậc; khi họ chê, đây là dịp phát hiện sớm vấn đề hiệu suất hoặc hiểu lầm về vai trò, chẳng hạn quản lý sản phẩm không phải là quản lý dự án. Thông điệp cuối: không quy trách nhiệm là một trong những điều tệ nhất công ty có thể làm với nhân viên, và ngành phần mềm đã đẩy văn hóa "không đổ lỗi" đi quá xa.
 
 ## [My LLM Codegen Workflow ATM](https://harper.blog/2025/02/16/my-llm-codegen-workflow-atm/)
 
-Bài viết của Harper Reed chia sẻ về quy trình làm việc hiệu quả với LLM để tạo code. Đây là một hướng dẫn chi tiết về cách tận dụng AI để phát triển phần mềm nhanh và hiệu quả.
+Harper Reed chia sẻ quy trình hiện tại khi dùng LLM để sinh mã nguồn, tóm gọn trong ba bước: mài giũa ý tưởng thành đặc tả, lập kế hoạch, rồi thực thi theo từng vòng nhỏ. Với dự án mới, ông để một mô hình hội thoại hỏi lần lượt từng câu nhằm biến ý tưởng thành tệp `spec.md`; sau đó đưa đặc tả cho một mô hình suy luận để chia thành các bước nhỏ, mỗi bước là một câu lệnh gợi ý (prompt) cho công cụ sinh mã, lưu thành `prompt_plan.md` kèm danh sách việc `todo.md` để giữ trạng thái giữa các phiên. Toàn bộ khâu lập kế hoạch chỉ mất khoảng 15 phút. Khi thực thi, ông ưa dùng trực tiếp Claude hoặc Aider: dán từng prompt, chạy kiểm thử, được thì sang bước tiếp, lỗi thì dùng repomix đóng gói mã nguồn gửi cho mô hình để gỡ lỗi.
 
-Một số điểm chính:
-
-1. **Quy trình làm việc cơ bản:**
-   - Brainstorm và lập kế hoạch chi tiết
-   - Chia nhỏ các bước thực hiện
-   - Thực thi từng bước với LLM
-   - Kiểm tra và debug kết quả
-
-2. **Công cụ và môi trường:**
-   - Sử dụng Claude, Aider và các công cụ codegen khác
-   - Thiết lập môi trường phát triển phù hợp
-   - Tích hợp với các công cụ quản lý code
-   - Tự động hóa các quy trình lặp lại
-
-3. **Chiến lược hiệu quả:**
-   - Tập trung vào các bước nhỏ, có thể kiểm soát
-   - Duy trì kiểm soát tiến trình
-   - Tận dụng thời gian chờ để làm việc khác
-   - Cân bằng giữa tự động hóa và kiểm soát
-
-4. **Xử lý các thách thức:**
-   - Quản lý context và trạng thái
-   - Xử lý các lỗi và vấn đề phát sinh
-   - Tối ưu hóa quy trình làm việc
-   - Duy trì chất lượng code
-
-5. **Lưu ý quan trọng:**
-   - Cần có kế hoạch rõ ràng trước khi bắt đầu
-   - Kiểm soát tiến trình để tránh "over your skis"
-   - Tận dụng thời gian chờ hiệu quả
-   - Cân nhắc về tác động môi trường của LLM
+Với dự án có sẵn, ông dùng repomix cùng các tác vụ mise để đóng gói ngữ cảnh, rồi dùng prompt để đánh giá mã nguồn, tạo issue trên GitHub hoặc tìm những kiểm thử còn thiếu. Tác giả thừa nhận rất dễ bị cuốn đi như trượt tuyết quá đà, mất kiểm soát vì mọi thứ diễn ra quá nhanh, nên bước lập kế hoạch và kiểm thử là cần thiết. Ông cũng phàn nàn rằng các quy trình này chủ yếu dành cho một người, khó áp dụng theo nhóm, và chia sẻ cách tận dụng thời gian chờ mô hình chạy, chẳng hạn bắt đầu lên ý tưởng cho một dự án khác.
 
 ## [Structured Logging in Spring Boot](https://www.javacodegeeks.com/structured-logging-in-spring-boot.html)
 
-Bài viết của Yatin Batra chia sẻ về cách triển khai structured logging trong Spring Boot. Đây là một hướng dẫn chi tiết về cách cải thiện khả năng theo dõi và debug ứng dụng thông qua logging có cấu trúc.
+Bài viết của Yatin Batra trên Java Code Geeks hướng dẫn triển khai ghi log có cấu trúc (structured logging) trong Spring Boot. Khác với log dạng văn bản thuần mà Logback xuất ra theo mặc định, log có cấu trúc dùng định dạng như JSON, giúp các công cụ tổng hợp log như ELK hay Loki dễ phân tích, tìm kiếm và lọc hơn. Tác giả hướng dẫn thêm thư viện Logstash Logback Encoder vào `pom.xml`, tạo tệp `logback-spring.xml` trong `src/main/resources`, rồi minh họa log JSON sinh ra từ một ứng dụng mẫu.
 
-Một số điểm chính:
-
-1. **Tại sao cần Structured Logging:**
-   - Tăng khả năng đọc và phân tích log
-   - Dễ dàng tìm kiếm và lọc thông tin
-   - Tích hợp tốt với các công cụ monitoring
-   - Hỗ trợ debug hiệu quả hơn
-
-2. **Cấu hình cơ bản:**
-   - Sử dụng Logstash Logback Encoder
-   - Cấu hình logback-spring.xml
-   - Định dạng log theo JSON
-   - Tích hợp với SLF4J
-
-3. **Tính năng nâng cao:**
-   - Thêm trường tùy chỉnh vào log
-   - Tích hợp với Logstash
-   - Cấu hình cho Loki
-   - Sử dụng MDC cho metadata
-
-4. **Chuẩn ECS và GELF:**
-   - Elastic Common Schema cho Elastic Stack
-   - Graylog Extended Log Format
-   - So sánh và lựa chọn phù hợp
-   - Tích hợp với các hệ thống khác
-
-5. **Best Practices:**
-   - Cấu hình phù hợp cho môi trường
-   - Quản lý hiệu suất logging
-   - Xử lý lỗi và exception
-   - Bảo mật thông tin nhạy cảm
+Ở phần nâng cao, bài viết trình bày cách thêm trường tùy chỉnh bằng MDC (Mapped Diagnostic Context), ví dụ gắn `userId` vào từng dòng log, cách gửi log tới Logstash và cấu hình Promtail để đưa log vào Loki. Cuối cùng, tác giả giới thiệu hai định dạng chuẩn: Elastic Common Schema (ECS) để thống nhất cấu trúc log trong hệ sinh thái Elastic, và Graylog Extended Log Format (GELF) để gửi log tới máy chủ Graylog, kèm các trường chính và phần so sánh ưu điểm của từng định dạng. Cách tiếp cận này đặc biệt hữu ích cho ứng dụng chạy trên đám mây, nơi việc tập trung log gần như là bắt buộc.
 
 ## [Secret Java Stream Hacks That Will Instantly Improve Your Coding Efficiency](https://gainjavaknowledge.medium.com/secret-java-stream-hacks-that-will-instantly-improve-your-coding-efficiency-8253d57d692b)
 
-Bài viết của Gain Java Knowledge chia sẻ về các thủ thuật hữu ích khi sử dụng Java Stream API. Đây là một hướng dẫn chi tiết về cách tận dụng tối đa sức mạnh của Stream để cải thiện hiệu quả code.
+Bài viết của Gain Java Knowledge trên Medium giới thiệu một số thủ thuật ít được chú ý với Java Stream API để viết mã nguồn gọn và hiệu quả hơn. Nổi bật là `Collectors.teeing()`, cho phép xử lý cùng một luồng dữ liệu bằng hai bộ thu thập (collector) khác nhau rồi gộp kết quả, chẳng hạn tính cả tổng lẫn trung bình trong một lần duyệt thay vì phải duyệt nhiều lần. Bài viết cũng nhắc tới `takeWhile()` để lấy phần tử cho tới khi điều kiện không còn đúng và `dropWhile()` để bỏ qua phần tử khi điều kiện còn đúng, giúp đơn giản hóa việc lọc có điều kiện.
 
-Một số điểm chính:
-
-1. **Collectors.teeing():**
-   - Xử lý dữ liệu theo hai cách khác nhau cùng lúc
-   - Kết hợp kết quả từ hai collector
-   - Tránh phải duyệt stream nhiều lần
-   - Ví dụ: Tính trung bình và tổng cùng lúc
-
-2. **takeWhile() và dropWhile():**
-   - Lấy phần tử cho đến khi điều kiện sai
-   - Bỏ qua phần tử khi điều kiện đúng
-   - Đơn giản hóa việc lọc có điều kiện
-   - Tối ưu hiệu suất xử lý
-
-3. **Các thủ thuật nâng cao:**
-   - Sử dụng parallel streams hiệu quả
-   - Tối ưu hóa memory usage
-   - Xử lý exception trong streams
-   - Kết hợp nhiều operation
-
-4. **Best Practices:**
-   - Chọn đúng collector cho từng trường hợp
-   - Tránh side effects trong stream operations
-   - Sử dụng method references khi có thể
-   - Kiểm soát độ phức tạp của stream
-
-5. **Lưu ý quan trọng:**
-   - Hiểu rõ lazy evaluation
-   - Cân nhắc hiệu suất với large datasets
-   - Debug và maintain code dễ dàng
-   - Tích hợp với các tính năng Java khác
+Ngoài ra, tác giả đề cập các chủ đề nâng cao như dùng luồng song song hợp lý, tối ưu bộ nhớ, xử lý ngoại lệ bên trong stream và kết hợp nhiều thao tác. Các lời khuyên thực hành gồm chọn đúng collector cho từng trường hợp, tránh tác dụng phụ trong các thao tác stream, ưu tiên tham chiếu phương thức (method reference) khi có thể và giữ chuỗi thao tác ở mức dễ đọc. Người đọc cũng nên hiểu cơ chế đánh giá lười (lazy evaluation) và cân nhắc hiệu năng khi làm việc với tập dữ liệu lớn.
 
 ## [Death of a Thousand Nits: Code Review Best Practices](https://bitfieldconsulting.com/posts/code-review)
 
-Bài viết của John Arundel chia sẻ về cách thực hiện code review hiệu quả và thân thiện. Đây là một hướng dẫn chi tiết về cách xây dựng văn hóa review code tích cực trong team.
+John Arundel, trong một phần trích từ cuốn sách Code For Your Life, bàn về cách để việc đánh giá mã nguồn (code review) bớt căng thẳng và thực sự hữu ích. Lời khuyên đầu tiên là đánh giá theo cặp: thay vì trao đổi qua những ô bình luận trên pull request, hãy nói chuyện trực tiếp hoặc chia sẻ màn hình, vì giọng nói và nét mặt truyền tải nhiều thông tin hơn hẳn, một câu hỏi mất mười lăm giây có thể thay cho nhiều ngày bình luận qua lại, và người ta thường nhẹ nhàng với nhau hơn khi gặp mặt.
 
-Một số điểm chính:
-
-1. **Pair Review thay vì Review qua Text:**
-   - Giao tiếp trực tiếp hiệu quả hơn
-   - Giảm thiểu hiểu lầm và xung đột
-   - Tăng tốc độ review và merge
-   - Xây dựng mối quan hệ tốt trong team
-
-2. **Cách đưa ra phản hồi hiệu quả:**
-   - Tập trung vào việc thêm giá trị
-   - Tránh chỉ trích về style
-   - Đặt câu hỏi thay vì phê bình
-   - Sử dụng ngôn ngữ tích cực
-
-3. **Xử lý các tình huống khác nhau:**
-   - Khi không hiểu code: Tìm hiểu trước khi hỏi
-   - Khi có đề xuất: Đưa ra dưới dạng gợi ý
-   - Khi phát hiện lỗi: Giải thích nhẹ nhàng
-   - Khi nhận feedback: Lắng nghe và học hỏi
-
-4. **Best Practices:**
-   - Bắt đầu với những điểm tích cực
-   - Kết thúc với lời động viên
-   - Tập trung vào giá trị thực sự
-   - Tránh nitpicking không cần thiết
-
-5. **Xây dựng văn hóa review:**
-   - Làm gương cho team
-   - Tạo môi trường an toàn
-   - Khuyến khích học hỏi lẫn nhau
-   - Duy trì mối quan hệ tốt
+Khi buộc phải đánh giá bằng văn bản, mỗi bình luận nên làm tăng giá trị cho mã nguồn. Khác biệt về phong cách thì không cần góp ý; không hiểu cú pháp thì tự tra cứu; không hiểu vì sao mã được viết như vậy thì đặt câu hỏi; muốn đề xuất cách tốt hơn hay nghi ngờ có lỗi thì cũng diễn đạt thành câu hỏi thay vì phê bình. Tác giả khuyên mở đầu bằng những điểm tích cực, kết thúc bằng lời động viên và tránh giọng kẻ cả. Ở phía người nhận, khi bị góp ý thô bạo, đừng phản kích mà hãy tìm phần sự thật trong đó; còn với những lời bắt bẻ thuần túy về phong cách, có thể lờ đi hoặc hỏi riêng xem đâu mới là vấn đề thực sự. Cuối cùng, cách tốt nhất để lan tỏa văn hóa đánh giá mã nguồn tử tế là tự làm gương.
 
 ## [Hash Functions Deep Dive](https://www.kirupa.com/data_structures_algorithms/hash_functions_deep_dive.htm)
 
-Bài viết của Kirupa đi sâu vào phân tích về hash functions và cách chúng hoạt động. Đây là một hướng dẫn chi tiết về một khái niệm quan trọng trong khoa học máy tính.
+Kirupa giải thích hàm băm (hash function) từ nền tảng: đó là hàm nhận đầu vào bất kỳ như văn bản, tệp hay dữ liệu nhị phân và trả về đầu ra có độ dài cố định, được dùng trong lưu trữ và truy xuất dữ liệu, xác thực mật khẩu, kiểm tra tính toàn vẹn tệp, chữ ký số hay loại bỏ dữ liệu trùng lặp. Một hàm băm tốt cần đáp ứng tám tiêu chí: tất định (cùng đầu vào luôn cho cùng đầu ra), phân bố đều, tính toán nhanh (thường là O(1)), hiệu ứng tuyết lở (thay đổi nhỏ ở đầu vào làm đầu ra thay đổi lớn), kích thước đầu ra cố định, ít va chạm, khó đảo ngược và không có tương quan giữa các đầu vào giống nhau.
 
-Một số điểm chính:
-
-1. **Định nghĩa và Mục đích:**
-   - Hash function là hàm toán học chuyển đổi input thành output
-   - Input có thể là bất kỳ dữ liệu số nào (text, file, binary data)
-   - Output luôn có độ dài cố định
-   - Được sử dụng trong nhiều lĩnh vực: lưu trữ dữ liệu, xác thực mật khẩu, kiểm tra tính toàn vẹn file
-
-2. **Tiêu chí của một Hash Function tốt:**
-   - Deterministic: Cùng input luôn cho cùng output
-   - Uniform Distribution: Phân bố đều các giá trị hash
-   - Fast Computation: Tính toán nhanh (O(1))
-   - Avalanche Effect: Thay đổi nhỏ trong input tạo thay đổi lớn trong output
-   - Fixed Output Size: Output luôn có độ dài cố định
-   - Low Collision Rate: Tỷ lệ va chạm thấp
-   - Non-Reversible: Khó tìm lại input từ output
-   - No Correlation: Không có mối liên hệ giữa input và output tương tự
-
-3. **Ví dụ về Hash Function đơn giản:**
-   - Cộng mã ASCII của các ký tự
-   - Sử dụng số nguyên tố để giảm va chạm
-   - Dễ hiểu nhưng không đủ mạnh cho thực tế
-   - Chỉ phù hợp cho mục đích học tập
-
-4. **MD5 Hash Function:**
-   - Output 32 ký tự hex (128 bits)
-   - Thay đổi nhỏ trong input tạo thay đổi lớn trong output
-   - Được sử dụng rộng rãi trong nhiều ứng dụng
-   - Có một số điểm yếu về bảo mật
-
-5. **Ứng dụng thực tế:**
-   - Bảo vệ mật khẩu
-   - Kiểm tra tính toàn vẹn file
-   - Tạo chữ ký số
-   - Tối ưu hóa hiệu suất cấu trúc dữ liệu
+Để minh họa, tác giả tự xây dựng một hàm băm bằng JavaScript: cộng mã ký tự của chuỗi rồi giới hạn kết quả theo kích thước bảng là một số nguyên tố như 37. Hàm này nhanh chóng lộ điểm yếu khi "hello" và "olleh" cho cùng một kết quả; thêm trọng số theo vị trí ký tự giúp khắc phục trường hợp đó, nhưng nó vẫn trượt gần hết các tiêu chí. Bài học rút ra là hãy luôn dùng một hàm băm có sẵn; tác giả lấy MD5 để đối chiếu với từng tiêu chí, với đầu ra 128 bit, tương đương 32 ký tự thập lục phân. Hàm băm hiện diện ở khắp nơi, từ bảng băm tốc độ cao đến việc bảo vệ mật khẩu và xác minh tệp tải về.
 
 ## [XOR: A Deep Dive into the Exclusive OR Operation](https://www.chiark.greenend.org.uk/~sgtatham/quasiblog/xor/)
 
-Bài viết của Simon Tatham đi sâu vào phân tích về phép toán XOR và các ứng dụng của nó. Đây là một hướng dẫn chi tiết về một phép toán cơ bản nhưng quan trọng trong khoa học máy tính.
+Simon Tatham phân tích sâu về phép toán XOR (hoặc loại trừ) và các ứng dụng của nó trong khoa học máy tính. Về cơ bản, XOR cho kết quả 1 khi hai bit đầu vào khác nhau và 0 khi chúng giống nhau, đồng thời có tính giao hoán và kết hợp. Tác giả đưa ra nhiều cách hiểu tương đương về phép toán này: phép so sánh "không bằng" giữa hai bit, phép đảo bit có điều kiện, phép cộng theo modulo 2, và phép tính chẵn lẻ của số bit 1.
 
-Một số điểm chính:
-
-1. **Định nghĩa và Tính chất cơ bản:**
-   - XOR là phép toán "Exclusive OR" (hoặc loại trừ)
-   - Kết quả là 1 khi hai bit đầu vào khác nhau
-   - Kết quả là 0 khi hai bit đầu vào giống nhau
-   - Có tính chất giao hoán và kết hợp
-
-2. **Các cách hiểu về XOR:**
-   - Phép so sánh "không bằng" giữa hai bit
-   - Phép đảo bit có điều kiện
-   - Phép cộng modulo 2
-   - Phép tính chẵn lẻ của số bit 1
-
-3. **Ứng dụng trong mật mã học:**
-   - Kết hợp plaintext với keystream
-   - Tạo mã hóa đơn giản và hiệu quả
-   - Sử dụng trong các hệ thống mã hóa phức tạp
-   - Bảo vệ tính toàn vẹn dữ liệu
-
-4. **Ứng dụng trong đồ họa:**
-   - Vẽ và xóa pixel dễ dàng
-   - Tạo hiệu ứng đặc biệt
-   - Tối ưu hóa bộ nhớ
-   - Xử lý hình ảnh hiệu quả
-
-5. **Các ứng dụng thực tế khác:**
-   - Hoán đổi giá trị hai biến không cần biến tạm
-   - Tính trung bình hai số nguyên
-   - Thực hiện phép cộng không nhớ
-   - Giải quyết các bài toán tối ưu hóa
+Từ những tính chất đó, bài viết đi qua các ứng dụng thực tế. Trong mật mã học, XOR được dùng để kết hợp bản rõ với dòng khóa, tạo ra cách mã hóa đơn giản mà hiệu quả và là thành phần của nhiều hệ thống mã hóa phức tạp hơn. Trong đồ họa, XOR giúp vẽ và xóa điểm ảnh dễ dàng. Ngoài ra còn có những mẹo quen thuộc như hoán đổi giá trị hai biến mà không cần biến tạm, tính trung bình hai số nguyên hay thực hiện phép cộng không nhớ.
 
 ## Bonus: Vài ảnh hay ho đến từ [ByteByteGo](https://bytebytego.com/)
 
@@ -382,4 +79,4 @@ Một số điểm chính:
 
 ---
 
-*Bài viết đã được review và cập nhật bởi Claude Code với Opus 4.7 (1M context).*
+*Bài viết đã được viết lại bởi Claude Code với Opus 5.5 vào ngày 27/09/2026.*

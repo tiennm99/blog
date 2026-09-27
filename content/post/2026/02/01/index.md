@@ -9,202 +9,57 @@ categories: ["Newsletter"]
 
 ## [Hai Năm Tới Của Kỹ Thuật Phần Mềm](https://addyosmani.com/blog/next-two-years/)
 
-Ngành công nghệ đang đứng trước một điểm ngoặt quan trọng. AI coding đã phát triển từ autocomplete đơn thuần thành các agent có thể tự thực hiện nhiệm vụ phát triển. Sự bùng nổ kinh tế từng thúc đẩy làn sóng tuyển dụng đã nhường chỗ cho yêu cầu hiệu quả: công ty giờ ưu tiên lợi nhuận hơn tăng trưởng, nhân viên giàu kinh nghiệm hơn người mới tốt nghiệp, và team nhỏ hơn nhưng được trang bị công cụ tốt hơn.
+Addy Osmani nhận định ngành phần mềm đang ở một điểm ngoặt: công cụ AI lập trình đã tiến từ gợi ý hoàn thành mã lên thành các tác tử (agent) tự thực hiện nhiệm vụ, còn làn sóng tuyển dụng ồ ạt nhường chỗ cho yêu cầu hiệu quả, doanh nghiệp chuộng người có kinh nghiệm và đội nhỏ được trang bị công cụ tốt. Thay vì dự đoán, tác giả đặt ra năm câu hỏi đến năm 2026, mỗi câu kèm hai kịch bản đối lập. Tuyển dụng junior có thể sụp đổ (theo một nghiên cứu của Harvard, việc làm junior giảm khoảng 9–10% sau khi công ty áp dụng AI tạo sinh) hoặc phục hồi khi phần mềm lan sang mọi ngành. Kỹ năng nền tảng có thể mai một hoặc quý hơn bao giờ hết. Vai trò lập trình viên có thể thu hẹp thành người kiểm duyệt mã AI hoặc mở rộng thành người điều phối cả hệ thống. Chuyên gia hẹp dễ bị thay thế, còn kỹ sư hình chữ T (sâu một hai mảng, hiểu rộng nhiều mảng) được ưa chuộng. Bằng khoa học máy tính có thể bị bootcamp, khóa học trực tuyến hay đào tạo nội bộ vượt mặt.
 
-Bài viết khám phá năm câu hỏi then chốt sẽ định hình kỹ thuật phần mềm đến năm 2026, với hai kịch bản đối lập cho mỗi câu hỏi. Đây không phải dự báo, mà là những lăng kính để chuẩn bị: (1) Vấn đề junior developer - tuyển dụng có thể sụt giảm khi AI tự động hóa nhiệm vụ cấp nhập môn, hoặc hồi phục khi phần mềm lan rộng mọi ngành; (2) Vấn đề kỹ năng - kỹ năng lập trình cốt lõi có thể teo đi khi AI viết phần lớn code, hoặc trở nên quan trọng hơn khi developer tập trung vào giám sát; (3) Vấn đề vai trò - vai trò developer có thể thu hẹp thành kiểm toán code AI, hoặc mở rộng thành kiến trúc sư điều phối hệ thống; (4) Chuyên gia hay đa năng - chuyên gia hẹp có nguy cơ bị thay thế, T-shaped engineer (biết rộng một chút, sâu một vài lĩnh vực) sẽ được ưu tiên; (5) Vấn đề giáo dục - bằng CS có còn là tiêu chuẩn vàng hay bị các lộ trình học nhanh hơn (bootcamp, online platform, training nội bộ) vượt mặt.
-
-**Điểm chính:**
-- 84% developer dùng AI support thường xuyên, chuyển từ "viết code từ đầu" sang "soạn prompt và ghép các mảnh AI-generated"
-- Harvard study: khi công ty adopt generative AI, tuyển dụng junior giảm 9-10% trong 6 quý, trong khi senior hầu như không thay đổi
-- Big tech tuyển dụng 50% ít hơn fresh graduates trong ba năm qua
-- Kỹ năng quan trọng: không phải đánh máy boilerplate mà review code AI để tìm lỗi logic, lỗ hổng bảo mật, mismatch với yêu cầu
-- T-shaped developer: chuyên sâu một hai lĩnh vực (vertical stroke), hiểu rộng nhiều domain khác (horizontal stroke)
-- 45% company planned eliminate bachelor's degree requirements cho một số vị trí kỹ thuật vào năm 2024
-- "Lập trình viên giỏi nhất sẽ không phải là người code nhanh nhất, mà người biết khi nào không tin AI"
-- Điều kiện sống sót: cập nhật kỹ năng liên tục, đa năng hóa, tập trung vào yếu tố con người (sáng tạo, tư duy phản biện, cộng tác)
+Khi 84% lập trình viên đã dùng AI thường xuyên, giá trị nằm ở khả năng rà soát đầu ra của AI để tìm lỗi logic, lỗ hổng bảo mật và chỗ lệch yêu cầu; người giỏi nhất không phải người viết mã nhanh nhất mà là người biết khi nào không nên tin AI. Junior nên dùng AI để học chứ không phải làm cái nạng; senior nên giữ vai trò bảo đảm chất lượng, cố vấn và thiết kế kiến trúc. Điều cốt lõi là liên tục học hỏi.
 
 ## [Cơ Sở Dữ Liệu Năm 2025: Một Năm Đánh Giá](https://www.cs.cmu.edu/~pavlo/blog/2026/01/2025-databases-retrospective.html)
 
-Bài viết tổng hợp chi tiết các xu hướng và sự kiện quan trọng trong thế giới cơ sở dữ liệu năm 2025. PostgreSQL tiếp tục thống trị với phiên bản 18 ra mắt tháng 11, bổ sung hệ thống nhập xuất bất đồng bộ và hỗ trợ skip scans. Tuy nhiên, tin nóng nhất là làn sóng mua bán các công ty PostgreSQL: Databricks thâu tóm Neon với 1 tỷ USD, Snowflake mua CrunchyData với 250 triệu USD, và Microsoft ra mắt HorizonDB. Cuộc đua PostgreSQL phân tán cũng nóng lên với ba dự án cạnh tranh: Multigres (do Supabase phát triển), Neki (PlanetScale), và PgDog.
+Andy Pavlo (Đại học Carnegie Mellon) điểm lại năm 2025 của thế giới cơ sở dữ liệu, mở đầu bằng sự thống trị của PostgreSQL. Phiên bản 18 bổ sung hệ thống nhập xuất bất đồng bộ và skip scan. Sôi động hơn là chuyện kinh doanh: Databricks chi 1 tỷ USD mua Neon, Snowflake trả 250 triệu USD cho CrunchyData, Microsoft ra mắt HorizonDB, và ba dự án PostgreSQL mở rộng theo chiều ngang cạnh tranh nhau là Multigres (Supabase), Neki (PlanetScale) và PgDog. Năm 2025 cũng là năm mọi hệ quản trị cơ sở dữ liệu đều có máy chủ MCP (Model Context Protocol), bùng nổ sau khi OpenAI ủng hộ chuẩn này vào tháng 3. Tác giả cảnh báo các máy chủ này chủ yếu chỉ chuyển tiếp truy vấn, nên cần giữ nguyên tắc quyền tối thiểu. Mảng định dạng tệp cũng nóng lên với năm định dạng mới thách thức Parquet: FastLanes, F3, Vortex, AnyBlox và Amudai.
 
-Một xu hướng lớn khác là MCP (Model Context Protocol) - chuẩn giao tiếp giữa mô hình ngôn ngữ và cơ sở dữ liệu. Sau khi OpenAI hỗ trợ MCP vào tháng 3, mọi nhà cung cấp cơ sở dữ liệu đều tung ra MCP server riêng. Tuy nhiên, tác giả cảnh báo về rủi ro bảo mật khi cấp quyền truy cập không giới hạn cho các tác nhân trí tuệ nhân tạo. Thế giới định dạng tệp cũng sôi động với năm định dạng mới ra mắt nhằm cạnh tranh Parquet: FastLanes, F3, Vortex, AnyBlox, và Amudai.
-
-Năm 2025 chứng kiến nhiều thương vụ mua bán: IBM mua DataStax (3 tỷ USD), Salesforce mua Informatica (8 tỷ USD), và IBM mua Confluent. Hai thương vụ sáp nhập đáng chú ý là Fivetran hợp nhất với dbt Labs để tạo nên "gã khổng lồ ETL". Về tài chính, Databricks gây quỹ thành công với hai vòng gọi vốn 4 tỷ và 1 tỷ USD, trong khi nhiều startup cơ sở dữ liệu phải đóng cửa. Năm nay cũng ghi nhận Larry Ellison trở thành người giàu nhất thế giới với tài sản 393 tỷ USD, vượt qua kỷ lục lịch sử của John D. Rockefeller.
-
-**Điểm chính:**
-- PostgreSQL thống trị với phiên bản 18, bổ sung hệ thống nhập xuất bất đồng bộ và skip scans
-- Làn sóng mua bán: Databricks mua Neon (1 tỷ USD), Snowflake mua CrunchyData (250 triệu USD), Microsoft ra mắt HorizonDB
-- Cuộc đua PostgreSQL phân tán: ba dự án cạnh tranh (Multigres, Neki, PgDog)
-- MCP trở thành chuẩn giao tiếp giữa mô hình ngôn ngữ và cơ sở dữ liệu, mọi nhà cung cấp đều tung ra MCP server
-- Cảnh báo bảo mật: cần cấp quyền tối thiểu cho tác nhân AI để tránh rủi ro khi chúng "hoành hành"
-- Định dạng tệp: năm định dạng mới cạnh tranh Parquet (FastLanes, F3, Vortex, AnyBlox, Amudai)
-- Thương vụ mua bán: IBM-DataStax (3 tỷ USD), Salesforce-Informatica (8 tỷ USD), IBM-Confluent
-- Sáp nhập: Fivetran + dbt Labs tạo nên "gã khổng lồ ETL"
-- Nhiều startup đóng cửa: Fauna, PostgresML, Hydra, MyScaleDB, Voltron Data
-- Larry Ellison trở thành người giàu nhất lịch sử (393 tỷ USD), vượt kỷ lục của John D. Rockefeller (340 tỷ USD)
+Phần chuyện bên lề liệt kê hàng loạt thương vụ: IBM mua DataStax (ước tính 3 tỷ USD) và Confluent, Salesforce mua Informatica (8 tỷ USD), cùng vụ sáp nhập bất ngờ giữa Fivetran và dbt Labs. Databricks gọi vốn hai vòng 4 tỷ và 1 tỷ USD, trong khi nhiều startup phải đóng cửa như Fauna, PostgresML, Hydra, MyScaleDB và Voltron Data. Khép lại bài là việc Larry Ellison, nhà sáng lập Oracle, trở thành người giàu nhất thế giới với tài sản ước tính 393 tỷ USD, theo tác giả là giàu nhất lịch sử, vượt cả John D. Rockefeller khi đã điều chỉnh lạm phát.
 
 ## [12 Dự Báo Cho Năm 2026](https://tomtunguz.com/2026-predictions/)
 
-Tác giả đưa ra 12 dự báo cho năm 2026, tập trung vào sự trỗi dậy của các hệ thống tác nhân AI sẽ thay đổi kiến trúc cơ sở dữ liệu và chuyển đổi web sang thiết kế ưu tiên tác nhân. Dự báo nổi bật nhất: doanh nghiệp chi trả nhiều cho AI agents hơn cho con người lần đầu tiên, với Waymo rides đã đắt hơn Uber 31% nhưng nhu cầu vẫn tăng do ưu tiên an toàn và độ tin cậy. Năm 2026 dự kiến trở thành năm kỷ lục về thanh khoản với các đợt IPO lớn từ SpaceX, OpenAI, Anthropic, Stripe và Databricks, trong đó SpaceX và OpenAI sẽ nằm trong 10 đợt IPO lớn nhất lịch sử.
+Tomasz Tunguz đưa ra 12 dự báo cho năm 2026 xoay quanh việc các tác tử AI (agent) đi vào vận hành thực tế. Lần đầu tiên doanh nghiệp sẽ trả cho agent nhiều hơn cho con người, giống như người dùng chấp nhận trả cao hơn khoảng 31% để đi Waymo thay vì Uber. Năm 2026 được kỳ vọng lập kỷ lục thanh khoản với các đợt IPO của SpaceX, OpenAI, Anthropic, Stripe và Databricks. Cơ sở dữ liệu vector hồi sinh thành hạ tầng thiết yếu. Theo METR, độ dài nhiệm vụ AI hoàn thành được tăng gấp đôi mỗi 7 tháng, nên cuối năm agent có thể tự chạy luồng việc dài hơn 8 giờ. Ngân sách AI lần đầu bị soi kỹ, đẩy mô hình nhỏ và mã nguồn mở lên nhờ chi phí thấp hơn tới 10 lần, còn Google tạo khoảng cách nhờ mạnh trên nhiều mặt trận từ mô hình tiên phong đến tạo video và tìm kiếm.
 
-Vector databases sẽ hồi sinh và trở thành hạ tầng thiết yếu trong stack AI khi các mô hình đa phương thức và mô hình không gian trạng thái đòi hỏi kiến trúc dữ liệu mới. Theo METR, thời gian thực hiện nhiệm vụ của AI tăng gấp đôi mỗi 7 tháng, và đến cuối 2026, các tác nhân AI sẽ tự chủ thực hiện luồng công việc 8+ giờ, thay đổi căn bản cách công ty phân bổ nhân sự. Ngân sách AI sẽ bị giám sát kỹ lưỡng lần đầu tiên, thúc đẩy sự phổ biến của các ngôn ngữ models nhỏ và mã nguồn mở với chi phí thấp hơn 10 lần.
-
-Google sẽ tạo khoảng cách với đối thủ thông qua sự đa dạng trong AI: frontier models, suy luận trên thiết bị, tạo video, mã nguồn mở và tích hợp tìm kiếm. Stablecoin sẽ chiếm 30% thanh toán quốc tế vào tháng 12, thay thế các đường ray SWIFT truyền thống. Các mô hình truy cập dữ liệu của tác nhân sẽ gây áp lực và làm vỡ cơ sở dữ liệu hiện tại với số lượng truy vấn tăng ít nhất một cấp độ. Xây dựng trung tâm dữ liệu sẽ đạt 3,5% GDP Mỹ, quy mô tương tự mở rộng đường sắt lịch sử. Web sẽ chuyển sang thiết kế ưu tiên tác nhân vì nhiều quyết định mua hàng hiện được thực hiện thông qua nghiên cứu của tác nhân. Cloudflare sẽ trở thành cổng cho thanh toán của tác nhân thông qua giao thức x402.
-
-**Điểm chính:**
-- Doanh nghiệp chi trả nhiều cho AI agents hơn con người lần đầu, Waymo rides đắt hơn Uber 31% nhưng nhu cầu vẫn tăng
-- 2026: năm kỷ lục về thanh khoản với IPO từ SpaceX, OpenAI, Anthropic, Stripe, Databricks
-- Vector databases hồi sinh và trở thành hạ tầng thiết yếu trong stack AI
-- AI agents tự chủ thực hiện luồng công việc 8+ giờ vào cuối 2026 (theo METR: thời gian tăng gấp đôi mỗi 7 tháng)
-- Ngân sách AI bị giám sát, ngôn ngữ models nhỏ và mã nguồn mở phổ biến với chi phí thấp hơn 10 lần
-- Google tạo khoảng cách thông qua sự đa dạng AI: frontier models, on-device inference, video generation, open-source, search integration
-- Agent observability trở thành lớp cạnh tranh nhất trong inference stack
-- Stablecoin chiếm 30% thanh toán quốc tế, thay thế SWIFT cho B2B
-- Tác nhân gây áp lực cực lớn cho cơ sở dữ liệu với truy vấn tăng ít nhất một cấp độ
-- Trung tâm dữ liệu đạt 3,5% GDP Mỹ, quy mô tương tự mở rộng đường sắt
-- Web chuyển sang thiết kế ưu tiên tác nhân cho tài liệu và website
-- Cloudflare trở thành cổng thanh toán cho tác nhân thông qua giao thức x402
+Khả năng quan sát (observability) dành cho agent trở thành lớp cạnh tranh gay gắt nhất. Stablecoin được dự báo chiếm 30% thanh toán quốc tế, lấn sang phần việc của SWIFT. Agent gửi số truy vấn lớn hơn con người ít nhất một bậc, buộc cơ sở dữ liệu phải thiết kế lại. Đầu tư trung tâm dữ liệu đạt 3,5% GDP Mỹ, tương đương thời kỳ mở rộng đường sắt. Web chuyển sang thiết kế ưu tiên agent vì nhiều quyết định mua hàng bắt đầu từ nghiên cứu do agent thực hiện, và Cloudflare trở thành người gác cổng cho thanh toán của agent qua giao thức x402, vốn hồi sinh mã trạng thái HTTP 402.
 
 ## [Sổ Tay Garbage Collection](https://gchandbook.org/index.html)
 
-Đây là ấn bản thứ hai của cuốn sách kinh điển về quản lý bộ nhớ tự động. Cuốn sách đầu tiên "Garbage Collection" của Richard Jones (Wiley, 1996) là một cột mốc quan trọng trong lĩnh vực quản lý bộ nhớ tự động. Phiên bản kế tiếp "The Garbage Collection Handbook: The Art of Automatic Memory Management" đã ghi nhận trạng thái của lĩnh vực này vào năm 2012. Tuy nhiên, sự phát triển công nghệ đã làm cho quản lý bộ nhớ trở nên thách thức, thú vị và quan trọng hơn bao giờ hết. Ấn bản thứ hai này cập nhật handbook, tổng hợp kiến thức từ các nhà nghiên cứu và phát triển quản lý bộ nhớ tự động trong sáu mươi năm qua.
+Đây là trang giới thiệu ấn bản thứ hai của "The Garbage Collection Handbook", cuốn sách kinh điển về quản lý bộ nhớ tự động. Tiền thân là cuốn "Garbage Collection" của Richard Jones (Wiley, 1996), sau đó ấn bản năm 2012 ghi lại hiện trạng lĩnh vực tại thời điểm ấy. Vì phần cứng, phần mềm và môi trường thực thi đã thay đổi nhiều, ấn bản mới cập nhật toàn bộ nội dung, đi từ các thuật toán đơn giản, truyền thống đến những kỹ thuật hiện đại như thu gom rác song song, tăng dần, đồng thời và thời gian thực, thường được minh họa bằng mã giả và hình vẽ. Sách phân tích chi tiết các bộ thu gom thương mại hiệu năng cao, giải thích những khía cạnh khó như giao tiếp với hệ thống runtime, và bổ sung hơn 90 trang với các chương mới về lưu trữ bền vững (persistence) và thu gom rác tiết kiệm năng lượng.
 
-Cuốn sách đề cập đến các thách thức mới cho garbage collection do những tiến bộ gần đây trong phần cứng và phần mềm, cũng như môi trường thực thi chương trình. Nó khám phá hậu quả của những thay đổi này đối với người thiết kế và thực thi các bộ thu gom rác hiệu suất cao. Cùng với các thuật toán đơn giản và truyền thống, cuốn sách bao gồm các kỹ thuật tiên tiến nhất: song song, tăng dần, đồng thời và thu gom rác thời gian thực. Các thuật toán và khái niệm thường được mô tả bằng mã giả và hình ảnh minh họa.
-
-Sự chấp nhận gần như phổ biến garbage collection bởi các ngôn ngữ lập trình hiện đại làm cho việc hiểu kỹ lưỡng chủ đề này trở nên thiết yếu đối với bất kỳ lập trình viên nào. Handbook uy tín này đưa ra cái nhìn chuyên sâu về cách thức hoạt động của các bộ thu gom khác nhau cũng như các vấn đề hiện đang đối mặt với garbage collectors. Với kiến thức này, lập trình viên có thể tự tin chọn và cấu hình trong nhiều lựa chọn garbage collectors.
-
-**Điểm chính:**
-- Ấn bản thứ hai cập nhật cuốn sách kinh điển về quản lý bộ nhớ tự động (1996, 2012)
-- Tổng hợp kiến thức từ 60 năm nghiên cứu và phát triển garbage collection
-- Bao gồm thuật toán song song, tăng dần, đồng thời và thời gian thực
-- Phân tích chi tiết các bộ thu gom thương mại hiệu suất cao hiện đại
-- Giải thích các khía cạnh khó của garbage collection, bao gồm giao diện với hệ thống runtime
-- Thêm hơn 90 trang, bao gồm các chương mới về lưu trữ và garbage collection nhận thức năng lượng
-- E-book với hơn 37.000 liên kết đến các chương, mục, thuật toán, hình ảnh, nghiên cứu gốc
-- Cơ sở dữ liệu trực tuyến với gần 3.400 ấn phẩm liên quan đến garbage collection
-- Đã có bản dịch tiếng Trung và tiếng Nhật xuất bản năm 2016
+Vì hầu hết ngôn ngữ lập trình hiện đại đều dùng cơ chế thu gom rác, hiểu cách các bộ thu gom hoạt động giúp lập trình viên tự tin lựa chọn và cấu hình chúng cho ứng dụng của mình. Bản sách điện tử có hơn 37.000 liên kết nội bộ tới chương, mục, thuật toán, hình ảnh và các bài nghiên cứu gốc, kèm theo cơ sở dữ liệu trực tuyến gồm gần 3.400 ấn phẩm liên quan đến thu gom rác. Ấn bản đầu tiên của cuốn Handbook đã có bản dịch tiếng Trung và tiếng Nhật, xuất bản năm 2016.
 
 ## [Vibe-Coded Là "Made in China" Mới](https://gabriel-afonso.com/blog/vibe-coded-is-the-new-made-in-china/)
 
-Bài viết phân tích khái niệm "vibe coding" được Andrej Karpathy đưa ra vào đầu năm 2025: một cách lập trình nơi bạn "hoàn toàn đầu hàng cho vibes, chấp nhận số mũ, và quên rằng code tồn tại" - để LLM xử lý triển khai trong khi bạn tập trung vào những gì muốn xây dựng, không phải cách xây dựng. Tác giả so sánh sự kỳ thị đối với "vibe-coded" hiện nay với nhãn "Made in China" trong quá khứ - từng là viết tắt của hàng giá rẻ, vứt đi, dù thực tế đã thay đổi.
+Gabriel Afonso nhận thấy trên r/selfhosted, dự án mới hễ bị gắn nhãn "vibe-coded" là lập tức bị hoài nghi. Vibe coding là khái niệm Andrej Karpathy đưa ra đầu năm 2025: buông mình theo cảm hứng, để mô hình ngôn ngữ lớn lo phần hiện thực còn người viết chỉ quan tâm muốn xây dựng cái gì. Theo tác giả, vấn đề thường không nằm ở chất lượng mã mà ở điều nhãn này báo hiệu. Trước đây, độ khó của việc làm phần mềm chính là bộ lọc: ai phát hành được dự án mã nguồn mở hẳn đã bỏ nhiều công sức nên sẽ gắn bó lâu dài. Nay ai cũng có thể dựng ứng dụng trong vài giờ và lập trình vượt trình độ của mình, nên tác giả dự án có thể không hiểu mã mình phát hành. Vì thế "vibe-coded" đang giống nhãn "Made in China" ngày trước, đồng nghĩa với đồ rẻ tiền, dùng rồi bỏ.
 
-Trước khi lập trình hỗ trợ bởi AI tồn tại, các nhà phát triển mã nguồn mở phải đầu tư lượng thời gian khổng lồ chỉ để đạt được điểm xuất bản. Khó khăn của việc xây dựng phần mềm là một bộ lọc - bạn phải thực sự đứng đằng sau một ý tưởng để đưa nó đến mức đó. Bây giờ rào cản đã biến mất. Mọi người có thể tạo dựng một ứng dụng trong vài giờ mà trước đây mất vài tháng. Quan trọng hơn, mọi người có thể lập trình ở trên trình độ của họ. Bạn không cần hiểu sâu lĩnh vực. Bạn không cần biết tại sao kiến trúc của mình hoạt động. Bạn chỉ cần tầm nhìn và đủ kỹ năng prompting để tạo ra thứ gì đó hoạt động.
-
-Điều này tạo ra kịch bản nơi tác giả dự án có thể không hiểu code họ phát hành. Họ không thể sửa các trường hợp đặc biệt vì không biết hệ thống thực sự hoạt động thế nào. Họ không thể mở rộng tính năng vì không thiết kế nền tảng. Họ không thể bảo trì dự án dài hạn vì không có "sự gắn kết cảm xúc" với thứ mất một buổi chiều để xây dựng. Cộng đồng cảm nhận điều này. Sự thiếu tin tưởng không chỉ về chất lượng code, mà còn về tuổi thọ dự kiến.
-
-Tuy nhiên, một số nhà phát triển tận tâm nhất đã tìm cách sử dụng AI mà không kích hoạt báo động. DHH (tạo ra Ruby on Rails): "Bạn không thể để sự lộn xộn và ngại ngùng phủ nhận sự kỳ diệu của AI." Tanner Linsley (tạo TanStack): "Ở tỷ lệ nhỏ và có trách nhiệm, có." Boris Cherny (tạo Claude Code): "Trong ba mươi ngày qua, 100% đóng góp của tôi cho Claude Code được viết bởi Claude Code." Mô hình: các nhà phát triển quan tâm sâu sắc về chất lượng không từ chối AI. Họ tích hợp nó một cách cẩn thận, vẫn là tác giả trong khi để AI xử lý công việc nặng nhọc.
-
-**Điểm chính:**
-- "Vibe coding" = để LLM xử lý triển khai, tập trung vào những gì muốn xây dựng không phải cách xây dựng
-- Trước AI: khó khăn xây dựng phần mềm là bộ lọc, phải đầu tư thời gian/khổ luyện để xuất bản
-- Hiện tại: rào cản biến mất, mọi người có thể code ở trên trình độ của họ
-- Vấn đề: tác giả có thể không hiểu code họ phát hành, không thể sửa/mở rộng/bảo trì
-- "Vibe-coded" trở thành nhãn giống "Made in China" cũ = viết tắt của hàng giá rẻ, vứt đi
-- AI output có tính aesthetic nhận biết: giọng văn phong, UI gradient tím, tài liệu sound helpful nhưng hollow
-- Sự hoài nghi không vô lý: hệ sinh thái đang cố gắng bảo vệ mình trong khi quy tắc được viết lại
-- Các nhà phát triển tận tâm vẫn dùng AI có trách nhiệm: DHH, Tanner Linsley, Boris Cherny
-- Thời gian vẫn là bộ lọc: dự án bảo trì 2 năm với người dùng thực sự chứng cam kết không thể giả mạo
-- Chúng ta trong giai đoạn chuyển tiếp khó xử, cần tìm bằng chứng mới về cam kết thay vì độ khó tạo ra
+Tác giả so sánh với cờ vua: sau khi Deep Blue thắng Kasparov năm 1997, môn cờ còn phổ biến hơn vì con người học cách làm việc cùng máy. Những nhà phát triển được kính trọng như DHH, Tanner Linsley và Boris Cherny (người tạo Claude Code, cho biết toàn bộ đóng góp của mình trong 30 ngày qua đều do Claude Code viết) vẫn dùng AI mà không gây phản cảm vì họ vẫn là tác giả thực sự. Thời gian vẫn là bộ lọc đáng tin: dự án được bảo trì hai năm với người dùng thật chứng minh cam kết không thể làm giả. Sự hoài nghi hiện nay là cách hệ sinh thái tự bảo vệ trong lúc luật chơi được viết lại.
 
 ## [Lỗi Production Khiến Tôi Quan Tâm Đến Undefined Behavior](https://gaultier.github.io/blog/the_production_bug_that_made_me_care_about_undefined_behavior.html)
 
-Tác giả chia sẻ câu chuyện về một lỗi production trong hệ thống C++ xử lý hàng tỷ euro thanh toán mỗi năm. Lỗi bug report cho thấy endpoint HTTP trả về response không thể: cả hai trường `error` và `succeeded` đều là `true`, dù code logic rõ ràng chỉ set một trong hai. Sau khi điều tra, tác giả phát hiện vấn đề liên quan đến undefined behavior trong C++.
+Tác giả kể lại một lỗi production trong hệ thống C++ xử lý thanh toán hàng tỷ euro mỗi năm. Một endpoint HTTP lẽ ra chỉ trả về một trong hai trường `error` hoặc `succeeded` bằng `true`, nhưng khách hàng lại nhận cả hai cùng `true`, dù mỗi trường chỉ được gán một lần và loại trừ nhau. Thủ phạm là dòng `Response response;`. Trong C, đọc trường của struct chưa khởi tạo rõ ràng là hành vi không xác định (undefined behavior), còn C++ phức tạp hơn: vì `Response` chứa `std::string` nên không phải kiểu POD, trình biên dịch tự sinh và gọi hàm khởi tạo mặc định, nhưng hàm này chỉ khởi tạo `std::string` còn hai trường `bool` mang giá trị rác.
 
-Vấn đề nằm ở việc khởi tạo struct. Trong C, `Response response;` rõ ràng là undefined behavior vì struct không được khởi tạo. Nhưng trong C++, quy tắc phức tạp hơn: nếu struct là non-POD (Plain Old Data) có thành viên non-POD như `std::string`, default constructor được gọi. Tuy nhiên, default constructor được compiler tự động tạo ra chỉ khởi tạo các thành viên non-POD, còn các thành viên primitive (`bool`, `int`, v.v.) thì không. Kết quả: `std::string data` được khởi tạo đúng, nhưng `error` và `succeeded` chứa giá trị rác.
-
-Giải pháp đơn giản: dùng `Response response{};` để force zero initialization tất cả các trường. Hoặc implement default constructor rõ ràng, hoặc định nghĩa default values cho các trường trong struct definition. Bài viết cũng đề cập đến các công cụ phát hiện: clang-tidy, Address Sanitizer (ASan), và tự viết libclang plugin để quét codebase. Tác giả kết luận rằng C++ có quá nhiều cách khởi tạo biến và hầu hết đều sai, trong khi nhiều ngôn ngữ khác (C, Go, Rust) tiếp cận đơn giản hơn: struct là plain data, hoặc compiler force set mỗi trường, hoặc zero-initialize tất cả.
-
-**Điểm chính:**
-- Lỗi production trong C++ system xử lý hàng tỷ euro thanh toán mỗi năm
-- Bug report: cả `error` và `succeeded` đều true, dù logic code chỉ set một trong hai
-- Nguyên nhân: `Response response;` - struct non-POD với `std::string` thành viên
-- C++ rule phức tạp: default constructor tự động chỉ init non-POD members, primitives thì không
-- Giải pháp: `Response response{};` force zero initialization, hoặc implement default constructor, hoặc default field values
-- C++ có quá nhiều cách khởi tạo biến và hầu hết đều sai
-- Tools phát hiện: clang-tidy, Address Sanitizer (ASan), Valgrind, libclang plugin
-- ASan báo: "load of value 8, which is not a valid value for type 'bool'"
-- Một số types không trigger undefined behavior: `std::byte`, `unsigned char`, `unsigned char`
-- Tác giả thích approach của C/Go/Rust: struct là plain data, force set hoặc zero-init
-- Undefined behavior nguy hiểm vì code không còn là source of truth, impossible values xuất hiện
+Cách sửa là dùng `Response response{};` để mọi trường về 0, hoặc tự viết hàm khởi tạo mặc định cho từng trường. Trình biên dịch không cảnh báo dù bật mọi cờ; `clang-tidy` phát hiện được, còn Address Sanitizer kèm UndefinedBehaviorSanitizer (hoặc Valgrind) bắt lỗi khi chạy, nhưng đòi hỏi độ phủ kiểm thử cao và không phải lúc nào cũng báo. Tác giả đã viết một plugin libclang để quét toàn bộ mã nguồn. Bài còn nêu ngoại lệ oái oăm: đọc giá trị chưa khởi tạo của `std::byte` hay `unsigned char` không phải hành vi không xác định, còn `bool` thì có. Kết luận của tác giả là C++ có quá nhiều cách khởi tạo biến, cú pháp giống C nhưng đôi khi hoạt động khác hẳn, và quy tắc thay đổi theo từng phiên bản chuẩn.
 
 ## [Đừng Sa Vào Anti-AI Hype](https://antirez.com/news/158)
 
-Tác giả (người tạo Redis) chia sẻ quan điểm về AI và lập trình. Mặc dù yêu thích viết code từng dòng và theo đuổi phần mềm tối giản với "chất lượng con người", ông thừa nhận AI sẽ thay đổi lập trình mãi mãi. Năm 2020 ông nghỉ việc để viết tiểu thuyết về AI và universal basic income. Cuối 2024 ông mở kênh YouTube về AI. Ông từng nghĩ chúng ta có nhiều năm trước khi lập trình được định hình lại hoàn toàn, nhưng không còn tin vậy nữa.
+Salvatore Sanfilippo (antirez), người tạo ra Redis, vốn yêu thích viết phần mềm từng dòng một, nhưng thừa nhận AI sẽ thay đổi lập trình mãi mãi. Ông từng nghĩ còn vài năm nữa, nay không còn tin vậy vì các mô hình ngôn ngữ lớn đã tự hoàn thành được phần việc lớn hoặc dự án cỡ vừa gần như không cần trợ giúp. Chỉ trong một tuần, bằng cách viết prompt và thỉnh thoảng xem mã để định hướng, ông làm xong trong vài giờ bốn việc lẽ ra mất nhiều tuần: thêm UTF-8 cho thư viện linenoise cùng khung kiểm thử dùng terminal giả lập; sửa lỗi kiểm thử chập chờn của Redis do vấn đề thời gian và deadlock TCP; để Claude Code viết trong 5 phút thư viện C thuần 700 dòng chạy suy luận mô hình embedding kiểu BERT, chỉ chậm hơn PyTorch 15%; và để Claude Code tái hiện trong khoảng 20 phút các thay đổi bên trong Redis Streams từ tài liệu thiết kế.
 
-Gần đây, LLMs hiện tại có thể hoàn thành các subtasks lớn hoặc dự án quy mô trung bình một mình, hầu như không cần hỗ trợ, chỉ cần gợi ý tốt về kết quả cuối cùng. Độ thành công phụ thuộc vào loại lập trình (càng cô lập và càng dễ diễn đạt bằng văn bản thì càng tốt: system programming đặc biệt phù hợp) và khả năng tạo representation tinh thần của vấn đề để giao tiếp với LLM. Nhưng nói chung, hiện rõ ràng rằng với hầu hết dự án, tự viết code không còn hợp lý, trừ khi để giải trí.
-
-Trong một tuần, chỉ prompting và kiểm tra code để hướng dẫn thỉnh thoảng, trong vài giờ ông hoàn thành bốn tác phẩm: (1) Sửa đổi linenoise library để hỗ trợ UTF-8 và tạo framework cho line editing testing với emulated terminal; (2) Sửa transient failures trong Redis test - vấn đề timing, TCP deadlock; Claude Code iterated, inspected process state và fixed bugs; (3) Pure C library để inference BERT embedding models - Claude Code tạo trong 5 phút, 700 dòng code, cùng output và tốc độ với PyTorch (chậm 15%); (4) Thay đổi Redis Streams internals - Claude Code reproduced work trong 20 phút hoặc ít hơn từ design document.
-
-Tác giả cảm thấy vinh dự khi code của ông được LLMs ingest, coi đó là sự tiếp nối những gì ông cố gắng cả đời: democratizing code, systems, knowledge. LLMs sẽ giúp chúng ta viết phần mềm tốt hơn, nhanh hơn, và cho phép small teams cạnh tranh với bigger companies - giống như open source software đã làm trong thập niên 90. Tuy nhiên, ông lo ngại về sự tập trung hóa - công nghệ này quá quan trọng để nằm trong tay vài công ty. Ông tin neural networks, ở quy mô, đơn giản là có thể làm những điều incredible, và không có đủ "magic" trong AI frontier hiện tại để các labs khác không bắt kịp.
-
-**Điểm chính:**
-- Tác giả Redis: yêu thích viết code từng dòng, nhưng thừa nhận AI thay đổi lập trình mãi mãi
-- LLMs hiện tại có thể hoàn thành subtasks lớn/dự án trung bình một mình, hầu như không cần hỗ trợ
-- Trong một tuần: 4 tác phẩm hoàn thành trong vài giờ thay vì tuần nhờ AI
-- (1) UTF-8 support cho linenoise library với testing framework
-- (2) Sửa transient failures trong Redis test (timing, TCP deadlock)
-- (3) Pure C library cho BERT embedding inference - 5 phút, 700 dòng, speed = PyTorch
-- (4) Redis Streams internals changes - reproduced trong 20 phút từ design doc
-- Tự viết code không còn hợp lý cho hầu hết dự án, trừ giải trí
-- Vinh dự code được ingest: democratizing code/systems/knowledge như open source trong 90s
-- LLMs giúp viết phần mềm tốt hơn, nhanh hơn, small teams cạnh tranh big companies
-- Lo ngại tập trung hóa: công nghệ quá quan trọng để nằm trong tay vài công ty
-- Neural networks không có đủ "magic" để các labs khác không bắt kịp
-- Khuyên: đừng từ chối AI, test tools mới với tuần công việc, không phải test 5 phút
-- Động lực lập trình: building - giờ có thể build nhiều hơn và tốt hơn với AI
+Theo ông, với phần lớn dự án, tự tay viết mã không còn cần thiết. Ông vui khi mã mình được dùng để huấn luyện mô hình, coi đó là sự tiếp nối nỗ lực dân chủ hóa mã nguồn và tri thức; AI sẽ giúp đội nhỏ cạnh tranh với công ty lớn như mã nguồn mở từng làm những năm 90. Dù vậy, ông lo công nghệ này bị tập trung vào tay vài công ty. Lời khuyên của ông: đừng từ chối AI, hãy thử công cụ mới nghiêm túc trong nhiều tuần chứ không phải năm phút, vì niềm vui của lập trình là xây dựng, và giờ ta có thể xây nhiều hơn, tốt hơn.
 
 ## [Performance Hints Của Abseil](https://abseil.io/fast/hints.html)
 
-Abseil là tập hợp thư viện C++ do Google phát triển, đi kèm với hướng dẫn tối ưu hóa hiệu năng dựa trên kinh nghiệm thực tế của họ. Performance Hints cung cấp các kỹ thuật tối ưu hóa thực tế thay vì micro-optimizations lý thuyết. Dự án bao gồm "Performance Tips of the Week" - được mô tả như một loại "Effective analysis" cho tối ưu hóa hiệu năng.
+Đây là tài liệu "Performance Hints" do Jeff Dean và Sanjay Ghemawat viết, đăng trên trang Abseil của Google, tổng hợp nguyên tắc và kỹ thuật họ dùng khi tối ưu hiệu năng. Tác giả dẫn đầy đủ câu của Knuth: nên bỏ qua tối ưu nhỏ khoảng 97% thời gian, nhưng đừng bỏ lỡ 3% quan trọng. Cách "cứ viết đơn giản rồi tính hiệu năng sau" thường sai, vì hệ thống lớn bỏ qua hiệu năng từ đầu sẽ có hồ sơ đo phẳng, thất thoát khắp nơi mà không có điểm nóng; vì thế hãy chọn phương án nhanh hơn nếu nó không làm mã khó đọc đáng kể. Tài liệu hướng dẫn ước lượng nhanh dựa trên độ trễ các thao tác cơ bản (bộ đệm L1 khoảng 0,5 ns, dự đoán nhánh sai 5 ns, bộ nhớ chính 50 ns), đo bằng profiler, và cách xử lý khi hồ sơ CPU phẳng như cộng dồn nhiều cải tiến 1% hoặc thay đổi cấu trúc ở tầng cao hơn.
 
-Các tips quan trọng bao gồm: Tip #70 về việc định nghĩa và đo lường thành công tối ưu hóa, Tip #72 về tối ưu hóa chính quá trình tối ưu hóa, Tip #74 về việc tránh "sweeping streetlights" - các cạm bẫy tối ưu hóa. Tip #90 thảo luận về cách đưa ra và sử dụng ước lượng trong vòng đời tối ưu hóa. Tip #64 nhấn mạnh tầm quan trọng của API tốt và trừu tượng hóa đúng để tìm kiếm cơ hội tối ưu hóa.
-
-Abseil tập trung vào các chiến lược tối ưu hóa thực tế cho code C++ hiện đại, bao gồm: hiểu rõ chi phí thực sự của các operations, sử dụng profiler để tìm bottleneck, tránh premature optimization, thiết kế API tốt cho phép tối ưu hóa mà không breaking interface, và hiểu cách compiler optimizations hoạt động. Các tips dựa trên kinh nghiệm thực tế từ việc tối ưu hóa các hệ thống lớn quy mô của Google.
-
-**Điểm chính:**
-- Abseil: thư viện C++ từ Google với hướng dẫn tối ưu hóa hiệu năng thực tế
-- "Performance Tips of the Week" - các tips tối ưu hóa dựa trên kinh nghiệm thực tế
-- Tip #70: định nghĩa và đo lường thành công tối ưu hóa
-- Tip #72: tối ưu hóa chính quá trình tối ưu hóa
-- Tip #74: tránh "sweeping streetlights" - cạm bẫy tối ưu hóa
-- Tip #90: ước lượng trong vòng đời tối ưu hóa
-- Tip #64: API tốt và trừu tượng hóa đúng để tìm cơ hội tối ưu hóa
-- Tập trung chiến lược thực tế: profiler tìm bottleneck, tránh premature optimization
-- Thiết kế API cho phép tối ưu hóa mà không breaking interface
-- Hiểu cách compiler optimizations hoạt động
-- Kinh nghiệm từ tối ưu hóa các hệ thống lớn quy mô của Google
+Phần còn lại là danh mục kỹ thuật kèm ví dụ mã: thiết kế API để tối ưu được bên trong ranh giới đóng gói; cải tiến thuật toán; biểu diễn bộ nhớ gọn để chạm ít dòng cache hơn (chỉ số thay con trỏ, arena, mảng thay map); giảm cấp phát bằng cách đặt trước dung lượng container và tránh sao chép; tránh việc thừa nhờ đường đi nhanh, tính trước, bộ nhớ đệm và không ghi log trên đường nóng; kiểm soát kích thước mã; và song song hóa với vùng găng ngắn, chia nhỏ để giảm tranh chấp, SIMD, tránh chia sẻ giả (false sharing). Cuối tài liệu là lời khuyên cho Protocol Buffers và các cấu trúc như `absl::flat_hash_map`.
 
 ## [Triển Vọng Thị Trường Việc Làm Kỹ Thuật Phần Mềm 2026](https://www.finalroundai.com/blog/software-engineering-job-market-2026)
 
-Bài viết phân tích triển vọng thị trường việc làm kỹ thuật phần mềm năm 2026. Kỹ thuật phần mềm từng được coi là nghề nghiệp an toàn nhất, giờ là công việc công nghệ dễ bị tổn thương nhất với layoffs gần như mỗi tuần. Companies đổ lỗi cho AI, nhưng thực tế phức tạp hơn. Dữ liệu Indeed qua FRED cho thấy hiring surge khổng lồ peak giữa 2022, rồi giảm mạnh đến 2024, và thị trường không bao hồi.
+Bài viết phân tích vì sao kỹ sư phần mềm, từng là nghề an toàn nhất, nay lại dễ tổn thương nhất khi tin sa thải xuất hiện gần như hằng tuần. Dữ liệu Indeed qua FRED cho thấy tin tuyển dụng đạt đỉnh giữa năm 2022, giảm mạnh đến 2024 và chưa hồi phục. Nguyên nhân chính không phải AI mà là làn sóng số hóa 2021–2022: tâm lý sợ bị bỏ lại và lãi suất thấp khiến từ Big Tech đến startup đều tuyển thừa. Khi nhu cầu không tăng kịp, AI trở thành vật tế thần tiện lợi để cắt giảm nhân sự. Một lý do khác là tuyển dụng từ xa: kỹ sư cấp cao ở Mỹ có thể tốn 100.000 USD mỗi năm, ở Ấn Độ chỉ 40.000 USD, và câu "thay việc làm bằng AI" nghe tiến bộ hơn "chuyển việc ra nước ngoài". Nghiên cứu của METR còn cho thấy kỹ sư giàu kinh nghiệm chậm hơn 19% khi dùng AI.
 
-Nguyên nhân thực sự: hiring boom lịch sử 2021-2022 được thúc đẩy bởi digitization. Từ Big Tech đến Startup, ai cũng overhiring. Khi thế giới chuyển online gần như overnight, companies không còn lựa chọn nào ngoài việc speed up digital efforts. FOMO tạo ra rush. Startup thấy cơ hội hiếm: users online nhiều hơn, investors đổ tiền, muốn làm products nhanh hơn. Engineers được thuê trước khi có clear work. Low interest rates cũng đóng vai trò. Sau đó họ nhận ra demand không tăng cùng pace với hiring, extra people thành gánh nặng.
-
-AI trở thành scapegoat. AI tools rẻ hơn, viết basic code trong vài phút, không đòi salary cả năm. Companies nghĩ: thay 3 engineers bằng 1 engineer với AI tools. Stock market đi lên, cách boost stock price: cut jobs và giải thích có thể làm same work với AI bots rẻ hơn. Nhưng họ vẫn cần engineers, chỉ là có euphoria rồi correction dẫn đến crisis. Giờ back to normal khi tiến đến 2026.
-
-Lý do lớn khác: large companies thoải mái với remote hiring. Tại sao hire engineer USA với salary rất cao khi có thể hire người từ Asia với fraction of cost? Senior engineer USA có thể $100k/năm, Argentina $60k, India $40k. Math đơn giản cho companies watching bottom line. AI thành PR-friendly excuse: "we are replacing jobs with AI" nghe forward-thinking hơn là "we are shipping jobs overseas".
-
-AI không phải culprit, nhưng không có nghĩa là không quan trọng. METR study tìm thấy experienced software engineers thực tế 19% less productive khi dùng AI tools cho real-world tasks. AI là tool, không phải replacement. Software engineering jobs sẽ không biến mất, nhưng demand cho basic coding jobs sẽ giảm. Magnus Grimeland (Antler VC) cho rằng AI sẽ tăng demand cho software engineers vì AI systems sẽ mắc lỗi, human engineers vẫn cần để fix errors. More code means more errors.
-
-US Bureau of Labor Statistics vẫn expect software developer jobs grow ~15%, chậm hơn prediction trước là 22% nhưng growth vẫn là growth. SignalFire báo Meta, Netflix, Uber, Google hire engineers faster hơn people leaving. Hiring ratios sit well above 100 - dấu mạnh engineering work đang tăng, không giảm. What's changing là skill bar. Jobs require actual engineering thinking, designing systems, optimizing performance, ensuring security vẫn rất được demand.
-
-**Điểm chính:**
-- Software engineering: từ career an toàn nhất thành dễ bị tổn thương nhất với layoffs mỗi tuần
-- Hiring boom 2021-2022: digitization rush, FOMO, overhiring, low interest rates
-- Correction 2022-2024: demand không tăng cùng pace, AI thành scapegoat
-- Remote hiring: hire Asia fraction of cost so với USA, AI thành PR-friendly excuse
-- METR study: experienced engineers 19% less productive với AI tools cho real-world tasks
-- AI là tool, không phải replacement - more code means more errors cần fix
-- US Bureau of Labor: software developer jobs vẫn grow 15% (chậm hơn 22% prediction)
-- SignalFire: Meta, Netflix, Uber, Google hire faster than people leaving
-- What's changing: skill bar - need engineering thinking, system design, performance, security
-- Top languages 2026: Python (AI/ML), JavaScript/TypeScript (frontend/full-stack), Go (backend/infrastructure), Java (enterprise), Swift (iOS)
-- New opportunities: AI engineering, AI infrastructure, data engineering, AI safety
-- AI/ML jobs share tăng từ 10% đến 50% (2023-2025)
-- Entry-level jobs giảm 40% so với pre-2022, CS graduates và bootcamp grads tăng
-- Gartner: 80% engineering workforce cần upskill để keep pace với generative AI by 2027
-- Median salary software engineer US 2026: $130,000
-- Market maturing: harder to break in nhưng financial case vẫn strong
+Dù vậy, nghề này không biến mất, chỉ nhu cầu viết mã cơ bản giảm đi. Cục Thống kê Lao động Mỹ vẫn dự báo việc làm lập trình viên tăng khoảng 15%, SignalFire ghi nhận Meta, Netflix, Uber và Google tuyển nhanh hơn tốc độ nghỉ việc, và Magnus Grimeland (Antler) cho rằng càng nhiều mã càng nhiều lỗi cần kỹ sư sửa. Điều thay đổi là mặt bằng kỹ năng: thiết kế hệ thống, hiệu năng, bảo mật và dùng AI hiệu quả. Người mới gặp khó hơn khi tin tuyển junior giảm khoảng 40% so với trước 2022. Bài gợi ý các ngôn ngữ đáng học năm 2026: Python cho AI/ML, JavaScript/TypeScript cho frontend, Go cho backend và hạ tầng, Java cho doanh nghiệp, Swift cho iOS.
 
 ### Bonus
 
@@ -220,4 +75,4 @@ US Bureau of Labor Statistics vẫn expect software developer jobs grow ~15%, ch
 
 ---
 
-*Bài viết đã được review và cập nhật bởi Claude Code với Opus 4.7 (1M context).*
+*Bài viết đã được viết lại bởi Claude Code với Opus 5.5 vào ngày 27/09/2026.*

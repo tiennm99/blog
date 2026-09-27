@@ -9,119 +9,45 @@ categories: ["Newsletter"]
 
 ## [Scaling Engineering Teams: Lessons from Google, Facebook, and Netflix](https://greenido.dev/2025/09/25/scaling-engineering-teams-lessons-from-google-facebook-and-netflix/)
 
-Bài viết chia sẻ kinh nghiệm quý báu từ tác giả với hơn 10 năm lãnh đạo kỹ thuật tại Google, Facebook và Netflix về cách mở rộng quy mô đội ngũ kỹ thuật từ 10 lên 1000+ engineers. Tác giả tập trung vào ba yếu tố then chốt: đặt mục tiêu với OKRs, xây dựng nền tảng chất lượng code, và nuôi dưỡng văn hóa làm việc.
+Ido Green, người có hơn mười năm lãnh đạo kỹ thuật tại Google, Facebook và Netflix, cho rằng khi mở rộng từ 10 lên hơn 1.000 kỹ sư, đội ngũ phát triển tốt hay sụp đổ phụ thuộc vào ba yếu tố: đặt mục tiêu có cấu trúc, tập trung tuyệt đối vào chất lượng mã nguồn và chủ động xây dựng văn hóa. Ở Google, OKR được đặt đầy tham vọng, mỗi đội 3–5 mục tiêu với 2–4 kết quả đo được, và đạt 60–70% mới là lý tưởng; đạt 100% nghĩa là mục tiêu chưa đủ cao. Về chất lượng, Facebook yêu cầu mọi dòng mã đều được đánh giá, mọi phần kho mã đều có người sở hữu và mã mới đạt độ bao phủ kiểm thử từ 80%; Netflix chủ động gây lỗi bằng Chaos Monkey (tắt ngẫu nhiên máy chủ), diễn tập sự cố và triển khai canary cho 1% người dùng trước.
 
-Về OKRs, Google khuyến khích đặt mục tiêu đầy tham vọng - đạt 60-70% là tốt, còn đạt 100% nghĩa là mục tiêu chưa đủ cao. Netflix lại theo triết lý "Context Over Control" - cho team một North Star metric duy nhất để tập trung. Đối với chất lượng code, Facebook yêu cầu mọi dòng code đều phải được review, có code owner rõ ràng, và đạt ít nhất 80% test coverage. Netflix nổi tiếng với Chaos Engineering - cố ý "giết" instances ngẫu nhiên để kiểm tra độ bền hệ thống.
-
-Về văn hóa, Google có "Innovation Fridays" hàng tháng để thử nghiệm, Facebook có chương trình Bootcamp 6 tuần cho engineers mới fix bugs khắp nơi trước khi chọn team, còn Netflix tin tưởng vào việc thuê người tài năng với lương cao và kỳ vọng họ hành xử như người trưởng thành. Điểm chung của các công ty này là đều tránh hero culture và tribal knowledge - thay vào đó là hệ thống, documentation, automation và ownership rõ ràng.
-
-**Điểm chính:**
-- Đặt mục tiêu OKRs đầy tham vọng (60-70% completion là tốt) với 3-5 objectives và 2-4 key results mỗi team
-- Bắt buộc code review cho mọi thay đổi, có code owner rõ ràng, và duy trì ≥80% test coverage
-- Thực hành Chaos Engineering để test độ bền hệ thống và sử dụng canary deployment
-- Nuôi dưỡng văn hóa đổi mới qua innovation time, bootcamp cho nhân viên mới, và 360 feedback
-- Theo dõi DORA metrics: lead time, deployment frequency, time to restore, change failure rate
-- Tránh hero culture và manual processes - ưu tiên systems, documentation, automation
+Về văn hóa, Google dành một buổi chiều mỗi tháng cho thử nghiệm; Facebook cho nhân viên mới học khóa Bootcamp 6 tuần, sửa lỗi khắp hệ thống rồi mới tự chọn đội; Netflix thuê người giỏi, trả lương cao và đối xử với họ như người trưởng thành. Tác giả khuyên theo dõi bốn chỉ số DORA như tần suất triển khai và thời gian khôi phục. Bài học lớn nhất: văn hóa anh hùng, quy trình thủ công và kiến thức truyền miệng ổn với 10 người nhưng thành thảm họa với 100 người; thứ mở rộng được là hệ thống, tài liệu, tự động hóa và quyền sở hữu rõ ràng. Thay vì sao chép máy móc, hãy thực thi nhất quán và đo đúng thứ quan trọng.
 
 ## [The Trap of Excessive AI Use](https://dpereira.substack.com/p/the-trap-of-excessive-ai-use)
 
-David Pereira, tác giả của "Untrapping Product Teams", cảnh báo về cái bẫy của việc lạm dụng AI - nó có thể khiến con người trở nên trung bình thay vì giỏi hơn. Tuy không phản đối AI, ông lo ngại xu hướng "tự động hóa mọi thứ một cách mù quáng" đang thịnh hành trong giới chuyên môn. Vấn đề cốt lõi là: AI có thể tăng tốc độ nhưng không thể thay thế tư duy phản biện, sự thấu hiểu hay phán đoán của con người.
+David Pereira, tác giả cuốn "Untrapping Product Teams", cho rằng lạm dụng AI sẽ khiến chúng ta trở nên tầm thường chứ không giỏi hơn. Ông không phản đối AI mà phản đối tư duy "tự động hóa mọi thứ": nếu AI làm được thì mình không cần bận tâm. AI giúp ta nhanh hơn nhưng không khôn ngoan hơn. Ông chỉ ra những thói quen đáng lo: giao việc xếp ưu tiên cho AI, nhờ AI viết tài liệu yêu cầu sản phẩm thay vì tự nghĩ điều gì quan trọng, tóm tắt mọi thứ thay vì học chậm, và thay nghiên cứu thực tế bằng nhận định do AI tạo ra. Tư duy phản biện, thấu hiểu hành vi con người và thách thức giả định phải thuộc về chính mình; nghịch lý là càng nhiều người vội giao hết cho AI thì người không làm vậy càng có giá trị.
 
-Pereira nhận thấy nhiều pattern sử dụng AI đáng lo ngại: giao quyết định ưu tiên cho AI thay vì phân tích kỹ lưỡng, dùng AI viết product requirement documents thay vì suy ngẫm về điều gì thực sự quan trọng, tóm tắt quá mức thay vì học sâu, hoặc thay thế nghiên cứu thực sự bằng insights do AI tạo ra. Ông nhấn mạnh: "càng nhiều người vội vã outsource mọi thứ cho AI, thì việc là người không làm như vậy càng trở nên có giá trị."
-
-Về phía cá nhân, Pereira vẫn giữ những thói quen "old-fashioned": đọc từng tin nhắn trực tiếp, viết email thủ công để khuyến khích suy ngẫm, review từng application riêng lẻ, đọc sách hoàn chỉnh thay vì tóm tắt, và single-tasking để đảm bảo chất lượng hơn số lượng. Tuy nhiên, ông cũng thừa nhận AI hữu ích trong việc tăng tốc (draft meeting notes, automate research), khám phá (tạo góc nhìn thay thế, stress-test assumptions), và học hỏi (tạo experiment options). Nguyên tắc của ông rất rõ ràng: "AI có thể draft, nhưng tôi quyết định" - phân biệt giữa leverage và abdication trách nhiệm.
-
-**Điểm chính:**
-- AI tăng tốc độ nhưng không thay thế critical thinking, wisdom và human judgment
-- Tránh ủy thác quyết định quan trọng cho AI: prioritization, requirement docs, research insights
-- Critical thinking, hiểu human behavior, challenge assumptions nên là domain của con người
-- Sử dụng AI để acceleration (draft notes, automate research), exploration (alternative perspectives), và learning
-- Nguyên tắc "AI can draft, but I decide" - phân biệt leverage vs abdication
-- Càng nhiều người dựa vào AI, người không lạm dụng AI càng có giá trị
+Pereira kể những thói quen "lỗi thời" của mình như đọc mọi tin nhắn, tự viết email để có thời gian suy nghĩ, đọc trọn từng cuốn sách, ghi chép tay và làm từng việc một, và coi đó là lợi thế cạnh tranh. Dù vậy, AI vẫn hữu ích khi tăng tốc việc giá trị thấp (bản nháp biên bản họp, tổng hợp tính năng của đối thủ), khám phá phương án thay thế và phản biện giả định, viết lại thông điệp cho từng đối tượng, và gợi ý nhiều phương án thử nghiệm để học nhanh hơn. Nguyên tắc của ông là "AI có thể viết nháp, nhưng tôi quyết định": hãy giao việc chứ đừng giao quyền sở hữu, vì để AI quyết định là chuyển từ tận dụng công cụ sang buông bỏ trách nhiệm.
 
 ## [How Google, Amazon, and CrowdStrike Broke Millions of Systems](https://newsletter.techworld-with-milan.com/p/how-google-amazon-and-crowdstrike)
 
-Bài viết phân tích ba sự cố infrastructure lớn năm 2025 đã làm gián đoạn hàng triệu hệ thống, tiết lộ những bài học quan trọng về tính mong manh của distributed systems. AWS gặp sự cố kéo dài 15 giờ ảnh hưởng 113 services do race condition trong DynamoDB DNS automation - DNS Enactor #1 đã ghi đè Route 53 với dữ liệu cũ khi thời gian xử lý vượt quá timeout. Google Cloud sập 7 giờ do null pointer exception trong Service Control, bug nằm im 14 ngày sau khi deploy code mới thiếu null validation cho đến khi corrupted policy xuất hiện và Spanner replicate toàn cầu "với tốc độ ánh sáng".
+Milan Milanović phân tích ba sự cố lớn cho thấy ở quy mô siêu lớn, lỗi rất đơn giản cũng có thể thành thảm họa. Tháng 10/2025, một race condition trong hệ thống tự động quản lý DNS của DynamoDB tại us-east-1 khiến AWS gián đoạn 15 giờ với 113 dịch vụ: một DNS Enactor bị chậm ghi đè Route 53 bằng kế hoạch cũ đúng lúc Enactor khác dọn các kế hoạch "hết hạn", làm bản ghi DNS bị xóa sạch, một lỗi kinh điển kiểu kiểm tra một lúc, ghi một lúc (TOCTOU). DNS được sửa sau khoảng 3 giờ, nhưng các lỗi dây chuyền kéo dài thêm 12 giờ. Tháng 6/2025, Google Cloud sập khoảng 7 giờ: đoạn mã mới trong Service Control, cửa ngõ của mọi lời gọi API, thiếu kiểm tra null và không có feature flag, nằm im 14 ngày cho đến khi một chính sách có trường trống được Spanner sao chép ra toàn cầu trong vài giây.
 
-CrowdStrike gây ra thảm họa với 8.5 triệu máy Windows bị boot loop do Channel File 291 trigger null pointer trong kernel mode. Máy bay không cất cánh được, bệnh viện hủy phẫu thuật, và recovery đòi hỏi can thiệp thủ công trên từng máy bằng cách boot Safe Mode và xóa file .sys. Sự việc diễn ra nhanh chóng - chỉ 78 phút từ lúc global deployment đến khi phát hiện vấn đề, nhưng damage đã lan rộng. Kernel-mode drivers crash toàn bộ hệ thống khi gặp lỗi, và việc bypass Windows certification để update nhanh đã phản tác dụng.
-
-Ba sự cố này có điểm chung: đều ưu tiên speed hơn safety trong deployment, đều có single points of failure tạo catastrophic blast radius, và recovery automation trở thành failure modes trong stress. Bài học rút ra: cần staged rollouts với canary testing, validation gates trước global replication, circuit breakers cho recovery automation, và test recovery scenarios ở production-scale load. Như tác giả kết luận: "Độ phức tạp của hyperscale tạo ra emergent failure modes gần như không thể dự đoán hay test hoàn toàn."
-
-**Điểm chính:**
-- AWS sập 15h do race condition: processing time vượt timeout, DNS Enactor ghi đè Route 53 với dữ liệu cũ
-- Google Cloud sập 7h do null pointer exception, bug nằm im 14 ngày, không có feature flag để disable
-- CrowdStrike: 8.5M máy Windows boot loop, Channel File 291 trigger kernel crash, phải manual fix từng máy
-- Common themes: speed vs safety, single points of failure, automated recovery thành failure modes
-- Recommendations: staged rollouts, validation gates, circuit breakers, test recovery ở production-scale
-- "Hyperscale complexity tạo emergent failure modes không thể dự đoán hoàn toàn"
+Sự cố thứ ba xảy ra tháng 7/2024: bản cập nhật Channel File 291 của CrowdStrike cho trình điều khiển chạy ở chế độ kernel đọc con trỏ NULL, khiến 8,5 triệu máy Windows khởi động lại liên tục, và từng máy phải sửa thủ công trong Safe Mode. Điểm chung là tốc độ được đặt trên an toàn, điểm lỗi đơn lẻ có phạm vi ảnh hưởng quá rộng, và chính cơ chế tự khôi phục trở thành nguồn lỗi. Bài học rút ra: ghi dữ liệu bằng thao tác nguyên tử, thêm circuit breaker và backoff có jitter cho quá trình khôi phục, triển khai theo giai đoạn với canary, kiểm tra dữ liệu trước khi sao chép toàn cầu và kiểm thử cấu hình như mã nguồn.
 
 ## [The Linux Boot Process: From Power Button to Kernel](https://www.0xkato.xyz/linux-boot/)
 
-Bài viết này cung cấp một walkthrough kỹ thuật chi tiết về cách Linux khởi động, từ lúc bấm nút nguồn cho đến khi kernel initialization hoàn tất. Quá trình bắt đầu với CPU reset về "real mode" (16-bit 8086 mode) và jump đến reset vector tại `0xFFFFFFF0`. Firmware layer (BIOS hoặc UEFI) thực hiện hardware checks - BIOS tìm bootable devices với magic bytes `0x55` `0xAA` trong 512-byte đầu, trong khi UEFI hiểu filesystems trực tiếp và load được boot programs lớn hơn. GRUB bootloader sau đó load Linux kernel vào memory, fill setup header với boot parameters, và jump đến setup program.
+Bài viết giải thích dễ hiểu quá trình Linux khởi động trên máy x86, từ lúc bấm nút nguồn đến khi kernel bắt đầu chạy. Khi có điện, CPU tự đặt lại về real mode, chế độ 16-bit có từ chip 8086, rồi nhảy đến reset vector tại `0xFFFFFFF0`, nơi firmware đặt sẵn lệnh nhảy vào mã của mình. BIOS kiểu cũ tìm ổ đĩa có sector 512 byte đầu tiên kết thúc bằng `0x55` `0xAA`, còn UEFI hiện đại đọc được hệ thống tệp và nạp chương trình khởi động lớn hơn. Bootloader như GRUB nạp kernel vào bộ nhớ, điền setup header rồi chuyển quyền cho chương trình setup. Chương trình này dựng môi trường dự đoán được: căn chỉnh thanh ghi segment, tạo stack, xóa vùng BSS và hỏi firmware bản đồ RAM qua lời gọi e820. Tiếp theo là hai bước chuyển chế độ: sang protected mode 32-bit (tắt ngắt, mở đường A20, nạp GDT và IDT tối thiểu, bật bit PE trong CR0), rồi sang long mode 64-bit (bật PAE trong CR4, dựng bảng trang ánh xạ đồng nhất, ghi địa chỉ bảng vào CR3, bật bit LME trong EFER).
 
-Setup program tạo môi trường dự đoán được bằng cách align segment registers, tạo stack, clear BSS (global variables area), query available RAM qua e820 calls. Tiếp theo là mode transitions: từ 16-bit sang 32-bit protected mode (disable interrupts, mở A20 line, load minimal GDT/IDT, set PE bit trong CR0), rồi sang 64-bit long mode (enable PAE trong CR4, build minimal page tables với identity mapping, write page table address vào CR3, set LME bit trong EFER). Cuối cùng, 64-bit stub decompresses kernel bằng gzip/xz/zstd, đọc ELF headers để xác định nơi đặt code và data.
-
-Một feature bảo mật quan trọng là kASLR (Kernel Address Space Layout Randomization) - random chọn physical và virtual base addresses từ available memory slots, tránh reserved regions. Điều này làm attacks khó hơn bằng cách randomize kernel location. Nếu kernel load ở địa chỉ khác với expected, decompressor apply relocations để fix pointers và addresses. Sau khi decompression và relocation xong, code jump đến `start_kernel`, đánh dấu bắt đầu full kernel initialization.
-
-**Điểm chính:**
-- Boot flow: Power on → CPU reset (real mode) → Firmware (BIOS/UEFI) → Bootloader (GRUB) → Setup program
-- Mode transitions: Real mode (16-bit) → Protected mode (32-bit) → Long mode (64-bit)
-- Setup program: align segments, create stack, clear BSS, query RAM via e820, enable serial output
-- Protected mode: disable interrupts, A20 line, load GDT/IDT, set PE bit trong CR0
-- Long mode: enable PAE (CR4), build page tables with identity mapping, CR3 = page table, set LME (EFER)
-- Decompression: 64-bit stub decompress kernel (gzip/xz/zstd), read ELF headers, apply relocations nếu cần
-- kASLR: randomize kernel location để tăng security, fall back về defaults nếu không có suitable space
+Ở chế độ 64-bit, hàm `extract_kernel` giải nén kernel (gzip, xz, zstd…), đọc ELF header để biết đặt mã và dữ liệu ở đâu, áp dụng relocation nếu kernel không nằm ở địa chỉ mặc định, rồi nhảy vào `start_kernel`. Bài cũng giải thích kASLR: bộ giải nén chọn ngẫu nhiên địa chỉ cơ sở vật lý và ảo trong các vùng nhớ trống, tránh những vùng cần giữ như initrd, khiến kẻ tấn công khó đoán vị trí kernel; nếu không có chỗ phù hợp thì quay về địa chỉ mặc định. Bài kèm bảng thuật ngữ, rất hợp cho người mới.
 
 ## [Build System Tradeoffs](https://jyn.dev/build-system-tradeoffs)
 
-Bài viết từ jyn.dev phân tích các tradeoffs trong thiết kế build systems cho complex projects. Tác giả chỉ ra rằng build systems phải giải quyết nhiều concerns phức tạp: running generated binaries (integration tests gọi recursive builds), dependency tracking (nhiều hand-written builds có broken dependencies), cross-compilation (cần compiler cho target, standard library và linker), và tension giữa dynamic vs static linking - platform maintainers thích dynamic linking cho security updates, developers thích static linking cho reliability.
+jyn, người đang phát triển hệ thống build cho trình biên dịch Rust, mở đầu loạt bài về hệ thống build bằng bức tranh tổng quan về những gì dự án phức tạp phải tính đến: chạy chính các chương trình vừa build (như kiểm thử tích hợp gọi `cargo build` bên trong `cargo test`), theo dõi phụ thuộc chính xác, biên dịch chéo (cần trình biên dịch, thư viện chuẩn và trình liên kết cho nền tảng đích), lựa chọn giữa liên kết động và liên kết tĩnh, và build tái lập được, điều kiện để dùng cache an toàn. Theo tác giả, lỗi phổ biến nhất là ép cấu hình vào một ngôn ngữ riêng: làm build "khai báo" chỉ là ảo tưởng, nên hãy dùng một ngôn ngữ thật rồi tuần tự hóa đồ thị build ra định dạng tối giản như Ninja.
 
-Về dependency tracking, có nhiều approaches khác nhau: manual specification (unreliable), compiler support (tốt hơn nhưng incomplete), ephemeral state (always correct nhưng expensive), hermetic builds (sandboxed, forces explicit dependencies), và tracing (instruments syscalls để discover dependencies tự động). Hermetic builds như Bazel, Buck2, Nix guarantee correctness bằng cách chỉ allow declared inputs, enable remote caching và precise test selection. Tracing builds như Tup, Ekam tự động discover dependencies qua syscall monitoring - benefits mà không cần manual specification, nhưng Linux-specific và problematic ở scale lớn.
-
-Một điểm quan trọng tác giả nhấn mạnh là "making a build 'declarative' is a lie" - build systems vốn dĩ là procedural, nên tốt hơn hết là cho developers một ngôn ngữ thực sự thay vì custom DSL hạn chế. Về toolchains, hầu hết build systems "sidestep it by not worrying about it" và break khi compilers update mà không clean rebuild. Reproducible builds là must-have cho sound caching - cùng compiler invocation phải produce identical output. Tác giả kết luận kết hợp tracing với hermetic approaches "seems like the best of both worlds."
-
-**Điểm chính:**
-- Build concerns: recursive invocations, dependency tracking, cross-compilation, dynamic vs static linking, toolchains
-- Dependency tracking: manual (unreliable), compiler support (incomplete), ephemeral (expensive), hermetic (correct), tracing (automatic)
-- Hermetic builds (Bazel, Buck2, Nix): sandbox với declared inputs only, enable remote caching
-- Tracing builds (Tup, Ekam): syscall monitoring tự động discover dependencies, Linux-specific
-- "Making builds declarative is a lie" - nên dùng real programming language thay vì custom DSL
-- Reproducible builds: same compiler invocation → identical output, critical cho sound caching
-- Best approach: kết hợp tracing với hermetic builds
+Về theo dõi phụ thuộc có bốn hướng. Tự khai báo bằng tay, kể cả khi có trình biên dịch hỗ trợ như `gcc -M`, vẫn dễ sai. Luôn build lại từ đầu thì luôn đúng nhưng tốn kém. Build kín (hermetic) như Bazel, Buck2, Nix chỉ cho dùng đầu vào đã khai báo, nhờ đó dùng được cache từ xa. Build theo vết (tracing) như Tup, Ekam tự phát hiện phụ thuộc bằng cách theo dõi syscall, không cần khai báo nhưng gần như chỉ chạy trên Linux và gặp khó ở quy mô lớn vì không biết trước đồ thị. Tác giả kết luận ưu tiên tính đúng đắn luôn kèm đánh đổi, kết hợp tracing với build kín có vẻ là giải pháp tốt nhất, và viết luật build bằng ngôn ngữ thông thường rồi tuần tự hóa thành đồ thị có ít nhược điểm đến bất ngờ.
 
 ## [How I Use Every Claude Code Feature](https://blog.sshh.io/p/how-i-use-every-claude-code-feature)
 
-Shrivu Shankar chia sẻ kinh nghiệm sử dụng Claude Code trong production, với nhiều insights thực tế về cách tối ưu AI coding agent. CLAUDE.md là foundation quan trọng nhất - file 13KB của tác giả được maintain nghiêm ngặt như "constitution" của agent, chỉ document tools được 30%+ engineers sử dụng. Nguyên tắc chính: start với guardrails chứ không phải comprehensive manual, tránh @-mention docs trực tiếp (bloats context), luôn provide alternatives thay vì chỉ negative constraints.
+Shrivu Shankar tổng hợp cách anh dùng gần như mọi tính năng của Claude Code. Nền tảng quan trọng nhất là tệp `CLAUDE.md` gốc, "hiến pháp" của agent: ở công ty, tệp này giữ ở mức 13KB và chỉ ghi công cụ được từ 30% kỹ sư trở lên sử dụng. Anh khuyên bắt đầu bằng các rào chắn dựa trên lỗi Claude hay mắc thay vì viết cẩm nang, không nhúng tài liệu bằng `@` vì làm phình ngữ cảnh, và không chỉ cấm mà luôn đưa ra cách thay thế. Với cửa sổ ngữ cảnh 200k token, anh tránh `/compact` vì khó kiểm soát, thay bằng `/clear` kèm lệnh tự tạo `/catchup` để đọc lại các tệp đã đổi, hoặc cho Claude ghi tiến độ ra tệp `.md` rồi mở phiên mới. Anh không dùng subagent tùy biến vì chúng che giấu ngữ cảnh và ép agent theo quy trình của con người; thay vào đó, agent chính tự dùng `Task(...)` tạo bản sao của chính nó, kiến trúc anh gọi là "Master-Clone".
 
-Về context management với 200k token window, baseline monorepo tốn ~20k tokens (10%). Tác giả tránh `/compact` vì opaque và error-prone, thay vào đó dùng `/clear` + custom `/catchup` command cho simple reboots, hoặc "Document & Clear" method cho complex tasks (dump progress ra .md, clear, tiếp tục). Về custom features, tác giả theo minimalist approach - chỉ 2 slash commands (`/catchup`, `/pr`), không dùng custom subagents vì "gatekeep context" và "force human workflows", thay vào đó prefer "Master-Clone" architecture dùng built-in `Task(...)` để spawn clones với full `CLAUDE.md` context.
-
-Hooks critical cho enterprise repos: block-at-submit hooks (block commits until tests pass) và hint hooks (non-blocking feedback), nhưng tránh block-at-write hooks vì confuse agent mid-plan. Planning mode luôn được dùng cho large features. Về Skills vs MCP, tác giả đồng ý với Simon Willison rằng "Skills are (maybe) a bigger deal than MCP" - Skills formalize scripting layer trong agent autonomy evolution: single prompt → tool calling → scripting. MCP chỉ dùng như secure gateway cho stateful environments (Playwright), không phải bloated API mirrors. Claude Code SDK được dùng cho massive parallel scripting, building internal chat tools, và rapid agent prototyping. GitHub Action là "most slept on feature" - provides customizable containers với strong sandboxing.
-
-**Điểm chính:**
-- CLAUDE.md là foundation: guardrails > manual, document tools dùng bởi 30%+ engineers, avoid @-mention docs
-- Context: baseline 20k tokens (10% of 200k), dùng /clear + /catchup thay vì /compact
-- Minimalist approach: 2 slash commands only, no custom subagents, prefer "Master-Clone" architecture với Task(...)
-- Hooks: block-at-submit + hint hooks cho enterprise, avoid block-at-write (confuses agent)
-- Skills > MCP: Skills formalize scripting layer, MCP chỉ cho stateful environments
-- GitHub Action underrated: customizable containers với strong sandboxing
-- Agent autonomy evolution: single prompt → tool calling → scripting (Skills formalize này)
+Hook rất quan trọng trong kho mã doanh nghiệp: chặn lúc commit khi kiểm thử chưa qua, cộng hook gợi ý không chặn, nhưng tránh chặn lúc ghi tệp vì làm agent rối giữa chừng. Đồng tình với Simon Willison, anh cho rằng Skills có thể quan trọng hơn MCP vì chúng chính thức hóa lớp "viết script", bậc tiến hóa sau prompt đơn lẻ và gọi công cụ; MCP chỉ nên là cổng truy cập an toàn cho môi trường có trạng thái như Playwright. Tính năng bị đánh giá thấp nhất là GitHub Action: toàn quyền kiểm soát container, sandbox chặt và nhật ký đầy đủ để định kỳ phân tích, cải thiện `CLAUDE.md` cùng công cụ.
 
 ## [If you don't tinker, you don't have taste](https://seated.ro/blog/tinkering-a-lost-art)
 
-Seatedro viết về tầm quan trọng của tinkering - việc sửa chữa và cải thiện nhỏ thứ gì đó, nhưng mở rộng định nghĩa này thành exploratory learning qua hands-on experimentation. Tác giả hối tiếc không bắt đầu tinker sớm hơn trong đời - dù thử nhiều hoạt động khác (guitar, art, martial arts), họ không explore programming qua hands-on experimentation cho đến muộn, điều đã trở thành fundamental trong sự phát triển của họ. Examples của tinkering bao gồm: adjust game settings như mouse sensitivity, install và customize Linux distributions với window managers, modify mechanical keyboards.
+seatedro viết về "tinkering", tức mày mò chỉnh sửa những thứ nhỏ để cải thiện chúng, như một công cụ học tập suốt đời. Tác giả từng thử đủ thứ, từ guitar, mỹ thuật đến võ thuật, nhưng lại không mày mò với lập trình; thói quen này đến khá muộn, giờ đã thành cốt lõi trong cách tác giả học, và tác giả tiếc vì không bắt đầu sớm hơn. Mày mò là dành hàng giờ chỉnh độ nhạy chuột trong game, mất nhiều ngày cấu hình trình quản lý cửa sổ trên Linux chỉ vì thích, hay tháo bàn phím cơ để thay keycap và thử switch. Có người chỉ làm gì đó khi nó giúp đạt mục tiêu, có người làm "chỉ vì thích"; lý tưởng là kết hợp cả hai. Tác giả dẫn lời @ludwigABAP rằng mày mò rồi bỏ đi chính là luyện tập, và luyện tập nên mang tính tạm thời, khám phá và diễn ra thường xuyên.
 
-Tác giả phân biệt hai loại người: goal-oriented và những người explore "just because," khuyến khích balance cả hai. Citing @ludwigABAP, tinkering và discard work nên được xem như ephemeral, exploratory practice diễn ra frequently. Về minimum standards, tác giả cho rằng dùng command-line tools (Git CLI vs GitHub Desktop), hiểu vim bindings, move beyond basic IDE terminals nên là baseline skills chứ không exceptional. Trong một tuần gần đây, tác giả explore: GLSL shaders, Rust macros, template C++, Swift development, Windows development challenges, và Helix editor - tất cả đều unnecessary cho immediate goals nhưng valuable cho learning.
-
-Core message là taste emerges từ việc try multiple approaches, discard what doesn't work, keep what does. Điều này tạo individual preferences thay vì follow defaults. Tác giả định nghĩa taste là khả năng distinguish mediocrity from excellence. Continuous experimentation, question defaults, và break things repeatedly builds cả skill lẫn discernment, đặc biệt quan trọng trong technological landscape hiện tại.
-
-**Điểm chính:**
-- Tinkering = exploratory learning qua hands-on experimentation, không chỉ là sửa chữa nhỏ
-- Examples: adjust game settings, customize Linux/window managers, modify mechanical keyboards
-- Balance goal-oriented work với exploring "just because"
-- Minimum standards: Git CLI, vim bindings, beyond basic IDE terminals nên là baseline
-- Tinkering builds taste: try nhiều approaches, discard bad, keep good → individual preferences
-- Taste = distinguish mediocrity from excellence
-- Trong 1 tuần: GLSL shaders, Rust macros, template C++, Swift, Windows dev, Helix - all valuable learning
+Theo tác giả, dùng Git qua dòng lệnh thay vì GitHub Desktop hay biết phím tắt vim nên là mức tối thiểu chứ không phải điều hiếm có, nhưng cũng cần cân bằng: lần cuối tác giả chỉnh cấu hình neovim đã là sáu tháng trước. Chỉ trong một tuần, tác giả lần đầu viết fragment shader GLSL, macro thủ tục trong Rust, template C++, một ứng dụng Swift và dùng thêm trình soạn thảo Helix, dù không việc nào thật sự cần thiết. Thông điệp chính là "gu", khả năng phân biệt sự tầm thường với sự xuất sắc, chỉ hình thành khi bạn thử nhiều thứ, giữ cái mình thích và bỏ cái không hợp; vì thế hãy đặt câu hỏi với lối mòn, thử nghiệm và làm hỏng mọi thứ, mỗi ngày.
 
 ## Bonus: Vài ảnh hay ho đến từ [ByteByteGo](https://bytebytego.com/)
 
@@ -133,4 +59,4 @@ Core message là taste emerges từ việc try multiple approaches, discard what
 
 ---
 
-*Bài viết đã được review và cập nhật bởi Claude Code với Opus 4.7 (1M context).*
+*Bài viết đã được viết lại bởi Claude Code với Opus 5.5 vào ngày 27/09/2026.*

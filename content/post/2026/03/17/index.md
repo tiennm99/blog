@@ -9,94 +9,45 @@ categories: ["Newsletter"]
 
 ## [How Go Slices Work Under the Hood: What Makes Them Stand Out from Other Languages](https://dev.to/ganesh-kumar/how-go-slices-work-under-the-hood-what-makes-them-stand-out-from-other-languages-42o4)
 
-Bài viết giải thích cách slice trong Go hoạt động bên trong — một trong những cấu trúc dữ liệu quan trọng nhất của ngôn ngữ này. Không giống như mảng thông thường, slice trong Go là một cấu trúc gồm ba thành phần: con trỏ trỏ đến mảng nền bên dưới, độ dài hiện tại (`len`), và dung lượng tối đa (`cap`). Nhờ thiết kế này, slice có thể mở rộng linh hoạt mà không cần sao chép toàn bộ dữ liệu mỗi lần.
+Slice là một trong những cấu trúc dữ liệu được dùng nhiều nhất trong Go. Bề ngoài nó trông giống một mảng động đơn giản, nhưng bên trong mỗi slice chỉ gồm ba thành phần: con trỏ trỏ tới mảng nền, độ dài (`len`) và dung lượng (`cap`). Khi cắt slice bằng cú pháp `[start:end]`, Go không sao chép dữ liệu mà chỉ tạo một slice mới trỏ vào cùng mảng nền, nên thao tác này rất rẻ. Tác giả minh họa bằng ví dụ in ra `len` và `cap` sau mỗi lần cắt, đồng thời giải thích vì sao một slice khai báo bằng `var s []int` có giá trị `nil` với `len` và `cap` đều bằng 0.
 
-Khi thực hiện thao tác cắt (`[start:end]`), Go không sao chép dữ liệu mà chỉ tạo một con trỏ mới trỏ đến vùng nhớ gốc — giúp tiết kiệm bộ nhớ đáng kể. Khi dùng `append` và slice đã đầy, Go sẽ cấp phát mảng mới với dung lượng lớn hơn: với slice nhỏ hơn 256 phần tử, dung lượng tăng gấp đôi; với slice lớn hơn, tốc độ tăng trưởng giảm dần từ 2x xuống 1.25x để cân bằng giữa hiệu năng và bộ nhớ. Sử dụng `make` để khởi tạo slice với dung lượng phù hợp ngay từ đầu là cách tối ưu nhằm tránh việc cấp phát lại bộ nhớ nhiều lần.
-
-**Điểm chính:**
-- Slice gồm 3 thành phần: con trỏ, độ dài (`len`), dung lượng (`cap`)
-- Cắt slice không sao chép dữ liệu, chỉ tạo con trỏ mới đến mảng gốc
-- `append` tự động mở rộng dung lượng khi cần, với chiến lược tăng trưởng thông minh
-- Dùng `make([]T, len, cap)` để khởi tạo trước dung lượng, tránh cấp phát lại bộ nhớ
-- Hiểu cơ chế slice giúp viết mã Go hiệu quả và tránh các lỗi chia sẻ bộ nhớ ngoài ý muốn
+Phần đáng chú ý nhất là thuật toán mở rộng của hàm `append`, được phân tích trực tiếp từ mã nguồn `runtime/slice.go`. Khi slice đầy, Go cấp phát một mảng mới lớn hơn: nếu dung lượng hiện tại dưới 256 phần tử thì tăng gấp đôi, còn từ 256 trở lên thì hệ số tăng giảm dần từ 2 xuống khoảng 1,25 lần (trước Go 1.18, ngưỡng này là 1024). Với thao tác thêm nhiều phần tử cùng lúc vượt quá gấp đôi dung lượng cũ, Go nhảy thẳng tới dung lượng cần thiết rồi làm tròn lên theo lớp kích thước bộ nhớ. Vì cấp phát lại rất tốn kém, lời khuyên thực tế cho lập trình viên là dùng `make([]T, len, cap)` để khởi tạo sẵn dung lượng khi đã biết trước kích thước cần dùng.
 
 ## [Why Go Can't Try](https://niketpatel.com/essays/why-go-cant-try)
 
-Bài viết lý giải tại sao Go không thể thêm từ khóa `try` hay cơ chế xử lý lỗi tương tự — không phải vì các nhà thiết kế thích viết nhiều mã lặp lại, mà vì đây là sự bất tương thích kiến trúc sâu xa. Gốc rễ của vấn đề nằm ở định nghĩa kiểu `error` trong Go: chỉ là một interface tối giản với phương thức `Error() string`, cho phép bất kỳ kiểu nào triển khai và không có thông tin gì để trình biên dịch kiểm tra tính đầy đủ.
+Bài luận giải thích vì sao Go khó có được từ khóa `try` như Zig hay Rust, và lý do thật sự không nằm ở việc đội ngũ Go "thích sự tường minh". Trớ trêu thay, Zig còn tường minh hơn Go: kiểu trả về như `!Config` cho biết hàm có thể thất bại, trình biên dịch biết mọi lỗi có thể xảy ra và bắt buộc phải xử lý đủ. Trong khi đó, Go vẫn cho phép viết `data, _ := os.ReadFile(path)` mà không hề báo lỗi, nên sự tường minh của `if err != nil` phần nhiều chỉ là quy ước. Đội ngũ Go lập luận rằng `try` tạo ra các điểm thoát ẩn khó nhận ra khi đọc mã, nhưng theo tác giả đó chưa phải gốc rễ của vấn đề.
 
-Để so sánh, Zig sử dụng tập hợp lỗi có kiểu tường minh, được trình biên dịch theo dõi và bắt buộc xử lý đầy đủ — nhưng đổi lại, lỗi không thể mang thêm dữ liệu ngữ cảnh. Go chọn hướng ngược lại: cho phép bọc lỗi phong phú qua `fmt.Errorf("%w", err)` nhưng mất đi sự đảm bảo tại thời điểm biên dịch. Việc thay đổi kiểu `error` bây giờ đồng nghĩa với việc viết lại toàn bộ thư viện chuẩn và phá vỡ hàng triệu chương trình Go hiện có — một khoản nợ kiến trúc không thể hoàn trả dần dần.
-
-**Điểm chính:**
-- `if err != nil` tồn tại vì hệ thống lỗi của Go không thể thay thế, không phải vì sở thích
-- Kiểu `error` của Go là interface tối giản — trình biên dịch không biết gì về các lỗi có thể xảy ra
-- Zig kiểm tra lỗi đầy đủ tại thời điểm biên dịch, nhưng lỗi không thể mang dữ liệu ngữ cảnh
-- Go cho phép bọc lỗi phong phú nhưng không có bảo đảm tại thời điểm biên dịch
-- Thay đổi kiến trúc lỗi của Go sẽ phá vỡ toàn bộ hệ sinh thái hiện có
+Gốc rễ nằm ở kiểu `error`: nó chỉ là một interface có phương thức `Error() string`, nên trình biên dịch không biết một hàm có thể trả về những lỗi nào; mọi công cụ như `errors.Is()`, `errors.As()` hay `fmt.Errorf("%w")` đều là quy ước lúc chạy. Tập lỗi của Zig thì ngược lại: hữu hạn, được trình biên dịch theo dõi, mỗi lỗi chỉ là một số nguyên 16 bit không tốn chi phí, nhưng vì thế không thể mang thêm ngữ cảnh — Zig bù lại bằng dấu vết đường đi của lỗi (error return trace). Thêm `try` mà không sửa kiểu `error` chỉ là cú pháp cho gọn, không mang lại kiểm tra đầy đủ nào. Còn sửa kiểu `error` thì đồng nghĩa với phá vỡ toàn bộ thư viện chuẩn và mọi chương trình Go hiện có. Vì vậy `if err != nil` sẽ còn ở lại lâu dài.
 
 ## [The Scheduler — Understanding the Go Runtime](https://internals-for-interns.com/posts/go-runtime-scheduler)
 
-Bài viết giải thích cách bộ lập lịch của Go runtime quyết định goroutine nào sẽ chạy tiếp theo — cơ chế cốt lõi cho phép Go chạy hàng triệu goroutine nhẹ trên chỉ một vài luồng hệ điều hành. Trung tâm của thiết kế là mô hình **GMP**: **G** (Goroutine) là đơn vị thực thi nhẹ bắt đầu với stack chỉ 2KB; **M** (Machine) là luồng hệ điều hành thực sự; và **P** (Processor) là ngữ cảnh lập lịch giữ hàng đợi goroutine cục bộ, số lượng bằng `GOMAXPROCS`. Mỗi P có hàng đợi riêng giúp giảm tranh chấp khóa so với một hàng đợi toàn cục.
+Bài viết giải thích bộ lập lịch của Go runtime — thành phần trả lời câu hỏi "goroutine nào chạy tiếp theo?" và cho phép hàng triệu goroutine chạy trên vài luồng hệ điều hành. Nền tảng là mô hình GMP: G là goroutine, khởi đầu với stack chỉ 2KB (so với 1–8MB của một luồng hệ điều hành); M là luồng hệ điều hành thực sự thực thi mã; P là ngữ cảnh lập lịch, mang hàng đợi cục bộ tối đa 256 goroutine, số lượng bằng `GOMAXPROCS`. Việc tách P khỏi M giúp khi một luồng bị chặn trong lời gọi hệ thống, P có thể được chuyển sang luồng khác để các goroutine còn lại tiếp tục chạy. Một điểm thú vị là không có luồng lập lịch trung tâm nào: goroutine tự tạm dừng, tự vào hàng đợi chờ của channel và tự dọn dẹp khi kết thúc để được tái sử dụng.
 
-Thuật toán `findRunnable()` tìm goroutine theo thứ tự ưu tiên: công việc GC, kiểm tra công bằng toàn cục (cứ 61 lần lập lịch lại lấy từ hàng đợi toàn cục một lần), hàng đợi cục bộ của P, rồi đến đánh cắp công việc từ P khác nếu không còn gì. Điểm nổi bật của thiết kế là kiến trúc "tự phục vụ": goroutine tự quản lý trạng thái của mình, tự tạm dừng khi chờ, không có luồng lập lịch trung tâm nào điều phối tất cả. Nhờ đó, chuyển đổi ngữ cảnh giữa các goroutine chỉ tốn 50–100 nanosecond, nhanh hơn 10–40 lần so với chuyển đổi luồng hệ điều hành.
-
-**Điểm chính:**
-- Mô hình GMP: Goroutine (G), luồng hệ điều hành (M), ngữ cảnh lập lịch (P)
-- Số lượng P bằng `GOMAXPROCS`, mỗi P có hàng đợi cục bộ giảm tranh chấp khóa
-- `findRunnable()` tìm goroutine theo thứ tự ưu tiên, có cơ chế đánh cắp công việc giữa các P
-- Goroutine tự tạm dừng và tiếp tục — không có luồng lập lịch trung tâm
-- Chuyển đổi ngữ cảnh goroutine chỉ 50–100ns, nhanh hơn 10–40x so với luồng hệ điều hành
+Hàm `findRunnable()` tìm việc theo thứ tự: công việc của GC, cứ lần lập lịch thứ 61 thì lấy một goroutine từ hàng đợi toàn cục để tránh bỏ đói, rồi hàng đợi cục bộ, hàng đợi toàn cục, bộ thăm dò mạng, và cuối cùng là lấy một nửa công việc từ P khác (work stealing). Luồng hết việc sẽ "quay vòng" tìm việc một lúc trước khi ngủ, với số luồng quay vòng bị giới hạn. Bài cũng đề cập cơ chế tạm dừng cưỡng bức (hợp tác qua đoạn kiểm tra đầu hàm và bất đồng bộ qua tín hiệu `SIGURG`). Nhờ trạng thái cần lưu rất nhỏ, chuyển đổi giữa các goroutine chỉ mất khoảng 50–100 nano giây, nhanh hơn 10–40 lần so với chuyển đổi luồng hệ điều hành.
 
 ## [Go String Concatenation Performance Benchmark](https://www.winterjung.dev/en/string-concat-performance-benchmark-in-go/)
 
-Bài viết so sánh hiệu năng của 15 phương pháp nối chuỗi khác nhau trong Go qua hai kịch bản thực tế: nối số lượng chuỗi cố định (như tạo cache key) và nối số lượng chuỗi biến đổi (như ghép điều kiện truy vấn). Kết quả cho thấy sự chênh lệch rất lớn giữa các phương pháp, đặc biệt khi số lượng chuỗi tăng cao.
+Tác giả so sánh hiệu năng và mức dùng bộ nhớ của các cách nối chuỗi trong Go, gồm toán tử `+`, `+=`, `fmt.Sprintf()`, `fmt.Sprint()`, `strings.Join()`, `bytes.Buffer` và `strings.Builder` (có và không gọi `Grow()` để cấp phát trước). Bài đo được chia thành hai kịch bản thường gặp: số lượng chuỗi cố định, như khi tạo khóa bộ nhớ đệm từ vài trường dữ liệu, và số lượng chuỗi thay đổi, như khi ghép các điều kiện truy vấn. Toàn bộ mã nguồn và mã đo đạc được công bố để người đọc tự tái hiện kết quả.
 
-Với kịch bản số lượng cố định, toán tử `+` đơn giản cho hiệu năng hoàn toàn chấp nhận được. Nhưng với kịch bản biến đổi (256 phần tử), `strings.Join()` và `strings.Builder` với `Grow()` cấp phát trước dung lượng vượt trội rõ rệt — chỉ khoảng 2.6–2.8 microsecond, trong khi toán tử `+=` trong vòng lặp tốn tới 37 microsecond và tiêu tốn bộ nhớ gấp nhiều lần. Nguyên nhân là mỗi lần `+=` tạo ra một chuỗi mới, dẫn đến hàng loạt cấp phát bộ nhớ không cần thiết.
-
-**Điểm chính:**
-- `strings.Builder` với `Grow()` và `strings.Join()` là hai lựa chọn nhanh nhất trong mọi kịch bản
-- Toán tử `+` đủ tốt khi nối số lượng chuỗi cố định, ít
-- Toán tử `+=` trong vòng lặp chậm hơn ~14x và tốn nhiều bộ nhớ hơn so với `strings.Builder`
-- Cấp phát trước dung lượng bằng `Grow()` giúp tránh việc cấp phát lại bộ nhớ nhiều lần
-- Chọn đúng phương pháp nối chuỗi có thể tạo ra sự khác biệt lớn về hiệu năng ở quy mô lớn
+Kết luận khá rõ ràng: `strings.Builder` có gọi `Grow()` và `strings.Join()` là hai lựa chọn nhanh và tiết kiệm bộ nhớ nhất trong mọi kịch bản. Với số lượng chuỗi cố định và ít, toán tử `+` đơn giản là hoàn toàn đủ tốt, còn `fmt.Sprintf()` chậm hơn đáng kể. Ở kịch bản 256 chuỗi, hai phương pháp dẫn đầu chỉ mất khoảng 2,6–2,8 micro giây với một lần cấp phát, trong khi dùng `+=` trong vòng lặp mất hơn 37 micro giây, tốn khoảng 185KB bộ nhớ và 255 lần cấp phát, vì mỗi lần nối lại tạo ra một chuỗi mới. Bài học cho lập trình viên trẻ: nối chuỗi trong vòng lặp nên dùng `strings.Builder` hoặc `strings.Join()`.
 
 ## [Message Passing Is Shared Mutable State](https://causality.blog/essays/message-passing-is-shared-mutable-state/)
 
-Bài luận đưa ra một lập luận gây tranh cãi: mô hình lập trình đồng thời dùng truyền thông điệp (message passing) — như channel trong Go hay actor trong Erlang — không thực sự giải quyết các vấn đề của bộ nhớ chia sẻ có thể thay đổi (shared mutable state), mà chỉ đơn giản là di chuyển chúng sang tên gọi khác. Channel trong Go về bản chất là một hàng đợi chia sẻ — bất kỳ goroutine nào cũng có thể gửi hoặc nhận — tức là vẫn là trạng thái có thể thay đổi được chia sẻ giữa các luồng thực thi.
+Bài luận cho rằng truyền thông điệp (message passing) không loại bỏ trạng thái chia sẻ có thể thay đổi, mà chỉ chuyển nó sang chỗ khác. Ngay từ năm 2006, Edward Lee đã dự đoán cuộc tranh luận "bộ nhớ chia sẻ hay truyền thông điệp" là một lựa chọn giả, vì đổi cơ chế điều phối từ khóa sang thông điệp chỉ đổi hình thức của lỗi. Go, với triết lý "chia sẻ bộ nhớ bằng cách giao tiếp", trở thành thí nghiệm thực tế lớn nhất: nghiên cứu năm 2019 trên 171 lỗi đồng thời trong Docker, Kubernetes, etcd, gRPC và CockroachDB cho thấy khoảng 58% lỗi chặn (goroutine bị treo) đến từ truyền thông điệp. Bộ phát hiện deadlock tích hợp của Go chỉ bắt được 2 trên 21 lỗi chặn được thử nghiệm.
 
-Tác giả dẫn chứng nghiên cứu năm 2019 phân tích 171 lỗi đồng thời trong các dự án Go thực tế, trong đó khoảng 58% lỗi blocking xuất phát từ message passing, không phải bộ nhớ chia sẻ. Triết lý "share memory by communicating" của Go hóa ra không loại bỏ được deadlock, goroutine leak hay race condition — những loại lỗi này vẫn xảy ra, chỉ qua kênh channel thay vì mutex. Ngay cả Erlang, với cơ chế cô lập actor mạnh hơn nhiều, cũng bị phát hiện có race condition trong thư viện chuẩn liên quan đến bảng ETS — vốn là bộ nhớ chia sẻ được thêm vào để giải quyết các hạn chế thực tiễn.
-
-**Điểm chính:**
-- Channel trong Go là hàng đợi chia sẻ — về cấu trúc vẫn là shared mutable state
-- 58% lỗi blocking trong Go thực tế đến từ message passing, không phải bộ nhớ chia sẻ
-- Deadlock, goroutine leak, race condition vẫn xảy ra — chỉ qua channel thay vì mutex
-- Tranh luận "shared memory vs. message passing" là một lưỡng phân giả — cả hai có cùng lỗ hổng cấu trúc
-- Ngay cả Erlang cũng phải dùng bộ nhớ chia sẻ (ETS) để xử lý các bài toán thực tiễn
+Theo tác giả, channel trong Go thực chất là một hàng đợi đồng thời dùng chung, không có hai đầu gửi và nhận tách biệt, nên mọi lỗi kinh điển của trạng thái chia sẻ đều có phiên bản tương ứng: deadlock, rò rỉ goroutine, tranh chấp khi nhiều goroutine cùng đọc, và vi phạm giao thức như gửi vào channel đã đóng. Ví dụ tiêu biểu là một lỗi trong Kubernetes: goroutine con bị treo mãi vì không ai đọc channel sau khi hết thời gian chờ, và cách sửa chỉ là thêm bộ đệm một phần tử. Ngay cả Erlang, với các tiến trình cô lập hoàn toàn, cũng bị phát hiện có tranh chấp quanh bảng ETS — vốn là bộ nhớ chia sẻ được thêm vào vì lý do hiệu năng.
 
 ## [Things I've Done with AI](https://sjer.red/blog/2026/built-with-ai/)
 
-Bài viết của một lập trình viên 14 năm kinh nghiệm chia sẻ hành trình từ hoài nghi đến trở thành người dùng AI tích cực. Từ tháng 10/2025, tác giả chuyển hẳn sang mô hình viết prompt và kiểm tra kết quả thay vì tự viết mã — và trong 9 tháng đã hoàn thành hơn 15 dự án cá nhân bằng Cursor và Claude Code, một con số mà trước đây gần như không thể.
+Tác giả, với khoảng bảy năm kinh nghiệm chuyên nghiệp cộng thêm bảy năm tự học, kể lại hành trình từ hoài nghi đến chấp nhận AI trong lập trình. Từng né tránh GitHub Copilot và coi Cursor là thổi phồng, anh vốn rất coi trọng kiến trúc, hệ thống kiểu và khả năng bảo trì. Bước ngoặt đến khi anh tự hỏi vì sao lại cần những thứ đó: trong công việc, điều quan trọng là mang lại giá trị cho doanh nghiệp, còn mã nguồn không cần "đẹp" theo nghĩa truyền thống nếu có đủ kiểm thử để AI tự xử lý. Từ tháng 10/2025, anh không còn tự viết mã mà chỉ viết prompt và xem xét kết quả.
 
-Điều thú vị là tác giả không ca ngợi AI một cách mù quáng, mà nhấn mạnh rằng để dùng AI hiệu quả cần thay đổi tư duy: không còn ưu tiên mã nguồn "đẹp" hay kiến trúc hoàn hảo, mà tập trung vào giá trị thực tế cho người dùng. Mã do AI tạo ra không cần đáp ứng tiêu chuẩn bảo trì truyền thống nếu có đủ kiểm thử — vì bản thân AI cũng có thể điều hướng trong mã nguồn không hoàn hảo. Tại nơi làm việc, các yêu cầu nhỏ từ quản lý sản phẩm giờ "gần như miễn phí" để thực hiện; điểm nghẽn còn lại chỉ là kiểm tra và kiểm thử.
-
-**Điểm chính:**
-- Dùng AI hiệu quả đòi hỏi thay đổi tư duy: ưu tiên giá trị kinh doanh thay vì mã nguồn hoàn hảo
-- Kiểm thử và tài liệu đã trở thành điểm nghẽn chính trong quy trình phát triển hỗ trợ bởi AI
-- Mã do AI tạo không cần bảo trì theo kiểu truyền thống nếu có độ phủ kiểm thử tốt
-- Tập trung công việc chuyển sang thiết kế và tài liệu — thay vì triển khai chi tiết
-- Tốc độ xây dựng sản phẩm tăng đáng kể khi chấp nhận sự đánh đổi về chất lượng mã nguồn
+Trong chín tháng, với Cursor và Claude Code, anh đã hoàn thành hơn chục dự án cá nhân: gom mọi dự án vào một monorepo, chuyển hệ thống CI sang Buildkite và Bazel, viết Clauderon — công cụ điều phối nhiều tác tử lập trình, cùng các bot Discord và ứng dụng di động. Ở nơi làm việc, AI giúp viết tài liệu thiết kế, công cụ điều tra và tự động hóa vận hành; các yêu cầu nhỏ từ quản lý sản phẩm giờ gần như miễn phí, phần việc còn lại chỉ là xem xét mã và kiểm thử thủ công. Tuy vậy, anh thừa nhận việc này khá mệt mỏi, và kiểm thử cùng tài liệu đã trở thành điểm nghẽn mới, nên ngành cần đầu tư nhiều hơn vào công cụ kiểm thử.
 
 ## [Pushing and Pulling: Three Reactivity Algorithms](https://jonathan-frere.com/posts/reactivity-algorithms/)
 
-Bài viết phân tích ba thuật toán xây dựng hệ thống reactive — loại hệ thống tự động cập nhật khi dữ liệu thay đổi, như bảng tính nơi một ô thay đổi kéo theo hàng loạt ô phụ thuộc tính toán lại. Tác giả đánh giá các phương pháp qua bốn tiêu chí: hiệu quả tính toán, cập nhật chi tiết (chỉ tính lại những gì thực sự thay đổi), không có trạng thái trung gian không nhất quán, và hỗ trợ phụ thuộc động.
+Bài viết so sánh ba thuật toán xây dựng hệ thống reactive — loại hệ thống tự cập nhật khi dữ liệu thay đổi, dễ hình dung nhất qua bảng tính: sửa một ô thì mọi ô phụ thuộc phải tính lại. Tác giả đặt ra bốn tiêu chí: hiệu quả (mỗi ô tính lại tối đa một lần), chi tiết (chỉ cập nhật ô thực sự bị ảnh hưởng), không có trạng thái trung gian lệch nhau (glitchless) và hỗ trợ phụ thuộc động. Cách đẩy (push) cho phép mỗi nút thông báo cho các nút phụ thuộc, nên rất chi tiết, nhưng một nút có thể bị tính lại nhiều lần và dễ lộ trạng thái trung gian trừ khi sắp xếp tô-pô toàn bộ đồ thị. Cách kéo (pull) giống một chuỗi lời gọi hàm lồng nhau: dễ đạt glitchless và có phụ thuộc động miễn phí, nhưng không biết nút nào thay đổi nên phải tính lại nhiều hoặc dựa vào bộ nhớ đệm khó vô hiệu hóa.
 
-**Push-based**: khi dữ liệu đầu vào thay đổi, nó ngay lập tức thông báo cho tất cả các node phụ thuộc — cập nhật chi tiết nhưng có thể tính toán lại một node nhiều lần nếu nó có nhiều nguồn phụ thuộc. **Pull-based**: các node chủ động lấy giá trị từ phụ thuộc khi cần — tự nhiên không có trạng thái trung gian nhưng dễ tính toán dư thừa. **Push-pull** kết hợp cả hai: pha push đánh dấu các node bị ảnh hưởng là "dirty", pha pull chỉ tính toán lại những node đó — đạt độ phức tạp O(n) với mỗi node chỉ được xử lý đúng một lần, đáp ứng cả bốn tiêu chí.
-
-**Điểm chính:**
-- Ba phương pháp reactive: push-based, pull-based, và push-pull kết hợp
-- Push-based cập nhật chi tiết nhưng có thể tính toán lại node nhiều lần
-- Pull-based tránh trạng thái trung gian nhưng dễ tính toán dư thừa
-- Push-pull đánh dấu "dirty" rồi tính toán theo yêu cầu — O(n), mỗi node xử lý đúng một lần
-- Push-pull là lựa chọn tối ưu cho phát triển web, cân bằng giữa hiệu năng và sự đơn giản
+Cách kết hợp đẩy–kéo giải quyết cả hai: pha đẩy chỉ đánh dấu các nút bị ảnh hưởng là "dirty" và ghi lại danh sách nút đầu ra cần cập nhật, không phụ thuộc thứ tự duyệt; pha kéo sau đó chỉ tính lại những nút dirty rồi đánh dấu sạch. Mỗi nút được thăm tối đa một lần ở mỗi pha, đạt độ phức tạp O(n) với n là số nút cần cập nhật, và đáp ứng cả bốn tiêu chí. Hạn chế là toàn bộ pha kéo phải hoàn tất giữa hai lần thay đổi đầu vào, nên các tác vụ chạy lâu cần được xử lý riêng.
 
 ### Bonus
 
@@ -107,4 +58,4 @@ Bài viết phân tích ba thuật toán xây dựng hệ thống reactive — l
 
 ---
 
-*Bài viết đã được review và cập nhật bởi Claude Code với Opus 4.7 (1M context).*
+*Bài viết đã được viết lại bởi Claude Code với Opus 5.5 vào ngày 27/09/2026.*

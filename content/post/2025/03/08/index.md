@@ -13,87 +13,51 @@ Chào mừng các bạn đến với Newsletter #6.
 
 ## [How I use LLMs as a staff engineer](https://www.seangoedecke.com/how-i-use-llms/)
 
-Sean Goedecke, một staff engineer tại GitHub, chia sẻ cách anh tận dụng LLM (Large Language Models) trong công việc hàng ngày. Anh nhấn mạnh rằng, thay vì viết code hoàn toàn, LLM hiệu quả nhất khi được dùng như một công cụ hỗ trợ.
+Sean Goedecke, kỹ sư cấp staff tại GitHub, liệt kê những cách anh thực sự dùng mô hình ngôn ngữ lớn (LLM) trong công việc hằng ngày. Với mã nguồn chạy trên môi trường thực tế, anh dùng Copilot chủ yếu như một công cụ gợi ý hoàn thành mã rất tốt, phần lớn cho các đoạn lặp lại như tham số hàm hay kiểu dữ liệu; ở những mảng sở trường như Ruby on Rails, anh vẫn tự viết tốt hơn. Khi phải sửa nhỏ ở vùng ít quen như một dịch vụ Go hay thư viện C, anh dựa vào LLM nhiều hơn, hỏi thẳng "đoạn này đã đúng phong cách của ngôn ngữ chưa", nhưng luôn nhờ chuyên gia của mảng đó duyệt lại. Với mã viết một lần rồi bỏ, chẳng hạn mã nghiên cứu chỉ chạy trên máy cá nhân, anh để LLM viết gần như toàn bộ và ước tính nhanh hơn 2–4 lần.
 
-Cụ thể, anh dùng Copilot cho việc "autocomplete" code, đặc biệt hữu ích khi làm việc với các ngôn ngữ hoặc vùng kiến thức ít quen thuộc. Với các đoạn code "throwaway" (chỉ dùng một lần), anh thoải mái dùng LLM để tăng tốc độ. Anh cũng sử dụng LLM như một "tutor" để học các domain mới, đặt câu hỏi và kiểm tra kiến thức.
-
-Ngoài ra, LLM còn được dùng để "debug" ở bước cuối cùng khi đã cạn ý tưởng, hoặc để "proofread" các tài liệu kỹ thuật dài. Sean không dùng LLM để viết PR (Pull Request) hoàn chỉnh hoặc các tài liệu quan trọng như ADR (Architecture Decision Record).
-
-Tóm lại, theo Sean, LLM là công cụ giá trị nếu được sử dụng đúng cách, giúp tăng năng suất và học hỏi nhanh hơn, đặc biệt khi làm việc ngoài vùng "expertise".
+Theo anh, giá trị lớn nhất là dùng LLM như một gia sư theo yêu cầu khi học lĩnh vực mới: đặt câu hỏi nối tiếp, tự ghi lại những gì vừa học rồi nhờ mô hình chỉ ra chỗ hiểu sai. Anh cũng nhờ LLM gỡ lỗi như phương án cuối cùng (chỉ hỏi một lần, không dây dưa) và soát lỗi chính tả, lỗi logic trong các tài liệu dài. Ngược lại, anh không để LLM viết trọn một pull request ở mảng mình thành thạo, không để nó viết ADR hay các văn bản kỹ thuật quan trọng, và chưa dùng nó để tìm hiểu các kho mã nguồn lớn.
 
 ## [Software development topics I've changed my mind on after 10 years in the industry](https://chriskiehl.com/article/thoughts-after-10-years)
 
-Chris Kiehl là một lập trình viên phần mềm hiện đang làm việc tại Amazon. Anh đã viết cuốn sách "Lập trình hướng dữ liệu trong Java" và tạo ra Gooey, một công cụ chuyển đổi hầu hết các chương trình dòng lệnh Python thành ứng dụng GUI đầy đủ chức năng chỉ với một dòng code. Bốn năm trước, Kiehl đã đăng một danh sách các chủ đề về phát triển phần mềm mà anh đã thay đổi quan điểm sau khi làm việc trong ngành công nghiệp. Đây là một bản cập nhật về quan điểm của Kiehl - những điều anh đã thay đổi suy nghĩ, những ý kiến anh đã tiếp thu trong quá trình làm việc, và những điều anh vẫn giữ nguyên quan điểm.
+Chris Kiehl, kỹ sư phần mềm tại Amazon, nhìn lại mười năm làm nghề qua ba danh sách ngắn, tiếp nối bài viết cùng chủ đề anh đăng bốn năm trước. Những điều anh đã đổi ý gồm: sự đơn giản không tự nhiên mà có mà phải liên tục vun đắp; chẳng có gì đáng tự hào khi quản lý được sự phức tạp; ngôn ngữ có kiểu tĩnh là thiết yếu với đội có trình độ không đồng đều; Java hay chính vì nó nhàm chán; phần lớn việc lập trình nên diễn ra trước khi viết dòng mã đầu tiên; sự "thanh lịch" không phải thước đo thật; quản lý giỏi là vô giá; và DynamoDB tốt nếu khối lượng công việc khớp đúng với thứ nó cung cấp.
+
+Anh cũng bổ sung những quan điểm mới: kỹ thuật phần mềm chủ yếu là giao tiếp; thấy việc gì dễ thường là dấu hiệu chưa hiểu nó; cần cho lập trình viên trẻ không gian để thử và sai; nên tránh ORM mà viết SQL trực tiếp; về lâu dài sẽ hối hận khi xây hệ thống trên Serverless Functions; khóa phân tán vẫn khó một cách khó hiểu; và mã kiểm thử thì không bao giờ thừa chú thích. Những điều anh vẫn giữ nguyên: độ phủ kiểm thử không phản ánh chất lượng mã, kiến trúc nguyên khối (monolith) vẫn ổn, microservice cần được biện minh chứ không nên mặc định, và hầu hết dự án không cần "mở rộng quy mô" như người ta tưởng.
 
 ## [Looking Under the Lamppost (On Problem-Solving)](https://edbatista.com/2025/01/looking-under-the-lamppost-on-problem-solving.html)
 
-Ed Batista mở đầu bài viết bằng một câu chuyện ngụ ngôn quen thuộc: một người đàn ông tìm chìa khóa dưới cột đèn, dù biết đã đánh rơi ở chỗ tối hơn. Câu chuyện này là phép ẩn dụ cho cách chúng ta thường tiếp cận việc giải quyết vấn đề. Thay vì đối mặt với vấn đề cần giải quyết, chúng ta lại tập trung vào vấn đề muốn giải quyết.
+Ed Batista mở đầu bằng một câu chuyện cười cũ: một người tìm chìa khóa dưới cột đèn đường dù đánh rơi ở ngoài sân, chỉ vì "chỗ này sáng hơn". Theo ông, đó chính là cách chúng ta hay giải quyết vấn đề: thay vì xử lý vấn đề cần phải giải quyết, ta chọn vấn đề mình muốn giải quyết. Lý do thường rất dễ hiểu: vấn đề thật nằm ngoài chuyên môn; nó cần quá nhiều thời gian trong khi ta muốn cảm thấy "năng suất" bằng cách gạch bớt những việc nhỏ; hoặc nó có thể không có lời giải khiến ta sợ thất bại và mất mặt.
 
-Tác giả chỉ ra một số lý do cho hành vi này: vấn đề thực sự có thể nằm ngoài vùng chuyên môn, tốn quá nhiều thời gian, hoặc thậm chí không có lời giải. Thay vì đối mặt với những khó khăn này, chúng ta chọn những vấn đề nhỏ, dễ giải quyết để cảm thấy "hiệu quả" hoặc để bảo vệ hình ảnh cá nhân.
-
-Tuy nhiên, việc này kìm hãm sự phát triển của chúng ta. Để mở rộng vùng an toàn, chúng ta cần bước ra khỏi nó. Sự dũng cảm không chỉ là tự tin vào khả năng thành công, mà còn là nhận thức rằng cái giá của việc không thử còn lớn hơn cái giá của thất bại.
-
-Thất bại không phải là điều đáng sợ, mà là cơ hội để học hỏi và loại trừ các khả năng. Vì vậy, đừng mãi tìm kiếm dưới ánh đèn, hãy dũng cảm đối mặt với bóng tối, nơi những giải pháp thực sự đang chờ đợi.
+Tác giả không khuyên tự trách bản thân, nhưng nhấn mạnh rằng nếu chỉ chọn những bài toán nhỏ, dễ và chắc chắn giải được, ta sẽ không bao giờ phát triển được năng lực nào khác; vùng an toàn chỉ nới rộng khi ta bước ra ngoài nó. Ông phân biệt: tự tin là phép tính về khả năng thành công, còn dũng cảm là nhận ra cái giá của việc không thử lớn hơn cái giá của thất bại. Khi xem thất bại là cơ hội học hỏi, là "loại trừ các khả năng" theo cách nói của Peter Attia, ta sẽ thấy cứ quanh quẩn dưới cột đèn mới là rủi ro thật sự, vì lời giải cho những vấn đề có ý nghĩa chỉ nằm ngoài kia, trong bóng tối.
 
 ## [Sliding Window Log Rate Limiter (Redis & Java)](https://foojay.io/today/sliding-window-log-rate-limiter-redis-java/)
 
-Bài viết này giới thiệu về Sliding Window Log Rate Limiter, một phương pháp chính xác để kiểm soát tốc độ xử lý request. Thay vì chia thời gian thành các khoảng cố định, phương pháp này ghi lại dấu thời gian của từng request, cho phép theo dõi request trong một khoảng thời gian trượt (rolling time period) như giây hoặc phút.
+Raphael De Lio hướng dẫn xây dựng bộ giới hạn tốc độ theo thuật toán Sliding Window Log bằng Redis và Java. Khác với Fixed Window Counter chia thời gian thành các khoảng cố định, thuật toán này ghi lại mốc thời gian của từng request và chỉ đếm những request nằm trong cửa sổ trượt (ví dụ một giây hay một phút gần nhất), nhờ vậy giới hạn được áp dụng mượt mà, không bị đặt lại đột ngột ở cuối mỗi khoảng. Từ Redis 8, lệnh `HEXPIRE` cho phép đặt thời gian hết hạn cho từng trường trong một hash, nên cách làm rất gọn: mỗi client có một hash riêng, mỗi request hợp lệ là một trường tự hết hạn sau độ dài cửa sổ, và `HLEN` cho biết số request hiện có; nếu đã chạm giới hạn thì request mới bị từ chối.
 
-Bài viết hướng dẫn cách triển khai Sliding Window Log sử dụng Redis và Java, tận dụng command `HEXPIRE` mới của Redis 8 để thiết lập thời gian hết hạn cho các field cụ thể trong một hash. Mỗi request (nếu được phép) sẽ được ghi lại bằng timestamp trong Redis hash. Sau đó, đếm số lượng request trong khoảng thời gian cho phép bằng command `HLEN`. Nếu vượt quá giới hạn, request mới sẽ bị từ chối.
-
-Tác giả cũng cung cấp code mẫu Java sử dụng thư viện Jedis để tương tác với Redis, cùng với các test case sử dụng Redis TestContainers, JUnit 5 và AssertJ để đảm bảo rate limiter hoạt động đúng như mong đợi trong nhiều tình huống khác nhau, như kiểm tra số lượng request trong giới hạn, vượt quá giới hạn, sau khi sliding window reset, và xử lý đồng thời nhiều client.
+Phần cài đặt dùng thư viện Jedis, trong đó `HSET` và `HEXPIRE` được gói trong một giao dịch (transaction) để thực thi cùng nhau, tránh tranh chấp dữ liệu và giảm số lượt đi về qua mạng; mỗi trường dùng một UUID ngẫu nhiên để không bị trùng khi nhiều request đến trong cùng một mili giây. Cuối bài, tác giả viết bộ kiểm thử với Redis TestContainers, JUnit 5 và AssertJ, bao quát các tình huống như trong giới hạn, vượt giới hạn, sau khi cửa sổ trượt qua và nhiều client truy cập đồng thời.
 
 ## [Project Loom: Structured Concurrency – Java](https://foojay.io/today/project-loom-structured-concurrency-java/)
 
-Bài viết giới thiệu về Structured Concurrency, một tính năng mới được giới thiệu trong Java 19 (incubator), Java 21 (preview) và Java 23 (preview) như là một phần của Project Loom. Structured Concurrency giúp đơn giản hóa việc lập trình concurrent bằng cách tạo ra trật tự và tính dễ đoán trong quản lý task.
+Mahendra Rao B giới thiệu Structured Concurrency, một tính năng thuộc Project Loom, xuất hiện lần đầu dưới dạng incubator trong Java 19 (JEP 428), rồi trở thành bản preview ở Java 21 (JEP 453) và Java 23 (JEP 480). Ý tưởng cốt lõi là khi một tác vụ chính tách thành nhiều tác vụ con chạy đồng thời, tác vụ chính chỉ tiếp tục khi các tác vụ con đã xong; nhờ đó quan hệ cha con giữa các tác vụ được giữ nguyên và các lỗi liên quan đến hủy bỏ hay tắt tác vụ giảm đi. Trước khi vào API, bài viết ôn lại các khái niệm nền như tiến trình, luồng, đồng bộ hóa, deadlock và semaphore.
 
-Structured Concurrency hoạt động bằng cách chia một task chính thành nhiều subtask đồng thời và task chính không thể hoàn thành cho đến khi các subtask này hoàn tất. API này bao gồm lớp StructuredTaskScope (trong java.util.concurrent), cho phép tạo các subtask bằng StructuredTaskScope::fork và đợi chúng hoàn thành bằng StructuredTaskScope::join.
-
-Bài viết cũng giới thiệu StructuredTaskScope.ShutdownOnSuccess (hủy các subtask khác khi một subtask thành công) và StructuredTaskScope.ShutdownOnFailure (hủy các subtask khác khi một subtask thất bại). Ngoài ra, có thể debug bằng lệnh jcmd.
-
-Lợi ích của Structured Concurrency bao gồm đơn giản hóa quản lý task, cải thiện khả năng xử lý lỗi, đảm bảo an toàn tài nguyên và tính dễ đoán. Tính năng này hứa hẹn mang lại các ứng dụng concurrent hiện đại, dễ bảo trì và hiệu quả hơn.
+Trung tâm của API là lớp `StructuredTaskScope` trong gói `java.util.concurrent`: tạo scope bằng try-with-resources, khởi chạy từng tác vụ con bằng `fork`, chờ bằng `join` rồi xử lý kết quả. Hai lớp con có sẵn là `ShutdownOnSuccess` (hủy các tác vụ còn lại khi một tác vụ thành công, phù hợp khi chỉ cần kết quả đầu tiên) và `ShutdownOnFailure` (hủy tất cả khi một tác vụ thất bại); bạn cũng có thể kế thừa lớp này để tự định nghĩa chính sách riêng. Để gỡ lỗi, lệnh `jcmd <PID> Thread.print -format=json` xuất thông tin các luồng dưới dạng JSON. Lợi ích chính là quản lý tác vụ đơn giản, xử lý lỗi nhất quán, tài nguyên được dọn dẹp tự động và không còn tác vụ nào bị bỏ quên chạy ngầm.
 
 ## [Taking Out the Trash in Java](https://medium.com/@benweidig/taking-out-the-trash-in-java-19bcc0c7bd0c)
 
-Bài viết này cung cấp một cái nhìn tổng quan về Garbage Collection (GC) trong Java, một cơ chế quản lý bộ nhớ tự động quan trọng của JVM. Thay vì yêu cầu developer tự quản lý việc cấp phát và giải phóng bộ nhớ, GC tự động xác định và thu hồi bộ nhớ không còn được sử dụng, giúp giảm thiểu lỗi và đơn giản hóa quá trình phát triển.
+Ben Weidig trình bày tổng quan về cơ chế thu gom rác (garbage collection, GC) của JVM: thay vì cấp phát và giải phóng bộ nhớ thủ công như C/C++, JVM tự tìm các đối tượng không còn được tham chiếu để thu hồi, nhưng việc này không miễn phí và có thể ảnh hưởng đến hiệu năng. Bài viết giải thích heap là nơi chứa đối tượng, được chia theo giả thuyết thế hệ thành Young Generation (Eden và hai vùng Survivor) và Old Generation, bên cạnh Metaspace thay cho PermGen từ Java 8; còn stack là vùng riêng của mỗi luồng, lưu các khung lời gọi phương thức. Minor GC diễn ra nhanh và khó nhận thấy, trong khi major GC có thể gây khoảng dừng "stop-the-world" đáng kể.
 
-Bài viết giải thích cách JVM chia bộ nhớ thành các vùng khác nhau như Heap (nơi lưu trữ đối tượng) và Stack (nơi quản lý các lời gọi phương thức và biến cục bộ). Heap lại được chia thành Young Generation (Eden Space và Survivor Spaces) cho các đối tượng mới tạo và Old Generation cho các đối tượng tồn tại lâu hơn.
-
-Bài viết cũng giới thiệu các loại GC khác nhau có sẵn trong JVM, bao gồm Serial GC, Parallel GC, G1 GC, ZGC, Shenandoah GC và Epsilon GC. Mỗi loại GC có các thuật toán và ưu tiên khác nhau, được tối ưu hóa cho các khối lượng công việc khác nhau. Ví dụ: ZGC được thiết kế để có độ trễ cực thấp, trong khi Parallel GC tập trung vào thông lượng cao.
-
-Cuối cùng, bài viết cung cấp các mẹo thực tế để giảm thiểu garbage, gỡ lỗi và phân tích GC, cũng như điều chỉnh các cài đặt GC để cải thiện hiệu suất ứng dụng.
+Tiếp theo, tác giả so sánh các bộ GC: Serial dành cho ứng dụng đơn luồng hoặc môi trường tài nguyên hạn chế, Parallel ưu tiên thông lượng, G1 chia heap thành nhiều vùng và là mặc định ở nhiều bản JDK, ZGC và Shenandoah hướng tới độ trễ cực thấp đổi lại tốn CPU hơn, còn Epsilon không thu gom gì và chủ yếu dùng để đo đạc. Phần cuối đưa ra lời khuyên thực tế: giảm tạo đối tượng thừa, chọn cấu trúc dữ liệu hợp lý, dùng try-with-resources, bật nhật ký GC và dùng các công cụ như VisualVM hay JDK Mission Control để phân tích trước khi tinh chỉnh kích thước heap và các tham số JVM.
 
 ## [How Precision Time Protocol handles leap seconds](https://engineering.fb.com/2025/02/03/production-engineering/how-precision-time-protocol-ptp-handles-leap-seconds/)
 
-Bài viết này thảo luận về cách Facebook (Meta) xử lý leap seconds (giây nhuận) trong hệ thống của họ, đặc biệt là với sự gia tăng của Precision Time Protocol (PTP) cho đồng bộ hóa thời gian chính xác trong các trung tâm dữ liệu.
+Meta giải thích cách họ xử lý giây nhuận (leap second) khi Precision Time Protocol (PTP) ngày càng đóng vai trò lớn trong việc đồng bộ thời gian ở trung tâm dữ liệu. Với NTP, vốn đồng bộ ở mức mili giây, Meta từng dùng kỹ thuật "smearing", tức điều chỉnh dần tốc độ đồng hồ để hấp thụ giây nhuận, theo công thức tuyến tính hoặc bậc hai. Nhưng PTP đạt độ chính xác tới mức nano giây, nên ngay cả smearing tuyến tính cũng tạo độ lệch quá lớn giữa các máy chủ.
 
-Trước đây, Meta sử dụng "leap second smearing" cho NTP (Network Time Protocol), nhưng với PTP, phương pháp này không còn phù hợp do yêu cầu độ chính xác cao hơn (nanosecond). Leap second smearing là quá trình điều chỉnh tốc độ đồng hồ để bù đắp cho giây nhuận.
-
-Giải pháp của Meta cho PTP là "self-smearing" bằng thư viện fbclock, sử dụng thuật toán dịch thời gian tự động, stateless và reproducible. Tuy nhiên, phương pháp này vẫn tạo ra sự khác biệt đáng kể giữa các host trong quá trình smearing.
-
-Do đó, Meta khuyến nghị sử dụng TAI (International Atomic Time) thay vì UTC (Coordinated Universal Time) để tránh phải xử lý giây nhuận. Tuy nhiên, trong nhiều trường hợp, việc chuyển đổi sang UTC vẫn cần thiết.
-
-Cuối cùng, Meta ủng hộ việc ngừng thêm giây nhuận sau năm 2035 để toàn ngành có thể dựa vào UTC, đơn giản hóa cơ sở hạ tầng và loại bỏ các giải pháp smearing khác nhau. Một tương lai không có giây nhuận sẽ giúp hệ thống đạt được độ chính xác thời gian cao hơn một cách dễ dàng và hiệu quả.
+Giải pháp của Meta là tự smearing ngay trong thư viện fbclock: mỗi lần được gọi trong giai đoạn smearing, thư viện dịch khoảng thời gian trả về theo một thuật toán không lưu trạng thái và có thể tái lập; dịch vụ vẫn dùng mốc TAI bên trong nhưng có thể trả về giờ UTC cho client. Dù vậy, cách này vẫn gây độ lệch đáng kể giữa các máy, có thể chênh hơn 100 micro giây so với nguồn NTP dùng smearing bậc hai, và khiến các tác vụ chạy định kỳ bị lệch lịch gần 1 mili giây. Vì thế Meta khuyên dùng TAI thay cho UTC khi có thể, dù việc chuyển sang UTC thường vẫn phải làm ở đâu đó, đồng thời ủng hộ đề xuất ngừng thêm giây nhuận sau năm 2035 để cả ngành có thể dựa vào UTC và đơn giản hóa hạ tầng.
 
 ## [Developer philosophy](https://qntm.org/devphilo)
 
-Bài viết này trình bày triết lý phát triển phần mềm của qntm, một nhà văn khoa học viễn tưởng và nhà phát triển phần mềm. Trong một buổi thảo luận với các nhà phát triển mới, qntm đã chia sẻ bảy nguyên tắc cốt lõi trong triết lý phát triển của mình:
+qntm, nhà văn khoa học viễn tưởng kiêm lập trình viên, ghi lại triết lý phát triển phần mềm mà anh chia sẻ trong một buổi nói chuyện với các lập trình viên mới vào nghề. Điều quan trọng nhất là đừng bao giờ để dự án rơi vào tình thế mà việc viết lại từ đầu trông hấp dẫn, vì khi đó sai lầm đã xảy ra từ lâu; hãy để ý các dấu hiệu như nợ kỹ thuật chồng chất, thay đổi đơn giản ngày càng khó, khó hướng dẫn người mới và những lỗi không ai hiểu. Anh cũng khuyên đặt mục tiêu xong 90% công việc trong 50% thời gian, vì viết mã chạy được mới chỉ là một nửa chặng đường; phần còn lại là trau chuốt, xử lý trường hợp biên, kiểm thử và tối ưu hiệu năng.
 
-1. **Tránh việc viết lại từ đầu**: Nếu việc viết lại toàn bộ dự án trở nên hấp dẫn, điều đó cho thấy đã có những sai lầm không thể tránh khỏi. Hãy theo dõi các dấu hiệu như nợ kỹ thuật tăng, khó khăn khi thay đổi code, và khó khăn khi ghi chú hoặc giới thiệu cho các nhà phát triển mới.
-
-2. **Hoàn thành 90% công việc trong 50% thời gian**: Nhiều dự án mất 90% thời gian cho 90% công việc đầu tiên và 90% thời gian còn lại cho 10% cuối cùng. Hãy sử dụng thời gian còn lại để cải thiện quy trình hoặc trả nợ kỹ thuật.
-
-3. **Tự động hóa các thói quen tốt**: Thay vì nhắc nhở mọi người thực hiện các hành vi tốt một cách thủ công, hãy tự động hóa chúng bằng cách thêm các kiểm tra tự động hoặc sửa lỗi tự động.
-
-4. **Tư duy về dữ liệu bệnh lý**: Thay vì chỉ tập trung vào trường hợp lý tưởng, hãy nghĩ về cách mọi thứ có thể thất bại và viết code để xử lý các trường hợp đó.
-
-5. **Luôn tìm cách viết code tốt hơn**: Nếu có thời gian, hãy xem xét lại code để tìm cách cải thiện.
-
-6. **Viết code có thể kiểm thử**: Code nên có giao diện rõ ràng và ít tác dụng phụ để dễ dàng kiểm thử.
-
-7. **Code không chỉ đúng mà còn phải rõ ràng và dễ hiểu**: Tránh code hoạt động "tình cờ" mà không có lý do rõ ràng. Code nên rõ ràng, dễ nhìn và dễ hiểu ngay cả khi không có lỗi.
-
-Bài viết này cung cấp một cái nhìn sâu sắc về cách tiếp cận phát triển phần mềm một cách hiệu quả và bền vững
+Các nguyên tắc tiếp theo gồm: tự động hóa thói quen tốt bằng kiểm thử hoặc công cụ tự sửa thay vì nhắc nhở thủ công; luôn nghĩ đến dữ liệu "bệnh lý" như request treo mãi, bảng một tỷ dòng hay chuỗi rỗng, vì xử lý trường hợp biên chính là công việc của lập trình viên; khi còn thời gian, hãy tìm cách viết đơn giản hơn; viết mã dễ kiểm thử với giao diện rõ ràng và ít tác dụng phụ; và chọn điểm cân bằng giữa microservice với kiến trúc nguyên khối, chỉ tách dịch vụ khi thật sự có lợi. Cuối cùng, mã không chỉ cần đúng về mặt lý thuyết mà phải đúng một cách hiển nhiên, dễ thấy, để việc thay đổi phần mã xung quanh sau này không trở nên nguy hiểm.
 
 ## Bonus
 
@@ -107,4 +71,4 @@ Bài viết này cung cấp một cái nhìn sâu sắc về cách tiếp cận 
 
 ---
 
-*Bài viết đã được review và cập nhật bởi Claude Code với Opus 4.7 (1M context).*
+*Bài viết đã được viết lại bởi Claude Code với Opus 5.5 vào ngày 27/09/2026.*

@@ -9,105 +9,54 @@ categories: ["Newsletter"]
 
 ## [The Ultimate List of Best Software Architecture Books (2026)](https://www.workingsoftware.dev/the-ultimate-list-of-software-architecture-books/?&aid=recmw058VtqAJCyyK)
 
-Software architecture là nền tảng cho sự phát triển thành công của các sản phẩm phần mềm. Một kiến trúc phần mềm được thiết kế tốt có thể tạo ra sự khác biệt lớn về chất lượng của hệ thống, giúp giảm thiểu rủi ro lỗi và dễ dàng thêm tính năng mới trong tương lai. Bài viết này giới thiệu danh sách các sách về kiến trúc phần mềm tốt nhất nên đọc trong năm 2026, cùng với những cuốn sách sắp được xuất bản.
+Kiến trúc phần mềm là nền tảng quyết định chất lượng của một sản phẩm: thiết kế tốt giúp giảm rủi ro lỗi và dễ dàng bổ sung tính năng về sau. Bài viết tổng hợp những cuốn sách về kiến trúc phần mềm đáng đọc nhất năm 2026, từ các cuốn kinh điển như "Fundamentals of Software Architecture" của Richards và Ford, "Software Architecture in Practice" (tái bản lần thứ tư), "Designing Data-Intensive Applications" hay "Enterprise Integration Patterns", cho tới các cuốn bám sát thực tiễn hiện đại như "Software Architecture: The Hard Parts" bàn về những đánh đổi trong hệ thống phân tán và "Building Multi-Tenant SaaS Architectures" dành cho nền tảng đám mây.
 
-**Điểm chính:**
-- "Architecture for Flow" của Susanne Kaiser kết hợp Wardley Mapping, Domain-Driven Design và Team Topologies để tạo ra hệ thống thích ứng
-- "Collaborative Software Design" hướng dẫn cách tham gia tất cả stakeholders vào quá trình thiết kế phần mềm
-- "Facilitating Software Architecture" cung cấp phương pháp luận cho kiến trúc sư và developer hợp tác hiệu quả
-- "Reviewing Software Systems" giới thiệu LASR - phương pháp đánh giá kiến trúc nhẹ nhàng
-- Các cuốn kinh điển như "Fundamentals of Software Architecture" và "Designing Data-Intensive Applications" vẫn còn giá trị
-- Nhiều cuốn sách mới sẽ ra mắt năm 2026 tập trung vào hiện đại hóa hệ thống legacy và mô hình C4
+Danh sách cũng chú trọng khía cạnh con người và tổ chức: "Architecture for Flow" của Susanne Kaiser kết hợp Wardley Mapping, Domain-Driven Design và Team Topologies để gắn chiến lược kinh doanh với kiến trúc; "The Software Architect Elevator" của Gregor Hohpe giúp kiến trúc sư làm cầu nối giữa kỹ thuật và kinh doanh; "Collaborative Software Design" hướng dẫn cách đưa mọi bên liên quan vào quá trình thiết kế; "Facilitating Software Architecture" và "Reviewing Software Systems" (với phương pháp đánh giá kiến trúc gọn nhẹ LASR) giúp kiến trúc sư và lập trình viên phối hợp hiệu quả hơn. Năm 2026 còn có hai cuốn mới đáng chờ đợi: "Domain-Driven Transformation" của Lilienthal và Schwentner với lộ trình hiện đại hóa hệ thống cũ, và "The C4 Model" của Simon Brown về cách truyền đạt kiến trúc bằng sơ đồ có cấu trúc.
 
 ## [How I use AI (Oct 2025)](https://ben.stolovitz.com/posts/how_use_ai_oct_2025/?utm_source=tldrnewsletter)
 
-Ben Stolovitz chia sẻ cách ông sử dụng AI trong công việc hàng ngày, đặc biệt là các LLMs. Ông chia sẻ kinh nghiệm thực tế về việc sử dụng AI trong coding, research, summarization, writing và art. Bài viết cung cấp một cái nhìn chân thực về điểm mạnh, điểm yếu của các công cụ AI hiện tại.
+Ben Stolovitz chia sẻ cách anh dùng AI, chủ yếu là các mô hình ngôn ngữ lớn (LLM), trong công việc hằng ngày tính đến tháng 10/2025. Lập trình là nơi AI tạo ra thay đổi lớn nhất: tính năng tự động gợi ý của GitHub Copilot được tác giả gọi là "kỳ diệu" khi hoàn thành những đoạn mã quen thuộc và giúp khám phá cách viết chuẩn mực của ngôn ngữ, dù không giỏi với thuật toán phức tạp. Chế độ agent ngày càng hữu ích cho những thay đổi lớn, nhưng vẫn cần kiểm thử chặt chẽ, tài liệu hướng dẫn rõ ràng và con người giám sát. Với việc tra cứu, AI rất giỏi tìm lại những bài viết khó nhớ hay giải thích các kiến thức phổ thông, nhưng lại kém khi tìm sản phẩm hoặc tài liệu nghiên cứu, và dễ bịa trích dẫn hay xác nhận bất kỳ giả định nào người dùng đưa ra.
 
-**Điểm chính:**
-- AI autocomplete (Copilot) thay đổi hoàn toàn cách coding - hoàn thành code đã biết và giúp khám phá patterns, nhưng không tốt với thuật toán phức tạp
-- Agent mode ngày càng hữu ích cho các thay đổi phức tạp nhưng vẫn cần giám sát con người
-- AI rất giỏi trong việc tìm kiếm "pub facts" và giải thích các khái niệm phổ biến, nhưng không đáng tin cậy cho tìm kiếm sản phẩm hay literature search
-- Summarization và transcription là điểm mạnh ấn tượng của AI - có thể tóm tắt hàng trăm trang trong vài phút
-- Tác giả không dùng AI để viết từ đầu, nhưng sử dụng như một editor "đáng sợ" giúp cải thiện văn bản
-- AI-generated art và music vẫn còn gây tranh cãi - dù có thể tạo ra nội dung thú vị nhưng thường thiếu sự kết nối con người
+Tóm tắt và chép lời là điểm mạnh ấn tượng: AI có thể cô đọng hàng trăm trang tài liệu hay cả một buổi họp chỉ trong vài phút. Ngược lại, tác giả không để AI viết thay mình vì coi blog là cách thể hiện bản thân; anh chỉ dùng AI như một biên tập viên khó tính để gợi ý từ ngữ tốt hơn, rồi tự viết lại theo ý mình. Với tranh ảnh và âm nhạc do AI tạo ra, anh dè dặt nhất, cho rằng chúng thiếu chiều sâu sáng tạo và sự kết nối giữa con người với nhau.
 
 ## [Stop Vibe Coding Your Unit Tests](https://www.andy-gallagher.com/blog/stop-vibe-coding-your-unit-tests/?utm_source=tldrnewsletter)
 
-Andy Gallagher cảnh báo về việc sử dụng LLMs để viết unit tests một cách tự động. Ông chỉ ra rằng LLMs có xu hướng viết quá nhiều tests và chỉ xác nhận những gì code làm, chứ không xác thực những gì code nên làm. Bài viết cung cấp ví dụ thực tế về một React component button và cách LLMs tạo ra hàng chục tests không cần thiết.
+Andy Gallagher cảnh báo về thói quen giao hẳn việc viết kiểm thử đơn vị (unit test) cho LLM mà không kiểm soát. Theo tác giả, LLM có xu hướng sinh ra quá nhiều kiểm thử và chỉ xác nhận những gì mã nguồn đang làm, thay vì kiểm tra những gì mã nguồn nên làm. Ví dụ với một component nút bấm React đơn giản, Claude Sonnet 4 tạo ra khoảng 30 kiểm thử dài chừng 200 dòng, phần lớn kiểm tra những điều hiển nhiên như hiển thị mặc định, giá trị props hay thuộc tính HTML, vốn đã được framework và thư viện đảm bảo. Các kiểm thử này "khóa chặt" mã nguồn vào cách cài đặt hiện tại khiến mỗi lần tái cấu trúc đều kéo theo hàng loạt chỉnh sửa, đồng thời chiếm chỗ trong cửa sổ ngữ cảnh của agent, làm nhiễu kết quả tìm kiếm ngữ nghĩa và biến các pull request thành gánh nặng cho đồng nghiệp khi xem xét.
 
-**Điểm chính:**
-- LLMs tạo ra quá nhiều unit tests không cần thiết - ví dụ Claude Sonnet 4 tạo ra ~30 tests (200 LOC) cho một button component đơn giản
-- Tests do LLM tạo thường chỉ verify implementation details thay vì validate behavior thực sự
-- Tests này làm code bị "khóa" vào implementation hiện tại, gây khó khăn khi refactor
-- LLMs không hỏi clarifying questions về "cần test gì" mà chỉ test tất cả mọi thứ
-- Các tests này tốn context window, làm loãng semantic search, và khiến coworkers ghét khi review PR lớn
-- Giải pháp: viết tests từng cái một, tập trung vào behavior quan trọng, keep it focused và brief
+Giải pháp tác giả đề xuất là viết từng kiểm thử một cách có chủ đích: nói rõ cần kiểm thử hành vi nào, đọc lại kết quả AI sinh ra và giữ các tệp kiểm thử ngắn gọn, tập trung. LLM vẫn làm tốt với mã nguồn mang tính thuật toán, trừu tượng, nhưng với mã sản phẩm thông thường, điều cần kiểm chứng là nhóm có đang xây dựng đúng thứ cần xây hay không. Nguyên tắc cốt lõi: ít mà chất.
 
 ## [Game design is simple, actually](https://www.raphkoster.com/2025/11/03/game-design-is-simple-actually/?utm_source=tldrnewsletter)
 
-Raph Koster trình bày một framework 12 bước toàn diện để hiểu về thiết kế game. Ông phân tích các khái niệm phức tạp thành những nguyên tắc dễ hiểu, từ bản chất của niềm vui đến sự phức tạp của các hệ thống game. Bài viết nhấn mạnh rằng game về cơ bản là về giải quyết vấn đề và làm chủ kỹ năng, với sự không chắc chắn và học hỏi là cốt lõi.
+Raph Koster trình bày một khung 12 bước để hiểu thiết kế game một cách có hệ thống. Theo ông, game về bản chất là việc làm chủ các vấn đề: niềm vui đến từ sự tiến bộ trong khả năng dự đoán, chứ không phải từ những hiệu ứng bề ngoài. Một món đồ chơi là hệ thống có ràng buộc; khi thêm mục tiêu, nó trở thành game, với cơ chế cốt lõi là một "đối tượng có vấn đề" cần giải quyết. Người chơi tương tác qua các vòng lặp: vòng vận hành (thao tác, nhận phản hồi, học hỏi) và vòng tiến triển, nơi tình huống liên tục leo thang và thay đổi để cách giải cũ không còn hiệu quả. Phản hồi tốt phải cho người chơi biết họ có thể làm gì, đã làm gì, kết quả ra sao và có tiến gần mục tiêu hay không, còn độ khó cần vừa sức học của họ.
 
-**Điểm chính:**
-- Fun thực chất là về việc làm tiến bộ dự đoán (mastery of problems) - không phải tất cả mọi thứ thú vị đều liên quan đến thiết kế game
-- Games được xây dựng từ toys (hệ thống có ràng buộc) bằng cách thêm goals - core mechanic là một "problematic object"
-- Games là machines xung quanh uncertainty - tốt nhất có nhiều depth, nhiều paths đến solution
-- Có 2 types của loops: operational loop (tương tác với problem) và progression loop/spiral (đối mặt với nhiều situations)
-- Feedback cần show: có thể làm gì, đã làm gì, kết quả là gì, và có giúp đạt goal không
-- Games được làm từ games - nhiều loops được nối lại thành economies và value chains
-- Game design là compound art form - cần cả system design và experience design (art, story, audio)
-- Designer cần hiểu motivations của players - không có game nào dành cho tất cả mọi người
+Ở tầng hệ thống, game được ghép từ nhiều game nhỏ hơn: các vòng lặp nối với nhau thành nền kinh tế và chuỗi giá trị. Cách trình bày vấn đề qua cốt truyện, hình ảnh, âm thanh và ẩn dụ ảnh hưởng mạnh tới trải nghiệm, nên thiết kế game là một loại hình nghệ thuật tổng hợp, đòi hỏi cả thiết kế hệ thống lẫn thiết kế trải nghiệm. Động lực của người chơi cũng rất khác nhau, vì vậy không có game nào dành cho tất cả mọi người. Các nguyên tắc nghe thì đơn giản, nhưng làm tốt đồng thời cả 12 điều mới là thử thách thực sự.
 
 ## [Architectural debt is not just technical debt](https://frederickvanbrabant.com/blog/2025-10-31-architectural-debt-is-not-just-technical-debt/?&aid=recufcl24hU9MXCJC)
 
-Frederick Van Brabant giải thích sự khác biệt giữa architectural debt và technical debt. Ông chỉ ra rằng architectural debt không chỉ giới hạn ở code level mà còn ảnh hưởng đến nhiều layer của tổ chức. Bài viết phân tích architectural debt ở ba layer chính: application/infrastructure, business, và strategy.
+Frederick Van Brabant phân biệt nợ kiến trúc (architectural debt) với nợ kỹ thuật (technical debt). Nợ kỹ thuật thường là những cách làm tạm bợ trong mã nguồn, còn nợ kiến trúc là các quyết định mang tính cấu trúc gây hậu quả lâu dài, vượt ra ngoài phạm vi mã nguồn. Tác giả phân tích nợ kiến trúc ở ba tầng. Ở tầng ứng dụng và hạ tầng, kiến trúc sư doanh nghiệp nên tập trung vào mô hình tích hợp, sự chồng chéo giữa các hệ thống và sự phụ thuộc vào nhà cung cấp, vì nợ ở đây làm chi phí tăng và thời gian bàn giao kéo dài. Tầng nghiệp vụ liên quan đến quyền sở hữu, trách nhiệm quản lý và các quy trình lỗi thời; tài liệu sai lệch có thể gây rắc rối nghiêm trọng khi làm việc với kiểm toán. Tầng chiến lược nguy hiểm nhất: năng lực được định nghĩa sai hay các khung làm việc áp dụng nửa vời sẽ dẫn tới những giả định sai lầm lan khắp tổ chức trong ba đến năm năm tới.
 
-**Điểm chính:**
-- Technical debt thường là temporary hacks, architectural debt là structural decisions gây vấn đề về sau
-- Enterprise architects nên tập trung vào integration patterns, system overlap, và vendor lock-in thay vì code details
-- Business layer debt liên quan đến ownership, stewardship, và outdated processes - documentation sai có thể gây vấn đề nghiêm trọng với auditors
-- Strategy layer debt nguy hiểm nhất - mis-defined capabilities hoặc half frameworks có thể dẫn đến wrong assumptions cho 3-5 năm tới
-- Enterprise architects có time và visibility để flag architectural debt - cần build case với AS-IS, TO-BE, và business case
-- Cần pick battles carefully - có thể tolerate debt ở innovation systems hơn là record systems
+Kiến trúc sư doanh nghiệp có đủ thời gian và tầm nhìn để phát hiện loại nợ này, nhưng chỉ cảnh báo thôi là chưa đủ: họ cần xây dựng lập luận thuyết phục gồm hiện trạng, trạng thái mong muốn và lợi ích kinh doanh, kèm số liệu để lãnh đạo đồng thuận. Tác giả cũng khuyên nên chọn trận chiến cẩn thận: có thể chấp nhận nợ ở các hệ thống thử nghiệm đổi mới hơn là ở hệ thống lưu trữ dữ liệu gốc, miễn là dọn dẹp khi giai đoạn thử nghiệm kết thúc, và phải bảo đảm có đủ nguồn lực để thực sự xử lý nợ.
 
 ## [The Search Problem: Why Your Computer Finds Things Faster Than You Do](https://deyaa1251.github.io/deyaa1251/posts/b_tree/?utm_source=bonobopress&utm_medium=newsletter&utm_campaign=2155)
 
-Bài viết này giải thích tại sao B-trees lại quan trọng trong các hệ thống hiện đại. Tác giả chia sẻ kinh nghiệm thực tế khi implement binary search tree và nhận ra nó sụp đổ khi thêm simulated disk I/O. B-tree được thiết kế đặc biệt cho disk-based operations với node size khớp với disk block.
+Bài viết giải thích vì sao B-tree lại quan trọng trong các hệ thống hiện đại. Tác giả kể lại trải nghiệm tự cài đặt cây tìm kiếm nhị phân (BST) và nhận ra nó sụp đổ khi mô phỏng thêm thao tác đọc ghi đĩa. Trên RAM, BST có độ phức tạp O(log n), nhưng trên đĩa mỗi tầng của cây là một lần đọc: tìm trong 100.000 tệp cần khoảng 17 lần đọc với BST, trong khi B-tree chỉ cần 3. Lý do là B-tree lưu nhiều khóa trong mỗi nút ("nút béo") với kích thước vừa khít một khối đĩa (4KB), nên cây rất thấp. Kết quả đo đạc càng rõ rệt: khi chèn tuần tự 100.000 phần tử, BST suy biến thành danh sách liên kết cao tới 40.000 tầng và mất khoảng 23,5 phút, còn B-tree chỉ cao 3 tầng và hoàn thành trong 3 giây.
 
-**Điểm chính:**
-- Binary search trees là O(log n) trong RAM nhưng rất tệ trên disk - mỗi level là một disk read
-- B-tree lưu trữ nhiều keys per node (fat nodes) - một node fits trong một disk block (4KB)
-- Benchmark cho thấy: 100,000 files, BST cần 1,410 seconds (23.5 phút) trong khi B-tree chỉ cần 3 seconds
-- B-trees guarantee predictable performance - không degenerate thành linked list như BST
-- Real-world usage: ext4, NTFS, APFS, databases (MySQL, PostgreSQL), Git, MongoDB đều dùng B-trees
-- Key insight: B-trees trade best-case performance cho worst-case guarantees - crucial cho production systems
+Nhờ bảo đảm hiệu năng ổn định trong trường hợp xấu nhất bất kể thứ tự dữ liệu, B-tree có mặt ở khắp nơi: hệ thống tệp ext4, NTFS, APFS, chỉ mục cơ sở dữ liệu như MySQL, PostgreSQL, MongoDB và cả Git. Bài học rút ra vượt ra ngoài cấu trúc dữ liệu: ngữ cảnh quyết định thiết kế tối ưu. B-tree đánh đổi hiệu năng ở trường hợp tốt nhất để lấy sự bảo đảm cho trường hợp xấu nhất, điều sống còn với các hệ thống chạy thực tế.
 
 ## [Kafka is fast -- I'll use Postgres](https://topicpartition.io/blog/postgres-pubsub-queue-benchmarks?utm_source=bonobopress&utm_medium=newsletter&utm_campaign=2155)
 
-Bài viết này so sánh hiệu năng của Postgres khi dùng làm pub/sub messaging system và queue so với các hệ thống chuyên dụng như Kafka. Tác giả thực hiện benchmarks chi tiết trên nhiều setup khác nhau và chỉ ra rằng Postgres có thể xử lý workloads khá lớn mà không cần đến distributed systems phức tạp.
+Bài viết đo đạc hiệu năng của Postgres khi dùng làm hệ thống pub/sub và hàng đợi, thay cho các hệ thống chuyên dụng như Kafka. Với tin nhắn 1 KiB ở mô hình pub/sub, một máy 4 vCPU đạt khoảng 5.000 tin mỗi giây khi ghi (4,8 MiB/s) và 24,6 MiB/s khi đọc với hệ số phân phối gấp 5, độ trễ p99 là 60ms. Cụm ba máy có sao chép dữ liệu vẫn giữ nguyên thông lượng, chỉ tăng độ trễ p99 lên 186ms. Một máy 96 vCPU đạt tới 238 MiB/s khi ghi và 1,16 GiB/s khi đọc mà chỉ dùng khoảng 10% CPU. Ở mô hình hàng đợi, máy 4 vCPU xử lý khoảng 2,81 MiB/s với độ trễ p99 17,7ms, còn máy 96 vCPU đạt 19,7 MiB/s.
 
-**Điểm chính:**
-- Postgres pub/sub benchmark: 1 node 4 vCPU đạt 4.8 MiB/s write, 24.6 MiB/s read (5x fanout)
-- 3-node replicated setup vẫn maintain throughput tốt với latency tăng từ 60ms thành 186ms p99
-- 96 vCPU single node đạt 238 MiB/s write và 1.16 GiB/s read - rất ấn tượng
-- Queue benchmark đạt 2.81 MiB/s throughput trên 4 vCPU node
-- Key insight: Postgres thường "good enough" cho 80% use cases với 20% effort
-- Organizational overhead của adopting new systems thường lớn hơn benefit ở small scale
-- "Just Use Postgres" movement đang ngày càng phổ biến vì simplicity và reliability
+Kết luận của tác giả là cứ dùng Postgres cho tới khi nó không đáp ứng nổi. Với phần lớn tổ chức hoạt động dưới quy mô vài megabyte mỗi giây, Postgres đủ tốt cho khoảng 80% trường hợp với 20% công sức, trong khi chi phí vận hành và gánh nặng tổ chức khi áp dụng một hệ thống mới thường lớn hơn lợi ích ở quy mô nhỏ. Đó cũng là lý do trào lưu "Just Use Postgres" ngày càng phổ biến nhờ sự đơn giản và tin cậy.
 
 ## [You Need To Become A Full Stack Person](https://den.dev/blog/full-stack-person/?utm_source=tldrnewsletter)
 
-Den Delimarsky lập luận về sự cần thiết của việc trở thành "full-stack person" trong kỷ nguyên AI. Ông chỉ ra rằng nhiều kỹ năng đang bị commoditized bởi LLMs, nhưng combo của creativity, critical thinking, và execution speed sẽ tạo ra career moat bền vững. Bài viết giới thiệu 9 kỹ năng cốt lõi cần phát triển.
+Den Delimarsky lập luận rằng trong kỷ nguyên AI, mỗi người cần trở thành một "người toàn diện" (full-stack person). Nhiều kỹ năng kỹ thuật đang bị LLM phổ thông hóa, nhưng sự kết hợp giữa óc sáng tạo, tư duy phản biện và tốc độ thực thi sẽ tạo thành lợi thế nghề nghiệp bền vững. Ranh giới giữa các vai trò đang dần mờ đi, thể hiện qua sự trỗi dậy của kỹ sư sản phẩm (product engineer), người đảm nhận cả giao diện, phía máy chủ lẫn việc thấu hiểu người dùng. Theo tác giả, mô hình chữ T (một thế mạnh chuyên sâu cùng nền tảng rộng) đã lỗi thời; thay vào đó là mô hình chữ Pi với hai thế mạnh chuyên sâu là cảm quan sản phẩm và tay nghề kỹ thuật, đặt trên một nền kiến thức liên ngành rộng.
 
-**Điểm chính:**
-- Role flattening đang xảy ra - ranh giới giữa các roles trở nên mờ đi với sự trỗi dậy của product engineer
-- T-shaped model (1 deep spike + broad base) đang chết, Pi-shaped model (2 deep spikes + broad base) là tương lai
-- 9 skills cần thiết: Creativity & Taste, Critical Thinking, Communications, Cross-Domain Knowledge, AI Augmentation, Product Sense, Execution Speed, Learning Agility, Systems Thinking, và Agency
-- AI không thay thế được taste và judgment - nó chỉ là "idea implementation vehicles"
-- Key insight: "AI lowers the cost of type it and it runs, but not the cost of choosing the right thing"
-- High agency - attitude "We'll figure this out - let's get to work" - là yếu tố khác biệt quan trọng
+Bài viết liệt kê mười kỹ năng cần rèn luyện: sáng tạo và gu thẩm mỹ, tư duy phản biện, giao tiếp, kiến thức liên ngành, tận dụng AI, cảm quan sản phẩm, tốc độ thực thi, khả năng học nhanh, tư duy hệ thống và tính chủ động. AI không thay thế được gu và khả năng phán đoán; nó chỉ là phương tiện hiện thực hóa ý tưởng, giúp giảm chi phí viết mã nhưng không giảm chi phí chọn đúng việc cần làm. Viết mã không còn là nút thắt, và thái độ chủ động kiểu "cứ bắt tay vào làm, rồi sẽ tìm ra cách" chính là yếu tố tạo nên khác biệt.
 
 **Đánh giá**: *Phần đầu iFlow CLI làm khá tốt, nhưng mà càng về sau thì càng lạm dụng tiếng Anh nhiều. Điểm cộng là iFlow CLI có thể access nhiều url, bằng cách bypass sử dụng proxy (Tuy nhiên proxy của Trung Quốc nên nhìn cũng hơi ghê). Trong quá trình sử dụng thì cũng thấy nhiều dòng để toàn tiếng Trung Quốc làm khó hiểu và hơi rén :v Mình sẽ cố gắng cải thiện AGENTS.md và thử lại sau.*
 
 ---
 
-*Bài viết đã được review và cập nhật bởi Claude Code với Opus 4.7 (1M context).*
+*Bài viết đã được viết lại bởi Claude Code với Opus 5.5 vào ngày 27/09/2026.*

@@ -9,156 +9,39 @@ categories: [ "Newsletter" ]
 
 ## [Performance Improvements in JDK 24](https://inside.java/2025/03/19/performance-improvements-in-jdk24/)
 
-JDK 24 đã được phát hành với nhiều cải tiến đáng kể về hiệu suất so với các phiên bản trước đó. Bài viết từ Inside.java đã tổng hợp những cải tiến quan trọng nhất trong phiên bản mới này.
+Bài viết trên Inside.java tổng hợp những cải tiến hiệu năng đáng chú ý nhất của JDK 24 so với JDK 23, liệt kê theo từng mục trong hệ thống theo dõi lỗi của JDK. Ở nhóm thư viện lõi, các thao tác hàng loạt của Foreign Function & Memory API như `MemorySegment::fill`, `copy` và `mismatch` giờ được xử lý bằng mã Java thuần khi vùng nhớ đủ nhỏ, tránh chi phí chuyển sang mã native qua Unsafe. Việc nối chuỗi chuyển sang dùng các lớp ẩn (hidden class) có thể lưu đệm và tái sử dụng thay vì dựng nhiều `MethodHandle` trung gian; các thuật toán SHA3 nhanh hơn tới 27% nhờ giảm chuyển đổi giữa mảng byte và mảng long; còn quá trình chuyển sang ClassFile API được tối ưu để giảm ảnh hưởng tới thời gian khởi động.
 
-Một trong những cải tiến nổi bật nhất là việc cải thiện Foreign Function & Memory API (FFM API) thông qua việc tối ưu hóa các thao tác bulk như `MemorySegment::fill`, `MemorySegment::copy` và `MemorySegment::mismatch`. Các thao tác này trước đây được thực hiện thông qua các phương thức Unsafe đòi hỏi chuyển đổi từ Java sang mã native. Với JDK 24, hệ thống sẽ kiểm tra kích thước segment và nếu đủ nhỏ, thao tác sẽ được thực hiện bằng mã Java thuần túy thay vì chuyển sang mã native, giúp cải thiện hiệu suất đáng kể.
-
-JDK 24 cũng giới thiệu một cải tiến quan trọng cho virtual threads thông qua JEP 491, cho phép đồng bộ hóa virtual threads mà không cần pinning. Trước đây, virtual threads bị pinned vào carrier thread của chúng trong quá trình đồng bộ hóa, nhưng giờ đây virtual threads có thể giải phóng carrier thread để các virtual thread khác sử dụng, cải thiện đáng kể khả năng mở rộng của mã Java sử dụng các phương thức và câu lệnh synchronized.
-
-Những điểm nổi bật khác bao gồm:
-
-* Cải thiện hiệu suất của các thuật toán SHA3 lên đến 27% bằng cách giảm chuyển đổi qua lại giữa mảng byte và mảng long
-* Cải thiện ClassFile API đang được hoàn thiện trong JDK 24, với nhiều tối ưu hóa để giảm tác động tiêu cực đến thời gian khởi động
-* Tăng tốc String::indexOf khoảng 1.3x cho các nền tảng x64 hỗ trợ AVX2 thông qua mã intrinsic chuyên biệt
-* JEP 483: Ahead-of-Time Class Loading & Linking, một phần của Project Leyden, giúp cải thiện thời gian khởi động và warmup
-* JEP 450: 8-byte Object Headers (Experimental) giúp giảm kích thước header của object từ 96-128 bit xuống còn 64 bit trên kiến trúc 64-bit, giảm tiêu thụ bộ nhớ từ 10% đến 20% cho các workload thông thường
-
-Ngoài ra, JDK 24 cũng mang đến nhiều cải tiến cho nền tảng RISC-V, bao gồm các intrinsic cho CRC32, Adler32 và tối ưu hóa hiệu suất của các thao tác so sánh chuỗi và đảo byte.
-
-Với những cải tiến này, JDK 24 tiếp tục khẳng định cam kết của Oracle và cộng đồng OpenJDK trong việc không ngừng cải thiện hiệu suất của Java, giúp ngôn ngữ này vẫn duy trì vị thế mạnh mẽ trong thế giới phát triển phần mềm hiện đại.
+Ở tầng runtime, JEP 491 cho phép virtual thread bị chặn trong khối `synchronized` nhả luồng mang (carrier thread) thay vì bị ghim cố định, giúp mã dùng `synchronized` mở rộng tốt hơn. `String::indexOf` nhanh hơn khoảng 1,3 lần trên nền tảng x64 hỗ trợ AVX2. JEP 483 (Ahead-of-Time Class Loading & Linking), sản phẩm đầu tiên của Project Leyden, dùng bộ nhớ đệm AOT để cải thiện thời gian khởi động khoảng 42% trong ví dụ của bài. JEP 450 thử nghiệm header đối tượng chỉ 8 byte, giúp giảm 10–20% bộ nhớ với các khối lượng công việc thông thường. Ngoài ra, nền tảng RISC-V cũng nhận thêm nhiều hàm intrinsic như CRC32, Adler32 cùng các tối ưu cho so sánh chuỗi và đảo byte.
 
 ## [Clean your Memory: From Finalize to Cleaner](https://blog.frankel.ch/java-cleaner/)
 
-Java cung cấp cơ chế Garbage Collection để quản lý bộ nhớ, nhưng cơ chế này không tự động dọn dẹp các tài nguyên ngoài bộ nhớ như socket hay file handle. Nếu không quản lý đúng cách, việc rò rỉ tài nguyên có thể xảy ra, dẫn đến suy giảm hiệu suất hoặc thậm chí crash ứng dụng. Cleaner API, được giới thiệu từ Java 9, cung cấp một cơ chế hiện đại và hiệu quả để dọn dẹp tài nguyên khi đối tượng không còn được tham chiếu.
+Stefano Fago giải thích rằng bộ thu gom rác (GC) của Java chỉ quản lý bộ nhớ, không tự giải phóng các tài nguyên bên ngoài như socket hay file handle; nếu quản lý sai, ứng dụng có thể rò rỉ tài nguyên, chậm dần hoặc sập. Cách cũ là ghi đè `finalize()`, nhưng phương thức này đã bị đánh dấu lỗi thời vì thời điểm chạy không đoán trước được, đối tượng phải qua thêm một chu kỳ GC mới được thu hồi, có thể gây rò rỉ nếu đối tượng vô tình bị giữ lại, và luồng Finalizer riêng dễ gây tranh chấp. Giải pháp thay thế là Cleaner API, có từ Java 9: bên dưới nó dùng `PhantomReference` cùng một luồng daemon nền, nhưng che giấu sự phức tạp của các lớp Reference. Bạn đăng ký đối tượng kèm một hành động dọn dẹp, và khi đối tượng không còn truy cập được, hành động đó được đưa vào hàng đợi để chạy trên luồng nền.
 
-Phương thức `finalize()` trước đây được sử dụng để giải phóng tài nguyên trước khi đối tượng bị thu gom, nhưng có nhiều vấn đề nghiêm trọng: thời điểm thực thi không thể dự đoán, gây tốn kém hiệu suất, tiềm ẩn nguy cơ rò rỉ bộ nhớ và cơ chế hàng đợi finalization có thể gây ra tình trạng tranh chấp thread. Đó là lý do tại sao `finalize()` đã bị deprecated và sẽ bị loại bỏ trong tương lai.
-
-Cleaner API hoạt động dựa trên cơ chế PhantomReference của Java, nhưng cung cấp một lớp trừu tượng dễ sử dụng hơn. Khi đăng ký một đối tượng với Cleaner, nó sẽ được theo dõi bởi một thread daemon nền. Khi đối tượng trở nên không thể truy cập, tác vụ dọn dẹp sẽ được đưa vào hàng đợi để thực thi trong thread nền này.
-
-Cách sử dụng Cleaner cơ bản như sau:
-
-* Tạo một instance của Cleaner thông qua phương thức `Cleaner.create()`
-* Định nghĩa một lớp hoặc đối tượng thực hiện interface Runnable để xử lý việc dọn dẹp
-* Đăng ký đối tượng cần quản lý với Cleaner thông qua phương thức `register()`
-* Khi đối tượng không còn được tham chiếu, tác vụ dọn dẹp sẽ tự động được thực thi
-
-Cleaner cũng có thể kết hợp với AutoCloseable để cung cấp cả cơ chế dọn dẹp tự động và thủ công. Trong trường hợp này, phương thức `close()` có thể gọi `cleanable.clean()` để kích hoạt việc dọn dẹp ngay lập tức.
-
-Tuy nhiên, cần lưu ý rằng Cleaner chỉ nên được sử dụng khi không thể giải phóng tài nguyên thông qua try-with-resources hoặc gọi phương thức close() một cách tường minh. Cleaner có chi phí cao hơn do sử dụng thread nền và cơ chế PhantomReference, vì vậy nên ưu tiên sử dụng try-with-resources khi có thể.
+Cleaner có thể kết hợp với `AutoCloseable`: phương thức `close()` gọi `clean()` để dọn dẹp ngay khi cần, còn Cleaner đóng vai trò lưới an toàn. Tuy vậy, tác giả nhấn mạnh chỉ nên dùng Cleaner khi không thể giải phóng tài nguyên bằng try-with-resources hoặc gọi `close()` tường minh, vì cơ chế này dọn dẹp bất đồng bộ và tốn chi phí hơn do cần luồng nền. Khi viết hành động dọn dẹp, nên tránh lambda vì dễ vô tình giữ tham chiếu tới chính đối tượng cần dọn, khiến nó không bao giờ được thu hồi; hành động cũng cần ngắn gọn và không chặn, vì nhiều hành động có thể chạy đồng thời trên cùng một Cleaner.
 
 ## [5 Hidden Git Tips for Java Developers](https://www.azul.com/blog/5-hidden-git-tips-for-java-developers/)
 
-Git là công cụ quản lý phiên bản không thể thiếu đối với các lập trình viên Java. Ngoài các lệnh cơ bản như git commit, git push và git pull, Git còn có nhiều tính năng ẩn có thể cải thiện đáng kể quy trình làm việc của bạn. Bài viết từ blog của Payara giới thiệu năm mẹo Git hữu ích dành riêng cho phát triển Java.
+Trên blog của Azul, Luqman Saeed giới thiệu năm tính năng ít được chú ý của Git, vượt ra ngoài bộ ba quen thuộc commit, push và pull, kèm ví dụ gắn với dự án Java. Đầu tiên là `git bisect`: khi không rõ commit nào gây lỗi, bạn đánh dấu commit hiện tại là xấu (`git bisect bad`) và một commit cũ còn chạy đúng là tốt (`git bisect good <commit-hash>`), rồi Git tìm kiếm nhị phân bằng cách lần lượt checkout commit ở giữa để bạn kiểm thử cho đến khi tìm ra thủ phạm; kết thúc bằng `git bisect reset`. Tiếp theo, `git blame <tên-tệp>` cho biết ai sửa từng dòng lần cuối và vào lúc nào (thêm cờ `-L 50,60` để chỉ xem một đoạn), giúp bạn hiểu bối cảnh trước khi gỡ lỗi hay tái cấu trúc. Khi phải chuyển việc giữa chừng, `git stash` cất tạm các thay đổi chưa commit và `git stash pop` lấy chúng lại; `git stash list` cùng `git stash apply <stash-id>` giúp quản lý nhiều lần cất.
 
-### 1. Sử dụng Git Bisect để tìm commit gây ra lỗi
-
-Khi làm việc với các dự án Java phức tạp, việc tìm ra commit chính xác đã gây ra lỗi có thể rất khó khăn. Lệnh `git bisect` thực hiện tìm kiếm nhị phân qua lịch sử commit để xác định commit có vấn đề. Quy trình hoạt động như sau:
-
-* Bắt đầu quá trình bisect với `git bisect start`
-* Đánh dấu commit hiện tại là "xấu" với `git bisect bad`
-* Đánh dấu một commit đã biết là "tốt" với `git bisect good <commit-hash>`
-* Git sẽ tự động checkout một commit ở giữa khoảng và bạn kiểm tra xem lỗi có tồn tại không
-* Tiếp tục đánh dấu các commit là "tốt" hoặc "xấu" cho đến khi Git xác định được commit gây ra lỗi
-* Kết thúc quá trình với `git bisect reset`
-
-### 2. Sử dụng git blame để hiểu các thay đổi trong mã
-
-Khi làm việc với codebase lớn, lệnh `git blame` giúp bạn xem ai đã sửa đổi mỗi dòng của một tệp và khi nào. Cách sử dụng:
-
-* Chạy `git blame <tên-tệp>` để xem hash commit, tác giả và ngày cho mỗi dòng
-* Sử dụng cờ -L để tập trung vào các dòng cụ thể: `git blame -L 50,60 <tên-tệp>`
-
-### 3. Sử dụng git stash để lưu tạm công việc chưa hoàn thành
-
-Khi cần chuyển đổi giữa các tác vụ, `git stash` cho phép bạn tạm thời lưu các thay đổi mà không cần commit:
-
-* Lưu tạm thời các thay đổi với `git stash`
-* Chuyển nhánh hoặc làm việc trên tác vụ khác
-* Áp dụng lại các thay đổi đã lưu với `git stash pop`
-* Sử dụng `git stash list` để xem tất cả các stash và `git stash apply <stash-id>` để áp dụng một stash cụ thể
-
-### 4. Tự động dọn dẹp với git clean
-
-Các dự án Java thường tạo ra nhiều tệp build (ví dụ: tệp .class, thư mục target/). Lệnh `git clean` giúp loại bỏ các tệp không được theo dõi:
-
-* Xem trước các tệp sẽ bị xóa với `git clean -n`
-* Xóa các tệp không được theo dõi với `git clean -f`
-* Xóa cả thư mục không được theo dõi với `git clean -fd`
-* Sử dụng `git clean -x` để xóa cả các tệp bị bỏ qua (ví dụ: .idea/ hoặc .classpath)
-
-### 5. Sử dụng git hooks để tự động hóa quy trình làm việc
-
-Git hooks là các script chạy tự động trước hoặc sau các sự kiện Git như commit, push hoặc merge:
-
-* Tạo hook script trong thư mục .git/hooks của repository
-* Làm cho script có thể thực thi với `chmod +x .git/hooks/<tên-hook>`
-* Thêm logic tùy chỉnh, ví dụ như chạy unit test trước khi commit
-
-Mẹo bổ sung: Sử dụng `git checkout -` để nhanh chóng chuyển đổi giữa các nhánh. Lệnh này cho phép bạn quay lại nhánh trước đó mà không cần gõ lại tên nhánh, tiết kiệm thời gian và giảm nguy cơ gõ sai khi chuyển nhánh.
+Với các tệp tạm do Maven hay Gradle sinh ra như `.class` hoặc thư mục `target/`, `git clean -n` cho xem trước, `-f` xóa tệp chưa theo dõi, `-fd` xóa cả thư mục, còn `-x` xóa luôn các tệp bị bỏ qua như `.idea/`. Cuối cùng, git hooks là các script tự chạy trước hoặc sau những sự kiện như commit, push hay merge; chẳng hạn một hook `pre-commit` đặt trong `.git/hooks` có thể chạy `mvn test` và hủy commit nếu kiểm thử thất bại. Mẹo bổ sung: `git checkout -` đưa bạn về nhánh vừa làm việc trước đó mà không cần gõ lại tên nhánh, vừa tiết kiệm thời gian vừa tránh gõ sai.
 
 ## [Simplify Your System by Challenging the Status-Quo and Learning from Other Ecosystems](https://www.infoq.com/podcasts/simplify-system-learning-ecosystems/)
 
-Trong podcast này, Max Rydahl Andersen, kỹ sư xuất sắc tại RedHat và người tạo ra JBang, thảo luận về cách học hỏi liên tục từ các hệ sinh thái khác và áp dụng các công cụ mới để đơn giản hóa tư duy và hệ thống của bạn. Điều này sẽ tăng cường niềm vui cho các lập trình viên và tạo ra các hệ thống an toàn và mạnh mẽ hơn.
+Trong podcast của InfoQ, Max Rydahl Andersen, Distinguished Engineer tại Red Hat và tác giả của JBang, kể rằng sau một năm tạm rời Java, khi quay lại ông nhận ra cộng đồng đã tích tụ quá nhiều độ phức tạp, giống như "một nghìn vết cắt giấy" (thousand paper cuts): mỗi tính năng nhỏ đều hữu ích nhưng cộng lại thành gánh nặng. Quarkus, dự án ông tham gia, đảo ngược cách làm truyền thống bằng cách dời phần lớn xử lý sang thời điểm build thay vì runtime, nhờ đó ứng dụng khởi động rất nhanh. Tốc độ này còn mở ra trải nghiệm phát triển tốt hơn: tải lại nóng (hot reload), kiểm thử liên tục, Dev Services tự dựng các dịch vụ như PostgreSQL hay Kafka, và giao diện chat để thử dịch vụ AI qua LangChain4J ngay trong Dev UI.
 
-Max chia sẻ rằng sau khi nghỉ một năm và thử nghiệm với các ngôn ngữ khác như Python, ông đã nhìn nhận lại Java với góc nhìn mới. Ông nhận ra rằng cộng đồng Java đã vô tình tạo ra quá nhiều độ phức tạp qua các năm, với mỗi tính năng nhỏ được thêm vào tạo ra cái gọi là "các vết cắt ngàn lần" (thousand paper cuts).
-
-Quarkus, dự án mà Max tham gia tại RedHat, đã đảo ngược cách tiếp cận này bằng cách chuyển hầu hết các xử lý sang thời điểm biên dịch (build time) thay vì thời điểm chạy (runtime). Điều này cho phép JVM khởi động trong vòng vài mili giây hoặc ít hơn một giây, và có thể áp dụng native image để tăng tốc hơn nữa. Đây là một sự thay đổi lớn so với cách tiếp cận truyền thống của các framework Java EE hoặc Spring.
-
-Ngoài việc cải thiện hiệu suất runtime, Quarkus còn mang đến trải nghiệm phát triển tốt hơn với các tính năng như:
-
-* Hot reload/live reload cho phép các lập trình viên thử nghiệm nhanh chóng
-* Kiểm tra liên tục (continuous testing) để phát hiện lỗi sớm
-* Dev services tự động tạo các dịch vụ cần thiết (như Postgres, Kafka) nếu chưa được cấu hình
-* Hỗ trợ tốt cho AI với LangChain4J và giao diện chat UI trong môi trường phát triển
-
-Max cũng thảo luận về JBang, một công cụ khác do ông tạo ra, được lấy cảm hứng từ các hệ sinh thái như Python và Node.js để đơn giản hóa việc khởi tạo và chạy các ứng dụng Java. Ông tuyên bố rằng nếu bạn tìm thấy bất kỳ môi trường phát triển nào trên thế giới dễ dàng cài đặt hơn JBang, đó sẽ được coi là một lỗi.
-
-Thông điệp chính của podcast là chúng ta nên thách thức hiện trạng, học hỏi từ các hệ sinh thái khác, và chấp nhận rằng một số việc có thể đơn giản hơn những gì chúng ta đã quen. Đặc biệt trong thời đại AI, việc đơn giản hóa các hệ thống không chỉ giúp các lập trình viên làm việc hiệu quả hơn mà còn tạo ra các hệ thống an toàn và bền vững hơn.
+Với JBang, ông lấy cảm hứng từ Python và Node.js để chạy Java chỉ từ một tệp duy nhất, thậm chí tự tải JDK nếu máy chưa cài; ông tuyên bố nếu tìm được môi trường phát triển nào dễ cài đặt hơn thì đó là lỗi của JBang. Max cũng cho rằng AI không thay thế được nền tảng kỹ thuật phần mềm và tư duy hệ thống, đồng thời cảnh báo AI sẽ giúp khai thác lỗ hổng (CVE) nhanh hơn, nên các hệ thống cũ cần được cập nhật thường xuyên hơn. Thông điệp chung của buổi trò chuyện: hãy thách thức hiện trạng và học hỏi từ các hệ sinh thái khác để giữ hệ thống đơn giản.
 
 ## [About "vibe coding"](https://tryingthings.wordpress.com/2025/03/24/about-vibe-coding/)
 
-Trong bài viết ngắn gọn này, tác giả Sorin Costea chia sẻ quan điểm của mình về xu hướng "vibe coding" - một cách gọi mới cho việc sử dụng AI để lập trình. Tác giả bày tỏ sự hoài nghi của mình đối với các công cụ AI trong phát triển phần mềm, đặc biệt sau khi đọc bài viết "Vibe coding vs Reality" và tự trải nghiệm với công cụ Cursor.
+Sorin Costea viết ngắn gọn về trào lưu "vibe coding", tức để AI viết mã nguồn thay cho lập trình viên. Sau khi đọc bài "Vibe coding vs Reality", ông thấy không chỉ riêng ông hoài nghi, vì chính ông đã thử Cursor với một dự án Java Maven và công cụ này thậm chí không đổi tên nổi một lớp: lúc thì chỉ đổi tên lớp mà không đổi tên tệp, lúc được yêu cầu lại thì tạo ra một tệp rỗng mang tên mới, và chuyện đó lặp lại hai lần.
 
-Tác giả mô tả trải nghiệm của mình khi sử dụng Cursor với một dự án Java Maven. Ông phát hiện rằng Cursor không thể thực hiện một thao tác cơ bản như đổi tên một lớp Java. Công cụ này hoặc chỉ đổi tên lớp mà không đổi tên tệp, hoặc khi được yêu cầu lại, nó tạo ra một tệp mới rỗng với tên mới. Điều này khiến tác giả mất lòng tin vào khả năng của công cụ này trong việc xử lý các dự án thực tế.
-
-Khi chia sẻ trải nghiệm này trên Hacker News, tác giả nhận được các phản hồi không mấy tích cực như "haha Java", khiến ông tự hỏi liệu Cursor chỉ được huấn luyện cho các framework frontend phổ biến hay những người ủng hộ nó không thực sự quan tâm đến các ứng dụng trong thế giới thực. Kết quả là tác giả đã gỡ cài đặt Cursor và xây dựng một thái độ hoài nghi đối với các giải pháp AI "kỳ diệu".
-
-Tác giả kết luận bài viết với câu "Nhưng năm sau? Chúng ta sẽ xem xét lại vào năm sau", thể hiện thái độ chờ đợi và sẵn sàng đánh giá lại các công nghệ AI trong tương lai khi chúng trưởng thành hơn.
+Khi chia sẻ trên Hacker News, ông chỉ nhận được những phản hồi kiểu "haha Java", khiến ông tự hỏi Cursor chỉ được huấn luyện cho các framework frontend thịnh hành hay những người ủng hộ nó không quan tâm đến ứng dụng thực tế. Kết quả là ông gỡ Cursor và càng hoài nghi các giải pháp AI "thần kỳ", dù vẫn để ngỏ khả năng thay đổi: "Nhưng năm sau? Năm sau sẽ biết."
 
 ## [Visual-Focused Algorithms Cheat Sheet](https://photonlines.substack.com/p/visual-focused-algorithms-cheat-sheet)
 
-Bài viết này cung cấp một tổng quan trực quan về các thuật toán quan trọng được sử dụng trong thế giới thực. Tác giả Nick M đã tập hợp một bảng tra cứu (cheat sheet) bao gồm nhiều loại thuật toán khác nhau, từ các thuật toán sắp xếp và tìm kiếm cơ bản đến các thuật toán phức tạp hơn trong học máy và bảo mật.
+Nick M tổng hợp một bảng tra cứu (cheat sheet) thiên về hình ảnh cho các thuật toán quan trọng được dùng trong thực tế, nối tiếp bảng tra cứu cấu trúc dữ liệu trước đó của ông; mỗi thuật toán được giải thích bằng ví dụ đời thường và hình minh họa. Phần sắp xếp đi từ Selection Sort và Insertion Sort, đơn giản nhưng có độ phức tạp O(n²), đến Heap Sort, Quick Sort và Merge Sort với O(n log n), rồi Tim Sort, thuật toán lai giữa Insertion Sort và Merge Sort được dùng trong Python và Java. Phần tìm kiếm gồm Binary Search với O(log n) cùng DFS và BFS để duyệt đồ thị theo chiều sâu và chiều rộng. Phần đồ thị trình bày Prim và Kruskal để tìm cây khung nhỏ nhất, Dijkstra và Bellman-Ford để tìm đường đi ngắn nhất (Bellman-Ford xử lý được cả trọng số âm), A* dùng hàm ước lượng (heuristic), cùng Union-Find và Ford-Fulkerson.
 
-Bảng tra cứu này được chia thành nhiều phần chính:
-
-### Thuật toán sắp xếp (Sorting Algorithms)
-
-Phần này giới thiệu các thuật toán sắp xếp phổ biến như:
-
-* **Selection Sort**: Thuật toán đơn giản liên tục tìm phần tử nhỏ nhất và đưa vào vị trí đúng, với độ phức tạp O(n²)
-* **Insertion Sort**: Sắp xếp bằng cách so sánh và chèn các phần tử vào vị trí thích hợp trong phần đã sắp xếp, cũng có độ phức tạp O(n²)
-* **Heap Sort**: Sử dụng cấu trúc dữ liệu binary heap để sắp xếp với độ phức tạp O(n log n)
-* **Quick Sort**: Thuật toán chia để trị hiệu quả cao với độ phức tạp trung bình O(n log n)
-* **Merge Sort**: Thuật toán ổn định chia để trị với độ phức tạp O(n log n)
-* **Tim Sort**: Thuật toán lai kết hợp Insertion Sort và Merge Sort, được sử dụng trong Python và Java
-
-### Thuật toán tìm kiếm (Search Algorithms)
-
-* **Binary Search**: Tìm kiếm nhanh trên mảng đã sắp xếp với độ phức tạp O(log n)
-* **Depth-First Search (DFS)**: Duyệt đồ thị theo chiều sâu, thích hợp cho việc khám phá sâu
-* **Breadth-First Search (BFS)**: Duyệt đồ thị theo chiều rộng, tốt cho việc tìm đường đi ngắn nhất
-
-### Thuật toán đồ thị (Graph Algorithms)
-
-* **Prim's Algorithm**: Tìm cây khung nhỏ nhất trong đồ thị có trọng số
-* **Kruskal's Algorithm**: Cũng tìm cây khung nhỏ nhất nhưng bằng cách sắp xếp các cạnh theo trọng số
-* **Dijkstra's Algorithm**: Tìm đường đi ngắn nhất từ một đỉnh đến tất cả các đỉnh khác trong đồ thị có trọng số không âm
-* **Bellman-Ford Algorithm**: Tương tự Dijkstra nhưng có thể xử lý cả trọng số âm
-* **A* Search**: Thuật toán tìm đường cải tiến từ Dijkstra, kết hợp tìm đường ngắn nhất và tìm kiếm dựa trên hế số ước lượng
-
-Bài viết cũng bao gồm các phần về thuật toán nén và mã hóa, thuật toán tối ưu, thuật toán học máy và khoa học dữ liệu, cũng như các thuật toán bảo mật và mã hóa. Đặc biệt, phần học máy giới thiệu các thuật toán như hồi quy (Linear, Logistic, và Polynomial), Support Vector Machines (SVMs), cây quyết định (Decision Trees) và các biến thể như Random Forest và Boosted Trees.
-
-Bảng tra cứu này là một tài nguyên quý giá cho cả sinh viên và các chuyên gia trong lĩnh vực công nghệ, cung cấp cái nhìn trực quan và dễ hiểu về các thuật toán quan trọng được sử dụng trong thực tế. Tác giả cũng đã bao gồm các tài liệu hữu ích cho việc chuẩn bị phỏng vấn công việc, với các mục như "14 Patterns to Ace Any Coding Interview" và "5 Simple Steps for Solving Dynamic Programming Problems".
+Các phần tiếp theo bao quát tìm kiếm chuỗi, nén và mã hóa dữ liệu (Huffman, LZ, biến đổi Fourier, nén ảnh JPEG), tối ưu hóa (Simplex, Simulated Annealing), học máy và khoa học dữ liệu, cùng các thuật toán bảo mật và mật mã. Cuối bài là mục tài liệu luyện phỏng vấn như "14 Patterns to Ace Any Coding Interview" và "5 Simple Steps for Solving Dynamic Programming Problems", rất hữu ích cho các bạn mới vào nghề đang chuẩn bị phỏng vấn.
 
 ## Bonus: Vài ảnh hay ho đến từ [ByteByteGo](https://bytebytego.com/)
 
@@ -169,4 +52,4 @@ Bảng tra cứu này là một tài nguyên quý giá cho cả sinh viên và c
 
 ---
 
-*Bài viết đã được review và cập nhật bởi Claude Code với Opus 4.7 (1M context).*
+*Bài viết đã được viết lại bởi Claude Code với Opus 5.5 vào ngày 27/09/2026.*

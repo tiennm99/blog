@@ -9,31 +9,15 @@ categories: [ "Newsletter" ]
 
 ## [Đã đến lúc nên cho Nix một cơ hội](https://maych.in/blog/its-time-to-give-nix-a-chance/)
 
-Nix là một trình quản lý gói hàm số (functional package manager) mang đến khả năng tái tạo môi trường phát triển hoàn toàn chính xác. Khác với các trình quản lý gói truyền thống, Nix lưu trữ các gói trong `/nix/store` với đường dẫn duy nhất được tạo ra từ mã băm mật mã học, đảm bảo tính bất biến và loại bỏ hoàn toàn xung đột phụ thuộc.
+Chinmay D. Pai cho rằng Nix xứng đáng được cân nhắc rộng rãi hơn. Khác với các trình quản lý gói truyền thống cài mọi thứ vào những thư mục dùng chung của hệ thống, Nix lưu từng gói trong kho bất biến `/nix/store` với đường dẫn duy nhất sinh ra từ mã băm SHA-256 của toàn bộ đầu vào khi xây dựng. Nhờ đó, nhiều phiên bản của cùng một phần mềm có thể cùng tồn tại mà không xung đột, mỗi gói mang theo đầy đủ cây phụ thuộc riêng. Tính năng flakes ghim chặt các phụ thuộc, bảo đảm lần xây dựng nào, ở máy nào cũng cho ra cùng một kết quả. Bạn còn có thể chạy thử công cụ mà không cần cài đặt qua `nix shell` hay `nix run`, trong khi kho bất biến và cấu trúc hệ thống tệp khác chuẩn giúp chặn nhiều hướng tấn công quen thuộc trên Linux.
 
-Điểm mạnh chính của Nix nằm ở khả năng cô lập gói hoàn toàn - nhiều phiên bản phần mềm có thể tồn tại song song mà không ảnh hưởng lẫn nhau. Mỗi gói đều chứa toàn bộ cây phụ thuộc của mình, giúp giải quyết vấn đề "hôm qua còn chạy được mà". Về bảo mật, kho lưu trữ bất biến ngăn chặn việc chỉnh sửa tệp nhị phân, sandbox trong quá trình xây dựng gói, và cấu trúc hệ thống tệp không chuẩn làm giảm các vector tấn công truyền thống.
-
-Tuy nhiên, Nix cũng có những thách thức không nhỏ. Đường cong học tập khá dốc do cần hiểu các khái niệm lập trình hàm phức tạp, việc debug rất khó khăn, và đòi hỏi đầu tư thời gian ban đầu đáng kể. Tác giả khuyến nghị Nix đặc biệt phù hợp với các nhóm có môi trường phát triển phức tạp, phát triển đa nền tảng, dự án yêu cầu tuân thủ nghiêm ngặt, và nghiên cứu thử nghiệm.
-
-**Điểm chính:**
-- Môi trường tái tạo tuyệt đối với kho lưu trữ bất biến
-- Cô lập gói hoàn toàn, nhiều phiên bản cùng tồn tại
-- Bảo mật nâng cao nhờ sandbox và cấu trúc hệ thống tệp độc đáo
-- Đường cong học tập dốc nhưng lợi ích dài hạn đáng kể
+Tác giả cũng thẳng thắn nêu nhược điểm: phải học một ngôn ngữ lập trình hàm mới, thông báo lỗi khó hiểu, việc gỡ lỗi đòi hỏi nắm rõ mô hình thực thi của Nix, phần mềm vốn giả định đường dẫn Linux chuẩn dễ gặp trục trặc, tốn dung lượng lưu trữ và tài liệu còn rời rạc. Để bắt đầu, tác giả gợi ý cài bằng Determinate Systems Installer, thử công cụ với `nix shell` rồi dựng một môi trường phát triển đơn giản. Nix phát huy giá trị nhất với các nhóm hay gặp cảnh môi trường mỗi máy một kiểu, quy trình làm quen dự án rườm rà, phát triển đa nền tảng hoặc có yêu cầu tuân thủ; còn với dự án nhỏ, phụ thuộc ổn định thì có thể chưa cần đến.
 
 ## [Bạn có thể chọn công cụ làm mình hạnh phúc](https://borretti.me/article/you-can-choose-tools-that-make-you-happy)
 
-Lập trình viên thường ẩn giấu động lực thật sự đằng sau việc chọn công nghệ bằng cách tạo ra những lý do kỹ thuật có vẻ hợp lý. Thực tế, những quyết định này thường xuất phát từ cảm xúc và sở thích cá nhân hơn là từ những cân nhắc thuần túy về mặt kỹ thuật.
+Bài viết lập luận rằng lựa chọn công nghệ của lập trình viên phần lớn đến từ cảm xúc chứ không thuần lý trí như họ vẫn nói. Người ta chọn công cụ theo thẩm mỹ và hình ảnh bản thân muốn hướng tới: dùng Emacs vì thấy mình thuộc giới tinh hoa trí tuệ, dùng NetBSD vì hợp với hình tượng nhân vật cyberpunk. Sau đó họ dựng lên những lý lẽ kỹ thuật để che đi động cơ thật, bằng các chiêu quen thuộc như xem nhẹ nhược điểm lớn của công cụ ít người dùng ("ừ thì phải tự viết một máy chủ HTTP"), bịa ra những ưu điểm đáng ngờ, hoặc chê bai mơ hồ các lựa chọn phổ biến kiểu "Docker quá phức tạp" hay "C++ rèn luyện bản lĩnh, còn Rust khiến bạn yếu đi".
 
-Lập trình viên chọn công nghệ dựa trên cảm giác thoải mái, sự quen thuộc, tính thẩm mỹ, hoặc thậm chí là những kết nối hoài niệm với lịch sử công nghệ. Có thể là do "vibe" của một công cụ khiến họ cảm thấy phù hợp với bản thân. Điều này hoàn toàn bình thường và có thể chấp nhận được.
-
-Tác giả khuyến khích các lập trình viên nên thành thật với bản thân về động lực thực sự của mình. Thay vì tạo ra những lý do kỹ thuật giả tạo, hãy thừa nhận rằng việc chọn công cụ có thể đơn giản chỉ vì nó làm bạn hạnh phúc. Cuộc đời ngắn ngủi, hãy sử dụng những công cụ mang lại niềm vui và ý nghĩa trong công việc.
-
-**Thông điệp chính:**
-- Động lực cảm xúc trong việc chọn công nghệ là điều bình thường
-- Hãy thành thật về lý do thực sự khiến bạn chọn một công cụ
-- Được phép sử dụng công cụ "lạ" nếu nó làm bạn hạnh phúc
-- Sự hài lòng cá nhân cũng quan trọng như tính thực tiễn
+Tác giả không phản đối việc chọn công cụ theo cảm xúc, miễn là đừng tự lừa mình và lừa người khác. Nếu chọn một thứ vì thẩm mỹ hay bản sắc, hãy theo đuổi nó trọn vẹn và có chủ đích; điều không nên là khẳng định SNOBOL có tương lai thực tế, hay nói với sếp rằng quyết định đó hoàn toàn dựa trên tính toán hợp lý. Thông điệp cốt lõi: bạn được phép chọn công cụ khiến mình hạnh phúc, chỉ cần thành thật về lý do. Tác giả cũng nhắc rằng đam mê cần đi kèm sự tỉnh táo, bởi những lựa chọn cực đoan tách rời lý trí có thể khiến bạn mất nhiều năm cho những hướng đi bế tắc.
 
 ## ~~[Ảo tưởng về Copilot](https://deplet.ing/the-copilot-delusion/)~~
 
@@ -51,84 +35,34 @@ Tác giả khuyến khích các lập trình viên nên thành thật với bả
 
 ## [Tại sao Cline không lập chỉ mục mã nguồn (và đó là điều tốt)](https://cline.bot/blog/why-cline-doesnt-index-your-codebase-and-why-thats-a-good-thing)
 
-Cline, một trợ lý lập trình AI, có cách tiếp cận khác biệt hoàn toàn so với các công cụ khác: không lập chỉ mục (indexing) mã nguồn. Bài viết giải thích lý do tại sao đây lại là một thiết kế thông minh và có lợi cho lập trình viên.
+Cline, một trợ lý lập trình AI, chủ động không dùng RAG hay lập chỉ mục mã nguồn, và bài viết giải thích vì sao đây là lựa chọn cho kết quả tốt hơn. Vấn đề đầu tiên là mã nguồn không vận hành theo từng mảnh: cắt nó thành các đoạn nhỏ sẽ phá vỡ mạch logic liên kết, giống như cố hiểu một bản giao hưởng qua vài đoạn nhạc ngẫu nhiên dài mười giây, trong khi mã nguồn lại không có ranh giới ngữ nghĩa rõ ràng như văn bản thông thường. Thứ hai, chỉ mục nhanh chóng lỗi thời vì mã nguồn liên tục được tái cấu trúc và cập nhật; một bản chụp cũ có thể khiến AI gợi ý những hàm không còn tồn tại hoặc bỏ sót thay đổi kiến trúc gần đây. Thứ ba, việc tạo vector embedding sinh ra một bản sao thứ cấp của tài sản trí tuệ, kéo theo nhu cầu lưu trữ và bảo mật bổ sung.
 
-Vấn đề với việc lập chỉ mục truyền thống là nó "xé nát logic của mã nguồn". Tác giả ví việc này như cố gắng hiểu một bản giao hưởng thông qua những đoạn nhạc ngẫu nhiên 10 giây. Mã nguồn có tính kết nối cao, việc chia nhỏ theo ngữ nghĩa rất khó khăn và thường phá vỡ mối liên hệ quan trọng giữa các phần.
-
-Hơn nữa, các chỉ mục nhanh chóng trở nên lỗi thời. Phát triển phần mềm di chuyển rất nhanh, và chỉ mục trở thành "ảnh chụp đóng băng trong thời gian", có thể không phản ánh đúng trạng thái hiện tại của mã nguồn. Điều này cũng tạo ra lỗ hổng bảo mật khi tạo ra "biểu diễn thứ cấp của tài sản trí tuệ có giá trị nhất".
-
-Thay vào đó, Cline sử dụng phương pháp "khám phá, không truy xuất" - đọc mã "từng tệp, từng kết nối", theo cấu trúc tự nhiên của mã như một lập trình viên thực thụ. Cách này tận dụng khung ngữ cảnh rộng lớn của các mô hình ngôn ngữ hiện đại để tạo ra "ngữ cảnh chất lượng cao" thông qua việc khám phá thông minh.
-
-**Ưu điểm của cách tiếp cận Cline:**
-- Không có RAG, embeddings hay cơ sở dữ liệu vector
-- Áp dụng trí tuệ trực tiếp lên mã nguồn
-- Duy trì hiểu biết ngữ cảnh mà không cần lập chỉ mục bên ngoài
-- Theo dõi cấu trúc mã tự nhiên như lập trình viên thực
+Thay vào đó, Cline làm việc như một lập trình viên giàu kinh nghiệm: khám phá mã nguồn một cách có hệ thống bằng cách lần theo các lệnh import và mối liên kết. Chẳng hạn khi sửa một hàm xử lý thanh toán, Cline lần theo import để tìm tiện ích xử lý lỗi tự viết, xem các hàm tương tự để nắm quy ước và kiểm tra nơi gọi hàm, qua đó xây dựng hiểu biết ngữ cảnh thay vì chỉ so khớp mẫu. Cách làm này khả thi nhờ khung ngữ cảnh rất lớn của các mô hình ngôn ngữ hiện đại, khiến bài toán chuyển từ lượng thông tin sang chất lượng thông tin: ưu tiên thấu hiểu hơn truy xuất.
 
 ## [Commit hoàn hảo](https://simonwillison.net/2022/Oct/29/the-perfect-commit/)
 
-Simon Willison chia sẻ triết lý về việc tạo ra những commit Git lý tưởng, một kỹ năng quan trọng mà nhiều lập trình viên thường bỏ qua. Một commit hoàn hảo cần bao gồm bốn yếu tố chính: triển khai (implementation), kiểm thử (tests), tài liệu (documentation), và liên kết đến issue.
+Simon Willison chia sẻ cách anh tổ chức công việc quanh khái niệm "commit hoàn hảo", xem mỗi commit là một đơn vị công việc được chuẩn bị kỹ chứ không chỉ là một điểm lưu tạm. Một commit như vậy gồm bốn phần: phần triển khai tập trung vào đúng một thay đổi, kiểm thử chứng minh nó hoạt động, tài liệu được cập nhật tương ứng và liên kết tới issue chứa ngữ cảnh. Theo anh, kiểm thử giúp tăng năng suất lâu dài vì cho phép thay đổi mã nguồn một cách tự tin và tránh lỗi hồi quy, nên mọi dự án nên bắt đầu với ít nhất một bài kiểm thử chạy thành công. Tài liệu, dù cho mô-đun Python, dịch vụ web hay công cụ dòng lệnh, cần nằm ngay trong kho mã để luôn đồng bộ với mã nguồn, có phiên bản rõ ràng và được xem xét cùng lúc với mã.
 
-Về mặt triển khai, mỗi commit nên tập trung vào một thay đổi duy nhất, giữ lịch sử commit tuyến tính và đảm bảo tính nguyên tử - có thể dễ dàng review và triển khai. Kiểm thử phải được bao gồm để chứng minh rằng code hoạt động đúng, tăng năng suất và sự tự tin trong việc thay đổi mã nguồn.
-
-Tài liệu cần được cập nhật trong cùng repository với mã nguồn, đảm bảo tính đáng tin cậy, có version, có thể review và kiểm tra được. Cuối cùng, mỗi commit nên có liên kết đến issue thread để cung cấp ngữ cảnh, bao gồm thông tin nền, quá trình ra quyết định, đoạn mã, ảnh chụp màn hình và prototype.
-
-Willison khuyến nghị rằng thông điệp commit có thể ngắn gọn chỉ một dòng với liên kết issue, vì ngữ cảnh chi tiết tốt hơn nên đặt trong issue thread. Không phải commit nào cũng cần "hoàn hảo" - với công việc thử nghiệm, có thể sử dụng nhánh với "WIP" commits rồi squash-merge thành commit sạch và toàn diện.
-
-**Nguyên tắc cốt lõi:**
-- Một thay đổi tập trung, có kiểm thử và tài liệu
-- Liên kết issue để cung cấp ngữ cảnh
-- Commit nguyên tử, dễ review và triển khai
-- Ưu tiên sự rõ ràng và ngắn gọn trong thông điệp
+Thay vì viết thông điệp commit dài, Willison đưa ngữ cảnh vào issue trên GitHub, nơi dễ tìm kiếm, hỗ trợ hình ảnh và dễ bổ sung về sau. Anh thừa nhận cách này đi ngược triết lý truyền thống của Git nhưng giúp anh làm việc hiệu quả hơn. Không phải commit nào cũng cần đủ bốn phần: sửa lỗi nhỏ hay lỗi chính tả trong tài liệu có thể bỏ qua một vài yếu tố. Với công việc thử nghiệm, hãy dùng nhánh riêng với các commit nháp rồi squash-merge thành một commit gọn gàng vào nhánh chính. Để duy trì thói quen này, anh dùng mẫu cookiecutter khởi tạo sẵn khung kiểm thử và GitHub Actions ngay từ đầu, minh họa qua các dự án mã nguồn mở như Datasette và sqlite-utils.
 
 ## [Khoảnh khắc Kanagawa của kỹ thuật phần mềm](https://pashabitz.substack.com/p/the-software-engineering-kawagara)
 
-Tác giả sử dụng hình ảnh bức tranh "Sóng lớn ở Kanagawa" để miêu tả làn sóng biến đổi mạnh mẽ đang tác động đến ngành kỹ thuật phần mềm. AI và tự động hóa lập trình đang tạo ra một cuộc cách mạng không kém gì cuộc cách mạng cơ giới hóa nông nghiệp trong quá khứ.
+Pasha dùng bức tranh khắc gỗ "Sóng lớn ngoài khơi Kanagawa" của Hokusai làm ẩn dụ cho làn sóng tự động hóa bằng AI đang định hình lại ngành kỹ thuật phần mềm. Theo tác giả, lập trình đặc biệt dễ bị tự động hóa vì có kho dữ liệu huấn luyện dồi dào, kết quả kiểm chứng được một cách khách quan và không vướng rào cản pháp lý như nhiều nghề khác. Các tác tử lập trình giờ đã vượt xa việc gợi ý hoàn thành mã, có thể biến một yêu cầu công việc thành pull request hoàn chỉnh. Tuyển dụng lập trình viên junior đã chững lại rõ rệt. Những việc rõ ràng, khép kín như tái cấu trúc hay viết kiểm thử đang được tự động hóa trước tiên.
 
-Các trợ lý lập trình AI hiện tại đã có thể chuyển đổi mô tả tác vụ thành mã nguồn hoàn chỉnh kèm kiểm thử và tài liệu. Điều này đặc biệt ảnh hưởng đến vai trò lập trình viên junior, những người thường được giao nhiệm vụ triển khai các chức năng cụ thể theo yêu cầu chi tiết.
-
-Thay vì chỉ tập trung vào việc viết mã, kỹ sư phần mềm cần chuyển hướng sang hiểu biết về bối cảnh sản phẩm và kinh doanh rộng hơn. Vai trò mới sẽ bao gồm: hiểu nhu cầu kinh doanh, thiết kế sản phẩm, kiến trúc hệ thống, và định nghĩa "đường ray" cùng ràng buộc cho dự án.
-
-Tác giả khuyến nghị các kỹ sư nên học cách làm chủ công việc "đường ray": thiết lập môi trường, quản lý phụ thuộc, và hiểu cách các công cụ và nền tảng kết nối với nhau. Đây không phải là sự kết thúc của kỹ thuật phần mềm, mà là sự kết thúc của một phiên bản cụ thể của nó.
-
-**Thông điệp chính:**
-- Vai trò lập trình viên đang chuyển từ viết mã sang hiểu nghiệp vụ
-- AI đang thay đổi cơ bản cách thức làm việc, không chỉ là công cụ hỗ trợ
-- Cần tập trung vào kiến trúc, thiết kế sản phẩm và quản lý hệ thống
-- Học cách thiết lập và quản lý "đường ray" cho dự án
+Phần việc còn lại cho con người là hiểu nhu cầu kinh doanh, thiết kế sản phẩm, dựng khung kỹ thuật và định ra quy ước viết mã, dù tác giả thừa nhận ranh giới này khá mong manh vì mô hình ngôn ngữ lớn rồi cũng có thể làm được. Lời khuyên cho mọi kỹ sư là chủ động dùng tác tử lập trình, rà soát quy trình để tìm chỗ tự động hóa và trau dồi hiểu biết về sản phẩm lẫn kinh doanh; riêng lập trình viên junior nên tập xây dựng sản phẩm từ đầu đến cuối, học hạ tầng triển khai và tìm hiểu cách sản phẩm thực tế được làm ra thay vì chỉ theo hướng dẫn. Kết luận khá thẳng thắn: làn sóng này không thể ngăn lại, và giống như cơ giới hóa nông nghiệp từng đẩy người lao động sang ngành khác, nó có thể xóa bỏ hàng triệu vị trí việc làm.
 
 ## [WebSockets đảm bảo thứ tự - vậy tại sao tin nhắn của tôi lại bị xáo trộn?](https://www.sitongpeng.com/writing/websockets-guarantee-order-so-why-are-my-messages-scrambled)
 
-Một vấn đề thú vị trong lập trình realtime: mặc dù WebSockets sử dụng TCP đảm bảo thứ tự tin nhắn, nhưng tại sao tin nhắn lại có thể xuất hiện không đúng thứ tự? Câu trả lời nằm ở việc xử lý bất đồng bộ trong JavaScript, không phải ở giao thức mạng.
+Bài viết kể lại một tình huống gỡ lỗi thú vị: tác giả thấy các tin nhắn WebSocket được ghi nhật ký sai thứ tự, dù WebSocket chạy trên TCP vốn bảo đảm thứ tự và việc chuyển phát tin nhắn. Thủ phạm không nằm ở giao thức mà ở tầng ứng dụng. Trình xử lý tin nhắn gọi `await blob.arrayBuffer()`, khiến việc thực thi tạm dừng trong lúc xử lý từng tin; vì mỗi tin mất thời gian khác nhau (từ 1 đến 5 giây), tin đến sau nhưng xử lý nhanh có thể hoàn tất trước tin đến trước nhưng xử lý chậm. Nói cách khác, TCP vẫn giao tin đúng thứ tự, chính mã xử lý bất đồng bộ đã xáo trộn chúng.
 
-Nguyên nhân chính là các thao tác bất đồng bộ như `await blob.arrayBuffer()` làm tạm dừng việc thực thi message handler. Khi các tin nhắn có thời gian xử lý khác nhau, JavaScript event loop cho phép chúng được xử lý không tuần tự. Điều này tạo ra tình huống tin nhắn đến đúng thứ tự nhưng kết quả xử lý lại bị đảo lộn.
-
-Tác giả đề xuất hai giải pháp: Thứ nhất là sử dụng message queue với `Promise.all()` để xử lý song song nhưng vẫn giữ thứ tự kết quả. Thứ hai là dùng async generator để xử lý từng tin nhắn một cách tuần tự - chậm hơn nhưng đảm bảo thứ tự nghiêm ngặt.
-
-Bài học quan trọng ở đây là "luôn đi sâu thêm một bước". Mặc dù TCP đảm bảo thứ tự, nhưng code ứng dụng vẫn có thể tự phá vỡ thứ tự đó. Đây là một ví dụ điển hình cho thấy hiểu biết sâu về cơ chế hoạt động của từng lớp trong hệ thống là vô cùng quan trọng.
-
-**Điểm chính:**
-- Vấn đề thứ tự không nằm ở WebSocket/TCP mà ở code xử lý bất đồng bộ
-- Sử dụng message queue với Promise.all() để xử lý song song
-- Dùng async generator cho xử lý tuần tự nghiêm ngặt
-- Hiểu rõ từng lớp trong hệ thống để tránh giả định sai lầm
+Tác giả đưa ra hai giải pháp. Cách thứ nhất gom tin nhắn vào một hàng đợi rồi xử lý theo lô năm tin bằng `Promise.all`, cho phép xử lý song song trong mỗi lô mà vẫn giữ đúng thứ tự kết quả. Cách thứ hai dùng async generator để xử lý tuần tự từng tin một, chậm hơn vì không song song nhưng bảo đảm thứ tự tuyệt đối khi logic ứng dụng đòi hỏi. Bài học rút ra là gỡ lỗi hệ thống nhiều tầng trừu tượng rất khó: ngay cả khi tầng giao thức đã bảo đảm độ tin cậy và thứ tự, cách xử lý đồng thời sai ở tầng ứng dụng vẫn có thể phá vỡ nó, nên cần phân biệt rõ hành vi ở từng tầng.
 
 ## [Tại sao các AI agent là những đối tác lập trình đôi tệ](https://justin.searls.co/posts/why-agents-are-bad-pair-programmers/)
 
-Justin Searls đưa ra một góc nhìn thú vị về việc tại sao các AI agent lại không phù hợp cho pair programming. Vấn đề cốt lõi là các agent "viết mã nhanh hơn con người suy nghĩ", tạo ra sự mất cân bằng trong quá trình cộng tác. Tốc độ này ngăn cản việc cộng tác có ý nghĩa và có thể dẫn đến việc xây dựng "sản phẩm sai" mà không có sự giám sát của con người.
+Justin Searls cho rằng các tác tử AI là những bạn lập trình đôi tệ vì chúng "viết mã nhanh hơn con người suy nghĩ". Tốc độ ấy làm sự cộng tác đổ vỡ: lập trình viên không theo kịp, dần mất tập trung và không còn hiểu những gì đang diễn ra. Cảm giác giống như ghép cặp với một người giành bàn phím rồi im lặng gõ liên tục. Khi tác tử gặp trở ngại, con người lại không đủ nắm bắt các quyết định trước đó để hỗ trợ; tệ hơn, tác tử có thể giải sai bài toán, để lại một đống phức tạp thừa mà lập trình viên phải dọn dẹp về sau.
 
-Pair programming hiệu quả đòi hỏi sự trao đổi, thảo luận và suy ngẫm chung. Khi AI agent hoạt động với tốc độ quá nhanh, nó phá vỡ bản chất cộng tác này, khiến lập trình viên trở thành người quan sát thụ động thay vì đối tác tích cực.
-
-Tác giả đề xuất một số cách tiếp cận tốt hơn: sử dụng quy trình làm việc bất đồng bộ như GitHub's Coding Agent với review pull request, sử dụng chế độ "Edit" hoặc "Ask" thay vì chế độ "Agent" hoàn toàn tự động. Các cải tiến được đề xuất bao gồm cho phép người dùng kiểm soát tốc độ tạo mã, kích hoạt tạm dừng để làm rõ trong quá trình làm việc, và thiết kế agent với nhiều sự nghi ngờ và ý định cộng tác hơn.
-
-Mục tiêu không phải là loại bỏ sự hỗ trợ của AI, mà là tạo ra những tương tác cân bằng và cộng tác hơn, tôn trọng quá trình nhận thức và ra quyết định của con người. Voice chat cũng được đề xuất như một cách tương tác tự nhiên hơn.
-
-**Thông điệp cốt lõi:**
-- AI agent viết mã nhanh hơn khả năng suy nghĩ của con người
-- Tốc độ quá nhanh phá vỡ bản chất cộng tác của pair programming
-- Cần thiết kế tương tác cân bằng, tôn trọng quá trình nhận thức con người
-- Quy trình bất đồng bộ và chế độ turn-based hiệu quả hơn
+Searls đề xuất hai hướng. Một là chuyển sang quy trình bất đồng bộ: giao cho tác tử những nhiệm vụ độc lập rồi xem xét kết quả qua pull request, như tính năng Coding Agent mới của GitHub. Hai là giảm tốc khi làm việc đồng bộ, dùng chế độ "Edit" hoặc "Ask" thay vì chế độ "Agent" tự động hoàn toàn; kiểu ghép cặp luân phiên với chế độ Edit, nơi bạn phải duyệt từng thay đổi, là cân bằng nhất. Ông cũng gợi ý các nhà phát triển công cụ bổ sung tùy chỉnh tốc độ sinh mã, cho phép tạm dừng để hỏi lại, giao diện phản ánh đúng công việc như tích hợp GitHub và danh sách việc cần làm, khiến tác tử bớt tự tin và trao đổi xác nhận thường xuyên hơn, cùng tính năng trò chuyện bằng giọng nói. Những thay đổi này sẽ biến tác tử thành đối tác cộng tác thực thụ thay vì một người chạy nước rút đơn độc.
 
 ---
 
-*Bài viết đã được review và cập nhật bởi Claude Code với Opus 4.7 (1M context).*
+*Bài viết đã được viết lại bởi Claude Code với Opus 5.5 vào ngày 27/09/2026.*
