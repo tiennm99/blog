@@ -9,63 +9,39 @@ categories: ["Newsletter"]
 
 ## [Automatic programming](https://antirez.com/news/159)
 
-Antirez - tác giả của Redis - chia sẻ góc nhìn thú vị về "lập trình tự động" (automatic programming), thuật ngữ ông dùng để mô tả quá trình viết phần mềm có sự hỗ trợ của AI. Ông phân biệt rõ giữa "vibe coding" (mô tả chung chung và để AI tự quyết định) với lập trình tự động thực sự, nơi người lập trình vẫn đóng vai trò chủ đạo trong việc định hướng, thiết kế và kiểm soát chất lượng.
+Antirez, tác giả của Redis, dùng thuật ngữ "lập trình tự động" (automatic programming) để gọi quá trình viết phần mềm với sự hỗ trợ của AI, và ông tin rằng chẳng bao lâu nữa đó sẽ chỉ đơn giản là "viết phần mềm". Ông tách bạch nó với "vibe coding": vibe coding là để mô hình ngôn ngữ tự sinh ra phần mềm từ một mô tả chung chung, người dùng gần như đứng ngoài quá trình và chỉ báo lại khi có gì đó không chạy. Lập trình tự động thì khác: người lập trình hiểu rõ chuyện gì đang diễn ra, liên tục định hướng mô hình theo tầm nhìn của mình ở nhiều cấp độ, từ kiến trúc tổng thể cho đến việc chỉ AI cách viết một hàm cụ thể, và quyết định cả việc *làm gì*. Vì thế cùng một mô hình nhưng kết quả sẽ rất khác nhau tùy vào người cầm lái.
 
-Antirez nhấn mạnh rằng khi sử dụng AI để viết phần mềm một cách có ý thức, mã nguồn tạo ra vẫn là của bạn và bạn có quyền tự hào về nó. Ông lấy ví dụ về Redis - không phải vì kỹ thuật phức tạp mà vì tầm nhìn và ý tưởng phía sau. Ngày nay, lập trình có thể tự động hóa, nhưng tầm nhìn thì chưa (và có thể chưa bao giờ).
-
-**Điểm chính:**
-- "Vibe coding" khác với lập trình tự động có chủ đích
-- AI là công cụ hỗ trợ, nhưng người lập trình vẫn nắm tầm nhìn và kiểm soát
-- Lập trình hiện nay đã tự động hóa được, nhưng tầm nhìn và ý tưởng vẫn là yếu tố then chốt
+Antirez khẳng định mã nguồn tạo ra theo cách đó là của bạn và bạn có quyền tự hào về nó. Dữ liệu huấn luyện ban đầu của mô hình vốn do con người tạo ra, nên đó giống một món quà tập thể hơn là thứ chiếm đoạt của người khác. Ông lấy Redis làm ví dụ: về mặt kỹ thuật, Redis không có nhiều điểm mới, chỉ là tập hợp các cấu trúc dữ liệu cơ bản và mã nguồn mạng mà lập trình viên hệ thống nào có năng lực cũng viết được; nó trở nên hữu ích nhờ ý tưởng và tầm nhìn bên trong. Kết luận của ông: lập trình giờ đã có thể tự động, còn tầm nhìn thì (hiện tại) vẫn chưa.
 
 ## [Software Performance Engineering: The Ideas I Keep Coming Back To](https://ricomariani.medium.com/software-performance-engineering-the-ideas-i-keep-coming-back-to-6f421b6a9505)
 
-Rico Mariani chia sẻ 8 nguyên lý cốt lõi về hiệu năng phần mềm mà ông thường xuyên quay lại trong suốt sự nghiệp. Bài viết nhấn mạnh rằng hiệu năng không phải về các thủ thuật hay mã nguồn thông minh, mà về tư duy hệ thống. Tác giả giải thích cách các vấn đề hiệu năng thực sự thường xuất phát từ hiệu ứng kiến trúc: quá nhiều cấp phát bộ nhớ, tính địa phương cache kém, đồng bộ hóa ngầm, hoặc tăng trưởng không kiểm soát - không phải từ một hàm chậm đơn lẻ. Ông cũng bàn về việc các abstraction giấu chi phí, tầm quan trọng của cost model so với API, và tại sao bộ nhớ mới là nút thắt thực sự. Bài viết kết luận bằng cách cảnh báo về sự suy giảm hiệu năng dần dần qua thời gian thông qua tích tụ các thay đổi nhỏ.
+Rico Mariani tổng kết 8 ý tưởng về kỹ thuật hiệu năng cứ lặp lại bất kể ngôn ngữ hay thời kỳ, với thông điệp chung: hiệu năng không nằm ở thủ thuật hay mã nguồn khéo léo mà ở cách tư duy. Trước hết, hiệu năng là vấn đề của cả hệ thống: các sự cố khó thường bắt nguồn từ kiến trúc như cấp phát bộ nhớ quá nhiều, tính cục bộ dữ liệu kém, đồng bộ hóa ngầm hay tăng trưởng không kiểm soát, chứ hiếm khi do một hàm chậm đơn lẻ. Các lớp trừu tượng (abstraction) không miễn phí mà chỉ che giấu chi phí, nên bạn cần biết chúng thực sự triển khai thành gì và chạy bao nhiêu lần. Mô hình chi phí quan trọng hơn API: hai API trông tương đương có thể chênh nhau 10 lần vì một bên cấp phát ở mỗi lần gọi hoặc chạm vào vùng nhớ nguội. Profiler chỉ cho biết thời gian tiêu tốn ở *đâu* chứ không phải *vì sao*.
 
-**Điểm chính:**
-- Hiệu năng là vấn đề hệ thống, không phải vấn đề dòng code
-- Abstraction không miễn phí - chúng chỉ giấu chi phí đi
-- Cost model quan trọng hơn API, bộ nhớ là nút thắt thực sự
-- Hiệu năng suy giảm dần dần qua hàng nghìn thay đổi nhỏ
+Bộ nhớ mới là nút thắt thực sự, vì khoảng cách tốc độ giữa CPU và bộ nhớ ngày càng lớn. Câu "tối ưu sớm là nguồn gốc của mọi tội lỗi" thường bị hiểu sai: vấn đề thật là thiết kế hệ thống mà không hề hiểu chi phí, dẫn đến "bi quan hóa sớm" (premature pessimization). Ngôn ngữ lập trình cũng định hình cách con người suy nghĩ về chi phí; ngôn ngữ thể hiện rõ quyền sở hữu và vòng đời dữ liệu giúp dễ suy luận hơn. Cuối cùng, hiệu năng suy giảm dần qua hàng nghìn thay đổi nhỏ gần như vô hình, nên cần định kỳ đối chiếu ý định thiết kế với thực tế.
 
 ## [Go's synctest is amazing](https://oblique.security/blog/go-synctest/)
 
-Bài viết giới thiệu gói `testing/synctest` mới trong Go 1.25 - một công cụ mạnh mẽ giúp kiểm thử các tác vụ bất đồng bộ và background loops một cách xác định. Tính năng nổi bật là khả năng "thao túng thời gian" - các test chạy trong một môi trường với đồng hồ ảo, giúp `time.Sleep` thực thi gần như tức thì. Nhưng giá trị thực sự của synctest nằm ở khả năng suy luận xác định về thứ tự sự kiện trong test. Tác giả minh họa cách synctest hoạt động bằng cách theo dõi khi nào tất cả goroutines bị "block" trên các thao tác như channel, wait group, hoặc time methods, từ đó advance thời gian chính xác để unblock chúng. Điều này không chỉ giúp test chạy nhanh hơn mà còn cho phép sử dụng thời gian để đồng bộ hóa một cách đáng tin cậy.
+Eric Chiang từ Oblique chia sẻ kinh nghiệm dùng gói `testing/synctest` của Go 1.25 để kiểm thử một phần mã nguồn đầy vòng lặp chạy nền, như xóa bản ghi hết hạn trong cơ sở dữ liệu hay bầu chọn leader giữa các instance. Điểm được nhắc đến nhiều nhất là synctest chạy kiểm thử trong một "bong bóng" với đồng hồ ảo, nên `time.Sleep` gần như hoàn tất tức thì. Nhưng theo tác giả, giá trị lớn hơn là khả năng suy luận một cách xác định về *thứ tự* các sự kiện. Synctest chỉ đẩy thời gian tới khi mọi goroutine trong bong bóng đều bị chặn, chủ yếu ở thao tác channel, wait group hoặc các hàm thời gian, rồi tiến đồng hồ vừa đủ để mở khóa lần gọi sleep ngắn nhất. Nhờ vậy có thể dùng thời gian làm công cụ đồng bộ hóa, điều vốn không nên làm trong chương trình thông thường; chẳng hạn một vòng lặp chờ mỗi phút sẽ luôn chạy đúng ba lần sau ba phút ảo.
 
-**Điểm chính:**
-- synctest cho phép test code có time.Sleep và background loops nhanh và đáng tin cậy
-- Time được advance khi tất cả goroutines bị block, cho phép kiểm soát xác định thứ tự sự kiện
-- Giải quyết vấn đề kiểm thử các vòng lặp background phức tạp như leader election
+Áp dụng vào thực tế, chỉ cần sleep lâu hơn chu kỳ của `RunDeleteExpiredSessions`, test sẽ biết chắc lần xóa phiên hết hạn đã hoàn tất trước khi kiểm tra kết quả, và toàn bộ test chạy chưa tới một giây. Nhóm của tác giả còn áp dụng synctest cho logic bầu chọn leader gồm hàng chục vòng lặp mà không phải sửa mã nguồn, dừng ở bất kỳ thời điểm nào để kiểm tra trạng thái cơ sở dữ liệu. Tác giả lưu ý vẫn cần hiểu thao tác nào được tính là bị chặn và đảm bảo mọi goroutine được dọn dẹp đúng cách.
 
 ## [Why Clean Architecture Confuses Everyone (And How I Learned to Stop Worrying)](https://dev.to/rpereira15/why-clean-architecture-confuses-everyone-and-how-i-learned-to-stop-worrying-1i5k)
 
-Bài viết giải thích tại sao Clean Architecture khiến nhiều người nhầm lẫn và cách tiếp cận thực tế hơn. Tác giả chỉ ra rằng vấn đề không nằm ở cấu trúc thư mục mà ở việc business logic bị phụ thuộc vào framework. Spring Boot và các framework khác khiến việc vi phạm nguyên tắc trở nên quá dễ dàng thông qua các annotation. Bài viết đề xuất tổ chức theo feature thay vì theo layer, và nhấn mạnh rằng business logic nên "nhàm chán" - không quan tâm đến cách lưu trữ dữ liệu hay framework nào được sử dụng. Tác giả chia sẻ bài học thực tế: đừng tạo interface chỉ vì "clean architecture cần ports và adapters", hãy tạo khi thực sự cần. Kiểm tra kiến trúc tốt qua khả năng thay đổi: bạn có thể switch database hoặc framework mà không chạm vào business logic không?
+Rômulo Pereira, với hơn 10 năm làm phần mềm, giải thích vì sao Clean Architecture khiến nhiều người bối rối: các nhóm tranh luận hàng giờ về cấu trúc thư mục mà bỏ lỡ điểm cốt lõi. Framework như Spring Boot khiến việc vi phạm nguyên tắc trở nên quá dễ, chỉ cần thêm một annotation là logic nghiệp vụ đã phụ thuộc vào JPA, Jackson và nhiều thứ khác. Cách tổ chức theo tầng kỹ thuật (controller, service, repository, model) cũng kéo bạn vào tư duy công nghệ; tổ chức theo tính năng (order, product, customer) giúp bạn nghĩ về việc hệ thống *làm gì*. Từ kinh nghiệm xây dựng hệ thống tính cước lưu lượng lớn và nền tảng dữ liệu thời gian thực, tác giả cho rằng logic nghiệp vụ nên "nhàm chán": không quan tâm dữ liệu lưu ở đâu, yêu cầu đến qua REST hay hàng đợi thông điệp, hay dùng framework nào. Đừng tạo interface chỉ vì "clean architecture cần ports và adapters"; interface chỉ có đúng một cài đặt mãi mãi thì chỉ là nghi thức.
 
-**Điểm chính:**
-- Clean architecture không phải về folder, mà về tách biệt business logic khỏi framework
-- Tổ chức theo feature thay vì layer để tư duy về business capabilities
-- Business logic nên không phụ thuộc database, framework hay cách request đến
-- Kiểm tra kiến trúc qua khả năng thay đổi dễ dàng khi yêu cầu thay đổi
+Phép thử thực sự là khả năng thay đổi: bạn có thể đổi cơ sở dữ liệu, chuyển REST sang GraphQL hay thay framework mà không đụng vào logic nghiệp vụ không? Cách tác giả làm là viết các use case thuần túy không annotation, rồi đặt phần Spring ở ranh giới hệ thống. Thay vì tranh cãi về tên package, hãy tự hỏi logic nghiệp vụ có dễ kiểm thử không, mỗi lần nâng cấp framework phải sửa bao nhiêu file, và người mới có hiểu được hệ thống làm gì không. Hãy bắt đầu đơn giản, giữ quy tắc nghiệp vụ sạch sẽ và kiểm thử chúng mà không cần giả lập cả thế giới.
 
 ## [The third golden age of software engineering – thanks to AI](https://newsletter.pragmaticengineer.com/p/the-third-golden-age-of-software)
 
-Grady Booch - người đồng sáng tạo UML và Chief Scientist cho Software Engineering tại IBM - chia sẻ góc nhìn về ba "thời kỳ hoàng kim" của kỹ thuật phần mềm. Thời kỳ đầu tiên về thuật toán (1940s-1970s), thời kỳ thứ hai về abstraction hướng đối tượng (1970s-2000s), và thời kỳ thứ ba hiện nay về hệ thống - bắt đầu với sự trỗi dậy của abstraction từ components sang toàn bộ libraries, platforms, và packages. Ông khẳng định các công cụ AI coding chỉ là sự gia tăng mức abstraction khác, không phải là sự kết thúc của kỹ thuật phần mềm. AI hiện tại chủ yếu được huấn luyện trên các pattern đã biết, đặc biệt tốt với các hệ thống CRUD web, nhưng biên giới của computing rộng lớn hơn nhiều. Grady nhấn mạnh rằng foundational knowledge trở nên quan trọng hơn khi lĩnh vực này phát triển với tốc độ khó hiểu.
+Trong tập podcast này của The Pragmatic Engineer, Gergely Orosz trò chuyện với Grady Booch, người đồng sáng tạo UML và là Chief Scientist về kỹ thuật phần mềm tại IBM. Booch chia lịch sử ngành thành ba "thời kỳ hoàng kim": thời kỳ thứ nhất xoay quanh thuật toán (thập niên 1940 đến 1970), thời kỳ thứ hai là các lớp trừu tượng hướng đối tượng (1970 đến 2000), và thời kỳ thứ ba hiện nay là về hệ thống. Thời kỳ này bắt đầu khi mức trừu tượng nâng lên thành cả thư viện và nền tảng, chứ không phải từ làn sóng AI. Ông nhắc rằng khủng hoảng hiện sinh chẳng có gì mới: khi trình biên dịch và ngôn ngữ bậc cao ra đời, lập trình viên cũng từng sợ bị thay thế, và nghề vẫn tiến hóa. Các công cụ AI lập trình chỉ là thêm một bước nâng mức trừu tượng; theo ông, "công cụ thay đổi, nhưng vấn đề thì không".
 
-**Điểm chính:**
-- Chúng ta đang ở giữa thời kỳ hoàng kim thứ ba của kỹ thuật phần mềm - về hệ thống, không phải AI
-- AI coding tools là sự gia tăng abstraction, giống như compilers trước đó, không thay thế kỹ sư
-- Deep foundational knowledge trở nên quan trọng hơn khi ngành phát triển nhanh
-- Cơ hội để bay lên, không phải sợ hãi vực thẳm
+Booch nhận xét các công cụ AI hiện tại chủ yếu được huấn luyện trên những bài toán đã gặp đi gặp lại, nên rất giỏi tự động hóa các mẫu quen thuộc như hệ thống CRUD trên web, trong khi biên giới của ngành điện toán rộng lớn hơn nhiều. Khi lĩnh vực thay đổi với tốc độ chóng mặt, nền tảng kiến thức vững chắc càng trở nên quan trọng. Ông cũng thừa nhận quy trình phân phối phần mềm là mục tiêu dễ tự động hóa nhất, nên người làm các vai trò này cần học lại kỹ năng. Lời kết của ông: đây là lúc để bay lên, không phải để sợ hãi vực thẳm.
 
 ## [AI coding workflow](https://newsletter.systemdesign.one/p/ai-coding-workflow)
 
-Bài viết chia sẻ một quy trình thực tế để sử dụng AI coding hiệu quả, không phải như một "máy bán hàng tự động" mà paste vấn đề và nhận giải pháp. Tác giả nhấn mạnh rằng AI hoạt động tốt nhất trong một vòng lặp lặp lại, không phải yêu cầu một lần. Workflow cốt lõi gồm 6 bước: Context (chia sẻ project background và constraints), Plan (hỏi chiến lược trước khi viết code), Code (generate hoặc edit code từng bước), Review (kiểm tra kỹ output), Test (chạy tests và generate tests mới), và Iterate (debug và refine). Bài viết cũng chia sẻ các pattern prompt hữu ích và cách tránh các lỗi phổ biến như context quá dài hoặc để AI hallucinate APIs không tồn tại.
+Trong bài viết khách mời trên The System Design Newsletter, Louis-François Bouchard chia sẻ quy trình giúp ông dùng AI lập trình hiệu quả, sau khi nhận ra AI không phải "máy bán hàng tự động" cứ dán vấn đề vào là nhận lời giải chạy được. Mô hình tư duy cốt lõi: AI giống một đồng đội thông minh vừa gia nhập dự án năm phút trước, viết rất nhanh nhưng không biết kiến trúc, quy ước hay ràng buộc của bạn nếu bạn không nói. AI hoạt động tốt nhất trong một vòng lặp gồm sáu bước: Context (cung cấp README, tệp quy tắc như `AGENTS.md` hay `CLAUDE.md`, mã nguồn liên quan kèm stack trace hoặc log), Plan (yêu cầu chiến lược trước khi viết mã, vì sửa kế hoạch rẻ hơn gỡ mã), Code (thay đổi từng bước nhỏ để dễ xem xét), Review, Test và Iterate.
 
-**Điểm chính:**
-- AI hoạt động tốt nhất trong vòng lặp lặp lại, không phải yêu cầu một lần
-- Context và Plan trước khi Code là quan trọng nhất để tránh AI đoán
-- Tách biệt roles (Planner, Implementer, Tester, Explainer) giúp output tốt hơn
-- Tests và reviews là safety net bắt bugs và halllucinations của AI
+Tác giả còn áp dụng một dạng đa tác tử gọn nhẹ với bốn vai trò: Planner chia nhỏ nhiệm vụ và chỉ ra trường hợp biên, Implementer viết mã đúng theo kế hoạch đã duyệt, Tester viết kiểm thử, và Explainer tóm tắt những gì đã thay đổi cùng lý do. Ông dùng mô hình suy luận mạnh cho vai trò lập kế hoạch và mô hình nhanh hơn để hiện thực. Bài viết cũng liệt kê các lỗi thường gặp như ngữ cảnh bị trôi trong cuộc trò chuyện dài, API sai phiên bản, vòng lặp gỡ lỗi đi chệch hướng, chất lượng mã nguồn giảm dần và phụ thuộc quá mức vào AI. Nguyên tắc chung: coi kết quả của AI là bản nháp, và luôn dùng review cùng kiểm thử làm lưới an toàn.
 
 ### Bonus
 
@@ -75,4 +51,4 @@ Bài viết chia sẻ một quy trình thực tế để sử dụng AI coding h
 
 ---
 
-*Bài viết đã được review và cập nhật bởi Claude Code với Opus 4.7 (1M context).*
+*Bài viết đã được viết lại bởi Claude Code với Opus 5.5 vào ngày 27/09/2026.*

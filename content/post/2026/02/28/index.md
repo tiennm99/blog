@@ -9,120 +9,51 @@ categories: ["Newsletter"]
 
 ## [How I Use Claude Code](https://boristane.com/blog/how-i-use-claude-code/)
 
-Tác giả chia sẻ quy trình làm việc hiệu quả khi sử dụng Claude Code trong 9 tháng qua, với một nguyên tắc cốt lõi: không bao giờ để Claude viết mã cho đến khi bạn đã xem xét và phê duyệt một kế hoạch viết tay. Phương pháp này tách biệt hai giai đoạn tư duy và thực thi, giúp ngăn chặn sự lãng phí công sức, giữ người lập trình kiểm soát các quyết định kiến trúc, và tạo ra kết quả tốt hơn nhiều.
+Boris Tane chia sẻ quy trình anh đã dùng với Claude Code suốt khoảng 9 tháng, xoay quanh một nguyên tắc: không bao giờ để Claude viết mã khi chưa có bản kế hoạch bằng văn bản được đọc kỹ và phê duyệt. Cách này giữ quyền quyết định kiến trúc trong tay lập trình viên và cho kết quả tốt hơn hẳn. Ở bước nghiên cứu, tác giả yêu cầu Claude đọc "thật sâu" phần mã nguồn liên quan rồi ghi lại hiểu biết vào tệp `research.md`; thiếu những từ nhấn mạnh như vậy, Claude sẽ chỉ đọc lướt. Tệp này giúp kiểm tra Claude có hiểu đúng hệ thống không, vì lỗi đắt nhất khi lập trình cùng AI là những thay đổi chạy được riêng lẻ nhưng phá vỡ phần còn lại.
 
-Quy trình được chia thành ba giai đoạn chính. Giai đoạn Nghiên cứu bắt đầu bằng việc yêu cầu Claude đọc sâu phần cơ sở mã liên quan và viết báo cáo chi tiết vào tệp `research.md`. Giai đoạn Lập kế hoạch tạo ra tệp `plan.md` với hướng dẫn triển khai cụ thể. Điều thú vị nhất là Vòng lặp ghi chú (Annotation Cycle) - tác giả mở tệp kế hoạch trong trình soạn thảo và thêm ghi chú trực tiếp vào tài liệu để sửa các giả định sai, từ chối phương án không phù hợp, hoặc bổ sung kiến thức lĩnh vực. Quá trình này lặp lại 1-6 lần cho đến khi kế hoạch hoàn chỉnh.
-
-Giai đoạn Triển khai diễn ra sau khi mọi quyết định đã được xác nhận, với câu lệnh chuẩn yêu cầu Claude thực thi toàn bộ kế hoạch, đánh dấu hoàn thành từng tác vụ, chạy kiểm tra kiểu liên tục, và không dừng cho đến khi tất cả hoàn thành. Tác giả nhấn mạnh việc thực thi nên trở nên "nhàm chán" - công việc sáng tạo đã diễn ra trong các vòng lặp ghi chú, và khi kế hoạch đúng, thực thi phải thẳng tiến. Cách tiếp cận này loại triệt để các giả định sai được xây đắp chồng chất trong 15 phút, giúp người lập trình luôn ngồi ghế lái và đưa ra các quyết định quan trọng.
-
-**Điểm chính:**
-- Tách biệt tư duy và thực thi: luôn viết kế hoạch trước khi viết mã
-- Vòng lặp ghi chú: thêm ghi chú trực tiếp vào kế hoạch để tinh chỉnh và sửa lỗi sai
-- Tệp markdown làm trạng thái chia sẻ: giúp duy trì ngữ cảnh và quyết định
-- Chạy trong một phiên dài: tận dụng tích lũy ngữ cảnh thay vì chia nhỏ phiên
-- Giữ quyền kiểm soát: người lập trình đưa ra quyết định, Claude thực thi cơ khí
+Tiếp theo, Claude viết `plan.md` gồm hướng tiếp cận, đoạn mã minh họa, các tệp cần sửa và các đánh đổi. Phần giá trị nhất là vòng chú thích: tác giả ghi chú trực tiếp vào kế hoạch để sửa giả định sai, loại bỏ phương án thừa hoặc bổ sung kiến thức nghiệp vụ, rồi yêu cầu Claude cập nhật kèm câu chặn "chưa triển khai vội". Vòng này lặp lại 1 đến 6 lần, sau đó kế hoạch được bổ sung danh sách việc cần làm chi tiết. Khi mọi quyết định đã rõ, một câu lệnh chuẩn yêu cầu Claude làm hết mọi việc, đánh dấu tiến độ ngay trong kế hoạch và liên tục kiểm tra kiểu dữ liệu. Việc triển khai khi đó trở nên "nhàm chán": chỉ cần phản hồi ngắn, hoàn tác khi đi sai hướng, và chạy toàn bộ quy trình trong một phiên dài để Claude tích lũy ngữ cảnh.
 
 ## [Next-Generation DB Ingestion at Pinterest](https://medium.com/pinterest-engineering/next-generation-db-ingestion-at-pinterest-66844b7153b7)
 
-Pinterest chia sẻ hành trình xây dựng khung làm việc nhập liệu cơ sở dữ liệu thế hệ mới dựa trên Change Data Capture (CDC), thay thế hệ thống batch cũ kỹ gặp nhiều hạn chế. Hệ thống cũ có độ trễ dữ liệu cao (trên 24 giờ), xử lý kém hiệu quả do chạy full-table batch hàng ngày dù thay đổi thực tế dưới 5%, thiếu hỗ trợ xóa theo hàng cho tuân thủ, và phức tạp trong vận hành với nhiều quy trình độc lập.
+Pinterest giới thiệu phần đầu loạt bài về khung nhập liệu cơ sở dữ liệu thế hệ mới, thay cho các quy trình chạy theo lô cũ. Hệ thống cũ có độ trễ thường vượt quá 24 giờ, xử lý lại toàn bộ bảng mỗi ngày dù phần thay đổi dưới 5%, và không hỗ trợ xóa theo từng hàng. Khung mới dựa trên cơ chế bắt thay đổi dữ liệu (CDC) với Debezium/TiCDC, Kafka, Flink, Spark và Iceberg, hỗ trợ MySQL, TiDB và KVStore. Dịch vụ CDC ghi sự kiện vào Kafka với độ trễ dưới một giây, Flink ghi chúng vào bảng CDC Iceberg chỉ nối thêm trên S3 (trễ dưới 5 phút), còn Spark định kỳ lấy bản thay đổi mới nhất của từng khóa chính và dùng `Merge Into` để cập nhật bảng cơ sở, bản sao của bảng trực tuyến với độ trễ 15 phút đến một giờ.
 
-Giải pháp mới là khung làm việc thống nhất sử dụng Debezium/TiCDC, Kafka, Flink, Spark và Iceberg, cung cấp dữ liệu trong vài phút thay vì ngày, chỉ xử lý các bản ghi thay đổi để tiết kiệm chi phí, hỗ trợ xóa theo hàng và xử lý tăng dần. Kiến trúc gồm ba lớp chính: lớp CDC bắt thay đổi cơ sở dữ liệu với độ trễ dưới 1 giây và ghi vào Kafka; lớp Streaming (Flink) xử lý sự kiện gần thời gian thực vào bảng CDC Iceberg trên S3; lớp Batch (Spark) định kỳ lấy thay đổi từ bảng CDC và dùng `Merge Into` để upsert vào bảng Iceberg cơ sở.
-
-Bài viết chi tiết nhiều tối ưu hóa quan trọng. Phân vùng bảng cơ sở bằng băm của khóa chính sử dụng hàm `bucket()` giúp phân tán đều bản ghi và cải thiện hiệu suất upsert. Với vấn đề tệp nhỏ, thiết lập `WRITE DISTRIBUTED BY PARTITION` giảm số lượng tệp nhỏ và cải thiện hiệu suất. Bucket Join cho các bảng lớn, sử dụng bảng tạm trung gian để bỏ qua toàn bộ thao tác trộn của bảng cơ sở, giúp giảm 40%+ chi phí tính toán và độ trễ đáng kể. Pinterest chọn Merge-on-Read (MOR) thay vì Copy-on-Write (COW) vì chi phí lưu trữ của COW cao hơn nhiều.
-
-**Điểm chính:**
-- Từ batch sang CDC: giảm độ trễ từ 24 giờ xuống 15-60 phút
-- Kiến trúc hai bảng: bảng CDC (append-only, <5 phút) và bảng cơ sở (snapshot, 15-60 phút)
-- Tối ưu hóa phân vùng bucket: phân tán đều bản ghi, upsert song song hiệu quả
-- Bucket Join với bảng tạm: giảm 40%+ chi phí tính toán
-- Merge-on-Read: ưu tiên vì chi phí lưu trữ thấp hơn Copy-on-Write
+Nhóm chọn Merge-on-Read thay vì Copy-on-Write vì cách sau tốn chi phí lưu trữ cao hơn nhiều. Bài viết chia sẻ ba tối ưu. Thứ nhất, phân vùng bảng cơ sở theo giá trị băm của khóa chính bằng hàm `bucket()` để dữ liệu phân bố đều và Spark xử lý song song. Thứ hai, đặt `WRITE DISTRIBUTED BY PARTITION` để gom dữ liệu cùng phân vùng vào một lần ghi, khắc phục tình trạng sinh quá nhiều tệp nhỏ. Thứ ba, với bảng cực lớn, nhóm đổ dữ liệu CDC vào một bảng tạm có cùng cách phân vùng để dùng bucket join, tránh xáo trộn toàn bộ bảng cơ sở trước mỗi lần gộp, nhờ đó giảm hơn 40% chi phí tính toán và giảm đáng kể độ trễ. Phần tiếp theo sẽ bàn về tự động tiến hóa lược đồ dữ liệu.
 
 ## [Thank you, AI](https://www.kraxel.org/blog/2026/01/thank-you-ai/)
 
-Một câu chuyện ngắn về hậu quả không mong muốn của AI scrapers. Tác giả đã chạy máy chủ git tự lưu trữ công khai từ năm 2011 (và CVS trước đó), nhưng buộc phải đóng cửa sau khi các bot AI tấn công giao diện cgit với hàng loạt yêu cầu vô bổ đến mức "gây chết" máy chủ. Thay vì chiến đấu với scrapers, tác giả quyết định chuyển tất cả kho lưu trữ sang GitLab và GitHub - hầu hết đã có bản sao sẵn ở đó.
+Gerd Hoffmann kể lại việc phải khép lại máy chủ git tự vận hành mà ông duy trì công khai từ năm 2011, trước đó là máy chủ CVS. Các bot thu thập dữ liệu cho AI đã dội hàng loạt yêu cầu vô nghĩa vào giao diện web cgit cho đến khi máy chủ nhỏ bé này sập hẳn, trong khi cách hiệu quả nhất để lấy toàn bộ kho chỉ đơn giản là clone nó về. Không muốn dành thời gian rảnh để chiến đấu với các bot, tác giả quyết định không dựng lại máy chủ nữa mà chuyển hẳn sang GitLab và GitHub, nơi phần lớn kho đã có bản sao sẵn, đồng thời sửa lại các liên kết cũ để trỏ về đó.
 
-Điều đáng chú ý là ngay cả khi dịch vụ git đã bị tắt, AI scrapers vẫn tiếp tục tấn công. Hàng triệu phản hồi 404 không đủ để thuyết phục bot rằng dịch vụ cgit không còn tồn tại, và các tệp nhật ký đã lấp đầy đĩa nhanh đến mức logrotate không kịp xử lý, gây ra một lần sự cố khác. Tác giả đã di chuyển blog từ WordPress sang Jekyll từ 2018 nên là các trang tĩnh, ít bị ảnh hưởng hơn, nhưng vẫn phải điều chỉnh cấu hình logrotate để ngăn vấn đề tương tự. Câu chuyện này là lời nhắc nhở về tác động của AI scrapers đối với các dịch vụ tự lưu trữ quy mô nhỏ.
-
-**Điểm chính:**
-- AI scrapers tấn công máy chủ git tự lưu trữ đến mức không thể phục hồi
-- Chuyển sang GitLab/GitHub thay vì xây dựng lại máy chủ
-- Scrapers vẫn tiếp tục gửi yêu cầu sau khi dịch vụ tắt, lấp đầy đĩa bằng nhật ký
-- Trang tĩnh (Jekyll) an toàn hơn trang động (WordPress)
+Dịch vụ tự vận hành duy nhất còn lại là máy chủ web chứa blog, vốn đã chuyển từ WordPress sang Jekyll từ năm 2018 nên chỉ gồm các trang tĩnh và gần như không thể bị quá tải. Dù vậy, các bot vẫn gây ra một sự cố khác: hàng triệu phản hồi 404 không đủ để chúng hiểu rằng cgit đã biến mất, và tệp nhật ký phình to nhanh đến mức logrotate với cấu hình mặc định không kịp xoay vòng, làm đầy ổ đĩa. Tác giả đã chỉnh lại cấu hình. Câu chuyện ngắn này cho thấy gánh nặng thực tế mà làn sóng thu thập dữ liệu cho AI đang đặt lên những người tự vận hành dịch vụ nhỏ.
 
 ## [Java UI in 2026: The Complete Guide](https://robintegg.com/2026/02/08/java-ui-in-2026-the-complete-guide)
 
-Hướng dẫn toàn diện về các framework UI Java năm 2026, bao phủ web, desktop, mobile và terminal interfaces. Tác giả khẳng định đây không phải là các dự án lỗi thời (legacy) mà là công nghệ production-ready, được bảo trì actively và đang chạy tại các doanh nghiệp lớn, phục vụ hàng triệu người dùng trên toàn thế giới.
+Robin Tegg tổng hợp hơn 25 framework và thư viện giao diện người dùng viết bằng Java tính đến năm 2026, chia theo bốn nền tảng: web, máy tính để bàn, di động và terminal. Thông điệp chính là đây không phải những dự án cũ kỹ còn cầm cự mà là công nghệ sẵn sàng cho môi trường thực tế, được bảo trì tích cực và đang chạy ở doanh nghiệp lớn, ngân hàng, cơ quan chính phủ với hàng trăm triệu người dùng. Với web, Vaadin và Apache Wicket cho phép viết toàn bộ giao diện bằng Java mà không cần JavaScript, PrimeFaces và Jakarta Faces phục vụ hệ sinh thái Jakarta EE, HTMX kết hợp Spring Boot đi theo hướng hypermedia, j2html sinh HTML an toàn kiểu, Thymeleaf là lựa chọn mẫu giao diện truyền thống, còn TeaVM biên dịch bytecode Java sang JavaScript hoặc WebAssembly.
 
-Bài viết phân loại frameworks theo 4 nhóm chính. Web UI có Vaadin (server-driven, viết toàn bộ bằng Java), Apache Wicket (component-oriented từ 2004), TeaVM (biên dịch Java bytecode sang JavaScript/WebAssembly), HTMX + Spring Boot (hypermedia-driven), j2html (type-safe HTML builder) và PrimeFaces (thư viện 100+ component cho Jakarta EE). Desktop UI có JavaFX (tiêu chuẩn hiện đại với CSS styling), JCEF (wrapper Chromium), Swing với FlatLaf (được làm mới), và Eclipse RCP/NetBeans Platform cho ứng dụng mô-đun phức tạp. Mobile có Codename One (write-once-run-anywhere, cloud builds, không cần Mac cho iOS) và Gluon Mobile (mở rộng JavaFX với GraalVM). Terminal có JLine (console input) và Lanterna (GUI toolkit cho terminal).
-
-Insights quan trọng: Java UI ecosystem mạnh mẽ và production-ready, không còn là legacy technology. Frameworks hiện đại tập trung vào developer experience, type safety và native performance. Java vẫn là lựa chọn hàng đầu cho enterprise applications nhờ tính ổn định và hiệu năng, với sự phân biệt rõ ràng giữa server-driven (Vaadin), client-side (TeaVM) và hybrid approaches.
-
-**Điểm chính:**
-- Java UI production-ready: không phải legacy, đang chạy tại doanh nghiệp lớn
-- Web UI đa dạng: từ server-driven (Vaadin) đến client-side (TeaVM)
-- Desktop hiện đại: JavaFX là tiêu chuẩn, Swing được hồi sinh với FlatLaf
-- Mobile thực tế: Codename One và Gluon Mobile giúp viết Java cho iOS/Android
-- Terminal UI: JLine và Lanterna cho console applications
+Trên máy tính để bàn, JavaFX là tiêu chuẩn hiện đại, JCEF nhúng Chromium để dùng giao diện HTML/CSS, Swing được làm mới nhờ FlatLaf, còn NetBeans Platform và Eclipse RCP phù hợp ứng dụng mô-đun lớn có hệ thống plugin. Với di động, Codename One cho phép viết một lần chạy mọi nơi và biên dịch iOS trên đám mây mà không cần máy Mac, còn Gluon Mobile mở rộng JavaFX bằng biên dịch native qua GraalVM. Ở mảng terminal, JLine xử lý nhập liệu dòng lệnh và được Maven, Gradle sử dụng, còn Lanterna cung cấp bộ công cụ dựng giao diện dạng văn bản. Mỗi framework đều kèm mô tả, ví dụ mã và liên kết để bắt đầu, cùng bảng gợi ý chọn công cụ theo từng tình huống.
 
 ## [Java Full Stack Development in 2026](https://www.ophion.org/2026/02/java-full-stack-development-in-2026/)
 
-Tác giả chia sẻ kinh nghiệm chuyển đổi ứng dụng www.scanii.com từ stack webpack+TypeScript+Spring Boot truyền thống sang kiến trúc đơn giản hơn với server-side rendering, đạt được nhiều cải thiện đáng kể: codebase được hợp nhất với đơn giản "Run" target trong IntelliJ, thời gian build frontend giảm xuống 0 với tự động reload, partial page rendering như SPA nhưng vẫn có thể dùng React nếu muốn, 100 điểm Lighthouse performance score, và dễ debug hơn không cần source maps hay transpilation.
+Tác giả kể lại việc chuyển trang www.scanii.com từ ứng dụng Spring Boot dùng webpack và TypeScript sang kiến trúc gọn hơn, nơi toàn bộ việc hiển thị diễn ra phía máy chủ. Theo ông, xu hướng React, TypeScript và mã nguồn tách đôi chỉ hợp lý khi có các nhóm chuyên biệt; với một nhóm nhỏ gồm những người làm được nhiều việc, cách đơn giản mang lại năng suất lớn hơn. Kết quả là mã nguồn hợp nhất chỉ cần một nút "Run" trong IntelliJ, thời gian đóng gói giao diện về 0 kèm tự động tải lại, trang vẫn cập nhật từng phần như ứng dụng một trang, đạt 100 điểm hiệu năng Lighthouse và dễ gỡ lỗi hơn vì không còn bước chuyển mã.
 
-Ba bước chính để di chuyển: Chọn template engine (tác giả dùng JTE vì có toàn bộ JDK trong template và view model map tốt với Page objects), loại bỏ bundler và sử dụng importmaps (chuẩn HTML) thay vì webpack/TypeScript, kết hợp với webjars để serve dependencies trực tiếp từ Spring Boot mà không cần CDN bên thứ ba. Cung cấp tính tương tác với Turbo và Stimulus từ Hotwire.dev (theo hướng dẫn của Rails) để đạt automatic partial page updates và familiar MVC framework cho JavaScript vẫn cần thiết.
-
-Pain points và giải pháp: Thiếu HOT Reloading được giải quyết bằng logic tối giản client-side (poll server changes) và server-side (monitor filesystem changes), nhanh hơn solution frontend trước đó. CSRF protection trở nên phức tạp với server-side rendering vì Spring Security relied on random tokens trong mỗi form, gây vấn đề với Turbo page caching. Tác giả build custom CSRF filter dựa trên header Sec-Fetch-Site, không cần tokens trong templates hay issues với partial page reloads.
-
-**Điểm chính:**
-- Server-side rendering: codebase hợp nhất, build time 0, debug dễ dàng hơn
-- Importmaps thay vì bundler: theo chuẩn HTML, kết hợp webjars serve dependencies từ Spring Boot
-- Turbo + Stimulus: partial page updates như SPA mà không cần React
-- CSRF custom filter: dùng Sec-Fetch-Site header thay vì tokens
-- Small teams: phù hợp cho team generalist thay vì specialized teams
+Quá trình gồm ba bước. Đầu tiên là chọn bộ mẫu giao diện được Spring Boot hỗ trợ; nhóm chọn JTE vì dùng được toàn bộ JDK ngay trong mẫu. Tiếp theo là bỏ công cụ đóng gói, thay bằng importmaps thuộc chuẩn HTML, kết hợp webjars để phục vụ thư viện trực tiếp từ ứng dụng mà không cần CDN bên thứ ba. Cuối cùng là thêm tính tương tác bằng Turbo và Stimulus của Hotwire, theo hướng của Rails, để có cập nhật trang từng phần và một khung MVC quen thuộc cho phần JavaScript còn cần. Hai điểm vướng lớn là thiếu tải lại nóng, được giải quyết bằng việc trình duyệt thăm dò thay đổi còn máy chủ theo dõi hệ thống tệp, và cơ chế chống CSRF của Spring Security dựa trên mã ngẫu nhiên trong mỗi biểu mẫu, vốn xung đột với bộ nhớ đệm trang của Turbo. Nhóm tự viết bộ lọc CSRF dựa trên header `Sec-Fetch-Site` của trình duyệt.
 
 ## [Sharding Databases with Spring Boot: Patterns, Pitfalls, and Failure Modes](https://dev.to/adamthedeveloper/sharding-databases-with-spring-boot-patterns-pitfalls-and-failure-modes-4p37)
 
-Hướng dẫn chi tiết về triển khai sharding database sử dụng Spring Boot - kỹ thuật phân tán dữ liệu quan trọng để giải quyết vấn đề hiệu quả và khả năng mở rộng của các ứng dụng lớn. Bài viết đề cập các pattern chính: Sharding theo chiều ngang (phân tán dữ liệu dựa trên trường cụ thể như user ID đến nhiều database/table khác nhau), Sharding theo chiều dọc (phân tán theo logic kinh doanh, mỗi shard xử lý nhóm chức năng riêng), và Sharding logic sử dụng thuật toán hash modulo để định tuyến dữ liệu đến shard phù hợp.
+Bài hướng dẫn giải thích sharding, tức chia dữ liệu theo chiều ngang ra nhiều cơ sở dữ liệu nhỏ, và cách hiện thực nó với Spring Boot. Sharding cần thiết khi việc nâng cấp một máy chủ chạm giới hạn, truy vấn chậm dần theo kích thước dữ liệu, thông lượng ghi thành nút thắt hoặc cần tăng tính sẵn sàng. Quyết định quan trọng nhất là chọn khóa phân mảnh như mã người dùng hay mã khách thuê: khóa cần có nhiều giá trị khác nhau, phục vụ phần lớn truy vấn trên một shard và gần như không đổi. Bài so sánh bốn chiến lược chia theo khoảng, theo hàm băm, theo bảng tra cứu và theo địa lý, rồi chỉ ra rằng phép chia lấy dư đơn giản khiến gần như mọi khóa phải di chuyển khi thêm bớt shard, còn consistent hashing chỉ ảnh hưởng khoảng 1/N số khóa.
 
-Các vấn đề và lỗi phổ biến khi sharding: SQL không tương thích vì các truy vấn hoạt động tốt trên database đơn có thể lỗi trên hệ thống sharding, distributed transaction dựa trên XA không đảm bảo hiệu quả trong môi trường cao đồng thời, độ phức tạp quản lý tăng lên khi phải xác định database/table để truy xuất dữ liệu, và thách thức truy vấn chéo khi cần kết hợp giữa các shard yêu cầu tổng hợp dữ liệu. Giới hạn số lượng shard quan trọng vì quá nhiều shard dẫn đến hiệu suất kém do tổng hợp dữ liệu.
-
-Khuyến nghị và thực hành tốt nhất: Ưu tiên transaction đơn database, có thể sử dụng transaction cục bộ trong cùng database để tránh distributed transaction. Cẩn thận với phụ thuộc phiên bản vì lỗi tương thích giữa Spring Boot và ShardingSphere thường gặp. Cấu hình minh bạch sử dụng Spring Boot Starter để quản lý cấu hình sharding hiệu quả. Theo dõi hiệu suất để đảm bảo việc sharding thực sự cải thiện hiệu suất không gây thêm độ trễ.
-
-**Điểm chính:**
-- Ba pattern sharding: ngang (theo trường), dọc (theo logic), logic (hash modulo)
-- Pitfalls phổ biến: SQL không tương thích, XA transaction kém hiệu quả, độ phức tạp tăng
-- Cross-shard queries: thách thức tổng hợp dữ liệu từ nhiều shard
-- Giới hạn shard: quá nhiều shard làm giảm hiệu suất do tổng hợp
-- Transaction cục bộ: ưu tiên single-DB transaction thay vì distributed
+Phần hiện thực trình bày cách cấu hình nhiều nguồn dữ liệu, dịch vụ xác định shard và một JdbcTemplate có định tuyến. Truy vấn chứa khóa phân mảnh đi thẳng tới một shard, truy vấn không chứa khóa phải gửi tới mọi shard rồi gộp kết quả. Join giữa các shard khó nhất, có thể xử lý bằng phi chuẩn hóa, join trong ứng dụng hoặc đặt dữ liệu liên quan cùng shard. Commit hai pha chậm và dễ treo khi bộ điều phối gặp sự cố, nên tác giả khuyên dùng mẫu Saga và chấp nhận nhất quán sau cùng. Bài còn đề cập giám sát bằng Actuator, di chuyển dữ liệu bằng ghi kép và các lỗi thường gặp như chọn sai khóa, cố định số shard hay thiếu sao lưu riêng cho từng shard. Lời khuyên: chỉ sharding khi thật cần.
 
 ## [Go Made Me Fast, Rust Made Me Care, AWS Made Me Pay](https://dev.to/tirixa-hub/go-made-me-fast-rust-made-me-care-aws-made-me-pay-2f82)
 
-Bài viết thảo luận về lựa chọn ngôn ngữ lập trình cho kiến trúc cloud, tập trung vào sự đánh đổi giữa Go và Rust khi hệ thống phát triển từ "hợp lý" thành "đắt tiền". Tác giả chia sẻ kinh nghiệm thực tế về sự khác biệt giữa hai ngôn ngữ trong bối cảnh AWS, nơi chi phí được tính theo chu kỳ CPU, lượng bộ nhớ và lưu lượng mạng.
+Tác giả kể lại rằng nhiều năm dùng Go trên AWS mọi thứ đều có vẻ ổn, triển khai nhanh, đội ngũ năng suất, nhưng trên đám mây hệ thống hiếm khi hỏng ồn ào mà "hỏng về mặt tài chính". Go xứng đáng là lựa chọn mặc định cho backend nhờ mô hình đồng thời đơn giản, thư viện chuẩn mạnh, tệp thực thi nhỏ, khởi động nhanh và thường hỏng theo cách dễ đoán. Vấn đề là sự kém hiệu quả tích tụ âm thầm: thêm 10% CPU chỗ này, 200MB bộ nhớ chỗ kia, thêm một máy "cho chắc". Bộ thu gom rác của Go dù tốt vẫn có giá: bộ nhớ dự phòng, chu kỳ CPU, độ trễ khó đoán khi tải cao và mật độ container thấp hơn, còn AWS chỉ việc gửi hóa đơn.
 
-Go giúp phát triển nhanh với mô hình đồng trình đơn giản, thư viện chuẩn mạnh mẽ và dự đoán được. Tuy nhiên bộ thu gom rác (GC) của Go trở thành điểm yếu khi hệ thống mở rộng - nó yêu cầu bộ nhớ phụ, tiêu tốn CPU và gây độ trễ không đáng tin cậy. Rust không phải là phép màu tốc độ, mà buộc nhà phát triển phải đối mặt với các vấn đề cấp thấp như phân bổ bộ nhớ, sở hữu dữ liệu và hành vi cache. Điều này dẫn đến thiết kế hệ thống hiệu quả hơn với bộ nhớ ổn định, độ trễ nhất quán và mật độ container cao hơn.
-
-AWS đóng vai trò như thực tế khắc nghiệt - nó không quan tâm đến trải nghiệm nhà phát triển, chỉ tính phí theo tài nguyên sử dụng. Sự khác biệt chi phí không nằm ở ngôn ngữ mà ở hiệu quả sử dụng tài nguyên. Bài học quan trọng: Go vẫn hoàn hảo cho API và logic nghiệp vụ, trong khi Rust phù hợp cho đường dẫn dữ liệu cao throughput. Điểm ngọt ngào là sử dụng cả hai ngôn ngữ một cách có chủ đích, với Rust trong các phần nhạy cảm hiệu năng để tối ưu hóa hóa đơn AWS.
-
-**Điểm chính:**
-- Go nhanh phát triển: GC đơn giản, thư viện mạnh, nhưng GC overhead khi scale
-- Rust ép tư duy: đối mặt vấn đề cấp thấp, thiết kế hiệu quả hơn, bộ nhớ ổn định
-- AWS tính phí thực tế: không quan tâm DX, chỉ tính CPU/memory/network
-- Hybrid approach: Go cho API/business logic, Rust cho high-throughput data paths
-- Sweet spot: Rust tối ưu phần nhạy cảm hiệu năng để giảm hóa đơn AWS
+Rust xuất hiện khi các dịch vụ thông lượng cao và đường ống dữ liệu luồng bắt đầu gây khó cho Go. Tác giả nhấn mạnh Rust không nhanh hơn một cách thần kỳ; nó buộc lập trình viên đối mặt với cấp phát bộ nhớ, quyền sở hữu dữ liệu, bố cục bộ nhớ và hành vi bộ nhớ đệm. Dịch vụ Rust đầu tiên mất gấp ba thời gian để viết, nhưng khi chạy thì bộ nhớ phẳng, độ trễ ổn định, CPU đúng dự kiến. Nhờ đó dùng được máy EC2 nhỏ hơn, mật độ container cao hơn và ít lỗi hết bộ nhớ trên ECS/EKS, chi phí Lambda thấp hơn với tác vụ nặng CPU. Bài học là đặt ngôn ngữ đúng chỗ: Go cho API, logic nghiệp vụ và mã kết nối; Rust cho đường ống dữ liệu, thành phần nhạy cảm độ trễ và tác vụ nặng CPU.
 
 ## [The Cloud Is Not Your Computer: Why Go and Rust Developers Secretly Miss the Monolith](https://dev.to/tirixa-hub/the-cloud-is-not-your-computer-why-go-and-rust-developers-secretly-miss-the-monolith-594c)
 
-Bài viết phân tích sự thật rằng đám mây không phải là máy tính của bạn mà là một cuộc đàm phán phức tạp. Tác giả trải nghiệm qua nhiều nền tảng từ bare metal đến AWS và nhận ra rằng dù viết code Go hay Rust cảm thấy kiểm soát được thì khi triển khai lên cloud, mọi thứ trở nên bất định. Sự khác biệt chính giữa cloud và máy tính cục bộ là: máy tính cục bộ cho cảm giác kiểm soát trực tiếp, còn cloud khiến bạn đang thuê xác suất chứ không phải chạy phần mềm.
+Bài viết của cùng tác giả với giọng văn châm biếm, cho rằng đám mây không phải máy tính của bạn mà là một cuộc thương lượng. Viết Go hay Rust cho cảm giác mọi thứ xác định và trong tầm kiểm soát, nhưng trên đám mây "máy chủ" là ảo, "ổ đĩa" nằm qua mạng, "mạng" do phần mềm định nghĩa và ranh giới bảo mật chỉ là một chính sách IAM chép từ đâu đó, nên bạn không thực sự chạy phần mềm mà đang "thuê xác suất". Go giả định mọi thứ đều có thể hỏng và lặng lẽ trả về `error`, còn Rust buộc bạn chứng minh quyền sở hữu bộ nhớ, nhưng chương trình an toàn đó vẫn phải chạy sau hàng lớp container, cụm, VPC, bộ cân bằng tải và CDN. Bạn sửa lỗi trong mã, trong khi thủ phạm là security group hay một chỉ mục bị thiếu.
 
-Go - ngôn ngữ của những người lạc quan - thừa nhận thất bại như một giá trị, trong khi Rust - ngôn ngữ của những người kiểm soát cực đoan - đòi hỏi sự chính xác biên dịch. Các nhà phát triển trầm trồ kiến trúc monolith vì chúng có thể dự đoán, triển khai và hiểu được. Khi có lỗi, họ chỉ cần SSH vào một máy, kiểm tra log và sửa. Ngày nay họ phải mở nhiều công cụ giám sát khác nhau mà vẫn không hiểu tại sao 503 xảy ra.
-
-Bài học rút ra là Go và Rust đang phát triển mạnh trong cloud vì chúng là ngôn ngữ trung thực trong môi trường không trung thực. Go đón nhận thất bại như một giá trị, Rust thực thi sự chính xác tại thời điểm biên dịch. Đám mây là hỗn loạn, còn Go và Rust là kỷ luật. Sự căng thẳng đó chính là lý do chúng thuộc về nhau. Cloud là về quản lý sự bất định, không phải kiểm soát - và Go, Rust là công cụ tốt nhất để điều hướng sự bất định đó.
-
-**Điểm chính:**
-- Cloud vs máy tính: cloud là thuê xác suất, không phải chạy phần mềm
-- Monolith đáng nhớ: dự đoán được, SSH vào máy để debug, dễ hiểu
-- Microservices chaos: nhiều công cụ giám sát, vẫn không hiểu tại sao 503
-- Go lạc quan: thừa nhận thất bại như giá trị, handle gracefully
-- Rust kiểm soát: thực thi chính xác tại compile, catch errors sớm
+Tác giả hoài niệm kiến trúc nguyên khối vì nó dễ đoán, dễ triển khai và dễ gỡ lỗi: chỉ cần SSH vào một máy, đọc nhật ký và sửa, thay vì mở CloudWatch, Prometheus, Grafana, Datadog mà vẫn không hiểu vì sao lỗi `503` xảy ra. Dù vậy, Go và Rust vẫn phát triển mạnh trên đám mây vì chúng là những ngôn ngữ trung thực trong một môi trường thiếu trung thực: Go coi lỗi là giá trị hạng nhất, Rust bảo đảm tính đúng đắn lúc biên dịch, cả hai đều giảm bớt sự bất định. Vì thế, kỹ sư đám mây giỏi ngày nay không chỉ viết mã tốt mà còn hiểu cấu trúc mạng, phạm vi ảnh hưởng của IAM, chiến lược giám sát, ngân sách độ trễ, vùng lỗi và mô hình chi phí.
 
 ### Bonus
 
@@ -131,4 +62,4 @@ Bài học rút ra là Go và Rust đang phát triển mạnh trong cloud vì ch
 
 ---
 
-*Bài viết đã được review và cập nhật bởi Claude Code với Opus 4.7 (1M context).*
+*Bài viết đã được viết lại bởi Claude Code với Opus 5.5 vào ngày 27/09/2026.*

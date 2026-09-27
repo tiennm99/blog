@@ -9,35 +9,15 @@ categories: ["Newsletter"]
 
 ## [I love UUID, I hate UUID](https://blog.epsiolabs.com/i-love-uuid-i-hate-uuid)
 
-Bài viết từ blog Epsio Labs khám phá những mặt tích cực và tiêu cực của UUID khi sử dụng làm khóa chính trong cơ sở dữ liệu quan hệ, đặc biệt trong hệ thống streaming SQL của họ. Đối với các lập trình viên junior, UUID (Universally Unique Identifier) là một công cụ hữu ích để tạo ID duy nhất mà không cần phụ thuộc vào database server, giúp đơn giản hóa việc phát triển ứng dụng phân tán.
+Epsio xây dựng một bộ máy SQL dạng streaming, liên tục thêm và xóa dòng trong cơ sở dữ liệu, nên việc chọn khóa chính ảnh hưởng trực tiếp đến hiệu năng. Họ chọn UUID vì ưu điểm lớn nhất của nó: phía client có thể tự sinh định danh mà không cần hỏi máy chủ. Nhờ vậy người dùng có thể thao tác ngay với một đối tượng vừa tạo trước khi máy chủ xác nhận (cập nhật "lạc quan"), và các lệnh nạp dữ liệu hàng loạt như `COPY` trong PostgreSQL vẫn dùng được, điều mà khóa tự tăng không làm được vì không lấy lại được giá trị vừa sinh.
 
-UUID được yêu thích vì có thể sinh ra từ client-side, cho phép cập nhật giao diện người dùng một cách optimistic – nghĩa là UI có thể phản hồi ngay lập tức mà không chờ server xác nhận, cải thiện trải nghiệm người dùng. Chúng đảm bảo tính duy nhất toàn cầu với xác suất va chạm cực thấp (khoảng 1 trong hàng tỷ tỷ), và tương thích tốt với các hoạt động bulk insert như lệnh COPY trong PostgreSQL, tránh tình trạng phải đồng bộ hóa với server như khi dùng auto-increment integers.
-
-Tuy nhiên, UUIDv4 – phiên bản phổ biến nhất – bị chỉ trích vì tính ngẫu nhiên cao dẫn đến phân tán dữ liệu trong B-Tree index của database. Điều này làm tăng kích thước index đáng kể và giảm tốc độ insert. Trong benchmark với 10 triệu rows, index UUIDv4 chiếm 389MB và mất 54.62 giây, so với UUIDv7 chỉ 301MB và 37.53 giây – cải thiện 22% kích thước và 31% thời gian.
-
-UUIDv7 là giải pháp mới, nhúng 48-bit timestamp Unix vào đầu UUID để tạo thứ tự thời gian, giúp index hiệu quả hơn mà vẫn giữ tính duy nhất. Trade-off duy nhất là có thể lộ thời gian tạo nếu UUID bị expose ra ngoài, và giảm nhẹ độ ngẫu nhiên, nhưng rủi ro va chạm vẫn rất thấp (khoảng 0.0000000003% cho 1 triệu UUID trong 1ms).
-
-**Điểm chính:**
-- UUID lý tưởng cho optimistic UI updates và bulk operations nhờ client-generated và global uniqueness.
-- UUIDv4 kém hiệu suất do randomness gây phân tán index, tăng size và thời gian query.
-- UUIDv7 cải thiện bằng timestamp prefix, tăng throughput 31% và giảm index size 22%.
-- Khuyến nghị sử dụng UUIDv7 cho database hiện đại để balance uniqueness và performance.
+Vấn đề nằm ở UUIDv4: giá trị hoàn toàn ngẫu nhiên trên không gian 122 bit, nên mỗi lần chèn lại rơi vào một nút lá khác nhau của chỉ mục B-Tree, gây trượt bộ nhớ đệm và tách nút liên tục, làm giảm mạnh tốc độ ghi. UUIDv7 khắc phục bằng cách đặt 48 bit dấu thời gian ở đầu, theo sau là 74 bit ngẫu nhiên, nên các giá trị sinh liên tiếp có thứ tự tăng dần. Thử nghiệm chèn 10 triệu dòng cho thấy chỉ mục UUIDv7 nhỏ hơn 22% (301MB so với 389MB) và thời gian giảm 31% (37,53 giây so với 54,62 giây). Đánh đổi là dấu thời gian có thể làm lộ thời điểm tạo bản ghi nếu định danh xuất hiện ở API công khai, và độ ngẫu nhiên trong cùng một mili giây giảm xuống 74 bit, dù xác suất trùng vẫn gần như bằng không. Bài học cho lập trình viên mới: UUIDv7 là lựa chọn mặc định hợp lý khi cần khóa chính phân tán.
 
 ## [What's new in Java 25](https://pvs-studio.com/en/blog/posts/java/1284/)
 
-Bài viết từ PVS-Studio blog tóm tắt các cập nhật mới trong Java 25, phát hành ngày 10/09/2025. Đối với lập trình viên junior, Java 25 mang đến nhiều cải tiến giúp code đơn giản hơn, hiệu suất cao hơn và an toàn hơn, mà không phá vỡ compatibility với code cũ.
+Bài viết của PVS-Studio điểm qua các JEP trong Java 25, bản phát hành hỗ trợ dài hạn ra mắt tháng 9/2025. Về API mới, Scoped Values (JEP 506) thay thế ThreadLocal bằng cơ chế có vòng đời giới hạn, hạn chế thay đổi giá trị và kế thừa hiệu quả giữa các luồng; Key Derivation Function API (JEP 510) thống nhất cách sinh khóa mật mã; Module Import Declarations (JEP 511) cho phép nhập cả một module bằng một câu lệnh; Compact Source Files và Instance Main Methods (JEP 512) giúp viết chương trình nhỏ mà không cần khai báo lớp rườm rà; còn Flexible Constructor Bodies (JEP 513) cho phép chạy mã nguồn trước lời gọi `super()` hoặc `this()`.
 
-Trong phần New API, JEP 506 giới thiệu Scoped Values – thay thế cho ThreadLocal với lifetime scoped, giúp quản lý dữ liệu trong các block code ngắn hạn mà không leak memory. JEP 510 thêm Key Derivation Function API để xử lý unified các thuật toán KDF cho cryptography. JEP 511 cho phép import toàn bộ module bằng Module Import Declarations, giảm boilerplate. JEP 512 với Compact Source Files và Instance Main Methods giúp viết app đơn giản mà không cần class đầy đủ. JEP 513 cho phép flexible constructor bodies, di chuyển code trước super() call.
-
-Về Platform Changes, JEP 503 loại bỏ 32-bit x86 port vì ít sử dụng, tập trung vào 64-bit. JEP 519 Compact Object Headers giảm header từ 12 bytes xuống 8 bytes, tiết kiệm memory. JEP 521 thêm Generational Shenandoah GC cho throughput cao hơn. Trong AOT, JEP 514 và 515 cải thiện command-line ergonomics và method profiling để JIT nhanh hơn. JFR enhancements như JEP 518 Cooperative Sampling và JEP 520 Method Timing giúp monitoring chính xác hơn.
-
-Các preview features bao gồm Structured Concurrency (preview thứ 5) cho concurrent tasks an toàn. Tổng thể, Java 25 tập trung vào developer productivity, performance và security. Junior devs nên thử nghiệm các JEPs mới để viết code hiện đại hơn.
-
-**Điểm chính:**
-- Scoped Values và KDF API: Cải tiến API cho scoped data và cryptography.
-- Module imports và compact source: Giảm boilerplate cho learning và simple apps.
-- Compact headers và Generational GC: Tối ưu memory và performance.
-- JFR và AOT enhancements: Monitoring và compilation tốt hơn cho production.
+Ở tầng nền tảng, Java 25 bỏ hỗ trợ kiến trúc x86 32 bit (JEP 503), thu gọn phần đầu đối tượng từ 12 xuống 8 byte để tiết kiệm bộ nhớ (JEP 519), và bổ sung chế độ phân thế hệ cho bộ thu gom rác Shenandoah (JEP 521). Nhóm tính năng biên dịch trước (AOT) giúp tạo bộ nhớ đệm dễ hơn (JEP 514) và lưu hồ sơ thực thi phương thức để JIT tối ưu sớm hơn (JEP 515), trong khi JFR được cải thiện độ chính xác khi lấy mẫu (JEP 518) và thêm đo thời gian, truy vết phương thức (JEP 520). Nhìn chung, đây là bước tiến đều đặn tập trung vào hiệu năng, giảm mã nguồn thừa và bảo mật mà vẫn giữ tương thích ngược, rất đáng để lập trình viên Java thử nghiệm.
 
 ## ~~[Some Best Practices for Writing Readable Automation Tests](https://blog.scottlogic.com/2025/09/04/some-best-practices-for-writing-readable-automation-tests.html)~~
 
@@ -57,117 +37,48 @@ Các preview features bao gồm Structured Concurrency (preview thứ 5) cho con
 
 ## [Tech Debt: Understanding its Business Impact - Optimism](https://www.optimism.io/blog/tech-debt-understanding-its-business-impact)
 
-Nợ kỹ thuật (technical debt) đề cập đến chi phí ngầm phát sinh từ việc chọn giải pháp nhanh chóng thay vì tối ưu trong phát triển phần mềm, tương tự như nợ tài chính tích lũy lãi suất. Bài viết mô tả nó là sản phẩm phổ biến trong môi trường công nghệ nhanh chóng, nơi các đội ngũ chọn fix nhanh để đáp ứng deadline, dẫn đến codebase dễ vỡ và khó mở rộng.
+Adrian Sutton (OP Labs) cho rằng thay vì than phiền chung chung về "nợ kỹ thuật", đội ngũ nên chỉ ra chi phí kinh doanh cụ thể của từng loại, vì không phải khoản nợ nào cũng đắt như nhau: có khoản là đánh đổi có chủ đích để phát hành nhanh hơn, có khoản âm thầm tiêu tốn nguồn lực mà không mang lại giá trị. Ông chia nợ kỹ thuật thành bảy nhóm: độ phức tạp không cần thiết (nên đơn giản hóa dần thay vì viết lại toàn bộ), bảo trì định kỳ bị trì hoãn như cập nhật thư viện phụ thuộc (giống việc bỏ bảo dưỡng xe, về sau hỏng nặng và tốn kém hơn), trải nghiệm sử dụng kém do cắt phạm vi để kịp hạn, lỗi và xử lý sự cố làm gián đoạn công việc, mã nguồn chết vẫn phải bảo trì, thiếu kiểm thử tự động, và vòng phản hồi chậm.
 
-Nguyên nhân chính bao gồm áp lực giao hàng nhanh chóng, thiếu kiểm thử đầy đủ, hoặc yêu cầu thay đổi vượt quá tốc độ cải thiện code. Sự tích tụ nợ kỹ thuật gây ra tác động kinh doanh nghiêm trọng: chi phí bảo trì tăng cao do sửa lỗi liên tục, trì hoãn phát hành tính năng làm mất lợi thế cạnh tranh, và rủi ro mất doanh thu từ sự cố hệ thống. Ví dụ, nợ không được xử lý có thể làm tăng chi phí phát triển lên đến 20-30% hàng năm, gây căng thẳng cho ngân sách và động lực đội ngũ.
-
-Để đo lường, các công ty sử dụng công cụ phân tích độ phức tạp code, tỷ lệ mã trùng lặp, và chỉ số khả năng bảo trì, thường định lượng nợ như một phần trăm giá trị codebase. Hậu quả không chỉ giới hạn ở khía cạnh kỹ thuật mà còn ảnh hưởng đến sự hài lòng của khách hàng qua sản phẩm không đáng tin cậy, đồng thời cản trở khả năng đổi mới. Các chiến lược quản lý nhấn mạnh cách tiếp cận chủ động: dành thời gian riêng cho việc refactor code, tích hợp kiểm thử tự động vào pipeline CI/CD, và xây dựng văn hóa phát triển coi trọng chất lượng bền vững. Bằng cách coi nợ kỹ thuật như một tài sản chiến lược thay vì khuyết điểm không thể tránh khỏi, doanh nghiệp có thể giảm thiểu rủi ro, nâng cao sự linh hoạt, và thúc đẩy tăng trưởng lâu dài.
-
-**Điểm chính:**
-- Nợ kỹ thuật phát sinh từ các shortcut trong coding ưu tiên tốc độ, dẫn đến nhu cầu rework trong tương lai.
-- Nguyên nhân chính: áp lực deadline và lựa chọn thiết kế kém ban đầu.
-- Tác động kinh doanh: chi phí cao hơn, đổi mới chậm hơn, và vấn đề scalability.
-- Phương pháp đo lường: metrics code như điểm phức tạp và tỷ lệ nợ.
-- Chiến lược: phân bổ sprint refactor, tích hợp CI/CD testing, và văn hóa coding bền vững.
+Theo tác giả, mã nguồn thiếu kiểm thử tự động là một trong những dạng nợ đắt nhất, nhất là với hệ thống đòi hỏi đồng thuận như blockchain, còn vòng phản hồi chậm (chờ biên dịch, kiểm thử, xác thực) gây hại năng suất lập trình viên nhiều nhất. Ví dụ thực tế tại OP Labs là việc chưa triển khai được chuỗi với cơ chế fault proof không cần cấp quyền được cấu hình đúng, khiến nhóm tốn nhiều thời gian. Các khuyến nghị gồm: định lượng tác động kinh doanh, theo dõi mẫu cảnh báo và dành năng lực cho độ tin cậy, có quy trình gỡ bỏ tính năng lỗi thời, mở rộng kiểm thử tự động để nhiều người có thể đóng góp an toàn, và ưu tiên rút ngắn vòng phản hồi.
 
 ## [Spec-Driven Development with AI: A New Approach and a Journey into the Past](https://foojay.io/today/spec-driven-development-with-ai-a-new-approach-and-a-journey-into-the-past/)
 
-Bài viết phê phán bản chất tập trung vào code trong phát triển phần mềm truyền thống, nơi yêu cầu thường trở nên lỗi thời, dẫn đến vấn đề bảo trì, đặc biệt khi AI tăng tốc coding mà không giải quyết nguyên nhân gốc rễ. Lấy cảm hứng từ Rational Unified Process (RUP) những năm 2000, tác giả Simon Martinelli đề xuất AI Unified Process (AIUP), một phương pháp dẫn dắt bởi yêu cầu, đặt nhu cầu kinh doanh làm nguồn sự thật duy nhất.
+Simon Martinelli, Java Champion với hơn 30 năm làm kiến trúc phần mềm, chỉ ra rằng trong quy trình truyền thống, mã nguồn dần trở thành nguồn sự thật duy nhất, còn tài liệu yêu cầu bị bỏ quên và lỗi thời. AI giúp viết mã nhanh hơn nhưng không giải quyết gốc rễ đó. Lấy cảm hứng từ Rational Unified Process (RUP) những năm 2000, ông đề xuất đảo ngược thứ bậc: yêu cầu nghiệp vụ trở thành nền móng cho mọi hoạt động phía sau.
 
-Trong cách tiếp cận này, phát triển bắt đầu bằng catalog yêu cầu kinh doanh thủ công, sau đó sử dụng AI tạo ra các artifact: sơ đồ use case, mô hình entity, thông số hệ thống, và cuối cùng là code ứng dụng. Các bên liên quan xem xét từng bước để đảm bảo phù hợp, tránh lỗi miền. Tất cả output được mã hóa dưới dạng Markdown và PlantUML, versioned trong Git để diff trực quan và theo dõi audit. AI đóng vai trò "consistency engine", tự động cập nhật các yếu tố downstream khi yêu cầu thay đổi, loại bỏ đồng bộ thủ công.
-
-Bối cảnh lịch sử nhấn mạnh trọng tâm lặp lại modeling của RUP, nay được nâng cao bởi AI hiện đại để hiệu quả hơn. Lợi ích bao gồm hợp tác mạnh mẽ hơn giữa kinh doanh và developer, hệ thống dễ bảo trì với traceability đầy đủ, chu kỳ nhanh hơn bằng cách tự động hóa công việc nhàm chán, và chất lượng tích hợp qua test dựa trên spec. Thách thức ngầm bao gồm đầu tư ban đầu vào yêu cầu chính xác và sự tham gia của bên liên quan, dù phương pháp giảm thiểu các lỗi truyền thống như documentation thiếu sót. Phương pháp này phù hợp cho ứng dụng kinh doanh nhờ pattern công nghệ dự đoán được, nhấn mạnh hợp tác con người-AI cho logic miền.
-
-**Điểm chính:**
-- Chuyển trọng tâm từ code sang yêu cầu làm nguồn sự thật, sử dụng AI tạo artifact tự động.
-- Workflow: Yêu cầu kinh doanh → AI-generated diagrams/models/specs/code, tất cả versioned trong Git.
-- Lợi ích: Hợp tác tốt hơn, traceability, chu kỳ phát triển nhanh, chất lượng qua spec-based tests.
-- Thách thức: Đầu tư ban đầu vào yêu cầu chính xác và stakeholder review.
-- Phù hợp cho business apps với pattern predictable, tận dụng AI cho consistency.
+Quy trình gồm sáu bước: con người cùng các bên liên quan lập danh mục yêu cầu nghiệp vụ; AI sinh sơ đồ use case nghiệp vụ, mô hình thực thể, sơ đồ use case hệ thống, đặc tả use case hệ thống và cuối cùng là mã nguồn ứng dụng. Mỗi sản phẩm trung gian đều được bên nghiệp vụ hoặc lập trình viên xem xét trước khi sang bước tiếp theo. Toàn bộ được lưu dưới dạng Markdown và PlantUML trong Git để dễ so sánh thay đổi, còn công cụ như Claude Code đóng vai trò giữ tính nhất quán khi yêu cầu thay đổi; phần ứng dụng dùng Vaadin, Spring Boot và jOOQ, chia thành các epic độc lập để tránh phụ thuộc chéo. Thông điệp chính: "Viết mã là phần dễ; làm đúng yêu cầu mới là nơi tạo ra giá trị" — AI chỉ phát huy khi đặc tả đầu vào có chất lượng cao.
 
 ## [On Good Software Engineers](https://candost.blog/on-good-software-engineers/)
 
-Việc đặt kỳ vọng cho kỹ sư phần mềm là thách thức đối với quản lý do nhu cầu, cấu trúc và văn hóa công ty khác nhau. Bài viết bác bỏ khái niệm "10x engineers" như gây hại cho tinh thần đội ngũ và chất lượng code, đồng thời phê phán framework phát triển sự nghiệp vì thiếu sót trong định nghĩa năng lực. Thay vào đó, tiêu chuẩn đơn giản: "Một kỹ sư tốt là người mà tôi, với tư cách quản lý hoặc đồng nghiệp, có thể tin tưởng để tiến hành dự án, biết rằng họ sẽ cung cấp giải pháp bằng cách làm việc với đội ngũ và sản xuất chất lượng tốt, lặp lại liên tục." Điều này áp dụng cho mọi cấp độ, từ junior xử lý nhiệm vụ nhỏ đến staff dẫn dắt sáng kiến phức tạp.
+Đặt kỳ vọng cho kỹ sư phần mềm luôn khó vì mỗi công ty có nhu cầu và văn hóa khác nhau. Tác giả đưa ra một định nghĩa đơn giản: kỹ sư tốt là người mà quản lý hay đồng nghiệp có thể tin tưởng giao việc để thúc đẩy dự án, vì họ sẽ phối hợp tốt với đội ngũ và liên tục mang lại giải pháp chất lượng. Định nghĩa này áp dụng cho mọi cấp độ, từ junior xử lý nhiệm vụ nhỏ đến staff dẫn dắt các sáng kiến phức tạp, chỉ khác nhau ở quy mô.
 
-Đặc trưng bao gồm độ tin cậy, khả năng thích ứng và nhất quán. Kỹ năng nhấn mạnh giao tiếp rõ ràng (viết và nói), lắng nghe đồng cảm, trao đổi phản hồi, và nắm vững quy trình (code review, RFC, methodology như Scrum). Kỹ sư phải học các chi tiết tổ chức – văn hóa, chuẩn mực, hệ thống phân cấp – để ảnh hưởng hiệu quả và chủ động nhúng chất lượng, như qua test-driven development hoặc refactor code cũ. Họ ưu tiên phù hợp với stakeholder, giảm độ phức tạp qua thiết kế modular và chiến lược test, và duy trì chất lượng bền vững giữa thay đổi.
-
-Tư duy hướng tăng trưởng: chấp nhận khó chịu, thừa nhận lỗi, ngăn chặn tái phát, và hành động vào vấn đề mà không phàn nàn. Kỹ sư tốt chơi như thành viên đội ngũ, đề xuất giải pháp thay vì đẩy vấn đề. Đối với lập trình viên junior, bài viết khuyến khích tập trung vào độ tin cậy và hợp tác để trở thành kỹ sư đáng tin cậy, vượt qua kỹ năng kỹ thuật thuần túy.
-
-**Điểm chính:**
-- Kỹ sư tốt: Tin cậy tiến hành dự án qua hợp tác đội ngũ và chất lượng nhất quán.
-- Kỹ năng cốt lõi: Giao tiếp, nắm quy trình tổ chức, chủ động chất lượng.
-- Tư duy: Tăng trưởng, trách nhiệm, giải quyết vấn đề chủ động.
-- Phù hợp mọi cấp độ, nhấn mạnh hợp tác hơn tốc độ cá nhân.
-- Khác biệt với great: Ảnh hưởng rộng hơn, nhưng good tập trung cơ bản.
+Những phẩm chất cụ thể gồm: giao tiếp rõ ràng cả khi viết lẫn khi nói, biết cho và nhận phản hồi, lắng nghe đồng cảm; nắm vững quy trình như review mã nguồn, RFC, ADR hay Scrum và biết khi nào có thể linh hoạt; chịu khó tìm hiểu văn hóa, thứ bậc và chuẩn mực của tổ chức thay vì áp một cách làm cho mọi nơi; tự nhiên lồng chất lượng vào công việc qua TDD và tái cấu trúc mà không cần xin phép; cân bằng giữa sự hoàn hảo kỹ thuật và tiến độ mà các bên liên quan cần; giảm độ phức tạp qua thiết kế module và chiến lược kiểm thử hợp lý; giữ trách nhiệm, dám nhận vấn đề lạ và giải quyết cùng đội thay vì "ném vấn đề qua hàng rào". Kỹ sư xuất sắc là người làm tất cả những điều đó một cách chủ động, kể cả sửa quy trình hỏng mà không chờ ai cho phép. Theo tác giả, đây chỉ là chuẩn mực nghề nghiệp cơ bản chứ không phải đòi hỏi quá mức.
 
 ## [Why I do programming](https://esafev.com/notes/why-i-do-programming/)
 
-Tác giả kể lại niềm đam mê lập trình suốt đời bắt nguồn từ sự tò mò thời thơ ấu. Là một đứa trẻ ba tuổi trầm tĩnh, họ thích tháo rời máy cassette để khám phá cơ chế bên trong, nuôi dưỡng bản năng hiểu máy móc. Điều này phát triển ở trường qua MS-DOS, Logo, BASIC, sau đó là HTML, CSS và JavaScript, nơi xây dựng chương trình đơn giản và website mang lại cảm giác kỳ diệu. Đến 10 tuổi, internet khơi dậy thử nghiệm web, bao gồm kiếm tiền từ giúp bài tập.
+Tác giả kể lại hành trình đến với lập trình bắt nguồn từ sự tò mò: lên ba tuổi đã cầm tua vít tháo tung máy móc để xem bên trong có gì. Đi học, họ làm quen với MS-DOS, Logo và Pascal; đến mười tuổi, có máy tính riêng và kết nối Internet, họ tự học HTML, CSS, JavaScript và thậm chí kiếm tiền bằng cách làm bài tập hộ bạn bè. Tuổi thiếu niên gắn với việc viết script PAWN cho các bản mod game SAMP và MTA với mong muốn xây dựng thế giới nhiều người chơi, rồi dùng LSL tạo quần áo, công trình và script trong Second Life, mang lại thu nhập thật. Muốn tạo tác động ngoài thế giới ảo, năm mười sáu tuổi họ mở một mảng kinh doanh bán lại hàng số để tự mua máy tính và thiết bị âm nhạc.
 
-Tuổi thiếu niên sâu sắc hóa qua mod game như MTA và SAMP sử dụng scripting PAWN, nhằm tạo thế giới multiplayer immersive giống "proto-metaverse". Khám phá Second Life mở rộng thành scripting LSL cho kinh tế ảo, tạo thu nhập thực từ sáng tạo digital. Tuy nhiên, sự chuyển dịch hướng tác động đời thực nảy sinh khoảng 16 tuổi, dẫn đến các venture bán hàng online nhỏ để tài trợ công nghệ cá nhân, dù rủi ro trường học.
-
-Đại học Kỹ thuật Sáng tạo kết hợp kỹ năng kỹ thuật như CAD và bảo mật với triết học, nhấn mạnh đặt câu hỏi suy tư. Sau tốt nghiệp, bất định giải quyết qua startup MipoTheBot, nơi thiết kế và coding khơi dậy động lực chuyên nghiệp, dù đóng cửa dạy bài học kinh doanh. Kinh nghiệm qua các ngành nhấn mạnh sức mạnh đội ngũ hợp tác.
-
-Burnout đánh úp hai lần, một liên quan công việc và một cá nhân, nhưng chuyến du lịch châu Âu phục hồi khẳng định niềm vui lập trình. Tác giả đánh giá cao biên giới vô tận – từ backend đến AI – như phản ứng chống phân tâm, thể hiện sáng tạo hơn chỉ nghề nghiệp. Cuối cùng, lập trình bền vững như cách cốt lõi để tinker, khám phá và tương tác thực tế, không thay đổi từ xung động tuổi trẻ.
-
-**Điểm chính:**
-- Lái bằng tò mò tuổi thơ tháo rời máy móc và khám phá cơ chế.
-- Tìm magic trong tạo chương trình chức năng, từ game đơn giản đến thế giới ảo.
-- Tìm xây dựng tác động ý nghĩa đời thực ngoài không gian ảo.
-- Xem lập trình như khám phá vô tận qua lĩnh vực web, hệ thống và AI, thỏa mãn impulse tinker.
-- Thấy lập trình như triết lý sáng tạo tương tác thế giới, bền vững qua burnout.
+Ở đại học ngành Kỹ thuật Đổi mới, tác giả học CAD, an ninh mạng và cả triết học. Startup đầu tiên, MipoTheBot — một bot Slack dành cho freelancer — dạy họ nhiều về thiết kế, phát triển và tầm quan trọng của bán hàng, tiếp thị. Sau hai lần kiệt sức, một kỳ nghỉ kéo dài một tháng ở châu Âu giúp họ tìm lại niềm đam mê. Với tác giả, lập trình là cách để khám phá, mày mò và thỏa mãn trí tò mò, với những chân trời không bao giờ cạn như hệ thống, mạng phân tán hay công nghệ mới; thử thách lớn nhất là giữ được sự tập trung giữa vô vàn khả năng.
 
 ## [The unreasonable effectiveness of modern sort algorithms](https://github.com/Voultapher/sort-research-rs/blob/main/writeup/unreasonable/text.md)
 
-Nghiên cứu khám phá hiệu suất đáng ngạc nhiên của thuật toán sắp xếp generic hiện đại trong kịch bản hạn chế: sắp xếp mảng u64 với chỉ bốn giá trị phân biệt, mô phỏng dữ liệu low-cardinality. Sử dụng suite benchmark sort-research-rs dựa trên Rust trên AMD Ryzen 9 5900X, tác giả test bucket sort tối ưu domain chống hybrid general-purpose, đo throughput theo elements per second qua kích thước input từ 10 đến 10^8.
+Bài nghiên cứu đặt một câu hỏi thú vị: nếu biết trước dữ liệu chỉ có đúng bốn giá trị u64 khác nhau (mẫu `random_d4`), một thuật toán sắp xếp viết riêng cho miền dữ liệu đó sẽ nhanh hơn thuật toán tổng quát đến mức nào? Tác giả, người đồng phát triển các thuật toán sắp xếp trong thư viện chuẩn của Rust, đo trên AMD Ryzen 9 5900X bằng bộ benchmark `sort-research-rs` với nhiều kích thước đầu vào khác nhau.
 
-Phương pháp liên quan benchmark cold với pattern random_d4, flush cache hướng dẫn để mô phỏng gọi one-off. Approach domain-specific bao gồm BTreeMap (đếm sorted, ~150M elem/s tại 10^6), HashMap (nhanh hơn nhưng cần sort thêm, ~300M elem/s), dựa trên match (nặng branch, giới hạn ~200M elem/s bởi mispredictions), branchless (tránh penalty, ~220M elem/s), và perfect hash function (PHF - nhanh nhất cho known domain, ~400M elem/s nhưng panic nếu dữ liệu thay đổi).
-
-Generic như std lib ipnsort (unstable) và driftsort (stable) vượt trội, đạt ~350M elem/s cho unstable và ~280M cho stable nhờ partial deduplication tự động, xử lý O(N * log(K)) với K=4 mà không kiến thức trước. So sánh với pdqsort, crumsort, radsort cho thấy generic robust hơn, thích ứng mà không fail. Tác giả nhấn mạnh std lib Rust (co-author) cho robustness qua partial deduplication, hiệu quả trong pattern low-cardinality phổ biến, làm generic "unreasonably effective" mà không cần specialize.
-
-Trade-off: Specialized excel ideal nhưng fail (panic/output sai) nếu dữ liệu thay đổi; generic adapt, phù hợp production. Đối với junior Rust devs, nghiên cứu khuyến khích tin tưởng std lib cho sorting, tập trung domain knowledge thay vì micro-optimize unknown cases.
-
-**Điểm chính:**
-- Tập trung benchmark Rust trên low-cardinality u64 (4 giá trị phân biệt) trên Ryzen 9 5900X.
-- So sánh bucket sort domain-specific (BTree, Hash, match, branchless, PHF) vs generic hybrids (ipnsort, driftsort, pdqsort).
-- Generic std lib vượt trội nhờ partial deduplication, đạt O(N log K) tự động ~350M elem/s stable/unstable.
-- Specialized nhanh nhưng fragile (panic nếu domain thay đổi); generic robust cho production.
-- Kết luận: Std lib "unreasonably effective" cho pattern phổ biến, ưu tiên robustness hơn specialize.
+Các cách tiếp cận chuyên biệt gồm: đếm bằng BTreeMap, đếm bằng HashMap rồi sắp xếp lại các khóa, dùng `match` cứng cho bốn giá trị (bị giới hạn bởi việc dự đoán rẽ nhánh sai), phiên bản không rẽ nhánh (branchless), và hàm băm hoàn hảo (perfect hash function) — cách nhanh nhất, đạt khoảng 1,7 tỷ phần tử mỗi giây. Phía tổng quát có `slice::sort_unstable` (ipnsort), driftsort cùng các cài đặt như pdqsort, crumsort. Điều đáng ngạc nhiên là thư viện chuẩn của Rust, dù không biết gì về dữ liệu, vẫn cạnh tranh sát với nhiều giải pháp chuyên biệt nhờ cơ chế xử lý dữ liệu ít giá trị phân biệt kế thừa từ pdqsort; trong khi các cài đặt C bị hạn chế vì không thể nội tuyến hàm so sánh do người dùng truyền vào. Kết luận: tối ưu theo miền dữ liệu có thể thắng lớn khi giả định đúng, nhưng sẽ panic hoặc cho kết quả sai khi dữ liệu thay đổi. Với lập trình viên, hãy tin tưởng thư viện chuẩn trước khi tự viết thuật toán riêng.
 
 ## [How we made ClickHouse log queries 99.5% faster with resource fingerprinting](https://signoz.io/blog/query-performance-improvement/)
 
-Các kỹ sư SigNoz giải quyết truy vấn log chậm trong ClickHouse bằng cách xử lý lưu trữ dữ liệu không hiệu quả. Truyền thống, log từ các pod, service, môi trường đa dạng trộn lẫn qua các block lưu trữ, buộc database quét gần như toàn bộ dữ liệu cho filter mục tiêu, như theo namespace. Ví dụ, truy vấn namespace production trước đây kiểm tra 99.5% block, dẫn đến I/O cao và latency.
+Đội ngũ SigNoz gặp vấn đề truy vấn log chậm: chỉ một bộ lọc theo namespace cũng phải quét 41.498 trên 41.676 khối dữ liệu (99,5%). Nguyên nhân là log từ nhiều pod, dịch vụ và môi trường nằm lẫn lộn trong các khối lưu trữ, khiến cơ sở dữ liệu không thể bỏ qua khối nào. ClickHouse lưu dữ liệu theo cột, chia thành các granule khoảng 8.192 dòng, và dùng chỉ mục khóa chính dạng thưa (mỗi khối một mục chứ không phải mỗi dòng). Mệnh đề `ORDER BY` quyết định thứ tự lưu vật lý, nên nếu dữ liệu được sắp xếp phù hợp, ClickHouse có thể bỏ qua cả khối không liên quan; các chỉ mục phụ như bloom filter cũng giúp được phần nào nhưng kém hiệu quả hơn tối ưu khóa chính.
 
-ClickHouse, database phân tích columnar, tổ chức dữ liệu vào granule khoảng 8,192 rows, sử dụng primary-key index sparse để skip block không liên quan trong truy vấn. Trong khi secondary index như bloom filter cung cấp skip nào đó, chúng kém hơn so với primary key tối ưu, quyết định sắp xếp physical row qua ORDER BY clause.
-
-Kỹ thuật cốt lõi giới thiệu resource fingerprinting phân cấp: hash từ attribute chính (e.g., "cluster=c1;namespace=n1;pod=p1") xác định unique nguồn log. Bằng cách incorporate fingerprint sớm trong ORDER BY sequence – sau bucketing thời gian nhưng trước severity và timestamp – log từ resource tương tự cluster cùng contiguous block. Điều này tận dụng indexing sparse của ClickHouse để skip granule không match chính xác.
-
-Benchmark chứng minh cải thiện đáng kể: filter namespace nay đọc chỉ 0.85% block (222/26,135), giảm I/O hơn 99%. Giải pháp extensible đến Kubernetes, AWS, Docker; duy trì compatibility schema. Đối với lập trình viên junior, kỹ thuật nhấn mạnh optimize storage qua sorting thông minh, tận dụng index để cải thiện query performance trong analytical database như ClickHouse.
-
-**Điểm chính:**
-- Vấn đề: Log trộn lẫn dẫn đến quét 99.5% block cho filter như namespace.
-- Giải pháp: Hierarchical resource fingerprinting hash attribute, ORDER BY (time, fingerprint) để cluster log.
-- Kết quả: Giảm quét từ 41,498/41,676 xuống 222/26,135 block, tiết kiệm I/O >99%.
-- Triển khai: Extensible cho K8s/AWS, giữ schema compatibility.
-- Bài học: Sắp xếp physical data theo query pattern phổ biến để leverage sparse index hiệu quả.
+Giải pháp là tạo "dấu vân tay tài nguyên" (resource fingerprint) bằng cách băm chuỗi thuộc tính phân cấp của nguồn log, ví dụ `cluster;namespace;pod` với Kubernetes, `container.name;container.image` với Docker, hay thẻ môi trường và log stream với AWS CloudWatch. Dấu vân tay này được đặt ngay sau mốc thời gian trong khóa sắp xếp: `ORDER BY (ts_bucket_start, resource_fingerprint, severity_text, timestamp, id)`, giúp log của cùng một tài nguyên nằm liền nhau. Kết quả, truy vấn namespace giờ chỉ đọc 222 trên 26.135 khối (0,85%), vẫn giữ tương thích lược đồ. Bài học cho lập trình viên: hãy sắp xếp dữ liệu vật lý theo cách người dùng thường truy vấn để tận dụng chỉ mục thưa.
 
 ## [AI Coding](https://geohot.github.io/blog/jekyll/update/2025/09/12/ai-coding.html)
 
-Bài viết của một nhân vật công nghệ có kinh nghiệm phản ánh về tuổi tác và sự thất vọng với ngành công nghệ bị hype chi phối, phê phán vai trò over-hyped của AI trong coding. Lấy từ thất bại quá khứ như venture xe tự lái, tác giả lập luận rằng sự nhiệt tình về AI thường ưu tiên lợi nhuận tài chính hơn tiến bộ thực tế. Trung tâm là ẩn dụ AI như compiler: người dùng input prompt tiếng Anh như "code", nhận output compiled, giống phát triển truyền thống nhưng với tweak tương tác hiếm khi vượt trội. Mô hình này highlight giới hạn của AI – tiếng Anh thiếu precision cho task mới, non-deterministic kết quả mà không spec nghiêm ngặt, và global effect của prompt – làm nó viable chủ yếu cho workflow routine do ecosystem lập trình hiện tại kém.
+George Hotz (geohot) cho rằng khả năng "lập trình" của AI đang bị thổi phồng, và nên xem AI như một trình biên dịch hơn là một trí tuệ biết viết mã: bạn đưa vào đặc tả (prompt), nhận lại kết quả đã "biên dịch". Nếu bạn tin trình biên dịch biết lập trình thì cứ tin AI biết lập trình. Việc tinh chỉnh qua lại với AI thường không tốt hơn bao nhiêu so với chỉ sửa lại prompt, giống giới hạn của các IDE. Tiếng Anh là một "ngôn ngữ lập trình" tệ vì ba lý do: thiếu chính xác nên chỉ hiệu quả với những tác vụ phổ biến, không có đặc tả nên kết quả không tất định, và một thay đổi nhỏ trong prompt có thể ảnh hưởng khó lường đến toàn bộ đầu ra.
 
-Tác giả bác bỏ ý tưởng AI "coding" độc lập, quy utility của nó cho enhanced search, optimization, và pattern reuse thay vì trí tuệ innate. Họ lập luận rằng phụ thuộc model ngôn ngữ lớn tiết lộ flaw trong codebase, hiring, và tool, dự đoán AI sẽ automate lập trình giống compiler và spreadsheet transform lĩnh vực trước. Nghiên cứu trích dẫn nhấn mạnh disconnect: AI boost perceived productivity 20% nhưng giảm actual speed 19%, fuel hàng tỷ investment misguided.
-
-Kết luận với call to action, bài viết kêu gọi focus trên ngôn ngữ robust, compiler, library hơn sensationalism. Update làm rõ hỗ trợ AI như tool thực tế khi giới hạn được thừa nhận, trong khi decrying hype và ponder style blog cho reach rộng hơn engagement metric. Tổng thể, nó advocate skepticism, ưu tiên công việc thực tế hơn hype.
-
-**Điểm chính:**
-- AI như compiler: Prompt tiếng Anh yield code, nhưng thiếu precision, determinism, locality so với ngôn ngữ lập trình.
-- Productivity illusion: Cảm giác nhanh hơn nhưng chậm thực tế 19%, từ tool kém hiện tại.
-- Giới hạn: Tiếng Anh kém cho novel task; AI optimize pattern, không magic.
-- Tương lai: AI automate như compiler thay manual coding, evolve tool ecosystem.
-- Phê phán hype: Ưu tiên language/compiler cải thiện hơn billion investment misguided.
+Tác giả dẫn một nghiên cứu cho thấy AI khiến lập trình viên cảm thấy nhanh hơn 20% nhưng thực tế lại chậm hơn 19%, và đặt câu hỏi về hàng tỷ đô la đầu tư dựa trên cảm giác đó. Ông dự đoán AI sẽ thay thế công việc lập trình giống cách trình biên dịch và bảng tính từng thay thế lực lượng lao động trước đây, không phải nhờ trí thông minh mà nhờ gom công cụ lại. Tiến bộ thực sự đến từ việc xây dựng ngôn ngữ, trình biên dịch và thư viện tốt hơn. Trong phần cập nhật, tác giả làm rõ mình phản đối sự thổi phồng chứ không phản đối AI, và ủng hộ việc nhìn nhận đúng điểm mạnh, điểm yếu của công cụ.
 
 *Đánh giá sơ bộ thì combo này ổn áp, chạy ổn định, không hỏi prompt linh tinh để xử lý việc đọc WebFetch, kết quả thì hơi dài dòng, nhiều lỗi vặt, mình sẽ thử thêm một số model khác trong các bài viết sắp tới để tìm được 1 combo vừa free lại chất lượng :D*
 
 ---
 
-*Bài viết đã được review và cập nhật bởi Claude Code với Opus 4.7 (1M context).*
+*Bài viết đã được viết lại bởi Claude Code với Opus 5.5 vào ngày 27/09/2026.*

@@ -9,15 +9,9 @@ categories: ["Newsletter"]
 
 ## [Agentic AI và Sự Thay Đổi Nghề Nghiệp](https://medium.com/@elliotgraebert/agentic-ai-has-changed-my-career-2c6e3dd29708)
 
-Trong thời đại AI phát triển mạnh mẽ, khái niệm "Agentic AI" đang dần trở nên phổ biến và có ảnh hưởng lớn đến sự phát triển nghề nghiệp của nhiều người. Agentic AI đề cập đến các hệ thống AI có khả năng tự chủ thực hiện các nhiệm vụ phức tạp thông qua việc lập kế hoạch, ra quyết định và thực thi hành động một cách độc lập.
+Elliot Graebert, một giám đốc kỹ thuật tại Skydio, thú nhận rằng suốt sự nghiệp ông gần như không viết mã nguồn vì lên làm quản lý quá sớm. Khoảng bốn tháng trước, ông bắt đầu "vibe coding" ngay trên monorepo hàng triệu dòng điều khiển đội drone của công ty, và nay đã lọt vào nhóm năm người đóng góp nhiều nhất, có lúc gửi tới mười pull request mỗi giờ. Tác giả phân biệt hai cách làm: vibe coding giống lập trình cặp với AI (như Windsurf, Cursor), vòng lặp tính bằng giây và cần bạn chú ý liên tục; còn agentic AI giống giao việc cho một thực tập sinh nhiệt tình, vòng lặp tính bằng phút và bạn chỉ quay lại khi việc đã xong. Hành trình của ông đi từ tốc độ 0,5 lần (tự sửa lỗi giao diện nhỏ với một trình soạn thảo), lên 1,5 lần khi chạy song song ba môi trường với ba mô hình Gemini, Claude và GPT để "vây đánh" một lỗi khó, rồi 3 lần nhờ các tệp ngữ cảnh (Windsurf Rules) ghi lại quy ước mã nguồn và lệnh chạy kiểm thử, được tinh chỉnh dần sau mỗi lần AI gặp khó.
 
-Sự xuất hiện của Agentic AI đang tạo ra những thay đổi đáng kể trong thị trường lao động. Một số ngành nghề truyền thống có thể bị ảnh hưởng, trong khi các vị trí mới liên quan đến quản lý và tương tác với AI đang dần hình thành. Những người làm việc trong lĩnh vực công nghệ đang phải thích nghi với vai trò mới, chuyển từ việc thực hiện các nhiệm vụ cụ thể sang việc giám sát, hướng dẫn và cộng tác với các agent AI.
-
-**Điểm chính:**
-- Agentic AI đang thay đổi bản chất công việc trong nhiều ngành, đặc biệt là công nghệ
-- Các chuyên gia cần phát triển kỹ năng mới để làm việc hiệu quả với AI agent
-- Cơ hội mới đang mở ra cho những người có thể kết hợp AI agent vào quy trình làm việc
-- Việc thích nghi sớm với xu hướng này có thể tạo ra lợi thế cạnh tranh trong sự nghiệp
+Bước nhảy lên 10 lần đến từ Coder Tasks, các môi trường tự động đi từ câu lệnh đến pull request, kết hợp với hai MCP: GitHub để đọc issue và tạo pull request (kích hoạt CI và bản xem trước trên Vercel), và Playwright để AI tự mở trình duyệt, tái hiện lỗi, sửa rồi kiểm tra lại. Bài học cốt lõi là agentic AI thành công khi có một vòng phản hồi không cần con người trả lời; khi đó ông có thể chạy hàng chục tác vụ cùng lúc, chẳng hạn hoàn thành cả một đợt chuyển đổi thành phần lọc dữ liệu trong một ngày. Tác giả cũng nhấn mạnh AI không tự giải quyết mọi thứ, bạn phải đầu tư vào công cụ, và điều thú vị nhất là cả nhà thiết kế, quản lý sản phẩm hay đội bay thử cũng có thể trực tiếp đóng góp vào sản phẩm.
 
 ## ~~[Sự Phát Triển Của Garbage Collectors: Từ CMS Của Java Đến ZGC](https://codemia.io/blog/path/The-Evolution-of-Garbage-Collectors-From-Javas-CMS-to-ZGC-and-a-JVM-vs-Go-vs-Rust-Latency-Shootout)~~
 
@@ -38,85 +32,33 @@ Sự xuất hiện của Agentic AI đang tạo ra những thay đổi đáng k�
 
 ## [Mới Trong Java 25: Generational Shenandoah GC Không Còn Là Tính Năng Thử Nghiệm](https://theperfparlor.com/2025/09/14/new-in-java25-generational-shenandoah-gc-is-no-longer-experimental/)
 
-Java 25 đánh dấu sự ổn định hóa của garbage collector Generational Shenandoah, hiện đã sẵn sàng cho môi trường production. Shenandoah GC, ban đầu được giới thiệu trong Java 12, là một bộ thu gom rác có thời gian tạm dừng thấp, chạy gần như đồng thời với ứng dụng.
+Java 25 chính thức đưa Generational Shenandoah ra khỏi trạng thái thử nghiệm, sẵn sàng cho môi trường production. Shenandoah vốn là bộ thu gom rác (garbage collector) có thời gian tạm dừng thấp, xuất hiện từ Java 12 và chạy gần như đồng thời với ứng dụng. Phiên bản phân thế hệ, được giới thiệu dưới dạng thử nghiệm ở Java 24, chia bộ nhớ thành vùng dành cho đối tượng trẻ và đối tượng già. Vì phần lớn đối tượng "chết sớm", cách chia này giúp bộ thu gom không phải quét lại những đối tượng sống lâu một cách không cần thiết, từ đó cải thiện hiệu năng và giảm lượng bộ nhớ sử dụng.
 
-Phiên bản generational, lần đầu tiên có sẵn như một tính năng thử nghiệm trong Java 24, cải thiện hiệu suất và dung lượng bộ nhớ bằng cách tách biệt các đối tượng trẻ và cũ. Cách tiếp cận này giảm việc quét không cần thiết, vì hầu hết các đối tượng đều "chết sớm".
-
-Các cải tiến chính trong Java 25 bao gồm:
-- Ổn định hóa và sửa lỗi
-- Hiệu suất tốt hơn và giảm chi phí GC
-- Quản lý vùng nhớ hiệu quả hơn
-- Công cụ và ghi log được cải thiện
-
-Theo như bài viết, "Nhờ tất cả các cải tiến này, Generational Shenandoah đã đạt đến mức độ trưởng thành phù hợp cho các ứng dụng production." Người dùng không còn cần cờ `-XX:+UnlockExperimentalVMOptions` để kích hoạt tính năng này.
-
-**Điểm chính:**
-- Generational Shenandoah GC trong Java 25 đã sẵn sàng cho production
-- Tính năng generational giúp cải thiện hiệu suất và dung lượng bộ nhớ
-- Không cần cờ experimental để kích hoạt tính năng này nữa
-- Đây là bước tiến quan trọng trong việc tối ưu hóa garbage collection của Java
+Trong Java 25, tính năng này được ổn định hóa và sửa nhiều lỗi, giảm chi phí thu gom rác, quản lý vùng nhớ hiệu quả hơn, đồng thời có công cụ và nhật ký (log) tốt hơn. Theo bài viết, nhờ các cải tiến đó mà Generational Shenandoah đã đủ trưởng thành cho ứng dụng thực tế, và bạn không còn cần cờ `-XX:+UnlockExperimentalVMOptions` để bật nó. Đây là một bước tiến quan trọng trong hành trình tối ưu hóa việc thu gom rác của Java.
 
 ## [Nếu Tất Cả Thế Giới Là Một Monorepo](https://jtibs.substack.com/p/if-all-the-world-were-a-monorepo?utm_source=tldrnewsletter)
 
-Bài viết khám phá cách hệ sinh thái lập trình R, thông qua kho lưu trữ gói trung tâm CRAN, thực thi tư duy "monorepo" bằng cách yêu cầu các tác giả gói đảm bảo rằng các cập nhật của họ không phá vỡ các gói phụ thuộc. Điều này tương phản với các hệ sinh thái khác như npm hoặc PyPI, nơi các thay đổi phá vỡ phổ biến hơn và được để cho người dùng giải quyết.
+Julie Tibshirani kể về trải nghiệm với CRAN, kho gói trung tâm của ngôn ngữ R. Trước khi chấp nhận một bản cập nhật, CRAN không chỉ kiểm tra gói được gửi lên mà còn chạy kiểm tra trên mọi gói phụ thuộc vào nó. Khi tác giả phát hành `grf` 2.0 với thay đổi phá vỡ API, CRAN chặn việc xuất bản cho đến khi gói hạ nguồn `policytree` được cập nhật. Ban đầu cô thấy vô lý: tại sao mình phải lo cho mã nguồn của người khác? Nhưng dần dần cô nhận ra đây không đơn thuần là một điểm khác trên thang đánh đổi giữa tốc độ và ổn định, mà là một sự "đồng cảm cực độ" trong bảo trì phần mềm: mã nguồn của người dùng cũng là trách nhiệm của người viết thư viện, giống như tư duy của một monorepo.
 
-Tác giả suy ngẫm về cách tiếp cận này thúc đẩy sự đồng cảm cực độ trong bảo trì phần mềm, ưu tiên trải nghiệm người dùng hơn sự tiện lợi cho nhà phát triển. Một trải nghiệm cá nhân với các thay đổi phá vỡ trong gói `grf` làm nổi bật những thách thức và lợi ích của hệ thống này.
-
-Bài viết kết luận bằng cách đề xuất rằng các hệ sinh thái phần mềm quy mô lớn khác có thể hưởng lợi từ việc áp dụng triết lý tương tự để cải thiện khả năng bảo trì lâu dài và sự tin tưởng của người dùng.
-
-**Điểm chính:**
-- CRAN yêu cầu các tác giả gói đảm bảo cập nhật không phá vỡ phụ thuộc
-- Hệ sinh thái R ưu tiên trải nghiệm người dùng hơn sự tiện lợi cho nhà phát triển
-- Triết lý "monorepo" có thể cải thiện độ tin cậy và khả năng bảo trì
-- Các hệ sinh thái khác có thể học hỏi từ cách tiếp cận của R
+Tác giả so sánh với thời làm Elasticsearch, nơi việc để từng dự án tự nâng cấp khiến hàng nghìn dự án mắc kẹt ở phiên bản cũ nhiều năm sau đó. Khi chứng kiến các đợt chuyển đổi quy mô lớn tại Databricks, cô thấy rằng khi đội kỹ sư tự chịu trách nhiệm từ đầu đến cuối, kể cả việc sửa mã nguồn phụ thuộc, tỷ lệ hoàn thành tăng lên rõ rệt. Dù các gói R chấp nhận API kém nhất quán hơn các hệ sinh thái như npm hay PyPI, người dùng lại được hưởng việc cập nhật phụ thuộc gần như không đau đớn, và đó là bài học đáng để các hệ sinh thái khác suy ngẫm.
 
 ## [9 Mẫu Kiến Trúc Phần Mềm Cho Hệ Thống Phân tán](https://dev.to/somadevtoo/9-software-architecture-patterns-for-distributed-systems-2o86?=&aid=recZm2jVus1yqUHWw)
 
-Bài viết trình bày các mẫu kiến trúc phần mềm thiết yếu được sử dụng trong các hệ thống phân tán để quản lý dữ liệu và giao tiếp một cách hiệu quả. Những mẫu này cũng rất quan trọng cho các cuộc phỏng vấn thiết kế hệ thống. Các mẫu chính bao gồm:
+Bài viết giới thiệu chín mẫu kiến trúc thường gặp trong hệ thống phân tán, vừa hữu ích khi thiết kế thực tế vừa hay xuất hiện trong phỏng vấn thiết kế hệ thống. Nhóm giao tiếp gồm: Peer-to-Peer, nơi các nút trao đổi trực tiếp mà không cần bộ điều phối trung tâm, dùng trong chia sẻ tệp và blockchain; API Gateway, điểm vào thống nhất cho các dịch vụ phía sau, đảm nhận bảo mật và cân bằng tải trong kiến trúc microservices; Pub-Sub, tách bên gửi và bên nhận thông điệp qua một broker, phù hợp cho nhắn tin thời gian thực, hệ thống hướng sự kiện và IoT; và Request-Response, mô hình đồng bộ trong đó máy khách chờ phản hồi từ máy chủ, phổ biến ở REST API và ứng dụng web.
 
-1. **Peer-to-Peer (P2P):** Cho phép giao tiếp trực tiếp giữa các nút mà không cần điều phối viên trung tâm, được sử dụng trong các hệ thống chia sẻ tệp và blockchain.
-2. **API Gateway:** Đóng vai trò là điểm vào thống nhất cho các dịch vụ backend, đơn giản hóa tương tác của khách hàng và thực thi bảo mật.
-3. **Pub-Sub (Publish-Subscribe):** Tách rời người sản xuất tin nhắn khỏi người tiêu dùng bằng cách sử dụng một broker tin nhắn, hỗ trợ các hệ thống thời gian thực.
-4. **Request-Response:** Một mô hình đồng bộ trong đó khách hàng chờ phản hồi từ máy chủ, phổ biến trong REST API và ứng dụng web.
-5. **Event Sourcing:** Lưu trữ các thay đổi trạng thái dưới dạng các sự kiện bất biến, hỗ trợ khả năng kiểm tra và phát lại trong các hệ thống tài chính.
-6. **ETL (Extract, Transform, Load):** Tích hợp dữ liệu từ nhiều nguồn vào một kho dữ liệu, rất quan trọng cho phân tích và di chuyển dữ liệu.
-7. **Batching:** Nhóm dữ liệu để xử lý nhằm cải thiện hiệu suất, được sử dụng trong ETL và các đường ống dữ liệu.
-8. **Streaming Processing:** Xử lý các luồng dữ liệu liên tục trong thời gian thực, lý tưởng cho các ứng dụng IoT và an ninh mạng.
-9. **Orchestration:** Phối hợp quy trình làm việc giữa các dịch vụ bằng cách sử dụng một bộ điều khiển trung tâm, đảm bảo thực hiện có trật tự trong các hệ thống phức tạp.
-
-Những mẫu này giúp các kiến trúc sư xây dựng các hệ thống có thể mở rộng và phục hồi bằng cách cung cấp các cách tiếp cận có cấu trúc cho các thách thức thiết kế phổ biến.
-
-**Điểm chính:**
-- 9 mẫu kiến trúc thiết yếu cho hệ thống phân tán và phỏng vấn thiết kế
-- Mỗi mẫu giải quyết các vấn đề cụ thể trong giao tiếp và quản lý dữ liệu
-- Các mẫu giúp xây dựng hệ thống có thể mở rộng và phục hồi
-- Hiểu biết về các mẫu này rất quan trọng cho kỹ sư phần mềm
+Nhóm quản lý và xử lý dữ liệu gồm: Event Sourcing, lưu trạng thái dưới dạng chuỗi sự kiện bất biến để dễ kiểm toán và phát lại, thường thấy trong hệ thống tài chính; ETL (trích xuất, biến đổi, nạp) để gom dữ liệu từ nhiều nguồn vào kho dữ liệu phục vụ phân tích và di chuyển dữ liệu; Batching, gom dữ liệu thành lô rồi xử lý một lần để tăng hiệu năng; Streaming Processing, xử lý luồng dữ liệu liên tục theo thời gian thực cho tài chính, IoT hay an ninh mạng; và Orchestration, dùng một bộ điều phối trung tâm để sắp xếp luồng công việc giữa các dịch vụ. Theo tác giả, hiểu rõ điểm mạnh và sự đánh đổi của từng mẫu sẽ giúp bạn xây dựng hệ thống tin cậy, dễ mở rộng và dễ bảo trì khi yêu cầu thay đổi.
 
 ## [Sắp Xếp Các Dòng Trong Mã Nguồn](https://testing.googleblog.com/2025/09/sort-lines-in-source-code.html?=&aid=recV8wgDMqTb7Hwko)
 
-Bài viết từ Google Testing Blog thảo luận về cách sắp xếp các dòng trong mã nguồn có thể giúp ngăn chặn lỗi và cải thiện khả năng bảo trì. Bài viết sử dụng một ví dụ về cấu hình trò chơi, nơi một cài đặt cờ trùng lặp đã gây ra lỗi và dễ dàng được phát hiện khi các dòng được sắp xếp.
+Bài viết của Kyle Freeman trên Google Testing Blog, chuyển thể từ một số "Tech on the Toilet", mở đầu bằng một tình huống quen thuộc: bạn bật chế độ hai người chơi ở dòng cuối tệp cấu hình nhưng khi chạy trò chơi thì tính năng không xuất hiện. Nguyên nhân là cờ `enable_two_players` bị khai báo hai lần với hai giá trị khác nhau, rất khó thấy khi các dòng nằm lộn xộn. Chỉ cần sắp xếp lại, hai dòng trùng lặp nằm cạnh nhau và lỗi lộ ra ngay. Thông điệp chính là danh sách và các dòng mã nguồn được sắp xếp thì dễ đọc, dễ bảo trì hơn và giúp ngăn lỗi.
 
-Bài viết giới thiệu công cụ **keep-sorted** (có sẵn tại [github.com/google/keep-sorted](http://github.com/google/keep-sorted)), một công cụ để tự động sắp xếp các dòng trong các khối được chỉ định trong tệp. Người dùng thêm các chú thích `# keep-sorted start` và `# keep-sorted end` xung quanh các dòng mục tiêu và chạy công cụ.
-
-Việc sắp xếp giúp xác định các vấn đề như các mục nhập trùng lặp. Bài viết lưu ý: "Các danh sách đã sắp xếp và các dòng mã dễ đọc và bảo trì hơn, và có thể giúp ngăn chặn lỗi." Bài viết cũng đề cập đến các tính năng nâng cao như sắp xếp bằng biểu thức chính quy và nhắc nhở người dùng "đảm bảo thứ tự ban đầu không có chủ ý" trước khi sắp xếp.
-
-**Điểm chính:**
-- Sắp xếp các dòng mã giúp phát hiện lỗi trùng lặp và cải thiện khả năng bảo trì
-- Công cụ keep-sorted tự động sắp xếp các khối mã được chỉ định
-- Các danh sách đã sắp xếp dễ đọc và dễ bảo trì hơn
-- Cần kiểm tra thứ tự ban đầu có chủ ý trước khi sắp xếp
+Để làm việc này tự động, tác giả giới thiệu công cụ keep-sorted ([github.com/google/keep-sorted](http://github.com/google/keep-sorted)): bạn thêm chú thích `keep-sorted start` và `keep-sorted end` quanh các dòng cần sắp xếp, rồi chạy `keep-sorted [file1] [file2] ...`, và có thể gắn nó vào pre-commit để tự chạy mỗi khi commit. Công cụ còn có tùy chọn bỏ qua chữ hoa chữ thường, sắp xếp theo số, theo tiền tố hoặc theo biểu thức chính quy (ví dụ `by_regex` để sắp một mảng Go theo phần chú thích cuối dòng). Lưu ý quan trọng: trước khi sắp xếp, hãy chắc chắn thứ tự ban đầu không mang ý nghĩa, chẳng hạn thứ tự nạp các phụ thuộc.
 
 ## [Đánh Giá 26 Năm Thay Đổi Của Java](https://neilmadden.blog/2025/09/12/rating-26-years-of-java-changes/)
 
-Bài viết nhìn lại chặng đường 26 năm phát triển của ngôn ngữ lập trình Java, đánh giá các thay đổi quan trọng trong ngôn ngữ và thư viện cốt lõi. Tác giả bắt đầu từ Java 1.1.8 năm 1999 và điểm qua những cải tiến lớn như Bộ sưu tập (Collections Framework) ("4/10"), Generics ("8/10"), và java.util.concurrent ("10/10").
+Neil Madden nhìn lại 26 năm làm việc với Java, từ Java 1.1.8 năm 1999 đến Java 25, và chấm điểm chủ quan từng thay đổi của ngôn ngữ và thư viện lõi (bỏ qua giao diện, đồ họa, máy ảo và GC). Những tính năng được đánh giá cao gồm java.util.concurrent (10/10), thiết kế tốt đến mức mọi người dùng nó thay cho các lớp collection gốc; try-with-resources (10/10) giúp xử lý ngoại lệ an toàn hơn hẳn; Records (10/10) mà tác giả bảo là "đáng lẽ phải có từ lâu"; UTF-8 mặc định (10/10) sửa hàng nghìn lỗi mã hóa ký tự chỉ trong một lần; cùng Generics (8/10) và suy luận kiểu `var` (9/10). Collections Framework chỉ được 4/10, lambda 4/10 vì stack trace xấu, switch expression 6/10 như một cải thiện nhỏ dễ chịu.
 
-Một số tính năng bị chỉ trích như NIO ("0/10") và Streams ("1/10"), trong khi Records ("10/10") và UTF-8 mặc định ("10/10") được khen ngợi. Bài viết bao quát các phiên bản đến Java 25, nhấn mạnh xu hướng phát hành theo thời gian và các tính năng như pattern matching, virtual threads, và mã hóa hậu lượng tử. Mô-đun (Modules) nhận đánh giá rất tệ "-10/10". Bài viết kết thúc bằng lời mời gọi thảo luận về các đánh giá chủ quan này.
-
-**Điểm chính:**
-- Java đã trải qua nhiều thay đổi lớn trong 26 năm phát triển
-- Các cải tiến như Generics, java.util.concurrent và Records được đánh giá cao
-- Một số tính năng như NIO và Streams nhận đánh giá thấp từ cộng đồng
-- Java 25 tiếp tục cải tiến với các tính năng như pattern matching và virtual threads
+Ở chiều ngược lại, NIO nhận 0/10 vì API rối rắm, Streams chỉ 1/10 và bị gọi là một trong những sai lầm lớn nhất của Java hiện đại do phức tạp, hứa hẹn quá mức về xử lý song song và dễ rò rỉ tài nguyên, còn các API mật mã học 1/10 vì dễ dùng sai. Tệ nhất là Modules với -10/10: gây xáo trộn lớn mà lợi ích thực tế rất ít. Virtual threads được xem là hứa hẹn nhưng chưa đủ kiểm chứng để chấm điểm. Bài viết cũng nhắc tới nhịp phát hành theo thời gian, pattern matching và mật mã hậu lượng tử, rồi kết thúc bằng lời mời bạn đọc cùng tranh luận về các đánh giá này.
 
 
 ## Bonus: Một vài ảnh hay ho đến từ [ByteByteGo](https://bytebytego.com/)
@@ -133,4 +75,4 @@ Một số tính năng bị chỉ trích như NIO ("0/10") và Streams ("1/10"),
 
 ---
 
-*Bài viết đã được review và cập nhật bởi Claude Code với Opus 4.7 (1M context).*
+*Bài viết đã được viết lại bởi Claude Code với Opus 5.5 vào ngày 27/09/2026.*

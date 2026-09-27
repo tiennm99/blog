@@ -9,165 +9,39 @@ categories: [ "Newsletter" ]
 
 ## [Choosing Languages](https://steveklabnik.com/writing/choosing-languages)
 
-Bài viết của Steve Klabnik bàn về việc lựa chọn ngôn ngữ lập trình, được viết sau khi Microsoft thông báo sẽ viết lại TypeScript compiler bằng Go. Tác giả chia sẻ góc nhìn sâu sắc về việc tại sao chúng ta không nên vội vàng phán xét lựa chọn ngôn ngữ lập trình của người khác.
+Steve Klabnik viết bài này sau khi Microsoft thông báo chuyển trình biên dịch TypeScript sang Go, và cộng đồng lập tức tranh cãi "sao không phải C#?", "sao không phải Rust?". Quan điểm của ông rất đơn giản: hãy viết chương trình bằng ngôn ngữ bạn muốn. Những ràng buộc kỹ thuật thường phụ thuộc vào bối cảnh hơn là tuyệt đối, và người ngoài hiếm khi biết bối cảnh thật của một dự án. Lý do chính của Microsoft là họ đang chuyển (port) mã nguồn hiện có chứ không viết lại từ đầu, và mã nguồn cũ có cấu trúc khá giống Go nên việc chuyển đổi dễ hơn. Klabnik cũng không thích lời khuyên "chọn đúng công cụ cho đúng việc", vì hiếm ai cố tình chọn sai; thứ trông như lựa chọn sai thường chỉ là do ta không thấy hết các yêu cầu phía sau.
 
-Một số điểm chính:
-
-1. **Bối cảnh quan trọng**: Mỗi dự án có những yêu cầu và bối cảnh riêng. Ví dụ, Microsoft chọn Go vì code hiện tại của họ tương tự với Go, giúp việc port code dễ dàng hơn.
-
-2. **Trải nghiệm cá nhân**: Tác giả chia sẻ câu chuyện về việc từng chỉ trích một người viết công cụ grep bằng Node.js vào năm 2013. Sự việc này đã thay đổi cách nhìn của ông về việc phán xét lựa chọn công nghệ của người khác.
-
-3. **Văn hóa cộng đồng**: Klabnik nhấn mạnh tầm quan trọng của việc xây dựng văn hóa cộng đồng tích cực, không chỉ trích ngôn ngữ khác mà tập trung vào ưu điểm của ngôn ngữ mình chọn.
-
-4. **Thông điệp chính**: Mỗi người có lý do riêng để chọn một ngôn ngữ lập trình, và chúng ta nên tôn trọng những lựa chọn đó thay vì vội vàng phán xét. Điều quan trọng là hiểu được bối cảnh đằng sau mỗi quyết định.
+Phần sâu sắc nhất là câu chuyện cá nhân. Năm 2013, khi còn trong nhóm Rails, ông từng chế giễu một người viết công cụ `grep` bằng Node và khiến tác giả tổn thương. Sự việc giúp ông nhận ra lời nói của mình có sức ảnh hưởng, và rằng "văn hóa khinh miệt" trong cộng đồng Ruby lúc đó đã tác động đến mình. Khi đến với Rust, ông chủ động góp phần xây dựng văn hóa bàn về Rust dựa trên ưu điểm của chính nó thay vì chê bai ngôn ngữ khác, và vì thế càng khó chịu với trào lưu "viết lại bằng Rust" lần này. Thông điệp cuối: mỗi người chọn ngôn ngữ vì những lý do riêng, nên khi không đồng tình, không có lý do gì để cư xử khó chịu.
 
 ## [How Long Should Functions Be?](https://tidyfirst.substack.com/p/how-long-should-functions-be)
 
-Bài viết của Kent Beck phân tích về độ dài của các hàm trong lập trình, dựa trên dữ liệu thực tế từ JUnit 5. Tác giả đưa ra những góc nhìn thú vị về việc tại sao chúng ta không nên áp đặt một con số cố định cho độ dài của hàm.
+Kent Beck cho rằng câu hỏi "hàm nên dài bao nhiêu dòng?" đã sai ngay từ đầu, vì phần mềm được nuôi lớn dần chứ không được tạo ra một lần. Dù ban đầu ngắn thế nào, các hàm vẫn sẽ dài ra theo thời gian, và hàm càng dài thì càng có xu hướng dài thêm. Để kiểm chứng, ông đo độ dài của 12.513 hàm trong JUnit 5: phần lớn chỉ 1–4 dòng (riêng hàm 2 dòng đã có 5.491), còn dài nhất là một hàm 74 dòng. Dữ liệu khớp rất tốt với phân phối lũy thừa (power law), với số mũ α ≈ 2,46, hệ số R² là 0,96 và độ dài trung bình khoảng 3,49 dòng.
 
-Một số điểm chính:
-
-1. **Phân phối theo quy luật lũy thừa**: Độ dài của các hàm tuân theo quy luật phân phối lũy thừa (power law), không phải một con số cố định. Dữ liệu từ JUnit 5 cho thấy:
-   - Nhiều hàm ngắn (1-3 dòng)
-   - Một số ít hàm dài
-   - Hệ số lũy thừa (α) là 2.46
-   - Giá trị R-squared là 0.96, cho thấy mối tương quan mạnh
-
-2. **Kết quả phân tích**:
-   - Độ dài trung bình của hàm là 3.49 dòng
-   - Phạm vi từ 1 đến 74 dòng
-   - Các hàm dài có xu hướng ngày càng dài hơn theo thời gian
-   - Dự án càng lớn, độ dài trung bình của hàm càng tăng
-
-3. **Ý nghĩa quan trọng**:
-   - Không có độ dài "đúng" cố định cho các hàm
-   - Phân phối tự nhiên bao gồm:
-     - Nhiều hàm ngắn
-     - Một số ít hàm dài
-     - Các hàm dài nhất sẽ tiếp tục phát triển khi hệ thống mở rộng
-
-4. **Các yếu tố ảnh hưởng**:
-   - Độ dốc của phân phối có thể được điều chỉnh
-   - Phát triển hướng thử nghiệm (TDD) đã được chứng minh là có tương quan với độ dốc lớn hơn
-   - Độ dốc lớn hơn đồng nghĩa với nhiều hàm ngắn hơn và giảm độ dài của các hàm dài nhất 
+Vì là phân phối lũy thừa, định lý giới hạn trung tâm không áp dụng: dự án càng lớn thì độ dài trung bình càng tăng, và hàm dài nhất sẽ còn dài thêm khi hệ thống mở rộng. Do đó câu trả lời đúng là một phân phối chứ không phải một con số: nhiều hàm ngắn, vài hàm dài. Chúng ta không thay đổi được việc độ dài hàm tuân theo quy luật này, nhưng có thể làm độ dốc của phân phối lớn hơn, nghĩa là có nhiều hàm ngắn hơn và hàm dài nhất bớt dài đi. Kết quả thực nghiệm duy nhất mà tác giả biết là nghiên cứu của Keith Braithwaite, cho thấy phát triển hướng kiểm thử (TDD) có tương quan với độ dốc lớn hơn.
 
 ## [What Makes Code Hard To Read: Visual Patterns of Complexity](https://seeinglogic.com/posts/visual-readability-patterns/)
 
-Bài viết phân tích các mẫu hình trực quan ảnh hưởng đến khả năng đọc hiểu code, dựa trên nghiên cứu về các metrics phức tạp và kinh nghiệm thực tế. Tác giả đưa ra 8 mẫu hình chính giúp cải thiện khả năng đọc hiểu code.
+Trong lúc rà soát một dự án để tìm lỗi, tác giả nhận thấy mình mệt mỏi rất nhanh dù mã nguồn có chất lượng tốt, và nguyên nhân không nằm ở độ phức tạp chu trình (cyclomatic complexity) như ông dự đoán mà ở khả năng đọc hiểu. Hiện chưa có thước đo phổ biến nào cho khả năng đọc hiểu, nên ông dựa vào hai chỉ số gần nhất. Bộ chỉ số Halstead từ thập niên 70 đếm số toán tử và toán hạng: càng nhiều thì người đọc càng phải suy luận nhiều về cách chúng tương tác. Chỉ số Cognitive Complexity của SonarSource thì cộng điểm mỗi khi luồng xử lý bị ngắt khỏi thứ tự tuyến tính và mỗi khi có cấu trúc điều khiển lồng nhau. Ngoài ra, ông phân tích thêm hình dạng hàm, cách đặt tên và vòng đời của biến.
 
-Một số điểm chính:
-
-1. **Các metrics phức tạp**:
-   - Halstead Complexity Metrics: đo lường số lượng operators và operands
-   - Cognitive Complexity: đánh giá độ phức tạp dựa trên cấu trúc code
-   - Các metrics này giúp định lượng khả năng đọc hiểu code
-
-2. **8 mẫu hình cải thiện khả năng đọc hiểu**:
-   - Số lượng dòng/operator/operand: Ưu tiên các hàm nhỏ với ít biến
-   - Tính mới lạ: Tránh các cấu trúc mới lạ, ưu tiên các mẫu hình quen thuộc
-   - Nhóm logic: Chia nhỏ các chuỗi hàm dài thành các nhóm logic
-   - Đơn giản hóa điều kiện: Giữ các điều kiện ngắn gọn
-   - Tránh goto: Chỉ sử dụng trong trường hợp đặc biệt
-   - Giảm thiểu lồng ghép: Tránh logic lồng nhau phức tạp
-   - Phân biệt biến: Sử dụng tên biến rõ ràng và khác biệt
-   - Thời gian sống của biến: Ưu tiên biến có thời gian sống ngắn
-
-3. **Ý nghĩa thực tế**:
-   - Các mẫu hình này áp dụng được cho mọi ngôn ngữ lập trình
-   - Giúp giảm thiểu lỗi và dễ dàng bảo trì code
-   - Tạo ra code dễ đọc và dễ hiểu hơn cho cả bản thân và người khác
+Từ đó tác giả rút ra 8 mẫu hình dễ nhận biết bằng mắt, áp dụng cho mọi ngôn ngữ: viết hàm nhỏ với ít biến và toán tử; tránh cú pháp lạ, ưu tiên các mẫu quen thuộc trong dự án; tách chuỗi `map`/`filter` hay biểu thức dài thành các nhóm logic bằng hàm phụ hoặc biến trung gian; giữ điều kiện ngắn gọn và không trộn lẫn nhiều toán tử logic; không dùng `goto` trừ một số trường hợp rất đặc biệt; hạn chế lồng nhau, nếu bắt buộc thì tách ra hàm riêng; đặt tên biến rõ nghĩa, dễ phân biệt và tránh che khuất biến (shadowing); và giữ vòng đời của biến càng ngắn càng tốt. Đây là bộ tiêu chí hữu ích để thảo luận khi xem xét mã nguồn.
 
 ## [IO Devices and Latency](https://planetscale.com/blog/io-devices-and-latency)
 
-Bài viết của Benjamin Dicken phân tích sâu về các thiết bị lưu trữ và độ trễ trong hệ thống máy tính, từ băng từ đến ổ cứng và SSD hiện đại. Tác giả cũng giải thích về tác động của việc chuyển đổi sang cloud và cách PlanetScale giải quyết các thách thức về hiệu suất.
+Benjamin Dicken (PlanetScale) dùng nhiều hình minh họa tương tác để kể lại lịch sử thiết bị lưu trữ và độ trễ của chúng. Băng từ lưu dữ liệu tuần tự nên truy cập ngẫu nhiên rất chậm. Ổ cứng HDD dùng đĩa từ quay nhanh với đầu đọc di chuyển, cải thiện đáng kể thời gian truy cập ngẫu nhiên. SSD không có bộ phận cơ học nên nhanh hơn nhiều và đọc ghi song song tốt, nhưng hiệu năng có thể giảm khi ổ phải chạy thu gom rác (garbage collection) để dọn các trang dữ liệu không còn dùng trước khi ghi mới.
 
-Một số điểm chính:
-
-1. **Lịch sử phát triển thiết bị lưu trữ**:
-   - Băng từ (1950s): Lưu trữ tuần tự, độ trễ cao khi truy cập ngẫu nhiên
-   - Ổ cứng (HDD): Cải thiện đáng kể với thời gian truy cập ngẫu nhiên 1-3ms
-   - Ổ cứng thể rắn (SSD): Hiệu suất cao hơn nhưng có vấn đề về garbage collection
-
-2. **Tác động của Cloud Computing**:
-   - Tách biệt storage và compute
-   - Sử dụng network-attached storage (EBS, etc.)
-   - Độ trễ tăng lên đáng kể: 250μs so với 50μs của local NVMe
-   - Giới hạn IOPS nhân tạo (ví dụ: 3000 IOPS/giây)
-
-3. **Giải pháp PlanetScale Metal**:
-   - Sử dụng NVMe SSD trực tiếp gắn với compute
-   - Replication tự động với primary và hai replica
-   - Không giới hạn IOPS
-   - Khả năng mở rộng linh hoạt
-   - Bảo vệ dữ liệu tốt hơn với nhiều lớp backup
-
-4. **So sánh hiệu suất**:
-   - CPU → RAM: ~100ns
-   - CPU → Local NVMe: ~50,000ns
-   - CPU → Network Storage: ~250,000ns
-   - Network storage chậm hơn 5 lần so với local storage
+Khi chuyển lên đám mây, các nhà cung cấp thường tách lưu trữ khỏi máy tính toán và dùng ổ gắn qua mạng như EBS. Cách này giúp tăng độ bền dữ liệu và dễ mở rộng dung lượng, nhưng mỗi lần đọc ghi mất khoảng 250 micro giây, so với khoảng 50 micro giây của ổ NVMe gắn trực tiếp; trong khi CPU truy cập RAM chỉ mất khoảng 100 nano giây. Hơn nữa, số thao tác đọc ghi mỗi giây (IOPS) còn bị giới hạn, ví dụ EBS GP3 mặc định là 3.000 IOPS, muốn cao hơn phải trả thêm phí. Bài viết là dịp giới thiệu PlanetScale Metal: mỗi cơ sở dữ liệu (Vitess hoặc Postgres) chạy trên ổ NVMe gắn trực tiếp, có sẵn một máy chính và hai bản sao để đảm bảo độ bền, cho phép nâng dung lượng mà không gián đoạn dịch vụ và không giới hạn IOPS.
 
 ## [The good times in tech are over](https://www.seangoedecke.com/good-times-are-over/)
 
-Bài viết của Sean Goedecke phân tích về sự thay đổi trong ngành công nghệ, đặc biệt là về môi trường làm việc của các kỹ sư phần mềm trong thập kỷ qua. Tác giả giải thích nguyên nhân và tác động của những thay đổi này.
+Sean Goedecke nhận xét rằng trong gần một thập kỷ, làm kỹ sư phần mềm là công việc rất dễ chịu: nhiều phúc lợi, hiếm khi bị sa thải và luôn được chiều chuộng như thiên tài. Hai năm gần đây mọi thứ đã đổi khác, các đợt sa thải bắt đầu từ 2023 và công ty như Meta còn công khai cắt giảm những người bị đánh giá hiệu quả thấp. Theo ông, nguyên nhân gốc rễ là lãi suất. Trong những năm 2010, lãi suất gần như bằng 0 nên nhà đầu tư đổ tiền vào công ty công nghệ, khiến họ tuyển dụng ồ ạt và làm đủ thứ dự án, kể cả chưa cần có lãi. Khi lãi suất tăng lên khoảng 5% vào năm 2023, lợi nhuận bỗng trở nên quan trọng. COVID chỉ tạo ra một đợt bùng nổ ngắn hạn, còn AI hiện chưa phải lý do dẫn đến sa thải.
 
-Một số điểm chính:
-
-1. **Sự thay đổi môi trường làm việc**:
-   - Thập kỷ trước: Nhiều đặc quyền, ít sa thải, được đối xử đặc biệt
-   - Hiện tại: Các công ty tập trung vào hiệu suất và lợi nhuận
-   - Meta đã công khai thừa nhận việc sa thải nhân viên kém hiệu quả
-
-2. **Nguyên nhân chính**:
-   - Lãi suất thấp (gần 0%) trong thập kỷ 2010 cho phép vay nhiều vốn
-   - Các công ty tech được khuyến khích mở rộng và chi tiêu không giới hạn
-   - Lãi suất tăng lên 5% vào năm 2023 thay đổi hoàn toàn động lực kinh doanh
-   - COVID-19 tạo ra cơn sốt ngắn hạn nhưng không phải nguyên nhân gốc rễ
-
-3. **Tác động đến kỹ sư phần mềm**:
-   - Các công ty tập trung vào mục tiêu cụ thể thay vì thử nghiệm nhiều dự án
-   - Giảm đầu tư vào các dự án phụ như open-source
-   - Lợi ích cá nhân có thể mâu thuẫn với lợi ích công ty
-   - Cần thích nghi với môi trường mới để tránh bị sa thải
-
-4. **Mặt tích cực**:
-   - Các công ty tech hoạt động thực tế hơn
-   - Quy tắc làm việc rõ ràng hơn:
-     - Cung cấp giá trị cho công ty = được thưởng
-     - Không cung cấp giá trị = bị phạt
-     - Giá trị = theo đuổi kế hoạch của ban lãnh đạo
+Hệ quả là các công ty buộc phải tập trung vào vài mục tiêu mà ban lãnh đạo thực sự quan tâm, và nhiều hoạt động như đóng góp mã nguồn mở hay trải nghiệm lập trình viên bị cắt ngân sách. Ông khuyên kỹ sư nên chấp nhận rằng lợi ích của mình giờ có thể mâu thuẫn với lợi ích của công ty; bạn vẫn được quyền theo đuổi điều mình cho là đúng, nhưng sẽ phải trả giá, nhất là với các bạn junior. Mặt tích cực là ngành công nghệ đã gần với thực tế hơn và luật chơi cũng rõ ràng hơn: tạo ra giá trị cho công ty thì được thưởng, không tạo ra giá trị thì bị phạt, và "giá trị" nghĩa là thúc đẩy các kế hoạch cụ thể của ban lãnh đạo.
 
 ## [Once You're Laid Off, You'll Never Be the Same Again](https://mertbulan.com/2025/01/26/once-you-are-laid-off-you-will-never-be-the-same-again/)
 
-Bài viết của Mert Bulan chia sẻ trải nghiệm cá nhân về việc bị sa thải và những thay đổi trong cách nhìn nhận về công việc sau sự kiện này. Tác giả cũng đưa ra những dấu hiệu cảnh báo và lời khuyên cho những người đang làm việc trong ngành công nghệ.
+Mert Bulan kể lại ngày bị sa thải cùng phần lớn đồng đội. Nhìn lại, anh chỉ ra năm dấu hiệu báo trước: các buổi sự kiện nhóm bị hủy đột ngột; nhân viên nhận thông báo có gói hàng sắp giao (hộp để gửi trả thiết bị); ban lãnh đạo thiếu định hướng rõ ràng và liên tục tái cấu trúc; xuất hiện những cuộc họp bắt buộc không có nội dung cụ thể; và thời điểm công bố kết quả kinh doanh quý ở công ty đại chúng. Điều khiến anh day dứt nhất là mọi nỗ lực vượt mức, từ tự học React Native, nhận dự án đặc biệt từ CEO đến giới thiệu người tài cho công ty, đều không có ý nghĩa gì. Trong đợt sa thải, bạn chỉ là một dòng trong bảng Excel, do những người không hề biết bạn quyết định.
 
-Một số điểm chính:
-
-1. **Dấu hiệu cảnh báo trước khi sa thải**:
-   - Hủy đột ngột các sự kiện team
-   - Nhận thông báo về gói hàng bất ngờ (để trả thiết bị)
-   - Thiếu tầm nhìn rõ ràng từ ban lãnh đạo
-   - Các cuộc họp đột ngột không có chương trình
-   - Thời điểm xung quanh báo cáo tài chính quý
-
-2. **Thực tế phũ phàng**:
-   - Bạn chỉ là một dòng trong bảng Excel
-   - Quyết định sa thải thường được đưa ra bởi người không biết bạn
-   - Thành tích và đóng góp trước đó không được xem xét
-   - Niềm tin giữa công ty và nhân viên đã bị phá vỡ
-
-3. **Tác động lâu dài**:
-   - Thay đổi cách nhìn nhận về công việc
-   - Mất niềm tin vào cam kết của công ty
-   - Chỉ làm đúng giờ quy định
-   - Không còn nỗ lực vượt quá yêu cầu
-
-4. **Lời khuyên cho người đang làm việc**:
-   - Tuân thủ giờ làm việc theo hợp đồng
-   - Tránh làm việc quá sức
-   - Luôn duy trì việc phỏng vấn ở nơi khác
-   - Tận dụng offer bên ngoài để tăng lương
-   - Đừng quá lo lắng về CV có nhiều công ty ngắn hạn
+Theo tác giả, niềm tin giữa công ty và nhân viên đã bị phá vỡ khi các đợt sa thải diễn ra ngay cả lúc công ty báo lãi kỷ lục. Anh cũng lưu ý rằng luật lao động ở Đức không ngăn được sa thải hàng loạt. Nhiều người từng trải qua như anh giờ chỉ làm đúng phần việc được giao. Lời khuyên cho những người chưa bị sa thải: làm đúng số giờ trong hợp đồng; không cố gắng vượt mức để mong thăng tiến nội bộ mà hãy chuyển công ty để tiến lên; luôn duy trì phỏng vấn ở nơi khác; tận dụng lời mời làm việc bên ngoài để tăng thu nhập; và đừng lo lắng quá về việc hồ sơ có nhiều công việc ngắn hạn.
 
 ## Bonus: Vài ảnh hay ho đến từ [ByteByteGo](https://bytebytego.com/)
 
@@ -177,4 +51,4 @@ Một số điểm chính:
 
 ---
 
-*Bài viết đã được review và cập nhật bởi Claude Code với Opus 4.7 (1M context).*
+*Bài viết đã được viết lại bởi Claude Code với Opus 5.5 vào ngày 27/09/2026.*

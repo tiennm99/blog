@@ -9,53 +9,33 @@ categories: ["Newsletter"]
 
 ## [p-fast trie: lexically ordered hash map](https://dotat.at/@/2025-08-04-p-fast-trie.html)
 
-Tác giả Tony Finch giới thiệu một cấu trúc dữ liệu thử nghiệm mới gọi là "p-fast trie", được thiết kế như một lựa chọn thay thế tiềm năng cho qp-trie. Đây là một kiểu hash map có thứ tự theo từ điển, mang đến những ưu điểm thú vị trong việc tìm kiếm và truy xuất dữ liệu.
+Tony Finch phác thảo một ý tưởng cấu trúc dữ liệu mà chính ông cũng chưa chắc là hay: "p-fast trie", một dạng hash map vẫn giữ được thứ tự từ điển của khóa. Thay vì duy trì cây và các con trỏ nội bộ như qp-trie, p-fast trie lưu mọi tiền tố (ngắn hơn khóa) của mọi khóa vào một hash map chia thành nhiều tầng, mỗi tiền tố ứng với một nút trong. Khóa được xem như chuỗi bit cắt thành từng khúc 6 bit; mỗi nút trong chứa một bitmap 64 bit đánh dấu những khúc tiếp theo có tồn tại, kèm một mảng nén bằng popcount trỏ tới lá gần nhất phía trước. Các lá nối thành danh sách liên kết vòng theo thứ tự, nên tìm được lá liền trước là có ngay lá liền sau. Nhờ vậy, tìm kiếm chính xác chỉ là một lần tra hash map O(1), còn tìm phần tử liền trước/liền sau dùng tìm kiếm nhị phân trên độ dài tiền tố, đạt O(log k) thay vì O(k) như qp-trie (k là độ dài khóa).
 
-Cấu trúc p-fast trie sử dụng hash map được tổ chức thành nhiều tầng, mỗi tầng tương ứng với một tiền tố của khóa. Các đối tượng lá tạo thành danh sách liên kết vòng, và sử dụng bitmap cùng mảng nén popcount để điều hướng hiệu quả. Điểm đặc biệt của thiết kế này là khả năng tìm kiếm chính xác với độ phức tạp O(1), trong khi tìm kiếm phần tử trước/sau có độ phức tạp O(log k), với k là độ dài khóa.
-
-Mặc dù p-fast trie có những ưu điểm như tìm kiếm chính xác nhanh và tìm kiếm phần tử trước/sau đơn giản hơn so với qp-trie, nhưng cũng tồn tại những hạn chế về việc sử dụng bộ nhớ cao hơn và khả năng cache-friendly kém hơn. Tác giả thẳng thắn thừa nhận đây chỉ là một khái niệm thử nghiệm và vẫn chưa rõ hiệu quả thực tế của nó, đồng thời mời gọi cộng đồng nghiên cứu và phản hồi thêm.
-
-Bài viết này rất phù hợp cho những ai quan tâm đến các cấu trúc dữ liệu tiên tiến và muốn hiểu sâu hơn về các phương pháp tối ưu hóa trong lĩnh vực khoa học máy tính.
+Tác giả cũng thẳng thắn chỉ ra các điểm yếu: p-fast trie tốn bộ nhớ hơn nhiều vì cần rất nhiều nút trong, thao tác chèn và xóa phải cập nhật nhiều tiền tố cùng lúc nên khó làm an toàn khi chạy đa luồng, và việc nhảy qua lại giữa các tiền tố dài khiến bộ nhớ đệm CPU kém hiệu quả hơn qp-trie. Ưu thế còn lại là tìm phần tử liền trước/liền sau chỉ cần một lần duyệt thay vì hai. Đây là bài ngắn, hợp với những bạn muốn học cách một kỹ sư cân nhắc đánh đổi khi thiết kế cấu trúc dữ liệu.
 
 ## [Big O vs Hardware: Better Complexity ≠ Better Performance](https://blog.codingconfessions.com/p/big-o-vs-hardware)
 
-Bài viết này khám phá một khái niệm quan trọng mà nhiều lập trình viên thường bỏ qua: độ phức tạp thuật toán tốt hơn không luôn đồng nghĩa với hiệu suất thực tế tốt hơn. Tác giả minh họa điều này thông qua việc phân tích chi tiết ba thuật toán tìm ước số chung lớn nhất (GCD) khác nhau.
+Abhinav Upadhyay chỉ ra rằng độ phức tạp thuật toán tốt hơn không đảm bảo chạy nhanh hơn trên phần cứng thật. Ông dựa vào "định luật sắt" (Iron Law) về hiệu năng: thời gian chạy phụ thuộc vào số lệnh cần thực thi và số lệnh CPU hoàn thành trong mỗi chu kỳ (IPC). Bài viết so sánh ba thuật toán tìm ước chung lớn nhất (GCD): Euclid dùng phép trừ với O(max(a, b)), Euclid dùng phép chia lấy dư với O(log(max(a, b))), và thuật toán nhị phân của Stein. Với đầu vào rất lớn, bản chia lấy dư nhanh hơn bản phép trừ khoảng 10.000 lần. Nhưng với a = 130000, b = 13, bản phép trừ dù lặp gần 10.000 lần vẫn xong sớm hơn bản chia lấy dư chỉ cần một bước, vì trên Intel Skylake phép cộng/trừ có độ trễ 1 chu kỳ và chạy được 4 lệnh mỗi chu kỳ, còn phép chia số nguyên có độ trễ 42–95 chu kỳ.
 
-Hiệu suất thực tế phụ thuộc vào hai yếu tố phần cứng chính: số lượng lệnh và số lệnh thực hiện trên mỗi chu kỳ (IPC). Bài viết so sánh thuật toán Euclid dựa trên phép trừ với độ phức tạp O(max(a,b)), thuật toán Euclid dựa trên phép chia dư với O(log(max(a,b))), và thuật toán nhị phân Stein được tối ưu hóa cho phần cứng.
-
-Điểm mấu chốt của bài viết là "Định luật Sắt về hiệu suất": hiệu suất thực tế không chỉ phụ thuộc vào độ phức tạp lý thuyết mà còn phụ thuộc vào cách mã nguồn tương tác với đặc tính phần cứng cụ thể. Số lượng lệnh ít hơn không đảm bảo thực thi nhanh hơn, và các thuật toán thân thiện với phần cứng có thể vượt trội hơn những thuật toán hiệu quả hơn về mặt lý thuyết.
-
-Bài viết khuyến nghị các lập trình viên nên xem xét đặc tính phần cứng khi thiết kế thuật toán, đo đạc hiệu suất với các kích thước đầu vào khác nhau, và tối ưu hóa cho cả độ phức tạp lý thuyết lẫn hiệu quả phần cứng.
+Thuật toán Stein thân thiện với phần cứng hơn: thay phép chia bằng phép dịch bit và lệnh đếm số bit 0 ở cuối, nên vừa ít lệnh vừa giữ IPC cao. Khi tính GCD cho các cặp số trong khoảng [1, 100000), Stein nhanh nhất; bản chia lấy dư chạy ít lệnh nhất (13 tỷ) nhưng IPC chỉ 0,15 nên chậm nhất, còn bản phép trừ chạy tới 97 tỷ lệnh mà vẫn xong sớm hơn 1,5 giây. Bài học rút ra: Big O vẫn quan trọng khi dữ liệu lớn, nhưng muốn nhanh thật thì cần hiểu chi phí từng lệnh trên CPU, đo đạc bằng công cụ như perf, và cân nhắc kết hợp thuật toán theo kích thước đầu vào.
 
 ## [Claude Code Is All You Need](https://dwyer.co.za/static/claude-code-is-all-you-need.html)
 
-Bài viết này giới thiệu về Claude Code - một công cụ lập trình và phát triển ứng dụng được hỗ trợ bởi các mô hình AI Claude của Anthropic. Tác giả khám phá khái niệm "vibe coding" - việc tạo ra phần mềm thông qua các tương tác hội thoại với AI, cho thấy Claude Code có khả năng tạo ra các ứng dụng hoàn chỉnh chỉ với đầu vào tối thiểu từ con người.
+Gareth Dwyer, người quen làm mọi thứ bằng vim, kể lại vài tuần dùng Claude Code, công cụ lập trình bằng AI chạy trong terminal của Anthropic, cùng ba bài học chính: trao cho nó nhiều quyền tự chủ (ông chạy ở chế độ bỏ qua xác nhận quyền, kể cả trên máy chủ thật), cung cấp thật nhiều đầu vào vì chất lượng đầu ra tỉ lệ thuận với ngữ cảnh, và nó thiết kế giao diện tốt bất ngờ. Ví dụ tiêu biểu là SmartSplit, bản sao SplitWise được tạo chỉ bằng một lệnh từ tệp đặc tả khoảng 500 từ; nhưng mô hình vẫn thiếu ổn định, và một đặc tả sơ sài cho ra ứng dụng hỏng hoàn toàn. Ông thấy mô hình viết PHP rất tốt và cho rằng framework chủ yếu phục vụ con người chứ không phải AI.
 
-Claude Code thể hiện khả năng ấn tượng trong việc xây dựng các ứng dụng CRUD hoàn chỉnh chỉ với một câu lệnh, thiết lập hạ tầng sản xuất, di chuyển các dự án hiện có, và thực hiện các tác vụ quản trị. Tác giả đã thử nghiệm với nhiều dự án thực tế như SmartSplit (bản sao SplitWise), trình xây dựng startup tự động, plugin xếp hạng bình luận HackerNews, và ứng dụng xử lý sao kê ngân hàng.
-
-Để đạt được kết quả tốt nhất với Claude Code, tác giả khuyến nghị cung cấp đầu vào chi tiết và ngữ cảnh phong phú, sẵn sàng lặp lại và hướng dẫn AI, duy trì sự giám sát của con người đặc biệt với các hệ thống quan trọng, và hiểu rõ khả năng cũng như hạn chế của AI.
-
-Mặc dù Claude Code đặc biệt mạnh trong PHP và các ứng dụng web đơn giản, rất hữu ích cho việc tạo nguyên mẫu nhanh và khởi tạo dự án, nhưng tác giả nhấn mạnh rằng công cụ này không hoàn hảo và vẫn cần sự hướng dẫn cẩn thận từ con người.
+Theo tác giả, sức mạnh của Claude Code nằm ở một vòng lặp đơn giản gọi mô hình liên tục. Ông thử kéo dài vòng lặp đó thành một "startup tự vận hành" trên VPS: Claude tự viết prompt, chọn ý tưởng và dựng ứng dụng web hoàn chỉnh kèm Nginx và chứng chỉ, dù ý tưởng của nó thực ra vô lý, rồi cuối cùng bị chặn vì vi phạm chính sách sử dụng. Ở việc thật, Claude Code giúp ông chuyển một ứng dụng Laravel/MySQL xa lạ sang VPS giá rẻ, ước tính tiết kiệm 16–32 giờ, dù vẫn cần ông giám sát. Ngoài ra còn có plugin chấm điểm bình luận HackerNews, công cụ làm poster và việc phân loại sao kê ngân hàng. Riêng bài viết này, ông vẫn tự viết gần như toàn bộ, vì thấy mô hình giỏi sắp xếp nội dung hơn là sáng tạo.
 
 ## [HTTP is not simple](https://daniel.haxx.se/blog/2025/08/08/http-is-not-simple/)
 
-Daniel Stenberg, tác giả của curl, thách thức quan niệm phổ biến rằng HTTP là một giao thức đơn giản. Ông lập luận rằng HTTP thực tế phức tạp hơn nhiều so với những gì mọi người thường nghĩ, đặc biệt khi xem xét việc triển khai một client HTTP tuân thủ đầy đủ các tiêu chuẩn.
+Daniel Stenberg, tác giả curl với gần ba thập kỷ viết mã HTTP phía client và tham gia soạn các đặc tả HTTP tại IETF, phản bác quan niệm "HTTP là giao thức đơn giản". HTTP/1 trông dễ vì là văn bản đọc được và ai cũng có thể telnet vào máy chủ gõ tay lệnh GET, nhưng cỗ máy bên dưới thì không hề đơn giản. Header tổ chức theo dòng, độ dài dòng không có giới hạn trong đặc tả, kết thúc bằng CRLF nhưng đôi khi chỉ LF, và là chuỗi octet chứ không phải UTF-8. Khoảng trắng lúc bắt buộc lúc tùy chọn, token có thể nằm trong ngoặc kép hoặc không. Có ít nhất ba cách xác định điểm kết thúc body (Content-Length, chunked encoding, Connection: close), nguồn gốc của vô số lỗ hổng bảo mật; phân tích số ở dạng văn bản phải lo tràn số, dấu và số 0 ở đầu; header còn có thể bị gộp hoặc "gấp" sang dòng sau.
 
-Những phức tạp cụ thể bao gồm xử lý xuống dòng với độ dài dòng tùy ý và các tiêu chuẩn kết thúc dòng không nhất quán (CR, LF, hoặc cả hai), trong khi các header dựa trên octet chứ không phải UTF-8. Việc phân tích cú pháp cũng gặp nhiều thách thức như nhiều cách khác nhau để xác định kết thúc nội dung, việc phân tích số khó khăn, các quy tắc phức tạp về khoảng trắng và token, cũng như các kỹ thuật "folding" header.
-
-HTTP đã tích lũy độ phức tạp qua nhiều thập kỷ với hơn 40 tài liệu RFC riêng biệt, sự gia tăng đáng kể về quy mô đặc tả theo thời gian, và các hành vi không nhất quán của phương thức và header. Các trình duyệt thường ưu tiên trải nghiệm người dùng hơn là tuân thủ nghiêm ngặt các tiêu chuẩn.
-
-Tác giả gợi ý rằng độ phức tạp này có thể là đặc tính cố hữu của các giao thức thành công và tồn tại lâu dài, khi những gì bắt đầu đơn giản thường trở nên phức tạp thông qua việc thích ứng và mở rộng liên tục.
+Chưa kể những tính năng có trong đặc tả nhưng hiếm khi dùng được như pipelining hay mã phản hồi 100, việc gửi body kèm GET không tương thích rộng rãi (dẫn tới đề xuất phương thức QUERY), và các trình duyệt thường đoán ý người dùng thay vì báo lỗi, khiến phần mềm khác phải bắt chước trình duyệt hơn là bám đặc tả. "HTTP/1.1" xuất hiện trong ít nhất 40 RFC; riêng bộ RFC 9110–9112 đã dài 95.740 từ, đọc liền mạch mất hơn bảy giờ. Tác giả cho rằng độ phức tạp có lẽ là cái giá của thành công, vì DNS hay SMTP cũng khởi đầu đơn giản rồi phức tạp dần, và HTTP sẽ chỉ càng phức tạp hơn.
 
 ## [Building a web search engine from scratch in two months with 3 billion neural embeddings](https://blog.wilsonl.in/search-engine/)
 
-Wilson Lin chia sẻ hành trình xây dựng một công cụ tìm kiếm web tùy chỉnh sử dụng mô hình nhúng thần kinh trong vòng hai tháng. Dự án này tập trung vào việc cải thiện chất lượng và độ liên quan của kết quả tìm kiếm thông qua việc hiểu ý định truy vấn thay vì chỉ khớp từ khóa đơn thuần.
+Wilson Lin kể lại hành trình hai tháng tự xây một công cụ tìm kiếm web từ con số không, xuất phát từ hai nhận định: kết quả tìm kiếm ngày càng lẫn nhiều nội dung SEO rác, trong khi các mô hình nhúng văn bản dựa trên transformer đã hiểu ngôn ngữ tự nhiên rất tốt. Mục tiêu là hiểu ý định của cả câu truy vấn thay vì khớp từ khóa. Trang web được chuẩn hóa để loại bỏ menu, chân trang, phần bình luận và chỉ giữ văn bản mang ngữ nghĩa, sau đó tách thành từng câu bằng mô hình của spaCy; mỗi câu được gắn thêm ngữ cảnh từ tiêu đề mục hay câu dẫn trước danh sách để những câu tham chiếu gián tiếp không bị mất nghĩa.
 
-Về mặt kỹ thuật, tác giả đã sử dụng 200 GPU để tạo ra 3 tỷ mô hình nhúng thần kinh, phát triển một crawler có thể xử lý 50.000 trang mỗi giây, và xây dựng hệ thống phân tán sử dụng RocksDB cho lưu trữ, HNSW được phân đoạn cho tìm kiếm vector, với 4 TB RAM và 82 TB SSD. Hệ thống đạt được độ trễ truy vấn đầu cuối khoảng 500ms.
-
-Các đổi mới chính bao gồm việc sử dụng kỹ thuật phân đoạn ngữ nghĩa và bảo tồn ngữ cảnh, triển khai chuẩn hóa nội dung trang web tiên tiến, và phát triển phương pháp móc nối câu lệnh để bảo tồn ngữ cảnh ngữ nghĩa. Dự án cho thấy mô hình nhúng thần kinh cung cấp khả năng hiểu tìm kiếm vượt trội, nhưng chất lượng tìm kiếm phụ thuộc nhiều hơn vào crawling và lọc hơn là công nghệ.
-
-Tác giả khuyến nghị khám phá các chỉ mục tìm kiếm mã nguồn mở được cộng đồng duy trì, nghiên cứu mô hình nhúng tĩnh và các mô hình nhúng hiệu quả hơn, tận dụng hạ tầng crawling hiện có, và tập trung vào nội dung chất lượng thay vì số lượng.
+Ở quy mô lớn, cụm 200 GPU tạo ra 3 tỷ vector nhúng SBERT, hàng trăm crawler đạt đỉnh 50.000 trang mỗi giây và tạo chỉ mục 280 triệu trang; RocksDB và HNSW được phân mảnh trên 200 lõi CPU, 4 TB RAM và 82 TB SSD, cho độ trễ truy vấn đầu cuối khoảng 500 ms. Bài viết cũng kể vì sao phải bỏ dịch vụ lưu trữ đối tượng rồi PostgreSQL để chuyển sang RocksDB, và cách chọn Hetzner, Oracle Cloud, Runpod giúp chi phí rẻ hơn AWS hàng chục lần. Hai bài học lớn nhất: số lượng chính là chất lượng, vì không tìm thấy thì vô dụng; và crawl cùng lọc nội dung mới là phần khó nhất. Hướng đi tiếp theo gồm tận dụng Common Crawl, dùng mô hình nhúng tĩnh, viết lại crawler bằng Rust và xây chỉ mục tập trung vào nội dung chất lượng cao.
 
 ## Bonus: Vài ảnh hay ho đến từ [ByteByteGo](https://bytebytego.com/)
 
@@ -67,4 +47,4 @@ Tác giả khuyến nghị khám phá các chỉ mục tìm kiếm mã nguồn m
 
 ---
 
-*Bài viết đã được review và cập nhật bởi Claude Code với Opus 4.7 (1M context).*
+*Bài viết đã được viết lại bởi Claude Code với Opus 5.5 vào ngày 27/09/2026.*

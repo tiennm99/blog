@@ -9,152 +9,58 @@ categories: [ "Newsletter" ]
 
 ## [Challenging algorithms and data structures every programmer should try](https://austinhenley.com/blog/challengingalgorithms.html)
 
-Bài viết giới thiệu 6 thuật toán và cấu trúc dữ liệu thú vị mà mọi lập trình viên nên thử nghiệm để mở rộng kiến thức và kỹ năng giải quyết vấn đề:
+Austin Z. Henley cho rằng có những thuật toán và cấu trúc dữ liệu thật sự thú vị, từng xuất hiện trong phỏng vấn và làm thay đổi cách ông nhìn nhận vấn đề, và đề xuất sáu cái tên nên tự tay cài đặt. Sắp xếp topo dùng mỗi khi cần sắp xếp các phần tử phụ thuộc lẫn nhau, như thứ tự tác vụ trong hệ thống build hay thứ tự tính các ô trong bảng tính. Phân tích cú pháp đệ quy xuống cho phép ánh xạ từng luật ngữ pháp thành một hàm, đủ để dựng một trình biên dịch đơn giản trong vài giờ. Thuật toán so sánh chuỗi Myers là thuật toán mặc định mà Git dùng để hiển thị khác biệt giữa hai phiên bản.
 
-**Sắp xếp topo (Topological sort)** - Thuật toán giúp xác định thứ tự phụ thuộc giữa các nhiệm vụ. Đặc biệt hữu ích trong việc lập lịch công việc, xây dựng hệ thống build, hoặc xử lý các mối quan hệ có hướng không có chu trình.
-
-**Phân tích cú pháp đệ quy xuống (Recursive descent parsing)** - Kỹ thuật phân tích cú pháp mạnh mẽ để xây dựng trình biên dịch, xử lý ngôn ngữ tự nhiên hoặc phân tích dữ liệu có cấu trúc phức tạp. Phương pháp này giúp hiểu sâu hơn về cách máy tính "đọc" và xử lý ngôn ngữ.
-
-**Thuật toán so sánh chuỗi Myers** - Thuật toán tìm sự khác biệt giữa hai chuỗi văn bản một cách hiệu quả. Đây chính là nền tảng của các công cụ như Git diff, giúp hiển thị chính xác những thay đổi giữa các phiên bản mã nguồn.
-
-**Bộ lọc Bloom** - Cấu trúc dữ liệu xác suất thông minh để kiểm tra sự tồn tại của phần tử với tốc độ nhanh và tiết kiệm bộ nhớ. Ứng dụng rộng rãi trong cơ sở dữ liệu, cache và hệ thống phân tán.
-
-**Bảng mảnh (Piece table)** - Kỹ thuật quản lý và chỉnh sửa văn bản hiệu quả, được sử dụng trong nhiều trình soạn thảo hiện đại. Cho phép thực hiện các thao tác undo/redo nhanh chóng mà không cần lưu trữ toàn bộ lịch sử thay đổi.
-
-**Cây Splay** - Cấu trúc cây nhị phân tự tối ưu hóa thông minh, tự động di chuyển các phần tử được truy cập gần đây lên gần gốc để tăng tốc độ truy xuất tiếp theo.
-
-Tác giả khuyến khích các lập trình viên, đặc biệt là những người mới bắt đầu, nên dành thời gian nghiên cứu và triển khai những thuật toán này. Việc thực hành sẽ giúp mở rộng tư duy giải quyết vấn đề và cung cấp những công cụ mạnh mẽ cho sự nghiệp lập trình.
+Bộ lọc Bloom là cửa ngõ vào thế giới cấu trúc dữ liệu xác suất: với rất ít bộ nhớ, nó khẳng định chắc chắn một phần tử không có mặt, còn trường hợp ngược lại chỉ là "có thể có"; tác giả thừa nhận chưa từng cần nó ngoài phỏng vấn. Bảng mảnh lưu các thao tác chỉnh sửa thay vì chỉ giữ văn bản cuối cùng, nhờ đó tính năng hoàn tác và lưu tăng dần trở nên đơn giản, và được dùng trong bộ đệm văn bản của VS Code. Cuối cùng, cây Splay là cây nhị phân tự tối ưu, đưa phần tử vừa truy cập lên gốc mà không cần lưu thêm siêu dữ liệu, giống một cây có sẵn bộ nhớ đệm và dễ cài đặt hơn nhiều so với cây đỏ-đen. Cuối bài là vài gợi ý bổ sung như trie, cây phân đoạn hay union-find.
 
 ## [Everything I know about good system design](https://www.seangoedecke.com/good-system-design/)
 
-Bài viết chia sẻ những nguyên tắc thiết kế hệ thống dựa trên kinh nghiệm thực tế, nhấn mạnh rằng thiết kế tốt thường đơn giản và không nổi bật. Tác giả tổng kết: "Thiết kế hệ thống tốt không phải về những thủ thuật thông minh, mà là biết cách sử dụng những thành phần đã được kiểm chứng ở đúng vị trí."
+Sean Goedecke định nghĩa thiết kế hệ thống là cách lắp ghép các dịch vụ như máy chủ ứng dụng, cơ sở dữ liệu, bộ nhớ đệm, hàng đợi hay event bus, và cho rằng thiết kế tốt thường trông nhàm chán: hệ thống chạy ổn trong thời gian dài mà không ai phải bận tâm. Phần khó nhất là trạng thái, vì thành phần có trạng thái có thể rơi vào tình trạng hỏng, nên hãy giảm số thành phần như vậy và để một dịch vụ duy nhất chịu trách nhiệm ghi vào một bảng. Với cơ sở dữ liệu, chỉ mục nên khớp với các truy vấn phổ biến, hãy dùng JOIN thay vì ghép dữ liệu trong bộ nhớ và đẩy truy vấn đọc sang bản sao chỉ đọc.
 
-**Quản lý trạng thái (State Management)** - Giảm thiểu số lượng thành phần có trạng thái, ưu tiên một dịch vụ duy nhất quản lý ghi dữ liệu. Các dịch vụ không trạng thái dễ bảo trì và mở rộng hơn nhiều.
-
-**Cơ sở dữ liệu** - Thiết kế lược đồ linh hoạt nhưng dễ đọc, sử dụng chỉ mục phù hợp và tối ưu hóa truy vấn. Tận dụng read replica để phân tải và cải thiện hiệu suất đọc dữ liệu.
-
-**Xử lý nền (Background Processing)** - Sử dụng background job cho các thao tác chậm, tách biệt công việc tức thì và hoãn lại. Triển khai hệ thống hàng đợi một cách chiến lược để tránh blocking người dùng.
-
-**Bộ nhớ đệm (Caching)** - Sử dụng cache một cách thông minh, ưu tiên cải thiện hiệu suất hệ thống trước khi nghĩ đến cache. Áp dụng các chiến lược cache đa dạng từ in-memory đến external store.
-
-**Độ tin cậy hệ thống** - Triển khai logging cho các đường dẫn lỗi, tạo metrics và khả năng quan sát. Thiết kế kill switch và cơ chế retry, lập kế hoạch cho việc hệ thống fail một cách graceful.
-
-Triết lý cốt lõi là tập trung vào các phương pháp thực dụng, đơn giản trong kiến trúc hệ thống, ưu tiên tính đơn giản và độ tin cậy thay vì sự phức tạp không cần thiết.
+Thao tác chậm nên được chia thành phần tối thiểu phục vụ người dùng ngay, phần còn lại giao cho tác vụ nền qua hàng đợi. Bộ nhớ đệm cũng là một nguồn trạng thái, nên chỉ dùng sau khi đã cố gắng tăng tốc thao tác gốc; event hub như Kafka hữu ích nhưng không nên lạm dụng, vì gọi API trực tiếp thường dễ theo dõi hơn. Tác giả khuyên tập trung vào các luồng xử lý chịu tải chính, ghi log kỹ ở các nhánh lỗi, theo dõi cả phân vị p95 và p99, dùng cơ chế ngắt mạch và khóa idempotency khi thử lại, và quyết định trước hành vi khi gặp sự cố: giới hạn tần suất thì cho yêu cầu đi qua, còn xác thực thì luôn chặn. Kết luận của ông: thiết kế tốt không nằm ở mẹo thông minh mà ở việc dùng đúng chỗ những thành phần nhàm chán đã được kiểm chứng.
 
 ## [AI Coding Agents are Already Commoditized](https://www.seangoedecke.com/ai-agents-are-commoditized/)
 
-Bài viết phân tích hiện trạng thị trường AI agent lập trình, cho rằng các agent này đã trở thành hàng hóa thông thường và không còn đòi hỏi công nghệ phức tạp để phát triển. Tác giả khẳng định: "AI agent lập trình không có bí kíp gì... Tất cả những gì bạn cần là một mô hình cơ sở thông minh hơn một chút."
+Sean Goedecke nhận định AI agent lập trình không có "bí kíp" nào. Năm 2023, ông từng tự xây một agent trên GPT-3.5 rồi GPT-4 và phải chăm chút rất kỹ để mô hình không bị kẹt; khi đó nhiều người tin rằng cần những thủ thuật phức tạp như bầy agent kiểm tra chéo lẫn nhau hay hiểu sâu cấu trúc mã nguồn. Thực tế chỉ cần một mô hình nền thông minh hơn một chút. Claude Sonnet 3.7 dẫn đầu nhờ khả năng bám nhiệm vụ và ra quyết định tốt theo thời gian, còn phần mã của agent chỉ đơn giản là đặt mô hình vào một vòng lặp với công cụ đọc và ghi tệp.
 
-**Thị trường bão hòa** - Các công ty công nghệ lớn như Claude, OpenAI, và GitHub đều đã ra mắt các AI agent tự động lập trình. Bất kỳ ai cũng có thể tạo ra một AI agent với ít mã nguồn, thường là miễn phí.
-
-**Rào cản thấp** - Sự đột phá chính chỉ đơn giản là sử dụng các mô hình ngôn ngữ tiên tiến hơn. Không cần kiến thức chuyên sâu hay thuật toán phức tạp để xây dựng một agent hoạt động tốt.
-
-**Thiếu lợi thế cạnh tranh** - Do sự xuất hiện của các giải pháp mã nguồn mở và chi phí inference có thể thay thế lẫn nhau, việc tạo ra sự khác biệt trong thị trường AI agent trở nên khó khăn.
-
-**Chiến lược tiềm năng** - Tác giả đề xuất một số hướng cạnh tranh có thể như phân phối tốt hơn (ví dụ như sự tích hợp của GitHub) hoặc quyền truy cập độc quyền vào các mô hình AI.
-
-Bài viết cảnh báo rằng thị trường AI agent lập trình đã trở nên commoditized (hàng hóa hóa), với rào cản gia nhập thấp và ít sự khác biệt giữa các nhà cung cấp, đòi hỏi các công ty phải tìm kiếm những lợi thế cạnh tranh mới.
+Vì vậy thị trường rất khó cạnh tranh: các giải pháp mã nguồn mở như Codex của OpenAI nâng mặt bằng chất lượng chung, trong khi chi phí suy luận có thể thay thế lẫn nhau, đổi nhà cung cấp rất dễ dàng. Tác giả còn dựng một agent chạy trên GitHub Actions với GitHub Models, cả hai đều miễn phí, chỉ bằng khoảng 50 dòng cấu hình. Theo ông, cách để thắng là tận dụng kênh phân phối, như lợi thế tích hợp sẵn của GitHub, hoặc huấn luyện một mô hình tốt hơn và chỉ cung cấp nó qua agent của riêng mình.
 
 ## [Java, What's Old? Part I: Collections](https://foojay.io/today/java-whats-old-part-i-collections/)
 
-Bài viết khám phá những tính năng "cũ" nhưng hữu ích trong Java Collections Framework mà nhiều lập trình viên có thể đã bỏ lỡ hoặc quên mất. Đây là những công cụ mạnh mẽ đã tồn tại từ lâu nhưng vẫn rất thực dụng trong các dự án hiện đại.
+Anthony Goubard giới thiệu những viên ngọc ẩn trong Collections của JDK, tất cả đều có từ Java 8 trở về trước nên dùng được ngay. Thay vì `Optional<Integer>`, Java có sẵn `OptionalInt`, `OptionalLong` và `OptionalDouble` làm việc trực tiếp với kiểu nguyên thủy. `IntSummaryStatistics` và `DoubleSummaryStatistics` ghi nhận giá trị nhỏ nhất, lớn nhất, tổng, số lượng và trung bình, hỗ trợ gộp nhiều bộ thống kê; tác giả phát hiện ra chúng khi tham gia One Billion Row Challenge. `LinkedHashMap` có một hàm khởi tạo cho phép sắp xếp theo thứ tự truy cập thay vì thứ tự chèn, kết hợp với việc ghi đè `removeEldestEntry` là có ngay một bộ nhớ đệm LRU gọn nhẹ, chỉ cần bọc bằng `Collections.synchronizedMap` khi dùng từ nhiều luồng.
 
-**Optional cho kiểu nguyên thủy** - Java cung cấp `OptionalInt`, `OptionalLong`, và `OptionalDouble` dành riêng cho các kiểu dữ liệu nguyên thủy, giúp tránh boxing/unboxing không cần thiết và cải thiện hiệu suất.
-
-**Lớp thống kê tóm tắt** - `IntSummaryStatistics` và `DoubleSummaryStatistics` là những công cụ mạnh mẽ để tính toán các chỉ số thống kê như min, max, trung bình, tổng và số lượng phần tử trong một lần duyệt.
-
-**LinkedHashMap với thứ tự truy cập** - Hỗ trợ sắp xếp theo thứ tự truy cập thông qua constructor parameter `accessOrder`, cho phép triển khai bộ nhớ đệm LRU (Least Recently Used) đơn giản và hiệu quả.
-
-**WeakHashMap** - Sử dụng tham chiếu yếu (weak reference) cho các khóa, cho phép bộ thu gom rác tự động xóa các entry khi không còn tham chiếu cứng nào trỏ đến khóa, rất hữu ích cho cache và metadata mapping.
-
-**BitSet** - Cấu trúc dữ liệu tiết kiệm bộ nhớ để lưu trữ các giá trị boolean, chỉ sử dụng 1 bit cho mỗi giá trị thay vì 8 bit như `boolean[]`, đặc biệt hữu ích khi xử lý tập dữ liệu lớn.
-
-Bài viết nhấn mạnh rằng những tính năng "cũ" này vẫn rất có giá trị và thường được bỏ qua vì các lập trình viên tập trung vào những tính năng mới hơn, trong khi những công cụ này đã được kiểm chứng qua thời gian.
+`WeakHashMap` giữ tham chiếu yếu tới khóa nên bộ thu gom rác có thể xóa mục khi không còn tham chiếu mạnh nào; giá trị thì không, và mục có thể biến mất bất cứ lúc nào nên không hợp để duyệt hay kiểm tra rồi mới lấy. Tác giả dùng nó để lưu tạm chuỗi thời gian đã định dạng trong trình quản lý tệp Ant Commander Pro, giảm tải CPU khi cuộn bảng. Cuối cùng, `BitSet` lưu mỗi giá trị boolean bằng khoảng 1 bit, co giãn kích thước linh hoạt và có nhiều phương thức thao tác bit, tiết kiệm hơn hẳn `boolean[]` hay `List<Boolean>`.
 
 ## [Challenging projects every programmer should try](https://austinhenley.com/blog/challengingprojects.html)
 
-Bài viết của Austin Z. Henley đề xuất 6 dự án thách thức giúp lập trình viên phát triển kỹ năng sâu sắc qua việc xây dựng các ứng dụng phức tạp từ đầu. Đây là những dự án đòi hỏi hiểu biết đa lĩnh vực và cung cấp trải nghiệm học tập toàn diện.
+Austin Z. Henley gợi ý những dự án đã dạy ông rất nhiều và có thể làm lại nhiều lần để học thêm, đặc biệt khi muốn học một ngôn ngữ hay framework mới. Trình soạn thảo văn bản buộc bạn chọn cấu trúc dữ liệu lưu văn bản như rope, gap buffer hay bảng mảnh, hiểu cách con trỏ "nhớ" cột, rồi cài đặt hoàn tác bằng mẫu Command và ngắt dòng. Trò chơi 2D kiểu Space Invaders dạy cách vẽ lên màn hình, vòng lặp game, xử lý đầu vào và quản lý đối tượng bằng mẫu Factory. Trình biên dịch cho một ngôn ngữ nhỏ như Tiny BASIC, xuất ra bất kỳ ngôn ngữ nào bạn thạo, đưa bạn qua phân tích từ vựng, phân tích cú pháp đệ quy xuống, cây cú pháp trừu tượng, kiểm tra ngữ nghĩa và sinh mã. Hệ điều hành mini giúp hiểu nạp khởi động, quản lý bộ nhớ, phân trang, lập lịch và hệ thống tệp.
 
-**Trình soạn thảo văn bản** - Học cách quản lý cấu trúc dữ liệu phức tạp để lưu trữ văn bản, hiểu hành vi con trỏ và thao tác văn bản. Triển khai các tính năng nâng cao như undo/redo giúp nắm vững quản lý trạng thái ứng dụng.
-
-**Game 2D (Space Invaders)** - Nắm vững kỹ thuật render đồ họa, hiểu về game loop và xử lý đầu vào người dùng. Thực hành quản lý đối tượng và logic game, từ đó học cách tối ưu hóa hiệu suất real-time.
-
-**Trình biên dịch (Tiny BASIC)** - Học phân tích từ vựng và cú pháp, tạo cây cú pháp trừu tượng (AST). Thực hành sinh mã và tối ưu hóa, hiểu sâu về cách máy tính "hiểu" và thực thi mã nguồn.
-
-**Hệ điều hành mini** - Hiểu tương tác phần cứng mức thấp, học về quy trình khởi động và quản lý bộ nhớ. Thực hành kỹ thuật lập lịch hệ thống và quản lý tài nguyên máy tính.
-
-**Bảng tính (Thách thức nâng cao)** - Kết hợp kiến thức từ trình soạn thảo và trình biên dịch, học lập trình phản ứng (reactive programming). Triển khai thông dịch nội dung ô tính và quản lý phụ thuộc giữa các ô.
-
-**Trình giả lập console game (Thách thức nâng cao)** - Mô phỏng các thành phần phần cứng, giả lập CPU và hành vi hệ thống. Bắt đầu với console đơn giản như CHIP-8 rồi tiến tới các hệ thống phức tạp hơn.
-
-Tác giả nhấn mạnh rằng những dự án này cung cấp cơ hội học tập sâu sắc qua nhiều lĩnh vực lập trình khác nhau, giúp lập trình viên hiểu rõ các nguyên tắc thiết kế phần mềm phức tạp và phát triển tư duy giải quyết vấn đề một cách toàn diện.
+Với ai muốn thử thách hơn, tác giả đề xuất bảng tính, kết hợp khó khăn của trình soạn thảo và trình biên dịch với đồ thị có hướng không chu trình và lập trình phản ứng, cùng trình giả lập máy chơi game, nên bắt đầu với CHIP-8 trước khi chuyển sang NES hay Gameboy. Mỗi dự án đều kèm danh sách kiến thức cần học và tài liệu đọc thêm, và cuối bài là các gợi ý từ cộng đồng như tự viết cơ sở dữ liệu, ray tracer hay tiện ích dòng lệnh kiểu grep.
 
 ## [Autonomous coding agents: A Codex example](https://martinfowler.com/articles/exploring-gen-ai/autonomous-agents-codex-example.html)
 
-Bài viết của Birgitta Böckeler trên blog Martin Fowler khám phá việc sử dụng AI agent lập trình tự động, cụ thể là OpenAI Codex, để giải quyết một nhiệm vụ nhỏ trong ứng dụng Haiven. Đây là một nghiên cứu thực tế về khả năng và hạn chế của AI agent trong môi trường phát triển thực.
+Birgitta Böckeler phân biệt hai nhóm AI agent lập trình: agent có giám sát, do lập trình viên điều khiển trong IDE như GitHub Copilot, Cursor hay Claude Code, và agent chạy nền tự động như OpenAI Codex, Google Jules hay Devin, làm cả nhiệm vụ trong môi trường riêng rồi tạo pull request. Bà giao cho Codex một việc nhỏ trong ứng dụng Haiven: hiển thị nhãn bộ lọc "client-research" thành "Client Research" và công bố toàn bộ nhật ký. Agent đọc AGENTS.md, README, rồi liên tục dùng `grep` với nhiều từ khóa, ba lần lạc vào node_modules mà không rút kinh nghiệm, cuối cùng tìm được hàm `toReadableText` sẵn có để mở rộng. Tuy vậy, nó không chạy được kiểm thử và pull request tạo ra làm hai bài kiểm thử hồi quy thất bại dù cách sửa rất đơn giản.
 
-**Phân loại AI agent lập trình** - Tác giả phân biệt hai loại: AI agent hướng dẫn (tương tác trực tiếp với lập trình viên như GitHub Copilot) và AI agent nền tự động (hoạt động độc lập trong môi trường riêng để tạo mã).
-
-**Nhiệm vụ thử nghiệm** - Cải thiện nhãn hiển thị từ "client-research" thành "Client Research" - một nhiệm vụ tưởng chừng đơn giản nhưng đòi hỏi hiểu biết về cấu trúc dự án và ngữ cảnh mã nguồn.
-
-**Phương pháp hoạt động** - AI agent sử dụng tìm kiếm văn bản đơn giản để định vị mã cần thay đổi, sau đó áp dụng các chỉnh sửa phù hợp. Môi trường phát triển từ xa đóng vai trò then chốt cho hoạt động của agent.
-
-**Kết quả quan sát** - Chất lượng giải pháp khác nhau đáng kể giữa các lần chạy, cho thấy tính không ổn định trong hiệu suất của AI agent. Một số lần chạy tạo ra giải pháp chính xác, trong khi những lần khác lại tạo ra mã có vấn đề.
-
-**Thách thức chính** - Thiết lập môi trường phù hợp và quyết định khi nào nên tiếp tục hoặc loại bỏ mã do agent tạo ra. Việc giám sát và đánh giá chất lượng đầu ra vẫn đòi hỏi sự can thiệp của con người.
-
-Bài viết cung cấp góc nhìn thực tế về tiềm năng và giới hạn của AI agent tự động trong phát triển phần mềm, nhấn mạnh rằng công nghệ này vẫn cần sự giám sát và hướng dẫn từ lập trình viên con người.
+Từ đó tác giả rút ra vài nhận xét. Các agent ngày càng dựa vào tìm kiếm văn bản thô thay vì các cơ chế tìm mã phức tạp hơn. Môi trường phát triển từ xa là yếu tố then chốt, nhưng việc dựng đủ công cụ như Node, Python, Semgrep hay Gitleaks cho agent vẫn còn non nớt. Qua sáu lần chạy trên Codex, Jules và Claude Code, lời giải lần nào cũng hoạt động nhưng chỉ hai lần agent tái sử dụng mã có sẵn, bốn lần còn lại tạo mã trùng lặp. Bà cũng đặt câu hỏi khi nào nhóm nên bỏ hẳn một pull request làm dở thay vì sa vào hiệu ứng chi phí chìm.
 
 ## [Implementing an Undo/Redo System in a Complex Visual Application](https://mlacast.com/projects/undo-redo)
 
-Bài viết thảo luận về việc triển khai hệ thống undo/redo nhận biết ngữ cảnh cho Alkemion Studio, một công cụ brainstorming trực quan. Thách thức chính là thiết kế một hệ thống hoạt động qua nhiều ngữ cảnh ứng dụng mà không gây nhầm lẫn cho người dùng.
+mlacast, trưởng nhóm phát triển của Alkemion Studio, một công cụ động não và viết trực quan dành cho game nhập vai trên bàn, chia sẻ cách xây hệ thống hoàn tác/làm lại nhận biết ngữ cảnh. Người dùng thao tác ở nhiều nơi như Board, Editor hay bảng Node, nên nguyên tắc cốt lõi là không cho hoàn tác thứ mình không nhìn thấy. Mỗi thao tác là một lớp Action có hai phương thức undo và redo; ActionGroup gom nhiều thao tác để hoàn tác một lần, như xóa Node kéo theo xóa Token. Một singleton ActionStore lưu các Action trong hai Action Volume cho việc đã làm và đã hoàn tác, còn một tệp cấu hình quyết định thao tác nào hợp lệ trong ngữ cảnh hiện tại để dựng ngăn xếp hoàn tác và làm lại, sắp theo chỉ số toàn cục.
 
-**Nguyên tắc thiết kế cốt lõi** - Tạo hệ thống theo dõi hành động theo ngữ cảnh cụ thể, ngăn người dùng hoàn tác những hành động mà họ không thể nhìn thấy trực quan. Sử dụng kiến trúc lớp "Action" linh hoạt để quản lý các thao tác phức tạp.
-
-**Thành phần kỹ thuật chính** - Action Classes (lớp cơ sở với phương thức undo/redo), Action Volumes (lưu trữ có tổ chức cho các hành động), Containers (môi trường hành động biệt lập), và Context Management (xác định hành động nào có thể được hoàn tác).
-
-**Phương pháp tiếp cận độc đáo** - Kiến trúc đa stack thay vì single stack truyền thống, quản lý chỉ mục cẩn thận để theo dõi hành động theo thứ tự thời gian, khả năng xử lý tương tác đa ngữ cảnh phức tạp.
-
-**Thử thách triển khai** - Xử lý việc một hành động có thể ảnh hưởng đến nhiều ngữ cảnh khác nhau, đảm bảo tính nhất quán khi người dùng chuyển đổi giữa các môi trường làm việc trong ứng dụng.
-
-**Cải tiến tương lai** - Kế hoạch triển khai đồ thị phụ thuộc (dependency graph) để quản lý các điều kiện tiên quyết của hành động và xử lý các tình huống undo/redo phức tạp hơn, bao gồm cả việc xử lý hành động có dependencies.
-
-Bài viết cung cấp cái nhìn kỹ thuật sâu sắc về việc xây dựng hệ thống undo/redo mạnh mẽ vượt xa các triển khai tuyến tính truyền thống, đặc biệt hữu ích cho các ứng dụng có giao diện phức tạp và nhiều ngữ cảnh làm việc.
+Lớp trừu tượng container, lấy cảm hứng từ Docker, tạo môi trường cô lập khi người dùng mở một hộp thoại: thao tác bên trong có thể bị hủy hoặc được gộp vào môi trường chính, giống như giao dịch. Khó khăn lớn nhất là giữ đúng thứ tự thời gian khi thao tác di chuyển giữa các ngữ cảnh, nên chỉ số phải được tăng hoặc giảm lúc tạo, hoàn tác và làm lại để thao tác vừa làm lại luôn nằm trên cùng ngăn xếp. Điểm yếu còn lại là quan hệ phụ thuộc giữa các thao tác, và tác giả dự định dùng một đồ thị phụ thuộc cấu hình sẵn để giải quyết.
 
 ## [The software engineering 'squeeze'](https://newsletter.manager.dev/p/the-software-engineering-squeeze)
 
-Bài viết của Anton Zaides phân tích sự thay đổi mạnh mẽ trong nghề kỹ sư phần mềm, cho rằng "thời hoàng kim" dễ dàng trong ngành này đã kết thúc. Tác giả nhận định rằng nghề này đã trở nên quá dễ dàng trong 10-15 năm qua, với nhiều kỹ sư "trung bình" được tuyển dụng một cách dễ dàng.
+Anton Zaides cho rằng suốt 10-15 năm qua, kỹ sư phần mềm là nghề mang lại thu nhập cao nhất cho ai chịu học chăm chỉ một năm, và các công ty tuyển bất kỳ ai vượt qua vòng phỏng vấn. Theo ông, công việc này thật ra không quá khó, nên kết quả là một lớp kỹ sư trung bình rất dày, giờ đang bị "ép" giữa thị trường khó khăn và AI. Ông thẳng thắn nhận xét nhiều kỹ sư đã quen với công việc nhàn hạ và hay than phiền, trong khi ở các nghề khác người mới phải chấp nhận vất vả, lương thấp để đi lên.
 
-**Hiện thực mới** - Nghề kỹ sư phần mềm không còn là con đường dễ dàng để có thu nhập cao như trước. AI və các công nghệ mới đang tạo ra những thay đổi cơ bản trong cách thức làm việc và yêu cầu kỹ năng.
-
-**Thách thức cạnh tranh** - Không còn chỗ cho những người chỉ "làm theo ticket" mà không hiểu sâu về sản phẩm và công nghệ. Thị trường hiện tại đòi hỏi những kỹ sư có khả năng sáng tạo và giải quyết vấn đề thực tế.
-
-**Lời khuyên cho kỹ sư** - Học hỏi và làm chủ các công cụ AI mới thay vì chống lại chúng, phát triển kỹ năng toàn diện hơn chỉ viết mã, hiểu rõ về sản phẩm và nhu cầu người dùng thay vì chỉ tập trung vào kỹ thuật.
-
-**Định hướng nghề nghiệp** - Các kỹ sư cần chuyển từ tư duy "nhân viên kỹ thuật" sang "người giải quyết vấn đề", từ việc thực hiện yêu cầu thành tìm hiểu và đề xuất giải pháp tối ưu.
-
-**Thông điệp cốt lõi** - Nghề kỹ sư phần mềm giờ đây chỉ dành cho những người thực sự đam mê công nghệ và sẵn sàng học hỏi không ngừng. Thời kỳ "ăn theo" công nghệ để có công việc ổn định đã qua, thay vào đó là yêu cầu về chuyên môn thực sự và khả năng thích ứng liên tục.
-
-Bài viết nhấn mạnh rằng sự thay đổi này không nhất thiết là tiêu cực, mà là cơ hội để ngành công nghiệp phần mềm trở nên chuyên nghiệp và chất lượng hơn.
+Dù vậy, tác giả rất lạc quan: nhiều công ty do những người "vibe-coding" lập ra sẽ thành công và cần kỹ sư giỏi để mở rộng. Kỹ sư cần thêm kỹ năng của người quản lý sản phẩm và chút gu thiết kế, thay vì chỉ nhận ticket chi tiết rồi làm theo, vì theo ông thị trường có quá nhiều kỹ sư trung bình nhưng lại thiếu kỹ sư giỏi. Ông khuyên người đang thất nghiệp thử các công cụ AI mới và giải quyết những vấn đề thực tế quanh mình, đồng thời nhấn mạnh rằng chuyển nghề không có gì đáng xấu hổ: nghề này giờ dành cho người thật sự muốn theo đuổi nó.
 
 ## [Go is 80/20 language](https://blog.kowalczyk.info/article/d-2025-06-26/go-is-8020-language.html)
 
-Bài viết thảo luận về triết lý thiết kế của Go, một ngôn ngữ được xây dựng theo nguyên tắc 80/20: cung cấp 80% tiện ích với chỉ 20% độ phức tạp. Tác giả lập luận rằng đây chính là sức mạnh cốt lõi của Go trong việc cân bằng giữa tính năng và sự đơn giản.
+Krzysztof Kowalczyk gọi Go là ngôn ngữ 80/20: mang lại 80% tiện ích với 20% độ phức tạp, và sự ghét bỏ đến từ những người muốn 85% hay 97%. Dẫn lời Rob Pike, ông viết: "Không ai phủ nhận 87% mang lại nhiều tiện ích hơn 80%. Vấn đề là 7% tiện ích thêm đó đòi hỏi nhiều hơn 36% công sức." Các ví dụ gồm struct tag đơn giản hơn annotation hay macro, thư viện kiểm thử chuẩn chỉ vài trăm dòng mà vẫn đủ các tính năng cơ bản so với hàng chục nghìn dòng của jUnit, goroutine cho xử lý đồng thời với một phần nhỏ độ phức tạp của async trong C# hay Rust, và các kiểu dựng sẵn như slice, map, channel vốn đã là generic từ trước khi Go có generic do người dùng định nghĩa.
 
-**Triết lý hạn chế tính năng** - Go cố tình giới hạn các tính năng ngôn ngữ để duy trì sự đơn giản. Tác giả nhấn mạnh: "Không ai phủ nhận rằng 87% cung cấp nhiều tiện ích hơn 80%. Vấn đề là 7% tiện ích bổ sung đó đòi hỏi thêm 36% công việc."
-
-**Ví dụ thiết kế 80/20 trong Go** - Struct tags tối giản nhưng đủ dùng, thư viện testing tiêu chuẩn đơn giản nhưng hiệu quả, concurrency với goroutines dễ hiểu và sử dụng, các kiểu generic tích hợp sẵn trước khi có user-defined generics.
-
-**Ưu tiên thực dụng** - Go ưu tiên dễ học, đơn giản triển khai và tiện ích thực tế hơn là tính hoàn chỉnh về mặt lý thuyết. Ngôn ngữ tập trung vào việc giải quyết 80% các vấn đề phổ biến một cách hiệu quả.
-
-**Tránh bẫy phức tạp hóa** - Tác giả chỉ ra rằng các ngôn ngữ như Swift, C# và Rust thường rơi vào bẫy liên tục thêm tính năng, tăng độ phức tạp mà không mang lại lợi ích tương xứng.
-
-**Lợi ích của phương pháp này** - Codebase Go dễ đọc và bảo trì, thời gian học ngôn ngữ ngắn, ít tranh cãi về style coding, hiệu suất biên dịch nhanh và deployment đơn giản.
-
-**Thông điệp cốt lõi** - Thay vì cố gắng làm mọi thứ hoàn hảo, Go tập trung vào việc làm tốt những gì quan trọng nhất. Điều này tạo ra một ngôn ngữ thực dụng, dễ tiếp cận và hiệu quả cho phần lớn các use case trong phát triển phần mềm hiện đại.
-
-Bài viết khẳng định rằng sự "thiếu hụt" về tính năng của Go thực chất là một lợi thế, giúp các lập trình viên tập trung vào giải quyết vấn đề thay vì vật lộn với độ phức tạp của ngôn ngữ.
+Theo tác giả, C#, Swift và Rust cứ mãi thêm tính năng, và ngay cả JavaScript cũng đi theo hướng đó. Nhưng cũng có một giới hạn dưới: thiếu enum vẫn ổn, còn thiếu struct thì ngôn ngữ không đủ hữu dụng. Mỗi tính năng tốn công cho người dùng, vì phải học không chỉ cách dùng mà cả lúc nên dùng và đọc được mã của đồng nghiệp, đó là lý do Google cần bộ quy tắc viết C++. Nó cũng tốn công cho người hiện thực: sau hơn 10 năm, trình biên dịch Swift vẫn chậm và thiếu ổn định, trong khi Go nhanh, đa nền tảng và vững chắc ngay từ phiên bản 1.0.
 
 ---
 
-*Bài viết đã được review và cập nhật bởi Claude Code với Opus 4.7 (1M context).*
+*Bài viết đã được viết lại bởi Claude Code với Opus 5.5 vào ngày 27/09/2026.*

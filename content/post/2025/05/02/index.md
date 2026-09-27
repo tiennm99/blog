@@ -9,75 +9,45 @@ categories: [ "Newsletter" ]
 
 ## [Here’s how I use LLMs to help me write code](https://simonwillison.net/2025/Mar/11/using-llms-for-code/)
 
-Bài viết của Simon Willison chia sẻ kinh nghiệm sử dụng mô hình ngôn ngữ lớn (LLM) trong phát triển phần mềm. Tác giả đưa ra 5 cách sử dụng LLM hiệu quả cho lập trình viên:
+Simon Willison tổng kết hơn hai năm sử dụng mô hình ngôn ngữ lớn (LLM) để hỗ trợ viết mã nguồn và khẳng định rằng dùng LLM hiệu quả là một kỹ năng cần rèn luyện, không phải thứ tự nhiên mà có. Theo tác giả, nên xem LLM như một công cụ tự động hoàn thành nâng cao: nó giúp lấp khoảng trống kiến thức nhưng vẫn có thể mắc những lỗi khó lường, nên con người luôn phải là người kiểm soát. Tác giả cũng lưu ý giới hạn thời điểm của dữ liệu huấn luyện: với thư viện có thay đổi lớn sau thời điểm đó, cần đưa ví dụ mới vào câu lệnh (prompt). Ngữ cảnh của cuộc hội thoại là yếu tố quyết định, vì vậy hãy chủ động cung cấp mã nguồn hiện có, ví dụ mẫu, hoặc dùng các công cụ cho phép nạp cả dự án.
 
-1. **Giải thích code**: Sử dụng LLM để hiểu code phức tạp, đặc biệt là code của người khác hoặc code cũ của chính mình.
-
-2. **Viết test**: LLM rất giỏi trong việc tạo test cases, đặc biệt là unit test và integration test, giúp tăng độ bao phủ và phát hiện lỗi.
-
-3. **Refactoring code**: Sử dụng LLM để cải thiện cấu trúc code, tách các hàm phức tạp thành các hàm nhỏ hơn, dễ bảo trì hơn.
-
-4. **Viết documentation**: LLM có thể tạo ra tài liệu hướng dẫn, docstrings và README chất lượng cao dựa trên code hiện có.
-
-5. **Tạo code mới**: Sử dụng LLM để viết code từ đầu, nhưng luôn phải kiểm tra kỹ kết quả và hiểu rõ code được tạo ra.
-
-Tác giả nhấn mạnh rằng LLM không phải là công cụ thay thế lập trình viên mà là công cụ hỗ trợ, giúp tăng năng suất và chất lượng code. Bài viết cũng cảnh báo về những hạn chế của LLM như hallucination (tạo ra thông tin sai) và khuyên lập trình viên nên luôn kiểm tra kỹ output từ LLM trước khi sử dụng.
+Về cách làm cụ thể, tác giả dùng LLM để khảo sát các lựa chọn thư viện và cách triển khai ở giai đoạn đầu; khi viết mã nguồn thật thì đưa chỉ dẫn chi tiết như chữ ký hàm và yêu cầu rõ ràng, sau đó tiếp tục yêu cầu chỉnh sửa, tái cấu trúc qua nhiều lượt thay vì bỏ đi kết quả đầu tiên. Điều không thể thiếu là tự chạy và kiểm thử mã nguồn. Bài viết có ví dụ xây dựng một trang tổng hợp lịch sử commit bằng Claude Code chỉ trong khoảng 17 phút với chi phí 0,61 đô la, dù tác giả vẫn phải tự tay cấu hình GitHub Actions. Lợi ích lớn nhất là tốc độ: LLM giúp thực hiện những dự án trước đây không đáng bỏ công, đồng thời khuếch đại chuyên môn sẵn có của lập trình viên.
 
 ## [I use Cursor daily - here's how I avoid the garbage parts](https://www.nickcraux.com/blog/cursor-tips)
 
-Bài viết giới thiệu các mẹo và thủ thuật để sử dụng Cursor - một trình soạn thảo code tích hợp AI hiệu quả hơn. Cursor là công cụ được xây dựng dựa trên VS Code nhưng tích hợp sâu với các mô hình ngôn ngữ lớn như GPT-4, giúp lập trình viên tăng năng suất đáng kể.
+Bài viết chia sẻ kinh nghiệm dùng Cursor hằng ngày, một trình soạn thảo mã nguồn xây dựng trên nền VS Code và tích hợp sâu các mô hình ngôn ngữ lớn như GPT-4. Tác giả đưa ra nhiều mẹo thực tế: các phím tắt quan trọng, cách viết câu lệnh để AI trả lời chính xác hơn, cách tận dụng tính năng trò chuyện với toàn bộ mã nguồn dự án, cùng các chiến lược tối ưu quy trình làm việc và cấu hình Cursor cho phù hợp với từng người và từng dự án.
 
-Tác giả chia sẻ nhiều tip hữu ích như cách sử dụng các phím tắt quan trọng, kỹ thuật prompt hiệu quả để nhận được câu trả lời chính xác từ AI, cách tận dụng tính năng chat với codebase, và các chiến lược để tối ưu hóa quy trình làm việc. Bài viết cũng hướng dẫn cách cấu hình Cursor để phù hợp với nhu cầu cá nhân và dự án cụ thể.
-
-Đặc biệt, tác giả nhấn mạnh các phương pháp để kết hợp sức mạnh của con người và AI một cách hài hòa, giúp tạo ra code chất lượng cao hơn trong thời gian ngắn hơn. Đây là tài liệu tham khảo hữu ích cho cả người mới bắt đầu và những người đã quen thuộc với Cursor muốn nâng cao kỹ năng sử dụng công cụ này.
+Điểm đáng chú ý là tác giả nhấn mạnh việc phối hợp hài hòa giữa con người và AI thay vì phó mặc cho công cụ, để tạo ra mã nguồn chất lượng hơn trong thời gian ngắn hơn. Đây là tài liệu tham khảo hữu ích cho cả người mới làm quen lẫn những ai đã dùng Cursor và muốn khai thác công cụ này hiệu quả hơn.
 
 ## [Why Java endures: The foundation of modern enterprise development](https://github.blog/developer-skills/why-java-endures-the-foundation-of-modern-enterprise-development/)
 
-Bài viết từ GitHub Blog phân tích lý do tại sao Java vẫn tiếp tục là nền tảng vững chắc cho phát triển phần mềm doanh nghiệp hiện đại, dù đã gần 30 năm tuổi. Tác giả chỉ ra rằng sức mạnh của Java nằm ở tính ổn định, hiệu suất cao, khả năng mở rộng và hệ sinh thái phong phú.
+Bài viết trên GitHub Blog giải thích vì sao Java, ra đời năm 1995 tại Sun Microsystems, vẫn là nền tảng của phát triển phần mềm doanh nghiệp sau gần 30 năm. Gốc rễ sức mạnh của Java là nguyên tắc "viết một lần, chạy mọi nơi": mã nguồn chỉ cần viết một lần là chạy được trên nhiều hệ điều hành mà không phải biên dịch lại. Ngôn ngữ này vẫn liên tục hiện đại hóa, chẳng hạn Java 23 (tháng 9/2024) đơn giản hóa cú pháp cho người mới, còn pattern matching và record class giúp viết mã nguồn gọn gàng, dễ bảo trì hơn.
 
-Bài viết nhấn mạnh vai trò của Java trong các hệ thống backend quy mô lớn, đặc biệt trong lĩnh vực tài chính, thương mại điện tử và các ứng dụng doanh nghiệp. Mặc dù có nhiều ngôn ngữ mới xuất hiện, Java vẫn duy trì vị thế nhờ khả năng thích ứng liên tục, cộng đồng lớn mạnh và sự hỗ trợ từ các công ty lớn như Oracle, Google và Amazon.
-
-Tác giả cũng thảo luận về các xu hướng hiện đại trong hệ sinh thái Java như Spring Boot, Quarkus, và GraalVM, cũng như việc tích hợp với các công nghệ cloud-native và microservices. Bài viết kết luận rằng Java không chỉ là một ngôn ngữ lập trình mà còn là một nền tảng toàn diện, tiếp tục phát triển để đáp ứng nhu cầu của các doanh nghiệp trong kỷ nguyên số.
+Bên cạnh đó, hệ sinh thái Java rất đồ sộ, từ thư viện chuẩn đến các framework như Spring Boot và Hibernate, giúp lập trình viên không phải tự xây dựng lại những giải pháp phổ biến; Minecraft, Netflix hay LinkedIn đều là những ví dụ tiêu biểu. Trong lĩnh vực AI, dù Python chiếm ưu thế ở khâu nghiên cứu, Java lại mạnh ở khâu triển khai quy mô lớn, như nền tảng Michelangelo của Uber, và các thư viện Deeplearning4j, LangChain4j cho phép bổ sung khả năng AI vào hệ thống Java sẵn có. Bài viết kết luận Java vẫn là kỹ năng được thị trường săn đón và sẽ còn giữ vị thế nhờ cam kết với mã nguồn bền vững, dễ mở rộng và dễ bảo trì.
 
 ## [Part 5: Implementing a Web UI using Vaadin and GitHub Copilot Agent Mode](https://itnext.io/part-5-implementing-a-web-ui-using-vaadin-and-github-copilot-agent-mode-563e74f131aa)
 
-Bài viết này là phần thứ 5 trong một series về phát triển ứng dụng web, tập trung vào việc xây dựng giao diện người dùng sử dụng Vaadin kết hợp với GitHub Copilot Agent Mode. Tác giả hướng dẫn chi tiết cách tạo một UI web hiện đại mà không cần viết nhiều JavaScript, nhờ vào framework Vaadin - một công cụ cho phép lập trình viên Java xây dựng giao diện người dùng hoàn toàn bằng Java.
+Đây là phần thứ 5 trong loạt bài của Saeed Zarinfam về việc dùng các IDE tích hợp AI để phát triển ứng dụng Java. Lần này, tác giả dùng VS Code với chế độ Agent Mode của GitHub Copilot và mô hình Claude 3.5 Sonnet để xây dựng giao diện web bằng Vaadin Flow, một framework ít phổ biến cho phép viết giao diện web hoàn toàn bằng Java, cho dự án mẫu Employee Assistance Chatbot dùng Spring AI. Tác giả ghi lại đầy đủ các bước và câu lệnh đã sử dụng để quan sát Copilot Agent Mode hoạt động thực tế, đồng thời so sánh với agent Cascade của Windsurf, công cụ mà trước đó tác giả đã dùng khá suôn sẻ để xây dựng một dịch vụ REST có lớp bộ nhớ đệm bằng Spring Boot.
 
-Điểm nổi bật của bài viết là việc tận dụng GitHub Copilot Agent Mode - một tính năng AI mới của GitHub Copilot - để tăng tốc quá trình phát triển. Tác giả minh họa cách Copilot Agent có thể hiểu yêu cầu phức tạp, đề xuất các component UI phù hợp, và thậm chí tạo ra các layout hoàn chỉnh dựa trên mô tả bằng ngôn ngữ tự nhiên.
-
-Bài viết cũng thảo luận về các thực hành tốt nhất khi kết hợp Vaadin với Spring Boot, cách xử lý dữ liệu và sự kiện trong ứng dụng, cũng như các chiến lược để tối ưu hóa hiệu suất của ứng dụng web. Đây là tài liệu hữu ích cho các lập trình viên Java muốn xây dựng ứng dụng web hiện đại với sự hỗ trợ của công nghệ AI.
+Điểm khác biệt là lần này tác giả không am hiểu nhiều về Vaadin Flow, nên bài viết cũng là phép thử xem LLM có thực sự giúp được khi làm việc với một framework ít người dùng hay không. Như tiêu đề phụ của bài đã gợi ý, câu trả lời khá dè dặt: LLM chưa thực sự phù hợp với những ngôn ngữ lập trình và framework ít phổ biến, nên lập trình viên không thể trông chờ hoàn toàn vào AI khi bước vào một công nghệ mới lạ.
 
 ## [Microservices vs. Monoliths: How to Choose the Right Architecture for Your Project](https://dev.to/jhonifaber/microservices-vs-monoliths-how-to-choose-the-right-architecture-for-your-project-2bep)
 
-Bài viết phân tích sâu sắc về hai kiến trúc phổ biến trong phát triển phần mềm: microservices và monoliths. Tác giả Jhoni Faber cung cấp một cái nhìn toàn diện về ưu và nhược điểm của mỗi kiến trúc, giúp các đội phát triển đưa ra quyết định phù hợp cho dự án của họ.
+Bài viết so sánh hai kiến trúc phổ biến là monolith và microservices để giúp đội ngũ phát triển chọn hướng phù hợp. Với monolith, toàn bộ giao diện, logic nghiệp vụ và thao tác cơ sở dữ liệu nằm chung trong một khối triển khai duy nhất, nên dễ xây dựng, kiểm thử, gỡ lỗi và vận hành. Đổi lại, muốn mở rộng thì phải nhân bản cả hệ thống thay vì chỉ phần cần thiết, đội ngũ lớn dễ vướng xung đột khi gộp mã nguồn, công nghệ bị khóa cứng cho toàn bộ ứng dụng, và mỗi thay đổi nhỏ đều buộc phải triển khai lại mọi thứ, làm tăng rủi ro.
 
-Về kiến trúc monolith, tác giả chỉ ra những ưu điểm như dễ phát triển ban đầu, đơn giản trong triển khai và vận hành, hiệu suất tốt với độ trễ thấp, và chi phí phát triển ban đầu thấp. Tuy nhiên, monolith cũng có những hạn chế như khó mở rộng khi ứng dụng phát triển, khó áp dụng công nghệ mới, và rủi ro cao khi cập nhật vì toàn bộ hệ thống phải được triển khai lại.
-
-Về microservices, bài viết nhấn mạnh các lợi ích như khả năng mở rộng và phát triển độc lập của từng service, linh hoạt trong việc áp dụng công nghệ mới cho từng service, và khả năng phục hồi tốt hơn khi một service gặp sự cố. Tuy nhiên, microservices cũng đi kèm với những thách thức như độ phức tạp cao trong việc quản lý và điều phối các service, chi phí vận hành lớn hơn, và yêu cầu cao về kỹ năng DevOps.
-
-Phần quan trọng nhất của bài viết là hướng dẫn cách lựa chọn kiến trúc phù hợp dựa trên các yếu tố như quy mô dự án, yêu cầu về khả năng mở rộng, nguồn lực sẵn có của đội ngũ, và thời gian phát triển. Tác giả cũng đề xuất một cách tiếp cận thực tế là bắt đầu với monolith được thiết kế tốt và chuyển dần sang microservices khi cần thiết, thay vì áp dụng microservices ngay từ đầu cho mọi dự án.
+Microservices chia ứng dụng thành các dịch vụ độc lập, mỗi dịch vụ đảm nhận một chức năng nghiệp vụ và giao tiếp qua API. Cách này cho phép mở rộng có chọn lọc, các nhóm làm việc tự chủ, mỗi dịch vụ tự chọn công nghệ phù hợp và lỗi ở một dịch vụ không kéo sập cả hệ thống. Tuy vậy, cái giá phải trả là độ phức tạp cao: cần công cụ điều phối, giám sát, cơ chế khám phá dịch vụ, đồng thời phải xử lý độ trễ mạng và bài toán nhất quán dữ liệu. Bài viết giới thiệu mẫu SAGA để quản lý giao dịch phân tán bằng chuỗi giao dịch cục bộ kèm hành động bù trừ, với hai cách triển khai là choreography (dựa trên sự kiện, phi tập trung) và orchestration (dựa trên lệnh, tập trung). Kết luận của tác giả: lựa chọn phụ thuộc vào nhu cầu ứng dụng, quy mô đội ngũ và mục tiêu dài hạn.
 
 ## [Designing a Scalable Architecture - with Some Spring Boot Examples](https://dev.to/jhonifaber/designing-a-scalable-architecture-with-some-spring-boot-examples-340o)
 
-Bài viết của Jhoni Faber trình bày chi tiết về cách thiết kế kiến trúc có khả năng mở rộng cao cho các ứng dụng Spring Boot. Tác giả đi sâu vào các nguyên tắc thiết kế và mẫu kiến trúc giúp xây dựng hệ thống có thể dễ dàng phát triển theo quy mô và nhu cầu kinh doanh.
+Bài viết trình bày các nguyên tắc cốt lõi để thiết kế một hệ thống có khả năng mở rộng, kèm ví dụ minh họa bằng Spring Boot. Tác giả phân biệt mở rộng theo chiều dọc (tăng sức mạnh cho một máy) và theo chiều ngang (thêm nhiều thực thể), rồi đi qua từng thành phần quan trọng: tách ứng dụng thành microservices để mở rộng độc lập, quản lý cấu hình bằng Spring Cloud Config và đóng gói bằng Docker; thiết kế dịch vụ phi trạng thái, chẳng hạn xác thực bằng JWT để máy chủ không cần lưu và tra cứu phiên đăng nhập.
 
-Bài viết tập trung vào việc áp dụng kiến trúc phân lớp (layered architecture) trong Spring Boot, với sự phân chia rõ ràng giữa các thành phần: controller, service, repository và domain model. Tác giả nhấn mạnh tầm quan trọng của việc thiết kế giao diện (interface) rõ ràng giữa các lớp, giúp giảm sự phụ thuộc và tăng tính linh hoạt của hệ thống.
-
-Một điểm nổi bật trong bài viết là các ví dụ thực tế về cách tổ chức code trong Spring Boot, bao gồm cách xử lý dependency injection, quản lý transaction, và thiết kế API RESTful. Tác giả cũng đề cập đến các kỹ thuật nâng cao như caching, asynchronous processing và event-driven architecture để tối ưu hiệu suất và khả năng mở rộng.
-
-Phần cuối bài viết thảo luận về các chiến lược triển khai và giám sát hệ thống, bao gồm containerization với Docker, orchestration với Kubernetes, và các công cụ monitoring như Prometheus và Grafana. Đây là một tài liệu toàn diện cho các nhà phát triển Spring Boot muốn xây dựng các ứng dụng có khả năng mở rộng cao trong môi trường doanh nghiệp.
+Ở tầng dữ liệu, bài viết đề cập sharding, bản sao chỉ đọc (read replica) để giảm tải cho cơ sở dữ liệu chính, và các lựa chọn NoSQL như MongoDB với đánh đổi giữa tính nhất quán và tính sẵn sàng. Với xử lý bất đồng bộ, tác giả giới thiệu các message broker như Kafka, RabbitMQ và annotation `@Async` của Spring Boot để chạy phương thức trên luồng riêng. Ngoài ra còn có bộ nhớ đệm với `@Cacheable`, `@CacheEvict`, cùng API Gateway đảm nhận định tuyến, xác thực, giới hạn tần suất truy cập và circuit breaker. Tác giả nhắc rằng ghi log, bảo mật, giám sát và xử lý lỗi cũng là những yếu tố không thể thiếu để hệ thống bền vững khi phát triển.
 
 ## [Java is Very Fast, If You Don’t Create Many Objects](https://blog.vanillajava.blog/2022/09/java-is-very-fast-if-you-dont-create.html)
 
-Bài viết này từ Vanilla Java Blog phân tích một khía cạnh quan trọng về hiệu suất của Java: ngôn ngữ này có thể cực kỳ nhanh nếu bạn hạn chế việc tạo ra các đối tượng tạm thời (garbage). Tác giả Peter Lawrey, một chuyên gia về Java hiệu năng cao, giải thích rằng mặc dù Garbage Collector của Java đã được cải thiện đáng kể qua nhiều năm, việc liên tục tạo ra các đối tượng mới vẫn là nguyên nhân chính gây ra độ trễ và giảm hiệu suất trong các ứng dụng đòi hỏi hiệu năng cao.
+Peter Lawrey, chuyên gia về Java hiệu năng cao, cho thấy việc cấp phát đối tượng ảnh hưởng lớn đến hiệu năng Java trong các hệ thống thông lượng cao, dù bản thân việc thu gom rác (GC) khá rẻ. Trong benchmark với Chronicle Wire trên CPU Ryzen 5950X, khi không cấp phát đối tượng nào, hệ thống xử lý khoảng 60–68 triệu sự kiện mỗi giây với độ trễ 467–528 nano giây; chỉ cần tạo thêm một đối tượng 44 byte cho mỗi sự kiện, thông lượng giảm còn khoảng 37–50 triệu sự kiện mỗi giây, tức giảm chừng 25%, và độ trễ tăng thêm khoảng 166 nano giây.
 
-Bài viết trình bày các kỹ thuật để giảm thiểu việc tạo đối tượng không cần thiết, bao gồm:
-1. Sử dụng object pooling để tái sử dụng đối tượng thay vì tạo mới
-2. Áp dụng các cấu trúc dữ liệu off-heap để lưu trữ dữ liệu bên ngoài heap của JVM
-3. Tối ưu hóa code để tránh boxing/unboxing tự động và chuyển đổi kiểu dữ liệu không cần thiết
-4. Sử dụng các thư viện như Chronicle Queue và Chronicle Map được thiết kế để giảm thiểu garbage
-
-Tác giả cũng chia sẻ các benchmark so sánh hiệu suất giữa code Java thông thường và code được tối ưu để giảm thiểu garbage, cho thấy sự khác biệt đáng kể về thời gian xử lý và độ trễ. Đây là một bài viết giá trị cho các lập trình viên Java làm việc với các hệ thống yêu cầu hiệu năng cao như tài chính, giao dịch thời gian thực, hoặc xử lý dữ liệu lớn.
+Điều thú vị là GC chỉ chiếm khoảng 170 mili giây mỗi phút (0,3% thời gian chạy), nên nguyên nhân chính không nằm ở việc dọn dẹp mà ở áp lực lên bộ nhớ đệm L1/L2/L3 của CPU khi nhiều nhân cùng cấp phát. Khi thử với nhiều luồng, tốc độ cấp phát chững lại quanh 220 triệu đối tượng mỗi giây và độ trễ tăng vọt khi vượt quá tám luồng. Giải pháp của Chronicle Wire là mặc định tái sử dụng cùng một đối tượng cho mỗi loại sự kiện khi giải tuần tự hóa, loại bỏ việc cấp phát mà vẫn giữ mã nguồn đơn giản. Bài học rút ra: với các hệ thống nhạy cảm về độ trễ như tài chính, giảm cấp phát đối tượng mang lại hiệu quả rõ rệt hơn là tinh chỉnh GC.
 
 ## ~~[Microbenchmarks: Java Locks vs Atomic](https://blog.tombert.com/posts/2025-03-04-lock-benchmark/)~~
 
@@ -98,4 +68,4 @@ Tác giả cũng chia sẻ các benchmark so sánh hiệu suất giữa code Jav
 
 ---
 
-*Bài viết đã được review và cập nhật bởi Claude Code với Opus 4.7 (1M context).*
+*Bài viết đã được viết lại bởi Claude Code với Opus 5.5 vào ngày 27/09/2026.*

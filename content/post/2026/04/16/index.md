@@ -9,78 +9,39 @@ categories: ["Newsletter"]
 
 ## [Clean Architecture → Separation of Concerns trong Go](https://vjerci.com/writings/clean/separation-of-concerns/)
 
-Bài viết hướng dẫn về nguyên tắc phân tách mối quan tâm (Separation of Concerns) trong Go, một nguyên tắc cốt lõi giúp mã nguồn dễ bảo trì và mở rộng. Tác giả minh họa vấn đề thông qua ví dụ xấu — một hàm `CreateUserHandler` gộp chung xử lý HTTP, thao tác cơ sở dữ liệu và xác thực dữ liệu vào cùng một nơi, khiến ứng dụng nhanh chóng trở nên khó quản lý khi phức tạp tăng lên.
+Bài viết giải thích nguyên tắc phân tách mối quan tâm (Separation of Concerns): phần việc đã được xử lý ở một nơi trong hệ thống thì không nên bị các nơi khác bận tâm hay lặp lại. Tác giả mở đầu bằng một ví dụ xấu, trong đó một hàm duy nhất vừa xử lý yêu cầu HTTP, vừa xác thực dữ liệu, vừa thao tác với cơ sở dữ liệu. Khi mọi thứ đan xen như vậy, muốn sửa bất kỳ chỗ nào bạn cũng phải hiểu toàn bộ, và ứng dụng nhanh chóng trở nên khó bảo trì khi độ phức tạp tăng lên.
 
-Giải pháp được đề xuất là kiến trúc phân lớp với bốn tầng rõ ràng: HTTP (xử lý yêu cầu/phản hồi), Service (logic nghiệp vụ), Repository (truy cập cơ sở dữ liệu) và Model (định nghĩa cấu trúc dữ liệu). Bài viết cũng nêu bật các đặc trưng của Go như structural typing — struct tự động thỏa mãn interface mà không cần khai báo tường minh, cùng với kỹ thuật dependency injection thông qua hàm khởi tạo để kết nối các thành phần tại một điểm trung tâm.
-
-**Điểm chính:**
-- Nguyên tắc phân tách mối quan tâm đảm bảo thay đổi ở một phần không ảnh hưởng tiêu cực đến phần khác
-- Kiến trúc phân lớp gồm bốn tầng: HTTP, Service, Repository và Model
-- Go sử dụng structural typing — interface được triển khai ngầm định, không cần khai báo tường minh
-- Sử dụng dependency injection qua hàm khởi tạo để kết nối các thành phần
-- Mỗi package nên có một trách nhiệm duy nhất, rõ ràng và dễ hiểu
+Giải pháp là chia hệ thống thành bốn tầng: HTTP chỉ lo nhận yêu cầu và trả phản hồi, Service chứa logic nghiệp vụ tách khỏi hạ tầng, Repository đảm nhận mọi thao tác với cơ sở dữ liệu, còn Model định nghĩa cấu trúc dữ liệu mà không phụ thuộc tầng nào khác. Go hỗ trợ cách tổ chức này nhờ structural typing: struct tự động thỏa mãn interface mà không cần khai báo kế thừa. Tác giả khuyên mỗi package chỉ nên giữ một trách nhiệm rõ ràng, dễ nắm bắt ngay khi nhìn vào, và kết nối các thành phần bằng dependency injection qua hàm khởi tạo để quan hệ giữa chúng hiện rõ trong mã khởi tạo. Bài viết còn gợi ý dùng tính năng "find all implementations" của IDE để tìm struct hiện thực một interface, cùng câu lệnh `var _ MyInterface = (*MyStruct)(nil)` để trình biên dịch kiểm tra việc hiện thực đó.
 
 ## [Bộ thu gom rác trong Go](https://internals-for-interns.com/posts/go-garbage-collector)
 
-Bài viết chuyên sâu phân tích cơ chế hoạt động của Garbage Collector (GC) trong Go 1.26, phiên bản giới thiệu GreenTea GC. GC của Go là bộ thu gom không di chuyển đối tượng (non-moving), chạy đồng thời (concurrent), sử dụng thuật toán đánh dấu ba màu (tri-color mark-and-sweep). Toàn bộ chu trình GC gồm bốn giai đoạn: kết thúc quét (sweep termination), đánh dấu (mark), kết thúc đánh dấu (mark termination), và quét (sweep) — trong đó chỉ có hai lần dừng toàn bộ chương trình rất ngắn.
+Bài viết đi sâu vào bộ thu gom rác (Garbage Collector - GC) của Go 1.26, phiên bản giới thiệu GreenTea GC. GC của Go thuộc loại không di chuyển đối tượng (non-moving), chạy đồng thời (concurrent) và dùng thuật toán đánh dấu ba màu (tri-color mark-and-sweep). Vì đối tượng giữ nguyên địa chỉ suốt vòng đời, con trỏ luôn hợp lệ và việc phối hợp với mã unsafe hay C trở nên đơn giản hơn. Mỗi chu trình gồm bốn giai đoạn: kết thúc quét (sweep termination), đánh dấu (mark) chạy song song với chương trình và chiếm khoảng 25% CPU, kết thúc đánh dấu (mark termination), rồi quét (sweep) theo kiểu lười gắn với nhu cầu cấp phát; toàn bộ chu trình chỉ dừng chương trình hai lần rất ngắn.
 
-Điểm cải tiến lớn nhất của GreenTea GC là cơ chế quét theo span thay vì từng đối tượng riêng lẻ. Khi GC phát hiện con trỏ đến đối tượng, nó đánh dấu trong bitmap nội tuyến (inline mark bits) và xếp cả span vào hàng đợi FIFO, cho phép tích lũy nhiều đối tượng trước khi quét. Với span dày đặc (trên 12.5% đối tượng được đánh dấu), GC sử dụng lệnh AVX-512 để quét song song, nhanh gấp 4-8 lần. Cơ chế write barrier kiểu Yuasa-Dijkstra đảm bảo không bỏ sót đối tượng khi chương trình thay đổi con trỏ trong lúc GC đang chạy. Ngoài ra, mark assist tạo áp lực ngược lên goroutine cấp phát bộ nhớ quá nhanh, buộc chúng tham gia công việc đánh dấu.
-
-**Điểm chính:**
-- GC của Go chạy đồng thời với chương trình, chỉ dừng toàn bộ hai lần rất ngắn trong mỗi chu trình
-- GreenTea GC (Go 1.26) quét theo span với hàng đợi FIFO, tận dụng tính cục bộ bộ nhớ đệm CPU
-- Span dày đặc được quét bằng lệnh SIMD (AVX-512), nhanh gấp 4-8 lần so với quét từng đối tượng
-- Write barrier kiểu Yuasa-Dijkstra đánh dấu cả con trỏ cũ và mới để không bỏ sót đối tượng
-- GC Pacer điều chỉnh thời điểm kích hoạt chu trình dựa trên `GOGC` và `GOMEMLIMIT`
+Điểm mới của GreenTea là đưa cả span (vùng nhớ chứa các đối tượng cùng kích thước) vào hàng đợi thay vì từng đối tượng riêng lẻ, nhờ đó gom được nhiều đối tượng đã đánh dấu trước khi quét và tận dụng tốt bộ nhớ đệm CPU. Với span có trên 12.5% đối tượng được đánh dấu, GC dùng lệnh SIMD AVX-512 trên x86-64 để quét nhanh hơn 4-8 lần. Write barrier lai Yuasa-Dijkstra đánh dấu cả con trỏ cũ lẫn mới khi chương trình ghi đè con trỏ, bảo đảm không bỏ sót đối tượng còn sống. Khi goroutine cấp phát nhanh hơn tốc độ đánh dấu, cơ chế mark assist buộc chúng tham gia đánh dấu, tạo áp lực ngược. Cuối cùng, GC Pacer quyết định thời điểm chạy dựa trên `GOGC` (mặc định 100, tức kích hoạt khi heap tăng gấp đôi) và `GOMEMLIMIT` (giới hạn bộ nhớ tuyệt đối).
 
 ## [Kỹ năng sử dụng AI Agent hiệu quả](https://www.lesswrong.com/posts/9xAwybDhtgzGYPnbs/the-skill-of-using-ai-agents-well)
 
-Bài viết chia sẻ kinh nghiệm thực tế về cách sử dụng AI agent một cách hiệu quả, với nguyên tắc cốt lõi: con người là nút thắt cổ chai, không phải AI. Tác giả đề xuất 13 chiến lược cụ thể, bao gồm: luôn dùng mô hình tốt nhất với mức thinking cao nhất; sử dụng git worktree để chạy nhiều phiên AI song song trên cùng một repository mà không xung đột tệp; bật ghi log chi tiết để AI tự điều tra lỗi chỉ từ mô tả triệu chứng ngắn gọn.
+Bài viết chia sẻ kinh nghiệm thực tế khi làm việc với AI agent, xoay quanh một nhận định cốt lõi: nút thắt cổ chai là sự chú ý của con người chứ không phải năng lực của AI. Vì vậy, tác giả tập trung vào quy trình giúp giảm ma sát cho chính mình: luôn dùng mô hình tốt nhất với mức suy luận cao nhất, bật ghi log chi tiết để AI tự điều tra lỗi, và cho mỗi phiên AI một nhánh riêng bằng git worktree để nhiều phiên chạy song song mà không đụng tệp của nhau. Những việc có thể song song hóa, như kiểm thử năm kịch bản cùng lúc, nên giao cho nhiều subagent.
 
-Về quản lý quyền, tác giả khuyên dùng AI thứ hai để đánh giá yêu cầu quyền (Auto Mode trong Claude Code) hoặc chạy agent trong container cách ly. Ngoài ra, việc mở phiên mới để review công việc thường phát hiện cải tiến mà phiên gốc bỏ lỡ, vì phiên gốc phân tán chú ý vào chi tiết triển khai. Tác giả cũng nhấn mạnh tầm quan trọng của hệ thống thông báo và bảng điều khiển trung tâm khi quản lý hơn 10 phiên song song.
-
-**Điểm chính:**
-- Con người là nút thắt cổ chai — ủy thác tối đa công việc cho AI, kể cả tác vụ dài
-- Dùng git worktree để chạy nhiều phiên AI song song không xung đột
-- Mở phiên AI mới để review giúp phát hiện cải tiến mà phiên gốc bỏ lỡ
-- Dùng AI thứ hai đánh giá yêu cầu quyền thay vì duyệt thủ công
-- Nhận biết sớm khi AI hoạt động kém để chuyển sang mô hình thay thế
+Về quyền truy cập, tác giả khuyên đưa các lệnh hiển nhiên an toàn vào danh sách cho phép, dùng một AI thứ hai để tự động đánh giá yêu cầu cấp quyền, và bật âm thanh thông báo khi agent cần người trả lời. Mở một phiên mới để review thường phát hiện được vấn đề mà phiên gốc bỏ sót, còn một bảng điều khiển theo dõi mọi phiên giúp nhanh chóng tìm ra phiên đang chờ phản hồi. Tác giả cũng giao trọn cho AI các việc chuẩn bị như dựng cơ sở dữ liệu hay kiểm thử giao diện, chuyển sang nhà cung cấp khác khi mô hình có dấu hiệu kém đi, và đang thử nghiệm các hệ thống bộ nhớ xuyên phiên, dù chưa tìm được giải pháp thật sự ưng ý.
 
 ## [Những quy tắc bất thành văn trong kỹ thuật phần mềm](https://newsletter.manager.dev/p/the-unwritten-laws-of-software-engineering)
 
-Bài viết tổng hợp bảy quy tắc mà kỹ sư phần mềm thường chỉ học được qua những sai lầm đau đớn. Đầu tiên, khi hệ thống sản xuất gặp sự cố sau triển khai — hãy rollback ngay rồi mới điều tra, đừng cố chứng minh thay đổi không liên quan. Thứ hai, bản sao lưu chỉ thực sự tồn tại khi bạn đã thử khôi phục thành công từ nó. Thứ ba, log luôn là bài toán khó — quá ít thì thiếu thông tin khi sự cố, quá nhiều thì không thể tìm kiếm.
+Bài viết tổng hợp bảy quy tắc mà kỹ sư phần mềm thường chỉ học được sau những sai lầm đắt giá. Khi hệ thống production gặp sự cố ngay sau một lần triển khai, hãy rollback trước rồi mới điều tra, thay vì mất hàng giờ chứng minh thay đổi của mình vô can. Bản sao lưu chỉ thực sự tồn tại khi bạn đã khôi phục thành công từ nó, và bạn cần biết rõ khoảng dữ liệu có thể mất, ai được quyền khôi phục cũng như thời gian khôi phục thực tế khi dữ liệu ngày càng lớn. Log thì luôn khó cân bằng: thiếu thông tin khi có sự cố, hoặc quá dài dòng và thiếu request ID chung để truy vết giữa các dịch vụ.
 
-Ngoài ra, mọi thay đổi dữ liệu phải có kế hoạch rollback đã được kiểm thử; mọi dependency bên ngoài đều sẽ lỗi nên cần chuẩn bị fallback; thao tác rủi ro cần ít nhất hai người kiểm tra (quy tắc "4 mắt"); và giải pháp tạm thời sẽ tồn tại mãi mãi — nên viết giải pháp đơn giản nhưng sạch sẽ thay vì hack vội.
-
-**Điểm chính:**
-- Rollback ngay khi hệ thống lỗi sau triển khai, điều tra sau
-- Bản sao lưu chỉ có giá trị khi đã kiểm thử khôi phục thành công
-- Mọi dependency bên ngoài đều sẽ lỗi — cần fallback, cache và kế hoạch liên lạc
-- Thao tác rủi ro cần quy tắc "4 mắt" — giải thích cho người khác thường giúp phát hiện lỗi
-- Giải pháp tạm thời sẽ thành vĩnh viễn — viết đơn giản và sạch thay vì hack
+Mọi thay đổi chạm đến dữ liệu phải có kế hoạch rollback đã được kiểm thử, vì kế hoạch chưa từng chạy thử thì chỉ có một nửa cơ hội hoạt động. Mọi dependency bên ngoài rồi sẽ lỗi, nên cần tìm hiểu giới hạn tốc độ, kiểm thử hành vi khi dịch vụ ngừng hoạt động và chuẩn bị cache, hàng đợi hay kế hoạch thông báo cho người dùng; ghép hai hệ thống 99.9% chỉ còn khoảng 99.8% độ tin cậy. Thao tác có rủi ro cần quy tắc "4 mắt": nhờ người khác xem cùng, và việc giải thích thành lời thường tự giúp bạn phát hiện lỗi. Cuối cùng, không gì bền bằng giải pháp tạm thời, nên hãy viết giải pháp đơn giản, giới hạn nhưng sạch sẽ thay vì chắp vá.
 
 ## [Kỹ sư Big Tech cần sự tự tin lớn](https://www.seangoedecke.com/big-tech-needs-big-egos/)
 
-Bài viết thách thức quan điểm phổ biến rằng ego không có chỗ trong ngành công nghệ, lập luận rằng sự tự tin mạnh mẽ là cần thiết để kỹ sư phần mềm thành công tại các công ty lớn. Khi làm việc với codebase khổng lồ, kỹ sư liên tục đối mặt với điều chưa biết và sai lầm — cần niềm tin vào bản thân đủ lớn để vượt qua sự bất định. Trong môi trường Big Tech, ego giúp kỹ sư đưa ra quan điểm rõ ràng về vấn đề kỹ thuật mơ hồ, chấp nhận xung đột khi thực hiện thay đổi lớn ảnh hưởng hàng trăm người, và dám phản bác giả định sai ngay cả khi đối mặt với lãnh đạo cấp cao.
+Sean Goedecke phản bác quan điểm phổ biến rằng cái tôi không có chỗ trong ngành công nghệ, và lập luận rằng kỹ sư ở các công ty lớn cần một cái tôi đủ mạnh để thành công. Công việc hằng ngày của họ là liên tục đối mặt với sai lầm của chính mình và những codebase phức tạp đến mức khó hiểu nổi, nên cần niềm tin rằng mình giải quyết được cả những vấn đề tưởng như bất khả thi. Trong tổ chức, sự tự tin giúp kỹ sư giữ quan điểm kỹ thuật rõ ràng dù còn nhiều bất định, đưa ra những quyết định không được lòng số đông nhưng ảnh hưởng đến hàng trăm đồng nghiệp, và dám chỉ ra hiểu lầm của lãnh đạo cấp cao.
 
-Tuy nhiên, nghịch lý là kỹ sư hiệu quả nhất cũng cần biết kìm nén ego có chiến lược — thực thi kế hoạch của sếp dù không đồng ý, chấp nhận dự án bị hủy sau nhiều nỗ lực, và không bị ảnh hưởng bởi chính trị nội bộ. Tác giả mô tả kỹ sư cấp cao thành công như "tắc kè hoa" — biết điều chỉnh mức độ tự tin tùy theo đối tượng giao tiếp.
-
-**Điểm chính:**
-- Sự tự tin mạnh mẽ giúp kỹ sư vượt qua bất định khi làm việc với codebase lớn
-- Ego cần thiết để đưa quan điểm rõ ràng, chấp nhận xung đột và phản bác giả định sai
-- Kỹ sư hiệu quả cũng cần kìm nén ego có chiến lược với cấp trên
-- Kiệt sức (burnout) đến từ "nỗ lực không được ghi nhận" chứ không phải làm việc quá nhiều giờ
+Nghịch lý là kỹ sư hiệu quả cũng phải biết đặt cái tôi xuống trước cấu trúc tổ chức: chấp nhận dự án bị hủy, thua trong các cuộc tranh luận chính trị nội bộ hay những quyết định thiếu rõ ràng mà không oán giận. Tác giả gọi đó là kiểu "tắc kè hoa", quyết đoán với đồng nghiệp nhưng tôn trọng thứ bậc. Ông cũng cho rằng kiệt sức (burnout) không đến từ làm quá nhiều mà từ nỗ lực không được ghi nhận, nhất là khi một quyết định kỹ thuật đúng lại bị trừng phạt vì mâu thuẫn với chính trị. Sự cân bằng khó khăn này lý giải vì sao kỹ sư cấp cao giỏi luôn hiếm.
 
 ## [Trực quan hóa thuật toán sắp xếp với Claude](https://simonwillison.net/2026/Mar/11/sorting-algorithms/)
 
-Simon Willison chia sẻ quá trình sử dụng Claude để tạo bản demo tương tác minh họa các thuật toán sắp xếp: bubble sort, selection sort, insertion sort, merge sort, quick sort, heap sort và Timsort. Đặc biệt, khi triển khai Timsort, Claude đã tự truy cập repository CPython trên GitHub để đọc mã nguồn thực tế từ `Objects/listobject.c` và tài liệu `Objects/listsort.txt`. Tuy nhiên, khi GPT-5.4 Thinking đánh giá kết quả, nó nhận xét đây là "adaptive mergesort lấy cảm hứng từ Timsort" chứ chưa phải bản tái tạo hoàn chỉnh.
+Simon Willison chia sẻ cách anh dùng Claude Artifacts để tạo một bản demo hoạt họa minh họa các thuật toán sắp xếp, ban đầu gồm bubble sort, selection sort, insertion sort, merge sort, quick sort và heap sort. Khi được yêu cầu bổ sung Timsort, Claude đã tự clone repository CPython trên GitHub và đọc mã nguồn trong `Objects/listobject.c` cùng tài liệu `Objects/listsort.txt` để triển khai. Tuy vậy, khi nhờ GPT-5.4 Thinking đánh giá lại, mô hình này nhận xét đây chỉ là một bản adaptive mergesort đơn giản hóa lấy cảm hứng từ Timsort chứ chưa phải bản triển khai đầy đủ, một ví dụ cho thấy giá trị của việc để các mô hình AI kiểm tra chéo lẫn nhau.
 
-Sản phẩm cuối cùng hiển thị bảy thuật toán chạy đua đồng thời trên giao diện lưới, với thống kê thời gian thực về số lần so sánh và hoán đổi, cùng mã màu cho từng thao tác: hồng cho so sánh, cam cho hoán đổi, đỏ cho pivot và tím cho phần đã sắp xếp.
-
-**Điểm chính:**
-- Claude tự truy cập mã nguồn CPython để triển khai Timsort từ code thực tế
-- Bảy thuật toán sắp xếp chạy đồng thời với trực quan hóa thời gian thực
-- GPT-5.4 Thinking phát hiện bản triển khai Timsort chưa hoàn chỉnh — minh họa giá trị của cross-review giữa các mô hình AI
+Sau vài lượt tinh chỉnh giao diện, sản phẩm có thêm nút "Run all" cho cả bảy thuật toán chạy đua đồng thời trên dạng lưới, hiển thị số lần so sánh và hoán đổi theo thời gian thực cùng mã màu cho từng thao tác: hồng cho so sánh, cam cho hoán đổi, đỏ cho pivot và tím cho phần đã sắp xếp. Trong các lần chạy thử, Timsort về đích nhanh nhất, theo sau là quick sort và merge sort, còn bubble sort chậm nhất. Bài viết cho thấy công cụ AI hiện nay có thể nhanh chóng tạo ra nội dung học tập tương tác chỉ qua trao đổi và tinh chỉnh.
 
 ### Bonus
 
@@ -91,4 +52,4 @@ Sản phẩm cuối cùng hiển thị bảy thuật toán chạy đua đồng t
 
 ---
 
-*Bài viết đã được review và cập nhật bởi Claude Code với Opus 4.7 (1M context).*
+*Bài viết đã được viết lại bởi Claude Code với Opus 5.5 vào ngày 27/09/2026.*

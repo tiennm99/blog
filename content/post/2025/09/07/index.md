@@ -9,143 +9,68 @@ categories: [ "Newsletter" ]
 
 ## [Traps to Developers](https://qouteall.fun/qouteall-blog/2025/Traps%20to%20Developers)
 
-Bài viết này đưa ra một cái nhìn tổng quan về những "cạm bẫy" mà các lập trình viên có thể gặp phải trong quá trình phát triển phần mềm. Tác giả đã tổng hợp rất nhiều tình huống phức tạp và không trực quan có thể dẫn đến lỗi trong code.
+Bài viết của qouteall là một danh sách tham khảo dài về những "cạm bẫy" trong lập trình: các hành vi không trực quan, dễ hiểu sai và thường chỉ lộ ra khi đã gây lỗi. Tác giả chia theo chủ đề, mở đầu bằng HTML và CSS với những chi tiết như `min-width: auto` trong flexbox hay grid khiến phần tử không co lại được, hiện tượng gộp lề (margin collapse), stacking context làm `z-index` chỉ có tác dụng trong phạm vi một ngữ cảnh, hay `100vh` trên trình duyệt di động lớn hơn vùng hiển thị thực tế. Tiếp theo là Unicode và xử lý văn bản, số thực dấu phẩy động với NaN, vô cực và sai số làm tròn, cùng các vấn đề liên quan đến thời gian.
 
-Bài viết được chia thành nhiều chủ đề chính:
-
-**HTML/CSS và giao diện web**: Các hành vi phức tạp trong việc hiển thị, xử lý layout, stacking context và việc định vị các phần tử có thể gây ra những kết quả bất ngờ.
-
-**Unicode và xử lý văn bản**: Những thách thức trong việc mã hóa ký tự, sự khác biệt trong cách xử lý chuỗi giữa các ngôn ngữ lập trình, và vấn đề chuẩn hóa ký tự.
-
-**Số thực dấu phẩy động**: Hạn chế về độ chính xác, các trường hợp đặc biệt như NaN và infinity, cũng như sự khác biệt trong tính toán phụ thuộc vào phần cứng.
-
-**Lập trình đồng thời và đồng bộ hóa**: Race conditions, vấn đề thread safety và sự phức tạp của các thao tác atomic.
-
-**Cạm bẫy theo từng ngôn ngữ**: Java với việc so sánh đối tượng, Golang với quản lý bộ nhớ slice, C/C++ với các hành vi không xác định, Python với các vấn đề về tham số và thụt lề.
-
-Đây là một tài liệu tham khảo rất hữu ích giúp các lập trình viên nhận biết và tránh những lỗi phổ biến trong quá trình phát triển phần mềm.
+Phần sau đi vào từng ngôn ngữ và nền tảng: Java, Go, C/C++, Python, Rust, cơ sở dữ liệu SQL, lập trình đồng thời và song song, xung đột phụ thuộc bắc cầu, Linux và bash, backend, React, Git, mạng, thiết lập vùng miền (locale), biểu thức chính quy và hệ sinh thái Microsoft. Mỗi mục thường chỉ dài vài dòng kèm liên kết tham khảo, nên bài phù hợp để đọc lướt một lần rồi quay lại tra cứu khi gặp lỗi lạ. Với lập trình viên mới, đây là cách nhanh để biết trước những chỗ "tưởng đúng mà sai" thay vì phải trả giá bằng nhiều giờ gỡ lỗi.
 
 ## [Active Record vs. Repository Pattern](https://javabulletin.substack.com/p/active-record-vs-repository-pattern)
 
-Bài viết này so sánh hai mẫu thiết kế truy cập dữ liệu phổ biến trong các ứng dụng Java: Active Record Pattern và Repository Pattern.
+Suraj Mishra so sánh hai mẫu thiết kế truy cập dữ liệu phổ biến trong lập trình hướng đối tượng. Với Active Record, mỗi lớp ánh xạ trực tiếp tới một bảng, mỗi đối tượng tương ứng một dòng và tự chứa các phương thức CRUD như `find` hay `save`, theo phong cách quen thuộc của Rails. Cách này dễ dùng, giảm cấu hình nhờ nguyên tắc "quy ước thay vì cấu hình" và giúp phát triển nhanh các ứng dụng đơn giản, nhưng khiến mô hình gắn chặt với lược đồ cơ sở dữ liệu, vi phạm nguyên tắc đơn trách nhiệm (Single Responsibility) và dễ trở nên cồng kềnh khi nghiệp vụ phức tạp.
 
-**Active Record Pattern** cho phép các đối tượng chịu trách nhiệm cho cả dữ liệu và các thao tác cơ sở dữ liệu của chính chúng. Ưu điểm của mô hình này là dễ sử dụng cho các thao tác CRUD cơ bản, phát triển nhanh hơn cho các ứng dụng đơn giản và tuân theo nguyên tắc "Quy ước thay vì cấu hình". Tuy nhiên, nó cũng có nhược điểm là tạo ra sự liên kết chặt chẽ giữa mô hình và lược đồ cơ sở dữ liệu, vi phạm nguyên tắc Single Responsibility và ít linh hoạt cho các ứng dụng phức tạp.
-
-**Repository Pattern** tách biệt logic truy cập dữ liệu khỏi logic nghiệp vụ thông qua việc sử dụng interface để truy cập các đối tượng domain. Mô hình này có ưu điểm là phân tách mối quan tâm tốt hơn, cải thiện khả năng kiểm thử và linh hoạt hơn trong việc thay đổi nguồn dữ liệu. Nhược điểm là tăng độ phức tạp, phát triển ban đầu chậm hơn và thêm một lớp trừu tượng.
-
-Khuyến nghị từ tác giả là sử dụng Active Record cho các ứng dụng đơn giản với logic đơn giản, trong khi Repository Pattern phù hợp hơn cho các ứng dụng phức tạp yêu cầu khả năng bảo trì và mở rộng.
+Repository tách logic truy cập dữ liệu khỏi logic nghiệp vụ thông qua một giao diện giống như tập hợp; trong Spring Data JPA, đó là interface kế thừa `JpaRepository` được tiêm vào lớp dịch vụ. Nhờ vậy việc kiểm thử đơn vị dễ hơn vì có thể giả lập repository, và việc đổi nguồn dữ liệu, chẳng hạn từ cơ sở dữ liệu quan hệ sang NoSQL, ít ảnh hưởng tới nghiệp vụ. Đổi lại là thêm một lớp trừu tượng, tăng độ phức tạp và làm chậm giai đoạn phát triển ban đầu. Tác giả kết luận Active Record hợp với ứng dụng nhỏ có nghiệp vụ đơn giản, còn Repository phù hợp khi khả năng bảo trì, mở rộng và kiểm thử là ưu tiên hàng đầu.
 
 ## [Thread.sleep(0) is not for free](https://mlangc.github.io/java/performance/2025/08/14/thread-sleep0-is-not-for-free.html)
 
-Bài viết này phân tích một khía cạnh hiệu suất thú vị trong Java mà nhiều lập trình viên có thể bỏ qua: việc gọi `Thread.sleep(0)` không hề "miễn phí" như ta có thể nghĩ.
+Bài viết ngắn này gỡ bỏ một hiểu lầm phổ biến: gọi `Thread.sleep(0)` trong Java không hề "miễn phí". Tài liệu chính thức cho phép một lối tắt chỉ kiểm tra trạng thái ngắt khi thời gian chờ bằng 0, nhưng bản cài đặt thực tế lại gọi xuống mã native và thực hiện `os::naked_yield()`, trên Linux chính là `sched_yield()`, hàm mà tài liệu của nó khuyên tránh lạm dụng vì gây chuyển ngữ cảnh không cần thiết. Theo đo đạc bằng JMH của tác giả, mỗi lần gọi tốn ngang việc sinh 128 byte ngẫu nhiên, và tệ nhất đúng vào lúc CPU đang quá tải: với 20 luồng, thông lượng của phiên bản có `Thread.sleep(0)` còn thấp hơn cả khi chạy một luồng.
 
-Tác giả chỉ ra rằng mặc dù có vẻ như `Thread.sleep(0)` không làm gì cả, nhưng thực tế nó vẫn gọi đến một phương thức native thực hiện thao tác yield thread. Trên hệ điều hành Linux, thao tác này sử dụng `sched_yield()` có thể gây ra những lần chuyển đổi ngữ cảnh không cần thiết.
+Vì vậy, nếu mã nguồn của bạn dùng `sleep` để lùi lại khi gặp lỗi hoặc quá tải, đừng truyền độ trễ 0 vào `Thread.sleep` như đoạn đầu tiên bên dưới, mà hãy chỉ gọi khi thật sự cần chờ như đoạn thứ hai. Tác giả cũng gợi ý dùng `TimeUnit.sleep`, vốn có lối tắt được ghi rõ trong tài liệu, còn nếu thực sự muốn nhường CPU thì nên gọi thẳng `Thread.yield()` cho rõ ý đồ.
 
-Các thử nghiệm hiệu suất cho thấy:
-- Việc gọi `Thread.sleep(0)` có chi phí tính toán đáng kể
-- Hiệu suất giảm mạnh khi CPU tải cao, đặc biệt với nhiều luồng chạy đồng thời
-- Benchmark của tác giả cho thấy việc thêm `Thread.sleep(0)` có thể giảm đáng kể throughput của hệ thống
-
-Tác giả khuyên rằng thay vì sử dụng pattern như:
 ```java
 int delay = allGood ? 0 : waitShorty;
 Thread.sleep(delay);
 ```
 
-Nên sử dụng:
 ```java
 if (!allGood) {
     Thread.sleep(waitShortly);
 }
 ```
 
-Đây là một lời nhắc nhở quan trọng về việc hiểu rõ chi phí của các thao tác tưởng chừng như đơn giản trong lập trình Java.
-
 ## [Why do video games use kernel-mode anti-cheats?](https://malwaresourcecode.com/home/my-projects/write-ups/why-do-video-games-use-kernel-mode-anti-cheats)
 
-Bài viết này giải thích lý do tại sao các trò chơi video sử dụng phần mềm chống gian lận ở chế độ kernel và cách thức hoạt động của chúng.
+Bài viết nhằm phản bác nỗi sợ phần mềm chống gian lận chạy ở chế độ kernel. Trên Windows, hệ điều hành chia thành chế độ người dùng và chế độ kernel, trong đó kernel đóng vai trò "người quản lý" đứng giữa phần mềm và phần cứng thông qua driver. Ngày nay, muốn vào kernel, driver phải được Microsoft xét duyệt và ký chứng chỉ (Driver Signature Enforcement), bị Patchguard ngăn sửa đổi các thành phần kernel khác và có thể bị đưa vào danh sách chặn nếu không còn an toàn. Anti-cheat cần kernel vì chỉ ở đó mới nhận được thông báo mỗi khi một tiến trình được tạo, qua `PsSetCreateProcessNotifyRoutine`, đúng kỹ thuật mà phần mềm diệt mã độc và EDR vẫn dùng. Chương trình vừa khởi chạy sau đó được kiểm tra bằng phân tích tĩnh (tìm chuỗi byte đặc trưng của công cụ gian lận) và phân tích hành vi như kiểm tra toàn vẹn mã, ETW, hooking API hay minifilter.
 
-**Mục đích chính**: Phần mềm chống gian lận chế độ kernel được thiết kế để phát hiện và ngăn chặn việc gian lận trong các trò chơi video một cách hiệu quả hơn so với các giải pháp chạy ở chế độ người dùng thông thường.
-
-**Cách thức hoạt động**: Các phần mềm này hoạt động trong không gian kernel - nơi quản lý tương tác giữa phần mềm và phần cứng. Chúng sử dụng các kỹ thuật như "phân tích tĩnh" và "phân tích hành vi" để nhận diện hoạt động gian lận. Thông qua các system call, chúng có thể nhận thông báo về việc tạo tiến trình và kiểm tra các phần mềm gian lận tiềm ẩn.
-
-**Vấn đề bảo mật**: Microsoft có quy định nghiêm ngặt về Driver Signature Enforcement, nghĩa là tất cả phần mềm chế độ kernel phải được Microsoft chứng nhận và phê duyệt. Điều này khiến việc lạm dụng các phần mềm này trở nên khó khăn hơn nhiều so với phần mềm chế độ người dùng.
-
-**Tranh cãi**: Một số người dùng lo ngại về tính xâm phạm của phần mềm chế độ kernel. Tuy nhiên, tác giả cho rằng những lo ngại này phần lớn dựa trên hiểu biết sai lầm về khả năng kỹ thuật thực tế của chúng. Bài viết nhấn mạnh rằng mục tiêu chính là đảm bảo tính toàn vẹn của trò chơi chứ không phải thu thập dữ liệu.
+Về lo ngại xâm phạm quyền riêng tư, tác giả cho rằng phần lớn xuất phát từ hiểu biết chưa đầy đủ: thành phần kernel được ký mà độc hại là cực hiếm, khoảng 99,9% mã độc hiện nay chạy ở chế độ người dùng vì kẻ tấn công chỉ cần rất ít quyền để đánh cắp dữ liệu, và dùng kernel để "theo dõi" game thủ là quá mức cần thiết. Việc vẫn không tin tưởng anti-cheat kernel, theo tác giả, suy cho cùng là quan điểm về mô hình bảo mật, nhưng không nên dựa trên thông tin sai lệch.
 
 ## [Why LLMs Can't Really Build Software](https://zed.dev/blog/why-llms-cant-build-software)
 
-Bài viết từ Conrad Irwin (Zed) đưa ra quan điểm thú vị về những hạn chế cơ bản của các mô hình ngôn ngữ lớn (LLM) trong việc xây dựng phần mềm.
+Conrad Irwin (Zed) rút ra từ kinh nghiệm phỏng vấn rằng kỹ sư phần mềm giỏi luôn lặp một vòng: xây dựng mô hình tư duy về yêu cầu, viết mã, xây dựng mô hình tư duy về những gì mã thực sự làm, rồi tìm khác biệt để sửa mã hoặc sửa yêu cầu. LLM viết mã khá tốt và cũng biết đọc mã, chạy kiểm thử, thêm log, nhưng không duy trì được mô hình tư duy rõ ràng: chúng mặc định mã mình viết là đúng, khi kiểm thử thất bại thì đoán mò nên sửa mã hay sửa bài kiểm thử, và khi bế tắc thì xóa hết làm lại. Nguyên nhân là mô hình kém trong việc nhận ra ngữ cảnh bị thiếu, thiên lệch mạnh về thông tin gần nhất trong cửa sổ ngữ cảnh và hay bịa ra chi tiết, trong khi con người biết tạm gác ngữ cảnh để tập trung gỡ một vấn đề rồi quay lại bức tranh lớn.
 
-**Vòng lặp phát triển phần mềm**: Các kỹ sư phần mềm hiệu quả thường thực hiện liên tục các bước: xây dựng mô hình tư duy về yêu cầu, viết mã, kiểm chứng code thực sự làm gì, và nhận diện cũng như cập nhật những khác biệt.
-
-**Hạn chế của LLM**: Tác giả cho rằng LLM không thể duy trì các mô hình tư duy rõ ràng, thường xuyên "bối rối vô tận", giả định rằng mã hoạt động mà không kiểm chứng đúng cách, gặp khó khăn khi test thất bại, và có xu hướng xóa và bắt đầu lại thay vì debug.
-
-**Điểm yếu cụ thể**: LLM gặp vấn đề với việc bỏ qua ngữ cảnh, có bias mạnh về thông tin gần đây, và xu hướng tưởng tượng ra các chi tiết không có thật.
-
-**Kết luận của tác giả**: LLM là công cụ hữu ích để tạo mã và tổng hợp yêu cầu, nhưng không thể độc lập xây dựng phần mềm phức tạp. Con người vẫn đóng vai trò thiết yếu trong việc đảm bảo yêu cầu rõ ràng và mã hoạt động chính xác.
-
-Đây là một góc nhìn cân bằng về vai trò của AI trong phát triển phần mềm - hữu ích nhưng không thể thay thế hoàn toàn con người.
+Dù vậy, tác giả thừa nhận LLM rất hữu ích: sinh mã nhanh, tổng hợp yêu cầu và tài liệu tốt, đủ để làm trọn những việc đơn giản. Nhưng với bất kỳ việc gì không tầm thường, chúng chưa giữ đủ ngữ cảnh chính xác để lặp tới một lời giải chạy được. Kỹ sư vẫn phải chịu trách nhiệm đảm bảo yêu cầu rõ ràng và mã làm đúng điều nó tuyên bố; với Zed, con người cầm lái, còn LLM chỉ là thêm một công cụ trong tay.
 
 ## [The Java Type System is Broken](https://wouter.coekaerts.be/2018/java-type-system-broken)
 
-Bài viết từ Wouter Coekaerts đi sâu vào những lỗ hổng kỹ thuật trong hệ thống kiểu của Java, chỉ ra cách một số cấu trúc ngôn ngữ có thể dẫn đến lỗi liên quan đến kiểu dữ liệu và "heap pollution" - tình huống mà nội dung của kiểu tham số không khớp với kiểu được khai báo.
+Wouter Coekaerts chỉ ra rằng hệ thống kiểu của Java có lỗ hổng. Một số lỗ hổng là cố ý để tương thích ngược, như raw type hay ép kiểu không kiểm tra, có thể gây "heap pollution", tức nội dung của một kiểu tham số hóa không khớp với kiểu đã khai báo; nhưng những trường hợp này đều đi kèm cảnh báo của trình biên dịch. Tác giả đi tìm những cấu trúc mà trình biên dịch coi là an toàn, không hề cảnh báo, nhưng vẫn dẫn tới `ClassCastException` ở chỗ không có phép ép kiểu tường minh nào. Sau phần giới thiệu về wildcard và capture conversion, bài lần lượt cho thấy lambda, lớp nội cục bộ, lớp nội trong lớp generic, việc kiểm tra cận của biến kiểu và biến kiểu của lớp ngoài dùng làm cận cho lớp nội đều có thể phá vỡ đảm bảo về kiểu, kèm hai trường hợp "đáng nhắc tới" là unboxing trong lambda và `TreeSet`.
 
-**Vấn đề với Lambda Expressions**: Lambda có thể phá vỡ tính an toàn kiểu bằng cách cho phép thực thi nhiều lần các kiểu capture. Tác giả đưa ra ví dụ về cách một thao tác stream có thể di chuyển sai các phần tử giữa những danh sách có kiểu khác nhau.
-
-**Vấn đề Local Inner Classes**: Các phương thức generic với local inner classes có thể tạo ra vấn đề về phạm vi kiểu. Điều này cho thấy các tình huống mà thông tin kiểu có thể bị thao tác, dẫn đến ClassCastException.
-
-**Điểm yếu trong kiểm tra Type Variable Bound**: Việc áp dụng không nhất quán capture conversion trong type variable bounds cho phép định nghĩa các hệ thống phân cấp kiểu không phù hợp, tạo điều kiện cho các thao tác không an toàn về kiểu.
-
-**Các vấn đề khác**: Unboxing trong lambda có thể gây ra type casting bất ngờ, và TreeSet implementation có những lỗ hổng bẩm sinh về tính an toàn kiểu.
-
-Tác giả lập luận rằng trong khi một số lỗ hổng trong hệ thống kiểu là cố ý (để tương thích ngược), thì những lỗ hổng khác là tình cờ. Những lỗ hổng này có thể dẫn đến lỗi runtime mà vượt qua được kiểm tra kiểu tại compile-time - một vấn đề đáng quan tâm cho các lập trình viên Java.
+Tác giả cũng phát hiện một vài lỗi tương tự đã được báo cáo từ trước và mở thêm các lỗi mới cho JDK. Theo ông, những lỗ hổng này không ảnh hưởng tới bảo mật và khó gặp phải một cách vô tình, nhưng chúng nhắc rằng generics của Java vốn mong manh và không nên lờ đi các cảnh báo của trình biên dịch. Bài khép lại bằng câu "mọi thứ đều hỏng, mọi thứ vẫn ổn", kèm lời kêu gọi chăm chút lại hệ thống kiểu sau nhiều năm bị kéo căng bởi yêu cầu tương thích ngược và các tính năng mới.
 
 ## [The Pragmatic Engineer 2025 Survey: What's in your tech stack? Part 2](https://newsletter.pragmaticengineer.com/p/the-pragmatic-engineer-2025-survey-part-2)
 
-Phần 2 của khảo sát tập trung vào các công cụ và cơ sở hạ tầng mà kỹ sư phần mềm sử dụng hàng ngày, tiết lộ những xu hướng thú vị trong lựa chọn công nghệ.
+Phần 2 kết quả khảo sát của The Pragmatic Engineer, dựa trên hơn 3.000 phản hồi, xem xét các công cụ kỹ sư phần mềm dùng để quản lý dự án, giao tiếp, cộng tác, lưu trữ dữ liệu và vận hành hạ tầng backend. JIRA vẫn dẫn đầu mảng quản lý dự án dù từng bị bình chọn là công cụ bị ghét nhất, Linear đang nổi lên thành đối thủ đáng gờm, còn Azure DevOps phổ biến một cách bất ngờ. Ở mảng giao tiếp, Slack thống trị chat, Microsoft Teams dẫn đầu gọi video, Confluence là công cụ tài liệu phổ biến nhất và Figma áp đảo trong thiết kế. PostgreSQL là cơ sở dữ liệu được nhắc tới nhiều nhất trong 35 cái tên, theo sau là MySQL, Redis và MongoDB, còn hạ tầng backend xoay quanh các dịch vụ AWS, Docker, Kubernetes và Terraform.
 
-**Quản lý dự án**: JIRA vẫn dẫn đầu thị trường mặc dù bị "ghét" nhiều, Linear đang trở thành đối thủ cạnh tranh mạnh mẽ đặc biệt tại các công ty nhỏ, trong khi Azure DevOps bất ngờ phổ biến tại các tập đoàn lớn.
-
-**Công cụ giao tiếp và cộng tác**: Slack thống trị nền tảng chat, Microsoft Teams dẫn đầu về video call, Confluence là công cụ tài liệu được sử dụng nhiều nhất, và Figma được ưa chuộng áp đảo cho thiết kế cộng tác.
-
-**Cơ sở dữ liệu**: PostgreSQL là cơ sở dữ liệu được sử dụng rộng rãi nhất với danh sách "đuôi dài" các giải pháp khác. Vector database vẫn chưa thu hút được nhiều sự quan tâm như kỳ vọng.
-
-**Cơ sở hạ tầng backend**: Docker, Kubernetes và Terraform được sử dụng rộng rãi. Các dịch vụ quản lý của AWS rất phổ biến, trong khi việc áp dụng các fork của các dự án mã nguồn mở (như OpenSearch) có tỷ lệ hỗn hợp.
-
-**Quan sát đáng chú ý**: Các công cụ Microsoft thống trị nhiều danh mục, công cụ quản lý dự án được đề cập thường xuyên như IDE, và PostgreSQL vẫn là lựa chọn cơ sở dữ liệu thực dụng mặc định.
-
-Khảo sát này cung cấp cái nhìn sâu sắc về sở thích công nghệ hiện tại và xu hướng từ khoảng 3,000 kỹ sư phần mềm.
+Tác giả rút ra vài nhận định đáng chú ý: quản lý dự án là một phần công việc của lập trình viên, khi các công cụ này được nhắc tới nhiều ngang IDE; khó có thể sai khi chọn PostgreSQL, nên câu hỏi thực dụng là "điều gì ngăn ta dùng Postgres?"; và nên tìm hiểu Kubernetes kể cả khi chưa dùng, vì một phần tư số người trả lời đã có nó trong hệ thống. Cuối cùng, việc Redis và Terraform rời bỏ giấy phép mã nguồn mở dường như không làm giảm độ phổ biến dù đã có bản fork, trong khi OpenSearch, nhờ sự hậu thuẫn của Amazon, đã đạt mức sử dụng khoảng 25% so với Elasticsearch.
 
 ## [Why do software developers love complexity?](https://kyrylo.org/software/2025/08/21/why-do-software-developers-love-complexity.html)
 
-Bài viết từ Kyrylo khám phá lý do tại sao các lập trình viên thường bị hấp dẫn bởi những giải pháp phức tạp mặc dù nguyên tắc "Keep It Simple, Stupid" (KISS) được khuyến khích rộng rãi.
+Kyrylo Silin đặt câu hỏi: vì sao lập trình viên vẫn bị cuốn vào sự phức tạp dù ai cũng biết nguyên tắc KISS (Keep It Simple, Stupid)? Một phần câu trả lời nằm ở tiếp thị: chẳng ai hào hứng với một đối thủ của lệnh `cat`, nhưng một "catzilla" đầy tính năng, được quảng bá khắp nơi thì lại khiến người ta tò mò. Độ phức tạp còn ngầm báo hiệu công sức, chuyên môn và sự độc quyền, dần trở thành biểu tượng địa vị thay vì nhu cầu thật. Giống như kim tự tháp, phần mềm hiện đại chồng chất phụ thuộc, framework và lớp trừu tượng, trong khi bên trong có khi trống rỗng; tác giả tóm lại: "Độ phức tạp hét lên 'Nhìn tôi này!', còn sự đơn giản thì thầm 'Bạn có để ý không?'". Ví dụ ông ưa thích là React so với JavaScript thuần.
 
-**Các yếu tố tâm lý và marketing**: Độ phức tạp thường được coi là dấu hiệu của chuyên môn và tính độc quyền. Marketing tạo ra giá trị nhân tạo thông qua các giải pháp phức tạp, biến độ phức tạp thành "biểu tượng địa vị hơn là một nhu cầu thực sự".
-
-**Lý do sâu xa khiến lập trình viên ưa chuộng độ phức tạp**: Cám dỗ giải quyết vấn đề một cách sáng tạo, kế thừa từ các hệ thống cũ và nợ kỹ thuật, động lực cộng tác trong nhóm, và áp lực phải đổi mới cũng như tạo sự khác biệt.
-
-Tác giả sử dụng ví dụ ẩn dụ về việc xây dựng kim tự tháp để minh họa cách các lập trình viên thường tạo ra những "lớp" độ phức tạp không cần thiết.
-
-**Những hiểu biết quan trọng**: Sự đơn giản thường hiệu quả hơn về lâu dài, độ phức tạp có thể che giấu "sự thiếu bản chất", và các lập trình viên nên tập trung vào việc giải quyết các vấn đề thực sự của người dùng.
-
-Câu nói đáng chú ý: "Độ phức tạp hét lên 'Nhìn tôi đây!', trong khi sự đơn giản thì thầm 'Bạn có chú ý không?'"
-
-Bài viết kết thúc bằng lời kêu gọi xây dựng "kim tự tháp có mục đích" - tạo ra những giải pháp có chủ ý, nền tảng và thực sự có giá trị, thay vì phức tạp chỉ vì muốn phức tạp.
+Ngoài tiếp thị, bài chỉ ra bốn động lực bên trong: sức hấp dẫn của việc giải một "câu đố" hóc búa, hệ thống cũ và nợ kỹ thuật khiến việc chắp vá dễ hơn đơn giản hóa, nhóm đông người mà ai cũng thêm một lớp trừu tượng "phòng xa", và áp lực phải đổi mới để tạo khác biệt. Lời khuyên cuối cùng: nếu phải xây kim tự tháp thì hãy xây có mục đích, với nền móng vững chắc và bên trong thật sự có giá trị; trước khi viết 500 dòng trừu tượng cho việc có thể làm trong 50 dòng, hãy tự hỏi bạn đang giải quyết vấn đề thật cho người dùng và người bảo trì hay chỉ đang thỏa mãn bản thân.
 
 ## [The Important Things in Life](https://hamvocke.com/blog/important-things/)
 
-Bài viết từ Ham Vocke là một tấm gương phản chiếu về những điều thực sự quan trọng trong cuộc sống, vượt ra ngoài những thách thức nghề nghiệp hàng ngày.
+Ham Vocke giải thích vì sao blog của anh im ắng thời gian qua: mùa xuân và mùa hè bận rộn với những điều làm cuộc sống ngọt ngào, đến mức anh chẳng còn thời gian viết lách hay làm dự án phụ, và anh không muốn điều đó khác đi. Công việc ở một startup đang tăng trưởng vẫn đòi hỏi nhiều công sức và giúp anh học hỏi, trưởng thành, nhưng những thử thách, bực bội hay thành quả ở chỗ làm hiếm khi đáng nhớ lâu. Điều đọng lại là những khoảnh khắc ngoài màn hình: dự đám cưới và lễ kỷ niệm của những người bạn quen hơn 25 năm, lần đầu đi lễ hội âm nhạc sau 20 năm, tiệc nướng cuối tuần cùng bạn bè, thăm người anh em sau nhiều năm xa cách, ở bên cha mẹ khi họ chuẩn bị nghỉ hưu và chuyến đi cuối tuần cùng vợ ngắm cảnh miền nam nước Đức.
 
-**Nguyên tắc cốt lõi**: Ưu tiên các mối quan hệ và trải nghiệm cá nhân hơn những thách thức nghề nghiệp, trân trọng những khoảnh khắc bên bạn bè và gia đình, tạo ra những kỷ niệm có ý nghĩa ngoài công việc.
-
-**Những trải nghiệm được nhấn mạnh**: Tác giả chia sẻ về việc tham dự đám cưới và lễ kỷ niệm của bạn bè, tham gia các lễ hội âm nhạc, tổ chức tiệc nướng, thăm gia đình, hỗ trợ cha mẹ khi họ chuẩn bị nghỉ hưu, và du lịch cùng vợ/chồng.
-
-**Lời khuyên thực tiễn**: Bài viết kết thúc bằng một khuyến nghị mạnh mẽ và súc tích: "Ôm bạn bè, gọi điện cho gia đình, ra ngoài, tạo kỷ niệm."
-
-**Thông điệp trung tâm**: Mặc dù công việc có thể đầy thách thức và áp lực, những khía cạnh quan trọng nhất của cuộc sống chính là những kết nối cá nhân, trải nghiệm được chia sẻ, và những khoảnh khắc vui vẻ bên những người thân yêu.
-
-Đây là một lời nhắc nhở quan trọng cho những ai làm trong ngành công nghệ về việc cân bằng giữa công việc và cuộc sống, đặt con người và mối quan hệ lên hàng đầu.
+Bài viết ngắn nhưng là lời nhắc đáng giá cho người làm công nghệ về sự cân bằng giữa công việc và cuộc sống, khép lại bằng một lời khuyên giản dị: "Hãy ôm bạn bè, gọi cho gia đình, ra ngoài và tạo nên những kỷ niệm."
 
 ## Bonus: Vài ảnh hay ho đến từ [ByteByteGo](https://bytebytego.com/)
 
@@ -170,4 +95,4 @@ Bài viết từ Ham Vocke là một tấm gương phản chiếu về những �
 
 ---
 
-*Bài viết đã được review và cập nhật bởi Claude Code với Opus 4.7 (1M context).*
+*Bài viết đã được viết lại bởi Claude Code với Opus 5.5 vào ngày 27/09/2026.*

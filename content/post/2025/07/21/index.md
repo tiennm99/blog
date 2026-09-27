@@ -10,63 +10,33 @@ draft: false
 
 ## [Claude Code: Best Practices for Agentic Coding](https://code.claude.com/docs/en/best-practices)
 
-Anthropic vừa ra mắt hướng dẫn thực hành tốt nhất cho Claude Code - một công cụ command-line mạnh mẽ cho lập trình với sự hỗ trợ của AI. Đây là một dự án nghiên cứu linh hoạt và có thể tùy chỉnh cao, giúp các kỹ sư tích hợp AI vào quy trình phát triển phần mềm một cách hiệu quả.
+Đây là tài liệu hướng dẫn chính thức của Anthropic, tổng hợp những cách làm việc hiệu quả với Claude Code - môi trường lập trình dạng agent có thể tự đọc tệp, chạy lệnh, sửa mã nguồn và xử lý vấn đề trong khi bạn quan sát hoặc điều hướng. Hầu hết lời khuyên đều xuất phát từ một giới hạn: cửa sổ ngữ cảnh (context window) đầy lên rất nhanh và chất lượng câu trả lời giảm dần khi nó đầy. Vì vậy, việc quan trọng nhất là cho Claude một cách tự kiểm chứng kết quả, chẳng hạn bộ kiểm thử, lệnh build hay ảnh chụp màn hình để so sánh, để nó tự lặp lại cho tới khi đạt thay vì bạn phải soát từng lỗi. Với tác vụ phức tạp, nên tách thành bốn bước: khám phá, lập kế hoạch (dùng plan mode), triển khai rồi commit; còn việc nhỏ như sửa lỗi chính tả thì cứ yêu cầu làm luôn.
 
-**Điểm chính:**
-- Tạo file `CLAUDE.md` để hướng dẫn Claude về commands bash, style code, testing và setup môi trường phát triển
-- Sử dụng Model Context Protocol (MCP) servers và custom slash commands để mở rộng khả năng của Claude
-- Áp dụng quy trình "Explore, Plan, Code, Commit": đọc hiểu code → lập kế hoạch chi tiết → implement → commit và tạo PR
-- Hỗ trợ Test-Driven Development: viết test trước → confirm test fail → implement code → iterate
-- Visual Design Iteration: chụp screenshot → cung cấp mockup → implement và iterate design
-- Claude Code hỗ trợ nhiều chế độ từ coding cẩn thận từng bước đến "Safe YOLO mode" cho phát triển nhanh
-- Tối ưu hóa hiệu suất bằng cách đưa ra hướng dẫn cụ thể, sử dụng hình ảnh tham khảo và điều chỉnh sớm khi cần
+Tài liệu cũng khuyên viết yêu cầu thật cụ thể (chỉ rõ tệp, tình huống, mẫu có sẵn trong dự án) và cấu hình môi trường hợp lý: tệp `CLAUDE.md` ngắn gọn chứa lệnh, quy ước và lưu ý riêng của dự án; danh sách quyền được phép; công cụ CLI như `gh`; MCP server; hook cho những việc bắt buộc; skill và subagent cho kiến thức chuyên biệt. Trong phiên làm việc, hãy sửa hướng sớm, dùng `/clear` giữa các tác vụ không liên quan, giao việc tìm hiểu cho subagent để giữ ngữ cảnh sạch. Khi đã thành thạo, có thể mở rộng bằng chế độ không tương tác `claude -p`, chạy nhiều phiên song song và thêm bước review độc lập trước khi coi là xong.
 
 ---
 
 ## [OpenAI, Windsurf và tương lai của AI Workspaces](https://www.subtle.so/openai-windsurf-and-the-future-of-ai-workspaces.html)
 
-Bài viết từ Subtle.so phân tích tin đồn về việc OpenAI cân nhắc mua lại Windsurf với giá 3 tỷ USD, và ý nghĩa của thương vụ này đối với tương lai của các môi trường phát triển AI. Đây không chỉ là một thương vụ mua bán đơn thuần mà còn phản ánh xu hướng chuyển đổi từ các công cụ lập trình chuyên biệt sang nền tảng workspace thông minh toàn diện.
+Bài viết trên Subtle phân tích tin OpenAI muốn mua Windsurf với giá khoảng 3 tỷ USD, sau khi từng nhắm tới Cursor. Về mặt kỹ thuật, tính năng cốt lõi của Windsurf (một bản fork của VS Code kèm AI agent và gợi ý mã nguồn) không quá khó xây dựng, nên giá trị thật nằm ở chỗ khác: những công cụ này có thể trở thành không gian làm việc AI cho cả những việc ngoài lập trình. Chúng cho AI quyền thao tác trực tiếp trên tệp và thư mục, hỗ trợ viết lách, nghiên cứu, quản lý nội dung, lại có sẵn Git để theo dõi phiên bản - điều mà các công cụ năng suất truyền thống chưa làm được. Ví dụ, The Pragmatic Engineer đã nối Windsurf với cơ sở dữ liệu PostgreSQL để hỏi về số liệu kinh doanh bằng ngôn ngữ tự nhiên. Tác giả so sánh xu hướng này với cách IRC từ một công cụ ngách trở thành Slack trị giá 27 tỷ USD.
 
-**Điểm chính:**
-- OpenAI đang xem xét mua lại Windsurf với mức giá 3 tỷ USD, thể hiện tầm quan trọng chiến lược của các môi trường phát triển AI
-- Tương lai của productivity tools sẽ là AI assistants có khả năng "tác động trực tiếp lên files và folders" với tính năng theo dõi phiên bản toàn diện
-- Các công cụ như Windsurf đang mở rộng beyond coding: tích hợp AI agents, quản lý workspace đa chức năng, query phức tạp trên nhiều nguồn dữ liệu
-- Cạnh tranh gay gắt với Microsoft GitHub Copilot ra mắt chế độ agent mode, OpenAI đầu tư vào các startup cạnh tranh
-- Xu hướng tương tự Slack transforming IRC: biến công cụ kỹ thuật chuyên biệt thành nền tảng productivity mainstream
-- Giá trị chiến lược nằm ở việc thu thập dữ liệu tương tác người dùng để cải thiện AI models
-- AI development environments đang phát triển thành intelligent workspaces có thể cách mạng hóa cách chúng ta tương tác với thông tin số
+Ngoài ra, dữ liệu tương tác từ hàng triệu lượt sử dụng Windsurf là nguồn tín hiệu huấn luyện quý giá, có thể giúp mô hình của OpenAI bắt kịp Anthropic trên các bài đánh giá về lập trình. Bức tranh cạnh tranh cũng khá rối: Microsoft sở hữu cả VS Code lẫn GitHub Copilot và đồng thời đầu tư vào OpenAI, trong khi quỹ đầu tư của OpenAI lại rót vốn vào Cursor. Điều đó cho thấy thị trường công cụ phát triển dùng AI đang hợp nhất rất nhanh và được kỳ vọng sinh lời lớn.
 
 ---
 
 ## [Vibe Coding is Not an Excuse for Low-Quality Work](https://addyo.substack.com/p/vibe-coding-is-not-an-excuse-for)
 
-Bài viết từ Substack của tác giả Addyo thảo luận về xu hướng "vibe coding" - việc sử dụng AI để code nhanh và theo cảm tính. Tác giả lập luận rằng mặc dù AI hỗ trợ lập trình mang lại nhiều lợi ích, nhưng điều này không có nghĩa là chúng ta có thể bỏ qua các nguyên tắc kỹ thuật phần mềm cơ bản và chất lượng code.
+Addy Osmani lập luận rằng lập trình với AI theo cảm hứng ("vibe coding") là công cụ tăng tốc hữu ích, nhưng không phải lý do để bỏ qua sự chặt chẽ của kỹ thuật phần mềm. AI có thể sinh ra rất nhiều mã nguồn trong thời gian ngắn, song số lượng không đồng nghĩa với chất lượng: các dự án làm theo kiểu này thường thiếu xử lý lỗi, bỏ sót vấn đề bảo mật, khó bảo trì và dễ sụp như "nhà xếp bằng bài". Như tác giả viết, tốc độ chẳng có nghĩa gì nếu bánh xe rời ra giữa đường, vì nợ kỹ thuật sẽ tích tụ nhanh khi không ai giám sát.
 
-**Điểm chính:**
-- AI coding giúp giảm rào cản cho lập trình viên mới, cho phép prototyping nhanh và giúp non-programmers tạo ra solutions tùy chỉnh
-- Rủi ro của việc sử dụng AI code không kiểm soát: error handling kém, performance yếu, lỗ hổng bảo mật, cấu trúc logic dễ vỡ
-- Cần đối xử với AI-generated code như công việc của một junior developer - luôn phải review và test kỹ lưỡng
-- Duy trì sự giám sát của con người trong thiết kế và implementation, thiết lập coding standards rõ ràng
-- Viết comprehensive tests và document AI-generated code cẩn thận
-- Nguyên tắc cốt lõi: "Vibe coding không phải là lý do để làm việc chất lượng thấp"
-- Sử dụng AI như một công cụ tăng tốc, không phải thay thế cho chuyên môn kỹ thuật
-- Giữ thái độ phê phán và tham gia tích cực trong quá trình coding, hiểu rằng AI chỉ là công cụ chứ không phải giải pháp hoàn hảo
+Cách tiếp cận được đề xuất là coi AI như một lập trình viên junior làm việc cực nhanh: con người vẫn phải review mọi kết quả, tái cấu trúc khi cần, bổ sung xử lý trường hợp biên và viết kiểm thử đầy đủ. Tác giả đưa ra các nguyên tắc: luôn review mã nguồn do AI sinh ra, áp dụng chuẩn viết mã, dùng AI để tăng tốc chứ không để nó ra quyết định, ưu tiên kiểm thử, lặp và tinh chỉnh, nhận ra lúc nên tự viết tay, và ghi tài liệu cẩn thận. Vibe coding phát huy tốt khi làm nguyên mẫu nhanh, viết script dùng một lần, học công nghệ mới hay sinh mã khuôn mẫu, nhưng không phù hợp với hệ thống doanh nghiệp, phần mềm quan trọng hay dự án cần bảo trì lâu dài. Đó cũng là lý do kỹ sư có kinh nghiệm thường khai thác AI hiệu quả hơn, vì họ đủ hiểu biết để sửa và cải thiện gợi ý của nó.
 
 ---
 
 ## [Event-Hidden Architecture: Tương lai của Web Development](https://skiplabs.io/blog/event-hidden-arch)
 
-Bài viết từ Skip Labs giới thiệu khái niệm "Event-Hidden Architecture" - một paradigm mới trong phát triển phần mềm nhằm vượt qua các thách thức của kiến trúc event-driven truyền thống. Thay vì buộc developers phải quản lý events phức tạp, kiến trúc này ẩn đi complexity và cung cấp trải nghiệm phát triển đơn giản hơn.
+Charles Zedlewski, cố vấn của SkipLabs, cho rằng kiến trúc hướng sự kiện (event-driven) - vốn được xem là lựa chọn bắt buộc cho ứng dụng phân tán trên cloud - đã lỗi thời, và đề xuất thay bằng kiến trúc "ẩn sự kiện" (event-hidden). Ứng dụng phân tán vẫn sẽ tồn tại, nhưng việc để lập trình viên tự quản lý sự kiện gây ra nhiều khó khăn: phải xử lý luồng bất đồng bộ phức tạp, duy trì hàng đợi và schema, và gỡ lỗi xuyên qua nhiều hệ thống. Theo tác giả, sự phức tạp này từng là cái giá cần thiết vào khoảng năm 2020, nhưng giờ không còn bắt buộc nữa.
 
-**Điểm chính:**
-- Các vấn đề của event-driven systems truyền thống: multiple queues dễ fail, race conditions, buộc developers suy nghĩ asynchronously, troubleshooting khó khăn
-- Ba công nghệ chính tạo nên Event-Hidden Architecture: Frontend frameworks (React, Redux), Durable Execution Systems (Temporal, Restate), Reactive Computation Frameworks (Skip)
-- Nguyên tắc thiết kế chung: declarative developer experience, event-driven "under the covers", asynchronous with synchronous-feeling interactions
-- Quản lý state như first-class concern, hỗ trợ modular và incremental adoption
-- Lợi ích chính: simplified engineering, improved transparency, better state handling, enhanced replayability, reduced infrastructure complexity
-- Dự đoán của tác giả: "Event-hidden sẽ trở thành kiến trúc web app mặc định trong 10 năm tới"
-- Kiến trúc này đại diện cho một bước tiến quan trọng trong thiết kế distributed systems, đơn giản hóa phát triển mà vẫn duy trì scalability và performance
-- Cho phép developers tập trung vào business logic thay vì phải lo về infrastructure complexity
+Ba nhóm công nghệ giúp điều đó trở nên khả thi: ở frontend là React cùng các thư viện quản lý trạng thái; ở phía ghi dữ liệu của backend là các hệ thống thực thi bền vững (durable execution) như Temporal, Restate, DBOS, đảm bảo tính đúng đắn khi đi qua ranh giới giữa các service; ở phía đọc dữ liệu là các framework phản ứng như Skip để tổng hợp dữ liệu phân tán hiệu quả. Điểm chung của chúng là che đi chi tiết hạ tầng, xử lý phần bất đồng bộ một cách trong suốt và coi trạng thái là mối quan tâm hàng đầu. Nhờ vậy, lập trình viên viết mã nguồn đơn giản, dễ bảo trì hơn, đồng thời có thêm lợi ích như dễ quan sát, quản lý trạng thái tốt hơn và có thể phát lại hoạt động của ứng dụng. Tác giả dự đoán kiến trúc ẩn sự kiện sẽ trở thành kiến trúc mặc định cho ứng dụng web trong 10 năm tới.
 
 ---
 
@@ -103,4 +73,4 @@ Bài viết từ Skip Labs giới thiệu khái niệm "Event-Hidden Architectur
 
 ---
 
-*Bài viết đã được review và cập nhật bởi Claude Code với Opus 4.7 (1M context).*
+*Bài viết đã được viết lại bởi Claude Code với Opus 5.5 vào ngày 27/09/2026.*

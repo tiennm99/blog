@@ -9,40 +9,19 @@ categories: ["Newsletter"]
 
 ## [Claude Skills are awesome, maybe a bigger deal than MCP](https://simonwillison.net/2025/Oct/16/claude-skills/)
 
-Anthropic vừa công bố **Claude Skills**, một tính năng mới giúp Claude thực hiện các nhiệm vụ chuyên biệt hiệu quả hơn. Skills là các thư mục chứa file Markdown với hướng dẫn chi tiết, kèm theo script và tài nguyên cần thiết. Claude chỉ tải Skills khi nhận thấy nó liên quan đến yêu cầu của người dùng, giúp tiết kiệm token và tăng độ chính xác.
+Anthropic vừa giới thiệu **Claude Skills**, một cách đơn giản để bổ sung năng lực mới cho mô hình: mỗi skill là một thư mục chứa tệp Markdown hướng dẫn mô hình cách làm một việc, kèm tài liệu phụ và các script viết sẵn nếu cần. Điểm khiến nó thành một tính năng thực thụ là khi bắt đầu phiên làm việc, Claude chỉ đọc phần mô tả ngắn trong YAML frontmatter của từng skill (vài chục token mỗi skill) và chỉ nạp toàn bộ nội dung khi yêu cầu của người dùng thực sự liên quan. Simon Willison thử skill **slack-gif-creator** để tạo ảnh GIF so sánh Skills với MCP: Claude viết script Python dùng thư viện PIL dựng ảnh động, rồi gọi hàm kiểm tra có sẵn trong skill để bảo đảm tệp không vượt giới hạn 2MB của Slack. Ảnh đầu tiên khá tệ, nhưng skill rất dễ chỉnh sửa.
 
-Ví dụ điển hình là **slack-gif-creator**, một skill tạo GIF động tối ưu cho Slack từ mô tả đơn giản như "tạo GIF về Skills so với MCP". Claude sử dụng Python với PIL để xây dựng animation, kiểm tra kích thước file (dưới 2MB) trước khi xuất. Tác giả Simon Willison đã thử nghiệm và nhận được kết quả ấn tượng, dù GIF đầu tiên hơi "gây động kinh" nhưng dễ dàng cải tiến qua iteration.
-
-Skills phụ thuộc vào môi trường code execution (như Claude Code), khác biệt lớn so với MCP (Model Context Protocol). MCP tốn nhiều token để mô tả tool, trong khi Skills đơn giản chỉ cần Markdown + YAML metadata, dễ chia sẻ qua GitHub. Tác giả dự đoán Skills sẽ tạo "bùng nổ" agent, từ data journalism (phân tích census data, publish Parquet) đến tự động hóa chung. Đơn giản chính là sức mạnh: không cần protocol phức tạp, LLM tự xử lý.
-
-**Điểm chính:**
-
-- Skills: folder hướng dẫn + script, load on-demand, token-efficient.
-- Ưu việt MCP: Ít token hơn, dễ implement/share, tận dụng coding env.
-- Ứng dụng: Tạo agent chuyên biệt (GIF Slack, PDF/Excel, data viz).
-- Tương lai: Explosion skills cho mọi model, không chỉ Claude.
+Skills phụ thuộc hoàn toàn vào môi trường thực thi mã nguồn có hệ thống tệp và khả năng chạy lệnh, như Claude Code, Codex CLI hay Gemini CLI; đây là khác biệt lớn nhất so với MCP hay ChatGPT Plugins. Theo tác giả, Claude Code thực chất là một agent đa năng: chỉ cần một thư mục Markdown mô tả cách lấy dữ liệu điều tra dân số, nạp vào SQLite hay DuckDB, xuất bản dưới dạng Parquet và trực quan hóa bằng D3 là đã có một agent phục vụ báo chí dữ liệu. So với MCP vốn tiêu tốn hàng chục nghìn token chỉ để mô tả công cụ và có đặc tả giao thức phức tạp, Skills chỉ là Markdown cùng chút metadata, dễ chia sẻ và dùng được với cả mô hình khác. Chính sự đơn giản là điểm mạnh của nó.
 
 ## [Environment variables are a legacy mess: Let's dive deep into them](https://allvpv.org/haotic-journey-through-envvars/)
 
-Biến môi trường (environment variables) là một phần "di sản lộn xộn" từ thời Unix, vẫn được dùng rộng rãi để truyền tham số runtime cho ứng dụng mà không cần file config phức tạp. Chúng là dictionary string phẳng, global, không namespace hay type, được truyền từ parent sang child process qua syscall `execve` (filename, argv, envp). Kernel dump chúng lên stack dưới dạng null-terminated strings, với hạn chế: mỗi var ≤128KiB, tổng ≤2MiB chia sẻ với args.
+Biến môi trường là một giao diện cũ từ thời Unix nhưng đến nay vẫn là cách phổ biến để truyền tham số lúc chạy cho ứng dụng: một từ điển chuỗi phẳng, toàn cục, không có không gian tên hay kiểu dữ liệu. Chúng được truyền từ tiến trình cha sang tiến trình con qua lời gọi hệ thống `execve` với ba tham số `filename`, `argv` và `envp`; mặc định hầu hết công cụ đều chuyển tiếp toàn bộ môi trường, trừ vài trường hợp như `login` tạo môi trường mới. Sau khi khởi chạy, kernel đặt các biến lên stack dưới dạng chuỗi kết thúc bằng ký tự null, và mỗi chương trình phải tự sao chép chúng vào cấu trúc dữ liệu riêng: Bash dùng một chồng hashmap (nên có thể `export` cả biến `local`), glibc dùng mảng động khiến `getenv` và `putenv` có độ phức tạp tuyến tính, còn `os.environ` của Python chỉ đồng bộ một chiều xuống hàm `putenv` của thư viện C.
 
-Mỗi ngôn ngữ lưu trữ khác nhau: Bash dùng stack hashmaps (export local vars vẫn pass to child), glibc dùng dynamic array (getenv/putenv O(n)), Python dùng `os.environ` proxy đến putenv (one-way sync). Format liberal: kernel chấp nhận bất kỳ string nào, kể cả duplicate names, no '=', emoji, spaces in name (Bash lưu invalid_env). POSIX yêu cầu name không chứa '=', value portable charset; khuyến khích lowercase cho app tránh conflict uppercase utilities, nhưng convention là UPPERCASE_WITH_UNDERSCORES.
-
-Bài viết khám phá sâu quirks: Nushell/Python handle space names ok, Bash dedup và drop nonsense. Khuyến nghị thực tế: regex `^[A-Z_][A-Z0-9_]*$` cho name, UTF-8 value để tương thích Linux tốt.
-
-**Điểm chính:**
-
-- Env vars kế thừa parent-child via execve, dump stack.
-- Lưu trữ: Bash stack hashmap, glibc array, Python proxy putenv.
-- Liberal: duplicates/no= ok kernel, apps sanitize.
-- POSIX: no= in name; UPPERCASE convention, lowercase reserved apps.
-- Rec: UPPER_UNDERSCORE names, UTF-8 values.
+Kernel rất dễ dãi về định dạng: chấp nhận tên trùng lặp, chuỗi không có dấu `=`, thậm chí cả emoji, chỉ giới hạn mỗi biến khoảng 128 KiB và tổng cộng khoảng 2 MiB dùng chung với tham số dòng lệnh. Bash sẽ loại bỏ mục trùng và mục vô nghĩa, còn tên chứa khoảng trắng (Nushell và Python xử lý được) được Bash giữ trong bảng `invalid_env` và vẫn truyền cho tiến trình con. Trái với quan niệm phổ biến, POSIX chỉ bắt buộc tên không chứa `=` và còn khuyến khích dùng chữ thường để tránh trùng với các tiện ích chuẩn, dù quy ước thực tế vẫn là viết hoa. Khuyến nghị của tác giả: đặt tên theo mẫu `^[A-Z_][A-Z0-9_]*$` và dùng UTF-8 cho giá trị.
 
 ## [Examples are the best documentation](https://rakhim.exotext.com/examples-are-the-best-documentation)
 
-Tác giả cho rằng **examples là documentation tốt nhất**, vì 95% thời gian dev chỉ cần một ví dụ đơn giản để hiểu cách dùng API, thay vì docs dài dòng dành cho người đã quen ecosystem. Khi juggle nhiều projects/languages, restore context tốn mental energy; formal docs thường yêu cầu kiến thức nền (như Python `max(iterable, /, *, key=None)`: hiểu `*`, `/`, positional-only, iterable, keyword args).
-
-Ví dụ minh họa `max()` rõ ràng hơn docs:
+Tác giả cho rằng ví dụ là dạng tài liệu hữu ích nhất: 95% số lần tra cứu, chỉ một ví dụ đơn giản là đủ, nhưng tài liệu chính thức hiếm khi có. Tài liệu kỹ thuật thường được viết cho người đã am hiểu hệ sinh thái, trong khi lập trình viên phải chuyển qua lại giữa nhiều dự án, ngôn ngữ và framework, lần nào cũng tốn công khôi phục ngữ cảnh. Chẳng hạn, chữ ký `max(iterable, /, *, key=None)` trong tài liệu Python đòi hỏi phải hiểu `*`, `/`, tham số chỉ theo vị trí, iterable và tham số chỉ theo từ khóa, trong khi vài dòng ví dụ dưới đây trả lời ngay câu hỏi thường gặp nhất:
 
 ```
 max(4, 6) # → 6
@@ -52,60 +31,25 @@ max([]) # ValueError
 max([], default=5) # → 5
 ```
 
-Community như clojuredocs.org (Clojure) xuất sắc với examples thực tế, kèm related functions (into, spit, map). Docs chính thức thường terse API ref; dev hay tìm tutorial để lấy examples, dù không cần walkthrough đầy đủ. 4 loại docs lý tưởng hiếm gặp.
-
-**Điểm chính:**
-
-- Examples nhanh, trực quan > formal docs cho quick lookup.
-- Python max(): signature phức tạp, examples đơn giản minh họa.
-- clojuredocs.org: community examples + related funcs hữu ích.
-- Thường hesitate "Documentation" link, prefer tutorial cho examples.
+Dự án cộng đồng clojuredocs.org của Clojure là một hình mẫu: người dùng đóng góp ví dụ cho từng hàm có sẵn, thường kèm cả các hàm liên quan (như `into`, `spit`, `map`), giúp ví dụ sát với thực tế hơn. Vì hiếm dự án nào có đủ bốn loại tài liệu, tác giả thường ngại bấm vào liên kết "Documentation" do lo gặp một bản tham chiếu API tự động sinh, khô khan và khó đọc; thay vào đó, ông tìm bài hướng dẫn, không phải để được dẫn dắt từng bước mà để có ví dụ.
 
 ## [Hazardous States and Accidents](https://entropicthoughts.com/hazardous-states-and-accidents)
 
-Bài viết giới thiệu khái niệm **hazardous states** (trạng thái nguy hiểm) vs **accidents** (tai nạn) trong systems theory cho safety-critical systems. Accident xảy ra khi H (hazardous state) ∧ E (bad environment) → A. Không kiểm soát được E, nên focus tránh H bằng constraints. Ví dụ aviation: hạ cánh với fuel <30 phút là H (dễ crash nếu thời tiết xấu); trẻ em chơi gần vách đá: đứng sát mép mà không ai đỡ là H.
+Bài viết giới thiệu một khái niệm nền tảng trong các hệ thống an toàn trọng yếu: phân biệt **tai nạn** (thiệt hại thực sự) với **trạng thái nguy hiểm**. Tai nạn chỉ xảy ra khi hệ thống ở trạng thái nguy hiểm và gặp điều kiện môi trường bất lợi (H ∧ E ⇔ A); vì ta chỉ kiểm soát được hệ thống chứ không kiểm soát được môi trường, cách đạt được an toàn là tránh các trạng thái nguy hiểm. Ví dụ, máy bay thương mại hạ cánh khi chỉ còn nhiên liệu cho dưới 30 phút bay là đã rơi vào trạng thái nguy hiểm dù chuyến bay vẫn an toàn, bởi chỉ cần thời tiết xấu là có thể dẫn đến tai nạn; tương tự, một đứa trẻ không thể hứa "không bị ngã", nhưng có thể hứa không đứng sát mép đá khi không ai đỡ bên dưới.
 
-Maintaining constraints là dynamic control problem: controllers (low-level auto/hardware/software, high-level social/legal) dùng feedback (hiện tại), mental models (dự đoán tương lai), control actions (điều chỉnh). Failure khi thiếu 1/3: feedback kém, model sai, action yếu/mạnh quá. Controllers đa tầng: aviation có FADEC, FMS, pilots, ATC; car có stability, driver, lane assist.
-
-Predict H dễ hơn A (A cần multiple failures + bad E, trông như freak accident). Analyze H ngay cả near-miss, không chờ A (aviation report fuel low dù safe land). Từ Nancy Leveson (Engineering a Safer World), khuyến khích deeper analysis: reduce consequence, improve feedback/models, human error là starting point không phải end.
-
-**Điểm chính:**
-
-- H ∧ E ⇔ A: Tránh H để safety, ignore E luck.
-- Dynamic control: feedback + models + actions đa controllers.
-- Predict/analyze H > A: easier, proactive.
-- Aviation/child/car examples minh họa constraints.
-- Systems theory: Leveson books, future topics RCA flaws.
+Duy trì các ràng buộc an toàn là một bài toán điều khiển động: nhiều bộ điều khiển quan sát phản hồi về trạng thái hiện tại, dùng mô hình tư duy để dự đoán tương lai rồi đưa ra hành động điều chỉnh; hệ thống rơi vào trạng thái nguy hiểm khi một trong ba yếu tố này không đủ, kể cả khi hành động quá yếu hoặc quá mạnh. Bộ điều khiển tồn tại ở mọi cấp, từ FADEC trong động cơ, phi công đến kiểm soát không lưu và cơ quan quản lý. Dự đoán trạng thái nguy hiểm dễ hơn nhiều so với dự đoán tai nạn. Vì vậy cần phân tích cả những lần suýt xảy ra sự cố thay vì chờ tai nạn, điều ngành hàng không làm rất tốt nhưng ngành phần mềm thường bỏ qua.
 
 ## [Multi-Core By Default](https://www.dgtlgrove.com/p/multi-core-by-default)
 
-Tác giả Ryan Fleury lập luận **multi-core nên là default** thay vì special-case trong single-core code, tận dụng core counts cao (8-64) hiện đại. Parallel for/job systems tốn overhead (kernel threads, subdivision, sync, debug khó, lifetime mgmt), scatter control flow. Thay vào đó, bootstrap threads chạy chung EntryPoint (như GPU shaders), dùng LaneIdx()/LaneCount()/LaneSync() phân bổ work uniform (LaneRange), barrier sync, atomic cho reduce (sum), narrow (if LaneIdx()==0) cho serial (I/O, printf).
+Ryan Fleury lập luận rằng lập trình đa lõi nên là mặc định chứ không phải một kỹ thuật đặc biệt chèn vào mã đơn luồng, vì CPU hiện đại có tới 8, 16, 32 hay 64 lõi và bỏ qua chúng là lãng phí rất nhiều hiệu năng. Các cách làm quen thuộc như "parallel for" hay job system đều có cái giá: phải tạo luồng qua kernel hoặc gửi việc cho nhóm luồng, tự chia nhỏ công việc, luồng điều khiển bị phân tán qua nhiều lõi và thời điểm nên khó gỡ lỗi, còn vòng đời tài nguyên trở nên phức tạp. Lấy cảm hứng từ shader GPU, tác giả đảo ngược cách tiếp cận: khởi động sẵn nhiều luồng ("lane") cùng chạy một hàm `EntryPoint`, dùng `LaneIdx()`, `LaneCount()` và `LaneSync()` để chia việc đồng đều và đồng bộ qua barrier.
 
-Ví dụ sum array: mỗi lane tính subset uniform, atomic add hoặc table+barrier. File read: lane 0 alloc, broadcast ptr, lanes read ranges. Dynamic tasks: atomic counter grab. Non-uniform: redesign algo (radix sort uniform > comparison sort). Single-core chỉ param thread_count=1. Codebase primitives: LaneRange(count), LaneSyncU64(ptr, src_lane), đơn giản debug (full stack, homogeneous).
-
-Ưu: Ít machinery, uniform work dist, dễ narrow/wide, superset single-core, profiler rõ. Áp dụng debugger lớn data, game engines.
-
-**Điểm chính:**
-
-- Multi-core default: Bootstrap lanes chung code, primitives Lane*().
-- Critique job/parallel_for: Overhead, debug hard, scatter context.
-- Uniform dist: LaneRange upfront, atomic counter dynamic, redesign algo.
-- Narrow serial: if(LaneIdx()==0), broadcast shared data.
-- Benefits: Simpler, scalable perf, full stack debug.
+Với bài toán tính tổng một mảng, mỗi lane dùng `LaneRange` để nhận một đoạn dữ liệu, tính tổng riêng rồi cộng dồn bằng phép toán nguyên tử. Những phần buộc phải chạy tuần tự như đọc tệp hay in kết quả được thu hẹp về một lane bằng `if (LaneIdx() == 0)`, sau đó chia sẻ kết quả (chẳng hạn con trỏ bộ đệm) cho các lane khác bằng `LaneSyncU64`. Công việc không đồng đều có thể dùng bộ đếm nguyên tử để các lane tự nhận việc, hoặc đổi sang thuật toán đồng đều hơn, như radix sort thay cho sắp xếp dựa trên so sánh. Cách viết này cần ít cơ chế hơn, dễ gỡ lỗi vì mọi lane có cùng ngăn xếp lời gọi đầy đủ, và vẫn chạy được trên một lõi chỉ bằng cách đặt số luồng bằng 1. Tác giả áp dụng nó khi phát triển trình gỡ lỗi.
 
 ## [Vibing a Non-Trivial Ghostty Feature](https://mitchellh.com/writing/non-trivial-vibing)
 
-Mitchell Hashimoto chia sẻ quy trình **agentic coding** xây dựng tính năng update notification unobtrusive cho Ghostty (terminal macOS), dùng AI (Amp) ship real feature. Bắt đầu pre-AI plan: Sparkle custom UI + titlebar accessory/overlay. Sessions: prototype SwiftUI (titlebar pill), hit bug (tabs overlap) → pivot overlay bottom-right; backend UpdateDriver scaffold → cleanup viewmodel (tagged union); simulation scenarios; last mile controller/hook.
+Mitchell Hashimoto chia sẻ toàn bộ quá trình dùng agentic coding (với công cụ Amp) để phát triển tính năng thông báo cập nhật kín đáo trên macOS cho Ghostty. Ông tự lên kế hoạch trước khi dùng AI: tùy biến giao diện của framework cập nhật Sparkle và đặt một nút nhỏ trên thanh tiêu đề. Phiên đầu tiên chỉ yêu cầu agent lập kế hoạch rồi dựng thử giao diện SwiftUI; kết quả đúng hướng nhưng có lỗi xung đột với thanh tab mà cả agent lẫn ông đều không sửa được, nên ông chuyển sang hiển thị lớp phủ ở góc dưới bên phải cửa sổ, vốn cũng cần cho chế độ ẩn thanh tiêu đề. Ở phần backend, ông tự viết khung hàm kèm chú thích TODO để agent điền vào, nhưng phải bỏ đi vì sai hướng; chỉ sau khi tự tái cấu trúc view model sang dạng tagged union, các phiên tiếp theo mới cho kết quả tốt.
 
-Quy trình: Plan/oracle → small chunks (UI/backend) → cleanup/docs/refactor → fix bugs manual+AI → sim/tests → "anything else?". Manual polish critical, AI inspiration/prototype/cleanup. 16 sessions, $15.98 tokens, ~8h wall-clock (AI works while cooking). Faster than manual (SwiftUI tedious), esp iteration.
-
-**Điểm chính:**
-
-- Agentic: Plan → prototype chunks → cleanup/docs → sim/fix → review ship.
-- Pivot bugs: Tabs conflict → overlay fallback (titlebar hidden too).
-- Cleanup key: Viewmodel restructure → better AI/backend/UI.
-- Cost/time: $16/8h, AI parallel human tasks.
-- Tips: Scaffold TODO, docs, "fix build", "anything else?".
+Quy trình của ông gồm: lập kế hoạch cùng "oracle", chia việc thành phần nhỏ, dành các phiên riêng để dọn dẹp, viết tài liệu và tái cấu trúc mã nguồn, tạo kịch bản mô phỏng để kiểm thử các luồng cập nhật, nối backend với frontend, và cuối cùng luôn hỏi agent còn gì cần cải thiện. Ông nhấn mạnh phần viết tay và việc tự rà soát kỹ trước khi hợp nhất là bắt buộc, không bao giờ phát hành mã nguồn mình không hiểu. Tổng cộng có 16 phiên, chi phí token 15,98 USD và khoảng 8 giờ làm việc; tác giả cho rằng cách này nhanh hơn tự làm, nhất là khi tinh chỉnh giao diện SwiftUI, và AI có thể làm việc trong lúc ông bận việc khác.
 
 ## Bonus: Vài ảnh hay ho đến từ [ByteByteGo](https://bytebytego.com/)
 
@@ -115,4 +59,4 @@ Quy trình: Plan/oracle → small chunks (UI/backend) → cleanup/docs/refactor 
 
 ---
 
-*Bài viết đã được review và cập nhật bởi Claude Code với Opus 4.7 (1M context).*
+*Bài viết đã được viết lại bởi Claude Code với Opus 5.5 vào ngày 27/09/2026.*

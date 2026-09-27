@@ -9,127 +9,70 @@ categories: ["Newsletter"]
 
 ## [Hybrid Quota-Linear Rate Limiter](https://dotat.at/@/2026-01-12-hqlr.html)
 
-Tony Finch phân tích một vấn đề phổ biến với các thuật toán giới hạn tốc độ (rate limiter) tuyến tính như leaky bucket và GCRA: chúng có xu hướng "hào phóng" hơn mức cần thiết trong giai đoạn khởi động, cho phép client gửi khoảng `q*a/(a-1)` yêu cầu trước khi bị giới hạn khi hoạt động ở tốc độ gấp `a` lần cho phép.
+Tony Finch chỉ ra một điểm yếu ít được để ý của các bộ giới hạn tốc độ (rate limiter) tuyến tính như leaky bucket hay GCRA: chúng phản ứng chậm với những client vượt giới hạn nhưng không quá nhanh. Với hạn mức `q` yêu cầu trong cửa sổ thời gian `w`, một client chạy nhanh gấp `a` lần mức cho phép vẫn gửi được khoảng `q*a/(a-1)` yêu cầu trước khi bị chặn — tức gấp đôi hạn mức khi `a=2`. Nguyên nhân là bucket khởi đầu đã đầy token, rồi trong cửa sổ đầu tiên lại được nạp thêm một hạn mức nữa. Cách đặt lại bucket theo cửa sổ cố định (quota-reset) chặt hơn, nhưng tốn bộ nhớ và khiến client dồn yêu cầu thành từng đợt.
 
-Để giải quyết vấn đề này, tác giả đề xuất một thuật toán lai hoạt động ở hai chế độ: **chế độ bursty** dành cho các client có lưu lượng thấp, cho phép gửi theo đợt nhưng giới hạn tối đa một quota token mỗi cửa sổ thời gian; và **chế độ smooth** dành cho client có lưu lượng cao, buộc phân phối yêu cầu đều đặn hơn. Thuật toán tự chuyển đổi giữa hai chế độ khi client tiêu hết quota hoặc khi bucket phục hồi hoàn toàn. Cách tiếp cận này sử dụng ít bộ nhớ hơn so với phương pháp quota-reset, đồng thời kiểm soát quota chặt chẽ hơn so với rate limiter tuyến tính thuần túy.
-
-Tuy nhiên, điểm thú vị là tác giả cuối cùng khuyên **không nên** dùng thuật toán phức tạp này. Thay vào đó, hãy cân nhắc lại bài toán để có thể sử dụng một rate limiter tuyến tính đơn giản như GCRA — vì việc đo tốc độ trung bình theo thời gian dài tự nhiên khuyến khích client hoạt động mượt mà hơn.
-
-**Điểm chính:**
-- Rate limiter tuyến tính (GCRA, leaky bucket) có thể cho phép nhiều yêu cầu hơn dự kiến trong giai đoạn khởi động
-- Thuật toán lai kết hợp chế độ bursty và smooth để kiểm soát chặt chẽ hơn
-- Đơn giản hóa vẫn là ưu tiên hàng đầu: GCRA đủ tốt cho hầu hết các trường hợp thực tế
+Tác giả đề xuất một thuật toán lai với hai chế độ: chế độ bursty cho client ít lưu lượng, được gửi theo đợt nhưng chỉ được nạp tối đa một hạn mức mỗi cửa sổ; và chế độ smooth cho client lưu lượng cao, bắt đầu với bucket rỗng (kèm một khoản phạt âm) và buộc yêu cầu phải dàn đều. Thuật toán chuyển sang smooth khi client tiêu hết token cuối cùng, và quay lại bursty khi bucket hồi phục đủ một hạn mức. Kết quả tương đương chạy song song một bộ quota-reset và một bộ tuyến tính nhưng tốn ít bộ nhớ hơn. Dù vậy, chính tác giả khuyên không nên dùng nó: bộ giới hạn tuyến tính chỉ có vẻ "hào phóng" nếu bỏ qua việc client đã im lặng ở cửa sổ trước. Tốt hơn là định nghĩa lại bài toán để dùng một bộ giới hạn tuyến tính đơn giản như GCRA, vốn khuyến khích client gửi đều đặn.
 
 ## [Go is the Best Language for AI Agents](https://getbruin.com/blog/go-is-the-best-language-for-agents/)
 
-Burak Karakan — CEO của Bruin, người có 8 năm kinh nghiệm lập trình Go — lập luận rằng Go là ngôn ngữ lý tưởng để phát triển phần mềm bằng AI agent. Lý do cốt lõi xuất phát từ bản chất của ngôn ngữ biên dịch: khi agent tạo ra mã nguồn Go bị lỗi, trình biên dịch sẽ trả về thông báo lỗi rõ ràng ngay lập tức, tạo vòng phản hồi nhanh và chính xác để agent tự sửa lỗi. Điều này khác hoàn toàn so với Python hay JavaScript — vốn chỉ báo lỗi khi chạy thực tế.
+Burak Karakan, người đã làm việc chuyên nghiệp với Go suốt 8 năm và đang xây dựng Bruin — công cụ ETL mã nguồn mở viết bằng Go — cho rằng Go là ngôn ngữ phù hợp nhất để lập trình cùng AI agent. Lý do đầu tiên là Go được biên dịch: agent sinh ra rất nhiều mã nguồn trông có vẻ đúng, và trình biên dịch cùng hệ thống kiểu tĩnh giúp agent lặp lại cho đến khi loại bỏ được cả một nhóm lỗi về kiểu và tham số. So với Rust, Go có cú pháp và khái niệm đơn giản hơn, biên dịch nhanh hơn nên vòng phản hồi ngắn hơn, và lượng mã Go ngoài kia cũng nhiều hơn. Sự đơn giản còn giúp con người dễ đọc và nhận ra khi agent đang đi theo một hướng thiết kế kỳ lạ.
 
-Hệ thống kiểu tĩnh của Go cũng là một lợi thế lớn: agent có thể xác minh tính đúng đắn của mã trước khi chạy, thay vì phải phụ thuộc vào các bài kiểm thử thủ công. So với Rust — ngôn ngữ biên dịch khác — Go vẫn chiếm ưu thế nhờ cú pháp đơn giản hơn, tốc độ biên dịch nhanh hơn, và lượng mã Go trong dữ liệu huấn luyện của các mô hình AI lớn hơn đáng kể. Ngoài ra, bộ kiểm thử của Go chạy cực nhanh và hoạt động nhất quán trên mọi hệ điều hành, giúp các background agent có thể xác nhận kết quả công việc mà không phụ thuộc vào môi trường chạy cụ thể.
-
-**Điểm chính:**
-- Go biên dịch nhanh và báo lỗi rõ ràng giúp AI agent có vòng phản hồi ngắn để tự sửa lỗi
-- Kiểu tĩnh và cú pháp đơn giản giảm thiểu sai sót trong mã do agent tạo ra
-- Go chạy nhất quán trên mọi nền tảng — lợi thế lớn cho background agent và môi trường sandbox
+Go cũng là ngôn ngữ có quan điểm rõ ràng: có một cách chuẩn để chạy kiểm thử, định dạng mã hay xây dựng tệp thực thi, nên agent chỉ cần gọi `gofmt` thay vì cài thêm công cụ như thường thấy ở JavaScript. Việc biên dịch đa nền tảng dễ dàng cho phép chạy toàn bộ kiểm thử trên nhiều hệ điều hành sau mỗi thay đổi, một lợi thế lớn khi dùng background agent chạy trong các sandbox mà ta không kiểm soát được môi trường. Theo trải nghiệm cá nhân của tác giả, agent viết Go đúng ngay lần đầu khoảng 95% thời gian — không phải vì dữ liệu huấn luyện nhiều hơn Python, mà vì Go thường chỉ có một cách làm cho mỗi việc. Tác giả thừa nhận nhận định này khá cảm tính và có thể mất dần giá trị.
 
 ## [Your Agent Needs a Harness, Not a Framework](https://x.com/djfarrelly/status/2028556984396452250)
 
-Dan Farrelly từ Inngest.com đưa ra một góc nhìn sắc bén về kiến trúc AI agent: thay vì dùng framework, agent cần một "harness" — lớp kết nối, bảo vệ và điều phối các thành phần mà không làm thay công việc của chúng. Trong mọi ngành kỹ thuật, harness đều có vai trò như vậy: dây điện nối các cảm biến, test harness cung cấp giàn giáo kiểm thử, dây an toàn giữ bạn khi ngã. Agent runtime cũng cần điều tương tự.
+Dan Farrelly từ Inngest lập luận rằng AI agent cần một "harness" chứ không phải framework. Trong mọi ngành kỹ thuật, harness là lớp kết nối, bảo vệ và điều phối các thành phần mà không tự làm thay việc của chúng — như bó dây điện nối động cơ với cảm biến, hay dây an toàn giữ bạn khi ngã. Với agent, LLM là động cơ, công cụ là thiết bị ngoại vi, bộ nhớ là nơi lưu trữ; nhưng cần có thứ xử lý khi LLM hết thời gian chờ ở vòng lặp thứ năm hay khi hai tin nhắn va nhau. Mỗi framework lại tự xây từ đầu cơ chế thử lại, lưu trạng thái, hàng đợi và định tuyến sự kiện, trong khi hạ tầng bền vững hướng sự kiện đã giải quyết sẵn: mỗi lần gọi LLM hay công cụ là một "step" có thể thử lại độc lập, nên nếu tiến trình chết ở vòng thứ năm thì bốn vòng trước vẫn được lưu.
 
-Vấn đề hiện tại là mỗi framework agent lại tự xây dựng lại từ đầu: retry logic, lưu trạng thái, job queue, định tuyến sự kiện. Thay vào đó, hãy dùng hạ tầng event-driven bền vững đã sẵn có — mỗi lần gọi LLM hay công cụ trở thành một "step" có thể thử lại độc lập. Nếu tiến trình chết ở vòng lặp thứ năm, bốn vòng trước đã được lưu lại. Nhóm tác giả đã xây dựng **Utah** (Universally Triggered Agent Harness) để minh chứng: một agent hội thoại qua Telegram/Slack với công cụ, bộ nhớ, ủy quyền sub-agent và khả năng chịu lỗi — chỉ dùng Inngest, không framework. Bài học quan trọng rút ra: quản lý ngữ cảnh (context management) mới là thử thách thực sự, không phải việc gọi LLM.
-
-**Điểm chính:**
-- Agent cần "harness" để xử lý retry, trạng thái, concurrency — không phải thêm framework
-- Mỗi lần gọi LLM/công cụ là một step độc lập, có thể thử lại mà không mất kết quả trước
-- Quản lý ngữ cảnh (cắt bớt, nén lịch sử, cảnh báo ngân sách) là thách thức lớn nhất khi xây agent thực tế
+Để chứng minh, nhóm xây dựng Utah (Universally Triggered Agent Harness) — agent hội thoại qua Telegram hoặc Slack có công cụ, bộ nhớ, ủy quyền cho sub-agent qua `step.invoke()` và khả năng chịu lỗi, viết bằng ít mã TypeScript, không framework, chỉ dùng function, step và event của Inngest quanh vòng lặp suy nghĩ → hành động → quan sát. Bài học lớn nhất: quản lý ngữ cảnh mới là thử thách thực sự, vì kết quả công cụ phình to khiến mô hình mất phương hướng và gọi công cụ mãi không dừng. Nhóm khắc phục bằng cắt tỉa kết quả cũ theo hai tầng, nén lịch sử phiên, cảnh báo khi sắp hết số vòng lặp và tự nén lại khi gặp lỗi ngữ cảnh quá lớn.
 
 ## [An Interactive Intro to Quadtrees](https://growingswe.com/blog/quadtrees)
 
-Bài viết tương tác giải thích quadtree — cấu trúc dữ liệu dùng để tìm kiếm không gian 2D hiệu quả. Vấn đề đặt ra: khi xây dựng ứng dụng bản đồ với hàng triệu địa điểm, cách đơn giản nhất là tính khoảng cách từ vị trí người dùng đến từng điểm rồi lọc ra những điểm đủ gần — nhưng với hàng triệu điểm, cách này quá chậm.
+Bài viết tương tác này giải thích quadtree — cấu trúc dữ liệu giúp tìm kiếm trong không gian hai chiều hiệu quả, xuất phát từ việc tác giả thấy Uber dùng nó trong các bài về thiết kế hệ thống. Với một ứng dụng bản đồ có hàng triệu địa điểm, cách đơn giản nhất là tính khoảng cách từ người dùng tới từng điểm, nhưng mỗi truy vấn khi đó tốn hàng triệu phép tính. Quadtree tổ chức lại chính không gian: chia một vùng hình chữ nhật thành bốn góc phần tư, và khi một vùng chứa vượt quá sức chứa (capacity) thì tiếp tục chia nhỏ. Vùng dày đặc được chia mịn, vùng thưa vẫn giữ nguyên, nên tìm một điểm chỉ cần đi xuống cây, mỗi tầng loại bỏ ba phần tư không gian — khoảng 10 bước cho một triệu điểm.
 
-Quadtree giải quyết bài toán bằng cách chia không gian thành 4 ô con khi một ô chứa quá nhiều điểm (vượt ngưỡng capacity), tạo thành cây phân cấp. Khi truy vấn, chỉ cần đệ quy vào các ô giao với vùng tìm kiếm — bỏ qua hoàn toàn phần còn lại. Tham số capacity điều chỉnh sự cân bằng: capacity thấp tạo cây sâu, bỏ qua nhiều vùng hơn nhưng tốn bộ nhớ; capacity cao tạo cây nông, tiết kiệm bộ nhớ nhưng mỗi ô cần duyệt tuyến tính nhiều điểm hơn. Ngoài tìm kiếm địa lý (Uber dùng để tìm tài xế gần nhất), quadtree còn ứng dụng trong phát hiện va chạm game (broad-phase collision detection) và nén ảnh theo vùng.
-
-**Điểm chính:**
-- Quadtree chia không gian 2D thành 4 ô con đệ quy, giúp bỏ qua vùng không liên quan khi truy vấn
-- Tham số capacity (thường từ 4–16) ảnh hưởng trực tiếp đến độ sâu cây và hiệu năng truy vấn
-- Ứng dụng thực tế: tìm kiếm địa lý, phát hiện va chạm trong game, nén ảnh theo vùng
+Tham số capacity quyết định hình dạng cây: capacity thấp tạo cây sâu, bỏ qua được nhiều vùng hơn nhưng tốn bộ nhớ; capacity cao tạo cây nông nhưng mỗi nút phải duyệt tuần tự nhiều điểm hơn, với giá trị từ 4 đến 16 là điểm khởi đầu hợp lý. Truy vấn theo vùng chỉ đi vào các nút có khung giao với vùng tìm kiếm và cắt bỏ toàn bộ nhánh còn lại; tìm điểm gần nhất duy trì khoảng cách tốt nhất hiện tại để cắt tỉa ngày càng mạnh. Ngoài tìm kiếm địa lý, quadtree còn dùng trong phát hiện va chạm giai đoạn sơ bộ (broad-phase) của game để tránh so sánh mọi cặp đối tượng, và trong nén ảnh theo vùng: vùng đồng màu lưu thành một khối lớn, vùng nhiều chi tiết được chia nhỏ.
 
 ## [Agentic Engineering Patterns](https://simonwillison.net/guides/agentic-engineering-patterns/)
 
-Simon Willison — tác giả blog kỹ thuật nổi tiếng — ra mắt một hướng dẫn toàn diện về các mẫu thiết kế (pattern) khi làm việc với AI agent trong lập trình. Điều đáng chú ý là hướng dẫn phân biệt rõ ràng giữa "agentic engineering" và "vibe coding": vibe coding là để LLM viết mã mà không cần giám sát, còn agentic engineering là kỹ sư chuyên nghiệp dùng agent để khuếch đại chuyên môn sẵn có của mình — không phải thay thế nó.
+Simon Willison ra mắt một hướng dẫn về các mẫu (pattern) giúp khai thác tốt nhất các coding agent như Claude Code và OpenAI Codex. Hướng dẫn phân biệt rõ "agentic engineering" với "vibe coding": vibe coding là để LLM viết mã mà không cần quan tâm đến mã nguồn, còn agentic engineering là kỹ sư chuyên nghiệp dùng agent để khuếch đại chuyên môn sẵn có của mình chứ không phải thay thế nó. Nội dung được sắp theo từng nhóm: nguyên tắc, làm việc với coding agent (cách agent hoạt động, dùng Git, sub-agent), kiểm thử và đảm bảo chất lượng, hiểu mã nguồn qua các bản hướng dẫn đọc tuần tự và giải thích tương tác, cùng các prompt có chú thích và phụ lục những prompt tác giả thường dùng.
 
-Một số pattern nổi bật: **"Viết mã giờ rất rẻ"** — chi phí sinh mã gần như bằng không, buộc phải định nghĩa lại "mã tốt" là mã có kiểm thử, tài liệu, xử lý lỗi đúng chuẩn; **"Tích lũy những gì bạn đã biết làm"** — duy trì kho ví dụ hoạt động được (blog, repo, POC) để dùng làm đầu vào cho agent, vì biết rằng điều gì đó khả thi khác với đã tự mình làm được; **"Red/green TDD"** — viết kiểm thử trước, xác nhận kiểm thử thất bại, rồi mới triển khai, đảm bảo agent tạo ra mã đúng chức năng và tối giản. Hướng dẫn được cập nhật liên tục mỗi tuần với 1–2 chương mới.
-
-**Điểm chính:**
-- Agentic engineering là khuếch đại chuyên môn kỹ sư, không phải để LLM viết mã không kiểm soát
-- Tích lũy ví dụ hoạt động được là tài sản nghề nghiệp quan trọng khi làm việc với agent
-- Red/green TDD giúp agent tạo mã tối giản, đúng chức năng và có lưới an toàn kiểm thử
+Một vài mẫu tiêu biểu: "Viết mã giờ rất rẻ" — chi phí sinh mã gần như bằng không, nhưng mã tốt, tức là có kiểm thử, tài liệu và xử lý lỗi đầy đủ, vẫn có giá, nên cần xây dựng thói quen mới; "Tích lũy những gì bạn biết cách làm" — giữ một kho ví dụ chạy được để kết hợp lại và làm đầu vào cho agent; và "Red/green TDD" — viết kiểm thử trước, xác nhận nó thất bại rồi mới để agent triển khai, kèm lời khuyên chạy bộ kiểm thử ngay từ đầu phiên. Hướng dẫn cũng nêu các phản mẫu cần tránh, điển hình là đẩy mã chưa được xem xét sang cho đồng nghiệp, và liên tục được bổ sung thêm chương mới.
 
 ## [Things I Miss About Spring Boot After Switching to Go](https://sushantdhiman.dev/things-i-miss-about-spring-boot-after-switching-to-go/)
 
-Sushant Dhiman chia sẻ góc nhìn thực tế sau khi chuyển từ Spring Boot sang Go. Dù Go có nhiều ưu điểm, tác giả thừa nhận có những thứ trong Spring Boot mà Go chưa thể thay thế dễ dàng. Trước hết là triết lý "batteries included" của Spring Boot — hầu hết tính năng cần thiết cho môi trường production đều có sẵn và tích hợp chặt chẽ với nhau.
+Sushant Dhiman, sau 1,5 năm viết hệ thống production bằng Java và Spring Boot cho một startup rồi chuyển sang Go, chia sẻ những thứ anh nhớ ở hệ sinh thái Spring. Điều đầu tiên là triết lý "batteries included": Spring Boot cung cấp sẵn gần như mọi tính năng cần cho production, trong khi Go theo triết lý tối giản với nhiều thư viện nhỏ thay vì một framework khổng lồ. Cụ thể, anh nhớ dependency injection tự động qua annotation như `@Service` và `@Autowired`, trong khi ở Go phải tự nối các phụ thuộc qua hàm khởi tạo — rõ ràng nhưng mã khởi động sẽ phình to khi hệ thống có hàng trăm phụ thuộc. Tương tự, validation khai báo với `@NotNull` hay `@Email` giúp tránh các chuỗi if/else kiểm tra thủ công bằng biểu thức chính quy.
 
-Cụ thể, tác giả nhớ nhất: **Dependency Injection** tự động qua annotation (`@Service`, `@Autowired`) thay vì phải tự nối dây thủ công qua constructor trong Go; **validation khai báo** với `@NotNull`, `@Email` thay vì viết điều kiện kiểm tra thủ công; và hệ sinh thái trưởng thành gồm Spring Security (xác thực JWT, OAuth), Spring Data (tự sinh câu truy vấn từ tên phương thức), Spring Boot Actuator (giám sát sức khỏe tích hợp sẵn), Spring Cloud (hỗ trợ microservices). Go có các thư viện tương đương nhưng thiếu sự gắn kết thống nhất trong một framework duy nhất.
-
-**Điểm chính:**
-- Spring Boot tích hợp sẵn dependency injection, validation khai báo và hệ sinh thái production-ready
-- Go theo triết lý tối giản — linh hoạt hơn nhưng đòi hỏi tự lắp ráp nhiều thành phần hơn
-- Cả hai có đánh đổi rõ ràng: Spring Boot tiện lợi hơn, Go đơn giản và hiệu năng cao hơn
+Hệ sinh thái trưởng thành cũng là điểm cộng lớn: Spring Security hỗ trợ sẵn JWT, OAuth hay đăng nhập bằng form; Spring Data tự sinh truy vấn từ tên phương thức như `findByEmail`; Spring Boot Actuator cung cấp giám sát sức khỏe và số liệu chỉ với vài dòng cấu hình; Spring Cloud hỗ trợ đầy đủ cho microservices. Tuy vậy, tác giả cũng công bằng: Go cho quyền kiểm soát hoàn toàn và minh bạch với câu SQL, dễ gỡ lỗi hơn các truy vấn JOIN phức tạp qua ORM. Go còn thắng ở mô hình vận hành đơn giản — chỉ là một tệp nhị phân biên dịch sẵn, không phải tinh chỉnh JVM hay bộ thu gom rác, khởi động gần như tức thì và có cơ chế xử lý đồng thời được tích hợp ngay trong ngôn ngữ.
 
 ## [Design-First Collaboration with AI](https://martinfowler.com/articles/reduce-friction-ai/design-first-collaboration.html)
 
-Bài viết từ martinfowler.com giới thiệu phương pháp cộng tác "design-first" với AI để tránh "Implementation Trap" — bẫy mà AI sinh mã quá nhanh khiến các quyết định thiết kế quan trọng bị chôn vùi trong mã nguồn, và lập trình viên chỉ phát hiện ra bất đồng khi đọc lại mã — lúc đó đã quá tốn kém để sửa.
+Rahul Garg viết trên martinfowler.com về "Implementation Trap" khi làm việc với trợ lý lập trình AI: AI sinh mã nhanh đến mức điểm dừng tự nhiên giữa suy nghĩ thiết kế và viết mã biến mất. AI vẫn đưa ra các quyết định thiết kế về phạm vi, ranh giới thành phần, luồng dữ liệu hay xử lý lỗi, nhưng chúng bị chôn lặng lẽ trong mã. Người xem xét phải cùng lúc đánh giá quá nhiều khía cạnh nên dễ bỏ sót, và sửa hiểu lầm ở giai đoạn thiết kế luôn rẻ hơn nhiều so với lúc đã triển khai. AI còn hay tự thêm tính năng không ai yêu cầu, điều tác giả gọi là "technical debt injection".
 
-Giải pháp là khung năm cấp độ, không được viết mã cho đến khi cấp độ 5 được phê duyệt: **(1) Capabilities** — yêu cầu cốt lõi; **(2) Components** — các khối xây dựng và trừu tượng; **(3) Interactions** — luồng dữ liệu và giao tiếp; **(4) Contracts** — chữ ký hàm và interface; **(5) Implementation** — viết mã. Mỗi cấp độ chỉ kiểm tra một loại quyết định, giảm tải nhận thức đáng kể so với việc xem xét tất cả cùng lúc. Mức độ phức tạp quyết định điểm bắt đầu — tiện ích đơn giản có thể bắt đầu từ cấp 4, tính năng phức tạp bắt đầu từ cấp 1.
-
-**Điểm chính:**
-- Đừng để AI viết mã trước khi thống nhất thiết kế — phát hiện bất đồng sớm rẻ hơn rất nhiều
-- Khung 5 cấp độ tách biệt từng loại quyết định thiết kế, giảm tải nhận thức khi xem xét
-- Phương pháp này tạo điều kiện tự nhiên cho TDD và ngăn chặn "technical debt injection"
+Giải pháp là tái hiện buổi thảo luận trên bảng trắng qua năm cấp độ, từ trừu tượng đến cụ thể: Capabilities (yêu cầu cốt lõi), Components (các khối xây dựng), Interactions (luồng dữ liệu và giao tiếp), Contracts (chữ ký hàm, kiểu, interface) và cuối cùng là Implementation. Quy tắc then chốt là không viết mã cho đến khi cấp độ 5 được duyệt. Trong ví dụ xây dịch vụ thông báo, ở cấp Components tác giả đã gạt bỏ một lớp `RetryQueue` thừa vì BullMQ vốn có cơ chế thử lại sẵn; còn khi đã thống nhất Contracts, có thể yêu cầu AI viết kiểm thử trước khi triển khai. Không phải tác vụ nào cũng cần đủ năm cấp: tiện ích đơn giản bắt đầu từ cấp 4, tính năng nhiều thành phần bắt đầu từ cấp 1. Cách làm này tốn thời gian hơn và không đáng với việc vặt, nhưng rất đáng đầu tư cho các tính năng phức tạp cần bảo trì lâu dài.
 
 ## [The Two Kinds of Error](https://evanhahn.com/the-two-kinds-of-error/)
 
-Evan Hahn đề xuất một cách phân loại lỗi đơn giản nhưng hữu ích: lỗi **expected** (có thể xảy ra trong vận hành bình thường, không phải lỗi của lập trình viên) và lỗi **unexpected** (chỉ xảy ra khi có bug). Lỗi expected bao gồm: đầu vào của người dùng không hợp lệ, mất kết nối mạng, thiếu quyền truy cập — đây là lỗi có thể phục hồi, nên trả về kết quả lỗi và ghi log ở mức `WARN` hoặc `INFO`. Lỗi unexpected bao gồm: vi phạm assertion, logic sai, dependency chưa khởi tạo — đây là dấu hiệu của bug thực sự, nên log ở mức `ERROR` hoặc `FATAL`, thậm chí nên để chương trình crash hoàn toàn.
+Evan Hahn chia lỗi phần mềm thành hai loại. Lỗi expected xảy ra trong vận hành bình thường và không phải lỗi của lập trình viên: người dùng nhập dữ liệu sai, mạng chập chờn, chương trình không có quyền truy cập. Những lỗi này có thể phục hồi, không nên dùng `throw`, `raise` hay `panic` mà nên trả về một kết quả lỗi (như kiểu `Result`) để buộc phía gọi phải xử lý, và chỉ cần ghi log ở mức `WARN` hoặc `INFO`. Lỗi unexpected thì lẽ ra không bao giờ xảy ra — vi phạm assertion, lỗi logic, dữ liệu không hợp lệ từ cơ sở dữ liệu — và là dấu hiệu của bug. Không nên cố phục hồi mà cứ để chương trình crash, ghi log ở mức `ERROR` hoặc `FATAL`; theo tác giả, crash gây phiền toái trước mắt nhưng về lâu dài khiến phần mềm đáng tin cậy hơn.
 
-Ranh giới giữa hai loại phụ thuộc vào ngữ cảnh: ứng dụng thử nghiệm có thể coi mọi lỗi là unexpected, hệ thống quan trọng (tàu vũ trụ) phải coi gần mọi thứ đều có thể xảy ra. Điều quan trọng là lập trình viên phải **có ý thức** phân loại từng lỗi thay vì xử lý tất cả theo cùng một cách.
-
-**Điểm chính:**
-- Lỗi expected (mạng, đầu vào người dùng) nên được phục hồi và log WARN/INFO
-- Lỗi unexpected (bug, logic sai) nên log ERROR/FATAL và có thể crash chương trình
-- Phân loại có ý thức giúp thiết kế xử lý lỗi rõ ràng và đúng mức độ nghiêm trọng
+Ranh giới giữa hai loại phụ thuộc vào bối cảnh: với một bản mẫu hay kịch bản nhỏ, mọi lỗi đều có thể coi là unexpected; với phần mềm cho tàu thăm dò không gian chạy 50 năm, gần như mọi lỗi, kể cả hỏng phần cứng, đều phải được xem là expected. Muốn phần mềm đáng tin cậy hơn thì xu hướng chung là coi ngày càng nhiều lỗi là expected. Tác giả cũng nhận xét các ngôn ngữ như Rust hay Zig xếp nhiều lỗi vào loại expected, còn JavaScript và Python thì ngược lại, và ông thích trình biên dịch khắt khe hơn cho phần mềm production.
 
 ## [Secure Go Error Handling Best Practices](https://blog.jetbrains.com/go/2026/03/02/secure-go-error-handling-best-practices/)
 
-Blog JetBrains GoLand tập trung vào một khía cạnh thường bị bỏ qua: xử lý lỗi an toàn bảo mật trong Go. Nguyên tắc cốt lõi là **tách biệt thông tin nội bộ và thông tin công khai** — tạo kiểu lỗi tùy chỉnh chứa cả thông báo nội bộ (chi tiết kỹ thuật cho lập trình viên) và thông báo công khai (thông báo an toàn cho người dùng), tránh việc lỗi nội bộ bị serialized ra HTTP response.
+Bài viết trên blog JetBrains GoLand tập trung vào khía cạnh bảo mật của xử lý lỗi trong Go. Vì lỗi trong Go là giá trị chứ không phải ngoại lệ, việc để lỗi lan lên và bị trả thẳng cho người dùng dễ làm lộ đường dẫn, câu SQL, thông tin xác thực hay stack trace. Nguyên tắc đầu tiên là tách biệt rõ phần hệ thống thấy và phần người dùng thấy: tạo một kiểu lỗi chứa cả thông điệp nội bộ lẫn thông điệp công khai, trong đó `Error()` chỉ trả về thông điệp an toàn, còn chi tiết kỹ thuật chỉ đi vào log. Tiếp theo, thay vì ghi log cả đối tượng request có thể chứa mật khẩu, hãy dùng builder hoặc hàm hỗ trợ chỉ cho phép một danh sách trường metadata an toàn; và khi không muốn phía gọi lần ngược tới nguyên nhân gốc qua `errors.Is` hay `errors.As`, hãy bọc lỗi kiểu "opaque" thay vì `fmt.Errorf` với `%w`.
 
-Các thực hành quan trọng: dùng **builder pattern** để kiểm soát trường metadata nào được ghi log, tránh ghi toàn bộ đối tượng request có thể chứa mật khẩu hay token; dùng **opaque wrapping** thay vì `fmt.Errorf` khi không muốn lộ chi tiết triển khai cho phía gọi; và khi truyền lỗi qua ranh giới dịch vụ, chuyển đổi sang lỗi chuẩn hóa (gRPC codes, JSON format), không bao giờ để lỗi do AI sinh ra tiếp cận API công khai. Logging nên dùng `log/slog` với structured logging và implement interface redaction cho các trường nhạy cảm.
-
-**Điểm chính:**
-- Tách lỗi thành thông báo nội bộ (kỹ thuật) và công khai (an toàn) để tránh rò rỉ thông tin
-- Kiểm soát chặt metadata được ghi log, không ghi toàn bộ request object
-- API công khai chỉ trả về thông báo tĩnh, định nghĩa sẵn — không bao giờ lỗi được sinh động
+Khi lỗi đi qua ranh giới, cần kiểm soát theo ba mức: giữa các tầng nội bộ, bọc lỗi thô của cơ sở dữ liệu thành lỗi nghiệp vụ; giữa các dịch vụ, chuyển sang mã lỗi chuẩn như mã trạng thái gRPC hay định dạng JSON thống nhất; và ra ngoài người dùng cuối, chỉ trả về chuỗi hoặc mã tĩnh đã định nghĩa sẵn kèm mã định danh request, không bao giờ là thông điệp được sinh động. Về log, hãy dùng log có cấu trúc như `log/slog`, zap hay zerolog, chỉ ánh xạ những trường cần thiết để gỡ lỗi, và cài đặt một interface `Redactor` để che các trường nhạy cảm khi buộc phải ghi cả request.
 
 ## [AI Coding Tools, Java & Compounding Engineering](https://www.the-main-thread.com/p/ai-coding-tools-java-compounding-engineering)
 
-Bài viết tổng hợp từ buổi nói chuyện tại NDC Manchester 2025, với luận điểm cốt lõi: "Nếu AI tạo ra mã tệ cho bạn, đó thường là vấn đề workflow, không phải vấn đề mô hình." Phương pháp được đề xuất là **Compounding Engineering** — huấn luyện AI như người cộng tác theo thời gian, tương tự onboard lập trình viên junior.
+Markus Eisele tổng hợp bài nói của Aleksander Stensby tại NDC Manchester 2025, với luận điểm: nếu AI sinh mã tệ cho bạn, đó thường là vấn đề quy trình làm việc chứ không phải vấn đề mô hình. Stensby gọi cách khắc phục là Compounding Engineering — dạy dỗ công cụ theo thời gian như cách kèm một lập trình viên junior. Ngữ cảnh vừa quý vừa khan hiếm: quá ít thì mô hình bịa, quá nhiều thì mất tập trung, nên hãy xóa cuộc trò chuyện thường xuyên và lưu quyết định kiến trúc, ràng buộc, các hướng đã loại bỏ vào tệp markdown để nạp lại đúng những gì cần. Các tệp quy tắc như `CLAUDE.md` là một kho tri thức sống: mỗi khi sửa một bug tinh vi, hãy cập nhật tệp để lỗi đó không lặp lại.
 
-Các yếu tố chính: xóa chat thường xuyên và lưu quyết định kiến trúc vào file markdown (như `CLAUDE.md`) thay vì cố duy trì ngữ cảnh trong một cuộc trò chuyện dài; cập nhật "living rule files" mỗi khi sửa bug để lỗi không tái diễn; lên kế hoạch trước khi viết mã để phát hiện giả định sai ngay từ đầu; chia tính năng thành các tác vụ nhỏ, tập trung một trách nhiệm. Kỹ sư senior đóng góp giá trị qua **taste** — khả năng đánh giá kiến trúc và đánh đổi, điều mà AI giỏi sinh mã nhưng yếu phán xét chất lượng. Kết quả tích lũy theo thời gian; không đầu tư vào workflow thì chỉ có "mediocrity nhanh hơn".
-
-**Điểm chính:**
-- Mã AI kém chất lượng thường do workflow kém, không phải do mô hình
-- Lưu quyết định kiến trúc vào file markdown, cập nhật khi sửa bug để kiến thức tích lũy
-- Giá trị của kỹ sư senior nằm ở khả năng phán xét kiến trúc — thứ AI chưa làm tốt
+Các thói quen khác gồm luôn lập kế hoạch trước khi viết mã để phát hiện ý tưởng tồi sớm, chia công việc thành các tác vụ nhỏ với một trách nhiệm duy nhất, chọn mô hình có chủ đích (mô hình nhanh cho việc lặp lại, mô hình suy luận sâu cho kiến trúc), tự động hóa bằng slash command và sub-agent, dùng MCP để AI tương tác với hệ thống thật, và luôn có lưới an toàn bằng Git cùng các điểm khôi phục. Agent chạy nền vẫn phải được xem xét kỹ trước khi merge. Giá trị của kỹ sư nằm ở gu thẩm mỹ và khả năng phán đoán — nhận ra điều gì sai dù kiểm thử vẫn qua — thứ AI chưa làm tốt. Đầu tư vào quy trình thì kết quả tích lũy dần; không đầu tư thì chỉ nhận về "sự tầm thường nhanh hơn".
 
 ## [YAML? That's Norway Problem](https://lab174.com/blog/202601-yaml-norway/)
 
-Bài viết khám phá một lỗi phân tích cú pháp thú vị trong YAML: mã quốc gia `NO` (Na Uy) bị các trình phân tích cú pháp phổ biến chuyển thành giá trị boolean `false` thay vì chuỗi ký tự. Nguyên nhân là YAML xử lý một số từ tiếng Anh như `yes/no`, `true/false`, `on/off` dưới dạng giá trị boolean — tính năng này được giới thiệu từ YAML v1.0 (2004) nhằm làm cho tệp cấu hình dễ đọc hơn.
+Bài viết đào sâu "vấn đề Na Uy" của YAML: mã quốc gia `NO` bị các thư viện phổ biến như PyYAML hiểu thành giá trị boolean `false` thay vì chuỗi. Nguyên nhân là kiểu ngầm định cho scalar không có dấu ngoặc: bản nháp cuối YAML v1.0 (2004) và v1.1 (2005) coi các từ như `yes/no` hay `on/off` là boolean. Bản YAML 1.2 (2009) đã bỏ hành vi này, nhưng PyYAML và LibYAML — hai thư viện "chính thức" với những yêu cầu hỗ trợ v1.2 còn bỏ ngỏ từ 2016–2017 — vẫn chỉ theo v1.1. LibYAML lại nằm sâu trong cây phụ thuộc của rất nhiều công cụ nên thay đổi càng chậm và rủi ro.
 
-Dù YAML v1.2 (2009) đã loại bỏ hành vi này để tương thích với JSON, hầu hết các thư viện phổ biến như PyYAML và LibYAML vẫn triển khai theo đặc tả v1.1 — tạo ra khoảng cách lớn giữa tiêu chuẩn và thực tế sau hơn 15 năm. Người dùng có thể tránh vấn đề này bằng cách đặt chuỗi trong dấu ngoặc kép (`"NO"`), dùng thẻ kiểu tường minh (`!!str`), hoặc chuyển sang thư viện tương thích v1.2 như `ruamel.yaml` hay `yq`.
-
-**Điểm chính:**
-- `NO` trong YAML bị hiểu là `false` do quy tắc boolean từ đặc tả v1.1
-- YAML v1.2 đã sửa lỗi này từ năm 2009 nhưng hầu hết thư viện chưa cập nhật
-- Giải pháp: dùng dấu ngoặc kép, thẻ `!!str`, hoặc thư viện tương thích v1.2
+Nhiều bài viết dừng ở giải pháp đặt giá trị trong dấu ngoặc kép (`"NO"`), nhưng tác giả cho thấy bức tranh phức tạp hơn. Trong hệ sinh thái Go, `gopkg.in/yaml.v3` phổ biến nhất nhưng đã ngừng bảo trì và hỗ trợ lẫn lộn v1.1 với v1.2, còn thư viện được bảo trì tích cực phổ biến nhất lại mặc định theo v1.2; công cụ `yq` cũng mặc định theo v1.2, và Kubernetes ra mắt phương ngữ KYAML năm 2025 với mục tiêu an toàn, ít mơ hồ hơn. Tài liệu trên mạng thường nhầm phiên bản đặc tả, trong khi người dùng thì tranh cãi vấn đề đã được giải quyết hay chưa. Kết luận: hệ sinh thái YAML đang phân mảnh nhưng dần chuyển sang phiên bản chặt chẽ hơn; các dự án mới nhiều khả năng sẽ dùng thư viện mới không còn vấn đề này, còn các thư viện cũ, vốn vẫn phổ biến hơn, thì mắc kẹt với đặc tả cũ.
 
 ---
 
-*Bài viết đã được review và cập nhật bởi Claude Code với Opus 4.7 (1M context).*
+*Bài viết đã được viết lại bởi Claude Code với Opus 5.5 vào ngày 27/09/2026.*

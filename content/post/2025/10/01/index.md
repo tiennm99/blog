@@ -9,189 +9,45 @@ categories: ["Newsletter"]
 
 ## [How Software Engineers Make Productive Decisions (without slowing the team down)](https://strategizeyourcareer.com/p/how-software-engineers-make-productive-decisions)
 
-Khi làm việc trong một team phát triển phần mềm, kỹ sư phần mềm thường đứng trước những quyết định hàng ngày mà có thể ảnh hưởng đến tiến độ và chất lượng của dự án. Tuy nhiên, quá trình ra quyết định đôi khi lại trở thành nỗi ám ảnh khi engineer dành quá nhiều thời gian để phân tích và cân nhắc, thay vì hành động.
+Nhiều nhóm phát triển bị chậm lại chỉ vì đối xử với mọi quyết định như thể chúng không thể đảo ngược. Tác giả Fran Soto đề xuất phân biệt rõ hai loại: quyết định "cửa hai chiều" (có thể quay lại dễ dàng, như thêm một trường vào phản hồi API mà chưa ai dùng, bật tắt bằng feature flag hay thay một thư viện nội bộ) và quyết định "cửa một chiều" (khó hoặc không thể quay lại, như di chuyển dữ liệu, thay đổi schema, thay đổi về bảo mật hay những thay đổi khách hàng nhìn thấy có nguy cơ làm mất dữ liệu). Để phân loại nhanh, bài viết đưa ra ba câu hỏi: nếu sai thì hậu quả là không ai nhận ra, gây phiền toái hay là thảm họa; việc hoàn tác khó đến mức nào, chẳng hạn có quay lại được trong khoảng mười phút với hệ thống cảnh báo sẵn có hay không; và có thể thu hẹp phạm vi ảnh hưởng bằng canary, feature flag hay triển khai từng phần hay không.
 
-Bài viết này giới thiệu một cách tiếp cận thực tế để cải thiện năng suất ra quyết định. Thay vì coi mọi quyết định đều quan trọng như nhau, chúng ta nên phân biệt giữa những quyết định dạng "cửa một chiều" (rủi ro, khó đảo ngược) và "cửa hai chiều" (an toàn, có thể quay đầu).
-
-Để xác định loại quyết định nào đang đứng trước, bài viết đề xuất một framework 3 câu hỏi đơn giản:
-
-1. **Tác động nếu sai là gì?** - Xác định hậu quả là nhỏ, vừa hoặc thảm họa
-2. **Khó khăn khi quay lại là gì?** - Nếu dễ dàng đảo ngược, có thể tiến hành nhanh chóng
-3. **Có thể giảm thiểu rủi ro với phạm vi nhỏ không?** - Sử dụng feature flags, canaries và cảnh báo
-
-Với những quyết định dạng "cửa hai chiều", engineer có thể tự tin tiến hành nhanh chóng mà không cần sự phê duyệt từ nhiều người. Việc áp dụng các kỹ thuật như feature flags, small pull requests, và rollback nhanh giúp duy trì tốc độ mà không làm giảm chất lượng.
-
-**Điểm chính:**
-- Phân biệt giữa quyết định "cửa một chiều" và "cửa hai chiều" để tối ưu hóa thời gian ra quyết định
-- Framework 3 câu hỏi giúp đánh giá mức độ rủi ro của quyết định một cách nhanh chóng
-- Sử dụng các công cụ kỹ thuật để giảm thiểu rủi ro và tăng tốc độ thực thi
-- Tập trung sự thận trọng vào những quyết định thực sự quan trọng như bảo mật và toàn vẹn dữ liệu
+Với quyết định có thể đảo ngược, tác giả khuyên giới hạn thời gian tìm hiểu trong khoảng 30–60 phút rồi hành động, kèm các lớp bảo vệ: feature flag mặc định tắt, pull request nhỏ, kiểm thử cả hai trạng thái, kiểm tra canary, cảnh báo đầy đủ và kịch bản hoàn tác trong mười phút. Sự thận trọng nên dành cho những quyết định thực sự khó quay đầu. Thông điệp chính: khi rủi ro nhỏ và thay đổi có thể đảo ngược, hãy phát hành cùng các lớp bảo vệ — đó là cách đi nhanh mà không cẩu thả.
 
 ## [Why are Event-Driven Systems Hard?](https://newsletter.scalablethread.com/p/why-event-driven-systems-are-hard)
 
-Kiến trúc event-driven đang ngày càng phổ biến trong các hệ thống phân tán hiện đại nhờ khả năng mở rộng và tính đàn hồi cao. Tuy nhiên, việc triển khai và duy trì các hệ thống này lại không hề đơn giản. Bài viết phân tích những thách thức chính mà các kỹ sư phần mềm phải đối mặt khi làm việc với event-driven systems.
+Kiến trúc hướng sự kiện (event-driven) giúp các service tách rời nhau và dễ mở rộng, nhưng đi kèm năm thách thức lớn. Thứ nhất là quản lý định dạng sự kiện: khi một service thêm hoặc đổi trường dữ liệu mà không phối hợp, các service phía sau có thể không đọc được nữa; giải pháp là tuân thủ quy tắc tương thích ngược và tương thích xuôi, cùng với schema registry đóng vai trò "từ điển trung tâm" cho định dạng sự kiện. Thứ hai là khả năng quan sát: luồng xử lý bị chia nhỏ qua nhiều service độc lập nên rất khó nhìn thấy toàn cảnh khi gỡ lỗi; cách khắc phục là distributed tracing với correlation ID — một mã định danh gắn vào sự kiện đầu tiên và được sao chép qua mọi bước xử lý để dựng lại hành trình của một yêu cầu.
 
-Một trong những vấn đề cốt lõi là **quản lý phiên bản định dạng message**. Khi hệ thống phát triển, các service có thể gửi các event schema được cập nhật mà các service cũ không thể hiểu được, dẫn đến gián đoạn giao tiếp. Để giải quyết vấn đề này, cần áp dụng các chiến lược như tương thích ngược/tiến và sử dụng schema registries.
-
-Khó khăn khác là **khả năng quan sát và gỡ lỗi**. Khác với các hệ thống tuyến tính, luồng yêu cầu trong kiến trúc event-driven bị phân tán khắp các service. Để gỡ lỗi hiệu quả, cần sử dụng **distributed tracing** với **correlation IDs** để theo dõi events xuyên suốt các service.
-
-Vấn đề về **xử lý lỗi và mất message** cũng thường xuyên xảy ra do các sự cố hạ tầng. Hầu hết các hệ thống đảm bảo **giao message ít nhất một lần**, nhưng điều này có thể dẫn đến xử lý trùng lặp. **Dead-Letter Queues (DLQs)** giúp cách ly các message có vấn đề để tránh ảnh hưởng toàn hệ thống.
-
-**Idempotency** là một yêu cầu quan trọng để xử lý message trùng lặp. Các service phải được thiết kế sao cho việc xử lý cùng một message nhiều lần không gây ra tác dụng phụ không mong muốn. Điều này thường được thực hiện bằng cách theo dõi các event ID đã xử lý.
-
-Cuối cùng, **eventual consistency** là một đặc điểm của hệ thống event-driven, nơi dữ liệu được cập nhật bất đồng bộ, dẫn đến tình trạng không nhất quán tạm thời. Các ứng dụng phải được thiết kế để chịu được độ trễ này.
-
-**Điểm chính:**
-- Event-driven systems mang lại tính đàn hồi và linh hoạt nhưng đi kèm nhiều thách thức
-- Quản lý phiên bản message và đảm bảo tương thích là vấn đề phức tạp
-- Distributed tracing và correlation IDs là thiết yếu để gỡ lỗi
-- Idempotency là yêu cầu bắt buộc để xử lý message trùng lặp
-- Eventual consistency là đặc điểm cần được cân nhắc khi thiết kế hệ thống
+Thứ ba là xử lý lỗi: cơ chế giao message ít nhất một lần (at-least-once) giúp không mất message khi hạ tầng gặp sự cố, còn Dead-Letter Queue (DLQ) giữ lại những message liên tục thất bại sau số lần thử lại giới hạn, tránh vòng lặp lỗi vô tận và cho phép điều tra sau. Thứ tư, chính cơ chế at-least-once khiến một service có thể nhận cùng một message nhiều lần nếu nó bị sập trước khi xác nhận hoàn tất, nên service phải có tính idempotent: lưu ID sự kiện đã xử lý và bỏ qua bản trùng, tránh lỗi như trừ tiền hai lần. Cuối cùng là eventual consistency: dữ liệu được lan truyền bất đồng bộ giữa các service, nên giao diện và logic nghiệp vụ phải chấp nhận việc các hệ thống tạm thời chưa thống nhất.
 
 ## [Dev Culture Is Dying: The Curious Developer Is Gone](https://dayvster.com/blog/dev-culture-is-dying-the-curious-developer-is-gone/)
 
-Văn hóa phát triển phần mềm đang trải qua một sự thay đổi đáng buồn theo quan điểm của bài viết. Trước đây, các lập trình viên xây dựng các công cụ như Linux và Git xuất phát từ niềm đam mê và sự tò mò cá nhân, chứ không phải vì lợi nhuận hay danh tiếng.
+Tác giả cho rằng văn hóa lập trình đang thay đổi theo hướng đáng lo ngại. Những công cụ làm nên nền tảng ngày nay như VLC, Linux, Git hay Docker ra đời từ sự tò mò và mong muốn giải quyết vấn đề, chứ không phải vì lợi nhuận hay danh tiếng. Tác giả nhớ lại những năm 2000, khi lập trình viên thức trắng đêm mày mò công nghệ mới chỉ để học hỏi mà không mong đợi lợi ích thương mại hay sự công nhận. Ngày nay, sự chú ý chuyển sang các chỉ số như MRR, ARR, DAU, MAU, thứ hạng SEO hay tỷ lệ chuyển đổi, và nhiều người theo đuổi framework mới vì áp lực phải tỏ ra bắt kịp xu hướng hơn là vì thực sự hứng thú. Động lực nội tại dần nhường chỗ cho sự công nhận từ bên ngoài.
 
-Ngày nay, nhiều developer theo đuổi các framework mới không phải vì sự hứng thú thực sự, mà là do áp lực phải thể hiện mình là người có liên quan. Sự thay đổi này có nguy cơ ngăn chặn đổi mới, vì động lực nội tại bị thay thế bằng sự công nhận từ bên ngoài.
-
-> "Có điều gì đó cần được nói về việc học mà không có mục đích rõ ràng… bạn bắt đầu hành trình chỉ vì bạn tò mò."
-
-Bài viết cảnh báo về việc các developer ngày nay xác định bản thân theo công cụ họ sử dụng hơn là các vấn đề họ giải quyết:
-
-> "Bạn trở thành một Next.js developer, một React developer… Bạn bắt đầu xác định bản thân bằng các công cụ bạn sử dụng thay vì các vấn đề bạn giải quyết."
-
-Tác giả kêu gọi sự trở lại của việc tò mò khám phá và các dự án cá nhân, khuyến khích các developer xây dựng vì chính họ trước, không cần lo lắng về quy mô hay khả năng kiếm tiền.
-
-> "Hãy tạo ra điều gì đó tuyệt vời, điều gì đó độc đáo… xây dựng vì bạn muốn, vì nó làm bạn hạnh phúc."
-
-Bài viết than thở về sự suy giảm của tinh thần chủ sở hữu—không chỉ cho người dùng, mà cả cho những người sáng tạo có thể bán đi hoặc mất quyền kiểm soát tầm nhìn ban đầu của họ.
-
-> "Họ có quan tâm đến phần mềm họ xây dựng hay chỉ đơn giản quan tâm đến các chỉ số, doanh thu, tăng trưởng?"
-
-Cuối cùng, bài viết thúc giục các developer lấy lại sự tò mò, sáng tạo và niềm vui khi xây dựng chỉ vì lý do xây dựng.
-
-**Điểm chính:**
-- Văn hóa phát triển phần mềm đã chuyển từ đam mê sang hướng đến chỉ số và doanh thu
-- Các developer ngày nay thường xác định bản thân theo công cụ hơn là vấn đề họ giải quyết
-- Sự tò mò và động lực nội tại đang bị thay thế bởi sự công nhận từ bên ngoài
-- Cần trở lại với tinh thần khám phá và xây dựng dự án cá nhân
-- Quan trọng là phải giữ được niềm vui khi lập trình vì bản thân nó
+Bài viết cũng chỉ ra một cuộc khủng hoảng bản sắc: lập trình viên tự định danh bằng công cụ, trở thành "Next.js developer" hay "Rust developer", thay vì bằng những vấn đề họ giải quyết. Tác giả so sánh việc phần mềm tiêu dùng chuyển sang mô hình thuê bao với việc chính người sáng tạo đánh mất quyền làm chủ sản phẩm của mình vào tay doanh nghiệp hoặc các chỉ số tăng trưởng, và đặt câu hỏi liệu họ còn quan tâm đến phần mềm mình xây dựng hay chỉ quan tâm đến doanh thu. Lời kêu gọi cuối bài là hãy quay lại làm những dự án xuất phát từ sự tò mò — kể cả những thứ không thể bán được — xây dựng vì niềm vui, rồi chia sẻ chúng để truyền cảm hứng cho người khác.
 
 ## [Tool Calls Are Expensive And Finite](https://www.reillywood.com/blog/tool-calls-are-expensive-and-finite/)
 
-Tool calls trong các hệ thống AI cho phép các LLM vượt ra ngoài việc sinh text bằng cách tương tác với các hàm bên ngoài. Tuy nhiên, chúng đi kèm với chi phí đáng kể và những hạn chế.
+Việc cho LLM quyền sử dụng công cụ (tool) tạo ra những agent mạnh mẽ, nhưng Reilly Wood nhắc rằng một lần gọi tool tốn kém hơn một lần gọi hàm thông thường trong mã nguồn nhiều bậc độ lớn, và số lần gọi có giới hạn thực tế. Về bản chất, tool call vẫn là sinh văn bản: mô hình tạo ra một đoạn văn bản có cấu trúc (dạng JSON) ghi tên tool và tham số, hệ thống phân tích đoạn đó, thực thi hàm thật, rồi chèn kết quả vào lịch sử hội thoại như một message mới trước khi mô hình suy luận tiếp. Như vậy mỗi lần gọi đều tiêu tốn token để sinh ra lời gọi và chiếm thêm chỗ trong context window vì kết quả nằm lại trong đó.
 
-Theo Reilly Wood giải thích, "việc gọi một tool tốn kém hơn rất nhiều so với việc gọi một hàm thông thường từ code." Điều này là bởi vì mỗi tool call đều liên quan đến việc tạo ra text có cấu trúc, chiếm dụng tokens và không gian trong context window.
-
-Về mặt kỹ thuật, một tool call hoạt động như sau:
-1. Model tạo ra một message chỉ định tên tool và các tham số.
-2. Hệ thống phân tích message này và thực thi hàm thực tế.
-3. Kết quả được đưa lại vào context của model như một message mới.
-
-Quá trình này có nghĩa là "toàn bộ kết quả của mỗi tool call đều kết thúc trong context window," khiến cho việc gọi nhiều lần trở nên tốn kém. Ví dụ, một agent cố gắng xử lý 100 user IDs thông qua các tool call riêng lẻ có thể làm cạn kiệt context window trước khi hoàn thành nhiệm vụ.
-
-Wood nhấn mạnh rằng "mọi người nên hiểu rằng... sẽ luôn có giới hạn về số lượng tool call mà một agent có thể thực hiện một cách hiệu quả."
-
-Để giải quyết những hạn chế này, các developer nên thiết kế các tool linh hoạt hơn hoặc cân nhắc để các agent tạo và chạy code thay thế, đồng thời lưu ý đến các rủi ro bảo mật.
-
-**Điểm chính:**
-- Tool calls trong AI tốn kém hơn nhiều so với các hàm thông thường
-- Mỗi tool call chiếm dụng không gian trong context window
-- Việc gọi nhiều tool call có thể làm cạn kiệt context window
-- Cần thiết kế các tool linh hoạt hơn để tối ưu hiệu suất
-- Cần cân nhắc giữa hiệu suất và rủi ro bảo mật khi sử dụng tool calls
+Tác giả minh họa bằng ví dụ xử lý 1.000 user ID qua tool `get_user_info()`: một lập trình viên chỉ cần viết một vòng lặp, còn agent sẽ phải thực hiện 1.000 lần gọi riêng lẻ và nhiều khả năng cạn context window trước khi làm xong. Bài viết gợi ý ba hướng: thiết kế agent cho những bài toán không đòi hỏi quá nhiều lần gọi tool, xây dựng những tool linh hoạt hơn để mỗi lần gọi làm được nhiều việc, hoặc cho phép agent tự viết và chạy mã nguồn — với điều kiện có biện pháp bảo mật phù hợp.
 
 ## [Keeping Secrets Out of Logs](https://allan.reyes.sh/posts/keeping-secrets-out-of-logs/)
 
-Allan Reyes thảo luận về các chiến lược để ngăn chặn dữ liệu nhạy cảm bị ghi lại trong log của các hệ thống phần mềm. Ông nhấn mạnh rằng không có giải pháp duy nhất ("silver bullet") mà cần áp dụng nhiều cách tiếp cận lớp layers ("lead bullets").
+Allan Reyes phân tích vì sao dữ liệu bí mật (secret) như mật khẩu hay token cứ lọt vào log, và nhấn mạnh rằng không có "viên đạn bạc" nào giải quyết triệt để, mà cần kết hợp nhiều "viên đạn chì" — những biện pháp không hoàn hảo nhưng bổ trợ nhau. Sáu nguyên nhân phổ biến là: quên xóa câu lệnh ghi log khi gỡ lỗi; ghi nguyên cả đối tượng lớn như cấu hình hay phản hồi HTTP; đổi mức log toàn cục làm lộ thông tin vốn bị ẩn; secret nhúng sẵn trong URL; công cụ giám sát lỗi thu thập cả biến cục bộ; và người dùng gõ nhầm mật khẩu vào ô tên đăng nhập.
 
-Các nguyên nhân chính khiến secrets xuất hiện trong log bao gồm:
-- Ghi trực tiếp dữ liệu nhạy cảm vào log
-- Logging các đối tượng lớn ("kitchen sinks") chứa secrets
-- Thay đổi cấu hình làm tăng mức độ chi tiết của log
-- Secrets được nhúng trong URL hoặc các định dạng khác
-- Các công cụ telemetry thu thập biến cục bộ
-- Lỗi nhập liệu của người dùng (ví dụ: nhập mật khẩu vào ô tên người dùng)
-
-Các giải pháp chính bao gồm:
-- **Domain primitives:** Tạo các kiểu hoặc lớp riêng biệt cho secrets để có thể theo dõi và kiểm soát.
-- **Read-once objects:** Bọc secrets để chỉ có thể truy cập một lần, ngăn ngừa việc sử dụng lại vô tình.
-- **Taint checking:** Sử dụng phân tích tĩnh để theo dõi luồng dữ liệu nhạy cảm trong hệ thống.
-- **Log formatters:** Làm sạch hoặc loại bỏ dữ liệu nhạy cảm trước khi xuất log.
-- **Preventive testing:** Cấu hình test để thất bại khi phát hiện secrets trong log.
-- **Log pre-processors:** Các công cụ quét và loại bỏ dữ liệu nhạy cảm khỏi log trước khi lưu trữ.
-
-Cách tiếp cận chiến lược bao gồm:
-1. Xây dựng nền tảng với văn hóa và công cụ phù hợp
-2. Hiểu cách dữ liệu chảy qua hệ thống
-3. Bảo vệ các "điểm nghẽn" chính nơi log được tạo ra hoặc xử lý
-4. Áp dụng bảo vệ nhiều lớp với nhiều lớp bảo vệ
-5. Lập kế hoạch cho ứng phó và phục hồi sự cố
-
-Reyes kết luận rằng mặc dù vấn đề này tồn tại dai dẳng và phức tạp, nhưng cách tiếp cận có hệ thống sử dụng nhiều kỹ thuật có thể giảm đáng kể nguy cơ rò rỉ secrets trong log.
-
-**Điểm chính:**
-- Không có giải pháp đơn lẻ cho vấn đề secrets trong log
-- Cần áp dụng nhiều lớp bảo vệ để đảm bảo an toàn
-- Các nguyên nhân phổ biến bao gồm logging trực tiếp và cấu hình sai
-- Giải pháp bao gồm domain primitives, read-once objects và taint checking
-- Cần có chiến lược toàn diện từ phòng ngừa đến ứng phó sự cố
+Các biện pháp gồm: gom log về một đường ống duy nhất; tối giản, che, mã hóa hoặc băm dữ liệu nhạy cảm; domain primitive — bọc secret trong kiểu dữ liệu riêng để chặn việc vô tình ghi log; read-once object — khóa giá trị sau lần đọc đầu tiên; bộ định dạng log tự dò và che chuỗi nguy hiểm; kiểm thử đơn vị báo lỗi khi gặp dữ liệu nhạy cảm; công cụ quét secret sau khi ghi; bộ tiền xử lý log trước khi lưu trữ (như Vector); taint checking bằng phân tích tĩnh; và đào tạo con người. Chiến lược bốn bước là xây nền tảng (thống nhất thế nào là secret, dùng log có cấu trúc và tập trung), hiểu luồng dữ liệu, bảo vệ các điểm hội tụ của log, và phòng thủ nhiều lớp. Tác giả thừa nhận công việc này gần như không bao giờ kết thúc vì hệ thống mới luôn có thể vượt qua các biện pháp hiện có.
 
 ## [Things I Believe](https://leerob.com/beliefs)
 
-Lee Robinson chia sẻ những niềm tin và nguyên tắc cốt lõi của ông:
+Lee Robinson chia sẻ những niềm tin định hình cách ông làm việc. Trước hết, phát hành nhanh quan trọng hơn chiến lược hoàn hảo: tốc độ là một siêu năng lực, các nhóm nhỏ phát hành nhanh hơn, và việc sản phẩm được người dùng đón nhận quan trọng hơn chỉ đơn thuần đưa mã nguồn lên. Sự nghiệp không có giới hạn trần: sự kiên trì vượt qua tài năng bẩm sinh, cải thiện đều đặn mỗi ngày sẽ cộng dồn theo thời gian, hãy chủ động và sẵn lòng giúp đỡ. Ông đề cao việc tìm kiếm sự thật đến cùng — chấp nhận những sự thật khó chịu, giữ quan điểm mạnh nhưng sẵn sàng thay đổi, và lắng nghe nhiều góc nhìn khác nhau.
 
-- **Phát hành nhanh:** Tốc độ là một sức mạnh siêu nhiên; các team nhỏ, thân thiện với AI sẽ phát hành nhanh hơn. Sự áp dụng quan trọng hơn là việc ra mắt.
-- **Phát triển sự nghiệp:** Sự kiên trì và cải thiện hàng ngày (1%) thắng hơn tài năng. Thời gian đầu tư sẽ được cộng dồn theo thời gian.
-- **Tìm kiếm sự thật:** Hãy cởi mở để thay đổi suy nghĩ. Giờ tiếp xúc và hiểu biết thực tế quan trọng hơn dữ liệu trừu tượng.
-- **Giao tiếp:** Viết rõ ràng phản ánh suy nghĩ rõ ràng. Các nhà lãnh đạo cung cấp sự rõ ràng và lường trước các phản đối trong giao tiếp.
-- **Marketing dành cho developer:** Sự chân thật và giáo dục hiệu quả hơn marketing truyền thống. Việc hữu ích tạo ra giá trị dài hạn.
-- **Lãnh đạo:** Ảnh hưởng và sở hữu công việc vượt qua chức danh định nghĩa lãnh đạo. Ủy quyền, nhưng cũng tự mình làm công việc.
-- **Đam mê công việc:** Công việc có thể trở thành sở thích khi được thúc đẩy bởi sự tò mò và cân bằng với ranh giới, không phải là sự cân bằng huyền thoại giữa công việc và cuộc sống.
-- **Thực thi:** Các bản demo và prototype có giá trị hơn memo dài dòng. Hãy phát hành những gì khiến bạn hào hứng.
-- **Tuyển dụng:** Các nhà lãnh đạo giỏi tuyển dụng dựa trên tiềm năng phát triển và học hỏi, không chỉ kỹ năng hiện tại. Hãy hỏi ứng viên về công việc họ tự hào nhất.
-- **Đồng cảm:** Giả định ý định tốt đẹp. Dẫn đầu bằng sự đồng cảm và lắng nghe phản biện một cách khách quan.
-
-**Điểm chính:**
-- Tốc độ là sức mạnh siêu nhiên trong phát triển phần mềm
-- Sự kiên trì và cải tiến hàng ngày quan trọng hơn tài năng bẩm sinh
-- Giao tiếp rõ ràng phản ánh suy nghĩ rõ ràng
-- Lãnh đạo không chỉ là chức danh mà là ảnh hưởng và sở hữu công việc
-- Cần có sự cân bằng giữa công việc và cuộc sống cá nhân
+Theo ông, giao tiếp chính là công việc: viết rõ ràng phản ánh tư duy rõ ràng, ai cũng nên rèn kỹ năng viết, và người lãnh đạo cần làm rõ những điều mơ hồ để tránh kỳ vọng lệch nhau. Lãnh đạo không cần chức danh, vì sức ảnh hưởng quan trọng hơn vị trí; người lãnh đạo giỏi vừa trực tiếp làm việc vừa trao quyền cho người khác. Công việc cũng có thể là sở thích khi đam mê đi kèm ranh giới rõ ràng, thay vì theo đuổi thứ "cân bằng công việc – cuộc sống" mang tính huyền thoại. Tuyển dụng phải thật khắt khe, chỉ nhận những ứng viên khiến bạn muốn nói "chắc chắn có" và ưu tiên tiềm năng phát triển. Cuối cùng, hãy luôn giả định thiện ý, dẫn dắt bằng sự đồng cảm, tiếp nhận phê bình một cách khách quan, và nhớ rằng một bản demo chạy được thuyết phục hơn một bản ghi nhớ dài dòng.
 
 ## [How Claude Code is Built](https://newsletter.pragmaticengineer.com/p/how-claude-code-is-built)
 
-Claude Code, một công cụ phát triển được hỗ trợ bởi AI, được tạo ra bởi Boris Cherny tại Anthropic vào năm 2024. Ban đầu nó là một công cụ terminal sử dụng Claude để tương tác với hệ thống của người dùng, bắt đầu chỉ là xác định các bản nhạc. Tiềm năng của nó được mở rộng khi nó có quyền truy cập vào filesystem và các lệnh bash, cho phép khám phá code một cách tự động.
+Claude Code bắt đầu từ một nguyên mẫu Boris Cherny làm vào tháng 9/2024: dùng Claude điều khiển terminal qua AppleScript, ban đầu chỉ để cho biết bài nhạc đang phát. Khi nhận ra mô hình có thể tự khám phá hệ thống tệp, nhóm thấy tiềm năng sản phẩm lớn. Anthropic bắt đầu dùng nội bộ vào tháng 11/2024 và chỉ sau năm ngày đã có một nửa số kỹ sư sử dụng; dù từng cân nhắc giữ lại làm lợi thế cạnh tranh, công ty vẫn phát hành công khai để thúc đẩy nghiên cứu an toàn AI. Nhóm chọn TypeScript, React với framework Ink, hệ thống bố cục Yoga và Bun vì đây là những công nghệ "on distribution" — những thứ Claude vốn đã làm tốt — nhờ đó khoảng 90% mã nguồn của Claude Code được viết bởi chính Claude Code.
 
-Các khía cạnh chính trong việc phát triển và kiến trúc của Claude Code bao gồm:
-
-- **Công nghệ:** Được xây dựng với TypeScript, React, Ink, Yoga, và Bun. Bộ công nghệ này được chọn vì khả năng tương thích với Claude ("on distribution"), cho phép công cụ tự tạo khoảng 90% code của nó.
-
-- **Kiến trúc:** Được thiết kế đơn giản, Claude Code hoạt động cục bộ mà không cần ảo hóa. Nó giảm thiểu logic nghiệp vụ, để mô hình AI xử lý hầu hết các tác vụ. Giao diện người dùng được giữ tối giản để tránh hạn chế tiềm năng của mô hình.
-
-- **Hệ thống phân quyền:** Hệ thống nhiều cấp tìm kiếm sự chấp thuận của người dùng cho các hành động nhạy cảm, với tùy chọn duy trì quyền truy cập giữa các phiên. Nó sử dụng phân tích tĩnh để đánh giá các lệnh dựa trên cài đặt do người dùng xác định.
-
-- **Tạo mẫu nhanh:** Đội ngũ xây dựng và thử nghiệm nhiều mẫu nhanh chóng, lặp lại dựa trên phản hồi. Ví dụ, Boris đã thử nghiệm hơn 20 biến thể của tính năng danh sách việc cần làm trong chỉ hai ngày bằng cách sử dụng các thành phần UI do AI tạo ra.
-
-- **Đổi mới UX Terminal:** Claude Code nâng cao tương tác terminal với các tính năng như các phần tử UI tương tác, kiểu đầu ra (ví dụ: chế độ giải thích hoặc học tập) và chỉ báo tiến độ thời gian thực.
-
-- **Subagents & Khả năng mở rộng:** Các tính năng như subagents và hỗ trợ cho Model Context Protocol (MCP) cho phép khả năng mô-đun và mở rộng. Hooks cho phép các lệnh shell tùy chỉnh.
-
-- **Tính năng doanh nghiệp:** Bao gồm thiết lập IAM, phân tích và tùy chọn cấu hình toàn đội.
-
-- **Kỹ thuật hướng AI:** Đội ngũ tận dụng AI cho đánh giá code, kiểm thử và phản hồi sự cố, góp phần vào chu kỳ phát triển nhanh hơn và tăng năng suất. Dữ liệu nội bộ cho thấy mức tăng 67% trong hiệu suất PR sau khi áp dụng Claude Code.
-
-Claude Code đại diện cho sự thay đổi hướng tới kỹ thuật phần mềm hướng AI, nhấn mạnh lặp nhanh, scaffolding tối thiểu và tích hợp sâu với khả năng AI.
-
-**Điểm chính:**
-- Claude Code là công cụ phát triển AI được tạo ra bởi Anthropic vào năm 2024
-- Được xây dựng với TypeScript, React, Ink, Yoga và Bun để tương thích với Claude
-- Kiến trúc đơn giản hoạt động cục bộ mà không cần ảo hóa
-- Hệ thống phân quyền nhiều cấp với tùy chọn duy trì quyền truy cập
-- Tận dụng AI để tạo mẫu nhanh và giao diện người dùng
-- Hỗ trợ subagents và Model Context Protocol (MCP) cho khả năng mở rộng
-- Đội ngũ sử dụng AI cho đánh giá code, kiểm thử và phản hồi sự cố
-- Đại diện cho sự thay đổi hướng tới kỹ thuật phần mềm hướng AI
+Về kiến trúc, Claude Code là một lớp vỏ mỏng quanh mô hình với rất ít logic nghiệp vụ, chạy trực tiếp trên máy người dùng mà không cần ảo hóa. Phần phức tạp nhất là hệ thống phân quyền: công cụ xin phép người dùng trước các thao tác không thể hoàn tác, cho phép cấp quyền một lần hoặc lâu dài, với cấu hình nhiều cấp theo dự án, người dùng và công ty. Tốc độ tạo nguyên mẫu cũng rất đáng chú ý: khi xây dựng tính năng danh sách việc cần làm, nhóm đã thử khoảng 20 nguyên mẫu khác nhau chỉ trong hai ngày. Khi quy mô nhóm kỹ sư tăng gấp đôi, số pull request được hoàn thành vẫn tăng 67% — một chỉ số thường giảm khi đội ngũ mở rộng nhanh.
 
 ## Bonus: Một vài ảnh hay ho đến từ [ByteByteGo](https://bytebytego.com/)
 
@@ -205,4 +61,4 @@ Claude Code đại diện cho sự thay đổi hướng tới kỹ thuật phầ
 
 ---
 
-*Bài viết đã được review và cập nhật bởi Claude Code với Opus 4.7 (1M context).*
+*Bài viết đã được viết lại bởi Claude Code với Opus 5.5 vào ngày 27/09/2026.*

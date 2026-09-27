@@ -11,7 +11,7 @@ Chào các bạn, lại một cuối tuần nữa trôi qua, mời các bạn ch
 
 ## [Java's Plans for 2025 - Inside Java Newscast #83](https://www.youtube.com/watch?v=y26XGt8d_kI)
 
-Video này trên Inside Java Newscast trình bày những phát triển và kế hoạch dự kiến cho Java trong năm 2025, tập trung vào các dự án OpenJDK lớn như Babylon, Loom, Leyden, Lilliput, Panama và Valhalla (ngoại trừ Amber, sẽ được đề cập trong một video khác).
+Tập Inside Java Newscast #83 do kênh Java chính thức phát hành điểm qua lộ trình của Java trong năm 2025 thông qua các dự án OpenJDK lớn: Babylon, Loom, Leyden, Lilliput, Panama và Valhalla. Với mỗi dự án, video tóm tắt những gì đã đạt được và những bước tiếp theo đang được lên kế hoạch; riêng dự án Amber được dành cho một tập khác. Đây là cách nhanh để bạn nắm được bức tranh tổng thể về hướng phát triển của ngôn ngữ và nền tảng Java.
 
 ## ~~[Why You Should Learn Kotlin in 2025](https://dev.to/empiree/why-you-should-learn-kotlin-in-2025-47g0)~~
 
@@ -19,31 +19,45 @@ Video này trên Inside Java Newscast trình bày những phát triển và kế
 
 ## [Mastering Java Logging: Best Practices for Effective Application Monitoring](https://dev.to/nithinbharathwaj/mastering-java-logging-best-practices-for-effective-application-monitoring-20h7)
 
-Bài viết này trên Dev.to cung cấp hướng dẫn toàn diện về việc thực hiện ghi log hiệu quả trong các ứng dụng Java. Nó bao gồm các khía cạnh thiết yếu như chọn khung ghi log phù hợp, sử dụng các cấp log thích hợp, triển khai ghi log có cấu trúc và nhận biết ngữ cảnh, quản lý hiệu suất và bảo mật, đồng thời thiết lập ghi log tập trung.
+Bài viết trên Dev.to tổng hợp các thực hành tốt khi ghi log cho ứng dụng Java. Tác giả khuyên dùng SLF4J làm lớp trừu tượng kết hợp với Logback, để có thể đổi thư viện ghi log bên dưới mà không phải sửa mã nguồn, đồng thời giải thích cách chọn đúng cấp log từ TRACE đến FATAL nhằm tránh vừa bỏ sót lỗi quan trọng vừa làm nhiễu hệ thống cảnh báo. Bài cũng hướng dẫn ghi log có cấu trúc dưới dạng JSON với logstash-logback-encoder và dùng MDC để tự động gắn thông tin ngữ cảnh như mã yêu cầu hay mã người dùng vào mọi dòng log.
+
+Phần sau tập trung vào hiệu năng và vận hành: dùng appender bất đồng bộ, tránh tính toán tốn kém trong câu lệnh log và trì hoãn việc tạo thông điệp bằng biểu thức lambda. Về bảo mật, tác giả nhấn mạnh việc che dữ liệu nhạy cảm như số thẻ tín dụng hay mật khẩu. Cuối cùng, bài giới thiệu cách gom log tập trung bằng ELK hoặc Graylog và thiết lập xoay vòng, lưu giữ log theo thời gian để không làm đầy ổ đĩa.
 
 ## [Fixed Window Counter Rate Limiter (Redis & Java)](https://foojay.io/today/fixed-window-counter-rate-limiter-redis-java/)
 
-Bài viết này trên foojay.io trình bày cách triển khai thuật toán giới hạn tốc độ bộ đếm cửa sổ cố định bằng Redis và Java. Bài viết này giải thích cách hoạt động của thuật toán, cách triển khai nó bằng Jedis và Redis và cách kiểm tra nó bằng Redis TestContainers và JUnit 5.
+Bài viết trên foojay.io hướng dẫn xây dựng bộ giới hạn tần suất yêu cầu theo thuật toán bộ đếm cửa sổ cố định bằng Redis và Java. Thuật toán chia thời gian thành các khoảng cố định, đếm số yêu cầu trong mỗi khoảng và từ chối khi vượt ngưỡng; ưu điểm là đơn giản, nhưng có thể bị dồn yêu cầu tại ranh giới giữa hai cửa sổ. Phần cài đặt dùng Jedis với mỗi khách hàng một khóa riêng: đọc bộ đếm bằng GET, sau đó trong một giao dịch MULTI/EXEC tăng bộ đếm bằng INCR và đặt thời hạn bằng EXPIRE với cờ NX, để thời hạn chỉ được gán khi khóa vừa được tạo và cửa sổ không bị kéo dài sau mỗi yêu cầu.
+
+Bài cũng trình bày cách kiểm thử với Redis TestContainers, JUnit 5 và AssertJ, bao quát các trường hợp: yêu cầu trong giới hạn được chấp nhận, yêu cầu vượt giới hạn bị từ chối, bộ đếm được đặt lại khi cửa sổ hết hạn, các khách hàng có bộ đếm độc lập và yêu cầu bị từ chối không bị tính thêm vào bộ đếm.
 
 ## [How JVM handles exceptions](https://foojay.io/today/how-jvm-handles-exceptions/)
 
-Bài viết này trên foojay.io đi sâu vào cách Máy ảo Java (JVM) xử lý các ngoại lệ, tập trung vào bảng ngoại lệ và các hướng dẫn bytecode liên quan đến các khối try-catch-finally.
+Bài viết trên foojay.io giải thích cơ chế xử lý ngoại lệ bên trong máy ảo Java (JVM) ở mức bytecode. Mỗi phương thức có một bảng ngoại lệ, trong đó mỗi dòng xác định một khoảng lệnh được bảo vệ (from, to), vị trí nhảy tới để xử lý (target) và kiểu ngoại lệ cần bắt, hoặc "any" đối với khối finally. Khi gặp lệnh athrow, JVM lấy đối tượng ngoại lệ khỏi ngăn xếp toán hạng rồi tra bảng này để tìm trình xử lý phù hợp; nếu không tìm thấy, nó lần ngược lên các khung gọi hàm cho đến khi gặp trình xử lý hoặc chương trình kết thúc.
+
+Tác giả cũng phân tích cách trình biên dịch chuyển khối try-catch-finally thành bytecode: khối catch và khối finally có các dòng riêng trong bảng ngoại lệ, và các dòng kiểu "any" bảo đảm finally luôn được thực thi, kể cả khi ngoại lệ phát sinh ngay trong khối catch. Đây là bài đọc hữu ích nếu bạn muốn hiểu điều gì thực sự diễn ra khi một ngoại lệ được ném ra.
 
 ## [Database Sharding Explained](https://architecturenotes.co/p/database-sharding-explained)
 
-Bài viết này trên Architecture Notes giải thích về phân vùng cơ sở dữ liệu, một kỹ thuật để phân phối dữ liệu trên nhiều máy khi một máy duy nhất không thể xử lý khối lượng công việc dự kiến. Bài viết này bao gồm các tùy chọn khác trước khi phân vùng, các loại phân vùng, tầm quan trọng của khóa phân vùng, cách xử lý các giao dịch đa phân vùng và sự phức tạp hoạt động của việc phân vùng.
+Bài viết trên Architecture Notes giải thích sharding, kỹ thuật chia dữ liệu ra nhiều máy khi một máy chủ cơ sở dữ liệu không còn đáp ứng được tải. Trước khi sharding, tác giả khuyên cân nhắc các phương án đơn giản hơn: không làm gì nếu chưa có điểm nghẽn rõ ràng, nâng cấp phần cứng theo chiều dọc, nhân bản dữ liệu để tăng khả năng đọc, hoặc chuyển bớt dữ liệu sang các hệ thống chuyên dụng như Elasticsearch cho tìm kiếm hay S3 cho tệp lớn.
+
+Bài tiếp tục trình bày ba cách sharding: dựa trên hàm băm của khóa (phân bố đều nhưng khó chia lại), dựa trên khoảng giá trị (cần bảng tra cứu và khóa có độ phân tán tốt để tránh điểm nóng), và dựa trên quan hệ (giữ dữ liệu liên quan trên cùng một shard). Tác giả làm rõ vai trò của khóa shard, phân biệt shard logic với shard vật lý, và giải thích vì sao giao dịch trải trên nhiều shard cần giao thức cam kết hai pha, kéo theo chi phí ghi thêm và độ phức tạp đáng kể. Thông điệp chính là sharding giúp mở rộng quy mô nhưng đổi lại gánh nặng vận hành rất lớn.
 
 ## [Protecting your time from predators in large tech companies](https://www.seangoedecke.com/predators/)
 
-Bài viết blog này của seangoedecke.com cảnh báo các kỹ sư phần mềm giỏi tại các công ty công nghệ lớn về việc những người khác liên tục tìm cách giành lấy thời gian của họ, đôi khi một cách khai thác. Nó cung cấp hướng dẫn về cách xác định và tránh những "kẻ săn mồi" này để tập trung vào các trách nhiệm chính.
+Trong bài viết này, Sean Goedecke cảnh báo các kỹ sư giỏi ở công ty công nghệ lớn về những người liên tục tìm cách chiếm thời gian của họ, mà ông gọi là "kẻ săn mồi". Có hai nhóm điển hình: quản lý sản phẩm ở bộ phận khác nhắn tin riêng nhờ "sửa nhanh một chút" để né quy trình ưu tiên chính thức, và những kỹ sư yếu thường xuyên nhờ giúp đỡ thay cho việc tự học, lấy công sức của người khác mà không ghi nhận lại.
+
+Để tự bảo vệ, tác giả khuyên nhận diện những yêu cầu bất cân xứng, tức người hỏi bỏ ra rất ít công sức nhưng bạn phải làm rất nhiều, và đáp lại với mức công sức tương xứng. Nên đưa các yêu cầu ra kênh công khai thay vì tin nhắn riêng để công sức được ghi nhận và quản lý nắm được. Ông cũng lưu ý phân biệt các trường hợp chính đáng: hỗ trợ quản lý, cấp dưới hay kỹ sư mới đang học việc vẫn là trách nhiệm của bạn. Điều quan trọng nhất là nhớ rằng hoàn thành dự án mới là công việc chính.
 
 ## [How to improve your WFH lighting to reduce eye strain](https://rustle.ca/posts/articles/work-from-home-lighting)
 
-Bài viết này trên rustle.ca thảo luận về tầm quan trọng của ánh sáng phù hợp để giảm mỏi mắt khi làm việc tại nhà. Tác giả chia sẻ kinh nghiệm cá nhân và cung cấp lời khuyên thực tế về cách tạo ra một môi trường ánh sáng dễ chịu, bao gồm sử dụng ánh sáng tự nhiên, cải thiện chất lượng ánh sáng nhân tạo và cân bằng độ sáng để giảm thiểu độ tương phản.
+Bài viết trên rustle.ca chia sẻ cách bố trí ánh sáng khi làm việc tại nhà để giảm mỏi mắt. Tác giả chỉ ra ba nguyên nhân chính: màn hình nhấp nháy mà mắt không nhận ra, nhất là khi giảm độ sáng và màn hình là nguồn sáng duy nhất; môi trường có độ tương phản cao như ánh nắng chói từ cửa sổ hay phòng sáng tối không đều; và việc nhìn ở một khoảng cách cố định quá lâu. Với nguyên nhân cuối, tác giả gợi ý quy tắc 20/20/20: cứ 20 phút lại nhìn vào vật cách khoảng 20 feet (khoảng 6 mét) trong ít nhất 20 giây.
+
+Các lời khuyên cụ thể gồm tận dụng tối đa ánh sáng tự nhiên, dùng rèm mỏng để khuếch tán nắng thay vì chắn hoàn toàn, bố trí nhiều nguồn sáng gián tiếp khắp phòng để tránh vùng tối, chọn bóng đèn có thể điều chỉnh độ sáng, không nhấp nháy, chỉ số hoàn màu (CRI) cao và nhiệt độ màu ấm khoảng 2700K, đồng thời dùng đèn bàn hoặc đèn hắt sau màn hình có độ sáng tương đương màn hình.
 
 ## [Working fast and slow](https://www.seangoedecke.com/working-fast-and-slow/)
 
-Bài viết blog này trên seangoedecke.com thảo luận về hai kiểu làm việc mà tác giả đã xác định trong sự nghiệp kỹ thuật của mình: làm việc tập trung và làm việc không tập trung. Thay vì cảm thấy có lỗi khi ngày làm việc của họ không phải lúc nào cũng nhất quán, họ tập trung vào việc tận dụng tối đa từng giai đoạn, tận dụng tối đa các giai đoạn tập trung và thực hiện công việc ít quan trọng hơn trong những ngày ít tập trung.
+Sean Goedecke chia sẻ rằng năng suất không đều không phải là vấn đề cần khắc phục, và ông chủ động làm việc theo hai trạng thái. Khi đang tập trung cao độ, những việc phức tạp trở nên dễ dàng, nên ông dồn sức cho các nhiệm vụ có tác động lớn, hạn chế mọi xao nhãng và có thể làm việc nhiều giờ liền. Tuy nhiên, trạng thái này tiêu hao một nguồn năng lượng nội tại có hạn và cần thời gian để phục hồi.
+
+Khi thiếu tập trung, ông chuyển sang các việc nhẹ hơn như xử lý những đầu việc dễ, đánh giá pull request hay hỗ trợ các dự án khác. Theo tác giả, cố gắng làm việc khó trong lúc thiếu tập trung chỉ sinh ra lỗi mà việc sửa còn tốn kém hơn cả việc chờ đợi, thậm chí gây đau đầu. Cách làm này cũng khớp với nhịp độ tự nhiên của các công ty công nghệ lớn, nơi xen kẽ những giai đoạn nhẹ nhàng và những dự án quan trọng cần dốc toàn lực.
 
 ## Bonus
 
@@ -63,4 +77,4 @@ Bài viết blog này trên seangoedecke.com thảo luận về hai kiểu làm 
 
 ---
 
-*Bài viết đã được review và cập nhật bởi Claude Code với Opus 4.7 (1M context).*
+*Bài viết đã được viết lại bởi Claude Code với Opus 5.5 vào ngày 27/09/2026.*

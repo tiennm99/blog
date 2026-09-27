@@ -9,15 +9,9 @@ categories: ["Newsletter"]
 
 ## [Build better software to build software better](https://slack.engineering/build-better-software-to-build-software-better/)
 
-Slack Engineering chia sẻ cách họ đã cải thiện thời gian build từ 60 phút xuống chỉ còn 10-30 phút bằng cách áp dụng các nguyên tắc kỹ thuật phần mềm vào hệ thống build. Bài viết phân tích cách sử dụng Bazel để tối ưu hóa quá trình build thông qua caching và parallelization, cùng với việc tách biệt các thành phần để tăng hiệu quả.
+Đội kỹ thuật của Slack kể lại cách họ rút ngắn thời gian xây dựng (build) của Quip và Canvas từ 60 phút xuống còn khoảng 10–30 phút, với luận điểm chính: các nguyên tắc kỹ thuật phần mềm không chỉ áp dụng cho mã nguồn ứng dụng mà cho cả hệ thống build. Giống như tối ưu hiệu năng mã nguồn, tăng tốc build dựa trên hai kỹ thuật là bộ nhớ đệm (làm ít việc hơn) và song song hóa (chia tải). Bazel hỗ trợ sẵn cả hai: tự động tái sử dụng kết quả khi đầu vào không đổi và phân phối các bước build ra nhiều lõi CPU. Tuy vậy, công cụ tốt thôi là chưa đủ nếu đồ thị phụ thuộc bị rối.
 
-**Điểm chính:**
-- Build performance tương tự như code performance - cần áp dụng caching (làm ít việc hơn) và parallelization (chia tải)
-- Bazel tự động cache kết quả build khi inputs không thay đổi và phân phối build actions across nhiều CPU cores
-- Vấn đề chính của Quip/Canvas build là sự couplings giữa backend và frontend, khiến mỗi thay đổi Python đều trigger frontend rebuild
-- Tách biệt concerns đã giảm thời gian build từ 60 phút xuống 25 phút trong trường hợp frontend đã được cache
-- Thiết kế layering đúng cách - builder chỉ nên focus vào business logic, không nên tự implement parallelization
-- Kết quả cuối cùng: build nhanh hơn 6 lần, với best case chỉ 10 phút khi cached và parallelized
+Vấn đề cốt lõi là phần frontend phụ thuộc vào toàn bộ backend đã biên dịch, nên mỗi thay đổi mã Python đều làm mất bộ nhớ đệm và buộc frontend phải build lại, trung bình tốn khoảng 35 phút mỗi lần. Nhóm đã kiên nhẫn gỡ rối yêu cầu thực sự của từng bước, tách biệt backend với frontend, hạ tầng Python với TypeScript, tách hệ thống build khỏi mã nguồn ứng dụng, đồng thời chia nhỏ để mỗi gói (bundle) và tệp CSS được lưu đệm độc lập. Họ cũng sửa lỗi phân lớp: công cụ build frontend chỉ nên tập trung vào logic nghiệp vụ, còn việc điều phối và song song hóa hãy để Bazel đảm nhận. Kết quả là build nhanh hơn tới 6 lần: trường hợp tốt nhất 10 phút, trung bình khoảng 12 phút và xấu nhất 30 phút.
 
 ## ~~[Things I Don't Like in Configuration Languages](https://medv.io/blog/things-i-dont-like-in-configuration-languages/)~~
 
@@ -33,42 +27,21 @@ Slack Engineering chia sẻ cách họ đã cải thiện thời gian build từ
 
 ## [Here's What's Next in Agentic Coding](https://seconds0.substack.com/p/heres-whats-next-in-agentic-coding/)
 
-Bài viết phân tích tương lai của agentic coding và các hướng phát triển sắp tới. Tác giả nhấn mạnh rằng context management là yếu tố quan trọng nhất và sẽ là trọng tâm của các cải tiến trong tương lai. Bài viết cung cấp cái nhìn toàn diện về các tính năng sắp có trong các công cụ coding AI.
+Bài viết dự đoán những hướng phát triển tiếp theo của lập trình với tác tử AI (agentic coding), xoay quanh một luận điểm: quản lý ngữ cảnh là yếu tố quyết định. Bộ khung điều khiển (harness) tốt phải đưa đúng thông tin cần thiết vào ngữ cảnh và loại bỏ phần gây nhiễu. Theo tác giả, chế độ lập kế hoạch (Plan Mode) sẽ tinh vi hơn nhiều, tỷ lệ công sức lập kế hoạch so với thực thi sẽ chuyển từ 20:80 thành 80:20 để AI có thể hoàn thành trọn một tính năng trong một lần chạy. Việc tìm kiếm trong kho mã sẽ kết hợp grep với embedding ngữ nghĩa, tài liệu tham khảo (như Context7 MCP) sẽ được truy xuất đúng lúc cần, còn quy tắc (rules) và kỹ năng (skills) chỉ được nạp theo điều kiện để không làm ô nhiễm ngữ cảnh.
 
-**Điểm chính:**
-- Plan Mode sẽ trở nên tinh vi hơn, với tỷ lệ plan:execute thay đổi từ 20:80 thành 80:20
-- Search sẽ kết hợp cả grep và embeddings để tăng hiệu quả tìm kiếm trong codebase
-- Docs by Default sẽ trở thành tiêu chuẩn - tự động truy xuất documentation khi cần
-- Rules và Skills sẽ được điều kiện hóa để tránh làm ô nhiễm context
-- Multiagent orchestration với Best of N sampling và Mix of Models sẽ trở nên phổ biến
-- Subagents sẽ được sử dụng nhiều hơn cho parallelization, context isolation và prompt customization
-- Critic & Self Review sẽ trở thành tính năng mặc định để cải thiện chất lượng
-- Memory sẽ được tích hợp để lưu trữ thông tin về user, codebase và lịch sử tương tác
+Ở tầng điều phối nhiều tác tử, tác giả kỳ vọng các kỹ thuật như lấy mẫu Best of N, kết hợp mô hình đắt tiền để lập kế hoạch với mô hình rẻ hơn để thực thi, và dùng tác tử con (subagent) để chạy song song, cô lập ngữ cảnh, với một tác tử chính đứng ra điều phối giúp giảm tải cho người dùng. Chất lượng đầu ra sẽ được nâng lên nhờ cơ chế tự phê bình và tự đánh giá, bộ khung tự đề xuất cải thiện cấu hình, cùng hệ thống bộ nhớ lưu giữ thông tin về người dùng và kho mã vượt ra ngoài cửa sổ ngữ cảnh. Tác giả nhận định tốc độ thay đổi hiện nay là chưa từng có.
 
 ## [Why agents DO NOT write most of our code - a reality check](https://octomind.dev/blog/why-agents-do-not-write-most-of-our-code-a-reality-check/)
 
-Octomind chia sẻ thực tế về việc sử dụng AI agents trong development. Dù xây dựng AI agents, họ vẫn viết phần lớn code bằng tay. Bài viết mô tả thử nghiệm xây dựng feature hoàn toàn bằng AI và các vấn đề gặp phải, cung cấp cái nhìn thực tế về khả năng hiện tại của coding agents.
+Dù chính họ xây dựng tác tử AI, đội ngũ Octomind cho biết phần lớn mã nguồn của công ty vẫn do con người viết. Sau nhiều tháng dùng Cursor, Claude Code và Windsurf, không ai thấy năng suất tăng đáng kể (từ 20% trở lên). Để kiểm chứng, hai kỹ sư dành một tuần xây dựng hoàn toàn bằng AI một tính năng: tạo bản sao kịch bản kiểm thử riêng cho từng nhánh. Ở lần thử đầu, dù đã viết yêu cầu chi tiết và cập nhật tệp quy tắc, tác tử vẫn vấp ở những việc cơ bản như quên sinh lại Prisma client sau khi đổi lược đồ cơ sở dữ liệu, tạo thành phần giao diện mà không gắn vào đâu, viết truy vấn kém hiệu quả, rồi vẫn tự tin báo đã xong. Kết quả là một PR 2.000 dòng cần xem xét và sửa gần như mọi chỗ. Lần thứ hai chia nhỏ công việc vẫn cho ra 1.200 dòng chỉ cho một phần, kèm lỗi xử lý giao dịch (transaction).
 
-**Điểm chính:**
-- Thử nghiệm với Cursor, Claude Code và Windsurf không tăng productivity đáng kể (20%+)
-- AI tạo ra 2,000-line PR với nhiều lỗi cơ bản mà developer không mắc phải
-- Vấn đề lớn nhất: mất mental model của codebase khi AI generate code
-- AI không có khả năng self-reflection - không nhận biết giới hạn của bản thân
-- AI vẫn hữu ích cho các tasks nhỏ: tab completions, unit tests, refactoring
-- AI tốt khi recreating well-known patterns nhưng kém với features phức tạp
-- Specialized agents trong well-defined boundaries có thể deliver value
+Theo tác giả, vấn đề nghiêm trọng nhất là lập trình viên mất dần mô hình tư duy về kho mã khi AI liên tục đẩy vào hàng nghìn dòng thay đổi, khiến mỗi lần phải tự xử lý một lỗi khó lại giống như vừa chuyển sang công ty mới. Vấn đề thứ hai là AI không biết giới hạn của mình và luôn tự tin làm được, trong khi một thực tập sinh còn biết nói "tôi chưa từng làm việc này". Dù vậy, AI vẫn hữu ích để động não, gỡ lỗi, gợi ý hoàn thành mã, viết kiểm thử đơn vị và tái cấu trúc đoạn mã nhỏ; các tác tử chuyên biệt trong phạm vi hẹp vẫn mang lại giá trị thực.
 
 ## [Clarifying the Rule of Three in Refactoring](https://blog.jbrains.ca/permalink/clarifying-the-rule-of-three-in-refactoring/)
 
-Bài viết giải thích rõ về Rule of Three trong refactoring - một heuristic gây nhiều tranh cãi. Tác giả phân tích mục đích thực sự của quy tắc này và đưa ra góc nhìn linh hoạt hơn về việc khi nào nên remove duplication. Bài viết giúp developer hiểu rõ hơn về trade-offs giữa việc extract abstractions sớm hay muộn.
+J.B. Rainsberger làm rõ Quy tắc Ba lần (Rule of Three) trong tái cấu trúc mã nguồn — lời khuyên chỉ nên gộp phần trùng lặp thành một lớp trừu tượng dùng chung khi nó xuất hiện đến lần thứ ba — vốn là một nguyên tắc kinh nghiệm gây nhiều tranh cãi. Theo tác giả, quy tắc này chủ yếu dành cho những người mới ở mức khá (Advanced Beginner), giúp họ không loại bỏ trùng lặp một cách máy móc. Ông phân biệt hai bối cảnh: khi đang học thiết kế qua tái cấu trúc, việc mạnh tay loại bỏ trùng lặp rồi trải qua cảm giác hối tiếc chính là cách rèn luyện khả năng phán đoán; còn khi tập trung vào hiệu suất công việc, có thể trì hoãn để tránh phải làm lại nếu sau này thiết kế buộc phải đưa trùng lặp trở lại. Vì vậy, Quy tắc Ba lần là công cụ giảng dạy nhằm cân bằng giữa học và làm, không phải một định luật tuyệt đối.
 
-**Điểm chính:**
-- Rule of Three thực chất là để ngăn Advanced Beginners remove duplication một cách mù quáng
-- Khi đang học về design qua refactoring, việc remove duplication aggressively giúp phát triển design judgment
-- Khi đã thành thạo, có thể delay removing duplication để tránh rework sau này
-- Tác giả không ngại inlining khi后悔 về quyết định extract - đây là phần của quá trình học
-- Removing duplication giúp tìm ra các abstractions hữu ích có thể ẩn trong design
-- Nếu thoải mái với inlining, không cần quá lo lắng về việc có后悔 khi extract
+Bản thân tác giả thích loại bỏ trùng lặp sớm vì ông sẵn sàng gộp ngược (inline) mã trở lại khi nhận ra quyết định trích xuất là sai, và coi đó là một phần tự nhiên của quá trình học. Loại bỏ trùng lặp còn giúp làm lộ ra những lớp trừu tượng hữu ích đang ẩn trong thiết kế. Lời khuyên dành cho lập trình viên là hãy tập thoải mái với việc hoàn tác một lần tái cấu trúc, và nếu áp dụng Quy tắc Ba lần thì nên dựa trên lý lẽ rõ ràng thay vì nỗi sợ mơ hồ.
 
 ### Bonus
 
@@ -83,4 +56,4 @@ Bài viết giải thích rõ về Rule of Three trong refactoring - một heuri
 
 ---
 
-*Bài viết đã được review và cập nhật bởi Claude Code với Opus 4.7 (1M context).*
+*Bài viết đã được viết lại bởi Claude Code với Opus 5.5 vào ngày 27/09/2026.*

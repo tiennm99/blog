@@ -9,46 +9,21 @@ categories: ["Newsletter"]
 
 ## [PostgreSQL at Scale: Database Schema Changes Without Downtime](https://medium.com/paypal-tech/postgresql-at-scale-database-schema-changes-without-downtime-20d3749ed680)
 
-Bài viết từ đội ngũ kỹ thuật PayPal chia sẻ kinh nghiệm thực thi thay đổi lược đồ cơ sở dữ liệu PostgreSQL ở quy mô lớn mà không gây gián đoạn dịch vụ. Đây là một thách thức lớn đối với các hệ thống có lưu lượng truy cập cao và yêu cầu hoạt động liên tục 24/7.
+Bài viết của James Coleman trên blog kỹ thuật PayPal (xuất phát từ đội ngũ Braintree Payments) tổng hợp kinh nghiệm thay đổi lược đồ PostgreSQL khi hệ thống thanh toán không được phép có thời gian ngừng hoạt động theo lịch. Nguyên tắc nền tảng là mã nguồn và lược đồ phải vừa tương thích tiến vừa tương thích lùi, để có thể triển khai dần và quay lui mã ứng dụng an toàn; mọi khóa độc quyền trên bảng hoặc chỉ mục chỉ được giữ tối đa khoảng 2 giây. Nhóm không gộp nhiều câu lệnh DDL vào một giao dịch để tránh deadlock, và cũng không định nghĩa thao tác hoàn tác cho lược đồ: xóa cột vừa thêm có thể mất dữ liệu, thêm lại ràng buộc có thể thất bại, nên khi cần sửa sai họ viết một thay đổi mới và "tiến lên" thay vì lùi lại.
 
-PayPal đã phát triển một bộ công cụ và quy trình để thực hiện các thay đổi lược đồ một cách an toàn, bao gồm:
-
-- **Phương pháp thay đổi từng bước**: Thay vì thực hiện các thay đổi lớn một lần, họ chia nhỏ thành nhiều bước nhỏ có thể hoàn tác
-- **Công cụ tự động hóa**: Phát triển các script và công cụ để tự động hóa quá trình di chuyển và kiểm tra tính nhất quán dữ liệu
-- **Chiến lược rollback**: Luôn có kế hoạch hoàn tác rõ ràng cho mọi thay đổi
-- **Giám sát liên tục**: Theo dõi hiệu suất và tình trạng hệ thống trong suốt quá trình thay đổi
-
-Bài viết cung cấp những bài học kinh nghiệm quý báu cho các kỹ sư làm việc với cơ sở dữ liệu quy mô lớn, đặc biệt là trong môi trường sản xuất có yêu cầu độ tin cậy cao.
+Phần lớn bài viết đi qua từng loại thao tác. Thay vì để PostgreSQL tự lấy khóa, họ chủ động lấy khóa với `lock_timeout`, kiểm tra `pg_locks` trước để né các truy vấn chạy lâu, và tạm nghỉ giữa các lần thử để hàng đợi truy vấn kịp giải phóng. Chỉ mục được tạo và xóa bằng `CREATE INDEX CONCURRENTLY` và `DROP INDEX CONCURRENTLY`; khóa ngoại, ràng buộc CHECK hay NOT NULL được thêm với `NOT VALID` rồi chạy `VALIDATE CONSTRAINT` riêng để không phải quét cả bảng dưới khóa nặng; còn thêm cột kèm giá trị mặc định cần tách thành nhiều bước với các phiên bản trước PostgreSQL 11. Cuối bài, nhóm giới thiệu gem mã nguồn mở `pg_ha_migrations` cho Ruby on Rails đóng gói các quy tắc này.
 
 ## [The Big LLM Architecture Comparison: From DeepSeek-V3 to Kimi K2](https://magazine.sebastianraschka.com/p/the-big-llm-architecture-comparison)
 
-Sebastian Raschka, tác giả của cuốn "Machine Learning with PyTorch and Scikit-Learn", đã thực hiện một so sánh toàn diện về kiến trúc của các mô hình ngôn ngữ lớn hiện đại. Bài viết phân tích chi tiết 5 kiến trúc chính đang định hình tương lai của AI:
+Nhà nghiên cứu Sebastian Raschka đặt các mô hình ngôn ngữ lớn mở nổi bật cạnh nhau để trả lời câu hỏi: nhiều năm sau GPT gốc, kiến trúc thực sự đã thay đổi bao nhiêu? Câu trả lời là khung Transformer gần như giữ nguyên, khác biệt nằm ở các tinh chỉnh. DeepSeek V3/R1 dùng Multi-Head Latent Attention (MLA) để nén KV cache và Mixture-of-Experts (MoE) với 256 chuyên gia, mỗi token chỉ kích hoạt 9 chuyên gia (gồm một chuyên gia dùng chung), nên trong 671 tỷ tham số chỉ khoảng 37 tỷ hoạt động khi suy luận. OLMo 2 đặt RMSNorm theo kiểu Post-Norm và thêm QK-Norm để huấn luyện ổn định hơn; Gemma 3 dùng sliding window attention để giảm bộ nhớ KV cache; Mistral Small 3.1 tối ưu cho tốc độ suy luận; Llama 4 xen kẽ khối MoE với khối dense; Qwen3 có cả biến thể dense lẫn MoE; SmolLM3 thử bỏ hẳn mã hóa vị trí (NoPE); còn Kimi K2 với khoảng 1 nghìn tỷ tham số dựa trên kiến trúc DeepSeek V3, tăng số chuyên gia và giảm số đầu attention trong MLA.
 
-**DeepSeek V3/R1** sử dụng Multi-Head Latent Attention (MLA) kết hợp với Mixture-of-Experts (MoE) có 256 chuyên gia, chỉ kích hoạt 9 chuyên gia cho mỗi lần suy luận với 37 tỷ tham số.
-
-**OLMo 2** nổi bật với cách bố trí lớp chuẩn hóa độc đáo, sử dụng RMSNorm với cấu hình "Post-Norm" và giới thiệu QK-Norm để tăng tính ổn định của attention.
-
-**Gemma 3** áp dụng sliding window attention giúp giảm sử dụng bộ nhớ KV cache, kết hợp cả Pre-Norm và Post-Norm RMSNorm.
-
-**Qwen3** cung cấp cả biến thể dense (0.6B đến 32B tham số) và MoE (30B-A3B và 235B-A22B), cho phép lựa chọn linh hoạt theo nhu cầu tính toán.
-
-**Kimi 2** với 1 nghìn tỷ tham số, dựa trên kiến trúc DeepSeek V3 nhưng sử dụng ít đầu attention hơn trong Multi-Head Latent Attention.
-
-Bài viết nhấn mạnh xu hướng tăng cường sử dụng MoE, các cơ chế attention sáng tạo và tập trung vào hiệu quả suy luận. Đây là tài liệu tham khảo quan trọng cho các lập trình viên muốn hiểu rõ sự phát triển của kiến trúc LLM và lựa chọn mô hình phù hợp với ràng buộc tính toán cụ thể.
+Xu hướng chung là MoE ngày càng phổ biến để tăng sức chứa mà vẫn giữ chi phí suy luận thấp, các biến thể attention hiệu quả hơn như Grouped-Query Attention, MLA hay sliding window dần thay thế Multi-Head Attention truyền thống, và các nhóm ưu tiên tối ưu hiệu năng hơn là phát minh kiến trúc hoàn toàn mới. Đây là tài liệu tốt để lập trình viên nắm các thuật ngữ đang xuất hiện trong mọi báo cáo mô hình mới, và hiểu vì sao hai mô hình có cùng số tham số lại có thể chênh lệch lớn về chi phí vận hành.
 
 ## [From Async/Await to Virtual Threads](https://lucumr.pocoo.org/2025/7/26/virtual-threads/)
 
-Armin Ronacher, tác giả của Flask và Jinja, đã đề xuất một tầm nhìn độc đáo về tương lai của lập trình đồng thời trong Python thông qua "virtual threads" - một thay thế tiềm năng cho mô hình async/await hiện tại.
+Armin Ronacher, tác giả Flask và Jinja, cho rằng mô hình async/await của Python đang đẩy quá nhiều độ phức tạp nội bộ sang người dùng. Vấn đề dễ thấy nhất là "hàm có màu" (colored functions): hàm async và hàm đồng bộ không gọi lẫn nhau trực tiếp được, khiến hệ sinh thái thư viện bị chia đôi. Việc hủy tác vụ cũng khó làm đúng, chẳng hạn `aiofiles` không hỗ trợ hủy đúng cách nên có thể gây treo khi dùng structured concurrency. Khi Python bắt đầu hỗ trợ free-threading, lập trình viên còn phải lo cùng lúc cả vấn đề của async lẫn của đa luồng truyền thống.
 
-Vấn đề cốt lõi mà virtual threads muốn giải quyết là "colored functions" - hiện tượng các hàm async và sync không thể tương tác trực tiếp, tạo ra sự phức tạp và chia cắt trong hệ sinh thái thư viện.
-
-Kỹ thuật virtual threads sẽ chuyển độ phức tạp của lập trình đồng thời vào các API nội bộ của trình thông dịch, cung cấp:
-
-- **Hủy bỏ tự động**: Hỗ trợ cancellation mà không cần quản lý thủ công
-- **Kế thừa ngữ cảnh**: Context được truyền tự động giữa các virtual thread
-- **Kiểm soát đồng thời**: Giới hạn số lượng thread đồng thời một cách dễ dàng
-
-Ví dụ về cách sử dụng:
+Đề xuất của ông là virtual threads: luồng nhẹ do runtime quản lý thay vì hệ điều hành, giúp các thao tác chặn trở nên không chặn một cách trong suốt và bỏ được từ khóa `async`/`await`. Các luồng được tổ chức thành thread group theo tinh thần structured concurrency: luồng con không sống lâu hơn luồng cha, context variable được kế thừa tự động từ cha sang con, khi một luồng con lỗi thì các luồng còn lại bị hủy, và nhóm chỉ kết thúc khi mọi luồng con hoàn tất. Tác giả nhấn mạnh đây chỉ là gợi ý để mở đầu thảo luận, còn nhiều câu hỏi về cú pháp và phạm vi biến trong Python chưa có lời giải; ví dụ dưới đây minh họa việc tải nhiều URL với tối đa 8 luồng đồng thời.
 
 ```python
 def download_all(urls):
@@ -58,8 +33,6 @@ def download_all(urls):
             g.spawn(partial(download_and_store, results, url))
     return results
 ```
-
-Đây hiện tại chỉ là "đề xuất thảo luận" nhưng thể hiện tầm nhìn tiền phong về việc đơn giản hóa lập trình đồng thời, giảm tải trí tuệ cho lập trình viên và cải thiện hiệu suất thông qua cơ chế điều phối virtual thread của runtime.
 
 ## ~~[Six Principles for Production AI Agents](https://www.app.build/blog/six-principles-production-ai-agents)~~
 
@@ -81,145 +54,46 @@ def download_all(urls):
 
 ## [Working Effectively with AI Coding Tools like Claude Code](https://sajalsharma.com/posts/effective-ai-coding/)
 
-Sajal Sharma, với kinh nghiệm phong phú trong việc sử dụng các công cụ AI coding, đã tổng hợp những thực tiễn tốt nhất để làm việc hiệu quả với AI trong phát triển phần mềm. Bài viết đặc biệt có giá trị khi AI coding tools ngày càng trở thành công cụ không thể thiếu trong quy trình phát triển.
+Sajal Sharma tổng hợp các thực hành để làm việc hiệu quả với công cụ lập trình AI như Claude Code, xuất phát từ một quan điểm: AI rất giỏi hiện thực hóa, còn con người phải nắm phần kiến trúc, phán đoán và chiến lược. Trọng tâm công việc vì thế chuyển từ viết mã sang viết đặc tả: chốt các câu hỏi kiến trúc trước, lưu đặc tả chi tiết trong hệ thống quản lý phiên bản, rồi mới để AI triển khai. Hãy coi AI như một lập trình viên cặp tài năng nhưng thiếu bối cảnh nghiệp vụ, đọc lại từng dòng mã nó tạo ra và cảnh giác với các lối tắt như lạm dụng kiểu `any` trong TypeScript hay sửa triệu chứng thay vì nguyên nhân, vì AI sinh mã nhanh hơn tốc độ con người xem xét.
 
-**Thay đổi tư duy**: Thay vì tập trung vào việc viết mã trực tiếp, hãy ưu tiên thiết kế kiến trúc và hệ thống. Coi đặc tả kỹ thuật như sản phẩm quan trọng và xem AI như một "cặp lập trình viên" cần được hướng dẫn và xem xét kỹ lưỡng.
-
-**Kiểm soát chất lượng**: Luôn xem xét tích cực mã do AI tạo ra, tin vào trực giác khi cảm thấy có gì đó không ổn. Đặc biệt chú ý đến các lối tắt tiềm ẩn như việc lạm dụng kiểu `any` và thường xuyên kiểm tra, dọn dẹp nợ kỹ thuật.
-
-**Kỹ thuật hợp tác**: Cực kỳ cụ thể trong các prompt AI, yêu cầu giải thích cho các giải pháp được đề xuất. Sử dụng nhiều mô hình AI để kiểm tra chéo và tạo các lệnh slash chung cho team để chuẩn hóa quy trình làm việc.
-
-**Tối ưu hóa quy trình**: Áp dụng phương pháp "lập kế hoạch trước", quản lý ngữ cảnh cuộc trò chuyện cẩn thận, duy trì tài liệu đầy đủ và phát triển kiến trúc đa-agent cho các dự án phức tạp.
-
-**Giá trị con người vẫn quan trọng**: Tập trung vào tư duy chiến lược và giao tiếp với các bên liên quan. Chia nhỏ tác vụ phức tạp thành đặc tả rõ ràng, cung cấp bối cảnh kinh doanh và đưa ra các quyết định quan trọng.
-
-Lời khuyên thiết thực: Tạo file `CLAUDE.md` để ghi lại ngữ cảnh dự án, tiêu chuẩn coding và các lệnh thường dùng cho AI assistant. Đội ngũ thành công là những ai coi AI như đối tác mạnh mẽ, không phải là thay thế hay đối thủ cạnh tranh.
+Về phối hợp, tác giả khuyên viết prompt thật cụ thể, luôn hỏi AI vì sao chọn giải pháp đó, và dùng thêm mô hình khác để kiểm tra chéo các quyết định phức tạp. Nên để AI lập kế hoạch trước, xem xét kỹ rồi lưu thành tệp markdown theo dõi tiến độ, và mở cuộc trò chuyện mới cho từng tính năng vì hội thoại dài làm AI kém nhất quán. Với Claude Code, tệp `CLAUDE.md` đóng vai trò bản đồ dẫn tới tài liệu kiến trúc, đặc tả API và kế hoạch hiện tại; lệnh slash dùng chung trong `.claude/commands/` giúp cả nhóm chuẩn hóa quy trình; các agent chuyên biệt cho lập kế hoạch, triển khai, xem xét và nghiên cứu giúp mỗi agent giữ ngữ cảnh gọn. Năng suất tăng mạnh là có thật, nhưng chỉ khi chất lượng được giữ bằng sự cảnh giác liên tục.
 
 ## [When Software Engineers Think They Need More Focus Time](https://jola.dev/posts/enough-focus-time)
 
-Jola Dev đặt ra một câu hỏi thách thức quan niệm truyền thống về năng suất lập trình viên: Liệu "thời gian tập trung" có thực sự là thứ các kỹ sư phần mềm cần nhiều hơn? Bài viết mang đến góc nhìn mới mẻ về việc tái định nghĩa năng suất trong ngành công nghệ.
+Bài viết của Jola thách thức niềm tin phổ biến rằng kỹ sư phần mềm luôn cần thêm thời gian tập trung không bị gián đoạn để viết mã. Theo tác giả, công việc của lập trình viên là tạo ra tác động, giải quyết vấn đề và mang lại giá trị thực sự, và phần giá trị cao nhất thường diễn ra bên ngoài trình soạn thảo: phát hiện một giả định sai trong buổi họp sản phẩm trước khi cả dự án đi chệch hướng, đặt một câu hỏi làm rõ giúp nhóm tiết kiệm nhiều tuần công sức, lập trình cặp với một đồng nghiệp junior đang bế tắc, hay xem xét tài liệu thiết kế trước khi bắt tay vào triển khai. Người luôn khóa kín lịch để viết mã một mình dễ bỏ lỡ chính những cơ hội hợp tác như vậy.
 
-**Tái định nghĩa năng suất**: Năng suất không phải là thời gian code không bị gián đoạn. Công việc của lập trình viên là tạo ra tác động, giải quyết vấn đề, mang lại giá trị có ý nghĩa. Những công việc có giá trị cao nhất thường xảy ra bên ngoài việc viết mã trực tiếp.
-
-**Các hoạt động có giá trị nhất của lập trình viên**:
-- Đặt câu hỏi làm rõ vấn đề
-- Xem xét tài liệu thiết kế
-- Lập trình theo cặp (pair programming)
-- Sẵn sàng tư vấn nhanh cho đồng nghiệp
-- Kiểm tra các giả định sản phẩm
-- Chạy thử nghiệm và thí nghiệm
-
-**Kỹ thuật quản lý thời gian thực tiễn**: Chỉ định các khoảng thời gian tập trung cụ thể (ví dụ: làm việc sâu vào buổi sáng), gộp các cuộc họp vào những ngày nhất định, truyền đạt rõ ràng về tính sẵn có, ưu tiên học hỏi và hợp tác nhóm.
-
-**Triết lý cốt lõi**: "Mục tiêu không phải là viết mã. Mục tiêu là giải quyết vấn đề."
-
-Phương pháp được khuyến nghị là duy trì kết nối với nhóm, đặt câu hỏi chiến lược, biết khi nào nên code và khi nào nên hợp tác, tối ưu hóa cho tác động tổng thể của nhóm và sản phẩm thay vì thời gian code cá nhân. Bài viết nhắc nhở rằng giá trị thực sự của một lập trình viên không chỉ nằm ở số dòng code mà ở khả năng tạo ra tác động tích cực cho tổ chức và người dùng.
+Tác giả không phủ nhận vai trò của thời gian tập trung mà khuyên dùng nó có chủ đích: đo năng suất bằng giá trị mang lại thay vì số giờ viết mã, thông báo rõ lịch làm việc (ví dụ buổi sáng làm việc sâu, buổi chiều sẵn sàng hỗ trợ), liên tục tự hỏi mình có đang giải đúng bài toán hay không, và nhớ rằng tác động của một kỹ sư không chỉ nằm ở mã nguồn. Tinh thần cốt lõi của bài có thể tóm lại trong một câu: mục tiêu không phải là viết mã, mục tiêu là giải quyết vấn đề.
 
 ## [Making Postgres 42,000x slower because I am unemployed](https://byteofdev.com/posts/making-postgres-slow/)
 
-Một bài viết hài hước nhưng đầy tính giáo dục từ Byte of Dev, minh họa cách những thay đổi cấu hình tưởng chừng nhỏ có thể làm giảm hiệu suất PostgreSQL một cách đáng kinh ngạc. Tác giả đã "thành công" làm chậm PostgreSQL từ 7,082 giao dịch/giây xuống chỉ còn 0.016 giao dịch/giây.
+Một thí nghiệm vừa hài hước vừa bổ ích: tác giả tự đặt luật chỉ được sửa tệp `postgresql.conf`, cơ sở dữ liệu vẫn phải xử lý được ít nhất một giao dịch trong thời gian hợp lý, rồi tìm cách làm PostgreSQL chậm nhất có thể. Bài kiểm thử là TPC-C với 128 kho hàng chạy qua Benchbase, 100 kết nối, trên máy Ryzen 7950x với 32GB RAM. Từ mức ban đầu khoảng 7.082 giao dịch/giây, việc thu nhỏ `shared_buffers` xuống vài MB buộc gần như mọi lần đọc phải xuống đĩa và kéo hiệu năng xuống vài trăm giao dịch/giây; cấu hình autovacuum chạy liên tục với ngưỡng cực thấp đẩy xuống khoảng 293; ép checkpoint WAL thật dày và đồng bộ đầy đủ còn khoảng 98.
 
-**Các vấn đề hiệu suất phổ biến**:
-- Cấu hình buffer cache không hiệu quả
-- Hoạt động autovacuum quá thường xuyên
-- Ghi Write-Ahead Logging (WAL) quá mức
-- Xử lý I/O không tối ưu
-
-**Các anti-pattern được minh họa**:
-- Giảm shared buffer cache từ 10GB xuống 8MB
-- Thiết lập autovacuum quá aggressive gây ra bảo trì liên tục
-- WAL checkpoint quá thường xuyên
-- Buộc tất cả I/O qua một thread duy nhất
-
-**Tham số cấu hình quan trọng**:
-- `shared_buffers`: Kiểm soát bộ nhớ cho database page caching
-- Các tham số `autovacuum_*`: Quản lý bảo trì tự động
-- Các tham số `wal_*`: Kiểm soát hành vi Write-Ahead Logging
-- `random_page_cost`: Ảnh hưởng đến query planning và sử dụng index
-- `io_method` và `io_workers`: Xác định chiến lược xử lý I/O
-
-**Thực tiễn tốt nhất** (được ngụ ý):
-- Điều chỉnh cẩn thận `shared_buffers` phù hợp với workload
-- Cấu hình autovacuum với ngưỡng hợp lý
-- Tối ưu hóa WAL và checkpoint settings
-- Sử dụng xử lý I/O song song
-- Giám sát và điều chỉnh cấu hình database dựa trên đặc điểm workload cụ thể
-
-Bài viết là một lời nhắc nhở thú vị về tầm quan trọng của việc hiểu rõ cấu hình PostgreSQL và tác động của nó đến hiệu suất hệ thống.
+Hai bước cuối là mạnh tay nhất: chỉnh các tham số chi phí như `random_page_cost` để bộ lập kế hoạch truy vấn gần như không dùng chỉ mục, khiến hiệu năng rơi xuống dưới 1 giao dịch/giây; rồi dùng `io_method` và `io_workers = 1` trong bản phát triển mới của PostgreSQL để dồn toàn bộ I/O qua một worker duy nhất, kết quả chỉ còn 0,016 giao dịch/giây, chậm hơn khoảng 42.000 lần. Đọc ngược lại, bài viết là bài học thiết thực về ý nghĩa của từng tham số: bộ đệm, autovacuum, WAL, chi phí truy vấn và I/O song song đều ảnh hưởng lớn đến hiệu năng, nên cần được điều chỉnh theo đặc điểm tải thực tế thay vì sửa tùy tiện.
 
 ## [Stack Overflow Developer Survey 2025](https://survey.stackoverflow.co/2025/)
 
-Khảo sát Developer Survey 2025 của Stack Overflow đã thu thập 49,009 phản hồi từ 166 quốc gia, bao gồm 314 công nghệ khác nhau trong khoảng thời gian từ 29/5 đến 23/6/2025. Đây là một trong những khảo sát toàn diện nhất về cộng đồng lập trình viên thế giới.
+Khảo sát lập trình viên thường niên lần thứ 15 của Stack Overflow thu về hơn 49.000 phản hồi từ 177 quốc gia, với 62 câu hỏi về 314 công nghệ. Điểm nổi bật nhất là khoảng cách giữa mức độ sử dụng và niềm tin vào AI: 84% lập trình viên đang dùng hoặc dự định dùng công cụ AI, 47% dùng hằng ngày, nhưng chỉ khoảng một phần ba tin vào độ chính xác của chúng, trong khi 46% chủ động hoài nghi. Nỗi bực bội lớn nhất (66%) là các lời giải "gần đúng nhưng chưa hẳn", tiếp theo là khó gỡ lỗi mã do AI tạo ra; phần lớn lập trình viên cũng chưa dùng AI agent.
 
-**AI và Công nghệ**: 84% lập trình viên đang sử dụng hoặc có kế hoạch sử dụng công cụ AI, tuy nhiên tình cảm tích cực về AI đã giảm xuống còn 60% trong năm 2025. Đáng chú ý, "nhiều lập trình viên không tin tưởng vào độ chính xác của công cụ AI hơn là tin tưởng."
-
-**Bối cảnh Lập trình viên**: 76% là lập trình viên chuyên nghiệp, 35% có kinh nghiệm lập trình dưới 10 năm. Các quốc gia có nhiều phản hồi nhất là Mỹ, Đức và Ấn Độ.
-
-**Công việc và Sự hài lòng**: Gần một phần ba lập trình viên làm việc từ xa, chỉ 24% hài lòng với công việc hiện tại. Các yếu tố hàng đầu tạo sự hài lòng trong công việc là "quyền tự chủ/tin cậy, lương cạnh tranh và giải quyết các vấn đề thực tế."
-
-**Xu hướng Công nghệ**: Python tăng trưởng đáng kể về mức độ áp dụng, Visual Studio và Visual Studio Code vẫn là các môi trường phát triển hàng đầu, các mô hình OpenAI GPT được sử dụng rộng rãi nhất trong các mô hình ngôn ngữ lớn.
-
-**Thông tin về Cộng đồng**: 82% truy cập Stack Overflow ít nhất hàng tháng, các lập trình viên trẻ tuổi thích các định dạng nội dung tương tác hơn. Khảo sát cho thấy "lập trình viên ở mọi cấp độ đều đang khám phá bối cảnh AI đang phát triển nhanh chóng."
-
-Khảo sát này cung cấp cái nhìn toàn diện về tình trạng hiện tại và xu hướng tương lai của ngành công nghệ, đặc biệt là tác động ngày càng tăng của AI trong quy trình phát triển phần mềm.
+Về công nghệ, Python tăng 7 điểm phần trăm lên 57,9% nhờ làn sóng AI và khoa học dữ liệu, JavaScript vẫn dẫn đầu, Visual Studio Code tiếp tục là môi trường phát triển phổ biến nhất; các mô hình GPT của OpenAI được dùng nhiều nhất còn Claude Sonnet được ngưỡng mộ nhất, và Cargo của Rust là công cụ hạ tầng được yêu thích nhất. Ở khía cạnh công việc, chỉ khoảng 24% lập trình viên thấy hài lòng với công việc (tăng so với năm trước), khoảng một phần ba làm việc từ xa hoàn toàn, và vai trò kiến trúc sư lần đầu lọt vào nhóm bốn vai trò phổ biến nhất. Với lập trình viên trẻ, đây là bức tranh hữu ích để định hướng kỹ năng: AI đã thành công cụ hằng ngày, nhưng khả năng kiểm chứng kết quả của nó mới là thứ tạo ra khác biệt.
 
 ## [Choose Boring Technology, Revisited](https://www.brethorsting.com/blog/2025/07/choose-boring-technology,-revisited/)
 
-Bret Horsting nhìn lại nguyên tắc "Chọn công nghệ nhàm chán" trong bối cảnh thời đại AI, mang đến góc nhìn cập nhật về việc lựa chọn công nghệ trong môi trường phát triển phần mềm hiện đại. Bài viết đặc biệt có giá trị khi các công cụ AI coding ngày càng phổ biến.
+Aaron Brethorst nhìn lại nguyên tắc "Choose Boring Technology" mà Dan McKinley đưa ra năm 2015 và cho rằng nó còn quan trọng hơn trong thời đại AI. Ý tưởng gốc là mỗi tổ chức chỉ có một số ít "innovation token" nên cần tiêu chúng có chủ đích: khi giải quyết vấn đề thì dùng công cụ quen thuộc, khi học thì chỉ chấp nhận một ẩn số mới mỗi lần. Công nghệ "nhàm chán" có ưu điểm là các kiểu lỗi đã được biết rõ, khả năng đã được hiểu kỹ và độ tin cậy vận hành đã được chứng minh.
 
-**Nguyên tắc cốt lõi**: Giới hạn "innovation tokens" bằng cách chọn các công nghệ đã được thiết lập và hiểu rõ. Thay vì theo đuổi những công nghệ mới nhất, hãy tập trung vào những công nghệ có chế độ lỗi đã biết, khả năng được hiểu rõ và độ tin cậy vận hành đã được chứng minh.
-
-**Khung ra quyết định**:
-- Khi giải quyết vấn đề: Tuân thủ các công nghệ đã biết
-- Khi học hỏi: Giới hạn mình ở một công nghệ mới duy nhất
-- Ưu tiên các công nghệ có chế độ lỗi đã biết, khả năng được hiểu rõ và độ tin cậy vận hành đã chứng minh
-
-**Cân nhắc trong thời đại AI**: Các công cụ AI coding có thể tạo ra mã hợp lý, nhưng không thể thay thế sự hiểu biết sâu sắc về công nghệ. Nguy hiểm khi kết hợp nhiều công nghệ chưa biết với mã do AI tạo ra. AI trở nên mạnh mẽ nhất khi được sử dụng với các công nghệ bạn đã hiểu rõ.
-
-**Hướng dẫn thực tiễn**: Trước khi áp dụng công nghệ mới, hãy tự hỏi: "Tôi có thể xem xét đầy đủ mã triển khai do AI tạo ra không?" Hiểu sâu các công nghệ mới trước khi sử dụng hỗ trợ AI, tránh học đồng thời nhiều công nghệ mới, nhận ra rằng mã do AI tạo ra có thể trông chuyên nghiệp nhưng chứa lỗi tiềm ẩn.
-
-Câu trích dẫn then chốt: "Công nghệ nhàm chán nhất trong stack của bạn có thể chính là công nghệ bạn hiểu đủ rõ để biết khi nào AI sai."
-
-Lời khuyên tổng quát là ưu tiên sự hiểu biết công nghệ hơn tính mới lạ, và sử dụng AI như một bộ nhân tốc cho kiến thức hiện có thay vì thay thế cho việc học hỏi căn bản.
+Vấn đề mới là trợ lý AI có thể sinh mã trông rất chuyên nghiệp cho bất kỳ ngăn xếp công nghệ nào, tạo ra cảm giác tự tin giả. Khi ghép nhiều công nghệ lạ với mã do AI viết, bạn gần như không thể kiểm chứng: không biết lựa chọn framework có phù hợp hay không, cũng không biết cần canh chừng những kiểu lỗi nào. Vì vậy, trước khi đưa một công nghệ mới vào dự án, hãy tự hỏi liệu mình có đủ khả năng xem xét mã AI viết cho công nghệ đó không; dành thời gian hiểu sâu công cụ mới đủ để kiểm tra lại gợi ý của AI; và đừng lấy AI làm lý do để học nhiều công nghệ lạ cùng lúc. Theo tác giả, AI nên là bộ khuếch đại cho những công nghệ bạn đã hiểu, chứ không phải chiếc nạng cho những công nghệ bạn chưa hiểu.
 
 ## [Agentic Coding Things That Didn't Work](https://lucumr.pocoo.org/2025/7/30/things-that-didnt-work/)
 
-Armin Ronacher chia sẻ thẳng thắn về những thất bại trong việc áp dụng AI coding agents, mang đến những bài học quý báu từ thực tiễn. Thay vì tập trung vào thành công, bài viết này khám phá những gì không hiệu quả và tại sao - một góc nhìn hiếm có trong làn sóng hype về AI.
+Khác với các bài chia sẻ thành công, Armin Ronacher kể về những cách tự động hóa khi lập trình với AI agent mà ông đã thử rồi bỏ. Loạt lệnh slash tự viết đều không trụ lại: `/fix-bug` không tốt hơn việc dán đường dẫn issue trên GitHub kèm suy nghĩ của mình, `/commit` sinh thông điệp không bao giờ đúng văn phong của ông, `/add-tests` và `/fix-nits` kém hơn hoặc thừa so với chỉ dẫn thông thường, còn `/next-todo` gần như không được dùng. Hook khó điều khiển và chạy formatter sau mỗi lần sửa thay vì cuối phiên, nên ông chuyển sang chặn lệnh qua PATH cho đơn giản; print mode (90% mã xác định, 10% suy luận) rất hứa hẹn nhưng còn chậm và khó gỡ lỗi; sub-agent giúp song song hóa nhưng gây rối khi vừa đọc vừa ghi, nên ông thường mở phiên mới hoặc chia sẻ suy nghĩ qua tệp markdown.
 
-**Nguyên tắc tự động hóa**: Chỉ tự động hóa các tác vụ được thực hiện thường xuyên và xóa bỏ các workflow tự động không được sử dụng nhất quán. "Tôi chỉ tự động hóa những thứ tôi làm thường xuyên."
-
-**Các lần thử tự động hóa thất bại**:
-- `/fix-bug`: Không cải thiện đáng kể so với thảo luận thủ công về vấn đề
-- `/commit`: Thông điệp commit không bao giờ khớp với phong cách cá nhân
-- `/add-tests`: Tạo test không nhất quán tốt hơn
-- `/fix-nits`: Các lệnh linting trở nên dư thừa
-
-**Bài học về quy trình**: Speech-to-text và chia sẻ ngữ cảnh hiệu quả hơn tự động hóa phức tạp. Copy/paste vẫn là phương pháp đơn giản nhưng mạnh mẽ. Hook và print mode có tiềm năng nhưng hiện tại thiếu độ tin cậy.
-
-**Cảnh báo quan trọng về AI workflow**: "Có một rủi ro ẩn lớn với tự động hóa thông qua LLM: nó khuyến khích sự vô cảm tinh thần."
-
-**Chiến lược đánh giá**: Kiểm tra tự động hóa bằng cách thực hiện tác vụ nhiều lần, đánh giá thủ công sự khác biệt và mức độ chấp nhận kết quả, duy trì tư duy kỹ sư tích cực trong công việc có hỗ trợ AI.
-
-Bài học cốt lõi: Tính đơn giản và sự tham gia của con người quan trọng hơn các quy trình tự động phức tạp. Liên tục đánh giá và sẵn sàng loại bỏ các công cụ không hiệu quả. Đây là lời nhắc nhở có giá trị về việc duy trì tư duy phê phán khi làm việc với AI.
+Những gì thực sự hiệu quả lại rất đơn giản: nói chuyện với máy bằng speech-to-text để truyền đạt được nhiều ý hơn, tự sao chép và dán ngữ cảnh chọn lọc, và để agent đọc `git status` để tự suy ra tệp cần sửa. Cảnh báo quan trọng nhất của bài là tự động hóa qua LLM dễ khiến người dùng ngừng suy nghĩ như một kỹ sư, và khi đó chất lượng giảm, thời gian bị lãng phí, còn bản thân không hiểu và không học được gì. Nguyên tắc rút ra: chỉ tự động hóa việc làm thường xuyên, xóa ngay những tự động hóa không dùng tới, và đánh giá kỹ kết quả trước khi tin tưởng.
 
 ## [Vibe Code is Legacy Code](https://blog.val.town/vibe-code)
 
-Val Town mang đến một quan điểm thú vị và có phần gây tranh cãi về "Vibe Code" - thuật ngữ mô tả cách lập trình với sự hỗ trợ AI mà bạn "quên rằng mã nguồn còn tồn tại". Bài viết này khám phá những ưu nhược điểm của phương pháp này và đặt ra câu hỏi về tương lai của việc phát triển phần mềm.
+Steve Krouse của Val Town nhắc lại rằng Andrej Karpathy đặt ra thuật ngữ "vibe coding" để chỉ kiểu lập trình với AI mà bạn "quên rằng mã nguồn còn tồn tại". Mà mã nguồn không ai hiểu thì đã có tên gọi: mã kế thừa (legacy code). Lập trình về bản chất là xây dựng lý thuyết về hệ thống chứ không phải sản xuất dòng mã, nên khi vibe code, bạn tích lũy nợ kỹ thuật nhanh đúng bằng tốc độ LLM sinh mã. Điều đó khiến vibe coding rất hợp với nguyên mẫu và dự án dùng một lần, như các ứng dụng nhỏ tác giả tự làm để tính tốc độ tăng trưởng hay để cầu hôn, vì mã chỉ thành gánh nặng khi phải bảo trì. Vibe coding cũng là một phổ: càng hiểu mã, bạn càng ít "vibe".
 
-**Khái niệm**: Vibe coding là lập trình có sự hỗ trợ AI với mức độ hiểu biết tối thiểu về mã nguồn. Đây là một phổ của sự hiểu biết mã, từ hiểu biết tối thiểu đến kiến thức sâu sắc. Phù hợp nhất cho prototype và các dự án dùng một lần.
-
-**Ứng dụng thực tiễn**: Phát triển nhanh các ứng dụng nhỏ, có mục đích duy nhất; prototype nhanh; các dự án cá nhân không yêu cầu bảo trì dài hạn.
-
-**Triết lý cốt lõi**: Lập trình về cơ bản là "xây dựng lý thuyết", không chỉ đơn thuần tạo ra mã. Vibe coding có thể nhanh chóng tạo ra nợ kỹ thuật nếu sử dụng không phù hợp, đòi hỏi quản lý cẩn thận, đặc biệt cho các dự án nghiêm túc, dài hạn.
-
-**Cảnh báo quan trọng**: "Khi bạn vibe code, bạn đang tích lũy nợ kỹ thuật nhanh như tốc độ LLM có thể tạo ra nó."
-
-**Lời khuyên thận trọng**: Tránh sử dụng vibe coding cho phần mềm phức tạp, được bảo trì; hiểu cấu trúc và logic cơ bản của mã; coi AI như một "thực tập sinh cấp dưới" cần giám sát cẩn thận.
-
-**Phương pháp được khuyến nghị**: Sử dụng các công cụ AI như "Townie" một cách chiến lược, duy trì "kiểm soát chặt chẽ" với mã do AI tạo ra, ưu tiên hiểu biết và học hỏi hơn việc tạo ra nhanh chóng.
-
-Bài viết nhấn mạnh rằng mặc dù vibe coding có thể hữu ích, nhưng nó không phải là sự thay thế cho chuyên môn kỹ thuật phần mềm thực sự. Đây là một lời nhắc nhở cân bằng về việc sử dụng AI trong phát triển phần mềm.
+Tình huống tệ nhất là người không biết lập trình vibe code một dự án lớn định duy trì lâu dài, giống như đưa thẻ tín dụng cho trẻ con mà chưa giải thích khái niệm nợ: ban đầu hào hứng, một tháng sau nhận hóa đơn, và nhờ AI sửa lỗi lúc đó chẳng khác gì lấy thẻ này trả nợ thẻ kia. Với dự án nghiêm túc, tác giả đồng tình với Karpathy: giữ AI trong vòng kiểm soát chặt như một thực tập sinh nhiệt tình quá mức, làm chậm, cẩn trọng và tận dụng mỗi cơ hội để học. Val Town dùng trợ lý Townie theo cả hai cách, lúc để vibe code, lúc để sửa đổi chính xác trong dự án quan trọng, và tác giả tin rằng xây dựng lý thuyết sẽ vẫn là trung tâm của việc phát triển phần mềm phức tạp.
 
 ---
 
-*Bài viết đã được review và cập nhật bởi Claude Code với Opus 4.7 (1M context).*
+*Bài viết đã được viết lại bởi Claude Code với Opus 5.5 vào ngày 27/09/2026.*

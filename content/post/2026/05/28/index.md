@@ -9,134 +9,69 @@ categories: ["Newsletter"]
 
 ## [How The Heck Does GPS Work? (An Interactive Exploration)](https://perthirtysix.com/how-the-heck-does-gps-work)
 
-GPS về bản chất là một công cụ chuyển đổi thời gian thành khoảng cách. Các vệ tinh phát sóng radio ở tốc độ ánh sáng, và thiết bị nhận sẽ đo độ trễ tín hiệu để tính ra khoảng cách — mỗi nano giây tương ứng khoảng 0.3 mét. Bằng cách kết hợp tín hiệu từ nhiều vệ tinh, thiết bị có thể xác định vị trí thông qua phương pháp trilateration: một vệ tinh tạo ra một vòng tròn các vị trí khả dĩ, hai vệ tinh tạo ra hai điểm giao, và ba vệ tinh xác định được một điểm duy nhất.
+Bài viết tương tác của Shri Khalpada giải thích rằng GPS là công cụ chuyển thời gian thành khoảng cách. Vệ tinh phát tín hiệu vô tuyến với tốc độ ánh sáng, điện thoại đo thời gian tín hiệu đi mất bao lâu, và cứ mỗi nano giây tương ứng khoảng 0,3 mét. Một vệ tinh chỉ cho biết bạn nằm đâu đó trên một vòng tròn, vệ tinh thứ hai thu hẹp còn hai điểm giao, vệ tinh thứ ba chốt lại một điểm duy nhất — phương pháp này gọi là trilateration. Khó khăn nằm ở đồng hồ: vệ tinh mang đồng hồ nguyên tử, còn điện thoại chỉ có bộ dao động thạch anh rẻ tiền, lệch vài micro giây là vị trí sai hàng trăm mét. Vì vậy cần vệ tinh thứ tư, vì chỉ có đúng một giá trị hiệu chỉnh đồng hồ khiến cả bốn mặt cầu gặp nhau tại một điểm, nên máy thu tìm ra cùng lúc cả vị trí lẫn thời gian chính xác.
 
-Vấn đề lớn nằm ở đồng hồ: điện thoại chỉ có đồng hồ thạch anh kém chính xác, sai lệch vài micro giây cũng đủ gây lỗi vị trí đáng kể. Vệ tinh thứ tư được dùng để vừa tính vị trí vừa hiệu chỉnh đồng hồ. Ngoài ra, GPS còn phải áp dụng thuyết tương đối của Einstein: vệ tinh chuyển động nhanh nên bị giãn thời gian (~45 ns/ngày), nhưng ở quỹ đạo có trọng lực yếu hơn nên lại nhanh hơn (~50 ns/ngày) — nếu không hiệu chỉnh, GPS sẽ lệch khoảng 10 km mỗi ngày.
-
-**Điểm chính:**
-- GPS dựa trên nguyên lý chuyển đổi thời gian truyền tín hiệu thành khoảng cách
-- Cần tối thiểu 4 vệ tinh: 3 để tính vị trí, 1 để hiệu chỉnh đồng hồ
-- Thuyết tương đối của Einstein là yếu tố bắt buộc trong thiết kế hệ thống
-- Thiết bị hiện đại thường bắt 8-12 vệ tinh cùng lúc từ nhiều hệ thống: GPS (Mỹ), GLONASS (Nga), Galileo (châu Âu), BeiDou (Trung Quốc)
-- Kết hợp nhiều hệ thống giúp tăng độ chính xác và giảm sai số ở khu vực đô thị
+Tiếp theo là "thuế tương đối tính": do chuyển động nhanh, đồng hồ vệ tinh chậm đi khoảng 7 micro giây mỗi ngày (thuyết tương đối hẹp), nhưng ở độ cao với trọng lực yếu hơn nó lại nhanh thêm khoảng 45 micro giây (thuyết tương đối rộng). Nếu không bù trừ, vị trí sẽ trôi khoảng 10 km mỗi ngày, nên đồng hồ vệ tinh được chế tạo để chạy hơi chậm khi còn ở mặt đất. Trên thực tế, máy thu hiện đại bắt cùng lúc 8–12 vệ tinh từ GPS (Mỹ), GLONASS (Nga), Galileo (châu Âu) và BeiDou (Trung Quốc) để giảm sai số; ở đô thị, tín hiệu phản xạ qua tòa nhà (lỗi đa đường) vẫn là bài toán khó nhất.
 
 ## [If AI Writes Your Code, Why Use Python?](https://medium.com/@NMitchem/if-ai-writes-your-code-why-use-python-bf8c4ba1a055)
 
-Suốt một thập kỷ qua, Python và TypeScript thống trị vì lý do đơn giản: hệ sinh thái khổng lồ, dễ tuyển dụng, và bạn có thể demo sản phẩm chỉ trong vài ngày. Rust, Go, C++ cho hiệu năng cao hơn 10-100 lần, nhưng đổi lại là nhiều tháng học hỏi và một thị trường nhân lực hẹp hơn. Tác giả lập luận rằng "thỏa thuận" này đã kết thúc, vì AI đã trở nên rất giỏi ở những ngôn ngữ khó. Đến tháng 4/2026, các mô hình như Claude Opus 4.7, GPT-5.5, Gemini 3.1, DeepSeek V4 đều vượt 80% trên SWE-bench Verified, và các phòng lab đang tối ưu rõ ràng cho các bài toán hệ thống.
+Noah Mitchem cho rằng "thỏa thuận" suốt một thập kỷ qua — chọn Python hay TypeScript vì hệ sinh thái lớn, dễ tuyển người, làm bản demo nhanh, chấp nhận hiệu năng kém hơn Rust, Go, C++ từ 10 đến 100 lần — đã hết hiệu lực, vì AI đã giỏi lên ở chính những ngôn ngữ khó. Đến tháng 4/2026, Claude Opus 4.7, GPT-5.5, Gemini 3.1 và DeepSeek V4 đều vượt 80% trên SWE-bench Verified. Hệ thống kiểu mạnh và vòng phản hồi biên dịch chặt của Rust, Go giúp agent tự sửa lỗi liên tục. Bằng chứng đã có: Microsoft chuyển trình biên dịch TypeScript sang Go (nhanh hơn khoảng 10 lần); Nicholas Carlini ở Anthropic điều phối 16 agent Claude viết một trình biên dịch C bằng Rust dài 100.000 dòng, qua gần 2.000 phiên Claude Code với chi phí dưới 20.000 USD; Andreas Kling chuyển JavaScript engine của Ladybird từ C++ sang Rust trong hai tuần, khoảng 25.000 dòng, không có lỗi hồi quy nào.
 
-Bằng chứng thực tế đã xuất hiện: Microsoft viết lại TypeScript compiler bằng Go (nhanh hơn 10 lần); Anthropic dùng 16 agent Claude song song để viết một C compiler bằng Rust trong gần 2000 phiên Claude Code, tốn gần 20.000 USD; Andreas Kling chuyển JavaScript engine của Ladybird từ C++ sang Rust trong 2 tuần với 25.000 dòng code và zero regression. Hệ sinh thái Python ngày càng là một hệ sinh thái Rust khoác áo Python: pydantic, polars, tokenizers, orjson đều là Rust. OpenAI đã mua Astral (uv, ruff), Anthropic đã mua Bun. Vai trò lập trình viên đang dịch chuyển từ "viết code" sang "thiết kế hệ thống và review output", và trong workflow đó, lợi thế ergonomics của Python ngày càng ít quan trọng, còn lợi thế runtime của ngôn ngữ khó hơn lại tăng giá trị mỗi ngày.
-
-**Điểm chính:**
-- AI hiện đại viết Rust, Go tốt hơn C++ vì compiler feedback loop chặt, mỗi error message là tín hiệu training miễn phí
-- Ngôn ngữ càng có hệ thống kiểu mạnh và compile nhanh thì agent càng tự sửa lỗi tốt
-- "Đơn vị đóng góp" đang chuyển từ patch sang port: Armin Ronacher port MiniJinja từ Rust sang Go trong 10 giờ chỉ với 45 phút thời gian thực
-- Không phải mọi ngôn ngữ đều hưởng lợi: Zig, Haskell, Gleam vẫn ở "phía sai" của đường cong vì thiếu dữ liệu training
-- Ngoại lệ vẫn tồn tại: Prisma bỏ Rust query engine để quay về TypeScript/WASM cho serverless; PyTorch vẫn giữ ~85% mảng nghiên cứu deep learning
+Ngay cả hệ sinh thái Python cũng đang là "hệ sinh thái Rust đội mũ Python": pydantic, polars, tokenizers, orjson đều viết bằng Rust; OpenAI mua Astral (uv, ruff), Anthropic mua Bun. Đơn vị đóng góp cũng dịch chuyển từ bản vá sang bản chuyển ngữ: Armin Ronacher dùng agent chuyển MiniJinja từ Rust sang Go trong 10 giờ, chỉ tốn 45 phút công sức thật. Ngoại lệ vẫn có: Prisma quay về lõi TypeScript/WASM cho serverless, PyTorch vẫn chiếm khoảng 85% nghiên cứu học sâu, còn Zig, Haskell, Gleam thiếu dữ liệu huấn luyện. Khi vai trò lập trình viên chuyển sang thiết kế và duyệt kết quả, lợi thế dễ viết của Python giảm dần, còn lợi thế hiệu năng của ngôn ngữ khó thì tích lũy mỗi ngày.
 
 ## [On Rendering the Sky, Sunsets, and Planets](https://blog.maximeheckel.com/posts/on-rendering-the-sky-sunsets-and-planets/)
 
-Bài viết của Maxime Heckel hướng dẫn chi tiết cách tái hiện hiện tượng tán xạ khí quyển bằng WebGL shader, từ những nguyên lý cơ bản đến kết quả gần như chụp ảnh thực tế. Tác giả bắt đầu từ kỹ thuật raymarching mô phỏng tương tác giữa ánh sáng và các hạt trong khí quyển, kết hợp ba cơ chế chính: tán xạ Rayleigh (bước sóng ngắn tán xạ mạnh, giải thích vì sao bầu trời xanh), tán xạ Mie (hạt lớn như bụi và aerosol, tạo hiệu ứng hào quang quanh mặt trời) và hấp thụ ozone (loại bỏ một số bước sóng, ảnh hưởng đến màu hoàng hôn).
+Maxime Heckel hướng dẫn chi tiết cách tái hiện hiện tượng tán xạ khí quyển bằng shader WebGL, đi từ nguyên lý cơ bản đến hình ảnh gần như ảnh chụp. Nền tảng là kỹ thuật raymarching: lấy mẫu mật độ khí quyển dọc theo tia nhìn, tính độ truyền sáng theo định luật Beer và dùng hàm pha để mô tả hướng tán xạ. Ba cơ chế được kết hợp: tán xạ Rayleigh (bước sóng ngắn tán xạ mạnh hơn, lý do bầu trời có màu xanh), tán xạ Mie (hạt lớn như bụi, sol khí, tạo quầng sáng quanh mặt trời) và sự hấp thụ của tầng ozone (lọc bớt một số bước sóng, ảnh hưởng đến màu hoàng hôn).
 
-Sau khi dựng được shader bầu trời phẳng, tác giả tích hợp khí quyển vào hành tinh tròn bằng cách dựng lại tọa độ world-space từ depth buffer, dùng phép kiểm tra giao nhau giữa tia và mặt cầu để xác định biên khí quyển, và xử lý độ sâu cảnh để khí quyển hòa hợp với các vật thể đã render. Cuối cùng, để đạt hiệu năng thời gian thực, bài viết áp dụng kỹ thuật Look-Up Table (LUT) của Sebastian Hillaire — thay vòng lặp raymarching lồng nhau bằng việc lấy mẫu texture đã tính sẵn. Bài viết kèm nhiều widget tương tác cho phép điều chỉnh góc mặt trời, độ cao, hiệu ứng Mie/ozone, cũng như phần bonus về render nhật thực và khí quyển sao Hỏa.
-
-**Điểm chính:**
-- Mô phỏng bầu trời thực tế cần ba thành phần: Rayleigh, Mie, và hấp thụ ozone
-- Raymarching kết hợp Beer's Law cho transmittance và phase function cho hướng ánh sáng
-- Để render khí quyển trên hành tinh, dùng depth buffer + ray-sphere intersection để gắn hiệu ứng vào geometry có sẵn
-- LUT giúp giảm tải bằng cách tiền tính các giá trị phức tạp và sample từ texture thay vì tính lại mỗi frame
-- Cùng một framework có thể mô phỏng nhật thực và khí quyển sao Hỏa chỉ bằng cách đổi tham số
+Sau khi có bầu trời phẳng, tác giả gắn khí quyển vào một hành tinh hình cầu: dựng lại tọa độ không gian thế giới từ bộ đệm độ sâu, dùng phép giao tia với mặt cầu để xác định biên khí quyển và xử lý độ sâu để khí quyển hòa vào các vật thể đã kết xuất. Cùng khung mô phỏng đó, chỉ cần đổi tham số là có thể dựng nhật thực hay bầu khí quyển sao Hỏa. Cuối cùng, để chạy thời gian thực, bài viết áp dụng phương pháp bảng tra cứu (LUT) của Sébastien Hillaire: tính sẵn độ truyền sáng, bầu trời và phối cảnh không khí vào các texture rồi lấy mẫu lại, thay cho các vòng lặp raymarching lồng nhau mỗi khung hình. Bài viết có rất nhiều widget tương tác để chỉnh góc mặt trời, độ cao hay cường độ Mie và ozone, rất đáng để đọc trực tiếp.
 
 ## [Starting Systems Programming, Pt 1: Programmers Write Programs](https://eblog.fly.dev/startingsystems1.html)
 
-Bài viết của Efron Amber Licht là phần đầu của loạt bài hướng dẫn systems programming, với luận điểm trung tâm: "cách để giỏi một thứ gì đó là làm nó". Tác giả cho rằng nhiều lập trình viên thiếu kỹ năng nền tảng vì chưa từng tự tay viết chương trình từ đầu, và bài viết hướng đến việc demystify hộp đen "phần mềm" bằng cách bắt tay phân tích trực tiếp các tệp nhị phân. Khác với tên gọi gợi liên tưởng đến boot process hay init system, nội dung tập trung vào việc hiểu cách một chương trình đã biên dịch thực sự vận hành ở mức byte.
+Đây là phần mở đầu loạt bài về lập trình hệ thống của Efron Amber Licht, xoay quanh một luận điểm: muốn giỏi thì phải tự làm, và lập trình viên thì phải viết chương trình. Theo tác giả, một bài toán mang tính "hệ thống" khi nó tương tác với hệ điều hành hoặc phần cứng, có ràng buộc hiệu năng chặt, hay thao tác ở mức byte và thanh ghi. Người lập trình hệ thống nhìn máy tính như một cỗ máy vật lý có thể hiểu trọn vẹn, chứ không phải một khái niệm trừu tượng, và không ngại tháo tung mọi thứ ra xem.
 
-Tác giả dẫn người đọc qua các kỹ thuật cốt lõi: dùng hex dump để khảo sát cấu trúc tệp thực thi, viết các công cụ nhỏ (findoffset, echo, cat) để định vị và sửa nội dung tệp, patch nhị phân mà không cần biên dịch lại, và nắm những điểm cơ bản về định dạng ELF như magic number, entry point, kiến trúc đích. Bài viết nhấn mạnh học qua thực hành: viết hàng chục chương trình nhỏ thay vì chỉ đọc lý thuyết.
-
-**Điểm chính:**
-- Systems programming là tương tác trực tiếp với OS và phần cứng, thao tác byte và register ở mức thấp
-- Tệp thực thi chỉ là chuỗi byte có tổ chức; hiểu cấu trúc của nó sẽ phá vỡ ảo giác "hộp đen"
-- Các công cụ Unix quen thuộc như cat, echo, grep có thể được xây lại từ những primitive đơn giản
-- x86-64 dùng little-endian; entry point trong ELF header xác định nơi CPU bắt đầu thực thi
-- Dữ liệu chuỗi như "hello, world!" tồn tại ở offset cố định trong binary và có thể tìm được qua pattern matching
+Bài viết mở "hộp đen" chương trình bằng cách biên dịch một chương trình hello world viết bằng Go rồi khảo sát trực tiếp tệp nhị phân. Người đọc tự viết từng công cụ nhỏ: findoffset để tìm vị trí một chuỗi trong tệp, echo và cat để ghi và in tệp, binpatch để sửa thẳng nội dung tệp nhị phân mà không cần biên dịch lại, cùng các công cụ hexdump để đọc phần mã lệnh. Qua đó, người đọc thấy rằng một tệp thực thi chỉ là chuỗi byte có tổ chức: chuỗi "hello, world!" nằm ở một vị trí cố định, còn header ELF chứa magic number, kiến trúc đích và điểm vào nơi CPU bắt đầu thực thi, với các giá trị lưu theo kiểu little-endian trên x86-64. Tinh thần tác giả muốn truyền lại: tự xây công cụ, tự nhìn dữ liệu bằng mắt mình, hiểu hệ thống thay vì dựa vào lớp trừu tượng, vì suy cho cùng tất cả chỉ là byte.
 
 ## [Learning Software Architecture](https://matklad.github.io/2026/05/12/software-architecture.html)
 
-Matklad cho rằng để giỏi thiết kế phần mềm, kinh nghiệm thực tế quan trọng hơn nhiều so với học thuật. Bản thân tác giả học được nhiều nhất qua việc dẫn dắt dự án IntelliJ Rust thay vì qua các khóa học chính quy. Quan điểm trung tâm: kiến trúc phần mềm bị chi phối bởi cấu trúc tổ chức và động cơ của con người nhiều hơn là kiến thức kỹ thuật thuần túy — đúng như định luật Conway. Tác giả còn nhấn mạnh một nhận định sắc bén: "phần mềm cuối cùng ít quan trọng hơn kiến trúc, và kiến trúc cuối cùng ít quan trọng hơn các vấn đề xã hội".
+Trong thư trả lời một nhà vật lý hỏi cách học thiết kế phần mềm, Matklad cho rằng kỹ năng này học tốt nhất qua thực hành. Các khóa học thiết kế ở đại học với anh chỉ như "trẻ mẫu giáo chơi làm lính cứu hỏa"; điều thực sự dạy anh là việc bất ngờ phải dẫn dắt dự án IntelliJ Rust. Nhận xét thứ hai là định luật Conway: phần mềm lặp lại cấu trúc xã hội của tổ chức làm ra nó. Tác giả trích một câu của neugierig: mã nguồn rốt cuộc ít quan trọng hơn kiến trúc, còn kiến trúc lại ít quan trọng hơn các vấn đề xã hội. Vì thế, chất lượng kém của "mã nguồn khoa học" chủ yếu đến từ hệ thống động cơ, như áp lực phải công bố bài báo trong ba tháng, chứ không phải do thiếu kiến thức.
 
-Tác giả lập luận rằng chất lượng code khoa học không kém vì lập trình viên thiếu hiểu biết, mà vì hệ thống động cơ ưu tiên thời hạn xuất bản hơn là kiến trúc bền vững. Khi không thể đổi được động cơ, ta phải tối ưu trong giới hạn — ví dụ rust-analyzer cố tình tách rời các tính năng với runtime isolation, vừa cho phép cộng tác viên không chuyên đóng góp, vừa bảo vệ phần lõi. Triết lý: chấp nhận ràng buộc thực tế và xây dựng có chiến lược thay vì chạy theo sự hoàn hảo không thể đạt được.
-
-**Điểm chính:**
-- Kỹ năng thiết kế phần mềm đến từ làm việc thực tế chứ không phải khóa học
-- Định luật Conway: cấu trúc tổ chức quyết định kiến trúc phần mềm
-- Vấn đề chất lượng code thường là vấn đề động cơ, không phải vấn đề kỹ thuật
-- Khi không đổi được context, hãy thiết kế kiến trúc thích nghi với context đó (ví dụ rust-analyzer)
-- Tham khảo: "Boundaries" của Gary Bernhardt, các bài viết của Pieter Hintjens và Ted Kaminski
+Có hai lối ra: hiếm hoi lắm mới có dịp thiết kế lại hệ thống động cơ của một dự án, còn thường thì phải chấp nhận ràng buộc và thích nghi. rust-analyzer là ví dụ: phần lõi sâu như một trình biên dịch được giữ dễ xây dựng và bộ kiểm thử chạy trong vài giây để thu hút người đóng góp giỏi; các tính năng rộng thì được tách độc lập, mỗi tính năng được bọc bởi catch_unwind, nên người đóng góp cuối tuần có thể gửi mã chưa hoàn hảo mà lỗi không lan sang phần khác hay làm hỏng dữ liệu. Tác giả không có cuốn sách "chân lý" nào để giới thiệu, nhưng gợi ý bài nói "Boundaries" của Gary Bernhardt, các bài viết của Pieter Hintjens, blog của Ted Kaminski và bài "Reflections on a decade of coding" của Jamii.
 
 ## [I'm an introvert. This is how I get myself to speak up.](https://newsletter.weskao.com/p/im-an-introvert-this-is-how-i-get-myself-to-speak-up)
 
-Wes Kao chia sẻ kinh nghiệm cá nhân của một người hướng nội trong môi trường làm việc nơi các cuộc họp luôn ưu ái những người nói trước và nghĩ to. Tác giả thẳng thắn thừa nhận cấu trúc họp hành thường "tưởng thưởng" cho người nói nhanh, đặt người hướng nội — vốn cần thời gian xử lý trước khi phản hồi — vào thế bất lợi có hệ thống. Thay vì chờ đến lúc đủ tự tin (thường không bao giờ đến), cô đề xuất chuẩn bị trước và áp dụng các chiến thuật cụ thể.
+Wes Kao chia sẻ kinh nghiệm của một người hướng nội ở nơi làm việc, nơi các cuộc họp thường ưu ái người nói trước và vừa nói vừa nghĩ. Người hướng nội cần thời gian xử lý trước khi phản hồi nên dễ rơi vào thế bất lợi một cách có hệ thống. Thay vì chờ đến lúc đủ tự tin — điều thường không bao giờ đến — tác giả đề xuất chuẩn bị trước và áp dụng những chiến thuật cụ thể mà chính cô đang dùng.
 
-Một số kỹ thuật đáng chú ý: quyết định trước cuộc họp rằng mình sẽ tham gia phát biểu, lên tiếng sớm để tránh cửa sổ cơ hội đóng lại, dùng văn bản (tài liệu, ghi chú) như một kênh đóng góp song song có giá trị lâu dài, chuẩn bị sẵn các câu mở đầu kiểu "That's a great point. My POV on this is…" để giảm lo âu, tận dụng lợi thế của họp online (ánh sáng, khung hình, ô video nhỏ giúp giảm áp lực), và nhờ đồng nghiệp "nudge" mình một cách nhẹ nhàng để có động lực phát biểu.
-
-**Điểm chính:**
-- Quyết định trước cuộc họp rằng sẽ phát biểu, không tranh luận với chính mình trong lúc họp
-- Phát biểu sớm để tránh tự nghi ngờ kéo dài
-- Dùng văn bản như kênh đóng góp song song, tạo ra "artifact" lâu dài
-- Chuẩn bị sẵn vài câu mở đầu mẫu để giảm áp lực ngay lúc đó
-- Họp online có nhiều lợi thế cho người hướng nội — biết tận dụng
+Trước cuộc họp, hãy quyết định sẵn là mình sẽ phát biểu để khỏi giằng co với bản thân ngay lúc đó, và lên tiếng sớm trước khi sự tự nghi ngờ kéo dài khiến cơ hội trôi qua. Chuẩn bị vài câu mở đầu quen thuộc kiểu "That's a great point. My POV on this is…" giúp chen vào cuộc thảo luận dễ hơn. Văn bản như tài liệu, ghi chú là một kênh đóng góp song song, tạo ra sản phẩm có giá trị lâu dài. Họp trực tuyến cũng có lợi thế riêng cho người hướng nội (ánh sáng, khung hình, ô video nhỏ giúp bớt áp lực), và có thể nhờ một đồng nghiệp nhắc nhẹ để giữ trách nhiệm phát biểu.
 
 ## [How I use LLMs as a staff engineer in 2026](https://www.seangoedecke.com/how-i-use-llms-in-2026/)
 
-Sean Goedecke chia sẻ cách anh sử dụng LLM trong vai trò staff engineer ở năm 2026, với thay đổi lớn nhất so với năm 2025: agent đã đủ tin cậy để dùng thường xuyên thay vì chỉ thử nghiệm dè dặt. Hiện nay, mỗi thay đổi code anh đều bắt đầu bằng việc nhờ agent giải quyết vấn đề, đánh giá kết quả trong khoảng 30 giây ban đầu và thường chỉ cần một lượt chỉnh sửa trước khi push. Với debug, agent chẩn đoán đúng khoảng 80% bug một cách tự lực, dù anh vẫn tham gia cung cấp context và thu hẹp không gian tìm kiếm — đặc biệt với bug phức tạp cần nhiều phiên agent.
+Sean Goedecke nhìn lại cách anh dùng LLM trong vai trò staff engineer sau hơn một năm, và thay đổi lớn nhất là agent giờ đã thật sự tốt. Năm 2025 anh chỉ nhờ AI gợi ý mã, sửa nhỏ ở vùng lạ hay hỏi đáp; nay mọi thay đổi mã nguồn đều bắt đầu bằng việc giao cho agent (chủ yếu qua ứng dụng GitHub Copilot, hàng chục phiên mỗi ngày). Anh lướt qua kết quả khoảng 30 giây, loại bỏ phần lớn vì "không phải điều mình nghĩ", còn lại mới duyệt kỹ và chỉnh một lượt cuối. Với lỗi phần mềm, anh giao mọi báo cáo lỗi cho agent vì nó tự chẩn đoán đúng khoảng 80%. Tuy vậy, chuyên môn con người vẫn quan trọng: có lỗi phải tới phiên agent thứ 14 mới tìm ra, sau khi anh đã bổ sung ngữ cảnh từ log, Slack, tự tái hiện lỗi và thu hẹp phạm vi tìm kiếm.
 
-Quan điểm thú vị là anh xem code test là "rẻ" nên review thoáng hơn code production, đồng thời cho agent đảm nhận viết test, integration test, và xử lý sự cố môi trường local. Tuy nhiên, anh cố ý không dùng AI cho PR description, ADR, tin nhắn Slack, và bài blog — vì tin rằng những loại văn bản này cần phán đoán con người về điều gì thực sự đáng truyền đạt. Bài học cốt lõi: kỹ năng quan trọng nhất là "chuyển càng nhiều việc cho agent càng tốt, nhưng không đi quá xa" — vừa tránh underutilization, vừa tránh phụ thuộc mù quáng.
-
-**Điểm chính:**
-- Năm 2026, agent đủ tin cậy để dùng thường xuyên với giám sát nhẹ
-- Mỗi thay đổi code bắt đầu bằng prompt cho agent, review nhanh trong 30 giây
-- Agent chẩn đoán đúng ~80% bug; con người vẫn cần cung cấp context và thu hẹp scope
-- Test code được xem là "rẻ" và review thoáng hơn so với code production
-- Vẫn giữ tay viết PR description, ADR, Slack, blog — nơi cần phán đoán con người
+Anh đẩy nhiều việc kiểm thử và thiết lập môi trường cho agent: nhờ agent tự kiểm thử thay đổi rồi đọc lại nhật ký, viết thêm kiểm thử tích hợp, gỡ rối cấu hình máy cục bộ. Mã kiểm thử được xem là "rẻ", nhưng giao diện người dùng thì anh không giao vì agent chưa đủ nhạy với cảm nhận thị giác. Ngược lại, anh vẫn tự viết mô tả PR, ADR, tin nhắn Slack và bài blog, vì LLM hay nói quá nhiều, khó nêu được ý cốt lõi, và việc tự viết cho người khác thấy có một con người đang suy nghĩ. Theo anh, kỹ năng AI quan trọng nhất hiện nay là giao càng nhiều việc cho agent càng tốt nhưng không đi quá xa.
 
 ## [Interrogatory LLM](https://martinfowler.com/bliki/InterrogatoryLLM.html)
 
-Martin Fowler giới thiệu kỹ thuật "Interrogatory LLM": thay vì để con người tự viết ra mọi context cần thiết cho một tác vụ phức tạp, ta để LLM đóng vai người phỏng vấn — đặt câu hỏi để thu thập thông tin, sau đó tổng hợp lại thành tài liệu context cho một phiên LLM khác thực thi tác vụ thực sự. Cách làm này giải quyết một bài toán quen thuộc: viết spec đầy đủ thường rất tốn công, và nhiều chuyên gia có kiến thức nhưng không quen viết.
+Martin Fowler giới thiệu kỹ thuật "Interrogatory LLM": thay vì con người tự viết ra hàng trang ngữ cảnh cho một tác vụ phức tạp, ta yêu cầu LLM phỏng vấn mình, đặt mọi câu hỏi cần thiết, rồi tổng hợp thành một báo cáo ngữ cảnh để một phiên khác (có thể dùng mô hình khác) thực hiện bước tiếp theo. Ông lần đầu thấy cách làm này trong blog của Harper Reed, với điểm đáng chú ý là buộc LLM chỉ hỏi một câu mỗi lần; khi tự thử, Fowler nhận ra phải nhắc lại yêu cầu này thường xuyên.
 
-Tác giả mô tả ba ứng dụng chính: (1) chuẩn bị context — LLM phỏng vấn người dùng để tạo report làm input cho LLM thực thi; (2) kiểm tra tài liệu — LLM phỏng vấn domain expert để xác minh xem spec hiện có còn chính xác không, một cách thay thế cho review truyền thống; (3) trích xuất tri thức — biến kiến thức truyền miệng thành tài liệu viết, đặc biệt hữu ích với người ngại viết. Một khuyến nghị quan trọng: LLM phải được "nhắc đi nhắc lại" để chỉ hỏi một câu mỗi lần, vì model có xu hướng dồn nhiều câu hỏi cùng lúc khiến cuộc phỏng vấn mất hiệu quả.
-
-**Điểm chính:**
-- Đảo vai trò: thay vì cấp context cho LLM, để LLM phỏng vấn để tự thu thập context
-- Ba ứng dụng: chuẩn bị context, kiểm tra tài liệu, trích xuất tri thức từ chuyên gia
-- Yêu cầu "chỉ hỏi một câu mỗi lần" cần được nhắc liên tục trong prompt
-- Kỹ thuật hữu ích vượt ngoài LLM: giúp khai thác tri thức từ người không quen viết tài liệu
+Kỹ thuật này còn dùng được theo chiều ngược lại: đưa cho LLM một tài liệu như đặc tả phần mềm và để nó phỏng vấn chuyên gia miền nhằm kiểm tra tài liệu còn chính xác không, thay cho việc bắt chuyên gia đọc duyệt vốn nhiều người thấy khó. Có thể kết hợp cả hai: một LLM xây dựng tài liệu, các LLM khác đem đi rà soát với những chuyên gia khác. Rộng hơn, dù Fowler là người coi viết là một phần của tư duy, nhiều người thấy viết rất khó; một cuộc trò chuyện với LLM có thể giúp họ biến hiểu biết của mình thành tài liệu viết.
 
 ## [I don't think AI will make your processes go faster](https://frederickvanbrabant.com/blog/2026-05-15-i-dont-think-ai-will-make-your-processes-go-faster/)
 
-Frederick Van Brabant lập luận ngược lại với kỳ vọng phổ biến: AI sẽ không làm cho quy trình của tổ chức nhanh hơn, vì các tổ chức thường xác định sai vị trí của nút thắt. Họ tập trung vào những bottleneck nhìn thấy được (tốc độ viết code, thời gian xử lý ticket) trong khi nút thắt thật sự nằm ở thượng nguồn: yêu cầu mơ hồ, tài liệu nghèo nàn, scope chưa rõ. Trong phát triển phần mềm, phần lớn thời gian thực sự bị tiêu tốn không phải để gõ code, mà để hiểu xem khách hàng hoặc domain expert thực sự muốn gì.
+Frederick Van Brabant, sau khi đọc lại hai cuốn kinh điển "The Toyota Way" và "The Goal", cho rằng AI sẽ không làm quy trình của tổ chức nhanh hơn như nhiều người kỳ vọng, vì ta thường tìm sai chỗ của điểm nghẽn. Nhìn biểu đồ tiến độ dự án, phát triển phần mềm là khâu tốn thời gian nhất, nên cách xử lý quen thuộc là thêm người hoặc tin rằng AI sẽ làm nó nhanh hơn. Nhưng thời gian dài không có nghĩa vấn đề bắt nguồn từ đó: không ai làm dự án nhanh hơn bằng cách gõ phím nhanh hơn. Phần lớn thời gian thực chất dành để hiểu một yêu cầu mơ hồ, chỉ có tiêu đề, như "gửi email cho người dùng khi hoàn tất đơn hàng" — email chứa gì, lỗi thì sao, thế nào là hoàn tất.
 
-Tác giả nhấn mạnh rằng AI sinh code không loại bỏ được công việc thượng nguồn đó. Để cho ra kết quả đúng, AI vẫn cần spec chi tiết và bị "cầm tay" liên tục. Một bottleneck chỉ phát huy năng suất khi nhận input chất lượng cao và dự đoán được — nếu input là yêu cầu mơ hồ thì việc thực thi nhanh chỉ tạo ra nhiều output sai nhanh hơn. Giải pháp gốc là đảm bảo người (hoặc AI) thực thi nhận được thông tin đầy đủ trước khi bắt đầu, thay vì đầu tư thêm công cụ hay tài nguyên ở khâu cuối.
-
-**Điểm chính:**
-- Tổ chức thường xác định nhầm vị trí của bottleneck — nó nằm ở thượng nguồn, không phải khâu thực thi
-- Trong dev, thời gian thực sự tốn nằm ở việc làm rõ yêu cầu, không phải gõ code
-- AI sinh code chỉ hữu ích khi có spec rõ; với yêu cầu mơ hồ, AI làm sai nhanh hơn
-- Bottleneck cần "input chất lượng cao, dự đoán được" để phát huy giá trị
-- Cải thiện thật sự đến từ tài liệu và spec rõ ràng, không phải từ việc tăng tốc khâu cuối
+AI sinh mã nhanh, nhưng không có nghĩa là sinh đúng mã. Các so sánh giữa người và AI thường bỏ qua công "cầm tay chỉ việc": để AI làm đúng, chuyên gia miền và sản phẩm phải mô tả từng tính năng, từng lỗi đến chi tiết nhỏ nhất, và khâu viết tài liệu phình ra đáng kể. Đó chính là điều lập trình viên luôn mong muốn; nếu được nhận tài liệu chi tiết như vậy, năng suất của họ cũng sẽ tăng vọt. Muốn quy trình nhanh hơn, hãy bảo đảm người làm việc có đủ điều kiện để làm việc, đúng như bài học của "The Goal": điểm nghẽn cần nhận đầu vào chất lượng cao và dự đoán được.
 
 ## [Using an Engineering Notebook](https://ntietz.com/blog/using-an-engineering-notebook/)
 
-Nicole Tietz chia sẻ thói quen ghi chép cá nhân mà cô gọi là "engineering notebook" — một cuốn sổ kỹ thuật mượn ý tưởng từ truyền thống ghi chép phòng thí nghiệm. Cô ghi rất chi tiết những gì đang làm và lý do làm, mỗi mục đều có ngày tháng, ghi theo thời gian thực, và quan trọng là sổ chỉ append, không xóa hay sửa. Bắt đầu thói quen này từ năm 2016 khi quản lý nhiều khách hàng consulting cùng lúc, hiện cô dùng thiết bị e-ink thay vì sổ giấy vì thuận tay trái.
+Nicole Tietz chia sẻ thói quen mà cô xem là có lẽ quan trọng nhất để làm việc hiệu quả: viết tay vào sổ kỹ thuật (engineering notebook), một thực hành mượn từ sổ ghi chép phòng thí nghiệm. Sổ ghi rất chi tiết việc đang làm và lý do, đủ để người khác lặp lại được; mỗi mục có ngày tháng, được viết ngay trong lúc làm, chỉ ghi thêm chứ không xóa hay sửa, và là nơi ghi nhận đầu tiên chứ không phải chép lại từ chỗ khác. Mức chi tiết đặc biệt quan trọng vì bản thân bạn trong tương lai cũng là "người khác" và sẽ quên nhiều thứ. Cô bắt đầu từ năm 2016 khi làm tư vấn cho nhiều khách hàng cùng lúc, và hiện dùng thiết bị e-ink thay cho sổ giấy vì thuận tay trái và không muốn mang theo nhiều cuốn sổ.
 
-Điểm đặc biệt: cô viết trước khi viết code — mô tả thay đổi định làm vào sổ để làm rõ tư duy trước khi triển khai. Hai lợi ích lớn nhất là (1) hỗ trợ trí nhớ qua việc xem lại các entry cũ và qua chính hành động viết tay, và (2) làm công cụ tư duy: viết ép phải suy nghĩ rõ ràng và phơi bày những lỗ hổng kiến thức trước khi gõ phím. Cô nhấn mạnh "writing is the work" — sổ không phải tài liệu cho người khác, mà là quá trình xử lý suy nghĩ cho chính mình. Cô khuyến nghị mỗi người tự thử nghiệm format và mức chi tiết riêng, vì không phải ai cũng hợp với cách làm này.
-
-**Điểm chính:**
-- Engineering notebook = ghi chi tiết quá trình làm việc theo thời gian thực, có ngày, không sửa
-- Viết trước khi code: mô tả thay đổi định làm để làm rõ tư duy
-- Hai lợi ích chính: hỗ trợ trí nhớ và làm công cụ tư duy phát hiện lỗ hổng kiến thức
-- "Writing is the work" — sổ phục vụ chính mình, không phải tài liệu cho người khác
-- Tự thử nghiệm format phù hợp; cách này không phải hợp với tất cả mọi người
+Cuốn sổ mang lại hai lợi ích chính. Thứ nhất là hỗ trợ trí nhớ: vừa có thể đọc lại xem mình đang làm gì sau khi bị gián đoạn, vừa nhờ việc viết tay giúp ghi nhớ tốt hơn. Thứ hai là công cụ tư duy: cô thường mô tả thay đổi định làm vào sổ trước khi viết mã, buộc bản thân nghĩ kỹ và phát hiện chỗ chưa hiểu trước khi gõ phím. Cô hầu như không đọc lại sổ và cũng không cho ai xem, vì "việc viết chính là công việc". Lời khuyên của cô: nếu chưa thử thì nên thử, rồi tự điều chỉnh định dạng, phương tiện và mức độ chi tiết cho phù hợp với bản thân.
 
 ### Bonus
 
 **Documents:**
 [AI eats the world](https://static1.squarespace.com/static/50363cf324ac8e905e7df861/t/6a0af5d0484fbf5fe9a7743e/1779103184855/2026-Spring-AI.pdf)
+
+---
+
+*Bài viết đã được viết lại bởi Claude Code với Opus 5.5 vào ngày 27/09/2026.*

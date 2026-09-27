@@ -9,115 +9,52 @@ categories: ["Newsletter"]
 
 ## [The developer productivity paradox: Why faster coding doesn't mean faster software delivery](https://gradle.com/blog/developer-productivity-paradox-faster-coding-slower-delivery/)
 
-Bài viết khám phá Nghịch lý Năng suất Nhà phát triển, nơi các công cụ AI giúp lập trình nhanh hơn nhưng chỉ số tổ chức lại không cải thiện. Mặc dù 90% nhà phát triển sử dụng AI và 80% cảm thấy năng suất hơn, sự bất ổn hệ thống lại tăng do AI có tỷ lệ dự đoán sai cố hữu. Vấn đề gốc rễ là chuyển đổi ngữ cảnh đã hấp thụ lợi ích năng suất, và AI giới thiệu các gián đoạn mới trong quá trình xác thực và gỡ lỗi. Giải pháp là tổ chức cần Kỹ thuật Năng suất Nhà phát triển (DPE) để củng cố hệ thống phân phối, thiết kế lại quy trình làm việc cho hiệu quả luồng công việc, và thay đổi cách đo lường từ các chỉ số hoạt động sang các chỉ số luồng/kết quả.
+Bài viết của Trisha Gee (Gradle) tổng kết một chủ đề nổi bật tại DPE Summit 2025: nghịch lý năng suất nhà phát triển. Gần như mọi lập trình viên đã dùng AI (khoảng 90%) và hơn 80% tin rằng mình làm việc hiệu quả hơn, nhưng các chỉ số tổ chức gần như không nhúc nhích. Báo cáo DORA 2025 cho thấy AI không phải vấn đề cũng không phải lời giải, mà là tấm gương phản chiếu và bộ khuếch đại những điểm mạnh, điểm yếu sẵn có. Vì mô hình AI luôn có một tỷ lệ dự đoán sai nhất định, lượng mã nguồn sinh ra càng nhiều thì hệ thống càng kém ổn định nếu quy trình phân phối phần mềm không đủ vững. Chi phí chuyển đổi ngữ cảnh cũng nuốt mất phần thời gian tiết kiệm được: mỗi lần bị ngắt quãng tốn 15–20 phút để lấy lại tập trung, và chính AI tạo thêm những lần ngắt mới như kiểm tra kết quả, chỉnh câu lệnh hay chuyển công cụ để tìm lỗi.
 
-**Điểm chính:**
-- 90% nhà phát triển dùng AI nhưng sự bất ổn hệ thống vẫn tăng
-- Chuyển đổi ngữ cảnh hấp thụ lợi ích năng suất từ AI
-- Cần framework DPE: củng cố hệ thống phân phối, thiết kế lại quy trình làm việc, đo lường kết quả
-- Đầu tư vào kỹ thuật nền tảng, vòng lặp phản hồi CI/CD, quản lý luồng giá trị
+Để vượt qua nghịch lý, tác giả đề xuất coi việc áp dụng AI là một cuộc chuyển đổi toàn tổ chức theo hướng Kỹ thuật Năng suất Nhà phát triển (DPE): đầu tư vào kỹ thuật nền tảng và tiêu chuẩn chung, củng cố cơ chế hoàn tác, rút ngắn vòng phản hồi CI/CD; giảm kích thước mỗi lô thay đổi, loại bỏ việc vặt và áp dụng quản lý chuỗi giá trị; đồng thời đo luồng công việc và kết quả thay vì số dòng mã hay số yêu cầu hợp nhất và đào tạo đội ngũ biết thẩm định mã do AI viết thay vì chỉ bấm "Chấp nhận".
 
 ## [What Actually Makes You Senior](https://terriblesoftware.org/2025/11/25/what-actually-makes-you-senior/)
 
-Kỹ năng cốt lõi phân biệt các kỹ sư cấp cao là **giảm thiểu sự mơ hồ**. Trong khi các kỹ sư cấp trung xuất sắc với các vấn đề được định nghĩa rõ, các kỹ sư cấp cao biến các yêu cầu mơ hồ như "cải thiện hiệu suất" thành các kế hoạch cụ thể và có thể thực hiện được. Các kỹ sư cấp cao hỏi các câu hỏi quan trọng: "Chúng ta thực sự đang cố gắng giải quyết vấn đề gì?" và "Ai là người dùng ở đây và điều gì gây khó khăn cho họ?" Họ xác định các giả định ẩn và đánh giá các nhược điểm tiềm tàng. Giá trị của họ nằm ở việc **giảm thiểu rủi ro dự án** bằng cách làm cho các vấn đề trừu tượng trở nên cụ thể.
+Theo tác giả, kỹ năng cốt lõi tách biệt kỹ sư cấp cao với phần còn lại không nằm ở công nghệ mà ở khả năng **giảm sự mơ hồ**. Một kỹ sư cấp trung có thể xử lý rất tốt bài toán đã được định nghĩa rõ, nhưng trước yêu cầu mơ hồ như "cần cải thiện hiệu năng" hay "người dùng phàn nàn về luồng đăng ký", kỹ sư cấp cao sẽ đào sâu: đặt những câu hỏi chưa ai nghĩ tới, tách điều quan trọng khỏi nhiễu, xác định việc nào làm ngay và việc nào gác lại. Họ hỏi vấn đề thực sự cần giải quyết là gì, người dùng là ai và điều gì làm họ khó chịu, kế hoạch đang dựa trên giả định nào có thể sai, và hậu quả ra sao nếu vẫn phát hành khi đã sai. Nhờ vậy họ **giảm rủi ro cho dự án**, biến "chẳng biết đây là gì" thành "hai dự án nhỏ và một việc nên bỏ". Khi làm tốt, công việc này gần như vô hình: dự án cứ thế trôi chảy, ít bất ngờ và ít sự cố.
 
-Bài viết chỉ trích các phương pháp tuyển dụng hiện tại tập trung vào kỹ năng kỹ thuật thay vì giảm thiểu sự mơ hồ, lưu ý rằng nhiều kỹ sư "cấp cao" có thể giải quyết các vấn đề được định nghĩa rõ nhưng lại bị tê liệt với các thông số kỹ thuật không rõ ràng. Tác giả gợi ý rằng cấp độ cao có thể được phát triển qua thực hành, bắt đầu với các ticket mơ hồ và học cách làm rõ chúng ngay từ đầu thay vì chờ đợi người khác hoặc lập trình ngay lập tức. Công việc cấp cao thường trông vô hình khi làm tốt - các dự án đơn giản chạy trơn tru với ít bất ngờ hơn.
-
-**Điểm chính:**
-- Kỹ năng cốt lõi: giảm thiểu sự mơ hồ, không chỉ giải quyết các vấn đề được định nghĩa rõ
-- Các kỹ sư cấp cao hỏi "Chúng ta thực sự đang giải quyết vấn đề gì?" và "Ai là người dùng?"
-- Giá trị nằm ở việc giảm thiểu rủi ro dự án bằng cách làm các vấn đề trừu tượng trở nên cụ thể
-- Phương pháp tuyển dụng sai lầm khi tập trung vào kỹ năng kỹ thuật thay vì giảm thiểu sự mơ hồ
-- Cấp độ cao có thể phát triển qua thực hành với các ticket mơ hồ
+Tác giả phê phán cách tuyển dụng hiện nay chỉ chú trọng danh sách công nghệ, số năm kinh nghiệm và bài tập LeetCode, dẫn đến những kỹ sư "cấp cao" đảo được cây nhị phân trên bảng trắng nhưng lúng túng trước một đặc tả còn dang dở. Tin tốt là đây không phải tài năng bẩm sinh mà là kỹ năng rèn được qua thực hành: hãy bắt đầu từ chiếc ticket mơ hồ tiếp theo, dành thời gian làm rõ nó trước thay vì chờ người khác giải thích hoặc lao vào viết mã ngay.
 
 ## [Becoming unblockable](https://www.seangoedecke.com/unblockable/)
 
-Tác giả cung cấp các chiến lược cụ thể để trở nên "không thể bị chặn" - duy trì tiến độ về phía trước bất chấp trở ngại. Lời khuyên chính bao gồm: làm việc trên nhiều nhiệm vụ đồng thời để chuyển giữa luồng công việc khi một trong số bị chặn; sắp xếp thứ tự dự án để xử lý các rào cản tiềm tàng sớm (phần gây tranh cãi, các phụ thuộc); ưu tiên môi trường phát triển ổn định sử dụng các công cụ tiêu chuẩn để tối đa hóa thời gian hiệu quả; gỡ lỗi các vấn đề ngoài khu vực trách nhiệm thay vì chờ đợi các đội khác; xây dựng mối quan hệ với các kỹ sư trên các đội khác để có sự hợp tác không chính thức nhanh hơn; tận dụng các quản lý cấp cao làm "hỗ trợ từ trên cao" để xóa các rào cản tổ chức; và chọn các dự án phù hợp với các ưu tiên của công ty để có sự ủng hộ của nhà điều hành.
+Sean Goedecke đưa ra những lời khuyên cụ thể để trở nên "không thể bị chặn", tức luôn có cách tiến lên dù gặp trở ngại. Trước hết, hãy làm song song nhiều hơn một việc, giống một luồng CPU chuyển sang việc khác khi việc này bị chặn; nhưng tránh ôm hai việc khẩn cấp cùng lúc, và nên chọn các việc phụ như tái cấu trúc, tối ưu hiệu năng hay đào tạo bắt buộc thay vì nhặt bừa thêm ticket. Tiếp theo, sắp xếp thứ tự công việc sao cho phần dễ bị tắc (chẳng hạn việc chuyển đổi cơ sở dữ liệu phải chờ đội khác) hoặc phần dễ gây tranh cãi được làm sớm nhất. Hãy quyết liệt với công cụ: dùng môi trường phát triển càng phổ biến càng tốt, sửa môi trường hỏng nhanh như xử lý sự cố trên hệ thống thật, và khi thật sự bế tắc thì tìm đường vòng như chạy kiểm thử trên CI hay triển khai lên môi trường thử nghiệm.
 
-Tác giả nhấn mạnh rằng việc bị chặn thường phụ thuộc vào sự chuẩn bị, các mối quan hệ, và quản lý dự án chiến lược thay vì các hoàn cảnh bên ngoài. Việc trở nên không thể bị chặn không phải là kỹ thuật mà là sự kết hợp của lập kế hoạch, xây dựng mạng lưới, và tư duy chiến lược.
-
-**Điểm chính:**
-- Làm việc trên nhiều nhiệm vụ để chuyển đổi khi bị chặn
-- Sắp xếp thứ tự dự án để giải quyết các rào cản sớm
-- Môi trường phát triển ổn định với các công cụ tiêu chuẩn
-- Gỡ lỗi các vấn đề ngoài trách nhiệm thay vì chờ đợi
-- Xây dựng mối quan hệ liên đội để hợp tác nhanh hơn
-- Tận dụng các quản lý cấp cao làm hỗ trợ từ trên cao
-- Chọn các dự án phù hợp để có sự ủng hộ của nhà điều hành
+Khi gặp lỗi từ dịch vụ của đội khác, đừng vội kết luận mình bị chặn mà hãy tự đọc mã nguồn và nhật ký của họ; giờ đây có thể nhờ các tác tử AI như Codex hay Claude Code phân tích, và theo tác giả chúng trả lời đúng khoảng một phần ba số lần. Ngoài ra, hãy xây dựng quan hệ với kỹ sư các đội khác bằng cách hữu ích với họ để có kênh hợp tác không chính thức nhanh hơn, và tận dụng "hỗ trợ từ trên cao" của giám đốc hay phó chủ tịch bằng cách chọn dự án phù hợp với ưu tiên của công ty.
 
 ## [Treat test code like production code](https://blog.ploeh.dk/2025/12/01/treat-test-code-like-production-code/)
 
-Bài viết lập luận rằng mã kiểm thử nên được đối xử với cùng tiêu chuẩn như mã sản xuất vì nó cần bảo trì và khả năng đọc hiểu. Các vấn đề phổ biến trong mã kiểm thử bao gồm vi phạm nguyên tắc DRY, mã zombie, các chờ đợi tùy ý, và xử lý không đồng bộ không phù hợp. Tác giả nhấn mạnh rằng các tiêu chuẩn mã hóa tồn tại chủ yếu cho sự hiểu biết của con người và khả năng bảo trì, không phải cho thực thi máy tính. Vì mã kiểm thử chiếm một phần đáng kể của cơ sở mã, áp dụng các phương pháp tốt như giữ nó DRY ngăn chặn các vấn đề như "Phẫu thuật Shotgun" nơi các thay đổi yêu cầu sửa đổi trên nhiều bài kiểm thử.
+Mark Seemann cho rằng mã kiểm thử cần được đối xử như mã chạy trên môi trường thật: áp dụng cùng tiêu chuẩn viết mã, dễ đọc, được tổ chức tốt và cũng phải qua duyệt mã. Thực tế mã kiểm thử thường bị xem nhẹ: thụt lề đúng chuẩn nhưng đầy trùng lặp do sao chép, nhiều "mã zombie" bị vô hiệu hóa bằng chú thích, dùng thời gian chờ tùy ý thay cho đồng bộ luồng đúng cách. Tiêu chuẩn viết mã và nguyên tắc thiết kế tồn tại không phải để chiều máy tính mà để con người, thường là chính mình trong tương lai, có thể hiểu và bảo trì. Khi độ bao phủ kiểm thử tốt, lượng mã kiểm thử rất lớn nên càng cần giữ nó theo nguyên tắc DRY; nếu không, một thay đổi nhỏ sẽ gây ra "Shotgun Surgery", làm hàng loạt bài kiểm thử hỏng và phải sửa từng cái.
 
-Bài viết tham khảo các Mẫu Kiểm thử xUnit như là tài nguyên toàn diện cho các phương pháp kiểm thử cụ thể và phản đối quan niệm rằng các bài kiểm thử nên là DAMP thay vì DRY, lưu ý rằng các cụm từ mang tính mô tả và có ý nghĩa không xung đột với việc tránh trùng lặp. Các ngoại lệ tồn tại, đặc biệt trong các phương pháp bảo mật - mã kiểm thử có thể mã hóa cứng mật khẩu và bỏ qua xác thực đầu vào vì nó không được triển khai đến sản xuất. Các miễn lệ đặc thù nền tảng cũng có thể áp dụng, như các quy tắc ConfigureAwait trong .NET hoặc các thể chế mồ côi trong Haskell.
-
-**Điểm chính:**
-- Mã kiểm thử cần cùng tiêu chuẩn như mã sản xuất cho khả năng bảo trì
-- Các vấn đề phổ biến: vi phạm DRY, mã zombie, chờ đợi tùy ý, không đồng bộ không phù hợp
-- Tiêu chuẩn mã hóa phục vụ sự hiểu biết của con người, không phải thực thi máy tính
-- Áp dụng DRY trong các bài kiểm thử để ngăn chặn các vấn đề "Phẫu thuật Shotgun"
-- Ngoại lệ cho bảo mật (mã hóa cứng mật khẩu) và các quy tắc đặc thù nền tảng
-- Các Mẫu Kiểm thử xUnit là tài nguyên toàn diện cho các phương pháp kiểm thử
+Với các vấn đề riêng của kiểm thử như cấu trúc, tổ chức, đặt tên hay tính tất định, tác giả giới thiệu cuốn *xUnit Test Patterns* là tài liệu đầy đủ nhất. Ông cũng phản bác quan niệm kiểm thử nên "DAMP thay vì DRY", vì những cụm từ mô tả có ý nghĩa là phẩm chất đáng có bất kể có lặp lại hay không. Dù vậy vẫn có ngoại lệ, chủ yếu về bảo mật khi mã kiểm thử không bao giờ được triển khai: có thể mã hóa cứng mật khẩu chỉ dùng cho kiểm thử và bỏ qua bước kiểm tra đầu vào. Một số ngoại lệ theo nền tảng cũng hợp lý, như bỏ quy tắc bắt buộc gọi `ConfigureAwait` trong .NET hay chấp nhận orphan instance trong Haskell.
 
 ## [How good engineers write bad code at big companies](https://www.seangoedecke.com/bad-code-at-big-companies/)
 
-Bài viết giải thích tại sao các công ty công nghệ lớn lại tạo ra mã có chất lượng thấp đáng ngạc nhiên mặc dù tuyển dụng các kỹ sư có năng lực. Lý do chính là "các công ty lớn đầy rẫy các kỹ sư làm việc ngoài lĩnh vực chuyên môn của họ" do tỷ lệ nghỉ việc cao - hầu hết nhân viên chỉ ở lại "một hoặc hai năm" trước khi chuyển đến các đội khác hoặc công ty khác. Hầu hết các thay đổi mã được thực hiện bởi những người mới bắt đầu tương đối làm việc trong các cơ sở mã không quen thuộc. Các "lão làng" có kinh nghiệm bị quá tải và phát triển chuyên môn của họ là không chính thức thay vì có hệ thống.
+Sean Goedecke giải thích vì sao các công ty công nghệ lớn tuyển nhiều kỹ sư giỏi mà vẫn tạo ra mã nguồn kém chất lượng. Lý do chính là các công ty này **đầy kỹ sư làm việc ngoài chuyên môn của mình**. Nhân viên trung bình chỉ ở lại một đến hai năm, lại thêm tái cơ cấu nội bộ liên tục, trong khi nhiều dịch vụ đã tồn tại cả chục năm. Vì thế phần lớn thay đổi mã được thực hiện bởi "người mới", những người mới làm quen với công ty, cơ sở mã hay ngôn ngữ lập trình trong vòng sáu tháng. Những "lão làng" am hiểu hệ thống có thể duyệt mã kỹ, nhưng vai trò này hoàn toàn không chính thức và họ luôn quá tải vì còn phải lo việc riêng.
 
-Kỹ sư năng lực trung bình có năng lực nhưng "cố gắng làm hết sức trong một môi trường không được thiết lập để tạo ra mã chất lượng". Các công ty công nghệ lớn cố tình ưu tiên sự linh hoạt nội bộ hơn chất lượng phần mềm. Các kỹ sư cá nhân không có sức mạnh để thay đổi động lực tổ chức này. Tác giả lập luận rằng mã xấu là không thể tránh khỏi trong các bối cảnh "kỹ thuật không thuần túy" nơi các kỹ sư làm việc dưới áp lực thời hạn trên các hệ thống không quen thuộc, đối lập với "kỹ thuật thuần túy" nơi các sai lầm chủ yếu cho thấy sự thiếu năng lực. Nguyên nhân gốc rễ là "hầu hết các kỹ sư công ty lớn bị buộc phải làm hầu hết công việc của họ trong các cơ sở mã không quen thuộc."
-
-**Điểm chính:**
-- Mã xấu tại các công ty lớn do các kỹ sư làm việc ngoài chuyên môn
-- Tỷ lệ nghỉ việc cao: kỹ sư chỉ ở lại 1-2 năm trước khi chuyển đội
-- Hầu hết các thay đổi được thực hiện bởi người mới bắt đầu trong các cơ sở mã không quen thuộc
-- Các công ty ưu tiên sự linh hoạt hơn chất lượng phần mềm
-- Các kỹ sư cá nhân không có sức mạnh để thay đổi động lực tổ chức
-- "Kỹ thuật không thuần túy" với áp限 thời hạn và hệ thống không quen thuộc tạo ra mã xấu
+Kỹ sư điển hình vì vậy có năng lực nhưng phải chạy theo hạn chót trên hệ thống xa lạ, tức là "cố gắng hết sức trong một môi trường không được thiết lập để tạo ra mã chất lượng". Theo tác giả, đây là đánh đổi có chủ đích: công ty ưu tiên khả năng điều chuyển kỹ sư linh hoạt hơn chuyên môn sâu và chất lượng phần mềm, còn cá nhân kỹ sư gần như không thể thay đổi điều đó. Tác giả phân biệt "kỹ thuật thuần túy" (dự án khép kín như ngôn ngữ lập trình, nơi mã xấu thường do thiếu năng lực) với "kỹ thuật không thuần túy" (giống thợ điện, thợ nước làm theo hạn chót, nơi mã xấu là khó tránh). Nguyên nhân gốc rễ là hầu hết kỹ sư ở công ty lớn buộc phải làm phần lớn công việc trong những cơ sở mã không quen thuộc.
 
 ## [The Success Trap](https://mikefisher.substack.com/p/the-success-trap)
 
-Bài viết khám phá cách thành công có thể nghịch lý lại giới hạn tự do và các lựa chọn. Nghịch lý của Tiến bộ: Thành công cảm thấy như sự mở rộng nhưng thực sự lại thu hẹp các lựa chọn. Khi các cá nhân và tổ chức phát triển, họ đánh đổi tính có thể lựa chọn để tối ưu hóa, chuyển từ khám phá sang bảo vệ. Bẫy Thành công là một trạng thái nơi các thực thể trở nên quá giỏi trong việc khai thác các thế mạnh hiện có đến nỗi họ ngừng khám phá các cơ hội mới. Điều này tạo ra căng thẳng giữa khai thác (cải thiện những gì hoạt động) và khám phá (thử nghiệm những gì có thể hoạt động tiếp theo).
+Mike Fisher phân tích cách thành công có thể âm thầm thu hẹp tự do và lựa chọn. Ông so sánh người phục vụ ở một quán ăn nhỏ, với kỹ năng dễ mang theo và có thể đổi nghề bất cứ lúc nào, với người phục vụ ở nhà hàng Michelin, tinh thông hơn nhưng ít lựa chọn hơn. "Bẫy thành công" là khái niệm trong lý thuyết tổ chức, mô tả trạng thái quá giỏi khai thác thế mạnh hiện tại đến mức ngừng khám phá cơ hội mới; nó gần với *Thế lưỡng nan của nhà đổi mới* của Clayton Christensen, nhưng bẫy thành công là sự mục ruỗng từ bên trong, còn thế lưỡng nan là bị người khác phá vỡ từ bên ngoài.
 
-Các nghiên cứu trường hợp bao gồm: một kỹ sư cấp cao ngừng xây dựng công việc thực hành do thăng tiến sự nghiệp; Kodak thất bại trong việc đón chụp nhiếp ảnh kỹ thuật số mặc dù phát minh ra nó; và Radiohead cố tình tái tạo lại sau "OK Computer". Các giải pháp bao gồm: thể chế hóa sự tò mò trong các tổ chức; duy trì nhiều bản sắc và tư duy người mới bắt đầu; đánh giá tốc độ học tập cao hơn sự ổn định hiệu suất; và thực hành "quản lý" - nắm giữ thành công một cách nhẹ nhàng và tối ưu hóa cho sự đổi mới.
-
-**Điểm chính:**
-- Thành công thu hẹp lựa chọn thay vì mở rộng chúng
-- Bẫy thành công: quá giỏi khai thác hiện có, ngừng khám phá cơ hội mới
-- Căng thẳng giữa khai thác (cải thiện hiện tại) và khám phá (thử nghiệm tương lai)
-- Các giải pháp: thể chế hóa tò mò, duy trì tư duy người mới bắt đầu
-- Đánh giá tốc độ học tập hơn sự ổn định hiệu suất
-- "Tự do, không phải thành tựu, là thước đo thành công thực sự"
+Bài viết đưa ra ba ví dụ: một kỹ sư được thăng tiến lên quản lý đến mức không còn tự xây dựng gì, cuối cùng chấp nhận giảm lương để quay lại viết mã ở một công ty khởi nghiệp; Kodak phát minh ra máy ảnh kỹ thuật số năm 1975 nhưng xếp xó vì phim là nguồn sống của họ; và Radiohead chủ động làm mới mình bằng *Kid A* sau thành công của *OK Computer*. Để thoát bẫy, tổ chức cần thể chế hóa sự tò mò bằng thời gian dành riêng cho thử nghiệm, còn cá nhân nên thường xuyên đặt mình vào vị trí người mới học, coi trọng tốc độ học hỏi hơn sự ổn định. Với người lãnh đạo, đó là tinh thần "quản gia": nắm giữ thành công nhẹ nhàng và tối ưu cho sự đổi mới chứ không chỉ kết quả, bởi theo tác giả, tự do chứ không phải thành tựu mới là thước đo thật sự của thành công.
 
 ## [Writing a good CLAUDE.md](https://www.humanlayer.dev/blog/writing-a-good-claude-md)
 
-Bài viết giải thích rằng các tệp `CLAUDE.md` rất quan trọng để đưa Claude vào làm quen với cơ sở mã của bạn vì các LLM không có trạng thái và không biết gì về dự án của bạn khi bắt đầu phiên. Tệp nên bao gồm **CÁI GÌ** (ngăn xếp công nghệ, cấu trúc), **TẠI SAO** (mục đích), và **LÀM THẾ NÀO** (phương pháp làm việc) của dự án.
+Bài viết của HumanLayer giải thích rằng LLM không có trạng thái: ở đầu mỗi phiên, tác tử lập trình không biết gì về dự án, và `CLAUDE.md` (hoặc `AGENTS.md`) là tệp duy nhất mặc định được đưa vào mọi cuộc hội thoại. Vì vậy tệp này dùng để giúp Claude làm quen với cơ sở mã, trả lời ba câu hỏi: **CÁI GÌ** (công nghệ, cấu trúc dự án), **TẠI SAO** (mục đích của từng phần) và **LÀM THẾ NÀO** (cách làm việc, chạy kiểm thử, kiểm tra kiểu, biên dịch). Tác giả lưu ý Claude thường bỏ qua `CLAUDE.md` vì Claude Code chèn kèm lời nhắc hệ thống rằng nội dung này chỉ nên dùng khi "rất liên quan đến nhiệm vụ", nên tệp càng chứa nhiều hướng dẫn không áp dụng chung thì càng dễ bị phớt lờ.
 
-Các khuyến nghị chính bao gồm: ít hơn là nhiều hơn - giữ hướng dẫn tối thiểu vì các LLM có thể tuân theo khoảng 150-200 hướng dẫn một cách nhất quán, với các mô hình nhỏ hơn cho thấy sự suy giảm hiệu suất theo cấp số nhân; giữ nó súc tích - nhắm mục tiêu dưới 300 dòng, lý tưởng là dưới 60 dòng như cách tiếp cận của HumanLayer; tính phổ quát - chỉ bao gồm các hướng dẫn liên quan đến tất cả các nhiệm vụ để ngăn Claude bỏ qua nội dung; tiết lộ tiến bộ - lưu trữ các hướng dẫn cụ thể của nhiệm vụ trong các tệp riêng biệt và tham chiếu chúng thay vì bao gồm mọi thứ trong `CLAUDE.md`; tránh sử dụng Claude làm công cụ lint - sử dụng các công cụ lint truyền thống thay vì thực thi kiểu mã dựa trên LLM tốn kém; và tạo thủ công - không tự động tạo `CLAUDE.md` vì nó là "điểm đòn bẩy cao nhất của bộ điều khiển".
-
-Bài viết lưu ý rằng Claude thường bỏ qua `CLAUDE.md` khi cho rằng nội dung không liên quan, được củng cố bởi các lời nhắc hệ thống nói với Claude không phản hồi trừ khi "rất liên quan đến nhiệm vụ của bạn."
-
-**Điểm chính:**
-- CLAUDE.md cần thiết để onboarding Claude vào codebase
-- LLM có thể tuân theo 150-200 hướng dẫn nhất quán
-- Giữ dưới 300 dòng, lý tưởng dưới 60 dòng
-- Chỉ bao gồm hướng dẫn phổ quát cho tất cả các nhiệm vụ
-- Sử dụng tiết lộ tiến bộ - tham chiếu các tệp riêng biệt
-- Không tự động tạo - tạo thủ công là điểm đòn bẩy cao nhất
+Các khuyến nghị chính: ít hướng dẫn hơn là tốt hơn, vì các LLM suy luận hàng đầu chỉ tuân theo ổn định khoảng 150–200 chỉ dẫn, và riêng lời nhắc hệ thống của Claude Code đã chiếm khoảng 50; giữ tệp dưới 300 dòng, càng ngắn càng tốt (tệp gốc của HumanLayer chưa tới 60 dòng) và chỉ chứa nội dung áp dụng cho mọi nhiệm vụ. Hãy dùng cách tiết lộ dần: đặt hướng dẫn riêng cho từng loại việc trong các tệp markdown riêng, chỉ liệt kê chúng trong `CLAUDE.md` và ưu tiên trỏ tới vị trí `file:line` thay vì sao chép mã. Đừng biến Claude thành công cụ lint đắt đỏ; hãy dùng các công cụ lint và định dạng tất định, kết hợp hook hoặc lệnh slash. Cuối cùng, đừng dùng `/init` để tự động sinh tệp, vì đây là điểm đòn bẩy cao nhất của bộ khung tác tử.
 
 ## [We should all be using dependency cooldowns](https://blog.yossarian.net/2025/11/21/We-should-all-be-using-dependency-cooldowns)
 
-Bài viết lập luận rằng các thời gian chờ phụ thuộc là một cách miễn phí, dễ dàng và cực kỳ hiệu quả để giảm thiểu phần lớn các cuộc tấn công chuỗi cung ứng mã nguồn mở. Tác giả phân tích dòng thời gian tấn công điển hình, cho thấy cơ hội của kẻ tấn công thường rất nhỏ - thường chỉ vài giờ đến vài ngày giữa việc phát hành các gói độc hại và việc chúng bị loại bỏ bởi các kho lưu trữ thượng nguồn.
+Tác giả lập luận rằng thời gian chờ phụ thuộc (dependency cooldown) là cách miễn phí, dễ làm và cực kỳ hiệu quả để tránh phần lớn các cuộc tấn công chuỗi cung ứng mã nguồn mở. Hầu hết các vụ tấn công có chung kịch bản: kẻ tấn công chiếm quyền một dự án phổ biến (thường qua thông tin xác thực bị lộ hoặc lỗ hổng CI/CD), phát hành phiên bản độc hại lên PyPI, npm hay GitHub, người dùng tự động cập nhật, các công ty bảo mật phát hiện và báo lên, rồi kho gói gỡ bỏ phiên bản đó. Giai đoạn chuẩn bị có thể kéo dài hàng tuần, nhưng từ lúc phát hành gói độc hại đến lúc bị gỡ thường chỉ vài giờ đến vài ngày. Trong mười vụ được phân tích, tám vụ có cửa sổ tấn công dưới một tuần; ngoại lệ đáng kể là xz-utils với khoảng năm tuần.
 
-Các cuộc tấn công chuỗi cung cấp hầu hết tuân theo một mô hình tương tự: xâm phạm → phát hành phiên bản độc hại → người dùng tự động cập nhật → nhà cung cấp phát hiện → thượng nguồn loại bỏ. Các cửa sổ tấn công thường dưới một tuần (8/10 cuộc tấn công được phân tích là <7 ngày). Cuộc tấn công xz-utils là một trường hợp ngoại lệ đáng kể với khoảng 5 tuần.
-
-Các thời gian chờ trì hoãn cập nhật phụ thuộc theo một khoảng thời gian nhất định, cho phép các nhà cung cấp bảo mật xác định các mối đe dọa trước khi người dùng áp dụng chúng. Đơn giản để thực hiện với cấu hình như `cooldown: default-days: 7`. Lợi ích bao gồm: hiệu quả thực nghiệm chống lại các cuộc tấn công có tầm nhìn cao; miễn phí để thực hiện với các công cụ như Dependabot, Renovate; khuyến khích hành vi tích cực từ các nhà cung cấp bảo mật; và có thể ngăn chặn 80-90% sự tiếp xúc với nỗ lực tối thiểu.
-
-**Điểm chính:**
-- Phụ thuộc cooldown miễn phí, dễ dàng và hiệu quả chống tấn công chuỗi cung ứng
-- Cửa sổ tấn công thường dưới 7 ngày cho hầu hết các cuộc tấn công
-- Đơn giản thực hiện: chỉ cần cấu hình cooldown days
-- Miễn phí với Dependabot, Renovate và các công cụ tương tự
-- Có thể ngăn chặn 80-90% sự tiếp xúc với nỗ lực tối thiểu
+Thời gian chờ đơn giản là khoảng cách giữa lúc một phiên bản được công bố và lúc nó được coi là đủ tin cậy để sử dụng, giúp các công ty bảo mật kịp phát hiện vấn đề trước. Cấu hình rất gọn, chẳng hạn `cooldown: default-days: 7` trong Dependabot, hoặc tính năng tương tự trong Renovate và một số trình quản lý gói. Chờ 7 ngày sẽ chặn được phần lớn các vụ trong danh sách, còn 14 ngày chặn được tất cả trừ xz-utils. Dù không phải thuốc chữa bách bệnh, vì an ninh chuỗi cung ứng về bản chất là vấn đề niềm tin xã hội, việc giảm 80–90% rủi ro với chi phí gần như bằng không là rất khó bỏ qua.
 
 ---
 
-*Bài viết đã được review và cập nhật bởi Claude Code với Opus 4.7 (1M context).*
+*Bài viết đã được viết lại bởi Claude Code với Opus 5.5 vào ngày 27/09/2026.*

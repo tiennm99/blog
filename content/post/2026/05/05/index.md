@@ -9,58 +9,27 @@ categories: ["Newsletter"]
 
 ## [A GitHub agentic workflow](https://blog.frankel.ch/agentic-github-workflows/)
 
-Bài viết của Nicolas Fränkel giới thiệu về GitHub agentic workflow, một tính năng tương đối mới cho phép tự động hóa các tác vụ phức tạp, bán cấu trúc thông qua AI agent thay vì các workflow xác định truyền thống. Đây là giải pháp lý tưởng cho việc xử lý dữ liệu phi cấu trúc hoặc bán cấu trúc, vốn khó xử lý bằng các phương pháp tự động hóa thông thường.
+Nicolas Fränkel chia sẻ trải nghiệm thực tế với GitHub agentic workflow, loại workflow có điểm đặc biệt là chạy một AI agent bên trong. Tác giả làm việc trên một sản phẩm lâu năm với nhiều phiên bản, kèm công cụ phân tích giúp khách hàng biết trước các vấn đề khi nâng cấp. Tệp cấu hình của công cụ này vốn được một đồng nghiệp tổng hợp thủ công từ release notes. Một phần thông tin deprecate có trong mã nguồn qua annotation như `@Deprecated`, nhưng việc deprecate plugin chỉ nằm trong release notes, loại văn bản không có cấu trúc cố định mà tự động hóa xác định truyền thống không xử lý được. Đây chính là chỗ agent phát huy thế mạnh.
 
-Tác giả chia sẻ trường hợp thực tế khi nhóm của ông duy trì một sản phẩm dài hạn với nhiều phiên bản, và phải tổng hợp thủ công thông tin về các tính năng bị deprecate qua các bản phát hành. Quá trình này tốn nhiều công sức và dễ phát sinh lỗi vì phải xem xét cẩn thận release notes, code annotation và tài liệu plugin. Agentic workflow giúp giải quyết bài toán này một cách hiệu quả nhờ khả năng phân tích nội dung do con người viết.
-
-**Điểm chính:**
-- Triển khai gồm ba giai đoạn: khởi tạo bằng `gh aw init`, phát triển workflow dưới dạng Markdown, và biên dịch sang YAML bằng `gh aw compile`
-- Cần `GITHUB_COPILOT_TOKEN` với quyền fine-grained, cụ thể là quyền truy cập "Copilot requests"
-- Một số trở ngại thường gặp: quên biên dịch Markdown sang YAML trước khi push, xung đột quyền khi tự động hóa quá trình biên dịch, khác biệt nền tảng (Windows vs Ubuntu)
-- Hạn chế: không thể sử dụng các action từ GitHub Marketplace bên trong agentic workflow
-- Agentic workflow không thay thế tự động hóa xác định hiện có, mà mở ra khả năng mới cho việc xử lý nội dung mơ hồ do con người tạo ra
+Quy trình gồm bốn bước: khởi tạo bằng `gh aw init` hoặc qua giao diện GitHub; viết workflow bằng Markdown (tác giả dùng Copilot CLI hỗ trợ); "biên dịch" sang YAML bằng `gh aw compile`; rồi chạy như workflow thường với fine-grained token `GITHUB_COPILOT_TOKEN` có quyền "Copilot requests". Các lỗi tác giả gặp gồm: quên biên dịch nên chỉ đẩy tệp Markdown lên; thử tạo workflow tự động biên dịch nhưng vướng quyền hạn và nhận ra đó là ý tưởng rủi ro về bảo mật; cuối cùng chọn workflow biên dịch lại để kiểm tra, báo lỗi nếu khác tệp YAML hiện có, kèm `.gitattributes` để xử lý khác biệt xuống dòng giữa Windows và Ubuntu. Agentic workflow cũng không cho dùng action từ GitHub Marketplace. Theo tác giả, nó không thay thế các workflow xác định, nhưng mở ra trường hợp sử dụng mới như phân tích release notes, việc mà regex khó làm được.
 
 ## [The 20 Software Engineering Laws](https://newsletter.techworld-with-milan.com/p/the-20-software-engineering-laws)
 
-Bài viết của Dr Milan Milanović trình bày 20 nguyên lý nền tảng giúp giải thích vì sao các dự án phần mềm thất bại, vì sao đội ngũ mất đà và hệ thống xuống cấp theo thời gian. Tác giả nhấn mạnh rằng các định luật này, nhiều cái đã có từ hàng chục năm trước, mô tả các mô hình về cách con người cộng tác trong các ràng buộc, chứ không phải là những quy tắc bắt buộc.
+Dr Milan Milanović tổng hợp 20 định luật kỹ thuật phần mềm ông hay nhắc đến nhất, giúp lý giải vì sao dự án thất bại, hệ thống xuống cấp và đội ngũ chậm lại. Nhiều định luật có tuổi đời hàng chục năm nhưng vẫn đúng, vì chúng nói về con người cùng xây dựng sản phẩm dưới áp lực thời gian chứ không phải về công nghệ cụ thể. Chúng không phải quy tắc bắt buộc: chúng mô tả điều đang xảy ra, còn quyết định vẫn thuộc về người kỹ sư.
 
-Các định luật được nhóm theo nhiều khía cạnh: thiết kế hệ thống (Gall's Law, KISS, Conway's Law, Hyrum's Law, CAP Theorem), động lực đội ngũ (Brooks's Law, Ringelmann Effect, Price's Law), lập kế hoạch và ước lượng (Hofstadter's Law, Dunning-Kruger, Parkinson's Law), đo lường (Goodhart's Law, Gilb's Law), hiệu năng và độ tin cậy (Knuth's Optimization Principle, Amdahl's Law, Murphy's Law), và triết lý thiết kế (Postel's Law, Sturgeon's Law, Cunningham's Law). Tác giả minh họa bằng các tình huống thực tế như Instagram thành công nhờ tinh giản từ Burbn (Gall's Law), Google Wave thất bại do làm quá nhiều thứ cùng lúc, sân bay Berlin Brandenburg ước lượng 18 tháng nhưng kéo dài 7 năm và tiêu tốn 7 tỷ euro (Hofstadter's Law), hay sự cố CrowdStrike năm 2024 khiến 8.5 triệu máy Windows bị crash (Murphy's Law).
-
-**Điểm chính:**
-- Các định luật này tồn tại lâu dài vì chúng liên quan đến bản chất con người, không phải công nghệ cụ thể
-- Đôi khi các định luật mâu thuẫn nhau, cần phán đoán để biết áp dụng cái nào trong từng tình huống
-- Hiểu các định luật trước khi vấn đề xảy ra giúp tiết kiệm tài nguyên và tránh lặp lại sai lầm
-- Thành công đòi hỏi nhận biết khi nào mỗi định luật được áp dụng và đưa ra quyết định có chủ đích
-- Khuyến khích phát triển danh sách cá nhân các mô hình đã quan sát được thay vì chỉ dựa vào nguyên lý có sẵn
+Các định luật chia thành nhiều nhóm: cách hệ thống được xây dựng (Gall's Law, KISS, Conway's Law, Hyrum's Law, CAP Theorem, Zawinski's Law), động lực đội ngũ (Brooks's Law, Ringelmann Effect, Price's Law), lập kế hoạch và ước lượng (Dunning-Kruger Effect, Hofstadter's Law, Parkinson's Law), đo lường (Goodhart's Law, Gilb's Law), hiệu năng và độ tin cậy (Knuth's Optimization Principle, Amdahl's Law, Murphy's Law) và triết lý thiết kế (Postel's Law, Sturgeon's Law, Cunningham's Law). Ví dụ minh họa gồm Instagram thành công sau khi cắt gọt Burbn chỉ còn chia sẻ ảnh, còn Google Wave ôm quá nhiều tính năng và biến mất sau 15 tháng; sân bay Berlin Brandenburg dự kiến 18 tháng nhưng kéo dài 7 năm (Hofstadter's Law); hay sự cố CrowdStrike năm 2024 làm 8,5 triệu máy Windows gặp lỗi (Murphy's Law). Hiểu các định luật trước khi vấn đề xảy ra giúp tránh sai lầm tốn kém; vì đôi khi chúng mâu thuẫn nhau, cần phán đoán để chọn định luật phù hợp và tự xây dựng danh sách mô hình đã quan sát được.
 
 ## [Databases Were Not Designed For This](https://arpitbhayani.me/blogs/defensive-databases/)
 
-Arpit Bhayani lập luận rằng kiến trúc database truyền thống dựa trên những giả định ngầm bị các hệ thống AI agent vi phạm hoàn toàn. Hợp đồng truyền thống giả định "bên gọi là một ứng dụng do con người viết, chạy mã xác định" với các thao tác ghi có chủ đích và kết nối ngắn. AI agent phá vỡ mô hình này ở mọi tầng.
+Arpit Bhayani chỉ ra rằng mọi thiết kế database đều dựa trên một "hợp đồng ngầm": bên gọi là ứng dụng do con người viết, chạy mã nguồn xác định, truy vấn được review trước khi triển khai, thao tác ghi có chủ đích và kết nối ngắn. Hợp đồng này đứng vững bốn mươi năm, nhưng AI agent phá vỡ nó ở mọi tầng. Agent tự suy luận ra truy vấn chưa từng xuất hiện, ghi dữ liệu tự động, ghi lặp khi thử lại, giữ kết nối trong lúc chờ LLM suy luận và tách ra nhiều sub-agent chạy song song. Một sự cố điển hình: API trả về HTTP 200 với kết quả rỗng do connection pool phía sau cạn kiệt, agent hiểu "không có dữ liệu" là "không có vấn đề" và duyệt tiếp 500 giao dịch mà không cảnh báo nào được kích hoạt.
 
-Bài viết chỉ ra năm giả định bị phá vỡ: bên gọi xác định (agent tạo truy vấn không thể đoán trước dựa trên suy luận), ghi có chủ đích (agent ghi tự động không qua review), kết nối ngắn (tác vụ suy luận nhiều bước giữ kết nối mở qua các lần LLM tạm dừng), thất bại rõ ràng (agent có thể âm thầm tiếp tục với dữ liệu không đầy đủ), và schema như hợp đồng (schema database trở thành hợp đồng với LLM). Để giải quyết, tác giả đề xuất các kỹ thuật phòng vệ: statement timeout cấp role (5 giây), connection pool riêng cho agent, PgBouncer transaction pooling, soft delete với `deleted_by` truy vết danh tính agent, bảng event log append-only, idempotency key bắt buộc, query comment nhúng ID agent và task, view giám sát hiệu năng theo agent, kiến trúc role-per-agent-type với quyền tối thiểu cần thiết.
-
-**Điểm chính:**
-- Database truyền thống không được thiết kế cho bên gọi không xác định và tự động như AI agent
-- Sử dụng connection pool tách biệt cho agent với fast-fail timeout để khuyến khích backoff
-- Soft delete và append-only log giúp khôi phục khi agent suy luận sai và ghi nhầm
-- Idempotency key là bắt buộc để tránh ghi trùng khi agent retry
-- Query comment chứa thông tin agent giúp truy vết và giám sát các thao tác
-- Áp dụng nguyên tắc least-privilege ở cấp database thay vì dựa vào suy luận của tầng ứng dụng
-- Các pattern này không phải công cụ mới, mà là chuyển từ "best practice" sang "hạ tầng tải trọng" khi làm việc với agent
+Giải pháp là thiết kế database theo hướng phòng thủ: đặt statement timeout ở cấp role (ví dụ 5 giây); dùng soft delete với cột `deleted_by` để truy vết agent nào đã xóa gì; dùng bảng event log chỉ ghi thêm (append-only) cho dữ liệu nhạy cảm; bắt buộc idempotency key sinh từ mã tác vụ, loại thao tác và đối tượng đích để thử lại không tạo bản ghi trùng; tách connection pool riêng cho agent với thời gian chờ ngắn để thất bại nhanh. Bài viết còn đề cập PgBouncer transaction pooling, gắn comment chứa ID agent và tác vụ vào truy vấn để giám sát, và mỗi loại agent một role với quyền tối thiểu. Thông điệp chính: đây không phải công cụ mới, mà là best practice nay trở thành hạ tầng bắt buộc khi agent gọi database.
 
 ## [Finishing Things](https://ratfactor.com/finishing-things)
 
-Bài viết là một bài luận cá nhân sâu sắc về hành trình của tác giả trong việc hoàn thành các dự án cá nhân và duy trì thói quen làm việc hiệu quả bất chấp những bất ổn của cuộc sống. Đây không phải là một hướng dẫn theo công thức, mà là sự xem xét trung thực về những gì hiệu quả và không hiệu quả khi muốn hoàn thành công việc.
+Đây là bài luận cá nhân của tác giả blog ratfactor về chuyện hoàn thành dự án cá nhân giữa những biến động của cuộc sống. Tác giả từng đặt kế hoạch lớn theo năm như "The Year of the Microcontroller" (2023) hay "The Year of Try It" (2024), nhưng khó khăn riêng và yếu tố bên ngoài khiến chúng đổ vỡ, nên quyết định thôi lập kế hoạch lớn. Thứ hiệu quả là một "project stack": mỗi ý tưởng được ghi lên một mẩu Post-It nhỏ và đặt vào khung trưng bày, thường gần đỉnh, và tác giả chỉ làm mục trên cùng. Cách xếp chồng này biến mê cung "side quest" phát sinh thành một đường thẳng dễ theo dõi thay vì danh sách việc cần làm rối rắm.
 
-Tác giả từ bỏ các tuyên bố theo năm như "Năm của Microcontroller" hay "Năm của Thử Cái Mới" sau khi nhận ra rằng các thử thách lớn trong cuộc sống và những gián đoạn từ bên ngoài khiến việc lập kế hoạch cứng nhắc trở nên vô ích. Thay vào đó, tác giả dùng một "project stack" bằng giấy Post-It trong khung trưng bày nhỏ, dự án mới đặt lên đầu stack và chỉ làm việc trên dự án trên cùng. Hệ thống LIFO này giúp tránh tê liệt vì quá nhiều lựa chọn và tự nhiên cho phép các "side quest" phát sinh. Tác giả cũng đề cập đến cảm giác hư vô khi chứng kiến các hệ thống AI được đào tạo dựa trên sáng tạo của con người, và cách phản ứng của ông là cố tình bỏ qua mối đe dọa này và tiếp tục sáng tạo.
-
-**Điểm chính:**
-- Hoàn thành công việc đòi hỏi chấp nhận rằng kế hoạch hoàn hảo là bất khả thi
-- Làm việc tăng dần (incremental) hiệu quả hơn là chờ cảm hứng bùng nổ
-- Duy trì kết nối tâm lý với dự án trong giai đoạn khô hạn bằng cách tương tác nhỏ như đọc file dự án, chỉnh sửa tài liệu
-- Khái niệm "sphere of control" - phạm vi kiểm soát mở rộng và co lại theo hoàn cảnh sống hiện tại
-- Một số trở ngại không phải là khó khăn mà là sự khó chịu (sợ gọi điện thoại, không chắc về kết quả)
-- "Năm của Tiến Bộ Chậm và Liên Tục" thay vì mục tiêu thành tựu cụ thể
+Tác giả ví việc duy trì thói quen và dự án như màn xoay đĩa: khi biến cố ập đến, nhiều đĩa rơi cùng lúc. Lời khuyên là giữ ít nhất một đĩa còn quay vì duy trì dễ hơn bắt đầu lại; kỹ năng cũng cần luyện đều để không mai một. Bài viết đưa ra khái niệm "sphere of control", phạm vi kiểm soát co giãn theo hoàn cảnh: làm tốt mọi việc trong phạm vi đó thì không cần tự trách, và có những trở ngại chỉ là sự khó chịu, như ngại gọi điện đặt lịch hẹn. Tác giả cũng nói về cảm giác hư vô khi các công ty AI thu gom sáng tạo của con người, và chọn phớt lờ để tiếp tục sáng tạo. Kết luận: tiến bộ chậm mà đều đặn mới giúp hoàn thành công việc, nên tác giả chỉ đặt ra một "năm của tiến bộ chậm và bền bỉ" thay vì mục tiêu cụ thể.
 
 ### Bonus
 
@@ -72,4 +41,4 @@ Tác giả từ bỏ các tuyên bố theo năm như "Năm của Microcontroller
 
 ---
 
-*Bài viết đã được review và cập nhật bởi Claude Code với Opus 4.7 (1M context).*
+*Bài viết đã được viết lại bởi Claude Code với Opus 5.5 vào ngày 27/09/2026.*
