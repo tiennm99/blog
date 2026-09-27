@@ -26,11 +26,15 @@ Classified by `node scripts/newsletter protected-lines <post>`:
 | `frontmatter` | the whole `---` block |
 | `heading` | `## [Source Title](url)`, `### Bonus`, `## Bonus: Vài ảnh hay ho…` |
 | `html-block` | `<i> … </i>` greetings and intros |
+| `author-note` | `**Đánh giá:** *…*` — the author's verdict on the tool/model used for the post |
 | `italic-note` | `*Mời bạn thưởng thức Newsletter #7.*`, author notes in italics |
 | `struck` | `~~…~~` lines — entries the author struck out stay struck and unchanged |
 | `asset` | `![label](url)`, `[video title](url)`, `**Images:**` |
+| `code` | fenced code blocks in a summary — keep content verbatim, placed after the prose they illustrate; when the block sat inside a list, de-indent the whole block to column 0 (the check allows re-indenting) |
 
 `candidates` are paragraphs containing `mình` / `MiTi`. Judge each one: **author voice** (the blog author talking to readers — "tuần này mình đi chơi…") → keep verbatim; **summary voice** (paraphrasing the source author — "tác giả chia sẻ dự án của mình") → rewrite. When unsure, keep it and list it in the report.
+
+`###`-level sub-headings inside a live entry (`### Kết luận:`, `### Điểm chính cần lưu ý:`, `### Ứng dụng thực tế`) and short italic labels ending in `:` (`*Những điểm chính cần ghi nhớ:*`) are AI summary structure, not handwritten: fold their content into the prose and drop them. Full-sentence italic notes inside an entry are the author's (e.g. model-review remarks) and stay. `protected-lines` leaves them unprotected; `Bonus` headings anywhere stay protected.
 
 Anything else that is not an AI summary paragraph — a blank-line separator, a `---` rule, a bare comment, a list the author obviously typed — also stays. Rewrite only summary prose/lists under an entry heading or a video link.
 
@@ -40,7 +44,7 @@ Anything else that is not an AI summary paragraph — a blank-line separator, a 
    ```bash
    grep -rl --include=index.md -E '^categories:.*Newsletter' content/post | sort
    ```
-   Drop posts whose `protected-lines` output has `newsletter_post: false`, and (unless `--force`) posts whose `note` already credits the chosen model. Show the count and the first/last post; for scope `all` or more than 10 posts, confirm with the user before editing.
+   Drop posts whose frontmatter `tags` lack `AI-Assisted` (the author wrote them by hand — nothing to rewrite, and a rewrite note would be false), posts whose `protected-lines` output has `newsletter_post: false`, and (unless `--force`) posts whose `note` already credits the chosen model. Show the count and the first/last post; for scope `all` or more than 10 posts, confirm with the user before editing.
 
 2. **Per post, sequentially within the post** (posts are independent and may run in parallel subagents — at most 5 at once, one post per subagent, never two agents on the same file):
 
