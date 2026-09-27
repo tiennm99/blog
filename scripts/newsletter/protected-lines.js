@@ -1,6 +1,6 @@
 // List the lines of a newsletter post that a rewrite must leave byte-for-byte
 // intact — frontmatter, headings, the author's handwritten notes, struck-out
-// entries, and asset links — and, with --against, prove a rewritten post still
+// entries, code samples, and asset links — and, with --against, prove a rewritten post still
 // holds every one of them in the original order.
 // Usage: node scripts/newsletter protected-lines <path/to/index.md> [--against <snapshot.json>]
 // Outputs: JSON { post, newsletter, newsletter_post, note?, lines, candidates }
@@ -13,10 +13,21 @@ import { NEWSLETTER_NUM_RE } from "./find-newsletter-number.js";
 const FENCE_RE = /^---\s*$/;
 const NEWSLETTER_CATEGORY_RE = /^categories:.*\bNewsletter\b/;
 const HEADING_RE = /^#{1,6}\s/;
+const ENTRY_HEADING_RE = /^##\s+\[/;
+const STRUCK_ENTRY_HEADING_RE = /^##\s+~~/;
+const SUBHEADING_RE = /^#{3,6}\s/;
+const BONUS_RE = /\bBonus\b/i;
 const HTML_OPEN_RE = /^<(i|em|div|p|blockquote)\b[^>]*>/i;
 const HTML_CLOSE_RE = /<\/(i|em|div|p|blockquote)>\s*$/i;
 const STRUCK_RE = /^~~.*~~$/;
+const CODE_FENCE_RE = /^(```|~~~)/;
 const ITALIC_LINE_RE = /^(\*[^*].*\*|_[^_].*_)$/;
+// "*Những điểm chính cần ghi nhớ:*" — a short italic label that introduced a
+// machine key-points list. The author's own italic notes are full sentences.
+const ITALIC_LABEL_RE = /^[*_].{1,60}:[*_]$/;
+// "**Đánh giá:** *…*" — the author's bold-labelled verdict on the tool or
+// model that produced the post, written in italics after the label.
+const AUTHOR_NOTE_RE = /^\*\*Đánh giá:?\*\*:?\s*[*_]/;
 const ASSET_LINE_RE = /^!?\[[^\]]*\]\([^)]*\)$/;
 const SUBSECTION_RE = /^\*\*(Images|Videos|Documents):\*\*$/;
 // The blog author writes as "mình" / "MiTi"; AI summaries speak about the
@@ -61,10 +72,28 @@ export function classifyPost(content) {
   }
 
   let inHtml = false;
+  let inCode = false;
+  let codeIndent = "";
+  // zone tracks which part of the body a line sits in. Inside a live entry,
+  // "### Kết luận:"-style sub-headings are part of the machine summary, so
+  // they stay rewritable; everywhere else a heading is the author's.
+  /** @type {"pre" | "entry" | "struck" | "other"} */
+  let zone = "pre";
   for (; i < rows.length; i++) {
     const text = rows[i];
     const trimmed = text.trim();
     const line = i + 1;
+    // Code samples carry facts a paraphrase cannot, so they survive a rewrite
+    // verbatim, blank lines included.
+    // Code is stored relative to its fence's indent, so a block that sat
+    // inside a list may move out of it once the list becomes prose.
+    if (inCode || CODE_FENCE_RE.test(trimmed)) {
+      if (!inCode) codeIndent = text.slice(0, text.length - text.trimStart().length);
+      const rel = text.startsWith(codeIndent) ? text.slice(codeIndent.length) : text.trimStart();
+      lines.push({ line, kind: "code", text: rel });
+      if (CODE_FENCE_RE.test(trimmed)) inCode = !inCode;
+      continue;
+    }
     if (trimmed === "") continue;
 
     if (inHtml || HTML_OPEN_RE.test(trimmed)) {
@@ -77,9 +106,17 @@ export function classifyPost(content) {
       continue;
     }
     if (HEADING_RE.test(trimmed)) {
+      if (ENTRY_HEADING_RE.test(trimmed)) zone = "entry";
+      else if (STRUCK_ENTRY_HEADING_RE.test(trimmed)) zone = "struck";
+      else if (BONUS_RE.test(trimmed) || !SUBHEADING_RE.test(trimmed)) zone = "other";
+      else if (zone === "entry") continue;
       lines.push({ line, kind: "heading", text });
     } else if (STRUCK_RE.test(trimmed)) {
       lines.push({ line, kind: "struck", text });
+    } else if (AUTHOR_NOTE_RE.test(trimmed)) {
+      lines.push({ line, kind: "author-note", text });
+    } else if (zone === "entry" && ITALIC_LABEL_RE.test(trimmed)) {
+      continue;
     } else if (ITALIC_LINE_RE.test(trimmed)) {
       lines.push({ line, kind: "italic-note", text });
     } else if (ASSET_LINE_RE.test(trimmed) || SUBSECTION_RE.test(trimmed)) {
@@ -89,6 +126,17 @@ export function classifyPost(content) {
     }
   }
   return { newsletterPost, note, lines, candidates };
+}
+
+/**
+ * sameCodeLine accepts a code line re-indented as a whole block: the row must
+ * end with the stored fence-relative text and differ only by leading space.
+ * @param {string} row
+ * @param {string} rel
+ * @returns {boolean}
+ */
+function sameCodeLine(row, rel) {
+  return row.endsWith(rel) && row.slice(0, row.length - rel.length).trim() === "";
 }
 
 /**
@@ -107,7 +155,7 @@ export function findMissing(content, expected) {
   for (const want of expected) {
     let found = -1;
     for (let j = cursor; j < rows.length; j++) {
-      if (rows[j] === want.text) {
+      if (rows[j] === want.text || (want.kind === "code" && sameCodeLine(rows[j], want.text))) {
         found = j;
         break;
       }

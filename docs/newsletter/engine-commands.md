@@ -157,8 +157,9 @@ Counts what a post already holds, so a handler can report a running tally.
 ### `protected-lines <path/to/index.md> [--against <snapshot.json>]`
 
 Lists the lines a rewrite (`mt-rewrite-newsletter`) must keep byte-for-byte:
-frontmatter, headings, `<i>` blocks, whole-line italic notes, `~~struck~~`
-lines, and asset links / Bonus subsection labels. Paragraphs mentioning `mình`
+frontmatter, headings (except `###` sub-headings inside a summary), `<i>`
+blocks, whole-line italic notes, `~~struck~~` lines, fenced code blocks, and
+asset links / Bonus subsection labels. Paragraphs mentioning `mình`
 or `MiTi` come back as `candidates` for a human-style judgement; the machine
 provenance note (`*Bài viết đã được … bởi …*`) comes back as `note` and is not
 protected.
