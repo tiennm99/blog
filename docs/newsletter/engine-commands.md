@@ -154,6 +154,31 @@ Counts what a post already holds, so a handler can report a running tally.
 
 `newsletter` is `0` when the post carries no `Newsletter #N` heading.
 
+### `protected-lines <path/to/index.md> [--against <snapshot.json>]`
+
+Lists the lines a rewrite (`mt-rewrite-newsletter`) must keep byte-for-byte:
+frontmatter, headings, `<i>` blocks, whole-line italic notes, `~~struck~~`
+lines, and asset links / Bonus subsection labels. Paragraphs mentioning `mình`
+or `MiTi` come back as `candidates` for a human-style judgement; the machine
+provenance note (`*Bài viết đã được … bởi …*`) comes back as `note` and is not
+protected.
+
+```json
+{
+  "post": "content/post/2025/03/16/index.md",
+  "newsletter": 7,
+  "newsletter_post": true,
+  "note": "*Bài viết đã được review và cập nhật bởi Claude Code với Opus 4.7 (1M context).*",
+  "lines": [{ "line": 8, "kind": "html-block", "text": "<i>" }],
+  "candidates": [{ "line": 20, "kind": "first-person", "text": "…" }]
+}
+```
+
+`newsletter_post` is `true` only when the frontmatter `categories` names
+`Newsletter`. With `--against` (a snapshot saved from the first form), it checks
+the post still contains every snapshot line, in order, and prints
+`{ post, ok, missing }`; exit 1 when anything is missing.
+
 ## Tests
 
 ```bash
