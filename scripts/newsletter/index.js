@@ -16,6 +16,8 @@ Commands:
   find-substack-post --uuid <uuid> [--deep]  find the post embedding an image uuid
   fetch-via-defuddle <url>                   fallback fetch (local defuddle, then defuddle.md)
   post-stats <path/to/index.md>              count the post's articles/images/videos/documents
+  protected-lines <index.md> [--against <snapshot.json>]
+                                             lines a rewrite must keep; verify them after
 `;
 
 // A reader that closes early (`… | head -3`) makes the next write fail with
@@ -60,6 +62,7 @@ const COMMANDS = {
   "find-substack-post": { module: "./find-substack-post.js", fn: "runFindSubstackPost" },
   "fetch-via-defuddle": { module: "./fetch-via-defuddle.js", fn: "runFetchViaDefuddle" },
   "post-stats": { module: "./post-stats.js", fn: "runPostStats" },
+  "protected-lines": { module: "./protected-lines.js", fn: "runProtectedLines" },
 };
 
 /** @returns {Promise<void>} */

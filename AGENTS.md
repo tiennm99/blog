@@ -46,7 +46,7 @@ module per subcommand) and is invoked from the repo root:
 node scripts/newsletter <command> [args]
 ```
 
-The seven subcommands, their arguments, output shapes and exit codes are
+The eight subcommands, their arguments, output shapes and exit codes are
 documented once in **[docs/newsletter/engine-commands.md](docs/newsletter/engine-commands.md)**.
 
 The engine has npm dependencies, so a fresh clone needs `npm ci` from the repo
@@ -66,6 +66,7 @@ The newsletter workflow adds URLs (articles, YouTube videos, images) to the targ
   - `mt-add-video` — YouTube link → Bonus → Videos
   - `mt-add-image` — image → Bonus → Images (labels Substack images via source-post lookup)
   - `mt-add-tags` — add/update tags in post frontmatter
+  - `mt-rewrite-newsletter` — rewrite existing newsletter summaries with a newer model, keeping handwritten lines and stamping a rewrite note
   - `mt-fetch-url` — fallback web fetch chain (local defuddle, the defuddle.md proxy, then a reader proxy); use only when built-in WebFetch is blocked
 - **Codex** — discovers the repository-scoped adapters in `.agents/skills/`. Ask it to add a URL for implicit routing or invoke `$mt-add-url` explicitly.
 
@@ -82,6 +83,7 @@ Codex automatically discovers checked-in skills from `.agents/skills/`. No insta
 - `$mt-add-video <url>` — add a YouTube video directly
 - `$mt-add-image <url>` — add an image directly
 - `$mt-add-tags [post]` — add or update tags
+- `$mt-rewrite-newsletter [model] [scope]` — rewrite existing newsletters with a newer model
 - `$mt-fetch-url <url>` — fallback after the built-in fetch fails
 
 Codex detects skill changes automatically; restart Codex if an update does not appear.
