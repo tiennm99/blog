@@ -31,7 +31,7 @@ AEAD (Authenticated Encryption with Associated Data, mã hóa có xác thực k�
 
 "Dữ liệu liên kết" là phần dữ liệu không mã hóa nhưng vẫn cần bảo vệ khỏi bị thay đổi. Ví dụ trong ứng dụng chat, máy chủ cần đọc `conversation_id` để định tuyến tin nhắn; nếu kẻ tấn công ở giữa đổi mã này sang một cuộc trò chuyện khác của cùng hai người mà phía nhận không xác thực nó, tin nhắn vẫn giải mã thành công và bị xử lý sai ngữ cảnh. API AEAD buộc xác thực đồng thời cả bản mã lẫn dữ liệu liên kết. Các thuật toán AEAD đã được chuẩn hóa như AES256-GCM hay ChaCha20-Poly1305 dùng được trên nhiều thư viện và ngôn ngữ; tác giả khuyên nên theo khuyến nghị của Tink, trừ khi hệ thống có yêu cầu đặc biệt.
 
-## [Ceilometer: Khung đo lường thích ứng của Uber](https://www.uber.com/in/en/blog/ceilometer-ubers-adaptive-benchmarking-framework/)
+## [Ceilometer: Uber's Adaptive Benchmarking Framework](https://www.uber.com/in/en/blog/ceilometer-ubers-adaptive-benchmarking-framework/)
 
 Mọi loại máy chủ mới, bản nâng cấp nhân hệ điều hành hay thay đổi cấu hình tại Uber đều phải được kiểm định kỹ trước khi đưa vào môi trường thật, nhưng quy trình cũ thủ công, rời rạc giữa các nhóm và kết quả nằm rải rác trong bảng tính. Ceilometer ra đời để giải quyết vấn đề đó: một nền tảng đo hiệu năng thích ứng với cấu hình kiểm thử chuẩn hóa để so sánh công bằng, bộ kiểm thử đóng gói trong container để nhà cung cấp phần cứng tự chạy, và báo cáo có đầy đủ ngữ cảnh. Kiến trúc gồm điều phối kiểm thử phân tán trên cụm máy chuyên dụng, dịch vụ tiếp nhận và chuẩn hóa kết quả, kho lưu trữ blob, kho dữ liệu tập trung và dịch vụ phân tích. Hệ thống hỗ trợ kiểm thử tổng hợp (synthetic), kiểm thử cho cơ sở dữ liệu có trạng thái thông qua nền tảng Odin, và cho dịch vụ không trạng thái thông qua Ballast.
 

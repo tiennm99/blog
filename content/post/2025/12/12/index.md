@@ -7,13 +7,13 @@ categories: ["Newsletter"]
 
 *Mời bạn thưởng thức Newsletter #69. ~~Bài viết này được thực hiện bởi [Claude Code](https://github.com/anthropics/claude-code), [Claude Code Router](https://github.com/musistudio/claude-code-router), [iFlow Open Platform](https://platform.iflow.cn) & GLM-4.6~~*
 
-## [Netflix Xây Dựng Đồ Thị Phân Phân Phối Thời Gian Thực (Phần 1)](https://netflixtechblog.com/how-and-why-netflix-built-a-real-time-distributed-graph-part-1-ingesting-and-processing-data-80113e124acc)
+## [How and Why Netflix Built a Real-Time Distributed Graph: Part 1 — Ingesting and Processing Data Streams at Internet Scale](https://netflixtechblog.com/how-and-why-netflix-built-a-real-time-distributed-graph-part-1-ingesting-and-processing-data-80113e124acc)
 
 Khi Netflix mở rộng từ xem video theo yêu cầu sang gói có quảng cáo, sự kiện trực tiếp và trò chơi di động, việc hiểu hành trình của một thành viên trên nhiều thiết bị và nhiều mảng kinh doanh trở nên rất khó. Kiến trúc microservices với hàng trăm dịch vụ, mỗi dịch vụ tự quản lý dữ liệu riêng, khiến dữ liệu bị phân mảnh và các nhóm phân tích phải ghép nối thủ công. Vì vậy, đội kỹ sư dữ liệu xây dựng Real-Time Distributed Graph (RDG): biểu diễn dữ liệu dưới dạng đồ thị để truy vấn theo quan hệ bằng các bước "nhảy" giữa nút và cạnh thay vì những phép JOIN tốn kém, dễ mở rộng khi xuất hiện thực thể mới và thuận lợi cho việc phát hiện mẫu hay bất thường.
 
 Phần 1 tập trung vào tầng tiếp nhận và xử lý. Hành động của người dùng đi qua API Gateway vào các topic Kafka (mỗi topic lên tới khoảng 1 triệu tin nhắn mỗi giây, mã hóa Avro, đồng thời lưu vào bảng Iceberg để nạp lại dữ liệu cũ). Các job Apache Flink lọc nhiễu, bổ sung siêu dữ liệu, chuyển sự kiện thành nút và cạnh, rồi gom và loại bỏ các cập nhật trùng lặp trong một cửa sổ thời gian ngắn trước khi ghi hơn 5 triệu bản ghi mỗi giây sang Data Mesh. Bài học đáng chú ý: một job Flink duy nhất cho mọi topic rất khó tinh chỉnh, nên nhóm chuyển sang mô hình mỗi topic Kafka một job riêng, chấp nhận thêm chi phí vận hành để đổi lấy sự ổn định và khả năng điều chỉnh độc lập.
 
-## [Bắt Nhỏ Vươn Lớn: Giá Trị Thực Sự Của Kiến Trúc Tăng Dần](https://newsletter.optimistengineer.com/p/incremental-architecture-what-you)
+## [Start Small, Scale Smart: The Real Value of Incremental Architecture](https://newsletter.optimistengineer.com/p/incremental-architecture-what-you)
 
 Kiến trúc tăng dần là cách thiết kế để hệ thống dễ tiến hóa, dựa trên nhận định rằng bắt đầu bằng một hệ thống phức tạp thì sẽ kết thúc với một hệ thống phức tạp không chạy được. Theo tác giả, tổ chức đội ngũ quan trọng hơn công nghệ: các nhóm đa chức năng sở hữu trọn vẹn một miền nghiệp vụ hiệu quả hơn cấu trúc chia theo tầng, và muốn có microservices thì trước hết phải có các nhóm độc lập. Kiến trúc sư đóng vai trò người thầy, trực tiếp viết mã và giữ sự nhất quán cho hệ thống thay vì chỉ ra chỉ thị; kiến thức nên được lan tỏa qua lập trình cặp và lập trình nhóm. Thay vì hỏi "mất bao lâu?", hãy hỏi "có thể làm nhỏ hơn không?".
 

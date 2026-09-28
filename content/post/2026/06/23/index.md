@@ -7,19 +7,19 @@ categories: ["Newsletter"]
 
 *Mời bạn thưởng thức Newsletter #112.*
 
-## [Một vài pixel font hiện đại thú vị](https://unsung.aresluna.org/a-few-interesting-modern-pixel-fonts/)
+## [A few interesting modern pixel fonts](https://unsung.aresluna.org/a-few-interesting-modern-pixel-fonts/)
 
 Marcin Wichary điểm qua vài pixel font hiện đại có ý tưởng thú vị. Analog Mono của Andrew Gleeson "sửa tội" cho VCR OSD Mono, font pixel kinh điển từng xuất hiện khắp đầu VCR, TV và máy quay thập niên 1990, vốn có đường nền quá thấp khiến mọi chữ có phần đuôi bị kéo lên. Coral Pixels của Kumiko Yoshida là một color font cố tình giữ lại viền màu đặc trưng của hiển thị subpixel thời 1990–2000: thứ từng là lỗi kỹ thuật giờ trở thành chất liệu hoài cổ và yếu tố thị giác có chủ đích. Two Slice của Joseph Fatula thì đẩy sự tối giản tới cực hạn với chiều cao chỉ 2 pixel mà vẫn "tạm đọc được".
 
 Tác giả lưu ý rằng tất cả đều là font vector giả dạng pixel để cài được trên hệ điều hành hiện đại, và điều đó dẫn tới Geist Pixel của Vercel. Dù lời giới thiệu hơi phô trương, nó chạm đúng một vấn đề quan trọng: pixel font thường vỡ khi đưa vào sản phẩm thật vì không co giãn tốt giữa các kích thước màn hình, metrics xung đột với hệ thống typography sẵn có, hoặc chỉ mang tính trang trí. Theo tác giả, gót chân Achilles của nhiều font không nằm ở hình dạng chữ mà ở phần việc "vô hình" xung quanh như kerning, metadata, bộ ký tự bổ sung và vertical metrics. Bài học cho người làm giao diện là vẻ hoài cổ có thể là điểm khởi đầu, nhưng độ ổn định khi tích hợp mới quyết định một font có dùng được trong sản phẩm hay không.
 
-## [Những kỹ sư giỏi nhất viết ít mã nguồn hơn](https://shvetsm.github.io/posts/the-best-engineers-write-less-code/)
+## [The Best Engineers Write Less Code](https://shvetsm.github.io/posts/the-best-engineers-write-less-code/)
 
 Tác giả phản bác quan niệm rằng không cần viết phần mềm tốt nữa vì LLM đã sinh được mã nguồn. Phần mềm tệ vẫn là phần mềm tệ, dù do Claude Code hay một người thiếu kinh nghiệm viết ra: độ trễ, độ phức tạp và chi phí bảo trì vẫn là thật, và sẽ có rất nhiều việc phải làm để dọn dẹp mã kém chất lượng đang được đẩy lên production. Doanh nghiệp đo mọi thứ bằng thời gian, vì thời gian chính là tiền; đó cũng là lý do họ hào hứng với AI, bởi nó nhanh hơn và rẻ hơn.
 
 Theo tác giả, điều tốt nhất một kỹ sư có thể làm cho stakeholder là tránh xây những thứ không cần thiết, vì mỗi tính năng kéo theo chi phí dài hạn về bảo trì, gỡ lỗi, hạ tầng, hỗ trợ, di chuyển hệ thống và gánh nặng nhận thức. Trên con đường trở thành kỹ sư senior, bạn sẽ chuyển từ "Em làm được, mất vài ngày thôi" sang "Vì sao chúng ta lại xây thứ này?", và câu hỏi thứ hai cực kỳ quan trọng: mã nguồn là một khoản nợ trừ khi nó giải quyết đúng vấn đề. Tệ nhất là xây sai thứ. Cách giảm rủi ro chính là tinh thần Agile thực chất, không phải nghi thức: thống nhất lý do cần làm, điều chỉnh yêu cầu để ra giá trị nhanh hơn, rồi chia khoảng ngắn để trình bày tiến độ và nhận phản hồi. Kỹ sư giỏi không được đo bằng lượng mã tạo ra, mà bằng giá trị mang lại so với độ phức tạp để lại, và thời gian rảnh tốt nhất là dành để xóa bớt mã.
 
-## [Nhanh tốt hơn chậm](https://dubroy.com/blog/fast-is-better-than-slow/)
+## [Fast is better than slow](https://dubroy.com/blog/fast-is-better-than-slow/)
 
 Patrick Dubroy nhận ra rằng những lập trình viên giỏi nhất ông từng làm cùng đều có chung một điểm: họ rất nhanh, vừa bàn xong vấn đề thì một hai giờ sau đã có bản vá hoặc nguyên mẫu. Ông cho rằng họ không nhanh vì giỏi, mà giỏi vì nhanh: làm nhanh giúp có dữ liệu sớm hơn, ra quyết định tốt hơn, học nhanh và học nhiều hơn theo thời gian, đồng thời thử được nhiều hướng giải quyết trước khi chọn cách tốt nhất. Điều này không đồng nghĩa với văn hóa làm quá giờ; có nhiều cách tăng tốc mà không cần làm thêm.
 
@@ -31,25 +31,25 @@ Các gợi ý của ông gắn với thực tế công việc kỹ sư phần m�
 
 Với lập trình viên junior, cheat sheet kiểu này phù hợp để ôn nhanh khi chuyển từ ngôn ngữ khác sang Java, hoặc khi cần nhớ lại một API chuẩn mà không muốn đọc tài liệu dài. Tuy vậy, nên xem nó như bản đồ tra cứu ban đầu: nó không thay thế tài liệu chính thức, việc hiểu sâu về JVM, OOP, collections và concurrency, hay kinh nghiệm thực hành khi viết mã cho production.
 
-## [Thay Go bằng Rust: ingress Kubernetes rẻ hơn 10 lần](https://dev.to/syedahmershah/swapping-go-for-rust-10x-cheaper-k8s-ingress-2b4p)
+## [Swapping Go for Rust: 10x Cheaper K8s Ingress](https://dev.to/syedahmershah/swapping-go-for-rust-10x-cheaper-k8s-ingress-2b4p)
 
 Syed Ahmer Shah kể lại lúc nhìn thấy hóa đơn AWS 4.200 USD mỗi tháng chỉ riêng cho phần compute của lớp ingress Kubernetes. Hệ thống dùng Traefik với 3 pod, mỗi pod khoảng 180MB RSS khi rảnh và hơn 400MB khi có tải, chạy trên các node `t3.large` để đủ dư địa. Nguyên nhân không phải Traefik viết kém, mà là garbage collector của Go được tối ưu cho độ trễ chứ không cho bộ nhớ. Với một proxy, mỗi request đều cấp phát header, buffer và trạng thái kết nối; dưới tải liên tục, GC gần như không có "thời điểm tốt" để dọn dẹp. Ngược lại, Rust giải phóng bộ nhớ ngay khi ra khỏi phạm vi, nên mức dùng bộ nhớ phẳng và không có các đợt dừng do GC.
 
 Nhóm không viết lại Traefik mà chuyển phần proxy chính sang Envoy, kèm một service Rust nhỏ đảm nhận logic định tuyến tùy chỉnh trước đây nằm trong middleware. Tuần đầu gặp ba sự cố, không phải do Rust mà do mô hình cấu hình tường minh của Envoy khác hẳn cách Traefik "làm phép" qua annotation. Sau khoảng ba tuần, lớp ingress giảm từ 3 pod Traefik khoảng 380MB RSS mỗi pod xuống 2 pod Envoy cùng lớp Rust khoảng 40MB mỗi pod; chi phí node giảm từ khoảng 340 USD xuống 30 USD mỗi tháng, còn hóa đơn 4.200 USD còn 390 USD. Bài học không phải là "Rust thay Go": Go vẫn phù hợp cho API, CLI và microservice thông thường, còn Rust đáng cân nhắc cho data plane hiệu năng cao. Việc chuyển đổi tốn hai kỹ sư khoảng ba tuần, nên nếu Traefik đang ổn và hóa đơn không đáng lo thì cứ giữ nguyên.
 
-## [Giữ trạng thái multiplayer bền vững mà không hỗn loạn](https://packagemain.tech/p/persistent-multiplayer-state-without)
+## [Persistent multiplayer state without chaos](https://packagemain.tech/p/persistent-multiplayer-state-without)
 
 Julien Singler chia sẻ kiến trúc giữ trạng thái nhất quán cho một game multiplayer trực tiếp, trong đó PostgreSQL giữ dữ liệu gốc còn Redis đảm nhận các việc cần tốc độ. Ở game một người chơi, trạng thái khá đơn giản; nhưng khi nhiều người có thể cùng tác động lên một mục tiêu, các job định kỳ phải hoàn tất đúng thời điểm bất kể ai đang online, và người chơi quay lại sau vài ngày vẫn kỳ vọng tiến trình còn nguyên, thì trạng thái trở thành bài toán khó nhất. Giữ dữ liệu quan trọng trong bộ nhớ hay chỉ ghi xuống đĩa khi người chơi đăng xuất đều dễ làm mất tiến trình hoặc gây lỗi trong nền kinh tế game.
 
 Backend viết bằng Go, chia thành các lớp handler, service và repository. Mọi thay đổi quan trọng đều đi qua transaction PostgreSQL, là nguồn sự thật duy nhất. Dữ liệu đọc nhiều được lấy từ Redis trước, cache miss mới truy vấn PostgreSQL, và cache bị vô hiệu hóa khi ghi, trước khi trả kết quả thành công để người chơi không thấy dữ liệu cũ. Redis chỉ giữ những gì có thể xây lại như cache, trạng thái online và lock ngắn hạn: lock phân tán bằng `SetNX` đảm bảo job định kỳ chỉ chạy một lần khi backend chạy nhiều instance. Job định kỳ dựa trên cột `finishes_at` có index thay vì quét toàn bộ người chơi mỗi phút, còn các thay đổi theo từng người chơi dùng `SELECT ... FOR UPDATE` trong transaction thay vì tự viết bộ quản lý lock.
 
-## [Chúng ta đang bước vào thời đại over-engineering](https://plc.vc/cdx)
+## [We're in the Over-engineering Game Now](https://plc.vc/cdx)
 
 Peter Clark kể rằng cả sự nghiệp ông tự hào vì biết cách scope dự án sao cho tốn ít công sức kỹ thuật nhất mà vẫn linh hoạt tối đa, bởi thời gian kỹ sư là tài nguyên quý nhất ở một công ty phần mềm. Nhưng ông cũng mê thiết kế sản phẩm và các chi tiết trau chuốt, nên luôn giằng co giữa mong muốn làm kỹ hơn và nỗi lo lãng phí nguồn lực. Giờ đây, khi dùng Claude và Codex cho các dự án cá nhân, ông thoải mái "over-engineer": blog của ông có changelog động, một "máy đo cảm xúc", một MCP tự tạo bài tổng kết hằng tuần, cùng hàng trăm ý tưởng khác mà ông thử rồi bỏ đi.
 
 Luận điểm chính là AI coding xóa nhòa ranh giới giữa over-engineering và đơn giản là hoàn thiện sản phẩm. Ứng dụng iOS của ông giờ không khởi đầu như một MVP trống trải mà đã đầy đủ tính năng, có sẵn vòng phản hồi kích hoạt các agentic workflow. Những cải tiến từng nằm mãi trong backlog vì chưa bao giờ đủ ưu tiên, hoặc quá nhỏ để được ghi lại, giờ có thể được lặp và trau chuốt liên tục. Ông cho rằng thay đổi này sẽ nâng kỳ vọng của người dùng: khi làm phần mềm tốt gần như miễn phí, những sản phẩm cồng kềnh sẽ khó được chấp nhận hơn. Thay vì chỉ là thời của vibe coding hay ứng dụng cho một người dùng, ông tin chúng ta đang tiến tới giai đoạn mà tầm nhìn sản phẩm không còn bị giới hạn bởi nguồn lực, và câu hỏi duy nhất còn lại là: bạn thật sự muốn xây gì?
 
-## [Những package manager đóng gói package manager khác](https://nesbitt.io/2026/05/28/package-managers-that-package-package-managers.html)
+## [Package managers that package package managers](https://nesbitt.io/2026/05/28/package-managers-that-package-package-managers.html)
 
 Andrew Nesbitt xây một ma trận xem package manager nào có thể cài package manager nào khác. Ý tưởng bắt nguồn từ một vòng lặp kỳ lạ: PyPI có gói chứa Node binary, còn npm có gói chứa CPython portable, nên `pip install` và `npm install` có thể chuyền quyền điều khiển qua lại mãi. Ma trận bao phủ 42 client, lấy dữ liệu từ ecosyste.ms cho các registry ngôn ngữ và Repology cho các bản phân phối Linux. Các hàng dày đặc nhất là system package manager như AUR (chứa 40/42), nixpkgs, Homebrew, DNF và Debian, vì đóng gói binary tùy ý vốn là nhiệm vụ của chúng; nhưng khi làm cột thì gần như trống, bởi chẳng ai cần phân phối lại `apt` hay DNF khi chúng đã đi kèm hệ điều hành. Conda nằm giữa hai nhóm, còn PyPI là registry ngôn ngữ đóng gói nhiều nhất vì khá nhiều công cụ đa ngôn ngữ như Conan hay meson được viết bằng Python.
 
@@ -61,7 +61,7 @@ Arpan Patel viết một hướng dẫn dài về cách dùng Claude Code như m
 
 Phần đáng chú ý là cách tổ chức thư mục `.claude`: `CLAUDE.md` chứa quy tắc chung của dự án, `CLAUDE.local.md` cho ghi chú cá nhân, cùng settings, MCP, skills, commands, rules và subagents. `CLAUDE.md` nên ngắn gọn như một lan can bảo vệ, chỉ chứa những quy tắc thật sự giúp tránh lỗi, không phải tài liệu mô tả toàn bộ codebase; các quy trình lặp lại nên được chuyển thành skill, command hoặc subagent để dùng lại trong repo. Với nhóm lớn hơn, plugin, MCP và subagent giúp tách ngữ cảnh, review độc lập và chạy nhiều luồng song song, và chúng phát huy tác dụng nhất khi trở thành một phần của quy trình onboarding chung thay vì chỉ là tiện ích cá nhân.
 
-## [Linear nhanh như thế nào? Phân tích kỹ thuật](https://performance.dev/how-is-linear-so-fast-a-technical-breakdown)
+## [How's Linear so fast? A technical breakdown](https://performance.dev/how-is-linear-so-fast-a-technical-breakdown)
 
 Dennis Brotzky phân tích vì sao Linear tạo cảm giác rất nhanh dù vẫn là một ứng dụng web chạy phía client. Ý chính là Linear không đặt độ trễ mạng trên đường tương tác chính. Dữ liệu mà giao diện đọc đã có sẵn trong trình duyệt, chủ yếu qua IndexedDB và một object pool trong bộ nhớ; thay đổi được áp dụng cục bộ trước, ghi vào hàng đợi giao dịch bền vững rồi mới đồng bộ lên server. Server đóng vai trò xác nhận và gửi lại các delta, chứ không phải thứ giao diện phải chờ trước khi phản hồi người dùng. Ở runtime, MobX cho phép cập nhật rất hạt mịn: mỗi delta chỉ render lại đúng trường và component liên quan thay vì cả danh sách.
 

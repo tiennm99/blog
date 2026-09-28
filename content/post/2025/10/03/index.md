@@ -43,7 +43,7 @@ Kent Beck xuất phát từ giả định rằng lập trình có AI hỗ trợ 
 
 Lời khuyên của Beck là dùng công cụ rẻ cho phần hiển nhiên và dồn sức cho bài toán khó, tập trung vào tích hợp vì nút thắt không còn là viết mã, rèn luyện "gu" để biết điều gì đáng xây dựng, và tư duy theo hệ thống. Trong thế giới dư thừa mã nguồn, thứ khan hiếm là sự thấu hiểu, óc phán đoán và sự khôn ngoan để biết điều gì không nên làm. Chúng có giá trị dù tương lai có ít hay nhiều lập trình viên, nên thay vì đoán trước, hãy xây dựng năng lực phát triển tốt trong cả hai kịch bản.
 
-## [Thế nào là 'thẩm mỹ tốt' trong kỹ thuật phần mềm?](https://www.seangoedecke.com/taste/)
+## [What is "good taste" in software engineering?](https://www.seangoedecke.com/taste/)
 
 Sean Goedecke phân biệt "gu kỹ thuật" (technical taste) với kỹ năng kỹ thuật: bạn có thể giỏi kỹ thuật mà gu tệ, hoặc ngược lại. Theo ông, gu là khả năng chọn đúng bộ giá trị kỹ thuật phù hợp với dự án hiện tại. Ví dụ, ông thích `map` và `filter` hơn vòng lặp `for` vì hàm thuần dễ suy luận và tránh lỗi lệch chỉ số, nhưng người thích `for` cũng có lý do chính đáng như dễ đánh giá hiệu năng hay dễ mở rộng cách duyệt. Khác biệt không nằm ở trình độ mà ở giá trị mỗi người coi trọng. Hầu hết quyết định kỹ thuật là sự đánh đổi giữa các giá trị như khả năng phục hồi, tốc độ, tính dễ đọc, tính đúng đắn, tính linh hoạt, tính di động, khả năng mở rộng và tốc độ phát triển, và không kỹ sư nào coi trọng tất cả như nhau.
 
