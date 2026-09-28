@@ -1,7 +1,7 @@
 ---
 title: "Newsletter #34"
 date: 2025-07-23
-tags: [ "AI-Assisted", "Career", "Leadership", "Software Development", "Performance" ]
+tags: [ "AI-Assisted", "TDD", "Java", "System Design", "Performance", "Career", "AI Coding" ]
 categories: [ "Newsletter" ]
 ---
 

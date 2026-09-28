@@ -1,7 +1,7 @@
 ---
 title: "Newsletter #27"
 date: 2025-05-14
-tags: [ "AI-Assisted", "Development", "Frontend", "Vite", "Cloudflare", "Git", "Data Engineering", "Best Practices" ]
+tags: [ "AI-Assisted", "Vite", "Cloudflare", "Frontend", "AI Coding", "Data Engineering", "Career Development" ]
 categories: [ "Newsletter" ]
 ---
 

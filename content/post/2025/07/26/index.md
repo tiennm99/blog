@@ -1,7 +1,7 @@
 ---
 title: "Newsletter #37"
 date: 2025-07-26
-tags: [ "AI-Assisted", "DevOps", "WebSockets", "Developer Experience", "Git" ]
+tags: [ "AI-Assisted", "Nix", "DevOps", "Developer Experience", "AI Coding", "Git", "WebSockets" ]
 categories: [ "Newsletter" ]
 ---
 

@@ -13,7 +13,7 @@ Sau khi mã nguồn Claude Code CLI bị rò rỉ lên GitHub, Haseeb Qureshi đ
 
 Prompt hệ thống được ghép từ khoảng 15 hàm và chia đôi bằng một điểm đánh dấu ranh giới: nửa tĩnh (khoảng 3.000 token hướng dẫn) được lưu bộ nhớ đệm dùng chung cho mọi người dùng, nửa động chứa ngữ cảnh riêng của từng phiên như `CLAUDE.md` hay chỉ dẫn MCP. Kỹ sư nội bộ Anthropic còn nhận prompt khác người dùng bên ngoài, chẳng hạn giới hạn 25 từ giữa các lần gọi công cụ hay một tác tử xác minh đối kháng. Cờ tính năng lúc biên dịch của Bun giúp loại bỏ mã chết và để lộ những tính năng chưa phát hành như `VOICE_MODE` và `KAIROS`. Kết luận của tác giả: trong khoảng 500 nghìn dòng TypeScript, lời gọi API chỉ chiếm vài trăm dòng; mô hình là phần dễ thay thế nhất, còn "harness" (khung vận hành bao quanh) mới là nơi tích lũy nhiều năm kinh nghiệm thực chiến.
 
-## [AI sẽ đẩy nhanh nợ kỹ thuật của bạn](https://securosis.com/ai/ai-will-accelerate-your-tech-debt/)
+## ~~[AI sẽ đẩy nhanh nợ kỹ thuật của bạn](https://securosis.com/ai/ai-will-accelerate-your-tech-debt/)~~
 
 Chris Farris cho rằng nhiều tổ chức đang giống những gia đình sống nhờ đồng lương tháng: sau nhiều năm ưu tiên ra tính năng hơn xây kiến trúc bền vững, họ chỉ cách phá sản một sự cố lớn, và mỗi sự cố nhỏ lại ngốn thời gian lẽ ra dùng để trả nợ kỹ thuật. Tác giả ví đầu tư AI lúc này như chính sách giảm thuế: dễ chịu và có thể tăng năng suất trước mắt, nhưng làm vấn đề cấu trúc tệ hơn. Khi chi phí viết mã nguồn gần bằng không, rào cản kinh tế tự nhiên ngăn các tính năng thiếu cân nhắc biến mất, kéo theo nhiều mã hơn, bề mặt tấn công rộng hơn và hệ thống phức tạp hơn cho cùng một đội ngũ vốn đã quá tải.
 

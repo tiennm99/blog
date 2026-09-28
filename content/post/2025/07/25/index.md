@@ -1,7 +1,7 @@
 ---
 title: "Newsletter #36"
 date: 2025-07-25
-tags: [ "AI-Assisted", "Kỹ Thuật Phần Mềm", "Phát Triển Bản Thân", "AI", "Thiết Kế Hệ Thống" ]
+tags: [ "AI-Assisted", "Kỹ Thuật Phần Mềm", "Phát Triển Bản Thân", "AI", "Thiết Kế Hệ Thống", "Algorithms", "Code Review" ]
 categories: [ "Newsletter" ]
 ---
 

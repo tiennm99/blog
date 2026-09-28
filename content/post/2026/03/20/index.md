@@ -1,7 +1,7 @@
 ---
 title: "Newsletter #92"
 date: 2026-03-20
-tags: ["AI-Assisted", "Newsletter", "AI Infrastructure", "Security", "Redis", "Compression", "AI Agents"]
+tags: ["AI-Assisted", "Newsletter", "AI Infrastructure", "Machine Learning", "Redis", "Compression", "AI Agents"]
 categories: ["Newsletter"]
 ---
 
@@ -26,7 +26,7 @@ Bài viết thuộc loạt MLU-Explain của Jared Wilber và Lucía Santamaría
 
 Để chọn điểm phân chia, thuật toán ID3 ưu tiên phép chia mang lại information gain lớn nhất, tức là làm giảm entropy của dữ liệu nhiều nhất. Tuy nhiên, chia quá sâu sẽ khiến cây học cả nhiễu trong dữ liệu huấn luyện thay vì những quy tắc có thể tổng quát hóa, một biểu hiện của sự đánh đổi giữa bias và variance dẫn đến overfitting. Cây quyết định dễ diễn giải, huấn luyện nhanh, ít cần tiền xử lý và chịu tốt giá trị ngoại lệ, nhưng lại kém ổn định: chỉ một thay đổi nhỏ trong dữ liệu cũng có thể làm cấu trúc cây thay đổi hoàn toàn. Các kỹ thuật cắt tỉa (pruning) như giới hạn độ sâu tối đa hay đặt số mẫu tối thiểu ở mỗi lá giúp kiểm soát vấn đề này.
 
-## [Container không phải là ranh giới bảo mật](https://www.lucavall.in/blog/containers-are-not-a-security-boundary)
+## ~~[Container không phải là ranh giới bảo mật](https://www.lucavall.in/blog/containers-are-not-a-security-boundary)~~
 
 Dựa trên cuốn Container Security của Liz Rice và quá trình tự tìm hiểu các thành phần Linux bên dưới, Luca Cavallin nhắc lại rằng container không tự động an toàn. Về bản chất, container chỉ là một tiến trình Linux được bao quanh bởi vài lớp cô lập: namespace giới hạn những gì tiến trình nhìn thấy, cgroups giới hạn tài nguyên nó được dùng, nhưng mọi container trên cùng máy chủ vẫn dùng chung một kernel. Vì vậy lỗi kernel, mount cấu hình sai, capabilities quá rộng như CAP_SYS_ADMIN hay tệp setuid bị bỏ quên đều có thể trở thành đường leo thang đặc quyền; chỉ "không chạy bằng root" là chưa đủ. Những nguyên tắc cũ như đặc quyền tối thiểu, phòng thủ nhiều lớp, giảm bề mặt tấn công và giới hạn phạm vi ảnh hưởng vẫn nguyên giá trị.
 

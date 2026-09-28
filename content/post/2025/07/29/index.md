@@ -1,7 +1,7 @@
 ---
 title: "Newsletter #39"
 date: 2025-07-29
-tags: ["AI-Assisted", "Java", "Interview", "Senior Developer", "Programming"]
+tags: ["AI-Assisted", "Java", "Interview", "Prompt Engineering", "MCP", "PostgreSQL", "Refactoring"]
 categories: ["Newsletter"]
 ---
 

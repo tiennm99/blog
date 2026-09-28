@@ -7,7 +7,7 @@ categories: ["Newsletter"]
 
 *Mời bạn thưởng thức Newsletter #107.*
 
-## [Tại sao tôi rời GitHub để chuyển sang Forgejo](https://jorijn.com/en/blog/leaving-github-for-forgejo/)
+## ~~[Tại sao tôi rời GitHub để chuyển sang Forgejo](https://jorijn.com/en/blog/leaving-github-for-forgejo/)~~
 
 Jorijn Schrijvershof chia sẻ lý do rời GitHub để chuyển sang Forgejo tự vận hành, đi theo hướng mà chính phủ Hà Lan đã chọn khi ra mắt code.overheid.nl trên cùng nền tảng vào tháng 4/2026. Động lực chính không nằm ở độ ổn định của GitHub mà ở quyền độc lập và kiểm soát: sau khi cựu CEO Thomas Dohmke rời đi vào tháng 8/2025, GitHub trở thành một bộ phận trong mảng CoreAI của Microsoft thay vì có ban lãnh đạo tự chủ. Từ ngày 24/4/2026, GitHub còn bật mặc định việc thu thập dữ liệu người dùng Copilot để huấn luyện AI mà không có tùy chọn từ chối ở cấp kho mã, nên mã nguồn của tác giả có thể thành dữ liệu huấn luyện mỗi khi cộng tác viên dùng Copilot. Ngoài ra, luật Mỹ như FISA Section 702 hay CLOUD Act vẫn áp dụng dù dữ liệu đặt ở đâu, nên lưu trữ tại EU không giải quyết tận gốc.
 

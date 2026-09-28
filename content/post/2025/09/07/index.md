@@ -1,7 +1,7 @@
 ---
 title: "Newsletter #52"
 date: 2025-09-07
-tags: [ "AI-Assisted", "Programming", "Best-Practices", "Software-Development", "Work-Life-Balance" ]
+tags: [ "AI-Assisted", "Java", "Design-Patterns", "Security", "LLM", "Complexity", "Work-Life-Balance" ]
 categories: [ "Newsletter" ]
 ---
 

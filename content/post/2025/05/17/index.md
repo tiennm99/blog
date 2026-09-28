@@ -1,7 +1,7 @@
 ---
 title: "Newsletter #30"
 date: 2025-05-17
-tags: ["AI-Assisted", "Education", "LLMs", "Caching", "JavaScript", "Software Development"]
+tags: ["AI-Assisted", "Education", "LLMs", "Caching", "JavaScript", "Developer Experience", "PostgreSQL"]
 categories: ["Newsletter"]
 draft: false
 ---

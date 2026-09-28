@@ -1,7 +1,7 @@
 ---
 title: "Newsletter #19"
 date: 2025-05-06
-tags: [ "AI-Assisted", "Development", "Java", "DevOps", "Kafka", "AI", "Writing" ]
+tags: [ "AI-Assisted", "Java", "Kubernetes", "CI/CD", "Kafka", "AI Coding", "Writing" ]
 categories: [ "Newsletter" ]
 ---
 

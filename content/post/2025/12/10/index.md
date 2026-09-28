@@ -1,7 +1,7 @@
 ---
 title: "Newsletter #67"
 date: 2025-12-10
-tags: ["AI-Assisted", "Build Systems", "Configuration Languages", "Agentic Coding", "AI Development", "Refactoring", "Software Engineering"]
+tags: ["AI-Assisted", "Build Systems", "Bazel", "Agentic Coding", "AI Development", "Refactoring", "Software Engineering"]
 categories: ["Newsletter"]
 ---
 
@@ -31,7 +31,7 @@ Bài viết dự đoán những hướng phát triển tiếp theo của lập t
 
 Ở tầng điều phối nhiều tác tử, tác giả kỳ vọng các kỹ thuật như lấy mẫu Best of N, kết hợp mô hình đắt tiền để lập kế hoạch với mô hình rẻ hơn để thực thi, và dùng tác tử con (subagent) để chạy song song, cô lập ngữ cảnh, với một tác tử chính đứng ra điều phối giúp giảm tải cho người dùng. Chất lượng đầu ra sẽ được nâng lên nhờ cơ chế tự phê bình và tự đánh giá, bộ khung tự đề xuất cải thiện cấu hình, cùng hệ thống bộ nhớ lưu giữ thông tin về người dùng và kho mã vượt ra ngoài cửa sổ ngữ cảnh. Tác giả nhận định tốc độ thay đổi hiện nay là chưa từng có.
 
-## [Why agents DO NOT write most of our code - a reality check](https://octomind.dev/blog/why-agents-do-not-write-most-of-our-code-a-reality-check/)
+## ~~[Why agents DO NOT write most of our code - a reality check](https://octomind.dev/blog/why-agents-do-not-write-most-of-our-code-a-reality-check/)~~
 
 Dù chính họ xây dựng tác tử AI, đội ngũ Octomind cho biết phần lớn mã nguồn của công ty vẫn do con người viết. Sau nhiều tháng dùng Cursor, Claude Code và Windsurf, không ai thấy năng suất tăng đáng kể (từ 20% trở lên). Để kiểm chứng, hai kỹ sư dành một tuần xây dựng hoàn toàn bằng AI một tính năng: tạo bản sao kịch bản kiểm thử riêng cho từng nhánh. Ở lần thử đầu, dù đã viết yêu cầu chi tiết và cập nhật tệp quy tắc, tác tử vẫn vấp ở những việc cơ bản như quên sinh lại Prisma client sau khi đổi lược đồ cơ sở dữ liệu, tạo thành phần giao diện mà không gắn vào đâu, viết truy vấn kém hiệu quả, rồi vẫn tự tin báo đã xong. Kết quả là một PR 2.000 dòng cần xem xét và sửa gần như mọi chỗ. Lần thứ hai chia nhỏ công việc vẫn cho ra 1.200 dòng chỉ cho một phần, kèm lỗi xử lý giao dịch (transaction).
 

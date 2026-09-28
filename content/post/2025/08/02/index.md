@@ -1,7 +1,7 @@
 ---
 title: "Newsletter #43"
 date: 2025-08-02
-tags: [ "AI-Assisted", "Lập trình", "Tái cấu trúc mã" ]
+tags: [ "AI-Assisted", "AI Coding", "Coding Agents", "LLM", "Database", "Caching", "Testing" ]
 categories: [ "Newsletter" ]
 ---
 

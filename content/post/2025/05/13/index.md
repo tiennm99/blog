@@ -1,7 +1,7 @@
 ---
 title: "Newsletter #26"
 date: "2025-05-13"
-tags: [ "AI-Assisted", "Software Design", "Java", "Development", "Architecture", "Programming Patterns", "Technology Trends" ]
+tags: [ "AI-Assisted", "Software Design", "Java", "Structured Concurrency", "Git", "Local Development", "AI Agents" ]
 categories: [ "Newsletter" ]
 ---
 

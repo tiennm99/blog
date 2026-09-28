@@ -1,7 +1,7 @@
 ---
 title: "Newsletter #54"
 date: 2025-09-10
-tags: ["AI-Assisted", "Technology", "DevOps", "Monorepo", "Software-Engineering", "Deployment", "Uber", "CI/CD"]
+tags: ["AI-Assisted", "Monorepo", "Uber", "Deployment", "Unicode", "OAuth", "Caching"]
 categories: ["Newsletter"]
 ---
 
@@ -32,7 +32,7 @@ Alex Chesser, lập trình viên với hơn 20 năm kinh nghiệm, cho rằng ph
 
 Kế hoạch tác giả đề xuất gồm bốn bước. Trước hết, đặt lịch một buổi "tự nhìn lại nghề nghiệp" dài một giờ, lặp lại hằng tuần. Tiếp theo, trả lời các câu hỏi như bản thân giỏi gì, thích gì, được trả tiền cho việc gì, cần cải thiện điều gì và mục tiêu trong 1–3, 3–5, 5–10 năm tới, rồi đặt mục tiêu theo tiêu chí SMART, không quên sức khỏe, gia đình và đam mê ngoài công việc để tránh kiệt sức. Sau đó, dành thời gian tập trung theo phương pháp deep work hoặc Pomodoro, và cuối cùng lặp lại vòng này mỗi tuần để điều chỉnh mục tiêu. Tác giả nhấn mạnh rằng không đầu tư cho phát triển chuyên môn cũng là một lựa chọn hợp lệ, miễn là bạn quyết định điều đó một cách có ý thức.
 
-## [Database Cache](https://avi.im/blag/2025/db-cache/)
+## [Replacing a cache service with a database](https://avi.im/blag/2025/db-cache/)
 
 Avi đặt câu hỏi: liệu database có thể thay thế hoàn toàn dịch vụ cache? Cache giải quyết một vấn đề quan trọng là cung cấp dữ liệu tính sẵn với độ trễ cực thấp, thường theo mô hình cache-aside, trong đó ứng dụng làm việc với cả cache lẫn database và tự giữ cho chúng đồng bộ. Để hệ thống đơn giản hơn, ta có thể dùng read replica như một cache: database vốn đã giữ một phần dữ liệu trong bộ nhớ (buffer pool), cả cache lẫn replica đều không yêu cầu nhất quán mạnh, ta dùng lại được chính các câu SQL và không còn phải lo chuyện vô hiệu hóa cache. Với database nhúng như SQLite kết hợp công cụ nhân bản như Litestream, độ trễ mạng thậm chí bằng không.
 

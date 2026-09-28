@@ -1,7 +1,7 @@
 ---
 title: "Newsletter #21"
 date: 2025-05-08
-tags: [ "AI-Assisted", "Java", "JVM", "Memory Management", "Spring Boot", "Garbage Collection", "Coding Standards", "AI", "Software Development", "Career Development", "Payment Systems", "Asynchronous Processing", "Concurrency", "Multithreading", "Interfaces", "Microservices" ]
+tags: [ "AI-Assisted", "Java", "JVM", "Garbage Collection", "Concurrency", "Spring Boot", "Payment Systems" ]
 categories: [ "Newsletter" ]
 ---
 

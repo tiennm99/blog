@@ -1,7 +1,7 @@
 ---
 title: "Newsletter #15"
 date: 2025-05-02
-tags: [ "AI-Assisted", "Development", "Java", "Performance", "LLM" ]
+tags: [ "AI-Assisted", "Java", "LLMs", "GitHub Copilot", "Microservices", "Spring Boot", "Performance" ]
 categories: [ "Newsletter" ]
 ---
 
@@ -13,7 +13,7 @@ Simon Willison tổng kết hơn hai năm sử dụng mô hình ngôn ngữ lớ
 
 Về cách làm cụ thể, tác giả dùng LLM để khảo sát các lựa chọn thư viện và cách triển khai ở giai đoạn đầu; khi viết mã nguồn thật thì đưa chỉ dẫn chi tiết như chữ ký hàm và yêu cầu rõ ràng, sau đó tiếp tục yêu cầu chỉnh sửa, tái cấu trúc qua nhiều lượt thay vì bỏ đi kết quả đầu tiên. Điều không thể thiếu là tự chạy và kiểm thử mã nguồn. Bài viết có ví dụ xây dựng một trang tổng hợp lịch sử commit bằng Claude Code chỉ trong khoảng 17 phút với chi phí 0,61 đô la, dù tác giả vẫn phải tự tay cấu hình GitHub Actions. Lợi ích lớn nhất là tốc độ: LLM giúp thực hiện những dự án trước đây không đáng bỏ công, đồng thời khuếch đại chuyên môn sẵn có của lập trình viên.
 
-## [I use Cursor daily - here's how I avoid the garbage parts](https://www.nickcraux.com/blog/cursor-tips)
+## ~~[I use Cursor daily - here's how I avoid the garbage parts](https://www.nickcraux.com/blog/cursor-tips)~~
 
 Bài viết chia sẻ kinh nghiệm dùng Cursor hằng ngày, một trình soạn thảo mã nguồn xây dựng trên nền VS Code và tích hợp sâu các mô hình ngôn ngữ lớn như GPT-4. Tác giả đưa ra nhiều mẹo thực tế: các phím tắt quan trọng, cách viết câu lệnh để AI trả lời chính xác hơn, cách tận dụng tính năng trò chuyện với toàn bộ mã nguồn dự án, cùng các chiến lược tối ưu quy trình làm việc và cấu hình Cursor cho phù hợp với từng người và từng dự án.
 

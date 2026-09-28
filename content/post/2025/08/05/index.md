@@ -1,7 +1,7 @@
 ---
 title: "Newsletter #46"
 date: 2025-08-05
-tags: [ "AI-Assisted", "Survey", "Tech Stack", "AI Tools", "Developer Tools" ]
+tags: [ "AI-Assisted", "Survey", "Tech Stack", "AI Tools", "Distributed Systems", "TDD", "OOP" ]
 categories: [ "Newsletter" ]
 ---
 

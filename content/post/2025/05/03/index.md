@@ -1,7 +1,7 @@
 ---
 title: "Newsletter #16"
 date: 2025-05-03
-tags: [ "AI-Assisted", "Development", "Career", "Code Quality", "Tech Industry" ]
+tags: [ "AI-Assisted", "Programming Languages", "Code Quality", "Readability", "Latency", "Tech Industry", "Career" ]
 categories: [ "Newsletter" ]
 ---
 
@@ -37,7 +37,7 @@ Sean Goedecke nhận xét rằng trong gần một thập kỷ, làm kỹ sư ph
 
 Hệ quả là các công ty buộc phải tập trung vào vài mục tiêu mà ban lãnh đạo thực sự quan tâm, và nhiều hoạt động như đóng góp mã nguồn mở hay trải nghiệm lập trình viên bị cắt ngân sách. Ông khuyên kỹ sư nên chấp nhận rằng lợi ích của mình giờ có thể mâu thuẫn với lợi ích của công ty; bạn vẫn được quyền theo đuổi điều mình cho là đúng, nhưng sẽ phải trả giá, nhất là với các bạn junior. Mặt tích cực là ngành công nghệ đã gần với thực tế hơn và luật chơi cũng rõ ràng hơn: tạo ra giá trị cho công ty thì được thưởng, không tạo ra giá trị thì bị phạt, và "giá trị" nghĩa là thúc đẩy các kế hoạch cụ thể của ban lãnh đạo.
 
-## [Once You're Laid Off, You'll Never Be the Same Again](https://mertbulan.com/2025/01/26/once-you-are-laid-off-you-will-never-be-the-same-again/)
+## ~~[Once You're Laid Off, You'll Never Be the Same Again](https://mertbulan.com/2025/01/26/once-you-are-laid-off-you-will-never-be-the-same-again/)~~
 
 Mert Bulan kể lại ngày bị sa thải cùng phần lớn đồng đội. Nhìn lại, anh chỉ ra năm dấu hiệu báo trước: các buổi sự kiện nhóm bị hủy đột ngột; nhân viên nhận thông báo có gói hàng sắp giao (hộp để gửi trả thiết bị); ban lãnh đạo thiếu định hướng rõ ràng và liên tục tái cấu trúc; xuất hiện những cuộc họp bắt buộc không có nội dung cụ thể; và thời điểm công bố kết quả kinh doanh quý ở công ty đại chúng. Điều khiến anh day dứt nhất là mọi nỗ lực vượt mức, từ tự học React Native, nhận dự án đặc biệt từ CEO đến giới thiệu người tài cho công ty, đều không có ý nghĩa gì. Trong đợt sa thải, bạn chỉ là một dòng trong bảng Excel, do những người không hề biết bạn quyết định.
 

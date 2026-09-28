@@ -1,7 +1,7 @@
 ---
 title: "Newsletter #45"
 date: 2025-08-04
-tags: [ "AI-Assisted", "Productivity", "Career", "Paul Graham", "Essay" ]
+tags: [ "AI-Assisted", "Productivity", "Career", "Paul Graham", "AI Coding", "Search Platform", "Debugging" ]
 categories: [ "Newsletter" ]
 ---
 

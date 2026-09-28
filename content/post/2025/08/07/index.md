@@ -1,7 +1,7 @@
 ---
 title: "Newsletter #48"
 date: 2025-08-07
-tags: [ "AI-Assisted", "Software Development", "Programming", "Code Quality", "Documentation" ]
+tags: [ "AI-Assisted", "AI Coding", "Claude Code", "Prompt Engineering", "Pattern Matching", "Code Quality", "Career" ]
 categories: [ "Newsletter" ]
 ---
 
@@ -19,7 +19,7 @@ Claude Code thường để lại khoảng trắng thừa ở cuối dòng, vì 
 
 Ngoài `PostToolUse`, hooks còn có các sự kiện `PreToolUse`, `Notification`, `Stop` và `SubagentStop`, cho phép kiểm tra, biến đổi hoặc chặn hành động ở nhiều bước khác nhau: chạy công cụ phân tích mã, chạy kiểm thử, xác nhận mã biên dịch được, hay ngăn những thao tác rủi ro như commit khi chưa kiểm tra. Tác giả cũng cảnh báo rằng hooks chạy với toàn bộ quyền của người dùng, nên cần đọc kỹ mọi lệnh trước khi thêm vào, vì một hook độc hại có thể xâm hại hệ thống ngay trong những thao tác thường ngày của Claude. Đây là ví dụ thực tế về cách biến những "thói quen xấu" của AI thành việc được sửa tự động, thay vì phải nhắc đi nhắc lại.
 
-## [Docs for AI Agents](https://technicalwriting.dev/ai/agents/)
+## ~~[Docs for AI Agents](https://technicalwriting.dev/ai/agents/)~~
 
 Kayce Basques ghi lại suy nghĩ về tài liệu dành cho AI agent và mối quan hệ của nó với tài liệu kỹ thuật nội bộ mà nhóm phát triển viết cho chính mình, như RFC hay hướng dẫn xây dựng dự án. Agent docs giúp kết quả của agent nhất quán hơn, đúng quy ước dự án và chính xác hơn: khi mới dùng Claude Code, tác giả thấy công cụ đoán đúng trang web là Sphinx xây dựng bằng Bazel nhưng lại chạy sai lệnh; chỉ cần ghi lệnh đúng vào agent doc là từ đó nó luôn làm đúng. Mỗi công cụ tìm một file riêng ở thư mục gốc (`CLAUDE.md` cho Claude Code, `GEMINI.md` cho Gemini CLI, `AGENTS.md` cho Codex CLI), và nội dung file được chèn nguyên vẹn vào lời nhắc hệ thống ở mọi lần gọi mô hình, nên cần giữ thật cô đọng. Ngoài ra còn có agent doc cho thư mục con và cấp người dùng.
 

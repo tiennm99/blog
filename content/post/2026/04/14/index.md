@@ -31,7 +31,7 @@ Anthropic công bố kết quả nghiên cứu định tính đa ngôn ngữ l�
 
 81% người tham gia cho biết AI đã giúp họ tiến gần hơn tới mục tiêu, chủ yếu qua năng suất (32%), vai trò bạn đồng hành tư duy (17%) và học tập (10%). Mặt khác, trung bình mỗi người nêu 2.3 mối lo: độ tin cậy (27%), mất việc làm (22%), mất quyền tự chủ (22%), suy giảm nhận thức (16%) và thiếu cơ chế quản trị (15%). Lợi ích và rủi ro thường song hành trong cùng một người: ai đánh giá cao sự hỗ trợ cảm xúc từ AI thì khả năng lo ngại bị phụ thuộc cũng cao gấp 3 lần. Người dùng ở khu vực thu nhập thấp lạc quan hơn và xem AI là cơ hội, còn ở khu vực giàu có thì mối quan tâm xoay quanh việc quản lý một cuộc sống phức tạp.
 
-## [Mở rộng monolith lên 1 triệu dòng mã: 113 bài học thực tế từ Tech Lead đến CTO](https://www.semicolonandsons.com/articles/scaling-a-monolith-to-1m-loc-113-pragmatic-lessons-from-tech-lead-to-cto)
+## ~~[Mở rộng monolith lên 1 triệu dòng mã: 113 bài học thực tế từ Tech Lead đến CTO](https://www.semicolonandsons.com/articles/scaling-a-monolith-to-1m-loc-113-pragmatic-lessons-from-tech-lead-to-cto)~~
 
 Bài viết đúc kết 113 bài học thực tế từ hành trình mở rộng một monolith lên 1 triệu dòng mã, qua kinh nghiệm của tác giả khi đi từ vị trí Tech Lead lên CTO. Thông điệp xuyên suốt là quyết định kiến trúc quan trọng hơn nhiều so với các tối ưu nhỏ lẻ: thay vì vội thêm cache, hãy sửa tận gốc như truy vấn cơ sở dữ liệu kém hay thiếu index, bởi chỉ một truy vấn chạy lâu cũng có thể kéo hiệu năng toàn hệ thống giảm một nửa. Giám sát (monitoring) và khả năng quan sát (observability) phải được đối xử như thành phần chính của hệ thống, với cảnh báo cho hiệu năng, truy vấn N+1 hay mức đầy của cache, và mục tiêu "inbox zero" cho việc theo dõi lỗi — cảnh báo nào cũng được xử lý.
 

@@ -1,7 +1,7 @@
 ---
 title: "Newsletter #49"
 date: 2025-08-08
-tags: ["AI-Assisted", "PostgreSQL", "Developer-Survey", "Productivity", "Technology-Selection"]
+tags: ["AI-Assisted", "PostgreSQL", "LLM", "AI-Coding", "Virtual-Threads", "Developer-Survey", "Technology-Selection"]
 categories: ["Newsletter"]
 ---
 
