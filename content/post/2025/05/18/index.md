@@ -1,7 +1,7 @@
 ---
 title: "Newsletter #31"
 date: 2025-05-18
-tags: ["AI-Assisted", "Technology", "Software Development", "Career Growth", "AI", "Hiring", "Engineering", "DevOps"]
+tags: ["AI-Assisted", "Testing", "CI/CD", "Hiring", "LLMs", "Security", "Career Growth"]
 categories: ["Newsletter"]
 draft: false
 ---

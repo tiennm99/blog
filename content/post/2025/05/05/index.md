@@ -1,7 +1,7 @@
 ---
 title: "Newsletter #18"
 date: 2025-05-05
-tags: [ "AI-Assisted", "Development", "Git", "UI", "AI", "DevOps" ]
+tags: [ "AI-Assisted", "Git", "UI Design", "Java", "Distributed Locking", "Markdown", "AI Coding" ]
 categories: [ "Newsletter" ]
 ---
 

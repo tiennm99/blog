@@ -1,7 +1,7 @@
 ---
 title: "Newsletter #28"
 date: 2025-05-15
-tags: [ "AI-Assisted", "Java", "Machine Learning", "Build Automation", "Development" ]
+tags: [ "AI-Assisted", "Java", "JDK 24", "Garbage Collection", "Project Reactor", "Machine Learning", "Build Automation" ]
 categories: [ "Newsletter" ]
 ---
 

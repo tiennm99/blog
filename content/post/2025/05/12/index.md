@@ -1,7 +1,7 @@
 ---
 title: "Newsletter #25"
 date: "2025-05-12"
-tags: [ "AI-Assisted", "Software Engineering", "LLM Research", "Leadership", "Development" ]
+tags: [ "AI-Assisted", "Software Engineering", "Career Development", "LLM Research", "Open Source", "AI Coding", "Productivity" ]
 categories: [ "Newsletter" ]
 ---
 

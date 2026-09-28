@@ -1,7 +1,7 @@
 ---
 title: "Newsletter #55"
 date: 2025-09-14
-tags: ["AI-Assisted", "Technology", "Performance", "CPU", "Benchmarking", "System-Administration", "DevOps"]
+tags: ["AI-Assisted", "Performance", "CPU", "Durable-Queues", "Cognitive-Load", "Claude-Code", "Hiring"]
 categories: ["Newsletter"]
 ---
 

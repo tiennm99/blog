@@ -1,7 +1,7 @@
 ---
 title: "Newsletter #20"
 date: 2025-05-07
-tags: [ "AI-Assisted", "Java", "Development", "Algorithms", "Git" ]
+tags: [ "AI-Assisted", "Java", "JDK 24", "Memory Management", "Git", "Vibe Coding", "Algorithms" ]
 categories: [ "Newsletter" ]
 ---
 

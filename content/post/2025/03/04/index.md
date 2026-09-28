@@ -1,7 +1,7 @@
 ---
 title: "Newsletter #5"
 date: 2025-03-04
-tags: ["AI-Assisted", "Newsletter", "Java", "Reliability", "Software Design", "Engineering Career", "AI Coding"]
+tags: ["AI-Assisted", "Newsletter", "Java", "Reliability", "Soft Skills", "Engineering Career", "AI Coding"]
 categories: [ "Newsletter" ]
 ---
 

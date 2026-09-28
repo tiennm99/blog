@@ -1,7 +1,7 @@
 ---
 title: "Newsletter #59"
 date: 2025-10-03
-tags: ["AI-Assisted", "Technology", "Compression", "Algorithms", "AI", "Programming", "Performance", "Optimization", "CodeAssistant", "AutonomousCoding", "Experience", "WernerVogels", "KentBeck", "SoftwareCost", "FutureOfProgramming", "EngineeringTaste", "TechnicalTaste", "SeanGoedecke", "SoftwareDesign"]
+tags: ["AI-Assisted", "Compression", "Branchless Programming", "Performance", "AI Coding", "Future of Programming", "Engineering Taste"]
 categories: ["Newsletter"]
 ---
 

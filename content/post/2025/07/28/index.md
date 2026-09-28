@@ -1,7 +1,7 @@
 ---
 title: "Newsletter #38"
 date: 2025-07-28
-tags: ["AI-Assisted", "Cursor", "Prompt Engineering", "AI Coding", "System Prompt"]
+tags: ["AI-Assisted", "Cursor", "Prompt Engineering", "AI Coding", "Java", "Machine Code", "SQL"]
 categories: ["Newsletter"]
 ---
 
@@ -31,7 +31,7 @@ Peter Steinberger, người thường xuyên bị hỏi "tốn bao nhiêu tiền
 
 Về nỗi lo giá sẽ tăng, tác giả chỉ ra rằng giá token đã giảm khoảng 1000 lần trong hai năm và cạnh tranh đang tiếp tục đẩy chi phí xuống. Phép tính cho người làm hợp đồng rất đơn giản: với mức 800 USD/ngày, tiết kiệm được một buổi chiều mỗi tháng đã tương đương 200 USD, nghĩa là Claude Max hoàn vốn sau 5 giờ và Cursor chỉ sau 45 phút. Kết luận của ông: thời gian là tài nguyên duy nhất không thể nạp lại, và Claude Max hiện là cách rẻ nhất để "đúc" thêm giờ làm việc.
 
-## [Tests Should Not Contain Logic](https://blog.snork.dev/posts/tests-should-not-contain-logic.html)
+## ~~[Tests Should Not Contain Logic](https://blog.snork.dev/posts/tests-should-not-contain-logic.html)~~
 
 Bài viết ngắn này đưa ra một nguyên tắc: bài kiểm thử nên chứa càng ít logic càng tốt, tránh câu lệnh điều kiện và vòng lặp, để khi kiểm thử thất bại ta loại trừ ngay khả năng lỗi nằm ở chính nó. Tác giả minh họa bằng một hàm FizzBuzz có lỗi: vì kiểm tra `n % 3` trước `n % 15`, lời gọi `fizzbuzz(15)` trả về "fizz" thay vì "fizzbuzz". Nếu ngại viết từng câu lệnh khẳng định và dùng vòng lặp tính kết quả mong đợi bằng đúng chuỗi điều kiện ấy, bài kiểm thử sẽ lặp lại chính lỗi của mã nguồn và vẫn vượt qua. Ngược lại, những bài kiểm thử "hiển nhiên" ghi rõ từng giá trị, như `assert fizzbuzz(15) == "fizzbuzz"`, sẽ phát hiện lỗi ngay lập tức.
 

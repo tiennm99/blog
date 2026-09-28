@@ -1,7 +1,7 @@
 ---
 title: "Newsletter #61"
 date: 2025-11-25
-tags: ["AI-Assisted", "Technology", "Machine-Learning", "Software-Engineering", "Compilers", "Performance", "PostgreSQL"]
+tags: ["AI-Assisted", "Open Table Formats", "Spec-Driven Development", "Agentic Engineering", "JIT", "Compilers", "PostgreSQL"]
 categories: ["Newsletter"]
 ---
 

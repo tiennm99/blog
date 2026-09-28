@@ -1,7 +1,7 @@
 ---
 title: "Newsletter #42"
 date: 2025-08-01
-tags: [ "AI-Assisted", "Thuật toán", "Thiết kế hệ thống", "Go" ]
+tags: [ "AI-Assisted", "Thuật toán", "Thiết kế hệ thống", "Go", "Java", "AI Agents", "Career" ]
 categories: [ "Newsletter" ]
 ---
 

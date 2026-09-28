@@ -1,7 +1,7 @@
 ---
 title: "Newsletter #47"
 date: 2025-08-06
-tags: [ "AI-Assisted", "LLM", "Git", "Code Review", "CLI" ]
+tags: [ "AI-Assisted", "LLM", "AI Agents", "Git", "Code Review", "CLI", "Concurrency" ]
 categories: [ "Newsletter" ]
 ---
 

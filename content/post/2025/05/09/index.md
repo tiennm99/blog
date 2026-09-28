@@ -1,7 +1,7 @@
 ---
 title: "Newsletter #22"
 date: 2025-05-09
-tags: [ "AI-Assisted", "Security", "Authentication", "Identity Management", "Best Practices", "Career Development", "Productivity", "Workplace", "AI", "Machine Learning", "Language Models", "Research", "Microservices", "DevOps", "Software Architecture", "Development Environments", "Logging", "Software Development", "Concurrency", "Asynchronous Programming", "Programming Patterns", "Performance Optimization", "Experimentation", "Data Engineering" ]
+tags: [ "AI-Assisted", "Security", "Authentication", "Career Development", "Language Models", "Microservices", "Asynchronous Programming" ]
 categories: [ "Newsletter" ]
 ---
 
@@ -31,7 +31,7 @@ Arjun Iyer (Signadot) cho rằng trong phát triển microservices, thời gian 
 
 Giải pháp tác giả đề xuất là dùng chung một môi trường với cơ chế cô lập ở tầng ứng dụng gọi là sandbox, tương tự cách Uber làm cho kiểm thử đầu cuối: chỉ những dịch vụ thay đổi chạy trong sandbox, còn yêu cầu được định tuyến động dựa trên header. Cách này tiết kiệm tài nguyên, cho kết quả nhất quán, dễ bảo trì, tạo sandbox gần như tức thì và sát thực tế hơn. Khi triển khai cần chú ý ba điểm: lan truyền ngữ cảnh qua các dịch vụ (có thể dùng chuẩn `baggage` và `tracecontext` của OpenTelemetry), cô lập dữ liệu sao cho một bài kiểm thử không được sửa dữ liệu mà nó không tạo ra, và xử lý hàng đợi để các sandbox không tranh nhau cùng một thông điệp.
 
-## [Logging Practices I Follow](https://www.16elt.com/2023/01/06/logging-practices-I-follow)
+## ~~[Logging Practices I Follow](https://www.16elt.com/2023/01/06/logging-practices-I-follow)~~
 
 Eliran Turgeman chia sẻ bộ nguyên tắc ghi log mà anh áp dụng, xuất phát từ nhận xét rằng log là công cụ quan sát cơ bản nhất và người đọc log chủ yếu chính là lập trình viên. Trước khi ghi một dòng log, hãy tự hỏi: dòng này có thực sự cần không, có mang thông tin mà các log khác trong cùng luồng chưa có không; đối tượng sắp ghi có thể phình to trên môi trường thực tế không, nếu có thì chỉ ghi vài chỉ số như độ dài hoặc vài thuộc tính quan trọng; và thông tin này có giúp gỡ lỗi hay hiểu luồng xử lý không. Tiếp theo là giữ log nhất quán trên toàn hệ thống, ví dụ luôn bắt đầu bằng tiền tố `[serviceName](functionName)`, để có thể tìm log mà không cần mở mã nguồn.
 

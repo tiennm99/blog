@@ -1,7 +1,7 @@
 ---
 title: "Newsletter #41"
 date: 2025-07-31
-tags: ["AI-Assisted", "Performance", "Algorithms", "Programming", "SQL"]
+tags: ["AI-Assisted", "Performance", "Algorithms", "AI Coding", "Claude Code", "Vibe Coding", "SQL"]
 categories: ["Newsletter"]
 ---
 

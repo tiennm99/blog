@@ -7,7 +7,7 @@ categories: ["Newsletter"]
 
 *Mời bạn thưởng thức Newsletter #76.*
 
-## [TCP vs. UDP vs. gRPC: Chọn giao thức phù hợp cho kiến trúc của bạn](https://designgurus.substack.com/p/an-engineers-guide-to-basic-networking)
+## [TCP vs. UDP vs. gRPC: Choosing the Right Protocol for Your Architecture](https://designgurus.substack.com/p/an-engineers-guide-to-basic-networking)
 
 Khi viết một hàm, dữ liệu chỉ di chuyển bên trong bộ nhớ của một máy; nhưng phần mềm hiện đại luôn phải giao tiếp với cơ sở dữ liệu, API hay trình duyệt ở nửa kia thế giới. Giao thức mạng chính là bộ quy tắc quy định định dạng dữ liệu, cách mở và đóng một cuộc hội thoại, cũng như cách xử lý khi có sự cố. Bài viết bắt đầu từ tầng vận chuyển với hai nền móng là TCP và UDP. TCP ưu tiên độ tin cậy: trước khi truyền dữ liệu, hai bên thực hiện bắt tay ba bước (SYN, SYN-ACK, ACK); sau đó giao thức đảm bảo mọi byte đến đủ, đúng thứ tự, tự động gửi lại gói bị mất, đồng thời dùng kiểm soát luồng và kiểm soát tắc nghẽn để không làm quá tải bên nhận. Vì vậy TCP phù hợp khi độ chính xác quan trọng hơn tốc độ, như truy vấn cơ sở dữ liệu, email hay trang web. UDP thì ngược lại: không kết nối, không bắt tay, không đánh số gói tin, gói nào rơi giữa đường là mất luôn; đổi lại độ trễ rất thấp, rất hợp với phát video trực tiếp hay trò chơi trực tuyến, nơi bỏ qua một khung hình còn tốt hơn dừng lại chờ khung cũ.
 

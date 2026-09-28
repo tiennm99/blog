@@ -8,6 +8,8 @@ tags:
     "Cursor",
     "Quy trình phát triển",
     "Kỹ năng chuyên môn",
+    "AI Coding",
+    "Git",
   ]
 categories: ["Newsletter"]
 ---

@@ -13,7 +13,7 @@ Bài viết lưu giữ lại một bài đăng nổi tiếng trên r/Experienced
 
 Về kỹ thuật, mỗi lĩnh vực chỉ có khoảng 10–20 nguyên tắc cốt lõi, và nền tảng thay đổi rất chậm dù công nghệ thay đổi liên tục. Mã nguồn tốt là mã nguồn kỹ sư junior đọc hiểu được, còn mã nguồn tốt nhất là không cần viết dòng nào. Viết tài liệu là kỹ năng bị đánh giá thấp nhất, đi cùng khả năng viết đề xuất thay đổi. Với người mới, SQL là ngôn ngữ "đáng tiền" nhất; kiểm thử rất quan trọng nhưng TDD thì bị thần thánh hóa. Kỹ sư giỏi biết các thực hành tốt nhất, còn kỹ sư senior biết khi nào nên phá vỡ chúng. Điều khiến tác giả tự hào nhất không phải hệ thống lớn nào, mà là giúp người khác làm việc tốt hơn. Người lưu giữ bài viết đồng ý với gần hết, chỉ trừ quan điểm ưa chuộng ngôn ngữ động.
 
-## [How I Use AI to Code](https://www.chrismdp.com/coding-with-ai/)
+## [How I Use AI to Code](https://www.chrismdp.com/coding-with-ai-april-2026/)
 
 Chris Parsons cho rằng nếu vẫn gắn chặt với IDE như Cursor hay Copilot, bạn đang đi sau một năm: công cụ tốt nhất đã rời trình soạn thảo để chuyển sang dòng lệnh, và ông khuyên dùng Claude Code hoặc Codex CLI. Lập trình là "sân nhà" của AI vì mã nguồn có thể chạy để kiểm chứng ngay. Ông phân biệt "vibe coding" (không kiểm tra kết quả) với "agentic engineering" (chủ động quyết định thay đổi nào cần tự xem, thay đổi nào giao cho kiểm thử và công cụ tự động). Thông điệp chính: kỹ sư cấp cao nên huấn luyện AI viết mã tốt hơn thay vì tự review từng thay đổi, bởi cái khung (harness) bao quanh mô hình quan trọng hơn câu lệnh.
 

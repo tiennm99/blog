@@ -1,7 +1,7 @@
 ---
 title: "Newsletter #29"
 date: 2025-05-16
-tags: ["AI-Assisted", "Technology", "Process Optimization", "AI", "Cloud Computing", "Career Development", "Productivity", "Software Development"]
+tags: ["AI-Assisted", "Process Optimization", "Vibe Coding", "Cloudflare", "Career Development", "Productivity", "MCP"]
 categories: ["Newsletter"]
 draft: false
 ---

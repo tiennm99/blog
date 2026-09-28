@@ -1,7 +1,7 @@
 ---
 title: "Newsletter #63"
 date: 2025-12-03
-tags: ["AI-Assisted", "Technology", "SQL", "Database", "Data-Engineering", "Anti-Patterns", "LSM-Tree", "KeyValue-DB"]
+tags: ["AI-Assisted", "Software Design", "Code Review", "Software Quality", "AI Agents", "SQL", "Database"]
 categories: ["Newsletter"]
 ---
 

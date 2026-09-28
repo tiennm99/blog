@@ -1,7 +1,7 @@
 ---
 title: "Newsletter #126"
 date: 2026-07-23
-tags: ["AI-Assisted", "Go", "Performance", "Backend", "System Design", "Security", "Databases"]
+tags: ["AI-Assisted", "Go", "Performance", "Backend", "Concurrency", "Security", "Databases"]
 categories: ["Newsletter"]
 ---
 
@@ -19,7 +19,7 @@ Bài viết thuộc loạt "Optimization catalog", phân tích một hiện tư�
 
 Các phép đo tiếp theo cho thấy SIMD, dù dùng hàm nội tại thử nghiệm của Go hay hợp ngữ viết tay, không vượt trội so với `STOSQ`. Biến thể ghi thẳng ra bộ nhớ có lúc nhanh hơn nhưng kết quả dao động mạnh, vì phụ thuộc việc nhân hệ điều hành cấp phát các trang liền mạch hay rời rạc. Bài viết cũng gợi ý gắn số thế hệ cho từng phần tử để hiếm khi phải xóa thật, nhưng thẻ thế hệ làm mảng lớn hơn và có thể khiến dữ liệu không còn vừa bộ nhớ đệm. Bài học rút ra là hiệu quả tối ưu phụ thuộc bộ xử lý, lệnh máy và kích thước dữ liệu, nên luôn cần đo trên phần cứng thực tế.
 
-## [Engineering High-Performance Parsers with Data-Oriented Design](https://www.arshad.fyi/writings/engineering-high-performance-parsers)
+## ~~[Engineering High-Performance Parsers with Data-Oriented Design](https://www.arshad.fyi/writings/engineering-high-performance-parsers)~~
 
 Bài viết chia sẻ nguyên tắc thiết kế phía sau Yuku, một trình phân tích cú pháp JavaScript và TypeScript viết bằng Zig, với luận điểm chính: khi ngữ pháp đã đúng, hiệu năng gần như được quyết định bởi cách biểu diễn cây cú pháp trong bộ nhớ chứ không phải thuật toán phân tích. Thay vì các nút cấp phát rời rạc và liên kết bằng con trỏ, vốn gây hàng chục nghìn lần cấp phát và những lần truy cập bộ nhớ khó đoán, Yuku lưu nút trong một mảng phẳng và dùng chỉ số `u32` làm tham chiếu. Chỉ số chỉ bằng nửa con trỏ và cả cây được giải phóng trong một thao tác, còn thuật toán đệ quy vẫn quen thuộc.
 

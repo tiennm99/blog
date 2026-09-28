@@ -1,7 +1,7 @@
 ---
 title: "Newsletter #17"
 date: 2025-05-04
-tags: [ "AI-Assisted", "Development", "Architecture", "Java", "Microservices" ]
+tags: [ "AI-Assisted", "Microservices", "Software Architecture", "Domain-Driven Design", "Vibe Coding", "JVM", "Career" ]
 categories: [ "Newsletter" ]
 ---
 

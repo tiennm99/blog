@@ -1,7 +1,7 @@
 ---
 title: "Newsletter #62"
 date: 2025-12-02
-tags: ["AI-Assisted", "Technology", "Multi-Core", "Performance", "Programming", "Systems", "AI-Coding"]
+tags: ["AI-Assisted", "Claude Skills", "Environment Variables", "Documentation", "Multi-Core", "Performance", "AI-Coding"]
 categories: ["Newsletter"]
 ---
 

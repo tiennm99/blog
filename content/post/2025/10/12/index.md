@@ -1,7 +1,7 @@
 ---
 title: "Newsletter #60"
 date: 2025-10-12
-tags: ["AI-Assisted", "Technology", "Go", "Diff Algorithm", "Algorithms", "Performance"]
+tags: ["AI-Assisted", "Diff Algorithm", "Go", "Write-Ahead Log", "Cloud Platforms", "Engineering Management", "Career Development"]
 categories: ["Newsletter"]
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: "Newsletter #112"
 date: 2026-06-23
-tags: ["AI-Assisted", "Newsletter", "Typography", "Design", "Software Engineering", "Code Quality", "Engineering Culture", "Productivity", "Java", "Programming", "Go", "Rust", "Kubernetes", "Infrastructure", "PostgreSQL", "Redis", "Database", "Game Development", "AI Coding", "Product Management", "Package Management", "Supply Chain", "Claude Code", "AI Agents", "MCP", "Performance", "Frontend", "Web Development"]
+tags: ["AI-Assisted", "Newsletter", "Software Engineering", "Rust", "Kubernetes", "Claude Code", "Performance"]
 categories: ["Newsletter"]
 ---
 

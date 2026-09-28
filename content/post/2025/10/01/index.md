@@ -1,7 +1,7 @@
 ---
 title: "Newsletter #58"
 date: 2025-10-01
-tags: ["AI-Assisted", "Technology", "Productivity", "Decision Making", "Software Engineering", "Career Development", "Event-Driven", "Distributed Systems", "System Design", "Developer Culture", "Curiosity", "Innovation", "AI", "LLM", "Tool Calls", "Security", "Logging", "Data Protection", "Leadership", "Communication", "AI Coding", "Code Generation", "Claude Code", "Anthropic"]
+tags: ["AI-Assisted", "Event-Driven", "Distributed Systems", "Security", "LLM", "Claude Code", "Career Development"]
 categories: ["Newsletter"]
 ---
 

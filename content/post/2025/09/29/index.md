@@ -1,7 +1,7 @@
 ---
 title: "Newsletter #56"
 date: 2025-09-29
-tags: ["AI-Assisted", "Technology", "UUID", "Database", "Java", "Java25", "JDK", "Testing", "Automation", "Playwright", "AI-Development", "Spec-Driven", "Software-Engineering", "Programming-Motivation", "Rust", "Sorting-Algorithms", "ClickHouse", "Query-Optimization", "AI-Coding"]
+tags: ["AI-Assisted", "UUID", "Java", "Spec-Driven", "Sorting-Algorithms", "ClickHouse", "AI-Coding"]
 categories: ["Newsletter"]
 ---
 

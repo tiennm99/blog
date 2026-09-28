@@ -1,7 +1,7 @@
 ---
 title: "Newsletter #65"
 date: 2025-12-08
-tags: ["AI-Assisted", "Technology", "Engineering", "Leadership", "Scaling", "Infrastructure", "Linux", "Developer Tools"]
+tags: ["AI-Assisted", "Engineering Leadership", "Incidents", "Linux", "Build Systems", "Claude Code", "AI Coding"]
 categories: ["Newsletter"]
 ---
 

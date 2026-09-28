@@ -1,7 +1,7 @@
 ---
 title: "Newsletter #50"
 date: 2025-08-09
-tags: ["AI-Assisted", "Event-Driven-Architecture", "Legacy-Systems", "Software-Architecture", "Modernization"]
+tags: ["AI-Assisted", "AI-Coding", "Claude-Code", "Java", "Concurrency", "System-Design", "Event-Driven-Architecture"]
 categories: ["Newsletter"]
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: "Newsletter #32"
 date: 2025-07-21
-tags: ["AI-Assisted", "Technology", "Software Development", "Career Growth", "AI", "Hiring", "Engineering", "DevOps"]
+tags: ["AI-Assisted", "Claude Code", "AI Coding", "Windsurf", "Vibe Coding", "Web Development", "Software Architecture"]
 categories: ["Newsletter"]
 draft: false
 ---

@@ -1,7 +1,7 @@
 ---
 title: "Newsletter #66"
 date: 2025-12-09
-tags: ["AI-Assisted", "Technology", "Software Architecture", "Books", "Engineering", "Development"]
+tags: ["AI-Assisted", "Software Architecture", "Books", "AI Coding", "Testing", "PostgreSQL", "Kafka"]
 categories: ["Newsletter"]
 ---
 

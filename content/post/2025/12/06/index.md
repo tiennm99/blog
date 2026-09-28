@@ -1,7 +1,7 @@
 ---
 title: "Newsletter #64"
 date: 2025-12-06
-tags: ["AI-Assisted", "Technology", "caching", "database", "performance"]
+tags: ["AI-Assisted", "Caching", "Consistent Hashing", "Linux", "Java", "Performance", "Career"]
 categories: ["Newsletter"]
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: "Newsletter #121"
 date: 2026-07-09
-tags: ["AI-Assisted", "Newsletter", "Go", "Performance", "System Design", "Programming", "Networking", "AI", "Infrastructure", "Leadership", "Engineering Culture", "Software Architecture", "Distributed Systems", "Databases", "SQLite", "Security", "Code Quality", "Compilers", "Programming Languages", "Linux"]
+tags: ["AI-Assisted", "Newsletter", "Go", "Performance", "System Design", "Linux", "Engineering Culture"]
 categories: ["Newsletter"]
 ---
 

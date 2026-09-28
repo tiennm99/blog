@@ -1,7 +1,7 @@
 ---
 title: "Newsletter #35"
 date: 2025-07-24
-tags: [ "AI-Assisted", "WebAssembly", "WASM", "Cross-platform", "Performance" ]
+tags: [ "AI-Assisted", "Redis", "Valkey", "Open Source", "Testing", "SOLID", "WebAssembly" ]
 categories: [ "Newsletter" ]
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: "Newsletter #57"
 date: 2025-09-30
-tags: ["AI-Assisted", "Technology", "Career", "Agentic AI", "Professional Development", "Performance", "Memory Management", "Java", "Programming Languages", "Software Evolution", "Monorepo", "Package Management", "R", "Software Maintenance", "Distributed Systems", "Software Architecture", "System Design", "API Gateway", "Event Sourcing", "Microservices", "Code Quality", "Testing", "Code Maintenance", "Bug Prevention"]
+tags: ["AI-Assisted", "Agentic AI", "Career", "Monorepo", "Distributed Systems", "Code Quality", "Java"]
 categories: ["Newsletter"]
 ---
 
@@ -30,7 +30,7 @@ Bước nhảy lên 10 lần đến từ Coder Tasks, các môi trường tự �
 ~~- Rust loại bỏ hoàn toàn nhu cầu GC nhờ ownership model~~
 ~~- Việc lựa chọn ngôn ngữ ảnh hưởng đáng kể đến hiệu suất và trải nghiệm người dùng~~
 
-## [Mới Trong Java 25: Generational Shenandoah GC Không Còn Là Tính Năng Thử Nghiệm](https://theperfparlor.com/2025/09/14/new-in-java25-generational-shenandoah-gc-is-no-longer-experimental/)
+## ~~[Mới Trong Java 25: Generational Shenandoah GC Không Còn Là Tính Năng Thử Nghiệm](https://theperfparlor.com/2025/09/14/new-in-java25-generational-shenandoah-gc-is-no-longer-experimental/)~~
 
 Java 25 chính thức đưa Generational Shenandoah ra khỏi trạng thái thử nghiệm, sẵn sàng cho môi trường production. Shenandoah vốn là bộ thu gom rác (garbage collector) có thời gian tạm dừng thấp, xuất hiện từ Java 12 và chạy gần như đồng thời với ứng dụng. Phiên bản phân thế hệ, được giới thiệu dưới dạng thử nghiệm ở Java 24, chia bộ nhớ thành vùng dành cho đối tượng trẻ và đối tượng già. Vì phần lớn đối tượng "chết sớm", cách chia này giúp bộ thu gom không phải quét lại những đối tượng sống lâu một cách không cần thiết, từ đó cải thiện hiệu năng và giảm lượng bộ nhớ sử dụng.
 

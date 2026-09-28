@@ -47,7 +47,7 @@ Tập Inside Java Newscast #84 điểm lại các hướng phát triển của n
 
 Trong video này, Brian Goetz cập nhật tiến độ của Project Valhalla, dự án được ví như cuộc "tái cấu trúc vĩ đại" của Java nhằm hiện đại hóa hệ thống kiểu của ngôn ngữ. Mục tiêu là mang lại hiệu năng tốt hơn trong khi giúp việc lập trình trở nên đơn giản hơn, và video giải thích các tính năng mới cùng định hướng của dự án.
 
-## [Protecting your time from predators in large tech companies](https://registerspill.thorstenball.com/p/how-might-ai-change-programming)
+## [How might AI change programming?](https://registerspill.thorstenball.com/p/how-might-ai-change-programming)
 
 Thorsten Ball khẳng định AI chắc chắn sẽ thay đổi lập trình, dẫn chứng bằng loạt công cụ Claude đã viết giúp anh: một script Python chuyển RSS của bản tin thành Markdown, một MCP server cho Tailscale, hơn 200 dòng Rust và một máy chủ Go nhỏ hiển thị tệp Markdown, phần lớn chạy được ngay từ lần đầu. Dù AI chưa hiệu quả với mọi kho mã, việc viết và viết lại một số loại mã đã trở nên rất rẻ, và điều đó sẽ thay đổi nghề lập trình giống như trình biên dịch, Internet, quản lý phiên bản hay StackOverflow từng làm. Câu hỏi là thay đổi như thế nào.
 

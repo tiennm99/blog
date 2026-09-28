@@ -37,7 +37,7 @@ Simon Willison ra mắt một hướng dẫn về các mẫu (pattern) giúp kha
 
 Một vài mẫu tiêu biểu: "Viết mã giờ rất rẻ" — chi phí sinh mã gần như bằng không, nhưng mã tốt, tức là có kiểm thử, tài liệu và xử lý lỗi đầy đủ, vẫn có giá, nên cần xây dựng thói quen mới; "Tích lũy những gì bạn biết cách làm" — giữ một kho ví dụ chạy được để kết hợp lại và làm đầu vào cho agent; và "Red/green TDD" — viết kiểm thử trước, xác nhận nó thất bại rồi mới để agent triển khai, kèm lời khuyên chạy bộ kiểm thử ngay từ đầu phiên. Hướng dẫn cũng nêu các phản mẫu cần tránh, điển hình là đẩy mã chưa được xem xét sang cho đồng nghiệp, và liên tục được bổ sung thêm chương mới.
 
-## [Things I Miss About Spring Boot After Switching to Go](https://sushantdhiman.dev/things-i-miss-about-spring-boot-after-switching-to-go/)
+## ~~[Things I Miss About Spring Boot After Switching to Go](https://sushantdhiman.dev/things-i-miss-about-spring-boot-after-switching-to-go/)~~
 
 Sushant Dhiman, sau 1,5 năm viết hệ thống production bằng Java và Spring Boot cho một startup rồi chuyển sang Go, chia sẻ những thứ anh nhớ ở hệ sinh thái Spring. Điều đầu tiên là triết lý "batteries included": Spring Boot cung cấp sẵn gần như mọi tính năng cần cho production, trong khi Go theo triết lý tối giản với nhiều thư viện nhỏ thay vì một framework khổng lồ. Cụ thể, anh nhớ dependency injection tự động qua annotation như `@Service` và `@Autowired`, trong khi ở Go phải tự nối các phụ thuộc qua hàm khởi tạo — rõ ràng nhưng mã khởi động sẽ phình to khi hệ thống có hàng trăm phụ thuộc. Tương tự, validation khai báo với `@NotNull` hay `@Email` giúp tránh các chuỗi if/else kiểm tra thủ công bằng biểu thức chính quy.
 

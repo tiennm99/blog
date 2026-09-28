@@ -1,7 +1,7 @@
 ---
 title: "Newsletter #40"
 date: 2025-07-30
-tags: ["AI-Assisted", "Java", "Testing", "Performance", "Database"]
+tags: ["AI-Assisted", "Java", "Concurrency", "Testing", "AI Agents", "Performance", "Database"]
 categories: ["Newsletter"]
 ---
 

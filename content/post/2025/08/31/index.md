@@ -1,7 +1,7 @@
 ---
 title: "Newsletter #51"
 date: 2025-08-31
-tags: ["AI-Assisted", "Algorithms", "Performance", "Data Structures", "AI Tools", "Search Engine", "Neural Embeddings"]
+tags: ["AI-Assisted", "Algorithms", "Data Structures", "Performance", "Claude Code", "HTTP", "Search Engine"]
 categories: ["Newsletter"]
 ---
 

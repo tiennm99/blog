@@ -1,7 +1,7 @@
 ---
 title: "Newsletter #33"
 date: 2025-07-22
-tags: ["AI-Assisted", "Java", "Performance", "Memory Management", "JavaScript"]
+tags: ["AI-Assisted", "Java", "Garbage Collection", "JavaScript", "AI Agents", "Refactoring", "UX"]
 categories: ["Newsletter"]
 ---
 

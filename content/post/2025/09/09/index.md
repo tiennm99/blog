@@ -1,7 +1,7 @@
 ---
 title: "Newsletter #53"
 date: 2025-09-09
-tags: ["AI-Assisted", "Technology", "Security", "Gaming", "Programming", "Algorithms", "AI", "DevOps", "Big-Data", "FAANG"]
+tags: ["AI-Assisted", "Security", "Gaming", "Algorithms", "Kafka", "Distributed-Systems", "Vibe-Coding"]
 categories: ["Newsletter"]
 ---
 
