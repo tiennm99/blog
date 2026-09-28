@@ -43,7 +43,7 @@ Alyosha kể lại nỗi lo khi còn là một lập trình viên junior chuyên
 
 Theo tác giả, Java đang ở giai đoạn của một công nghệ trưởng thành: ít được bàn tán trên mạng nhưng vẫn tạo ra rất nhiều giá trị, và chính việc bị xem là "không hợp thời" khiến nguồn cung lập trình viên ít đi, từ đó đẩy mức đãi ngộ lên cao. Nhờ kỹ năng Java, tác giả đã mua được nhà và trang trải khoản vay mua nhà. Bài học cho các bạn junior là độ ồn ào trên mạng không phản ánh nhu cầu thực tế của thị trường; làm chủ một nền tảng vững chắc, dù không hào nhoáng, có thể mang lại sự nghiệp ổn định hơn nhiều so với việc chạy theo xu hướng.
 
-## [Cấu hình domain .localhost cho ứng dụng local](https://inclouds.space/localhost-domains)
+## [.localhost domains](https://inclouds.space/localhost-domains)
 
 Charles Chamberlain chia sẻ cách thoát khỏi cảnh phải nhớ hàng loạt cổng như `localhost:4333` hay `localhost:5050` khi chạy nhiều ứng dụng web trên máy cá nhân. Thay vào đó, mỗi ứng dụng được gán một tên miền `.localhost` dễ nhớ, chẳng hạn `inclouds.localhost`. Cách thiết lập trên macOS gồm ba phần: chạy mỗi ứng dụng như một dịch vụ nền bằng launchd, lắng nghe trên một cổng riêng; thêm một dòng vào `/etc/hosts` để trỏ tên miền về `127.0.0.1`; và dùng Caddy làm proxy ngược, chuyển yêu cầu từ từng tên miền đến đúng cổng, đồng thời tự lo phần mã hóa TLS nội bộ và nén dữ liệu bằng gzip, zstd. Ví dụ cấu hình cho một ứng dụng chạy ở cổng 5050:
 

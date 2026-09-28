@@ -16,7 +16,7 @@ Tài liệu cũng khuyên viết yêu cầu thật cụ thể (chỉ rõ tệp, 
 
 ---
 
-## [OpenAI, Windsurf và tương lai của AI Workspaces](https://www.subtle.so/openai-windsurf-and-the-future-of-ai-workspaces.html)
+## [OpenAI, Windsurf, and the future of work](https://www.subtle.so/openai-windsurf-and-the-future-of-ai-workspaces.html)
 
 Bài viết trên Subtle phân tích tin OpenAI muốn mua Windsurf với giá khoảng 3 tỷ USD, sau khi từng nhắm tới Cursor. Về mặt kỹ thuật, tính năng cốt lõi của Windsurf (một bản fork của VS Code kèm AI agent và gợi ý mã nguồn) không quá khó xây dựng, nên giá trị thật nằm ở chỗ khác: những công cụ này có thể trở thành không gian làm việc AI cho cả những việc ngoài lập trình. Chúng cho AI quyền thao tác trực tiếp trên tệp và thư mục, hỗ trợ viết lách, nghiên cứu, quản lý nội dung, lại có sẵn Git để theo dõi phiên bản - điều mà các công cụ năng suất truyền thống chưa làm được. Ví dụ, The Pragmatic Engineer đã nối Windsurf với cơ sở dữ liệu PostgreSQL để hỏi về số liệu kinh doanh bằng ngôn ngữ tự nhiên. Tác giả so sánh xu hướng này với cách IRC từ một công cụ ngách trở thành Slack trị giá 27 tỷ USD.
 
@@ -32,7 +32,7 @@ Cách tiếp cận được đề xuất là coi AI như một lập trình viê
 
 ---
 
-## [Event-Hidden Architecture: Tương lai của Web Development](https://skiplabs.io/blog/event-hidden-arch)
+## [Event-Hidden Architectures](https://skiplabs.io/blog/event-hidden-arch)
 
 Charles Zedlewski, cố vấn của SkipLabs, cho rằng kiến trúc hướng sự kiện (event-driven) - vốn được xem là lựa chọn bắt buộc cho ứng dụng phân tán trên cloud - đã lỗi thời, và đề xuất thay bằng kiến trúc "ẩn sự kiện" (event-hidden). Ứng dụng phân tán vẫn sẽ tồn tại, nhưng việc để lập trình viên tự quản lý sự kiện gây ra nhiều khó khăn: phải xử lý luồng bất đồng bộ phức tạp, duy trì hàng đợi và schema, và gỡ lỗi xuyên qua nhiều hệ thống. Theo tác giả, sự phức tạp này từng là cái giá cần thiết vào khoảng năm 2020, nhưng giờ không còn bắt buộc nữa.
 
@@ -55,7 +55,7 @@ Ba nhóm công nghệ giúp điều đó trở nên khả thi: ở frontend là 
 
 ---
 
-## ~~[Better Error Handling: Từ Try/Catch đến Modern Approaches](https://meowbark.dev/Better-error-handling)~~
+## ~~[Better error handling](https://meowbark.dev/Better-error-handling)~~
 
 ~~Bài viết từ meowbark.dev khám phá các phương pháp xử lý lỗi hiện đại trong software development, từ traditional try/catch cho đến các kỹ thuật tiên tiến như Go-style error handling và monadic Result types. Tác giả phân tích ưu nhược điểm của từng approach và đưa ra khuyến nghị về cách chọn lựa phương pháp phù hợp.~~
 
