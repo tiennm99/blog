@@ -21,11 +21,11 @@ Dù không biết người ta star vì điều gì nữa 🤡🤡
 | Name | Description | Stars | URL |
 | --- | --- | --- | --- |
 | [tiennm99/awesome-ai-dev-tools](https://github.com/tiennm99/awesome-ai-dev-tools) | Daily-refreshed ranking of open-source AI developer tools — coding agents, ADEs, AI editors and code-review tools — by GitHub stars, with 7-day deltas, star-history charts and a tag-filtered dashboard. | 3 | [https://awesome-ai-dev-tools.pages.dev/](https://awesome-ai-dev-tools.pages.dev/) |
+| [tiennm99/lottery-generator](https://github.com/tiennm99/lottery-generator) | Lottery number generator in Go, useful for Vietlott and similar lotteries; earlier Java and Python versions kept in history. | 1 | — |
+| [tiennm99/ai-labs](https://github.com/tiennm99/ai-labs) | Experiments with AI-assisted coding workflows — ClaudeKit, Superpowers, BMAD, oh-my-claudecode, gstack, and course work, merged with full history | 1 | [https://tiennm99.github.io/ai-labs/](https://tiennm99.github.io/ai-labs/) |
 | [tiennm99/penny-pincher-provider](https://github.com/tiennm99/penny-pincher-provider) | Curated list of affordable + free LLM API providers — Claude Code passes, coding-plan subs, free-tier APIs. | 1 | [https://tiennm99.github.io/penny-pincher-provider/](https://tiennm99.github.io/penny-pincher-provider/) |
 | [tiennm99/time-mocker](https://github.com/tiennm99/time-mocker) | Windows tool that injects fake time into running processes by hooking Win32 time APIs. Rust. | 1 | — |
-| [tiennm99/ai-labs](https://github.com/tiennm99/ai-labs) | Experiments with AI-assisted coding workflows — ClaudeKit, Superpowers, BMAD, oh-my-claudecode, gstack, and course work, merged with full history | 1 | [https://tiennm99.github.io/ai-labs/](https://tiennm99.github.io/ai-labs/) |
 | [tiennm99/export-telegram-group-members](https://github.com/tiennm99/export-telegram-group-members) | Export Telegram group members to CSV using Telethon — admin auth required for full member visibility. | 1 | — |
-| [tiennm99/lottery-generator](https://github.com/tiennm99/lottery-generator) | Go port of my lottery number generator — useful for Vietlott and similar lotteries. | 1 | — |
 | [tiennm99/arduino](https://github.com/tiennm99/arduino) | Collection of small Arduino projects and sketches. | 1 | — |
 | [tiennm99/adventofcode](https://github.com/tiennm99/adventofcode) | My Advent of Code 2025 solutions | 1 | — |
 
@@ -44,8 +44,10 @@ Vài có URL để bấm vào xem trực tiếp (demo). URL có thể là:
 
 | Name | Description | URL |
 | --- | --- | --- |
+| [tiennm99/cv](https://github.com/tiennm99/cv) | My personal CV written in Typst with RenderCV. | [https://tiennm99.github.io/cv/](https://tiennm99.github.io/cv/) |
+| [tiennm99/ai-labs](https://github.com/tiennm99/ai-labs) | Experiments with AI-assisted coding workflows — ClaudeKit, Superpowers, BMAD, oh-my-claudecode, gstack, and course work, merged with full history | [https://tiennm99.github.io/ai-labs/](https://tiennm99.github.io/ai-labs/) |
+| [tiennm99/store-scraper-api](https://github.com/tiennm99/store-scraper-api) | HTTP wrapper hosting google-play-scraper and app-store-scraper — POST to /google/:method or /apple/:method | [https://store-scraper-api.vercel.app](https://store-scraper-api.vercel.app) |
 | [tiennm99/blog](https://github.com/tiennm99/blog) | Source of miti99.com — personal blog (VN/EN) built with Hugo + Stack theme. | [https://miti99.com](https://miti99.com) |
-| [tiennm99/nntv](https://github.com/tiennm99/nntv) |  | [https://tiennm99.github.io/nntv/](https://tiennm99.github.io/nntv/) |
 | [tiennm99/miti99bot](https://github.com/tiennm99/miti99bot) | Plug-n-play Telegram bot framework in Go, self-hosted on Coolify + MongoDB Atlas with cron, games, schedules, and paper trading modules. | [https://t.me/miti99bot](https://t.me/miti99bot) |
 | [tiennm99/awesome-ai-dev-tools](https://github.com/tiennm99/awesome-ai-dev-tools) | Daily-refreshed ranking of open-source AI developer tools — coding agents, ADEs, AI editors and code-review tools — by GitHub stars, with 7-day deltas, star-history charts and a tag-filtered dashboard. | [https://awesome-ai-dev-tools.pages.dev/](https://awesome-ai-dev-tools.pages.dev/) |
 | [tiennm99/tiennm99](https://github.com/tiennm99/tiennm99) | Config files for my GitHub profile. | [https://github.com/tiennm99](https://github.com/tiennm99) |
@@ -53,22 +55,18 @@ Vài có URL để bấm vào xem trực tiếp (demo). URL có thể là:
 | [tiennm99/vngeoguessr](https://github.com/tiennm99/vngeoguessr) | GeoGuessr clone for Vietnamese locations — Mapillary panoramas, Turf.js boundaries, Upstash REST leaderboards | [https://vngeoguessr.vercel.app](https://vngeoguessr.vercel.app) |
 | [tiennm99/loldle](https://github.com/tiennm99/loldle) | LoLdle-style League of Legends daily champion guessing game — SvelteKit web app, Go data scraper, and Android stub in one repo; champion data auto-updates weekly | [https://tiennm99.github.io/loldle/](https://tiennm99.github.io/loldle/) |
 | [bkfcduchoa/bkfcduchoa.github.io](https://github.com/bkfcduchoa/bkfcduchoa.github.io) |  | [https://bkfcduchoa.github.io/](https://bkfcduchoa.github.io/) |
-| [tiennm99/cv](https://github.com/tiennm99/cv) | My personal CV written in Typst with RenderCV. | [https://tiennm99.github.io/cv/](https://tiennm99.github.io/cv/) |
-| [tiennm99/ai-labs](https://github.com/tiennm99/ai-labs) | Experiments with AI-assisted coding workflows — ClaudeKit, Superpowers, BMAD, oh-my-claudecode, gstack, and course work, merged with full history | [https://tiennm99.github.io/ai-labs/](https://tiennm99.github.io/ai-labs/) |
 | [tiennm99/sokoban](https://github.com/tiennm99/sokoban) | From-scratch Sokoban puzzle game — Svelte 5 + Vite, all 155 Microban levels, undo, progress tracking | [https://tiennm99.github.io/sokoban/](https://tiennm99.github.io/sokoban/) |
 | [tiennm99/loto](https://github.com/tiennm99/loto) | Lô Tô (Vietnamese lottery bingo) number board — Next.js web app | [https://tiennm99.github.io/loto/](https://tiennm99.github.io/loto/) |
 | [tiennm99/sudoku-solver](https://github.com/tiennm99/sudoku-solver) | 9×9 Sudoku solver in the browser using recursive backtracking — plain JavaScript, Svelte 5 + Vite, on GitHub Pages. | [https://tiennm99.github.io/sudoku-solver/](https://tiennm99.github.io/sudoku-solver/) |
 | [tiennm99/miti-telegram](https://github.com/tiennm99/miti-telegram) | Cloudflare Worker that forwards incoming messages to my Telegram account | [https://miti-telegram.miti99.workers.dev](https://miti-telegram.miti99.workers.dev) |
 | [tiennm99/claude-status-webhook](https://github.com/tiennm99/claude-status-webhook) | Telegram bot forwarding Claude Status updates — alerts for incidents and resolutions. Serverless on Cloudflare Workers. | [https://t.me/MiTiClaudeStatusBot](https://t.me/MiTiClaudeStatusBot) |
 | [tiennm99/rplace](https://github.com/tiennm99/rplace) | Collaborative pixel-art canvas (r/place clone). Svelte 5 + Hono on Cloudflare Workers + Durable Object SQLite. | [https://rplace.miti99.workers.dev/](https://rplace.miti99.workers.dev/) |
-| [tiennm99/store-scraper-bot](https://github.com/tiennm99/store-scraper-bot) | Telegram bot tracking Apple App Store + Google Play app updates. JS port of store-scraper-bot-java. | [https://store-scraper-bot.vercel.app](https://store-scraper-bot.vercel.app) |
+| [tiennm99/store-scraper-bot](https://github.com/tiennm99/store-scraper-bot) | Telegram bot tracking Apple App Store + Google Play app updates — serverless Node.js on Vercel with Upstash Redis; earlier Java and Go versions kept in history. | [https://store-scraper-bot.vercel.app](https://store-scraper-bot.vercel.app) |
 | [tiennm99/miti-loki](https://github.com/tiennm99/miti-loki) | Cloudflare Worker that forwards log messages to Grafana Cloud Loki. | [https://miti-loki.miti99.workers.dev/](https://miti-loki.miti99.workers.dev/) |
-| [tiennm99/store-scraper-api](https://github.com/tiennm99/store-scraper-api) | HTTP wrapper hosting google-play-scraper and app-store-scraper — POST to /google/:method or /apple/:method | [https://store-scraper-api.vercel.app](https://store-scraper-api.vercel.app) |
 | [tiennm99/exchange-rate-export](https://github.com/tiennm99/exchange-rate-export) | Export BIDV and Techcombank FX rates to Excel — Next.js web app with date range selection | [https://exchange-rate-export.vercel.app/](https://exchange-rate-export.vercel.app/) |
 | [tiennm99/thptqg](https://github.com/tiennm99/thptqg) | Tra cứu điểm thi THPT Quốc gia 2016–2017 — 1,7 triệu thí sinh · Truy vấn SQL client-side với sql.js | [https://tiennm99.github.io/thptqg/](https://tiennm99.github.io/thptqg/) |
 | [tiennm99/ocrot](https://github.com/tiennm99/ocrot) | Website mừng bạn Thân trở thành ông chủ quán ăn Ốc Rốt | [https://tiennm99.github.io/ocrot/](https://tiennm99.github.io/ocrot/) |
 | [ngamtheproject/ngamtheproject.github.io](https://github.com/ngamtheproject/ngamtheproject.github.io) | Website for Ngăm - a charity organization founded by high school students. | [https://ngamtheproject.github.io/](https://ngamtheproject.github.io/) |
-| [tiennm99/llmapikey](https://github.com/tiennm99/llmapikey) | Pending/archived: free capped OpenRouter API key giveaway paused until a suitable LLM gateway/provider is found. | [https://llmapikey.vercel.app](https://llmapikey.vercel.app) |
 | [tienthieusac/tienthieusac.github.io](https://github.com/tienthieusac/tienthieusac.github.io) | Tiên Thiếu Sắc | [https://tienthieusac.github.io/](https://tienthieusac.github.io/) |
 | [tiennm99/tiennm99.github.io](https://github.com/tiennm99/tiennm99.github.io) | Redirect page for my personal website | [https://tiennm99.github.io/](https://tiennm99.github.io/) |
 | [tiennm99/20221225](https://github.com/tiennm99/20221225) | A small just-for-fun website built on Christmas Day 2022. | [https://tiennm99.github.io/20221225/](https://tiennm99.github.io/20221225/) |
@@ -93,11 +91,11 @@ Project của người khác/tổ chức khác mà mình gửi PR và được m
 | [is-a-dev/register](https://github.com/is-a-dev/register) | Grab your own sweet-looking '.is-a.dev' subdomain. | 4 | 11429 |
 | [is-a-good-dev/register](https://github.com/is-a-good-dev/register) | Register for your is-a-good.dev domain! | 4 | 628 |
 | [open-domains/register](https://github.com/open-domains/register) | Free subdomains for personal sites, open-source projects, and more. | 4 | 2600 |
-| [coollabsio/coolify](https://github.com/coollabsio/coolify) | An open-source, self-hostable PaaS alternative to Vercel, Heroku & Netlify that lets you easily deploy static sites, databases, full-stack applications and 280+ one-click services on your own servers. | 3 | 62425 |
+| [coollabsio/coolify](https://github.com/coollabsio/coolify) | An open-source, self-hostable PaaS alternative to Vercel, Heroku & Netlify that lets you easily deploy static sites, databases, full-stack applications and 280+ one-click services on your own servers. | 3 | 62426 |
 | [tarampampam/domains](https://github.com/tarampampam/domains) | 🌐 DNS configuration for some of my domains | 3 | 809 |
 | [zfoo-project/zfoo](https://github.com/zfoo-project/zfoo) | 💡Extremely fast enterprise server framework, can be used in RPC,  game server,  web server. | 3 | 2014 |
 | [old-free-domains/register](https://github.com/old-free-domains/register) | Free subdomains for personal sites, open-source projects, and more. | 2 | 597 |
-| [ripienaar/free-for-dev](https://github.com/ripienaar/free-for-dev) | A list of SaaS, PaaS and IaaS offerings that have free tiers of interest to devops and infradev | 1 | 138922 |
+| [ripienaar/free-for-dev](https://github.com/ripienaar/free-for-dev) | A list of SaaS, PaaS and IaaS offerings that have free tiers of interest to devops and infradev | 1 | 138924 |
 | [onyx-dot-app/documentation](https://github.com/onyx-dot-app/documentation) | Documentation for the Onyx Software | 1 | 33 |
 | [oraios/serena](https://github.com/oraios/serena) | A powerful MCP toolkit for coding, providing semantic retrieval and editing capabilities  - the IDE for your agent | 1 | 29914 |
 | [sirmalloc/ccstatusline](https://github.com/sirmalloc/ccstatusline) | 🚀 Beautiful highly customizable statusline for Claude Code CLI with powerline support, themes, and more. | 1 | 13125 |
