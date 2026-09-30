@@ -44,10 +44,12 @@ Vài có URL để bấm vào xem trực tiếp (demo). URL có thể là:
 
 | Name | Description | URL |
 | --- | --- | --- |
+| [tiennm99/christmas-2022](https://github.com/tiennm99/christmas-2022) | A small just-for-fun website built on Christmas Day 2022. | [https://tiennm99.github.io/christmas-2022/](https://tiennm99.github.io/christmas-2022/) |
+| [tiennm99/valentine-2025](https://github.com/tiennm99/valentine-2025) | A fun Valentine's Day 2025 website. | [https://tiennm99.github.io/valentine-2025/](https://tiennm99.github.io/valentine-2025/) |
+| [tiennm99/blog](https://github.com/tiennm99/blog) | Source of miti99.com — personal blog (VN/EN) built with Hugo + Stack theme. | [https://miti99.com](https://miti99.com) |
 | [tiennm99/cv](https://github.com/tiennm99/cv) | My personal CV written in Typst with RenderCV. | [https://tiennm99.github.io/cv/](https://tiennm99.github.io/cv/) |
 | [tiennm99/ai-labs](https://github.com/tiennm99/ai-labs) | Experiments with AI-assisted coding workflows — ClaudeKit, Superpowers, BMAD, oh-my-claudecode, gstack, and course work, merged with full history | [https://tiennm99.github.io/ai-labs/](https://tiennm99.github.io/ai-labs/) |
 | [tiennm99/store-scraper-api](https://github.com/tiennm99/store-scraper-api) | HTTP wrapper hosting google-play-scraper and app-store-scraper — POST to /google/:method or /apple/:method | [https://store-scraper-api.vercel.app](https://store-scraper-api.vercel.app) |
-| [tiennm99/blog](https://github.com/tiennm99/blog) | Source of miti99.com — personal blog (VN/EN) built with Hugo + Stack theme. | [https://miti99.com](https://miti99.com) |
 | [tiennm99/miti99bot](https://github.com/tiennm99/miti99bot) | Plug-n-play Telegram bot framework in Go, self-hosted on Coolify + MongoDB Atlas with cron, games, schedules, and paper trading modules. | [https://t.me/miti99bot](https://t.me/miti99bot) |
 | [tiennm99/awesome-ai-dev-tools](https://github.com/tiennm99/awesome-ai-dev-tools) | Daily-refreshed ranking of open-source AI developer tools — coding agents, ADEs, AI editors and code-review tools — by GitHub stars, with 7-day deltas, star-history charts and a tag-filtered dashboard. | [https://awesome-ai-dev-tools.pages.dev/](https://awesome-ai-dev-tools.pages.dev/) |
 | [tiennm99/tiennm99](https://github.com/tiennm99/tiennm99) | Config files for my GitHub profile. | [https://github.com/tiennm99](https://github.com/tiennm99) |
@@ -69,9 +71,7 @@ Vài có URL để bấm vào xem trực tiếp (demo). URL có thể là:
 | [ngamtheproject/ngamtheproject.github.io](https://github.com/ngamtheproject/ngamtheproject.github.io) | Website for Ngăm - a charity organization founded by high school students. | [https://ngamtheproject.github.io/](https://ngamtheproject.github.io/) |
 | [tienthieusac/tienthieusac.github.io](https://github.com/tienthieusac/tienthieusac.github.io) | Tiên Thiếu Sắc | [https://tienthieusac.github.io/](https://tienthieusac.github.io/) |
 | [tiennm99/tiennm99.github.io](https://github.com/tiennm99/tiennm99.github.io) | Redirect page for my personal website | [https://tiennm99.github.io/](https://tiennm99.github.io/) |
-| [tiennm99/20221225](https://github.com/tiennm99/20221225) | A small just-for-fun website built on Christmas Day 2022. | [https://tiennm99.github.io/20221225/](https://tiennm99.github.io/20221225/) |
 | [tiennm99/test-deeplink-sms](https://github.com/tiennm99/test-deeplink-sms) | Small test page for verifying SMS deeplink behavior on mobile devices. | [https://tiennm99.github.io/test-deeplink-sms/](https://tiennm99.github.io/test-deeplink-sms/) |
-| [tiennm99/valentine2025](https://github.com/tiennm99/valentine2025) | A fun Valentine's Day 2025 website. | [https://tiennm99.github.io/valentine2025/](https://tiennm99.github.io/valentine2025/) |
 | [tiennm99/double-click-test](https://github.com/tiennm99/double-click-test) | Website to quickly check a mouse for double-click issues. | [https://tiennm99.github.io/double-click-test/](https://tiennm99.github.io/double-click-test/) |
 | [ngamtheproject/ngamtheproject](https://github.com/ngamtheproject/ngamtheproject) | Redirect to Ngăm's website | [https://ngamtheproject.github.io/ngamtheproject/](https://ngamtheproject.github.io/ngamtheproject/) |
 | [tiennm99/tn1](https://github.com/tiennm99/tn1) | Hugo photo gallery site built on the Gallery Deluxe module | [https://tiennm99.github.io/tn1/](https://tiennm99.github.io/tn1/) |
