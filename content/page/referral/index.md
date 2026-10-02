@@ -78,18 +78,6 @@ Referral code: `CAQ5sxHAq6`
 
 Link: https://platform.minimax.io/subscribe/token-plan?code=CAQ5sxHAq6&source=link
 
-### [OpenCode Go](https://opencode.ai/go?ref=HE42WGS8BM)
-
-Invite friends to OpenCode Go. Earn **$5** when a friend subscribes, and they'll get **$5** too.
-
-- Share your referral link.
-- Your friend joins and subscribes to Go.
-- You both get a **$5 usage credit** to apply toward your Go usage limits.
-
-Referral code: `HE42WGS8BM`
-
-Link: https://opencode.ai/go?ref=HE42WGS8BM
-
 ### [Synthetic](https://synthetic.new/?referral=CNBFyw28zF0dZoj)
 
 Thanks for helping us grow!
