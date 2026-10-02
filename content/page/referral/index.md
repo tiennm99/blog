@@ -15,14 +15,6 @@ Many thanks to those who subscribe via my referral links! 🙏
 
 ## Claude Ecosystem
 
-### [Claude Code Guest Pass](https://claude.ai/referral/ZkoAngod1A)
-
-Share a free week of Claude Code with friends. If they love it and subscribe, you'll get $10 of extra usage to keep building.
-
-My passes:
-
-- ~~https://claude.ai/referral/ZkoAngod1A~~ — **out of stock as of 2026-04-30**
-
 ### [AgentKit](https://agentkit.best/?ref=BWA910UK)
 
 AgentKit — formerly **ClaudeKit** (`claudekit.cc`) — packages production-ready skills, slash commands, subagents, and workflows for coding agents such as Claude Code, Codex, and GitHub Copilot, so sessions stay consistent instead of restarting from scratch every time.
@@ -127,30 +119,6 @@ Link: https://platform.xiaomimimo.com?ref=T8ESAY
 https://www.byteplus.com/activity/codingplan?ac=MMAUCIS9NT1S&rc=2739UWRE
 
 [![modelark](modelark.png)](https://www.byteplus.com/activity/codingplan?ac=MMAUCIS9NT1S&rc=2739UWRE)
-
-### [BigModel.cn — Platform Invite](https://www.bigmodel.cn/invite?icode=rIX6uZrLYfy8fQ6Urca4xf2gad6AKpjZefIo3dVEQyA%3D)
-
-General BigModel.cn (Zhipu AI / 智谱 AI) platform invitation — new users get **20M free tokens** to explore the API, playground, and AGI apps.
-
-Link: https://www.bigmodel.cn/invite?icode=rIX6uZrLYfy8fQ6Urca4xf2gad6AKpjZefIo3dVEQyA%3D
-
-### [BigModel.cn — GLM Coding Plan](https://www.bigmodel.cn/glm-coding?ic=VGRZKHKNKW)
-
-The **GLM Coding Plan** is a low-cost subscription that powers Claude Code, Cline, and other AI coding tools using GLM-5.1 / GLM-4.7 models.
-
-**Friend's discount:** Subscribe via my link and get **5% off** your first GLM Coding Plan order.
-
-**My rebate (challenge-based, resets every 30 invitees):**
-
-- **3 friends subscribed** → I receive **10% cashback** of their actual paid amount.
-- **30 friends subscribed** → I receive an **additional 10%** of the total paid amount for those 30 orders.
-- The mission resets for every 30 friends invited — no upper limit.
-
-Rebate credit can be used for anything on BigModel: resource packs, API calls, package subscriptions.
-
-Invitation code: `VGRZKHKNKW`
-
-Link: https://www.bigmodel.cn/glm-coding?ic=VGRZKHKNKW
 
 ## Cloud Computing
 
