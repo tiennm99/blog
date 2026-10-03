@@ -1,7 +1,7 @@
 ---
 title: Referral
 description: Referral links for tech services I use
-tags: ["Referral", "AI Tools", "AI Gateway", "LLM API", "OrcaRouter", "Claude Code", "Cloud Storage", "Cloud Computing", "Alibaba Cloud", "Database", "Aiven"]
+tags: ["Referral", "AI Tools", "AI Gateway", "LLM API", "OrcaRouter", "Hermes Agent", "Claude Code", "Cloud Storage", "Cloud Computing", "Alibaba Cloud", "Database", "Aiven"]
 aliases:
   - invite
 menu:
@@ -90,6 +90,14 @@ Share Your Referral Link
 https://synthetic.new/?referral=CNBFyw28zF0dZoj
 
 Your referral link contains your unique code: CNBFyw28zF0dZoj
+
+### [Hermes Agent Cloud](https://portal.nousresearch.com/r/tien-nguyen-minh)
+
+Hermes Agent Cloud is the hosted subscription for Nous Research's Hermes Agent. Subscribe through my link to get **$15 off** your first paid month.
+
+The discount applies only to new customers starting a new personal subscription, and only with a payment card that hasn't been used for another referral.
+
+Link: https://portal.nousresearch.com/r/tien-nguyen-minh
 
 ### [Xiaomi MiMo](https://platform.xiaomimimo.com?ref=T8ESAY)
 
