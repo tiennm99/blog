@@ -7,3 +7,21 @@ hasCJKLanguage: false
 enableRobotsTXT: true
 timeZone: Asia/Ho_Chi_Minh
 enableGitInfo: true
+
+# TEMPORARY (added 2026-10-04): Cloudflare Pages `_redirects` file that sends
+# the old Stack-theme URLs (/post/YYYY/MM/DD/, home pagination /page/N/) to
+# their tsuki URLs. Remove this block and layouts/home.redirects together once
+# the old URLs no longer get traffic (review at 3, 6 or 12 months after the
+# migration ships).
+mediaTypes:
+  text/redirects:
+    delimiter: ""
+    suffixes: [""]
+outputFormats:
+  redirects:
+    baseName: _redirects
+    mediaType: text/redirects
+    isPlainText: true
+    notAlternative: true
+outputs:
+  home: [html, rss, redirects]

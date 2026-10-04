@@ -1,0 +1,22 @@
+{{- /*
+  TEMPORARY (added 2026-10-04): 301 redirects from the old Stack-theme URLs to
+  the tsuki URLs, written to public/_redirects for Cloudflare Pages.
+  Delete this file and the matching block in config/_default/hugo.yml once the
+  old URLs no longer get traffic (review at 3, 6 or 12 months after the
+  migration ships).
+
+  - Posts: Stack had no post permalink rule, so a post lived at its content
+    path, /post/YYYY/MM/DD/. tsuki serves it at /p/:slug/.
+  - Pagination: Stack paginated lists with 5 entries per page. The home page
+    pages (/page/N/) go to /, since tsuki's home page is not paginated, and the
+    page section's pages (/page/page/N/) go to its first page, /page/.
+*/ -}}
+{{- $posts := where site.RegularPages "Section" "post" -}}
+{{- range $posts }}
+/{{ .File.Dir }} {{ .RelPermalink }} 301
+{{- end }}
+{{- /* Page counts of the last Stack build; the old URL set is frozen. */ -}}
+{{- range seq 38 }}
+/page/{{ . }}/ / 301
+{{- end }}
+/page/page/2/ /page/ 301
