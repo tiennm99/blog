@@ -6,7 +6,8 @@ settings.local.json
 
 
 public
-themes
+themes/*
+!themes/tsuki/
 resources
 
 assets/jsconfig.json
