@@ -6,11 +6,11 @@ featured:
     image: "img/projects/bonsai.svg"
     tags: [hugo, theme, minimal]
 
-  - title: "miti99bot"
-    tagline: "Plug-n-play Telegram bot framework on Cloudflare Workers with grammY."
-    repo: https://github.com/tiennm99/miti99bot
-    image: "img/projects/miti99bot.svg"
-    tags: [telegram, cloudflare, framework]
+  - title: "tiennm99bot"
+    tagline: "Plug-n-play Telegram bot framework in Go, self-hosted on Coolify + MongoDB Atlas."
+    repo: https://github.com/tiennm99/tiennm99bot
+    image: "img/projects/tiennm99bot.svg"
+    tags: [telegram, go, framework]
 
   - title: "rplace"
     tagline: "Collaborative pixel art canvas inspired by Reddit r/place. Real-time WebSocket sync."
