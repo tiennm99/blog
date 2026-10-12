@@ -4,7 +4,7 @@ All notable changes to tsuki will be documented here. Format follows [Keep a Cha
 
 ## [Unreleased] — v0.3.0
 
-Feature-parity round + Lighthouse ≥80 baseline. Six phases per `plans/260510-0144-tsuki-v0.3.0/`. Net: tsuki now ships breadcrumbs, prev/next post navigation, language switcher UI, llm.txt, English i18n bundle, and per-page-kind CSS bundles, while maintaining the ≤4 KB gz / page-kind / ≤1 KB gz JS hard caps.
+Feature-parity round + Lighthouse ≥80 baseline. Delivered in six phases. Net: tsuki now ships breadcrumbs, prev/next post navigation, language switcher UI, llm.txt, English i18n bundle, and per-page-kind CSS bundles, while maintaining the ≤4 KB gz / page-kind / ≤1 KB gz JS hard caps.
 
 ### Added
 
