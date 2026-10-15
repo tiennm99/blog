@@ -56,9 +56,9 @@ Anything else that is not an AI summary paragraph — a blank-line separator, a 
       Keep the `post-stats` counts for step d.
 
    b. **Rewrite each entry summary** (headings unchanged):
-      - Re-read the source: `WebFetch` the entry URL; if blocked, use the `mt-fetch-url` chain. YouTube entries: use oEmbed title/description plus the existing summary.
+      - Re-read the source: `WebFetch` the entry URL; if blocked, use the `mt-fetch-url` chain. YouTube entries: title/author from `node scripts/newsletter add-url <url>` (oEmbed has no description) plus the existing summary; description source per `mt-add-video` step 3.
       - Source unreachable → rewrite from the existing summary only; add no new facts. Note it in the report.
-      - Output per post-mechanics rules: Vietnamese (≥99%), 1–2 prose paragraphs, ≤300 words, no key-points bullet list, junior-developer audience, professional tone. Video blockquote summaries (`> …`) stay 1–2 sentences.
+      - Output per post-mechanics rules: Vietnamese (≥99%), length per post-mechanics §5 (Summary length), no key-points bullet list, junior-developer audience, professional tone.
       - Struck entries (`## ~~[…]~~`): leave the heading and every body line untouched.
       - Edit summary paragraphs in place with anchored `Edit` calls; never rewrite the whole file.
 
@@ -94,7 +94,7 @@ Give each subagent: the post path, model + tool name, today's date string, the s
 - [ ] `protected-lines --against` → `ok: true`
 - [ ] `post-stats` counts unchanged
 - [ ] Exactly one provenance note, last line, correct model + DD/MM/YYYY date
-- [ ] Summaries Vietnamese, prose, ≤300 words; headings and image labels untouched
+- [ ] Summaries Vietnamese, prose, ≤300 words by awk NF count (post-mechanics §5); headings and image labels untouched
 - [ ] Struck entries and author-voice lines byte-identical
 
 ## Security

@@ -15,19 +15,20 @@ A clean article URL (passed by `mt-add-url`, or given directly). If a raw URL is
 ```bash
 node scripts/newsletter add-url "<url>"
 ```
-Trust `route: article`; skip if `duplicate` or not `accessible`.
+Trust `route: article`; skip if `duplicate`; for `accessible: false` follow post-mechanics §6 (not a skip by itself).
 
 ## Workflow
 
-1. **Post mechanics** — follow `docs/newsletter/post-mechanics.md` to resolve/create the target post and (if new) get the newsletter number + apply the template.
-2. **Extract** the original article title and main content. Try `WebFetch` first; if the host blocks it (403, Cloudflare challenge, empty body), work through the `mt-fetch-url` fallback chain before giving up. A `accessible: false` from the router is not by itself a reason to skip — many public tech blogs block plain fetches but serve the fallback fetchers fine. Preserve the source title exactly enough to remain recognizable: do not translate/localize it; keep source-language wording, capitalization, punctuation, and proper nouns from metadata (`og:title`, page title, or fetcher frontmatter).
-3. **Summarize in Vietnamese** — 1-2 paragraphs, max 300 words, professional tone for junior developers. Summary paragraphs only; do not add a key-points bullet list.
+1. **Extract** the original article title and main content. Try `WebFetch` first, then the `mt-fetch-url` fallback chain. Title: post-mechanics §4 (*Title source*). Skip rules: post-mechanics §6.
+   - **GitHub repo URLs** (`github.com/<owner>/<repo>`): `WebFetch` returns only the repo chrome with HTTP 200, so the fallback never triggers. Read the README from `https://raw.githubusercontent.com/<owner>/<repo>/HEAD/README.md` (`HEAD` resolves the default branch). On 404, find the README's real name in the repo page's file list. The title follows the post-mechanics §4 GitHub rule.
+2. **Summarize in Vietnamese** — length per post-mechanics §5 *Summary length* (count with `awk` NF, target 280–298, max 300 words); professional tone for junior developers. Summary paragraphs only; do not add a key-points bullet list.
+3. **Post mechanics** — follow `docs/newsletter/post-mechanics.md` to resolve/create the target post and (if new) get the newsletter number + apply the template. Done after extraction so a failed fetch never leaves an empty new newsletter behind.
 4. **Write** the main-content block and insert it **before** the `### Bonus` section (or append at end of file if there is no Bonus yet — do not create an empty Bonus):
 
 ```markdown
 ## [Original article title](clean_url)
 
-[Tóm tắt tiếng Việt — tối đa 300 từ]
+[Tóm tắt tiếng Việt — ≤300 từ, xem post-mechanics §5]
 ```
 
 5. **Report**:
@@ -37,7 +38,7 @@ Trust `route: article`; skip if `duplicate` or not `accessible`.
 🔗 [clean_url]
 📊 [tally]
 ```
-The tally comes from `post-stats` — see *Post tally* in the shared post mechanics.
+The `📊` line uses the post-mechanics §4a (*Post tally*) format.
 
 ## Checklist
 
@@ -47,5 +48,6 @@ The tally comes from `post-stats` — see *Post tally* in the shared post mechan
 - [ ] URL is clean (no tracking params)
 - [ ] Heading uses the original source article title, not a Vietnamese translation
 - [ ] Summary paragraphs only, no key-points bullet list
+- [ ] Summary ≤300 words by awk NF count (target 280-298), per post-mechanics §5
 - [ ] Vietnamese content ≥99%, grammar correct
 - [ ] Article inserted before the Bonus section

@@ -1,6 +1,6 @@
 ---
 name: mt-fetch-url
-description: "Fallback web content fetchers for pages that blocked the built-in fetch. Use ONLY when the built-in WebFetch tool has already failed with 403 Forbidden, bot detection, Cloudflare challenge, empty content, or similarly blocked response. Tries local defuddle extraction, then the defuddle.md proxy, then a reader proxy — the proxies fetch the page server-side from a different IP and return clean markdown. Do NOT use as a first-choice fetcher — try WebFetch first. Does NOT bypass paywalls, login walls, or pages that require JavaScript execution."
+description: "Fallback web content fetchers for pages that blocked the built-in fetch. Use ONLY when the built-in WebFetch tool has already failed with 403 Forbidden, bot detection, Cloudflare challenge, empty content, or similarly blocked response. Tries local defuddle extraction, then the defuddle.md proxy, then a reader proxy — the proxies fetch the page server-side from a different IP and return clean markdown — then renders the page in a local headless browser (agent-browser) for JavaScript-only pages. Do NOT use as a first-choice fetcher — try WebFetch first. Does NOT bypass paywalls, login walls, or Cloudflare challenge pages that also stop a headless browser."
 ---
 
 ## Scope
@@ -9,7 +9,7 @@ This skill handles: fetching public web pages that blocked WebFetch due to bot-d
 
 This skill does NOT handle:
 - Paywalled or login-gated content
-- Pages requiring client-side JavaScript execution (these proxies do HTTP fetch, not headless rendering)
+- Cloudflare "Just a moment…" challenges that also stop headless Chromium (tested: the agent-browser tier stays on the challenge page)
 - URLs that return 404 / are actually dead
 - Sites that block every fetcher in the chain below
 
@@ -39,10 +39,24 @@ Use this skill only after a WebFetch attempt returned one of:
    WebFetch(url: "https://r.jina.ai/<target_url>", prompt: "<extraction prompt>")
    ```
    Tier 1 and tier 2 fail independently — a site blocking one often still serves the other, so always attempt tier 2 before giving up.
-4. Parse the returned markdown — both tier-1 stages emit YAML frontmatter with title/description/etc. ahead of the body
-5. If every tier fails, stop and report which tiers were tried and what each returned — do not keep retrying.
+4. **Tier 3 — local headless browser (agent-browser).** If tier 2 also fails or returns only SPA boilerplate, render the page in a real browser and read the rendered DOM:
+   ```bash
+   export AGENT_BROWSER_SESSION=mt-fetch
+   npx -y agent-browser open "<target_url>" &&
+     npx -y agent-browser wait 10000 &&
+     npx -y agent-browser get title &&
+     npx -y agent-browser read
+   npx -y agent-browser close
+   ```
+   - Run the whole block as ONE shell invocation: environment variables do not persist between agent shell calls, so a later call would lose `AGENT_BROWSER_SESSION` and talk to a different session. The `&&` chain stops at the first failure, and `close` runs regardless.
+   - Where agent-browser cannot download its own Chrome (no Chrome for Testing build, e.g. Linux ARM64), also export `AGENT_BROWSER_EXECUTABLE_PATH` to the system Chromium in that same invocation.
+   - `read` with no URL reads the rendered DOM of the open tab. Its output is the page text with menus and banners kept — skip that noise when summarizing; no extra extraction step is needed.
+   - Always run `close` at the end, even after a failure, so no headless browser is left running.
+   - If the title is still "Just a moment…" or the body is a verification message, the page is behind a bot challenge: count the tier as failed.
+5. Parse the returned markdown — both tier-1 stages emit YAML frontmatter with title/description/etc. ahead of the body; tier 3 gives the title via `get title`
+6. If every tier fails, stop and report which tiers were tried and what each returned — do not keep retrying.
 
-Attempt each tier at most once. The whole chain is: built-in WebFetch → local defuddle → defuddle.md → reader proxy → report failure.
+Attempt each tier at most once. The whole chain is: built-in WebFetch → local defuddle → defuddle.md → reader proxy → agent-browser → report failure.
 
 ## How defuddle works
 
@@ -95,5 +109,8 @@ WebFetch returned: "Request failed with status code 403"
    → exit 1 after both stages: continue
 → Tier 2: WebFetch(url: "https://r.jina.ai/https://example.com/article", prompt: ...)
    → success: parse markdown output, summarize as usual
-   → failure: report "WebFetch 403, defuddle 502, reader proxy failed" and stop
+   → failure: continue
+→ Tier 3: agent-browser open → wait → get title → read → close
+   → success: summarize the rendered text as usual
+   → challenge page or empty: report "WebFetch 403, defuddle 502, reader proxy failed, agent-browser stuck on challenge" and stop
 ```

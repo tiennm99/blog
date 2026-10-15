@@ -10,7 +10,7 @@ Canonical instructions for AI coding tools (Claude Code, OpenCode, Codex) workin
 - **User communication**: English by default; use another language only when the user explicitly requests it
 - **Timezone**: Asia/Ho_Chi_Minh (UTC+7)
 
-Vietnamese language requirements apply only to prose written into Hugo posts, including summaries. Preserve article titles and image labels in their original source language, wording, capitalization, and punctuation; translate them only when the user explicitly asks. Keep questions, status updates, reports, and final responses in English unless the user asks for another language.
+Vietnamese language requirements apply only to prose written into Hugo posts, including summaries. Preserve article titles and image labels in their original source language, wording, capitalization, and punctuation; translate them only when the user explicitly asks. Keep questions, status updates, reports, and final responses in English unless the user asks for another language. YouTube video titles in Bonus → Videos are the deliberate exception: they are localized into Vietnamese, keeping proper nouns and product names (see `mt-add-video`).
 
 ## Directory Structure
 
@@ -50,7 +50,8 @@ The eight subcommands, their arguments, output shapes and exit codes are
 documented once in **[docs/newsletter/engine-commands.md](docs/newsletter/engine-commands.md)**.
 
 The engine has npm dependencies, so a fresh clone needs `npm ci` from the repo
-root once before any skill will run.
+root once; Substack image lookup and local defuddle extraction depend on it
+(details in engine-commands.md).
 
 The engine is shared by all three tools — no tool-specific copies.
 
@@ -67,12 +68,14 @@ The newsletter workflow adds URLs (articles, YouTube videos, images) to the targ
   - `mt-add-image` — image → Bonus → Images (labels Substack images via source-post lookup)
   - `mt-add-tags` — add/update tags in post frontmatter
   - `mt-rewrite-newsletter` — rewrite existing newsletter summaries with a newer model, keeping handwritten lines and stamping a rewrite note
-  - `mt-fetch-url` — fallback web fetch chain (local defuddle, the defuddle.md proxy, then a reader proxy); use only when built-in WebFetch is blocked
+  - `mt-fetch-url` — fallback web fetch chain (local defuddle, the defuddle.md proxy, a reader proxy, then a local headless browser via agent-browser); use only when built-in WebFetch is blocked
 - **Codex** — discovers the repository-scoped adapters in `.agents/skills/`. Ask it to add a URL for implicit routing or invoke `$mt-add-url` explicitly.
 
 `mt-add-url` dispatches `article` / `youtube` / `image`; other types (direct video files, documents, unknown) prompt the user to add or extend a handler.
 
 Canonical skill implementations live in `.claude/skills/`; `.agents/skills/` symlinks to them so there is only ever one copy to edit.
+
+Skills name Claude Code tools; other tools map them as follows. `WebFetch` → the tool's web fetch, or `curl -sL`. `AskUserQuestion` → the tool's question prompt, or a numbered list in chat, then wait. Skill tool → open and follow `.agents/skills/<name>/SKILL.md`. `Edit` → an anchored edit, never a whole-file rewrite. `<scratchpad>` → `temp/`. Subagents → process posts sequentially.
 
 ### Using Codex
 
@@ -92,4 +95,6 @@ Codex detects skill changes automatically; restart Codex if an update does not a
 
 ## Git Workflow Rules
 
-**Before any git commit**, check all staged `content/post/*/index.md` files for minimal tags. If any have only `["AI-Assisted"]` or empty tags, run the `mt-add-tags` workflow on them first before committing.
+**Before any git commit**, run the `mt-add-tags` pre-commit check on every staged or new `content/post/YYYY/MM/DD/index.md` (the skill defines what counts as minimal tags).
+
+Stage only the post files you changed, because unrelated local edits may be present; never `git add -A`. Commit as `docs(newsletter): add newsletter N`. A daily bot commit (`chore(projects): refresh projects list`, from `.github/workflows/update-projects.yml`) often lands on main first, so push with `git pull --rebase --autostash && git push`.

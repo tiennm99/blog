@@ -29,21 +29,21 @@ Output (JSON): `{ original_url, clean_url, http_status, accessible, duplicate, r
 
 ### 2. Skip non-actionable URLs
 
-- `duplicate: true` → skip, note in report (already in a newsletter).
-- `accessible: false` → **not an automatic skip.** The classifier does a plain fetch, so a bot-blocked host (403, Cloudflare challenge) reports `accessible: false` even when the page is public and the fallback fetchers can read it. Dispatch on `route` as normal and let the handler's fetch chain decide; only report the URL as skipped when every fetcher in `mt-fetch-url` has failed. A `404`/dead URL is a genuine skip.
+- `duplicate: true` → skip and report where it already is, per `docs/newsletter/post-mechanics.md` §6.
+- `accessible: false` → **not an automatic skip** (HEAD probe; bot-blocked hosts read false). Dispatch on `route` as normal and follow post-mechanics §6.
 
 ### 3. Dispatch on route
 
 | route | Action |
 |-------|--------|
 | `article` | Invoke the **`mt-add-article`** skill, passing `clean_url` |
-| `youtube` | Invoke the **`mt-add-video`** skill, passing `clean_url` |
+| `youtube` | Invoke the **`mt-add-video`** skill, passing `clean_url`, `title` and `author` |
 | `image` | Invoke the **`mt-add-image`** skill, passing `clean_url` |
 | `video` (direct file) / `document` / anything else | **Fallback** — see step 4 |
 
 Dispatch by calling the Skill tool for the chosen handler with `clean_url` as the argument. The handler completes the write end-to-end.
 
-**Multiple URLs:** dispatch **sequentially** (one handler finishes before the next starts) — handlers edit the same daily `index.md`, so concurrent edits would clobber each other. Process article(s) and video(s) one at a time.
+**Multiple URLs:** dispatch **sequentially** (one handler finishes before the next starts) — handlers edit the same daily `index.md`, so concurrent edits would clobber each other. Process every URL (articles, videos, images) one at a time.
 
 ### 4. Fallback for unsupported types
 
@@ -69,8 +69,7 @@ Aggregate across all URLs:
 ```
 ✅ Newsletter URL Dispatch Complete
 
-📊 Newsletter #[number]: [articles] articles · [videos] videos · [images] images
-   (omit zero counts; documents too when present)
+📊 [tally line in the post-mechanics §4a format]
 
 ✅ Dispatched: [count]
    - [count] → mt-add-article (articles)

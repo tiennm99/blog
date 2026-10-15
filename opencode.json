@@ -5,7 +5,8 @@
     "webfetch": "allow",
     "websearch": "allow",
     "bash": {
-      "node *": "allow",
+      "*": "ask",
+      "node scripts/newsletter *": "allow",
       "git status*": "allow",
       "git add*": "allow",
       "git commit*": "allow",
@@ -19,9 +20,15 @@
       "mv *": "allow",
       "mkdir *": "allow",
       "find *": "allow",
+      "find * -delete*": "ask",
+      "find * -exec*": "ask",
       "grep *": "allow",
+      "head *": "allow",
+      "sort*": "allow",
+      "awk *": "allow",
+      "wc *": "allow",
       "curl *": "allow",
-      "*": "ask"
+      "npx -y agent-browser *": "allow"
     }
   }
 }

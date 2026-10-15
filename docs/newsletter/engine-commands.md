@@ -13,11 +13,11 @@ a fresh clone needs one setup step:
 npm ci
 ```
 
-Skip it and the content-parsing subcommands print
+Skip it and `find-substack-post` prints
 `newsletter engine: dependencies missing — run 'npm ci' from the repo root`
-and exit 1 rather than a module-resolution stack trace. `fetch-via-defuddle` is
-the exception: its local tier needs the dependencies, so without them it falls
-through to the `defuddle.md` proxy and still succeeds.
+and exits 1 rather than a module-resolution stack trace. `fetch-via-defuddle`
+loses only its local stage, so it falls through to the `defuddle.md` proxy and
+can still succeed. The other subcommands need no dependencies.
 
 ## Invocation
 
@@ -31,6 +31,11 @@ node scripts/newsletter <command> [args]
 JSON output is 2-space indented with a trailing newline, and is not HTML-escaped
 (URLs keep their `&` readable). Optional fields are **omitted** when empty rather
 than emitted as `""`.
+
+Exit codes: 0 is success; 1 is a usage error, unknown command, missing
+dependencies or uncaught error. `find-substack-post` exits 2 on a bad flag;
+`fetch-via-defuddle` and `protected-lines --against` use the codes in their own
+sections.
 
 ## Commands
 
@@ -59,7 +64,15 @@ Classifies and deduplicates one URL — the single entry point per URL.
   route, and absent when oEmbed fails.
 - `duplicate` is boundary-aware: a URL that is merely a *prefix* of one already
   stored is not a duplicate. Substack images dedupe on their image uuid, so
-  transform and size variants collapse onto one identity.
+  transform and size variants collapse onto one identity. It is a boolean and
+  does not name the post holding the URL; see
+  [post-mechanics §6](post-mechanics.md#6-error-handling) for finding and
+  reporting it.
+- `http_status` is the final status (after redirects) of a HEAD request sent
+  with Node's default User-Agent, not a browser one — `"000"` on network error
+  or 10 s timeout. `accessible` is `http_status == "200"`, so a bot-blocking or
+  HEAD-rejecting host reads `false` (see
+  [post-mechanics §6](post-mechanics.md#6-error-handling)).
 
 ### `find-newsletter-number`
 
@@ -121,19 +134,19 @@ fetched at all.
 
 ### `fetch-via-defuddle <url>`
 
-Fallback fetcher for pages that blocked the built-in fetch. Two tiers, in order:
+Fallback fetcher for pages that blocked the built-in fetch. Two stages, in order:
 local defuddle extraction, then the `defuddle.md` proxy (which fetches from its
-own IP — the tier that matters when this machine's IP is the blocked one).
+own IP — the stage that matters when this machine's IP is the blocked one).
 
-Both tiers write YAML frontmatter followed by the markdown body, so the caller
-parses one shape either way; stderr names which tier failed and why. An
+Both stages write YAML frontmatter followed by the markdown body, so the caller
+parses one shape either way; stderr names which stage failed and why. An
 extraction that looks like a bot challenge rather than the requested page counts
-as a local-tier failure, so the proxy still gets its turn.
+as a local-stage failure, so the proxy still gets its turn.
 
 | Exit | Meaning |
 |---|---|
 | 0 | content returned |
-| 1 | every tier failed |
+| 1 | both stages failed |
 | 2 | bad arguments |
 
 ### `post-stats <path/to/index.md>`
@@ -157,8 +170,9 @@ Counts what a post already holds, so a handler can report a running tally.
 ### `protected-lines <path/to/index.md> [--against <snapshot.json>]`
 
 Lists the lines a rewrite (`mt-rewrite-newsletter`) must keep byte-for-byte:
-frontmatter, headings (except `###` sub-headings inside a summary), `<i>`
-blocks, whole-line italic notes, `~~struck~~` lines, fenced code blocks, and
+frontmatter, headings (except `###` sub-headings inside a summary), HTML blocks
+opened by `<i>`/`<em>`/`<div>`/`<p>`/`<blockquote>`, `**Đánh giá:** *…*` author
+notes (kind `author-note`), whole-line italic notes, `~~struck~~` lines, fenced code blocks, and
 asset links / Bonus subsection labels. Paragraphs mentioning `mình`
 or `MiTi` come back as `candidates` for a human-style judgement; the machine
 provenance note (`*Bài viết đã được … bởi …*`) comes back as `note` and is not

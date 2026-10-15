@@ -11,7 +11,7 @@ Shared scripts: `scripts/newsletter/`. Shared procedure: `docs/newsletter/post-m
 
 **Label priority:** figure caption → source post title → your typed input.
 
-**Label language:** Preserve the selected label's original source-language wording, capitalization, and punctuation. Do not translate or localize it unless the user explicitly asks. Preserve user-typed labels exactly as entered.
+**Label language:** keep the source language per `AGENTS.md` / post-mechanics §5; preserve user-typed labels exactly as entered.
 
 ## Input
 
@@ -27,7 +27,7 @@ node scripts/newsletter detect-image-source "<url>"
 
 When invoked **directly** (not via `mt-add-url`), first run the router to get accessibility + duplicate status and skip accordingly:
 ```bash
-node scripts/newsletter add-url "<url>"   # expect route:image; skip if duplicate/!accessible
+node scripts/newsletter add-url "<url>"   # expect route:image; skip if duplicate (report where, per post-mechanics §6); for `accessible: false` follow post-mechanics §6
 ```
 (When dispatched by `mt-add-url`, that check already ran — don't repeat it.)
 
@@ -43,17 +43,19 @@ node scripts/newsletter find-substack-post --uuid <uuid>
   ```bash
   node scripts/newsletter find-substack-post --uuid <uuid> --deep
   ```
-  On a miss the result reports `scanned` (posts fetched), `budget` (the 40-fetch cap), and `cutoff` (oldest date looked at) — mention how far back it looked.
+  On a miss the result reports `scanned` (posts fetched), `budget` (the 40-fetch cap), and `cutoff`. `cutoff` is the fixed 3-month boundary (`null` means no sitemap could be fetched). If `scanned` equals `budget`, the budget ran out before the cutoff, so say older posts were not checked.
 - `found: false` after `--deep` → no source post; go to step 3 (ask) and/or step 4 (add publication).
 
 **When `found: true` — pick the label (confirm-from-candidates):**
 ByteByteGo doesn't attach captions to images (verified: empty `alt`, no `<figcaption>`), and image order can't be mapped to titles automatically because sponsor/video items interleave. So the script returns `candidates` — the newsletter post's topic titles from the post's TOC. Pick the label this way:
 1. If `caption` is non-empty (some publications do caption images) → propose it as the default.
-2. Otherwise present `candidates` to the user via `AskUserQuestion` (the correct title is in this list):
+2. Otherwise, **recommend, don't guess.** Fetch `<origin>/api/v1/posts/<slug>` (slug from `postUrl`) and walk `body_html` in document order, printing each `<h1>`–`<h4>` text and each deduped `images/<uuid>`. The nearest heading above this image's UUID is the recommended label. Reuse the same ordering for later images from the same post.
+3. Present `candidates` via `AskUserQuestion`. Candidates = `<li>` texts of 6–70 chars from the post (usually its TOC); the right title is usually, but not always, among them:
    - "Image is from **[postTitle]** (`postUrl`). Which title matches it?"
+   - List the recommended title first, marked (Recommended), and cite the evidence (the heading above the UUID); the user still confirms. If no candidate fits, offer that heading as an option.
    - Offer the candidates. If there are more than 4, show them as a numbered list in text and ask the user to pick a number (AskUserQuestion allows max 4 options).
    - Always include a "Type my own" escape.
-3. Label = the user's pick (or the typed value). Preserve its original language, wording, capitalization, and punctuation; do not translate unless the user explicitly asks.
+4. Label = the user's pick (or the typed value), in its source language (see **Label language** above).
 
 **Presenting candidates — rules that prevent mis-labelling:**
 - **Dedupe first.** The list can contain the same title twice, once with literal escape sequences (e.g. `\u2019` instead of `'`). Show each title once, in its readable form.

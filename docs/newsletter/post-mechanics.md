@@ -16,6 +16,7 @@ The target defaults to today's date but the user can pin a different one.
 **Target date resolution:**
 - Default: current date in `YYYY-MM-DD` (UTC+7).
 - **Pinned target:** when the user names a post or date to keep working on — typically an unpublished draft started on an earlier day ("keep adding to the 7/9 post") — that post is the target for the rest of the session, including across a date rollover mid-session. Do not silently start a new post for the new day; if a pin might have lapsed, ask before creating one.
+- **Backfill:** when the user names a past date for a **new** newsletter ("the day after #134"), that date is the target. Create `content/post/<YYYY>/<MM>/<DD>/index.md` with `date: <that date>` — never today's date — and treat it as pinned for the rest of the session, exactly like a pinned draft. Commits still happen at real time.
 
 Check `content/post/YYYY/MM/DD/index.md` for the resolved target date:
 - **Exists** → update this file.
@@ -28,7 +29,7 @@ The newsletter number always comes from the target post, not from today's date.
 ```bash
 node scripts/newsletter find-newsletter-number
 ```
-Searches backwards from today for the most recent newsletter and returns the next number. Only needed when **creating** a new post — when the target post already exists, read its number from its own `title`.
+Returns 1 + the highest `Newsletter #N` in the newest year directory that has one. It ignores today's date and the target date, and future-dated posts count (details: [engine-commands.md](engine-commands.md)). When backfilling a date earlier than an existing newsletter, check that the number fits between the neighbouring posts, and ask the user if it does not. Create backfilled posts in date order so numbers stay chronological. Only needed when **creating** a new post — when the target post already exists, read its number from its own `title`.
 
 ## 2a. Terminology
 
@@ -53,7 +54,15 @@ categories: ["Newsletter"]
 **Never rewrite the whole `index.md`.** Always insert by anchoring an Edit on an existing string (e.g. `### Bonus`, `**Videos:**`) and prepending/appending around it. Multiple URLs targeting the same day's post must be applied **sequentially** so one edit doesn't clobber another.
 
 **Articles go before the `### Bonus` section; Bonus assets go inside it.**
-Article headings must use the original source title. Do not translate/localize article titles; keep the source-language wording, capitalization, punctuation, and proper nouns from metadata (`og:title`, page title, or fetcher frontmatter). Summaries stay Vietnamese and are prose paragraphs only — no key-points bullet list.
+Article headings must use the original source title. Do not translate/localize article titles; keep the source-language wording, capitalization, punctuation, and proper nouns from metadata.
+
+**Title source:**
+1. Use the first that exists: `og:title`, then fetcher frontmatter `title`, then `<title>`.
+2. Strip a leading `GitHub - `, so github.com repos become `<owner>/<repo>: <description>`, which matches existing posts.
+3. Strip a trailing site/brand suffix after ` | `, ` – `, ` — ` or ` - ` when it names the site or publication rather than the article (e.g. ` | Crunchy Data Blog`, ` – site.com`).
+4. Otherwise keep the wording, capitalization and punctuation verbatim; never translate.
+
+Summaries stay Vietnamese and are prose paragraphs only — no key-points bullet list.
 
 To insert an article safely, anchor the Edit on `### Bonus` and prepend:
 ```
@@ -92,10 +101,10 @@ node scripts/newsletter post-stats content/post/YYYY/MM/DD/index.md
 ```
 Output (JSON): `{ post, newsletter, articles, images, videos, documents, total }`.
 
-Render it as a single TL;DR line in the handler's report, omitting zero counts:
+Render it as a single TL;DR line in the handler's report, omitting zero counts, with `N` from the `newsletter` field. This is the canonical format: the handlers and `mt-add-url` use it and do not restate it.
 
 ```
-📊 4 articles · 2 videos · 1 image
+📊 Newsletter #N: 4 articles · 2 videos · 1 image
 ```
 
 Use the counts the command returns — do not tally by hand. This is a **report-only** line: never write it into `index.md`.
@@ -122,13 +131,22 @@ These rules apply only to text written into `content/post/**/index.md`. Keep use
 - Do not translate or localize article headings or image labels unless the user explicitly asks.
 - Video titles follow the `mt-add-video` handler's localization rules.
 
+**Summary length:** article summaries are 1–2 prose paragraphs of at most 300 words, aiming for 280–298. A word is a whitespace-separated token, so each Vietnamese syllable counts as one. Check after inserting with an exact heading match:
+```bash
+awk -v h='## [Title](url)' '$0==h{f=1;next} /^##/{f=0} f{n+=NF} END{print n}' content/post/YYYY/MM/DD/index.md
+```
+or before inserting with `printf '%s\n' "$SUMMARY" | awk '{n+=NF} END{print n}'`. Over 300 → trim and recount. Video blockquote summaries are 1–2 sentences.
+
 **Content requirements:** audience = junior developers; tone = professional, clear, accessible; verify content is ≥99% Vietnamese before saving.
 
 ## 6. Error handling
 
+This table owns the skip rules; handlers defer to it.
+
 | Problem | Action |
 |-------|--------|
-| URL inaccessible | Skip, note in report |
-| Duplicate URL | Skip, note in report |
-| Extraction fails | Skip, treat as error |
+| Duplicate URL | Skip and name where it already is: `grep -rlF '<scheme://host/path>' content/post` (for Substack images, grep the image UUID instead), read that post's `title`, and report `duplicate (Newsletter #N, content/post/YYYY/MM/DD/index.md)` |
+| Dead URL (404/410) | Skip immediately, note in report |
+| `accessible: false` (403, 429, challenge, HEAD rejected, 000) | Not a skip — continue; for articles try WebFetch, then the `mt-fetch-url` chain |
+| Extraction fails | Skip and report only after WebFetch and every `mt-fetch-url` tier fail |
 | Directory missing | Create directories |

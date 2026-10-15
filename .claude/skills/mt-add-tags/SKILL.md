@@ -100,20 +100,16 @@ Replace the entire existing `tags:` line. Preserve all other frontmatter fields 
 
 ## Proactive behavior (before commit)
 
-When the user is about to commit (`/commit`, `mt:commit-push-pr`, or similar), find the most recently modified `content/post/*/index.md` file:
+Before any git commit (the AGENTS.md pre-commit rule), list every new or modified post, staged or not:
 
 ```bash
-git diff --name-only HEAD | grep "^content/post/" | head -1
+git status --porcelain -uall -- 'content/post/*/index.md'
 ```
 
-If that returns nothing, check unstaged changes:
+Git's `*` matches across `/`, so this covers untracked new posts and modified ones. Check every listed post, not just one, so a batch of backfilled newsletters is covered.
 
-```bash
-git status --short | grep "content/post/" | awk '{print $2}' | head -1
-```
-
-If a post file is found and its tags look minimal (only 1-2 tags, or only `AI-Assisted`/`Newsletter`), say:
+A post's tags are **minimal** when they are empty, only `AI-Assisted` and/or `Newsletter`, or below target (2-3 for regular posts, 6-7 for newsletters, `AI-Assisted` included). For each minimal post, say:
 
 > "Post `content/post/.../index.md` only has these tags: [...]. Add richer tags before committing? [Y/n]"
 
-Default is **yes** — proceed to generate and confirm tags unless the user declines.
+Default is **yes** — proceed to generate tags, then confirm them with AskUserQuestion before writing (step 5), unless the user declines.
