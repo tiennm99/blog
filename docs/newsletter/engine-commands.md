@@ -202,5 +202,4 @@ NEWSLETTER_NET=1 npm test   # adds the live-upstream tier
 ```
 
 Golden outputs under `scripts/newsletter/__fixtures__/golden/` were captured from
-the previous Go implementation; see
-`plans/reports/parity-260918-newsletter-js-migration-report.md`.
+the previous Go implementation, so they pin the engine's original behavior.
