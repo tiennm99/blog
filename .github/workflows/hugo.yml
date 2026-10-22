@@ -21,7 +21,7 @@ jobs:
     env:
       DART_SASS_VERSION: 1.97.1
       HUGO_VERSION: 0.154.0
-      NODE_VERSION: 24.12.0
+      NODE_VERSION: 24
       TZ: Asia/Ho_Chi_Minh
     steps:
       - name: Checkout
@@ -85,7 +85,7 @@ jobs:
           path: ${{ runner.temp }}/hugo_cache
           key: ${{ steps.cache-restore.outputs.cache-primary-key }}
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v4
+        uses: actions/upload-pages-artifact@v5
         with:
           path: ./public
   # deploy:
@@ -113,7 +113,7 @@ jobs:
           mkdir -p public
           tar -xf artifact.tar -C public
       - name: Deploy
-        uses: cloudflare/wrangler-action@v3
+        uses: cloudflare/wrangler-action@v4
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
@@ -125,7 +125,7 @@ jobs:
     needs: deploy-cloudflare
     steps:
       - name: indexnow-action
-        uses: bojieyang/indexnow-action@v2
+        uses: bojieyang/indexnow-action@v3
         with:
           sitemap-location: 'https://miti99.com/sitemap.xml'
           key: ${{ secrets.INDEXNOW_KEY }}
