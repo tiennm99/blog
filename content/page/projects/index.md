@@ -94,25 +94,25 @@ Project của người khác/tổ chức khác mà mình gửi PR và được m
 
 | Name | Description | Merged PRs | Stars |
 | --- | --- | --- | --- |
-| [iluwatar/java-design-patterns](https://github.com/iluwatar/java-design-patterns) | Design patterns implemented in Java | 6 | 94821 |
-| [is-a-dev/register](https://github.com/is-a-dev/register) | Grab your own sweet-looking '.is-a.dev' subdomain. | 4 | 11640 |
-| [is-a-good-dev/register](https://github.com/is-a-good-dev/register) | Register for your is-a-good.dev domain! | 4 | 634 |
-| [open-domains/register](https://github.com/open-domains/register) | Free subdomains for personal sites, open-source projects, and more. | 4 | 2600 |
-| [coollabsio/coolify](https://github.com/coollabsio/coolify) | An open-source, self-hostable PaaS alternative to Vercel, Heroku & Netlify that lets you easily deploy static sites, databases, full-stack applications and 360+ one-click services on your own servers. | 3 | 64168 |
+| [iluwatar/java-design-patterns](https://github.com/iluwatar/java-design-patterns) | Design patterns implemented in Java | 6 | 94820 |
+| [is-a-dev/register](https://github.com/is-a-dev/register) | Grab your own sweet-looking '.is-a.dev' subdomain. | 4 | 11646 |
+| [is-a-good-dev/register](https://github.com/is-a-good-dev/register) | Register for your is-a-good.dev domain! | 4 | 635 |
+| [open-domains/register](https://github.com/open-domains/register) | Free subdomains for personal sites, open-source projects, and more. | 4 | 2599 |
+| [coollabsio/coolify](https://github.com/coollabsio/coolify) | An open-source, self-hostable PaaS alternative to Vercel, Heroku & Netlify that lets you easily deploy static sites, databases, full-stack applications and 360+ one-click services on your own servers. | 3 | 64933 |
 | [tarampampam/domains](https://github.com/tarampampam/domains) |  | 3 | 807 |
 | [zfoo-project/zfoo](https://github.com/zfoo-project/zfoo) | 💡Extremely fast enterprise server framework, can be used in RPC,  game server,  web server. | 3 | 2013 |
 | [old-free-domains/register](https://github.com/old-free-domains/register) | Free subdomains for personal sites, open-source projects, and more. | 2 | 600 |
-| [ripienaar/free-for-dev](https://github.com/ripienaar/free-for-dev) | A list of SaaS, PaaS and IaaS offerings that have free tiers of interest to devops and infradev | 1 | 140036 |
+| [oraios/serena](https://github.com/oraios/serena) | A powerful MCP toolkit for coding, providing semantic retrieval and editing capabilities  - the IDE for your agent | 1 | 30735 |
 | [onyx-dot-app/documentation](https://github.com/onyx-dot-app/documentation) | Documentation for the Onyx Software | 1 | 34 |
-| [projectlombok/lombok](https://github.com/projectlombok/lombok) | Very spicy additions to the Java programming language. | 1 | 13483 |
-| [kaitranntt/ccs](https://github.com/kaitranntt/ccs) | Switch between Claude accounts, Gemini, Copilot, OpenRouter (300+ models) via CLIProxyAPI OAuth proxy. Visual dashboard, remote proxy support, WebSearch fallback. Zero-config to production-ready. | 1 | 2892 |
-| [oraios/serena](https://github.com/oraios/serena) | A powerful MCP toolkit for coding, providing semantic retrieval and editing capabilities  - the IDE for your agent | 1 | 30707 |
-| [sirmalloc/ccstatusline](https://github.com/sirmalloc/ccstatusline) | 🚀 Beautiful highly customizable statusline for Claude Code CLI with powerline support, themes, and more. | 1 | 13405 |
-| [Bogdanp/awesome-advent-of-code](https://github.com/Bogdanp/awesome-advent-of-code) | A collection of awesome resources related to the yearly Advent of Code challenge. | 1 | 3230 |
+| [kaitranntt/ccs](https://github.com/kaitranntt/ccs) | Switch between Claude accounts, Gemini, Copilot, OpenRouter (300+ models) via CLIProxyAPI OAuth proxy. Visual dashboard, remote proxy support, WebSearch fallback. Zero-config to production-ready. | 1 | 2893 |
+| [sirmalloc/ccstatusline](https://github.com/sirmalloc/ccstatusline) | 🚀 Beautiful highly customizable statusline for Claude Code CLI with powerline support, themes, and more. | 1 | 13417 |
+| [ripienaar/free-for-dev](https://github.com/ripienaar/free-for-dev) | A list of SaaS, PaaS and IaaS offerings that have free tiers of interest to devops and infradev | 1 | 140067 |
+| [Bogdanp/awesome-advent-of-code](https://github.com/Bogdanp/awesome-advent-of-code) | A collection of awesome resources related to the yearly Advent of Code challenge. | 1 | 3231 |
+| [projectlombok/lombok](https://github.com/projectlombok/lombok) | Very spicy additions to the Java programming language. | 1 | 13482 |
 | [HugoBlox/kit](https://github.com/HugoBlox/kit) | 🧱 Describe your site, AI builds it, you own it as Markdown. Snap together Tailwind blocks like Lego — landing pages, blogs, portfolios, docs & more. No AI slop. Free to deploy anywhere 👇 | 1 | 9778 |
 | [tkowalcz/tjahzi](https://github.com/tkowalcz/tjahzi) | Java clients, log4j2 and logback appenders for Grafana Loki | 1 | 141 |
 | [dhyeythumar/awesome-readme-tools](https://github.com/dhyeythumar/awesome-readme-tools) | A curated list of awesome readme tools. ✌ | 1 | 272 |
-| [thedev-id/thedev.id](https://github.com/thedev-id/thedev.id) | Identity for developers on the web. | 1 | 1795 |
+| [thedev-id/thedev.id](https://github.com/thedev-id/thedev.id) | Identity for developers on the web. | 1 | 1800 |
 | [is-amazing/register](https://github.com/is-amazing/register) | Register your is-amaz.ing project domain here! | 1 | 149 |
 | [DavidNiessen/SimpleGuicePlugin](https://github.com/DavidNiessen/SimpleGuicePlugin) | An example for dependency injection (Google Guice) in a Spigot plugin | 1 | 2 |
 
