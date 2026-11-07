@@ -4,15 +4,22 @@
 */ -}}
 {{- $ogTitle := cond .IsHome site.Title .Title -}}
 {{- $fullTitle := cond .IsHome site.Title (printf "%s · %s" .Title site.Title) -}}
-{{- $rawDesc := .Description | default .Summary | default site.Params.description -}}
-{{- $desc := "" -}}
-{{- with $rawDesc -}}{{- $desc = . | plainify | truncate 200 -}}{{- end -}}
-{{- /* OG/Twitter image: per-post `cover.image` → per-post `image` → site `og.fallbackImage` → `data/profile.yaml: avatar`. */ -}}
-{{- $img := "" -}}
-{{- with .Params.cover -}}{{- $img = .image -}}{{- end -}}
-{{- if not $img -}}{{- $img = .Params.image -}}{{- end -}}
-{{- if not $img -}}{{- $img = site.Params.og.fallbackImage -}}{{- end -}}
-{{- if not $img -}}{{- with site.Data.profile -}}{{- $img = .avatar -}}{{- end -}}{{- end -}}
+{{- $desc := partial "head/description.html" . -}}
+{{- $canonical := partial "head/canonical.html" . -}}
+{{- /* Card image: see head/image.html for the lookup order. */ -}}
+{{- $img := partial "head/image.html" . -}}
+{{- /* publisher.logo: site `logo` param, else the profile avatar. Asset images are resized copies. */ -}}
+{{- $logo := "" -}}
+{{- with site.Params.logo | default (and site.Data.profile site.Data.profile.avatar) -}}
+  {{- $logo = . | absURL -}}
+  {{- with resources.Get (strings.TrimPrefix "/" .) -}}
+    {{- if and (eq .ResourceType "image") (ne .MediaType.SubType "svg") -}}
+      {{- $logo = (.Process "fit 600x600").Permalink -}}
+    {{- else -}}
+      {{- $logo = .Permalink -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
 
 {{- /* OG locale: map common Hugo lang codes to OpenGraph IETF-with-region. */ -}}
 {{- $ogLocale := site.Params.og.locale | default (index (dict "vi" "vi_VN" "en" "en_US" "ja" "ja_JP" "zh" "zh_CN" "ko" "ko_KR" "fr" "fr_FR" "de" "de_DE") site.Language.Lang) | default site.LanguageCode -}}
@@ -22,14 +29,16 @@
 {{- with $desc }}
 <meta property="og:description" content="{{ . }}">
 {{- end }}
-<meta property="og:url" content="{{ .Permalink }}">
+<meta property="og:url" content="{{ $canonical }}">
 <meta property="og:type" content="{{ if and .IsPage (eq .Kind "page") }}article{{ else }}website{{ end }}">
 <meta property="og:site_name" content="{{ site.Title }}">
 {{- with $ogLocale }}
 <meta property="og:locale" content="{{ . }}">
 {{- end }}
 {{- with $img }}
-<meta property="og:image" content="{{ . | absURL }}">
+<meta property="og:image" content="{{ .url }}">
+{{- with .width }}<meta property="og:image:width" content="{{ . }}">{{ end }}
+{{- with .height }}<meta property="og:image:height" content="{{ . }}">{{ end }}
 {{- end }}
 {{- if and .IsPage (eq .Kind "page") .Date }}
 <meta property="article:published_time" content="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">
@@ -45,7 +54,8 @@
 {{- end }}
 
 {{/* Twitter Card */}}
-<meta name="twitter:card" content="summary_large_image">
+{{- /* A large card only for a real post image; the avatar fallback is a square, so it gets `summary`. */}}
+<meta name="twitter:card" content="{{ if and $img (not $img.avatar) }}summary_large_image{{ else }}summary{{ end }}">
 <meta name="twitter:title" content="{{ $fullTitle }}">
 {{- with $desc }}
 <meta name="twitter:description" content="{{ . }}">
@@ -55,7 +65,7 @@
 <meta name="twitter:creator" content="@{{ . }}">
 {{- end }}
 {{- with $img }}
-<meta name="twitter:image" content="{{ . | absURL }}">
+<meta name="twitter:image" content="{{ .url }}">
 {{- end }}
 
 {{- /* JSON-LD Article — only on single posts (IsPage + Kind page). */ -}}
@@ -68,19 +78,19 @@
 {{- $keywords := slice -}}
 {{- range .GetTerms "tags" -}}{{- $keywords = $keywords | append .LinkTitle -}}{{- end -}}
 {{- $publisher := dict "@type" "Organization" "name" site.Title -}}
-{{- with $img }}{{- $publisher = merge $publisher (dict "logo" (dict "@type" "ImageObject" "url" (. | absURL))) -}}{{- end -}}
+{{- with $logo }}{{- $publisher = merge $publisher (dict "logo" (dict "@type" "ImageObject" "url" .)) -}}{{- end -}}
 {{- $ld := dict
   "@context" "https://schema.org"
   "@type" "Article"
   "headline" .Title
   "url" .Permalink
   "mainEntityOfPage" (dict "@type" "WebPage" "@id" .Permalink)
-  "datePublished" (.Date.Format "2006-01-02T15:04:05Z07:00")
-  "dateModified" (.Lastmod.Format "2006-01-02T15:04:05Z07:00")
   "author" (dict "@type" "Person" "name" $authorName "url" $authorURL)
   "publisher" $publisher
 -}}
-{{- with $img }}{{- $ld = merge $ld (dict "image" (. | absURL)) -}}{{- end -}}
+{{- if not .Date.IsZero }}{{- $ld = merge $ld (dict "datePublished" (.Date.Format "2006-01-02T15:04:05Z07:00")) -}}{{- end -}}
+{{- if not .Lastmod.IsZero }}{{- $ld = merge $ld (dict "dateModified" (.Lastmod.Format "2006-01-02T15:04:05Z07:00")) -}}{{- end -}}
+{{- with $img }}{{- $ld = merge $ld (dict "image" .url) -}}{{- end -}}
 {{- with $desc }}{{- $ld = merge $ld (dict "description" .) -}}{{- end -}}
 {{- if $keywords }}{{- $ld = merge $ld (dict "keywords" $keywords) -}}{{- end -}}
 <script type="application/ld+json">{{ $ld | jsonify (dict "indent" "  ") | safeJS }}</script>

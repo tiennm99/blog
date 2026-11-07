@@ -1,15 +1,28 @@
 {{- /*
   Prev/next post navigation within the same section.
   Gated by params.prevNextNav.enable (default true).
+  Opt-in params.prevNextNav.taxonomy (for example "categories"): when the post
+  has a term in that taxonomy, prev/next stays within the post's first term and
+  section, so a series links to its own neighbours. Posts without a term fall
+  back to the whole section.
   Silently skipped when neither a prev nor a next exists.
 */ -}}
-{{- if ne (site.Params.prevNextNav.enable | default true) false -}}
+{{- $cfg := site.Params.prevNextNav | default dict -}}
+{{- if ne ($cfg.enable | default true) false -}}
 {{- $prev := .PrevInSection -}}
 {{- $next := .NextInSection -}}
+{{- with $cfg.taxonomy -}}
+  {{- range first 1 ($.GetTerms .) -}}
+    {{- $pages := where .Pages "Section" $.Section -}}
+    {{- /* Term pages sort newest first, so Pages.Prev is the older post, like PrevInSection. */ -}}
+    {{- $prev = $pages.Prev $ -}}
+    {{- $next = $pages.Next $ -}}
+  {{- end -}}
+{{- end -}}
 {{- if or $prev $next -}}
-<nav class="prev-next" aria-label="{{ i18n "relatedPosts" }}">
+<nav class="prev-next" aria-label="{{ i18n "postNavigation" | default "Post navigation" }}">
   {{- if $prev }}
-  <a class="prev-next-prev" rel="prev" href="{{ $prev.Permalink }}">
+  <a class="prev-next-prev" rel="prev" href="{{ $prev.RelPermalink }}">
     <span class="prev-next-label">← {{ i18n "prevPost" | default "Previous post" }}</span>
     <span class="prev-next-title">{{ $prev.LinkTitle | default $prev.Title }}</span>
   </a>
@@ -17,7 +30,7 @@
   <span class="prev-next-spacer" aria-hidden="true"></span>
   {{- end }}
   {{- if $next }}
-  <a class="prev-next-next" rel="next" href="{{ $next.Permalink }}">
+  <a class="prev-next-next" rel="next" href="{{ $next.RelPermalink }}">
     <span class="prev-next-label">{{ i18n "nextPost" | default "Next post" }} →</span>
     <span class="prev-next-title">{{ $next.LinkTitle | default $next.Title }}</span>
   </a>

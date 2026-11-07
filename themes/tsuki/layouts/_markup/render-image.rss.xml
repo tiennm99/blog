@@ -1,0 +1,19 @@
+{{- /*
+  Feed images: absolute URLs, because feed readers resolve relative URLs
+  against the feed, not the post. Resolution matches render-image.html.
+*/ -}}
+{{- $res := "" -}}
+{{- $u := urls.Parse .Destination -}}
+{{- if and (not $u.IsAbs) (not $u.Host) $u.Path -}}
+  {{- $res = or (.PageInner.Resources.Get (strings.TrimPrefix "./" $u.Path)) (resources.Get (strings.TrimPrefix "/" $u.Path)) -}}
+{{- end -}}
+{{- $src := "" -}}
+{{- with $res -}}
+  {{- $src = .Permalink -}}
+{{- else -}}
+  {{- $src = ((urls.Parse .PageInner.Permalink).ResolveReference $u).String -}}
+{{- end -}}
+{{- if and .IsBlock .Title }}<figure>{{ end -}}
+<img src="{{ $src | safeURL }}" alt="{{ .PlainText }}"{{ if and .Title (not .IsBlock) }} title="{{ .Title }}"{{ end }}>
+{{- if and .IsBlock .Title }}<figcaption>{{ .Title }}</figcaption></figure>{{ end -}}
+{{- /**/ -}}

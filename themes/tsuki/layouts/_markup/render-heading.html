@@ -1,6 +1,10 @@
-{{- $level := .Level -}}
+{{- /*
+  The "#" anchor follows the heading text so headings align with body text.
+  It is aria-hidden and out of the tab order, so the heading's accessible
+  name is just its text; the table of contents already links every section.
+*/ -}}
 {{- $id := .Anchor -}}
-<h{{ $level }} id="{{ $id }}">
-  <a class="heading-anchor" href="#{{ $id }}" aria-label="{{ i18n "linkToSection" | default "Link to section" }}">#</a>
-  {{ .Text | safeHTML }}
-</h{{ $level }}>
+<h{{ .Level }} id="{{ $id }}">
+  {{- .Text -}}
+  {{- " " -}}<a class="heading-anchor" href="#{{ $id }}" aria-hidden="true" tabindex="-1">#</a></h{{ .Level }}>
+{{- /**/ -}}

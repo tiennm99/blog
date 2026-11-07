@@ -1,0 +1,9 @@
+{{- /*
+  Returns the absolute canonical URL: the current pager URL on paginated
+  lists (so /post/page/3/ is canonical to itself), the permalink elsewhere.
+*/ -}}
+{{- $url := .Permalink -}}
+{{- with partial "head/pager.html" . -}}
+  {{- $url = .URL | absURL -}}
+{{- end -}}
+{{- return $url -}}

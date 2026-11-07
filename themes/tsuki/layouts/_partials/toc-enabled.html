@@ -8,6 +8,6 @@
 {{- $cfg := site.Params.toc | default dict -}}
 {{- $enabled := $cfg.enable | default true -}}
 {{- $min := $cfg.minWordCount | default 400 -}}
-{{- if and $enabled (eq .Kind "page") (gt .WordCount $min) (ne .Params.toc false) -}}
+{{- if and $enabled (eq .Kind "page") (gt .WordCount $min) (ne .Params.toc false) (gt (len .Fragments.Headings) 0) -}}
 true
 {{- end -}}

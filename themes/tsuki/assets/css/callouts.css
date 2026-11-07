@@ -25,10 +25,16 @@
 .callout-warning   { --tsuki-callout: #d97706; --tsuki-callout-bg: #d9770614; }
 .callout-caution   { --tsuki-callout: #dc2626; --tsuki-callout-bg: #dc262614; }
 
-:where([data-theme="dark"]) {
-  .callout-note      { --tsuki-callout: #6ea1ff; --tsuki-callout-bg: #6ea1ff1f; }
-  .callout-tip       { --tsuki-callout: #4ade80; --tsuki-callout-bg: #4ade801f; }
-  .callout-important { --tsuki-callout: #a78bfa; --tsuki-callout-bg: #a78bfa1f; }
-  .callout-warning   { --tsuki-callout: #fbbf24; --tsuki-callout-bg: #fbbf241f; }
-  .callout-caution   { --tsuki-callout: #f87171; --tsuki-callout-bg: #f871711f; }
+:root[data-theme="dark"] .callout-note      { --tsuki-callout: #6ea1ff; --tsuki-callout-bg: #6ea1ff1f; }
+:root[data-theme="dark"] .callout-tip       { --tsuki-callout: #4ade80; --tsuki-callout-bg: #4ade801f; }
+:root[data-theme="dark"] .callout-important { --tsuki-callout: #a78bfa; --tsuki-callout-bg: #a78bfa1f; }
+:root[data-theme="dark"] .callout-warning   { --tsuki-callout: #fbbf24; --tsuki-callout-bg: #fbbf241f; }
+:root[data-theme="dark"] .callout-caution   { --tsuki-callout: #f87171; --tsuki-callout-bg: #f871711f; }
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .callout-note      { --tsuki-callout: #6ea1ff; --tsuki-callout-bg: #6ea1ff1f; }
+  :root:not([data-theme="light"]) .callout-tip       { --tsuki-callout: #4ade80; --tsuki-callout-bg: #4ade801f; }
+  :root:not([data-theme="light"]) .callout-important { --tsuki-callout: #a78bfa; --tsuki-callout-bg: #a78bfa1f; }
+  :root:not([data-theme="light"]) .callout-warning   { --tsuki-callout: #fbbf24; --tsuki-callout-bg: #fbbf241f; }
+  :root:not([data-theme="light"]) .callout-caution   { --tsuki-callout: #f87171; --tsuki-callout-bg: #f871711f; }
 }

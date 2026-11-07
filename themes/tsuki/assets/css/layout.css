@@ -3,6 +3,8 @@
 body {
   display: grid;
   grid-template-rows: auto 1fr auto;
+  /* minmax(0, …) stops a wide child (code, tables) from widening the page */
+  grid-template-columns: minmax(0, 1fr);
 }
 
 .site-header,
@@ -30,15 +32,20 @@ main,
 }
 .site-title:hover { text-decoration: none; color: var(--tsuki-accent); }
 
-.site-nav { margin-inline-start: auto; }
+.site-nav { margin-inline-start: auto; min-width: 0; }
 .site-nav ul {
   display: flex;
-  gap: var(--tsuki-space-4);
+  flex-wrap: wrap;
+  gap: var(--tsuki-space-1) var(--tsuki-space-4);
   list-style: none;
   padding: 0;
   margin: 0;
 }
-.site-nav a { color: var(--tsuki-fg-muted); }
+.site-nav a {
+  display: inline-block;
+  padding-block: var(--tsuki-space-2);
+  color: var(--tsuki-fg-muted);
+}
 .site-nav a:hover { color: var(--tsuki-fg); }
 .site-nav a[aria-current="page"] { color: var(--tsuki-fg); font-weight: 550; }
 
@@ -99,6 +106,8 @@ main,
 .theme-toggle:hover { color: var(--tsuki-fg); border-color: var(--tsuki-fg-muted); }
 
 main {
+  min-width: 0;
+  overflow-wrap: break-word; /* long URLs wrap instead of widening the page */
   max-width: var(--tsuki-content-width);
   margin-inline: auto;
   width: 100%;
@@ -107,6 +116,17 @@ main {
 
 body.home main,
 body.list main { max-width: var(--tsuki-wide-width); }
+main > * { min-width: 0; }
+
+/* narrow: title and actions share the first row, the nav wraps below them */
+@media (max-width: 40rem) {
+  .site-nav {
+    order: 1;
+    flex-basis: 100%;
+    margin-inline-start: 0;
+  }
+  .site-header-actions { margin-inline-start: auto; }
+}
 
 .site-footer {
   max-width: var(--tsuki-wide-width);
@@ -136,4 +156,92 @@ body.list main { max-width: var(--tsuki-wide-width); }
 .list-description {
   margin: var(--tsuki-space-2) 0 0;
   color: var(--tsuki-fg-muted);
+}
+
+/* pagination wraps instead of widening the page; see _partials/pagination.html */
+.pagination,
+.pagination-pages { flex-wrap: wrap; justify-content: center; }
+.pagination-ellipsis {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 2rem;
+  min-height: 2.75rem;
+  color: var(--tsuki-fg-muted);
+}
+/* narrow: prev and next share a row, the page numbers wrap below them */
+@media (max-width: 40rem) {
+  nav.pagination { justify-content: space-between; }
+  .pagination-pages { order: 1; flex-basis: 100%; }
+}
+
+/* post header chip and footer extras (single.html) */
+.post-category {
+  display: inline-block;
+  margin-block-end: var(--tsuki-space-3);
+  padding: var(--tsuki-space-1) var(--tsuki-space-3);
+  border: 1px solid var(--tsuki-border);
+  border-radius: 999px;
+  color: var(--tsuki-fg-muted);
+  font-size: var(--tsuki-fs-xs);
+  font-weight: 550;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+.post-category:hover {
+  color: var(--tsuki-accent);
+  border-color: var(--tsuki-accent);
+  text-decoration: none;
+}
+.post-footer-meta {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: var(--tsuki-space-2) var(--tsuki-space-4);
+  margin-block-start: var(--tsuki-space-4);
+  color: var(--tsuki-fg-muted);
+  font-size: var(--tsuki-fs-sm);
+}
+.post-footer-meta p { margin: 0; }
+.post-edit a { display: inline-block; padding-block: var(--tsuki-space-1); }
+
+/* print: content only, light colours, link targets spelled out */
+@media print {
+  :root,
+  :root[data-theme],
+  :root:not([data-theme="light"]) {
+    color-scheme: light;
+    --tsuki-bg: #fff;
+    --tsuki-fg: #000;
+    --tsuki-fg-muted: #333;
+    --tsuki-fg-subtle: #444;
+    --tsuki-border: #ccc;
+    --tsuki-accent: #000;
+    --tsuki-accent-hover: #000;
+    --tsuki-code-bg: #f4f4f4;
+    --tsuki-shadow: none;
+  }
+  body { display: block; }
+  .skip-link,
+  .site-header,
+  .site-footer,
+  .breadcrumbs,
+  .toc,
+  .prev-next,
+  .related-posts,
+  .comments,
+  .pagination,
+  .post-edit,
+  .code-toolbar,
+  .heading-anchor { display: none !important; }
+  main { max-width: none; padding: 0; }
+  .post-content a[href^="http"]::after {
+    content: " (" attr(href) ")";
+    font-size: 0.85em;
+    overflow-wrap: anywhere;
+  }
+  pre { white-space: pre-wrap; overflow-wrap: anywhere; }
+  :is(h2, h3, h4) { break-after: avoid; }
+  img, figure, tr { break-inside: avoid; }
 }

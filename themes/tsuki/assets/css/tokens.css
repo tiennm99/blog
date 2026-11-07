@@ -43,13 +43,19 @@
   --tsuki-wide-width: 64rem;
 
   --tsuki-transition: 180ms ease;
+
+  color-scheme: light dark;
 }
 
-:where([data-theme="dark"]) {
+:root[data-theme="light"] { color-scheme: light; }
+
+/* Dark tokens: an explicit toggle choice, or the OS setting unless light was picked. */
+:root[data-theme="dark"] {
+  color-scheme: dark;
   --tsuki-bg: #14151a;
   --tsuki-fg: #ececec;
   --tsuki-fg-muted: #a0a0a0;
-  --tsuki-fg-subtle: #777;
+  --tsuki-fg-subtle: #8a8a8a;
   --tsuki-border: #2a2c33;
   --tsuki-accent: #8ab0ea;
   --tsuki-accent-hover: #b1c8f0;
@@ -59,11 +65,12 @@
 }
 
 @media (prefers-color-scheme: dark) {
-  :where(:root:not([data-theme="light"])) {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
     --tsuki-bg: #14151a;
     --tsuki-fg: #ececec;
     --tsuki-fg-muted: #a0a0a0;
-    --tsuki-fg-subtle: #777;
+    --tsuki-fg-subtle: #8a8a8a;
     --tsuki-border: #2a2c33;
     --tsuki-accent: #8ab0ea;
     --tsuki-accent-hover: #b1c8f0;
