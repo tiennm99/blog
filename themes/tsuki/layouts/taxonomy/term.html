@@ -3,14 +3,14 @@
 {{ define "main" }}
 <header class="list-header">
   <h1 class="list-title">
-    <span class="term-prefix" aria-hidden="true">#</span>{{ .Title }}
+    {{ if eq .Data.Plural "tags" }}<span class="term-prefix" aria-hidden="true">#</span>{{ end }}{{ .Title }}
   </h1>
   {{- with .Description }}<p class="list-description">{{ . }}</p>{{ end }}
 </header>
 
 <div class="post-list">
   {{- range .Paginator.Pages }}
-    {{ partial "post-card.html" . }}
+    {{ partial "post-card.html" (dict "page" . "level" 2) }}
   {{- end }}
 </div>
 

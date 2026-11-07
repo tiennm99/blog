@@ -1,0 +1,35 @@
+{{- /*
+  Wraps Markdown tables in a horizontally scrolling region so wide tables do
+  not widen the page. The wrapper is focusable so keyboard users can scroll it.
+  Code-block line-number tables come from Chroma, not this hook.
+*/ -}}
+<div class="table-wrap" role="region" tabindex="0" aria-label="{{ i18n "table" | default "Bảng" }}">
+<table
+  {{- range $k, $v := .Attributes }}
+    {{- if $v }}{{ printf " %s=%q" $k $v | safeHTMLAttr }}{{ end }}
+  {{- end }}>
+  {{- with .THead }}
+  <thead>
+    {{- range . }}
+    <tr>
+      {{- range . }}
+      <th{{ with .Alignment }}{{ printf " style=%q" (printf "text-align: %s" .) | safeHTMLAttr }}{{ end }}>{{ .Text }}</th>
+      {{- end }}
+    </tr>
+    {{- end }}
+  </thead>
+  {{- end }}
+  {{- with .TBody }}
+  <tbody>
+    {{- range . }}
+    <tr>
+      {{- range . }}
+      <td{{ with .Alignment }}{{ printf " style=%q" (printf "text-align: %s" .) | safeHTMLAttr }}{{ end }}>{{ .Text }}</td>
+      {{- end }}
+    </tr>
+    {{- end }}
+  </tbody>
+  {{- end }}
+</table>
+</div>
+{{- /**/ -}}

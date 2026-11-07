@@ -1,4 +1,4 @@
-/* tsuki: table of contents — sticky on wide, collapsible on narrow */
+/* tsuki: table of contents — sticky sidebar on wide, framed block above content on narrow */
 
 .toc {
   font-size: var(--tsuki-fs-sm);
@@ -12,12 +12,12 @@
   text-transform: uppercase;
   letter-spacing: 0.05em;
 }
-.toc nav ul {
+.toc nav :is(ul, ol) {
   list-style: none;
   padding: 0;
   margin: 0;
 }
-.toc nav ul ul {
+.toc nav li :is(ul, ol) {
   padding-inline-start: var(--tsuki-space-3);
   margin-block-start: var(--tsuki-space-1);
 }
@@ -38,17 +38,48 @@
   font-weight: 550;
 }
 
-/* wide layout: 2-col grid with sticky toc */
-@media (min-width: 64rem) {
-  body.post main {
+/* ordered TOC (markup.tableOfContents.ordered: true): nested numbers like 1.2. */
+.toc nav ol { counter-reset: toc-item; }
+.toc nav ol > li { counter-increment: toc-item; }
+.toc nav ol > li > a::before {
+  content: counters(toc-item, ".") ". ";
+  color: var(--tsuki-fg-subtle);
+  font-variant-numeric: tabular-nums;
+}
+/* Hugo emits empty wrapper items when a post's first heading is deeper than
+   markup.tableOfContents.startLevel; collapse them so numbering and indent
+   start at the shallowest level present. */
+.toc nav li:not(:has(> a)) { margin-block: 0; counter-increment: none; }
+.toc nav li:not(:has(> a)) > ol {
+  padding-inline-start: 0;
+  margin-block-start: 0;
+  counter-reset: none;
+}
+
+/* wide layout: two columns only when the post has a TOC.
+   The article spans both main columns and repeats the same tracks, so its
+   header, content and footer line up with breadcrumbs, prev/next, related
+   posts and comments in column 1, and the TOC sits in column 2. */
+@media screen and (min-width: 64rem) {
+  body.post main:has(.post > .toc) {
     max-width: var(--tsuki-wide-width);
     display: grid;
-    grid-template-columns: 1fr 14rem;
-    gap: var(--tsuki-space-12);
+    grid-template-columns: minmax(0, 1fr) 14rem;
+    column-gap: var(--tsuki-space-12);
     align-items: start;
   }
-  body.post .post { min-width: 0; }
-  body.post .toc {
+  body.post main:has(.post > .toc) > * { grid-column: 1; }
+  body.post main:has(.post > .toc) > .post {
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 14rem;
+    column-gap: var(--tsuki-space-12);
+    align-items: start;
+  }
+  body.post .post > * { grid-column: 1; }
+  body.post .post > .toc {
+    grid-column: 2;
+    grid-row: 1 / span 3;
     position: sticky;
     inset-block-start: var(--tsuki-space-6);
     max-block-size: calc(100vh - var(--tsuki-space-12));
@@ -56,7 +87,7 @@
   }
 }
 
-/* narrow: framed block above content */
+/* narrow: framed block between the post header and the content */
 @media (max-width: 63.99rem) {
   .toc {
     margin-block-end: var(--tsuki-space-8);

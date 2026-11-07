@@ -1,0 +1,14 @@
+{{- /*
+  Returns the page's paginator, or false when the page is not paginated.
+
+  Only the kinds whose templates range `.Paginator.Pages` count:
+  the post section (`post/list.html`) and taxonomy terms (`taxonomy/term.html`).
+  Calling `.Paginator` anywhere else makes Hugo render duplicate `/page/N/`
+  pages, so head partials must ask this partial instead of calling it directly.
+  A site whose own list template paginates another kind can override this file.
+*/ -}}
+{{- $pager := false -}}
+{{- if or (eq .Kind "term") (and (eq .Kind "section") (eq .Type "post")) -}}
+  {{- $pager = .Paginator -}}
+{{- end -}}
+{{- return $pager -}}

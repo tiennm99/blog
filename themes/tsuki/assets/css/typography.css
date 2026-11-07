@@ -59,9 +59,24 @@ table {
   border-collapse: collapse;
   margin-block: var(--tsuki-space-6);
 }
+/* Markdown tables scroll inside their own wrapper (render-table hook). */
+.table-wrap {
+  overflow-x: auto;
+  margin-block: var(--tsuki-space-6);
+}
+.table-wrap > table { margin-block: 0; }
 th, td {
   text-align: start;
+  vertical-align: top;
   padding: var(--tsuki-space-2) var(--tsuki-space-3);
   border-bottom: 1px solid var(--tsuki-border);
 }
 th { font-weight: 600; }
+
+figure { margin: var(--tsuki-space-6) 0; }
+figcaption {
+  margin-block-start: var(--tsuki-space-2);
+  color: var(--tsuki-fg-muted);
+  font-size: var(--tsuki-fs-sm);
+}
+.image-link { display: block; inline-size: fit-content; max-inline-size: 100%; }

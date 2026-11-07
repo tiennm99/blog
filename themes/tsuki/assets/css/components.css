@@ -75,7 +75,6 @@
 .post-meta .reading-time { color: var(--tsuki-fg-subtle); }
 .post-meta .post-tags a {
   color: var(--tsuki-fg-muted);
-  margin-inline-end: var(--tsuki-space-1);
 }
 
 .post-content { font-size: var(--tsuki-fs-lg); }
@@ -110,12 +109,16 @@
   padding: 0;
   margin: 0;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(12rem, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(10rem, 1fr));
   gap: var(--tsuki-space-3);
 }
+/* cards stretch to their row so a wrapped term name does not leave neighbours short */
+.term-item { display: flex; }
 .term-link {
+  flex: 1;
   display: flex;
   justify-content: space-between;
+  gap: var(--tsuki-space-2);
   align-items: baseline;
   padding: var(--tsuki-space-3) var(--tsuki-space-4);
   border: 1px solid var(--tsuki-border);
@@ -173,23 +176,51 @@
   cursor: not-allowed;
 }
 
-/* code copy button */
-.code-copy {
+/* code block toolbar: language badge + copy button, pinned to the block wrapper */
+.code-block { position: relative; contain: inline-size; }
+.code-toolbar {
   position: absolute;
   inset-block-start: var(--tsuki-space-2);
   inset-inline-end: var(--tsuki-space-2);
+  display: flex;
+  align-items: center;
+  gap: var(--tsuki-space-2);
+  font-size: var(--tsuki-fs-xs);
+  line-height: 1.4;
+}
+.code-lang {
+  font-family: var(--tsuki-font-mono);
+  color: var(--tsuki-fg-muted);
+  /* Mask the code line it sits over. */
+  background: var(--tsuki-code-bg);
+  padding: 0.125rem 0.375rem;
+  border-radius: var(--tsuki-radius);
+  text-transform: lowercase;
+  user-select: none;
+}
+.code-copy {
   background: var(--tsuki-bg);
   border: 1px solid var(--tsuki-border);
   border-radius: var(--tsuki-radius);
+  min-height: 1.5rem;
   padding: 0.125rem 0.5rem;
-  font-size: var(--tsuki-fs-xs);
+  font-size: inherit;
   color: var(--tsuki-fg-muted);
   opacity: 0;
   transition: var(--tsuki-transition);
 }
-pre:hover .code-copy,
-.code-copy:focus-visible { opacity: 1; }
+:is(.highlight, .code-block):hover .code-copy,
+.code-copy:focus-visible,
+.code-copy[data-state="copied"] { opacity: 1; }
 .code-copy:hover { color: var(--tsuki-fg); }
+@media (hover: none) {
+  .code-copy { opacity: 1; }
+}
+/* Where the toolbar is always shown or space is tight, give it its own row
+   instead of covering the first code line. */
+@media (hover: none), (max-width: 40rem) {
+  .has-code-toolbar pre { padding-block-start: calc(var(--tsuki-space-4) + 1.75rem); }
+}
 
 /* related posts (single page) */
 .related-posts {
@@ -204,9 +235,12 @@ pre:hover .code-copy,
 .related-list { list-style: none; padding: 0; margin: 0; display: grid; gap: 0; }
 .related-list .post-card { padding-block: var(--tsuki-space-4); }
 
-/* heading anchor */
+/* heading anchor: out of flow so a heading that fills its line does not grow
+   a second line; the glyph is generated content so no text leaks into
+   summaries or the search index */
 .heading-anchor {
-  margin-inline-end: var(--tsuki-space-2);
+  position: absolute;
+  margin-inline-start: var(--tsuki-space-2);
   color: var(--tsuki-fg-subtle);
   opacity: 0;
   transition: var(--tsuki-transition);
@@ -215,3 +249,16 @@ pre:hover .code-copy,
 }
 :is(h2, h3, h4):hover .heading-anchor,
 .heading-anchor:focus-visible { opacity: 1; }
+.heading-anchor::before { content: "#"; }
+@media (hover: none) { .heading-anchor { display: none; } }
+
+/* screen-reader-only text (code-copy live region) */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}

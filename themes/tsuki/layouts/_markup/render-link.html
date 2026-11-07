@@ -4,8 +4,19 @@
   (strings.HasPrefix .Destination "https://")
   (strings.HasPrefix .Destination "//")
 -}}
+{{- /*
+  Link text that is one long path or host (owner/repo, example.com/path) has
+  no break opportunity, so it sets a table column's minimum width or overflows
+  a narrow screen. Offer breaks after "/" and before "." only, never mid-word.
+  Applies only to plain text with no spaces or inline markup.
+*/ -}}
+{{- $text := .Text -}}
+{{- if and (not (strings.Contains (string $text) "<")) (not (findRE `\s` .PlainText)) -}}
+  {{- $text = replaceRE `/(\w)` "/<wbr>$1" (string $text) -}}
+  {{- $text = replaceRE `(\w)\.` "$1<wbr>." $text | safeHTML -}}
+{{- end -}}
 <a href="{{ .Destination | safeURL }}"
   {{- with .Title }} title="{{ . }}"{{ end -}}
   {{- if $external }} rel="noopener noreferrer"{{ end -}}
->{{ .Text }}</a>
+>{{ $text }}</a>
 {{- /**/ -}}

@@ -1,9 +1,27 @@
 baseurl: https://miti99.com/
 languageCode: vi
-theme: hugo-theme-stack
+theme: tsuki
 title: miti99
 defaultContentLanguage: vi
 hasCJKLanguage: false
 enableRobotsTXT: true
 timeZone: Asia/Ho_Chi_Minh
 enableGitInfo: true
+
+# TEMPORARY (added 2026-10-04): Cloudflare Pages `_redirects` file that sends
+# the old Stack-theme home pagination (/page/N/) to the home page. Posts kept
+# their Stack URLs, so they need no redirects. Remove this block and
+# layouts/home.redirects together once the old URLs no longer get traffic
+# (review at 3, 6 or 12 months after the migration ships).
+mediaTypes:
+  text/redirects:
+    delimiter: ""
+    suffixes: [""]
+outputFormats:
+  redirects:
+    baseName: _redirects
+    mediaType: text/redirects
+    isPlainText: true
+    notAlternative: true
+outputs:
+  home: [html, rss, redirects, llmtxt]

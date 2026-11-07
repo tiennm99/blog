@@ -6,6 +6,24 @@
   {{- with .Description }}<p class="list-description">{{ . }}</p>{{ end }}
 </header>
 
+{{- $terms := slice }}
+{{- with site.Taxonomies.categories }}{{ $terms = $terms | append (dict "id" "archiveCategories" "label" "Chuyên mục" "list" .ByCount) }}{{ end }}
+{{- with site.Taxonomies.tags }}{{ $terms = $terms | append (dict "id" "archiveTags" "label" "Thẻ" "list" (first 10 .ByCount)) }}{{ end }}
+{{- with $terms }}
+<nav class="archive-terms" aria-label="{{ i18n "archiveTerms" | default "Chuyên mục và thẻ" }}">
+  {{- range . }}
+  <section class="archive-terms-group">
+    <h2 class="archive-terms-heading">{{ i18n .id | default .label }}</h2>
+    <ul class="post-tag-list">
+      {{- range .list }}
+      <li><a href="{{ .Page.RelPermalink }}">{{ .Page.LinkTitle }} <span class="archive-terms-count">{{ .Count }}</span></a></li>
+      {{- end }}
+    </ul>
+  </section>
+  {{- end }}
+</nav>
+{{- end }}
+
 <div class="archive">
   {{- $posts := where site.RegularPages "Section" "post" }}
   {{- range $posts.GroupByDate "2006" }}

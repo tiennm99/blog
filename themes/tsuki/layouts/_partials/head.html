@@ -1,5 +1,6 @@
 {{- $title := cond .IsHome site.Title (printf "%s · %s" .Title site.Title) -}}
-{{- $description := .Description | default .Summary | default site.Params.description | default site.Title | plainify -}}
+{{- $description := partial "head/description.html" . -}}
+{{- $pager := partial "head/pager.html" . -}}
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -9,7 +10,7 @@
 
 <title>{{ $title }}</title>
 <meta name="description" content="{{ $description }}">
-<link rel="canonical" href="{{ .Permalink }}">
+<link rel="canonical" href="{{ partial "head/canonical.html" . }}">
 
 {{/* Theme flash prevention — must run before <body> */}}
 <script>
@@ -39,18 +40,16 @@
 {{- with site.Home }}<link rel="alternate" hreflang="x-default" href="{{ .Permalink }}">{{- end }}
 {{- end }}
 
-{{/* Pagination prev/next for SEO — only on paginated kinds with >1 page */}}
-{{- if or (eq .Kind "section") (eq .Kind "taxonomy") (eq .Kind "term") }}
-  {{- with .Paginator }}
-    {{- if gt .TotalPages 1 }}
-    {{- if .HasPrev }}<link rel="prev" href="{{ .Prev.URL }}">{{ end }}
-    {{- if .HasNext }}<link rel="next" href="{{ .Next.URL }}">{{ end }}
-    {{- end }}
-  {{- end }}
+{{/* Pagination prev/next for SEO — only on pages whose template paginates (see head/pager.html) */}}
+{{- with $pager }}
+  {{- if .HasPrev }}<link rel="prev" href="{{ .Prev.URL | absURL }}">{{ end }}
+  {{- if .HasNext }}<link rel="next" href="{{ .Next.URL | absURL }}">{{ end }}
 {{- end }}
 
-{{/* Favicon — SVG only; sites can override head.html to add an .ico fallback */}}
-<link rel="icon" href="{{ "favicon.svg" | relURL }}" type="image/svg+xml">
+{{/* Favicon — `params.favicon` (default favicon.svg); MIME type follows the extension */}}
+{{- $favicon := site.Params.favicon | default "favicon.svg" -}}
+{{- $faviconType := index (dict ".svg" "image/svg+xml" ".png" "image/png" ".ico" "image/x-icon") (path.Ext $favicon | lower) -}}
+<link rel="icon" href="{{ strings.TrimPrefix "/" $favicon | relURL }}"{{ with $faviconType }} type="{{ . }}"{{ end }}>
 
 {{/* Speculation Rules — Chromium prefetch hints; gated, off by default */}}
 {{- $prefetch := site.Params.prefetch -}}
@@ -92,6 +91,7 @@
   (resources.Get "css/comments.css")
   (resources.Get "css/single-extras.css")
 -}}
+{{- with resources.Get "css/syntax.css" }}{{ $singleFiles = $singleFiles | append . }}{{ end -}}
 {{- $single := $singleFiles | resources.Concat "css/tsuki.single.css" | minify | fingerprint -}}
 <link rel="stylesheet" href="{{ $single.RelPermalink }}" integrity="{{ $single.Data.Integrity }}" crossorigin="anonymous">
 {{- end }}

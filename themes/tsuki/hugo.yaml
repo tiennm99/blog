@@ -16,6 +16,20 @@ module:
     - source: static
       target: static
 
+# llms.txt (https://llmstxt.org) from layouts/index.llmtxt.txt.
+# Hugo merges `outputFormats` from the theme, but not `outputs`: a site that
+# sets its own `outputs.home` must add `llmtxt` there to get /llms.txt.
+outputFormats:
+  llmtxt:
+    baseName: llms
+    mediaType: text/plain
+    isPlainText: true
+    notAlternative: true
+    permalinkable: false
+
+outputs:
+  home: [html, rss, llmtxt]
+
 pagination:
   pagerSize: 10
   path: page

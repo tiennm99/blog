@@ -73,6 +73,15 @@
 - id: archiveEmpty
   translation: "No posts yet."
 
+- id: archiveCategories
+  translation: "Categories"
+
+- id: archiveTags
+  translation: "Popular tags"
+
+- id: archiveTerms
+  translation: "Categories and tags"
+
 - id: month
   translation: "{{ .Number | printf \"Month %d\" }}"
 
@@ -109,9 +118,6 @@
 - id: calloutCaution
   translation: "Caution"
 
-- id: linkToSection
-  translation: "Link to section"
-
 - id: breadcrumbHome
   translation: "Home"
 
@@ -129,3 +135,18 @@
 
 - id: copiedCode
   translation: "Copied"
+
+- id: mainNavigation
+  translation: "Main"
+
+- id: pagination
+  translation: "Pagination"
+
+- id: postNavigation
+  translation: "Post navigation"
+
+- id: editSource
+  translation: "Edit this page"
+
+- id: table
+  translation: "Table"

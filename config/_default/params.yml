@@ -1,147 +1,56 @@
+# Fallback meta description (home page, og:description, twitter:description).
+description: Vietnamese developer. Writing about code, work, and the small things in between.
+
 mainSections:
   - post
-featuredImageField: image
+
+# Full post content in RSS, not just the summary.
 rssFullContent: true
 favicon: /favicon.png
+
+social:
+  twitter: tienthieusac
+
+# Shown in each post's footer.
+license: Licensed under CC BY-NC-SA 4.0
+
+# "Edit this page" link on posts: this prefix + the content file's path.
+editURL: https://github.com/tiennm99/blog/edit/main/content/
 
 footer:
   since: 2020
   customText: "Made by miti99 with ❤️"
 
-dateFormat:
-  published: Jan 02, 2006
-  lastUpdated: Jan 02, 2006 15:04 MST
+search:
+  enable: true
 
-sidebar:
-  emoji: 🧑‍💻
-  subtitle: A developer wants to be magician
-  avatar:
-    enabled: true
-    local: true
-    src: img/avatar.png
+home:
+  recentPostsCount: 5
 
-article:
-  math: false
-  toc: true
-  readingTime: true
-  license:
-    enabled: true
-    default: Licensed under CC BY-NC-SA 4.0
+# Prev/next links on a post stay inside its first category, so a Newsletter
+# post links to the previous and next Newsletter.
+prevNextNav:
+  taxonomy: categories
+
+# Show the post's first category as a chip above the title.
+categoryChip:
+  enable: true
 
 comments:
-  enabled: true
-  provider: giscus
-
-  disqusjs:
-    shortname:
-    apiUrl:
-    apiKey:
-    admin:
-    adminLabel:
-
-  utterances:
-    repo:
-    issueTerm: pathname
-    label:
-
-  beaudar:
-    repo:
-    issueTerm: pathname
-    label:
-    theme:
-
-  remark42:
-    host:
-    site:
-    locale:
-
-  vssue:
-    platform:
-    owner:
-    repo:
-    clientId:
-    clientSecret:
-    autoCreateIssue: false
-
-  waline:
-    serverURL:
-    lang:
-    pageview:
-    emoji:
-        - https://unpkg.com/@waline/emojis@1.0.1/weibo
-    requiredMeta:
-        - name
-        - email
-        - url
-    locale:
-        admin: Admin
-        placeholder:
-  twikoo:
-    envId:
-    region:
-    path:
-    lang:
-
-  cactus:
-    defaultHomeserverUrl: "https://matrix.cactus.chat:8448"
-    serverName: "cactus.chat"
-    siteName: ""
-
   giscus:
+    enable: true
     repo: tiennm99/blog
-    repoID: R_kgDOILzXrw
+    repoId: R_kgDOILzXrw
     category: Announcements
-    categoryID: DIC_kwDOILzXr84CeYAw
+    categoryId: DIC_kwDOILzXr84CeYAw
+    # Threads are keyed by page path; keep it so existing discussions still match.
     mapping: pathname
-    lightTheme: light
-    darkTheme: dark
-    reactionsEnabled: 1
-    emitMetadata: 0
+    strict: "0"
+    reactionsEnabled: "1"
+    inputPosition: bottom
+    theme: preferred_color_scheme
+    lang: vi
 
-  gitalk:
-    owner:
-    admin:
-    repo:
-    clientID:
-    clientSecret:
-    proxy:
-
-  cusdis:
-    host:
-    id:
-
-widgets:
-  homepage:
-    - type: search
-    - type: archives
-      params:
-        limit: 5
-    - type: categories
-      params:
-        limit: 10
-    - type: tag-cloud
-      params:
-        limit: 10
-  page:
-    - type: toc
-
-opengraph:
-  twitter:
-    site: tienthieusac
-    card: summary_large_image
-
-defaultImage:
-  opengraph:
-    enabled: false
-    local: false
-    src: img/logo.png
-
-colorScheme:
-  toggle: true
-  default: auto
-
-imageProcessing:
-  cover:
-    enabled: true
-  content:
-    enabled: true
+# Show a TOC on every post that has headings, as Stack did.
+toc:
+  minWordCount: 1

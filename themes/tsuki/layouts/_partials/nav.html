@@ -1,9 +1,9 @@
-<nav class="site-nav" aria-label="Main">
+<nav class="site-nav" aria-label="{{ i18n "mainNavigation" | default "Main" }}">
   <ul>
   {{- range site.Menus.main }}
     {{- $current := or ($.IsMenuCurrent "main" .) ($.HasMenuCurrent "main" .) }}
     <li>
-      <a href="{{ strings.TrimPrefix "/" .URL | relLangURL }}"{{ if $current }} aria-current="page"{{ end }}>{{ .Name }}
+      <a href="{{ strings.TrimPrefix "/" .URL | relLangURL }}"{{ if $current }} aria-current="page"{{ end }} data-text="{{ .Name }}">{{ .Name }}</a>
     </li>
   {{- end }}
   </ul>

@@ -73,6 +73,15 @@
 - id: archiveEmpty
   translation: "Chưa có bài viết."
 
+- id: archiveCategories
+  translation: "Chuyên mục"
+
+- id: archiveTags
+  translation: "Thẻ phổ biến"
+
+- id: archiveTerms
+  translation: "Chuyên mục và thẻ"
+
 - id: month
   translation: "Tháng {{ .Number }}"
 
@@ -109,9 +118,6 @@
 - id: calloutCaution
   translation: "Thận trọng"
 
-- id: linkToSection
-  translation: "Liên kết đến mục"
-
 - id: breadcrumbHome
   translation: "Trang chủ"
 
@@ -129,3 +135,18 @@
 
 - id: copiedCode
   translation: "Đã sao chép"
+
+- id: mainNavigation
+  translation: "Điều hướng chính"
+
+- id: pagination
+  translation: "Phân trang"
+
+- id: postNavigation
+  translation: "Điều hướng bài viết"
+
+- id: editSource
+  translation: "Sửa trang này"
+
+- id: table
+  translation: "Bảng"
