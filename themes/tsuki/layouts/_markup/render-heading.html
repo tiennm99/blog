@@ -2,9 +2,13 @@
   The "#" anchor follows the heading text so headings align with body text.
   It is aria-hidden and out of the tab order, so the heading's accessible
   name is just its text; the table of contents already links every section.
+  The anchor is empty: CSS draws the "#" glyph, so it never reaches auto
+  summaries, the Pagefind index or copied text. Keep the space before it:
+  plainify inserts no separator at </hN>, so this space is what keeps a
+  heading and the next paragraph apart in auto summaries.
 */ -}}
 {{- $id := .Anchor -}}
 <h{{ .Level }} id="{{ $id }}">
   {{- .Text -}}
-  {{- " " -}}<a class="heading-anchor" href="#{{ $id }}" aria-hidden="true" tabindex="-1">#</a></h{{ .Level }}>
+  {{- " " -}}<a class="heading-anchor" href="#{{ $id }}" aria-hidden="true" tabindex="-1"></a></h{{ .Level }}>
 {{- /**/ -}}

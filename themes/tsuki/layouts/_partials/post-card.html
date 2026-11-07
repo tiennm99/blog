@@ -15,7 +15,7 @@
   </h{{ $level }}>
   {{- with $page.Date }}
   <time datetime="{{ .Format "2006-01-02" }}" class="post-card-date">
-    {{ . | time.Format ":date_medium" }}
+    {{ . | time.Format ":date_long" }}
   </time>
   {{- end }}
   {{- with ($page.Summary | plainify) }}

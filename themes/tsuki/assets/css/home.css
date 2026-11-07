@@ -73,7 +73,8 @@
   gap: var(--tsuki-space-6);
 }
 .project-card {
-  display: grid;
+  display: flex;
+  flex-direction: column;
   gap: var(--tsuki-space-2);
   padding: var(--tsuki-space-4);
   border: 1px solid var(--tsuki-border);
@@ -115,10 +116,12 @@
   border-radius: var(--tsuki-radius);
   color: var(--tsuki-fg-muted);
 }
+/* Links sit at the card bottom; everything above keeps its natural height. */
 .project-card-links {
   list-style: none;
   padding: 0;
   margin: 0;
+  margin-block-start: auto;
   display: flex;
   gap: var(--tsuki-space-3);
   font-size: var(--tsuki-fs-sm);

@@ -15,8 +15,14 @@ function codeBlocks() {
   for (const box of document.querySelectorAll(".highlight")) {
     // With line numbers in a table, the code is in the last cell; the first holds the gutter.
     const code = box.querySelector(".lntd:last-child code") || box.querySelector("code");
-    // The line-number gutter is decoration; keep one tab stop per block.
-    box.querySelector(".lntd:first-child pre")?.removeAttribute("tabindex");
+    // With line numbers, the .chroma div is the horizontal scroller, not the
+    // pres inside it; keyboard focus goes to the element that actually
+    // scrolls, one tab stop per block.
+    if (box.querySelector(".lntable")) {
+      for (const pre of box.querySelectorAll("pre")) pre.removeAttribute("tabindex");
+      const scroller = box.querySelector(".chroma");
+      if (scroller) scroller.tabIndex = 0;
+    }
     if (code) blocks.push({ box, code });
   }
   for (const pre of document.querySelectorAll("pre")) {

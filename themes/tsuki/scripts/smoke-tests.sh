@@ -70,15 +70,15 @@ assert "BreadcrumbList JSON-LD"    '"@type":"BreadcrumbList"'                "$p
 assert "no breadcrumbs on home"    'class=breadcrumbs'                       "$home" 0
 assert "prev/next nav"             'class=prev-next'                         "$post"
 assert "rel=prev on post"          'rel=prev'                                "$post"
-# Heading-anchor i18n aria-label must appear somewhere in the build. Pinning to one
+# Heading anchors must appear somewhere in the build. Pinning to one
 # post is fragile because `$post` is picked by `find | head -1` and short posts
 # without h2/h3/h4 emit no heading-anchor markup.
-anchor_count=$({ grep -roE 'class=heading-anchor [^>]*aria-label' "$public_dir" --include='index.html' || true; } | wc -l)
+anchor_count=$({ grep -roE 'class=heading-anchor' "$public_dir" --include='index.html' || true; } | wc -l)
 if [ "$anchor_count" -lt 1 ]; then
-  echo "::error::FAIL [linkToSection aria-label] expected ≥1 heading-anchor + aria-label across build, got 0"
+  echo "::error::FAIL [heading-anchor] expected ≥1 heading-anchor across build, got 0"
   fail=1
 else
-  echo "  ok   [linkToSection aria-label] ${anchor_count} match(es) across $public_dir"
+  echo "  ok   [heading-anchor] ${anchor_count} match(es) across $public_dir"
 fi
 assert "no speculationrules by default"  'speculationrules'                  "$home" 0
 

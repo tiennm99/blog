@@ -118,9 +118,6 @@
 - id: calloutCaution
   translation: "Caution"
 
-- id: linkToSection
-  translation: "Link to section"
-
 - id: breadcrumbHome
   translation: "Home"
 

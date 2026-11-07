@@ -1,0 +1,11 @@
+{{- /* Feed copy of render-link.html without the <wbr> break hints, which only matter for the site layout. */ -}}
+{{- $external := or
+  (strings.HasPrefix .Destination "http://")
+  (strings.HasPrefix .Destination "https://")
+  (strings.HasPrefix .Destination "//")
+-}}
+<a href="{{ .Destination | safeURL }}"
+  {{- with .Title }} title="{{ . }}"{{ end -}}
+  {{- if $external }} rel="noopener noreferrer"{{ end -}}
+>{{ .Text }}</a>
+{{- /**/ -}}

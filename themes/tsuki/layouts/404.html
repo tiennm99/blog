@@ -4,6 +4,17 @@
 <section class="error-404">
   <h1>404</h1>
   <p>{{ i18n "pageNotFound" | default "Trang không tồn tại." }}</p>
-  <p><a href="{{ site.Home.RelPermalink }}">{{ i18n "backHome" | default "Về trang chủ" }}</a></p>
+  <p><a href="{{ site.Home.RelPermalink }}">{{ i18n "backHome" | default "Về trang chủ" }}</a>
+    {{- if site.Params.search.enable | default true }} · <a href="{{ "search/" | relLangURL }}">{{ i18n "search" | default "Tìm kiếm" }}</a>{{ end }}</p>
 </section>
+{{- with first 5 (where site.RegularPages "Type" "post") }}
+<section class="error-404-recent" aria-labelledby="error-recent-heading">
+  <h2 id="error-recent-heading">{{ i18n "recentPosts" | default "Bài viết gần đây" }}</h2>
+  <ul class="post-list">
+    {{- range . }}
+    <li>{{ partial "post-card.html" . }}</li>
+    {{- end }}
+  </ul>
+</section>
+{{- end }}
 {{ end }}

@@ -46,6 +46,15 @@
   color: var(--tsuki-fg-subtle);
   font-variant-numeric: tabular-nums;
 }
+/* Hugo emits empty wrapper items when a post's first heading is deeper than
+   markup.tableOfContents.startLevel; collapse them so numbering and indent
+   start at the shallowest level present. */
+.toc nav li:not(:has(> a)) { margin-block: 0; counter-increment: none; }
+.toc nav li:not(:has(> a)) > ol {
+  padding-inline-start: 0;
+  margin-block-start: 0;
+  counter-reset: none;
+}
 
 /* wide layout: two columns only when the post has a TOC.
    The article spans both main columns and repeats the same tracks, so its

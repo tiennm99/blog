@@ -1,11 +1,11 @@
 /* tsuki: search page — Pagefind UI container + token mapping */
 
-.search-container { margin-block: var(--tsuki-space-6); min-block-size: 6rem; }
-
 /* Pagefind UI tokens — see https://pagefind.app/docs/ui/#styling.
    Set on the container, not :root: pagefind-ui.css loads later and declares
    its light defaults on :root, which would win and break dark mode. */
 .search-container {
+  margin-block: var(--tsuki-space-6);
+  min-block-size: 6rem;
   --pagefind-ui-primary: var(--tsuki-accent);
   --pagefind-ui-text: var(--tsuki-fg);
   --pagefind-ui-background: var(--tsuki-bg);
@@ -14,12 +14,39 @@
   --pagefind-ui-border-width: 1px;
   --pagefind-ui-border-radius: var(--tsuki-radius);
   --pagefind-ui-font: var(--tsuki-font-sans);
+  /* Pagefind declares 0.8 on :root; 0.9 brings excerpts and messages to ~fs-sm. */
+  --pagefind-ui-scale: 0.9;
 }
+
+/* Pagefind's own rules are (0,2,0) and its sheet loads after this one, so each
+   override needs a chain of at least three classes to win. The input is a form
+   control and ignores --pagefind-ui-font, so the font is set here. */
+.search-container .pagefind-ui__form .pagefind-ui__search-input {
+  font-family: inherit;
+  font-weight: 500;
+  color: var(--tsuki-fg);
+}
+
+/* Pagefind sets physical top/right/height (in px times the scale) but no border, so the UA outset
+   border shows; keep `display` untouched, Pagefind hides the button itself. */
+.search-container .pagefind-ui__form .pagefind-ui__search-clear {
+  top: 0;
+  right: 0;
+  /* Match the input's own height; 100% would resolve against the form,
+     which also wraps the results. */
+  height: calc(64px * var(--pagefind-ui-scale));
+  padding: 0 var(--tsuki-space-3);
+  border: 0;
+  background: transparent;
+  font-size: var(--tsuki-fs-sm);
+  color: var(--tsuki-fg-muted);
+}
+
+.search-container .pagefind-ui__form .pagefind-ui__search-clear:hover { color: var(--tsuki-fg); }
 
 .search-container mark {
   background: color-mix(in srgb, var(--tsuki-accent) 22%, transparent);
   color: inherit;
-  border-radius: 2px;
 }
 
 .search-noscript { color: var(--tsuki-fg-muted); }
