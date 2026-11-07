@@ -1,2 +1,5 @@
 googleAnalytics:
   id: G-SWXREMSL5Q
+# Items per RSS feed (full content). 30 covers about four months of posts.
+rss:
+  limit: 30

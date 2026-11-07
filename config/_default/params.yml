@@ -54,3 +54,7 @@ comments:
 # Show a TOC on every post that has headings, as Stack did.
 toc:
   minWordCount: 1
+
+# Speculation Rules: Chromium prefetches a post's HTML on hover or tap.
+prefetch:
+  enable: true

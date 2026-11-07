@@ -102,37 +102,16 @@ Set CSS variables inline via a frontmatter `style` you wire up yourself, or use 
 
 Then style `body.section-work { --tsuki-accent: #...; }` in your custom CSS.
 
-## Callouts (admonitions)
+## Remote images
 
-Use Hugo's native Markdown alert syntax (Hugo 0.140+) — no shortcode needed:
+Images on another host render as a plain `<img>` with their URL unchanged. To optimize them, add `layouts/_partials/image/remote.html` to your site. `render-image.html` calls it with `(dict "Destination" <url>)` for every absolute image URL, and it must `return` a dict with any of these keys:
 
-```markdown
-> [!note]
-> Useful side information.
+- `src`: replacement URL
+- `srcset`: slice of `"<url> <width>w"` candidates (the theme adds its `sizes`)
+- `width`, `height`: intrinsic size, so the browser reserves space
+- `video`: URL of a looping clip that replaces the image (for animated GIFs). It renders as a muted `<video class="lazy-video">` that `js/lazy-video.js` loads near the viewport and plays only while visible.
 
-> [!tip]
-> Reader-friendly hint.
-
-> [!important]
-> Hard requirement.
-
-> [!warning]
-> Heads-up about a pitfall.
-
-> [!caution]
-> Risk of breakage.
-```
-
-Titles localize via `i18n/vi.yml` keys `calloutNote`, `calloutTip`, `calloutImportant`, `calloutWarning`, `calloutCaution`. Override per-callout with `> [!note] Custom title`.
-
-Plain `> blockquote` still renders as the regular muted blockquote — only `[!type]` triggers callout styling.
-
-**Override callout colors** in your custom CSS — each callout type exposes the `--tsuki-callout` and `--tsuki-callout-bg` tokens through its modifier class:
-
-```css
-/* your-site/assets/css/custom.css */
-.callout-note { --tsuki-callout: #ff5d8f; --tsuki-callout-bg: #ff5d8f1f; }
-```
+Return an empty dict to keep the original URL.
 
 ## Show word count
 
@@ -184,8 +163,6 @@ To render a cover, override `layouts/single.html` in your site:
 
 ```hugo
 {{ define "main" }}
-{{ partial "breadcrumbs.html" . }}
-
 <article class="post">
   <header class="post-header">
     {{- with .Params.cover.image }}
@@ -210,14 +187,10 @@ To render a cover, override `layouts/single.html` in your site:
 
 A built-in cover pipeline with `srcset`/AVIF is planned for **v0.4.0**.
 
-## Breadcrumbs, prev/next, language switcher
-
-These ship in v0.3.0 as opt-in features.
+## Prev/next, language switcher
 
 ```yaml
 params:
-  breadcrumbs:
-    enable: true            # Home › Section › Page trail + BreadcrumbList JSON-LD
   prevNextNav:
     enable: true            # in-section prev/next post nav below content
     taxonomy: categories    # optional: keep prev/next inside the post's first category

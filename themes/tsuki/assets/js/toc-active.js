@@ -10,7 +10,10 @@ if (toc) {
     .filter((h) => links.has(h.id));
   if (headings.length) {
     /** @param {string} [id] highlight that heading's link, or clear all when undefined */
+    let active;
     const setActive = (id) => {
+      if (id === active) return;
+      active = id;
       for (const a of toc.querySelectorAll('a[aria-current="true"]')) a.removeAttribute("aria-current");
       if (id) links.get(id)?.setAttribute("aria-current", "true");
     };

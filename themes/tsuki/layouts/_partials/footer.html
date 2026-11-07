@@ -21,9 +21,13 @@
 
 {{- $themeToggle := resources.Get "js/theme-toggle.js" | js.Build (dict "minify" true) | fingerprint -}}
 <script type="module" src="{{ $themeToggle.RelPermalink }}" integrity="{{ $themeToggle.Data.Integrity }}" crossorigin="anonymous"></script>
-{{- if eq .Kind "page" }}
+{{- if and (eq .Kind "page") (strings.Contains .Content "<pre") }}
 {{- $codeCopy := resources.Get "js/code-copy.js" | js.Build (dict "minify" true) | fingerprint -}}
 <script type="module" src="{{ $codeCopy.RelPermalink }}" integrity="{{ $codeCopy.Data.Integrity }}" crossorigin="anonymous"></script>
+{{- end }}
+{{- if and (eq .Kind "page") (strings.Contains .Content "lazy-video") }}
+{{- $lazyVideo := resources.Get "js/lazy-video.js" | js.Build (dict "minify" true) | fingerprint -}}
+<script type="module" src="{{ $lazyVideo.RelPermalink }}" integrity="{{ $lazyVideo.Data.Integrity }}" crossorigin="anonymous"></script>
 {{- end }}
 {{- if partial "toc-enabled.html" . }}
 {{- $tocJs := resources.Get "js/toc-active.js" | js.Build (dict "minify" true) | fingerprint -}}
