@@ -4,7 +4,7 @@ Shared procedure used by the newsletter handler skills (`mt-add-article`, `mt-ad
 The shared engine lives in `scripts/newsletter/` — see [engine-commands.md](engine-commands.md) for every command and the `npm ci` prerequisite.
 
 **Project Context:**
-- Hugo static site, theme `hugo-theme-stack`
+- Hugo static site, theme tsuki (vendored in `themes/tsuki/`)
 - Language: Vietnamese (99%) + minimal English tech terms (1%)
 - Timezone: Asia/Ho_Chi_Minh (UTC+7)
 - Content path: `content/post/YYYY/MM/DD/index.md`
