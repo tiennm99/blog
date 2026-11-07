@@ -8,7 +8,6 @@ on:
 
 permissions:
   contents: write
-  actions: write
 
 concurrency:
   group: update-projects
@@ -52,8 +51,3 @@ jobs:
           fi
           git commit -m "chore(projects): refresh projects list"
           git push
-          # A push made with GITHUB_TOKEN starts no workflow, so start the
-          # production deploy explicitly; a dispatch is allowed.
-          gh workflow run hugo.yml --ref main
-        env:
-          GH_TOKEN: ${{ github.token }}
