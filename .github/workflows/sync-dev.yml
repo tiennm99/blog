@@ -1,0 +1,64 @@
+name: Merge main into dev
+# Keeps dev (the miti99.dev preview) at least as new as main: every change on
+# main is merged into dev. A fast-forward when dev has no commits of its own,
+# a merge commit otherwise. A conflict fails this run and leaves dev untouched;
+# resolve it by merging main into dev by hand.
+on:
+  push:
+    branches:
+      - main
+  # The daily projects-list bot pushes to main with GITHUB_TOKEN, which starts
+  # no push workflows, so follow its runs as well.
+  workflow_run:
+    workflows:
+      - Update projects list
+    types:
+      - completed
+  workflow_dispatch:
+permissions:
+  contents: write
+  actions: write
+concurrency:
+  group: sync-dev
+  cancel-in-progress: false
+jobs:
+  merge:
+    if: github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout dev
+        uses: actions/checkout@v6
+        with:
+          ref: dev
+          fetch-depth: 0
+      - name: Merge main into dev
+        id: merge
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git fetch origin main
+          if git merge-base --is-ancestor origin/main HEAD; then
+            echo "dev already contains main."
+            echo "pushed=false" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          if git merge-base --is-ancestor HEAD origin/main; then
+            echo "dev has no commits of its own: fast-forward to main."
+          else
+            echo "dev has its own commits: merge main into it."
+          fi
+          # --ff fast-forwards when it can and makes a merge commit otherwise.
+          if ! git merge --ff --no-edit origin/main; then
+            echo "::error::main does not merge cleanly into dev; merge it by hand."
+            git diff --name-only --diff-filter=U
+            git merge --abort
+            exit 1
+          fi
+          git push origin HEAD:dev
+          echo "pushed=true" >> "$GITHUB_OUTPUT"
+      - name: Build the dev preview
+        # A push made with GITHUB_TOKEN starts no workflow, but a dispatch does.
+        if: steps.merge.outputs.pushed == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh workflow run hugo.yml --ref dev
