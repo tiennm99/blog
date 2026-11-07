@@ -3,6 +3,7 @@ on:
   push:
     branches:
       - main
+      - dev
   workflow_dispatch:
 permissions:
   contents: read
@@ -10,7 +11,8 @@ permissions:
   id-token: write
   deployments: write
 concurrency:
-  group: pages
+  # One group per branch, so a dev preview build never cancels a production deploy.
+  group: pages-${{ github.ref_name }}
   cancel-in-progress: true
 defaults:
   run:
@@ -73,11 +75,25 @@ jobs:
             hugo-
       - name: Build the site
         run: |
-          hugo \
-            --gc \
-            --minify \
-            --baseURL "https://miti99.com/" \
-            --cacheDir "${{ runner.temp }}/hugo_cache"
+          if [ "${GITHUB_REF_NAME}" = main ]; then
+            hugo \
+              --gc \
+              --minify \
+              --baseURL "https://miti99.com/" \
+              --cacheDir "${{ runner.temp }}/hugo_cache"
+          else
+            # Preview of the dev branch on miti99.dev: drafts and future posts
+            # included, and kept out of search engines.
+            hugo \
+              --gc \
+              --minify \
+              --buildDrafts \
+              --buildFuture \
+              --baseURL "https://miti99.dev/" \
+              --cacheDir "${{ runner.temp }}/hugo_cache"
+            printf '/*\n  X-Robots-Tag: noindex\n' >> public/_headers
+            printf 'User-agent: *\nDisallow: /\n' > public/robots.txt
+          fi
       - name: Cache save
         id: cache-save
         uses: actions/cache/save@v5
@@ -117,12 +133,14 @@ jobs:
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          command: pages deploy ./public --project-name=miti99
+          # The job has no checkout, so the branch must be named explicitly.
+          command: pages deploy ./public --project-name=miti99 --branch=${{ github.ref_name }}
           gitHubToken: ${{ secrets.GITHUB_TOKEN }}
   submit-indexnow:
     runs-on: ubuntu-latest
     name: Check and submit to IndexNow
     needs: deploy-cloudflare
+    if: github.ref_name == 'main'
     steps:
       - name: indexnow-action
         uses: bojieyang/indexnow-action@v3
