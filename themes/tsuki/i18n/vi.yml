@@ -118,9 +118,6 @@
 - id: calloutCaution
   translation: "Thận trọng"
 
-- id: linkToSection
-  translation: "Liên kết đến mục"
-
 - id: breadcrumbHome
   translation: "Trang chủ"
 

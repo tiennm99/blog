@@ -9,7 +9,7 @@
     {{ partial "search-button.html" . }}
     {{- end }}
     <button type="button" class="theme-toggle" aria-label="{{ i18n "toggleTheme" | default "Toggle theme" }}" aria-pressed="false" data-theme-toggle hidden>
-      <span aria-hidden="true">◐</span>
+      <span class="theme-icon-moon">{{ partial "icon.html" "moon" }}</span><span class="theme-icon-sun">{{ partial "icon.html" "sun" }}</span>
     </button>
   </div>
 </header>

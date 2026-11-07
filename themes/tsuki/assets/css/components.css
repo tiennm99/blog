@@ -109,12 +109,16 @@
   padding: 0;
   margin: 0;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(12rem, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(10rem, 1fr));
   gap: var(--tsuki-space-3);
 }
+/* cards stretch to their row so a wrapped term name does not leave neighbours short */
+.term-item { display: flex; }
 .term-link {
+  flex: 1;
   display: flex;
   justify-content: space-between;
+  gap: var(--tsuki-space-2);
   align-items: baseline;
   padding: var(--tsuki-space-3) var(--tsuki-space-4);
   border: 1px solid var(--tsuki-border);
@@ -231,9 +235,12 @@
 .related-list { list-style: none; padding: 0; margin: 0; display: grid; gap: 0; }
 .related-list .post-card { padding-block: var(--tsuki-space-4); }
 
-/* heading anchor */
+/* heading anchor: out of flow so a heading that fills its line does not grow
+   a second line; the glyph is generated content so no text leaks into
+   summaries or the search index */
 .heading-anchor {
-  margin-inline-end: var(--tsuki-space-2);
+  position: absolute;
+  margin-inline-start: var(--tsuki-space-2);
   color: var(--tsuki-fg-subtle);
   opacity: 0;
   transition: var(--tsuki-transition);
@@ -242,6 +249,8 @@
 }
 :is(h2, h3, h4):hover .heading-anchor,
 .heading-anchor:focus-visible { opacity: 1; }
+.heading-anchor::before { content: "#"; }
+@media (hover: none) { .heading-anchor { display: none; } }
 
 /* screen-reader-only text (code-copy live region) */
 .visually-hidden {

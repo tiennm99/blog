@@ -20,6 +20,9 @@
   margin: 0;
   color: var(--tsuki-fg-muted);
   font-weight: 550;
+  /* Same line box and top padding as the first post row, so the label centres on it. */
+  line-height: var(--tsuki-lh-body);
+  padding-block-start: var(--tsuki-space-2);
 }
 .archive-post-list {
   list-style: none;
@@ -47,6 +50,7 @@
     grid-template-columns: 1fr;
     gap: var(--tsuki-space-2);
   }
+  .archive-month-heading { padding-block-start: 0; }
 }
 
 /* category and top-tag links above the timeline */
@@ -61,4 +65,9 @@
   color: var(--tsuki-fg-muted);
   font-weight: 550;
 }
-.archive-terms-count { font-variant-numeric: tabular-nums; }
+.archive-terms-count {
+  font-size: var(--tsuki-fs-xs);
+  color: var(--tsuki-fg-subtle);
+  font-variant-numeric: tabular-nums;
+  margin-inline-start: 0.125em;
+}
