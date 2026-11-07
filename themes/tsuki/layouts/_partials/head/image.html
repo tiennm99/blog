@@ -1,0 +1,40 @@
+{{- /*
+  Returns the social-card image for a page as a dict:
+  { url, width, height, avatar }, or false when there is none.
+
+  Lookup order: per-post `cover.image` → per-post `image` →
+  site `og.fallbackImage` → `data/profile.yaml: avatar`.
+  Each value is tried as a page resource, then a global asset (assets/),
+  then used as a plain path or URL. Raster resources are always processed
+  (fit 1200x1200, 600x600 for the avatar), so a huge original is never
+  published and cards stay well under the platforms' size limits.
+  `avatar` is true when the card falls back to the profile avatar, which
+  head/seo.html renders as a `summary` card instead of a large image.
+*/ -}}
+{{- $src := "" -}}
+{{- $avatar := false -}}
+{{- with .Params.cover -}}{{- $src = .image -}}{{- end -}}
+{{- if not $src -}}{{- $src = .Params.image -}}{{- end -}}
+{{- if not $src -}}{{- $src = site.Params.og.fallbackImage -}}{{- end -}}
+{{- if not $src -}}
+  {{- with site.Data.profile -}}{{- $src = .avatar -}}{{- $avatar = true -}}{{- end -}}
+{{- end -}}
+
+{{- $result := false -}}
+{{- with $src -}}
+  {{- $res := false -}}
+  {{- if not (strings.Contains . "://") -}}
+    {{- $res = $.Resources.Get . -}}
+    {{- if not $res -}}{{- $res = resources.Get (strings.TrimPrefix "/" .) -}}{{- end -}}
+  {{- end -}}
+  {{- if and $res (eq $res.ResourceType "image") (ne $res.MediaType.SubType "svg") -}}
+    {{- $max := cond $avatar 600 1200 -}}
+    {{- $res = $res.Process (printf "fit %dx%d jpg q80" $max $max) -}}
+    {{- $result = dict "url" $res.Permalink "width" $res.Width "height" $res.Height "avatar" $avatar -}}
+  {{- else if $res -}}
+    {{- $result = dict "url" $res.Permalink "avatar" $avatar -}}
+  {{- else -}}
+    {{- $result = dict "url" (. | absURL) "avatar" $avatar -}}
+  {{- end -}}
+{{- end -}}
+{{- return $result -}}

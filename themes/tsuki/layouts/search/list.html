@@ -29,26 +29,32 @@
 
 {{ define "scripts" }}
 {{- if site.Params.search.enable | default true }}
-<script type="module">
-  import { PagefindUI } from "{{ "pagefind/pagefind-ui.js" | relLangURL }}";
-  new PagefindUI({
-    element: "#search",
-    showSubResults: true,
-    showImages: false,
-    resetStyles: false,
-    translations: {
-      placeholder: {{ i18n "searchPlaceholder" | default "Tìm bài viết..." | jsonify }},
-      clear_search: {{ i18n "clearSearch" | default "Xoá" | jsonify }},
-      load_more: {{ i18n "loadMore" | default "Xem thêm" | jsonify }},
-      search_label: {{ i18n "search" | default "Tìm kiếm" | jsonify }},
-      filters_label: {{ i18n "filters" | default "Bộ lọc" | jsonify }},
-      zero_results: {{ i18n "zeroResults" | default "Không có kết quả cho [SEARCH_TERM]" | jsonify }},
-      many_results: {{ i18n "manyResults" | default "[COUNT] kết quả cho [SEARCH_TERM]" | jsonify }},
-      one_result: {{ i18n "oneResult" | default "[COUNT] kết quả cho [SEARCH_TERM]" | jsonify }},
-      alt_search: {{ i18n "altSearch" | default "Không có kết quả cho [SEARCH_TERM]. Đang hiển thị kết quả cho [DIFFERENT_TERM]." | jsonify }},
-      search_suggestion: {{ i18n "searchSuggestion" | default "Không có kết quả cho [SEARCH_TERM]. Thử các từ khoá: [DIFFERENT_TERMS]." | jsonify }},
-      searching: {{ i18n "searching" | default "Đang tìm [SEARCH_TERM]..." | jsonify }}
-    }
+<script src="{{ "pagefind/pagefind-ui.js" | relLangURL }}"></script>
+<script>
+  window.addEventListener("DOMContentLoaded", function () {
+    var ui = new PagefindUI({
+      element: "#search",
+      showSubResults: true,
+      showImages: false,
+      resetStyles: false,
+      translations: {
+        placeholder: {{ i18n "searchPlaceholder" | default "Tìm bài viết..." }},
+        clear_search: {{ i18n "clearSearch" | default "Xoá" }},
+        load_more: {{ i18n "loadMore" | default "Xem thêm" }},
+        search_label: {{ i18n "search" | default "Tìm kiếm" }},
+        filters_label: {{ i18n "filters" | default "Bộ lọc" }},
+        zero_results: {{ i18n "zeroResults" | default "Không có kết quả cho [SEARCH_TERM]" }},
+        many_results: {{ i18n "manyResults" | default "[COUNT] kết quả cho [SEARCH_TERM]" }},
+        one_result: {{ i18n "oneResult" | default "[COUNT] kết quả cho [SEARCH_TERM]" }},
+        alt_search: {{ i18n "altSearch" | default "Không có kết quả cho [SEARCH_TERM]. Đang hiển thị kết quả cho [DIFFERENT_TERM]." }},
+        search_suggestion: {{ i18n "searchSuggestion" | default "Không có kết quả cho [SEARCH_TERM]. Thử các từ khoá: [DIFFERENT_TERMS]." }},
+        searching: {{ i18n "searching" | default "Đang tìm [SEARCH_TERM]..." }}
+      }
+    });
+    // Shared links: ?q= or Stack's old ?keyword= pre-fills the search.
+    var params = new URLSearchParams(window.location.search);
+    var query = params.get("q") || params.get("keyword");
+    if (query) ui.triggerSearch(query);
   });
 </script>
 {{- end }}

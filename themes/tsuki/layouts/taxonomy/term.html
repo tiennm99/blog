@@ -10,7 +10,7 @@
 
 <div class="post-list">
   {{- range .Paginator.Pages }}
-    {{ partial "post-card.html" . }}
+    {{ partial "post-card.html" (dict "page" . "level" 2) }}
   {{- end }}
 </div>
 

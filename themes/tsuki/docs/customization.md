@@ -220,6 +220,28 @@ params:
     enable: true            # Home › Section › Page trail + BreadcrumbList JSON-LD
   prevNextNav:
     enable: true            # in-section prev/next post nav below content
+    taxonomy: categories    # optional: keep prev/next inside the post's first category
+  categoryChip:
+    enable: true            # optional: first category as a chip above the post title
 ```
 
+Prev/next renders only on pages in `site.MainSections`, so standalone pages (About, Links) get none. With `prevNextNav.taxonomy` set, a post with a term in that taxonomy links to the older and newer posts of its first term in the same section, which turns a category such as Newsletter into a series. Posts without a term fall back to the whole section.
+
 The language switcher partial auto-emits when `hugo.IsMultilingual` is true; no config flag needed.
+
+## Post footer: license and edit link
+
+```yaml
+params:
+  license: "Licensed under [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/)"
+  editURL: "https://github.com/<owner>/<repo>/edit/main/content/"
+```
+
+`license` is rendered with Markdown under the post's tags; a post can override it with its own `license:` string or hide it with `license: false`. `editURL` is a prefix: the theme appends the post's path relative to `content/` (`.File.Path`), so it works for GitHub, GitLab or any forge that takes a file path.
+
+## Layout behaviour
+
+- **Table of contents** — emitted inside the article, between the header and the content. Below 64rem it is a framed block above the post; from 64rem it becomes a sticky sidebar, and only then does the post switch to two columns (`main:has(.toc)`), so posts without a TOC keep the single reading column. An ordered TOC (`markup.tableOfContents.ordered: true`) is numbered `1.`, `1.1.` like the headings it lists.
+- **Pagination** — shows the first and last page, the current page ±2 and an ellipsis for each skipped run, and wraps on narrow screens.
+- **Header nav** — wraps onto its own row below 40rem instead of scrolling the page sideways.
+- **Print** — `@media print` in `layout.css` prints the post only: light colours, no header, footer, TOC, prev/next, related posts, comments or copy buttons, and external link targets spelled out after the link text.

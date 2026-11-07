@@ -1,8 +1,18 @@
+{{- /*
+  Context: a page, or (dict "page" $page "level" 2). The title is an h3 by
+  default (cards under a section heading); list pages, whose only heading
+  above the cards is the h1, pass level 2.
+*/ -}}
 {{- $page := . -}}
+{{- $level := 3 -}}
+{{- if reflect.IsMap . -}}
+  {{- $page = .page -}}
+  {{- $level = .level | default 3 -}}
+{{- end -}}
 <article class="post-card">
-  <h3 class="post-card-title">
+  <h{{ $level }} class="post-card-title">
     <a href="{{ $page.RelPermalink }}">{{ $page.Title }}</a>
-  </h3>
+  </h{{ $level }}>
   {{- with $page.Date }}
   <time datetime="{{ .Format "2006-01-02" }}" class="post-card-date">
     {{ . | time.Format ":date_medium" }}

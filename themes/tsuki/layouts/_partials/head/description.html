@@ -1,0 +1,10 @@
+{{- /*
+  Returns the page's meta description as plain text, whitespace collapsed and
+  truncated to about 160 characters. Shared by <meta name="description">,
+  OpenGraph, Twitter Cards and JSON-LD so all of them say the same thing.
+*/ -}}
+{{- $raw := .Description | default .Summary | default site.Params.description | default site.Title -}}
+{{- /* Drop heading "#" anchors (render-heading.html) that an auto summary carries. */ -}}
+{{- $raw = replaceRE `<a class="heading-anchor"[^>]*>[^<]*</a>` "" $raw -}}
+{{- $desc := $raw | plainify | htmlUnescape | replaceRE `\s+` " " | strings.TrimSpace | truncate 160 -}}
+{{- return $desc -}}

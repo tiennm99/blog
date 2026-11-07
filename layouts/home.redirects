@@ -1,0 +1,26 @@
+{{- /*
+  TEMPORARY (added 2026-10-04): 301 redirects for the old Stack-theme home
+  pagination, written to public/_redirects for Cloudflare Pages.
+  Delete this file and the matching block in config/_default/hugo.yml once the
+  old URLs no longer get traffic (review at 3, 6 or 12 months after the
+  migration ships).
+
+  Posts keep their Stack URLs (/post/YYYY/MM/DD/), so they need no rules.
+  Stack paginated the home page with 5 posts per page. Those pages (/page/N/)
+  go to /, since tsuki's home page is not paginated. The page section's second
+  page (/page/page/2/) and Stack's first-page aliases (/page/page/1/,
+  /categories/page/1/, /tags/page/N/) go to their list pages, since tsuki does
+  not paginate those lists. Only /tags/page/:n/ is a placeholder rule; the rest
+  are exact paths, so /page/ and /page/index.xml are left alone. The count
+  is computed from the current posts, so it covers every old page and only
+  adds harmless rules as posts are added.
+*/ -}}
+{{- $posts := where site.RegularPages "Section" "post" -}}
+{{- $pages := int (math.Ceil (div (float (len $posts)) 5.0)) -}}
+{{- range seq $pages }}
+/page/{{ . }}/ / 301
+{{- end }}
+/page/page/1/ /page/ 301
+/page/page/2/ /page/ 301
+/categories/page/1/ /categories/ 301
+/tags/page/:n/ /tags/ 301

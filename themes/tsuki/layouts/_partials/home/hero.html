@@ -2,7 +2,16 @@
 {{- with $profile -}}
 <section class="home-hero" aria-labelledby="home-hero-name">
   {{- with .avatar }}
-  <img class="home-hero-avatar" src="{{ . | relURL }}" alt="{{ $profile.name | default site.Title }}" width="120" height="120" loading="eager" decoding="async">
+  {{- /* An avatar under assets/ is cropped to 240x240 WebP (2x the 120px display size); anything else is linked as is. */}}
+  {{- $src := strings.TrimPrefix "/" . | relURL }}
+  {{- with resources.Get (strings.TrimPrefix "/" .) }}
+    {{- if and (eq .ResourceType "image") (ne .MediaType.SubType "svg") }}
+      {{- $src = (.Fill "240x240 webp").RelPermalink }}
+    {{- else }}
+      {{- $src = .RelPermalink }}
+    {{- end }}
+  {{- end }}
+  <img class="home-hero-avatar" src="{{ $src }}" alt="{{ $profile.name | default site.Title }}" width="120" height="120" loading="eager" decoding="async">
   {{- end }}
 
   <h1 id="home-hero-name" class="home-hero-name">{{ .name | default site.Title }}</h1>

@@ -68,6 +68,24 @@ params:
 
   relatedPostsCount: 3      # number of cards under each post (0 disables — section vanishes)
 
+  prevNextNav:
+    enable: true            # prev/next links under posts in site.MainSections (other pages get none)
+    taxonomy: categories    # optional: stay within the post's first term of this taxonomy
+                            # (a Newsletter post links to Newsletter posts); posts without a term
+                            # fall back to the whole section
+
+  categoryChip:
+    enable: false           # opt-in: link chip for the post's first term above the title
+    taxonomy: categories    # taxonomy to read the term from (default "categories")
+
+  license: "Licensed under [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/)"
+                            # optional line in every post footer; Markdown allowed.
+                            # Per-post `license: "…"` overrides it, `license: false` hides it
+
+  editURL: "https://github.com/<owner>/<repo>/edit/main/content/"
+                            # optional "Edit this page" link in the post footer:
+                            # this prefix + the content file's path (.File.Path)
+
   comments:
     giscus:
       enable: false         # opt-in
@@ -105,6 +123,7 @@ tags: ["hugo", "viet"]
 categories: ["ghi-chu"]
 toc: false        # opt out of TOC for this post (default: render if WordCount > 400)
 comments: false   # opt out of comments for this post (default: enabled if giscus.enable)
+license: false    # hide (or replace with a string) params.license for this post
 cover:
   image: "img/cover.jpg"  # OG/Twitter card image (preferred)
 image: "img/cover.jpg"    # legacy alias for `cover.image`; either works

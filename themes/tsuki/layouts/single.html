@@ -1,16 +1,28 @@
 {{ define "body_class" }}post{{ end }}
 
 {{ define "main" }}
+{{- $isPost := in site.MainSections .Section -}}
 {{ partial "breadcrumbs.html" . }}
 
 <article class="post">
   <header class="post-header">
+    {{- $chip := site.Params.categoryChip | default dict }}
+    {{- if $chip.enable }}
+    {{- range first 1 (.GetTerms ($chip.taxonomy | default "categories")) }}
+    <a class="post-category" href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>
+    {{- end }}
+    {{- end }}
     <h1 class="post-title">{{ .Title }}</h1>
     {{ partial "meta.html" . }}
     {{- with .Description }}
     <p class="post-description">{{ . }}</p>
     {{- end }}
   </header>
+
+  {{- /* Before the content in DOM order: above the post on narrow screens, a sticky sidebar on wide ones. */}}
+  {{- if partial "toc-enabled.html" . }}
+  {{ partial "toc.html" . }}
+  {{- end }}
 
   <div class="post-content" data-pagefind-body>
     {{ .Content }}
@@ -24,14 +36,30 @@
       {{- end }}
     </ul>
     {{- end }}
+    {{- $license := "" }}
+    {{- if ne .Params.license false }}
+    {{- $license = .Params.license | default site.Params.license }}
+    {{- end }}
+    {{- $edit := "" }}
+    {{- with and site.Params.editURL .File }}
+    {{- $edit = printf "%s/%s" (strings.TrimSuffix "/" site.Params.editURL) (replace .Path "\\" "/") }}
+    {{- end }}
+    {{- if or $license $edit }}
+    <div class="post-footer-meta">
+      {{- with $license }}
+      <p class="post-license">{{ . | markdownify }}</p>
+      {{- end }}
+      {{- with $edit }}
+      <p class="post-edit"><a href="{{ . }}" rel="noopener">{{ i18n "editSource" | default "Edit this page" }}</a></p>
+      {{- end }}
+    </div>
+    {{- end }}
   </footer>
 </article>
 
-{{- if partial "toc-enabled.html" . }}
-{{ partial "toc.html" . }}
-{{- end }}
-
+{{- if $isPost }}
 {{ partial "prev-next.html" . }}
+{{- end }}
 
 {{ partial "related-posts.html" . }}
 

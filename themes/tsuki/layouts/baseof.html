@@ -5,6 +5,10 @@
 <head>
   {{ partial "head.html" . }}
   {{ block "head_extra" . }}{{ end }}
+  {{- /* Site hook: layouts/_partials/head/custom.html (analytics, fonts, extra tags). Last in <head>, so it can override theme CSS. */}}
+  {{- if templates.Exists "_partials/head/custom.html" }}
+  {{ partial "head/custom.html" . }}
+  {{- end }}
 </head>
 <body class="{{ block "body_class" . }}{{ end }}">
   <a class="skip-link" href="#main">{{ i18n "skipToContent" | default "Đến nội dung chính" }}</a>

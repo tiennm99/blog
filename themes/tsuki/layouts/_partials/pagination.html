@@ -1,6 +1,16 @@
+{{- /*
+  Windowed pager: first page, last page and the current page ±2, with an
+  ellipsis for each skipped run. A run of exactly one page shows that page
+  instead of an ellipsis, so the ellipsis always stands for two or more pages.
+*/ -}}
 {{- $p := .Paginator -}}
 {{- if gt $p.TotalPages 1 -}}
-<nav class="pagination" aria-label="Pagination">
+{{- $cur := $p.PageNumber -}}
+{{- $last := $p.TotalPages -}}
+{{- $win := 2 -}}
+{{- $lo := sub $cur $win -}}
+{{- $hi := add $cur $win -}}
+<nav class="pagination" aria-label="{{ i18n "pagination" | default "Pagination" }}">
   {{- if $p.HasPrev }}
   <a class="pagination-prev" rel="prev" href="{{ $p.Prev.URL }}">‹ {{ i18n "prev" | default "Trước" }}</a>
   {{- else }}
@@ -8,11 +18,22 @@
   {{- end }}
 
   <ol class="pagination-pages">
+    {{- $gap := false }}
     {{- range $p.Pagers }}
-      {{- if eq . $p }}
-    <li><span class="pagination-current" aria-current="page">{{ .PageNumber }}</span></li>
+      {{- $n := .PageNumber }}
+      {{- $show := or (eq $n 1) (eq $n $last) (and (ge $n $lo) (le $n $hi)) (and (eq $n 2) (eq $lo 3)) (and (eq $n (sub $last 1)) (eq $hi (sub $last 2))) }}
+      {{- if $show }}
+        {{- if $gap }}
+    <li class="pagination-ellipsis" aria-hidden="true">…</li>
+          {{- $gap = false }}
+        {{- end }}
+        {{- if eq $n $cur }}
+    <li><span class="pagination-current" aria-current="page">{{ $n }}</span></li>
+        {{- else }}
+    <li><a href="{{ .URL }}">{{ $n }}</a></li>
+        {{- end }}
       {{- else }}
-    <li><a href="{{ .URL }}">{{ .PageNumber }}</a></li>
+        {{- $gap = true }}
       {{- end }}
     {{- end }}
   </ol>

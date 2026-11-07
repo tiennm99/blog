@@ -1,0 +1,3 @@
+{{- /* Feed headings: keep the id, drop the "#" anchor link. */ -}}
+<h{{ .Level }} id="{{ .Anchor }}">{{ .Text }}</h{{ .Level }}>
+{{- /**/ -}}

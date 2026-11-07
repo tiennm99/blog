@@ -1,15 +1,19 @@
 # blog
 
-Source of [miti99.com](https://miti99.com) — personal blog (VN/EN) built with [Hugo](https://gohugo.io) and the [Stack](https://github.com/CaiJimmy/hugo-theme-stack) theme.
+Source of [miti99.com](https://miti99.com) — personal blog (VN/EN) built with [Hugo](https://gohugo.io) and the tsuki theme, vendored in `themes/tsuki/`.
 
 ## Quick start
 
 ```bash
-git submodule update --init --recursive
+npm ci
 hugo server -D
 ```
 
-Site available at `http://localhost:1313`.
+Site available at `http://localhost:1313`. Search runs on a [Pagefind](https://pagefind.app) index, which `hugo server` does not build. To try search locally, build the site and index it:
+
+```bash
+hugo && npx pagefind --site public --serve
+```
 
 ## Content structure
 
@@ -28,14 +32,14 @@ content/
 
 ## Theme customization
 
-Theme config lives in `config/` (Hugo config directory split). Key overrides:
+Site config lives in `config/_default/` (Hugo config directory split):
 
-- `config/_default/params.toml` — sidebar, avatar, footer, color scheme
-- `config/_default/menu.toml` — navigation links
-- `assets/` — custom CSS/JS overrides loaded on top of the Stack theme
-- `layouts/` — template overrides (add a file here to override any Stack partial)
+- `params.yml` — tsuki options: footer, license, comments (Giscus), search, prev/next navigation
+- `hugo.yml`, `markup.yml`, `permalinks.yml` — site, Markdown and URL settings
+- `data/profile.yaml`, `data/projects.yaml` — home page profile and featured projects
+- `layouts/` — template overrides; `layouts/_partials/head/custom.html` holds the analytics tags
 
-The Stack theme is pulled in as a git submodule under `themes/hugo-theme-stack/`.
+The tsuki theme is vendored in `themes/tsuki/` (no submodule) and is edited there directly; its docs are in `themes/tsuki/docs/`. Posts keep their content-path URLs (`/post/YYYY/MM/DD/`).
 
 ## Working with AI tools
 

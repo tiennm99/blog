@@ -1,5 +1,61 @@
-{{- /* In-content images get loading="lazy" + decoding="async" by default. */ -}}
-<img src="{{ .Destination | safeURL }}" alt="{{ .Text }}" loading="lazy" decoding="async"
-  {{- with .Title }} title="{{ . }}"{{ end -}}
->
+{{- /*
+  In-content images.
+
+  The destination resolves as a page resource, then a global resource
+  (assets/), then falls back to the raw URL. Raster resources get width and
+  height plus a WebP srcset; SVG and GIF are served as they are.
+
+  Block images (an image alone in its paragraph) link to the original file
+  and become <figure> with <figcaption> when they have a title. Hugo marks
+  images as block only when the site sets
+  markup.goldmark.parser.wrapStandAloneImageWithinParagraph: false; otherwise
+  every image renders inline. Inline images never get a link. Hugo also
+  reports an image as block when it is the only child of a Markdown link
+  ([![alt](img)](url)), so the source is checked for that pattern to avoid
+  nesting one link inside another.
+*/ -}}
+{{- $res := "" -}}
+{{- $u := urls.Parse .Destination -}}
+{{- if and (not $u.IsAbs) (not $u.Host) $u.Path -}}
+  {{- $res = or (.PageInner.Resources.Get (strings.TrimPrefix "./" $u.Path)) (resources.Get (strings.TrimPrefix "/" $u.Path)) -}}
+{{- end -}}
+
+{{- $src := .Destination -}}
+{{- $width := 0 -}}
+{{- $height := 0 -}}
+{{- $srcset := slice -}}
+{{- with $res -}}
+  {{- $src = .RelPermalink -}}
+  {{- if and (eq .MediaType.MainType "image") (not (in (slice "svg" "gif") .MediaType.SubType)) -}}
+    {{- $width = .Width -}}
+    {{- $height = .Height -}}
+    {{- range slice 480 960 1440 -}}
+      {{- if lt . $width -}}
+        {{- with $res.Resize (printf "%dx webp" .) -}}
+          {{- $srcset = $srcset | append (printf "%s %dw" .RelPermalink .Width) -}}
+        {{- end -}}
+      {{- end -}}
+    {{- end -}}
+    {{- with $srcset -}}
+      {{- $srcset = $srcset | append (printf "%s %dw" $src $width) -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+
+{{- $alt := .PlainText -}}
+{{- $figure := and .IsBlock .Title -}}
+{{- $link := false -}}
+{{- if and .IsBlock $alt -}}
+  {{- $dest := replaceRE `([\\.+*?()|\[\]{}^$])` `\$1` .Destination -}}
+  {{- $link = not (findRE (printf `\]\(<?%s>?(?:\s+"[^"]*")?\)\]\(` $dest) .PageInner.RawContent 1) -}}
+{{- end -}}
+
+{{- if $figure }}<figure>{{ end -}}
+{{- if $link }}<a class="image-link" href="{{ $src | safeURL }}">{{ end -}}
+<img src="{{ $src | safeURL }}" alt="{{ $alt }}"
+  {{- with $srcset }} srcset="{{ delimit . ", " }}" sizes="(min-width: 44rem) 42rem, 100vw"{{ end -}}
+  {{- with $width }} width="{{ . }}" height="{{ $height }}"{{ end -}}
+  {{- if and .Title (not $figure) }} title="{{ .Title }}"{{ end }} loading="lazy" decoding="async">
+{{- if $link }}</a>{{ end -}}
+{{- if $figure }}<figcaption>{{ .Title }}</figcaption></figure>{{ end -}}
 {{- /**/ -}}

@@ -5,7 +5,7 @@ Canonical instructions for AI coding tools (Claude Code, OpenCode, Codex) workin
 ## Project Info
 
 - **Type**: Hugo static site with Vietnamese tech content
-- **Theme**: hugo-theme-stack
+- **Theme**: tsuki, vendored in `themes/tsuki/` (no submodule; edit it there, docs in `themes/tsuki/docs/`)
 - **Post content language**: Vietnamese (with common English tech words)
 - **User communication**: English by default; use another language only when the user explicitly requests it
 - **Timezone**: Asia/Ho_Chi_Minh (UTC+7)
@@ -29,6 +29,8 @@ hugo server -D
 ```
 
 The site will be available at `http://localhost:1313`
+
+Search uses a Pagefind index that `hugo server` does not build. To test search, run `hugo && npx pagefind --site public --serve` (CI runs `npx pagefind --site public` after `hugo`).
 
 **Options:**
 - `-D` or `--buildDrafts`: Include draft content
