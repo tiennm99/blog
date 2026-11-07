@@ -7,13 +7,6 @@ on:
   push:
     branches:
       - main
-  # The daily projects-list bot pushes to main with GITHUB_TOKEN, which starts
-  # no push workflows, so follow its runs as well.
-  workflow_run:
-    workflows:
-      - Update projects list
-    types:
-      - completed
   workflow_dispatch:
 permissions:
   contents: write
@@ -23,7 +16,6 @@ concurrency:
   cancel-in-progress: false
 jobs:
   merge:
-    if: github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success'
     runs-on: ubuntu-latest
     steps:
       - name: Checkout dev
