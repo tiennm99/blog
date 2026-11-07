@@ -65,8 +65,11 @@ table {
   margin-block: var(--tsuki-space-6);
 }
 .table-wrap > table { margin-block: 0; }
+/* Long links (repo names, URLs) may break, so text columns get the width. */
+td a { overflow-wrap: anywhere; }
 th, td {
   text-align: start;
+  vertical-align: top;
   padding: var(--tsuki-space-2) var(--tsuki-space-3);
   border-bottom: 1px solid var(--tsuki-border);
 }

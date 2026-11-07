@@ -2,8 +2,10 @@
 
 .search-container { margin-block: var(--tsuki-space-6); min-block-size: 6rem; }
 
-/* Pagefind UI tokens — see https://pagefind.app/docs/ui/#styling */
-:root {
+/* Pagefind UI tokens — see https://pagefind.app/docs/ui/#styling.
+   Set on the container, not :root: pagefind-ui.css loads later and declares
+   its light defaults on :root, which would win and break dark mode. */
+.search-container {
   --pagefind-ui-primary: var(--tsuki-accent);
   --pagefind-ui-text: var(--tsuki-fg);
   --pagefind-ui-background: var(--tsuki-bg);
@@ -12,6 +14,12 @@
   --pagefind-ui-border-width: 1px;
   --pagefind-ui-border-radius: var(--tsuki-radius);
   --pagefind-ui-font: var(--tsuki-font-sans);
+}
+
+.search-container mark {
+  background: color-mix(in srgb, var(--tsuki-accent) 22%, transparent);
+  color: inherit;
+  border-radius: 2px;
 }
 
 .search-noscript { color: var(--tsuki-fg-muted); }
