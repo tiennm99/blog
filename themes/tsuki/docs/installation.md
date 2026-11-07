@@ -71,38 +71,23 @@ Drop a `data/profile.yaml` and `data/projects.yaml` next; see [`data-schemas.md`
 
 Pagefind indexes content **after** Hugo builds. The theme assumes you run it as part of your build pipeline — it's not bundled into the layout.
 
-### For submodule users
-
-`tsuki/package.json` pins Pagefind. From your site root, after Hugo builds:
+Install Pagefind in your site and run it after Hugo, locally and in CI:
 
 ```bash
-cd themes/tsuki && npm ci && cd -
-npx --prefix themes/tsuki pagefind --site public
-```
-
-Or simpler: install Pagefind in your own site `package.json` and run `npx pagefind --site public`.
-
-### For Hugo Module users
-
-Hugo Modules ignore `package.json` — it lives outside the module graph. Add Pagefind to your *site's* package.json:
-
-```bash
-npm init -y
 npm install --save-dev pagefind
+npx pagefind --site public
 ```
-
-Then in CI, run `npx pagefind --site public` after `hugo`. The supplied [`.github/workflows/pages.yml`](https://github.com/tiennm99/tsuki/blob/main/.github/workflows/pages.yml) is a drop-in template.
 
 If you don't want search at all, set `params.search.enable: false` in your `hugo.yaml` and skip the Pagefind step entirely.
 
 ## Verify
 
-After installing, run `hugo server -s exampleSite` (if cloned) or `hugo server` from your own site. You should see:
+After installing, run `hugo server` from your site. You should see:
 
 - Homepage with hero, optional projects grid, recent posts
 - `/post/` list with pagination
 - `/tags/<slug>/`, `/categories/<slug>/`, `/archives/`
-- Single post with reading-time byline, callouts (if used), related posts at the bottom
+- Single post with reading-time byline, related posts at the bottom
 - `<head>` containing OG, Twitter, JSON-LD on posts; `<meta name=generator content="tsuki">`
 
 If something looks off, see [`customization.md`](customization.md) for override patterns or open an issue.

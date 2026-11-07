@@ -103,27 +103,6 @@
 - id: backHome
   translation: "Back home"
 
-- id: calloutNote
-  translation: "Note"
-
-- id: calloutTip
-  translation: "Tip"
-
-- id: calloutImportant
-  translation: "Important"
-
-- id: calloutWarning
-  translation: "Warning"
-
-- id: calloutCaution
-  translation: "Caution"
-
-- id: breadcrumbHome
-  translation: "Home"
-
-- id: breadcrumb
-  translation: "Breadcrumb"
-
 - id: prevPost
   translation: "Previous post"
 

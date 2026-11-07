@@ -38,19 +38,17 @@ echo 'theme: tsuki' >> hugo.yaml
 
 Full installation guide (submodule, Hugo Module, Pagefind setup, required site config): [`docs/installation.md`](docs/installation.md).
 
-`exampleSite/hugo.yaml` is a complete working example.
-
 ## Documentation
 
 - [`docs/installation.md`](docs/installation.md) — submodule + Hugo Module + Pagefind setup
 - [`docs/config.md`](docs/config.md) — full params reference
 - [`docs/data-schemas.md`](docs/data-schemas.md) — `profile.yaml` + `projects.yaml`
-- [`docs/customization.md`](docs/customization.md) — override layouts, tokens, fonts, callouts
+- [`docs/customization.md`](docs/customization.md) — override layouts, tokens, fonts, remote images
 - [`docs/migrating-from-stack.md`](docs/migrating-from-stack.md) — for users coming from `hugo-theme-stack`
 
 ## Search and comments
 
-Search uses Pagefind, built post-Hugo via `npx pagefind --site public`. tsuki pins Pagefind in its own `package.json` for submodule consumers; Hugo Module consumers install Pagefind in their own site (see [`docs/installation.md`](docs/installation.md)). No runtime dependency.
+Search uses Pagefind, built post-Hugo via `npx pagefind --site public`. Install Pagefind in your own site (see [`docs/installation.md`](docs/installation.md)). No runtime dependency.
 
 Comments use Giscus. Generate config at [giscus.app](https://giscus.app) and add to `params.comments.giscus.*` to enable. Defaults to off.
 

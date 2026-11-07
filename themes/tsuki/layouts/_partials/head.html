@@ -61,12 +61,6 @@
 </script>
 {{- end }}
 
-{{/* Preconnect to Giscus on comment-enabled posts to shave third-party DNS+TLS handshake */}}
-{{- $giscusCfg := site.Params.comments.giscus -}}
-{{- if and (eq .Kind "page") $giscusCfg $giscusCfg.enable $giscusCfg.repo $giscusCfg.repoId $giscusCfg.categoryId (ne .Params.comments false) }}
-<link rel="preconnect" href="https://giscus.app" crossorigin>
-{{- end }}
-
 {{/* Theme CSS — per-page-kind bundles. Core loads everywhere; kind-specific bundles add only when needed. */}}
 {{- $coreFiles := slice
   (resources.Get "css/tokens.css")
@@ -87,7 +81,6 @@
 {{- if eq .Kind "page" }}
 {{- $singleFiles := slice
   (resources.Get "css/toc.css")
-  (resources.Get "css/callouts.css")
   (resources.Get "css/comments.css")
   (resources.Get "css/single-extras.css")
 -}}

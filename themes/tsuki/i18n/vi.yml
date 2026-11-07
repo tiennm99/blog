@@ -103,27 +103,6 @@
 - id: backHome
   translation: "Về trang chủ"
 
-- id: calloutNote
-  translation: "Ghi chú"
-
-- id: calloutTip
-  translation: "Mẹo"
-
-- id: calloutImportant
-  translation: "Quan trọng"
-
-- id: calloutWarning
-  translation: "Cảnh báo"
-
-- id: calloutCaution
-  translation: "Thận trọng"
-
-- id: breadcrumbHome
-  translation: "Trang chủ"
-
-- id: breadcrumb
-  translation: "Đường dẫn"
-
 - id: prevPost
   translation: "Bài trước"
 
