@@ -72,8 +72,8 @@ async function main() {
 
   const file = path.resolve(PAGE);
   const current = await fs.readFile(file, "utf8");
-  let next = injectBlock(current, "PROJECTS_STARRED", renderStarred(starred));
-  next = injectBlock(next, "PROJECTS_DEMO", renderDemo(demo));
+  let next = injectBlock(current, "PROJECTS_STARRED", renderStarred(starred, user));
+  next = injectBlock(next, "PROJECTS_DEMO", renderDemo(demo, user));
   next = injectBlock(next, "PROJECTS_CONTRIBUTED", renderContributed(contributed));
 
   const summary = `${starred.length} starred, ${demo.length} demo, ${contributed.length} contributed`;

@@ -25,11 +25,25 @@ function cell(text) {
 }
 
 /**
+ * Link text without the scheme and trailing slash, so the URL column stays narrow.
  * @param {string} url
  * @returns {string}
  */
 function linkOrDash(url) {
-  return url ? `[${url}](${url})` : "—";
+  if (!url) return "—";
+  const text = url.replace(/^https?:\/\//, "").replace(/\/$/, "");
+  return `[${cell(text)}](${url})`;
+}
+
+/**
+ * Repo link: just the name for the user's own repos, owner/name otherwise.
+ * @param {import("./github-api.js").Repo} repo
+ * @param {string} [user] GitHub login whose repos drop the owner prefix.
+ * @returns {string}
+ */
+function repoLink(repo, user) {
+  const own = user && repo.owner.toLowerCase() === user.toLowerCase();
+  return `[${own ? repo.name : repo.nameWithOwner}](${repo.htmlUrl})`;
 }
 
 /**
@@ -49,11 +63,12 @@ function table(headers, rows) {
 /**
  * Repos with at least one star, most-starred first.
  * @param {import("./github-api.js").Repo[]} repos
+ * @param {string} [user] GitHub login whose repos drop the owner prefix.
  * @returns {string[]}
  */
-export function renderStarred(repos) {
+export function renderStarred(repos, user) {
   const rows = repos.map((r) => [
-    `[${r.nameWithOwner}](${r.htmlUrl})`,
+    repoLink(r, user),
     cell(r.description),
     String(r.stars),
     linkOrDash(resolveUrl(r)),
@@ -64,11 +79,12 @@ export function renderStarred(repos) {
 /**
  * Repos with a live demo URL.
  * @param {import("./github-api.js").Repo[]} repos
+ * @param {string} [user] GitHub login whose repos drop the owner prefix.
  * @returns {string[]}
  */
-export function renderDemo(repos) {
+export function renderDemo(repos, user) {
   const rows = repos.map((r) => [
-    `[${r.nameWithOwner}](${r.htmlUrl})`,
+    repoLink(r, user),
     cell(r.description),
     linkOrDash(resolveUrl(r)),
   ]);
@@ -82,7 +98,7 @@ export function renderDemo(repos) {
  */
 export function renderContributed(contributions) {
   const rows = contributions.map((c) => [
-    `[${c.repo.nameWithOwner}](${c.repo.htmlUrl})`,
+    repoLink(c.repo),
     cell(c.repo.description),
     String(c.mergedPrs),
     String(c.repo.stars),
