@@ -2,8 +2,6 @@
 
 {{ define "main" }}
 {{- $isPost := in site.MainSections .Section -}}
-{{ partial "breadcrumbs.html" . }}
-
 <article class="post">
   <header class="post-header">
     {{- $chip := site.Params.categoryChip | default dict }}

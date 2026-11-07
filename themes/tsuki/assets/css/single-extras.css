@@ -1,18 +1,4 @@
-/* tsuki: per-post extras — breadcrumbs, prev/next, details, code-copy polish, TOC narrow */
-
-.breadcrumbs {
-  margin-block-end: var(--tsuki-space-4);
-  font-size: var(--tsuki-fs-sm);
-  color: var(--tsuki-fg-muted);
-}
-.breadcrumbs ol {
-  list-style: none; padding: 0; margin: 0;
-  display: flex; flex-wrap: wrap; gap: var(--tsuki-space-2);
-}
-.breadcrumbs li + li::before { content: "›"; margin-inline-end: var(--tsuki-space-2); color: var(--tsuki-fg-subtle); }
-.breadcrumbs a { color: var(--tsuki-fg-muted); }
-.breadcrumbs a:hover { color: var(--tsuki-fg); }
-.breadcrumbs [aria-current="page"] { color: var(--tsuki-fg); }
+/* tsuki: per-post extras — prev/next, details, code-copy polish, TOC narrow */
 
 .prev-next {
   display: grid; grid-template-columns: 1fr 1fr; gap: var(--tsuki-space-4);

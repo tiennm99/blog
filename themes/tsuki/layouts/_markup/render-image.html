@@ -5,6 +5,17 @@
   (assets/), then falls back to the raw URL. Raster resources get width and
   height plus a WebP srcset; SVG and GIF are served as they are.
 
+  Remote images pass through unchanged unless the site provides
+  layouts/_partials/image/remote.html. That partial receives the destination
+  and returns a dict with any of: src, srcset (a slice of "url Nw" strings),
+  width, height, and video (a URL that replaces the image with a muted,
+  looping video, lazy-loaded by js/lazy-video.js). An empty dict keeps the
+  raw URL.
+
+  The first image loads eagerly with high fetch priority when it sits near
+  the top of the post, since it is then the likely LCP element; every other
+  image is lazy.
+
   Block images (an image alone in its paragraph) link to the original file
   and become <figure> with <figcaption> when they have a title. Hugo marks
   images as block only when the site sets
@@ -21,11 +32,14 @@
 {{- end -}}
 
 {{- $src := .Destination -}}
+{{- $href := .Destination -}}
 {{- $width := 0 -}}
 {{- $height := 0 -}}
 {{- $srcset := slice -}}
+{{- $video := "" -}}
 {{- with $res -}}
   {{- $src = .RelPermalink -}}
+  {{- $href = .RelPermalink -}}
   {{- if and (eq .MediaType.MainType "image") (not (in (slice "svg" "gif") .MediaType.SubType)) -}}
     {{- $width = .Width -}}
     {{- $height = .Height -}}
@@ -36,8 +50,21 @@
         {{- end -}}
       {{- end -}}
     {{- end -}}
+    {{- /* Largest candidate: the original size, as WebP rather than the original format. */ -}}
     {{- with $srcset -}}
-      {{- $srcset = $srcset | append (printf "%s %dw" $src $width) -}}
+      {{- with $res.Resize (printf "%dx webp" $width) -}}
+        {{- $srcset = $srcset | append (printf "%s %dw" .RelPermalink .Width) -}}
+      {{- end -}}
+    {{- end -}}
+  {{- end -}}
+{{- else -}}
+  {{- if and $u.IsAbs (templates.Exists "_partials/image/remote.html") -}}
+    {{- with partial "image/remote.html" (dict "Destination" .Destination) -}}
+      {{- $src = .src | default $src -}}
+      {{- $srcset = .srcset | default $srcset -}}
+      {{- $width = .width | default 0 -}}
+      {{- $height = .height | default 0 -}}
+      {{- $video = .video | default "" -}}
     {{- end -}}
   {{- end -}}
 {{- end -}}
@@ -50,12 +77,26 @@
   {{- $link = not (findRE (printf `\]\(<?%s>?(?:\s+"[^"]*")?\)\]\(` $dest) .PageInner.RawContent 1) -}}
 {{- end -}}
 
+{{- $early := false -}}
+{{- if eq .Ordinal 0 -}}
+  {{- $early = lt (len (index (split .PageInner.RawContent .Destination) 0)) 1500 -}}
+{{- end -}}
+
 {{- if $figure }}<figure>{{ end -}}
-{{- if $link }}<a class="image-link" href="{{ $src | safeURL }}">{{ end -}}
+{{- if $link }}<a class="image-link" href="{{ $href | safeURL }}">{{ end -}}
+{{- if $video -}}
+<video class="lazy-video" data-src="{{ $video | safeURL }}" muted loop playsinline preload="none"
+  {{- with $alt }} aria-label="{{ . }}"{{ end -}}
+  {{- with $width }} width="{{ . }}" height="{{ $height }}"{{ end }}></video>
+<noscript><img src="{{ $href | safeURL }}" alt="{{ $alt }}"{{ with $width }} width="{{ . }}" height="{{ $height }}"{{ end }}></noscript>
+{{- else -}}
 <img src="{{ $src | safeURL }}" alt="{{ $alt }}"
-  {{- with $srcset }} srcset="{{ delimit . ", " }}" sizes="(min-width: 44rem) 42rem, 100vw"{{ end -}}
+  {{- /* safeHTMLAttr: CDN transform URLs carry commas and colons (q_auto:good) that Go's srcset filter rejects. */ -}}
+  {{- with $srcset }} {{ printf "srcset=%q" (delimit . ", ") | safeHTMLAttr }} sizes="(min-width: 44rem) 42rem, 100vw"{{ end -}}
   {{- with $width }} width="{{ . }}" height="{{ $height }}"{{ end -}}
-  {{- if and .Title (not $figure) }} title="{{ .Title }}"{{ end }} loading="lazy" decoding="async">
+  {{- if and .Title (not $figure) }} title="{{ .Title }}"{{ end -}}
+  {{- if $early }} loading="eager" fetchpriority="high"{{ else }} loading="lazy"{{ end }} decoding="async">
+{{- end -}}
 {{- if $link }}</a>{{ end -}}
 {{- if $figure }}<figcaption>{{ .Title }}</figcaption></figure>{{ end -}}
 {{- /**/ -}}

@@ -159,7 +159,7 @@ To override, drop `_partials/head/seo.html` (and optionally `_partials/head/og-i
 
 ## Why theme defaults don't merge
 
-Hugo's config-merging strategy for nested top-level keys (markup, permalinks, pagination, `related`) is "none" by default. `params.*` *does* merge, but anything outside `params:` (including `related:`) does not. The theme ships a complete `hugo.yaml` for reference, but consumer sites must duplicate the keys above. See `exampleSite/hugo.yaml` for a working example.
+Hugo's config-merging strategy for nested top-level keys (markup, permalinks, pagination, `related`) is "none" by default. `params.*` *does* merge, but anything outside `params:` (including `related:`) does not. The theme ships a complete `hugo.yaml` for reference, but consumer sites must duplicate the keys above.
 
 ## Theme contract: taxonomies and content
 

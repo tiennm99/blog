@@ -1,0 +1,46 @@
+{{- /*
+  Remote-image hook for tsuki's render-image.html (see that file for the
+  contract). Handles Substack images, which newsletters embed either as raw
+  S3 originals (often 2000-4000 px PNG or JPEG) or as substackcdn.com fetch
+  URLs whose f_auto serves JPEG or PNG. Both are rebuilt as substackcdn.com
+  fetch URLs that resize to the content column and force WebP; animated GIFs
+  become MP4. The original size is read from the "_WxH." suffix that Substack
+  puts in every file name, so the browser can reserve the space. Other hosts
+  return an empty dict and render unchanged.
+*/ -}}
+{{- $d := .Destination -}}
+{{- $out := dict -}}
+{{- $inner := "" -}}
+{{- if hasPrefix $d "https://substack-post-media.s3.amazonaws.com/" -}}
+  {{- $inner = urlquery $d -}}
+{{- else -}}
+  {{- with findRESubmatch `^https://substackcdn\.com/image/fetch/[^/]+/(https%3A%2F%2Fsubstack-post-media\.s3\.amazonaws\.com%2F.+)$` $d 1 -}}
+    {{- $inner = index (index . 0) 1 -}}
+  {{- end -}}
+{{- end -}}
+{{- with $inner -}}
+  {{- $fetch := "https://substackcdn.com/image/fetch/" -}}
+  {{- $w := 0 -}}
+  {{- $h := 0 -}}
+  {{- with findRESubmatch `_(\d+)x(\d+)\.(?i:png|jpe?g|gif|webp|heic)` $d 1 -}}
+    {{- $w = int (index (index . 0) 1) -}}
+    {{- $h = int (index (index . 0) 2) -}}
+    {{- $out = merge $out (dict "width" $w "height" $h) -}}
+  {{- end -}}
+  {{- if findRE `(?i)\.gif$` $d 1 -}}
+    {{- $out = merge $out (dict "video" (printf "%sw_960,c_limit,f_mp4/%s" $fetch $inner)) -}}
+  {{- else -}}
+    {{- $t := "c_limit,f_webp,q_auto:good,fl_progressive:steep" -}}
+    {{- $srcset := slice -}}
+    {{- range slice 480 960 1344 -}}
+      {{- if or (not $w) (lt . $w) -}}
+        {{- $srcset = $srcset | append (printf "%sw_%d,%s/%s %dw" $fetch . $t $inner .) -}}
+      {{- end -}}
+    {{- end -}}
+    {{- if and $w (le $w 1344) -}}
+      {{- $srcset = $srcset | append (printf "%sw_%d,%s/%s %dw" $fetch $w $t $inner $w) -}}
+    {{- end -}}
+    {{- $out = merge $out (dict "src" (printf "%sw_960,%s/%s" $fetch $t $inner) "srcset" $srcset) -}}
+  {{- end -}}
+{{- end -}}
+{{- return $out -}}

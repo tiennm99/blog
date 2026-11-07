@@ -3,12 +3,6 @@
 /resources/
 .hugo_build.lock
 
-# exampleSite build artifacts
-exampleSite/public/
-exampleSite/resources/
-exampleSite/.hugo_build.lock
-exampleSite/static/pagefind/
-
 # Pagefind generated index
 static/pagefind/
 

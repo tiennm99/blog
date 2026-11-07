@@ -58,7 +58,7 @@
 
 /* wide layout: two columns only when the post has a TOC.
    The article spans both main columns and repeats the same tracks, so its
-   header, content and footer line up with breadcrumbs, prev/next, related
+   header, content and footer line up with prev/next, related
    posts and comments in column 1, and the TOC sits in column 2. */
 @media screen and (min-width: 64rem) {
   body.post main:has(.post > .toc) {

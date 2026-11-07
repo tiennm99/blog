@@ -2,7 +2,27 @@
 
 All notable changes to tsuki will be documented here. Format follows [Keep a Changelog](https://keepachangelog.com/), versioning follows [SemVer](https://semver.org/).
 
-## [Unreleased] — v0.3.0
+## [Unreleased]
+
+### Added
+
+- **Remote-image hook** — `render-image.html` calls a site's `_partials/image/remote.html` for absolute URLs; it can supply `src`, `srcset`, `width`/`height`, or a `video` that replaces an animated GIF. `js/lazy-video.js` loads such clips near the viewport and plays them only while visible.
+- **Eager first image** — the first image loads with `loading="eager" fetchpriority="high"` when it appears within the first 1500 bytes of the post source.
+
+### Changed
+
+- The largest local-image `srcset` candidate is a native-width WebP instead of the original file.
+- `code-copy.js` loads only on posts that contain a code block.
+- `toc-active.js` skips the DOM update when the active heading has not changed.
+
+### Removed
+
+- Callouts (`> [!note]` styling, `callouts.css`, callout i18n keys); alert blockquotes render as plain blockquotes.
+- Breadcrumbs (`params.breadcrumbs`, `_partials/breadcrumbs.html`).
+- The Giscus `preconnect` in `<head>`; the widget loads lazily at the end of the post.
+- Theme development tooling: `exampleSite/`, `scripts/smoke-tests.sh`, `.htmltest.yml`, the theme `package.json` and lockfile, `images/` and the theme's own CI workflow.
+
+## v0.3.0
 
 Feature-parity round + Lighthouse ≥80 baseline. Delivered in six phases. Net: tsuki now ships breadcrumbs, prev/next post navigation, language switcher UI, llm.txt, English i18n bundle, and per-page-kind CSS bundles, while maintaining the ≤4 KB gz / page-kind / ≤1 KB gz JS hard caps.
 
