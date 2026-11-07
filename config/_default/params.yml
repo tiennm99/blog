@@ -1,167 +1,53 @@
 mainSections:
   - post
-featuredImageField: image
+
+# Full post content in RSS, not just the summary.
 rssFullContent: true
 favicon: /favicon.png
 
-# tsuki theme options
+social:
+  twitter: tienthieusac
+
+# Shown in each post's footer.
+license: Licensed under CC BY-NC-SA 4.0
+
+# "Edit this page" link on posts: this prefix + the content file's path.
+editURL: https://github.com/tiennm99/blog/edit/main/content/
+
+footer:
+  since: 2020
+  customText: "Made by miti99 with ❤️"
+
 search:
   enable: true
 
 home:
   recentPostsCount: 5
 
-# Stack params below are ignored by tsuki but kept for now in case of rollback.
-# To clean up: remove sidebar, widgets, article.toc/readingTime/license,
-# comments.{disqusjs,utterances,beaudar,remark42,vssue,waline,twikoo,cactus,gitalk,cusdis},
-# imageProcessing, colorScheme, defaultImage, opengraph.twitter
+# Prev/next links on a post stay inside its first category, so a Newsletter
+# post links to the previous and next Newsletter.
+prevNextNav:
+  taxonomy: categories
 
-footer:
-  since: 2020
-  customText: "Made by miti99 with ❤️"
-
-dateFormat:
-  published: Jan 02, 2006
-  lastUpdated: Jan 02, 2006 15:04 MST
-
-sidebar:
-  emoji: 🧑‍💻
-  subtitle: A developer wants to be magician
-  avatar:
-    enabled: true
-    local: true
-    src: img/avatar.png
-
-article:
-  math: false
-  toc: true
-  readingTime: true
-  license:
-    enabled: true
-    default: Licensed under CC BY-NC-SA 4.0
+# Show the post's first category as a chip above the title.
+categoryChip:
+  enable: true
 
 comments:
-  enabled: true
-  provider: giscus
-
-  disqusjs:
-    shortname:
-    apiUrl:
-    apiKey:
-    admin:
-    adminLabel:
-
-  utterances:
-    repo:
-    issueTerm: pathname
-    label:
-
-  beaudar:
-    repo:
-    issueTerm: pathname
-    label:
-    theme:
-
-  remark42:
-    host:
-    site:
-    locale:
-
-  vssue:
-    platform:
-    owner:
-    repo:
-    clientId:
-    clientSecret:
-    autoCreateIssue: false
-
-  waline:
-    serverURL:
-    lang:
-    pageview:
-    emoji:
-        - https://unpkg.com/@waline/emojis@1.0.1/weibo
-    requiredMeta:
-        - name
-        - email
-        - url
-    locale:
-        admin: Admin
-        placeholder:
-  twikoo:
-    envId:
-    region:
-    path:
-    lang:
-
-  cactus:
-    defaultHomeserverUrl: "https://matrix.cactus.chat:8448"
-    serverName: "cactus.chat"
-    siteName: ""
-
   giscus:
     enable: true
     repo: tiennm99/blog
     repoId: R_kgDOILzXrw
     category: Announcements
     categoryId: DIC_kwDOILzXr84CeYAw
+    # Threads are keyed by page path; keep it so existing discussions still match.
     mapping: pathname
     strict: "0"
     reactionsEnabled: "1"
     inputPosition: bottom
     theme: preferred_color_scheme
     lang: vi
-    # Legacy Stack keys kept for reference; ignored by tsuki:
-    repoID: R_kgDOILzXrw
-    categoryID: DIC_kwDOILzXr84CeYAw
-    lightTheme: light
-    darkTheme: dark
-    emitMetadata: 0
 
-  gitalk:
-    owner:
-    admin:
-    repo:
-    clientID:
-    clientSecret:
-    proxy:
-
-  cusdis:
-    host:
-    id:
-
-widgets:
-  homepage:
-    - type: search
-    - type: archives
-      params:
-        limit: 5
-    - type: categories
-      params:
-        limit: 10
-    - type: tag-cloud
-      params:
-        limit: 10
-  page:
-    - type: toc
-
-opengraph:
-  twitter:
-    site: tienthieusac
-    card: summary_large_image
-
-defaultImage:
-  opengraph:
-    enabled: false
-    local: false
-    src: img/logo.png
-
-colorScheme:
-  toggle: true
-  default: auto
-
-imageProcessing:
-  cover:
-    enabled: true
-  content:
-    enabled: true
+# Show a TOC on every post that has headings, as Stack did.
+toc:
+  minWordCount: 1

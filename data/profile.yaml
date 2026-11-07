@@ -9,6 +9,15 @@ links:
   - icon: github
     label: GitHub
     url: https://github.com/tiennm99
+  - icon: gitlab
+    label: GitLab
+    url: https://gitlab.com/miti99
+  - icon: facebook
+    label: Facebook
+    url: https://facebook.com/miti99
+  - icon: linkedin
+    label: LinkedIn
+    url: https://linkedin.com/in/miti99
   - icon: rss
     label: RSS
     url: /index.xml

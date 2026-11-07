@@ -1,0 +1,37 @@
+# Hand-picked projects for the home page grid (schema: themes/tsuki/docs/data-schemas.md).
+# The full, bot-refreshed list lives on content/page/projects/index.md.
+featured:
+  - title: "awesome-ai-dev-tools"
+    tagline: "Daily-refreshed ranking of open-source AI developer tools by GitHub stars, with 7-day deltas and star-history charts."
+    repo: https://github.com/tiennm99/awesome-ai-dev-tools
+    demo: https://awesome-ai-dev-tools.pages.dev/
+    tags: [go, ai, cloudflare-pages]
+
+  - title: "noitu"
+    tagline: "Vietnamese word-chain game (nối từ) on the web: play a bot or 2–4 players online."
+    repo: https://github.com/tiennm99/noitu
+    demo: https://noitu.miti99.dev
+    tags: [go, sveltekit, websocket]
+
+  - title: "ghglance"
+    tagline: "SVG cards that summarize a GitHub user's profile, written in Go."
+    repo: https://github.com/tiennm99/ghglance
+    demo: https://ghglance.miti99.dev
+    tags: [go, svg, github-action]
+
+  - title: "tiennm99bot"
+    tagline: "Plug-n-play Telegram bot framework in Go, self-hosted on Coolify with MongoDB Atlas."
+    repo: https://github.com/tiennm99/tiennm99bot
+    demo: https://t.me/tiennm99bot
+    tags: [go, telegram, mongodb]
+
+  - title: "loldle"
+    tagline: "LoLdle-style daily League of Legends champion guessing game."
+    repo: https://github.com/tiennm99/loldle
+    demo: https://tiennm99.github.io/loldle/
+    tags: [sveltekit, go, game]
+
+  - title: "traefik-cloudflare-dns"
+    tagline: "Go daemon that keeps Cloudflare DNS records in sync with the Traefik hosts of your Docker containers."
+    repo: https://github.com/tiennm99/traefik-cloudflare-dns
+    tags: [go, cloudflare, traefik]
