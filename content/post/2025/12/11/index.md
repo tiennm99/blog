@@ -1,7 +1,7 @@
 ---
 title: "Newsletter #68"
 date: 2025-12-11
-tags: ["AI-Assisted", "debugging", "open-source", "system-performance", "networking", "javascript", "algorithms"]
+tags: ["AI-Assisted", "Debugging", "Open Source", "system-performance", "Networking", "JavaScript", "Algorithms"]
 categories: ["Newsletter"]
 ---
 

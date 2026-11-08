@@ -1,7 +1,7 @@
 ---
 title: "Sửa lỗi 'Pairing Required' khi kết nối OpenClaw qua Docker"
 date: 2026-04-05
-tags: ["AI-Assisted", "OpenClaw", "Docker", "Self-Hosted"]
+tags: ["AI-Assisted", "OpenClaw", "Docker", "Self-hosted"]
 categories: ["Sharing"]
 ---
 

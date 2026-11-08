@@ -1,7 +1,7 @@
 ---
 title: "Viết blog với hugo"
 date: 2020-06-23
-tags: [ "hugo", "blog" ]
+tags: [ "Hugo", "Blog" ]
 ---
 
 Như các bạn cũng biết, blog này của mình sử dụng hugo để tạo ra. Bài viết này mình sẽ hướng dẫn các bạn dùng hugo để tạo ra một static website tương tự.
