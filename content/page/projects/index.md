@@ -21,12 +21,13 @@ Dù không biết người ta star vì điều gì nữa 🤡🤡
 | Name | Description | Stars | URL |
 | --- | --- | --- | --- |
 | [awesome-ai-dev-tools](https://github.com/tiennm99/awesome-ai-dev-tools) | Daily-refreshed ranking of open-source AI developer tools — coding agents, ADEs, AI editors and code-review tools — by GitHub stars, with 7-day deltas, star-history charts and a tag-filtered dashboard. | 4 | [awesome-ai-dev-tools.pages.dev](https://awesome-ai-dev-tools.pages.dev/) |
-| [genshin-repository](https://github.com/tiennm99/genshin-repository) | Genshin Impact direct download links and Sophon build data for every version, updated daily by a Go fetcher | 2 | — |
+| [genshin-repository](https://github.com/tiennm99/genshin-repository) | Genshin Impact direct download links and Sophon build data for every version, updated daily by a Go fetcher | 3 | — |
 | [penny-pincher-provider](https://github.com/tiennm99/penny-pincher-provider) | Curated list of affordable + free LLM API providers — coding-plan subs, free-tier APIs. | 2 | [tiennm99.github.io/penny-pincher-provider](https://tiennm99.github.io/penny-pincher-provider/) |
 | [ghglance](https://github.com/tiennm99/ghglance) | Generate SVG cards summarizing a GitHub user's profile, written in Go. Drop-in profile-summary alternative. | 1 | [ghglance.miti99.dev](https://ghglance.miti99.dev) |
 | [export-telegram-group-members](https://github.com/tiennm99/export-telegram-group-members) | Export Telegram group members to CSV using Telethon — admin auth required for full member visibility. | 1 | — |
 | [traefik-cloudflare-dns](https://github.com/tiennm99/traefik-cloudflare-dns) | Go daemon that creates Cloudflare DNS records for the Traefik hosts of your Docker containers, and deletes its own records after the host has been down for a while. Works with Coolify. | 1 | — |
 | [cheahjs-free-llm-api-resources](https://github.com/tiennm99/cheahjs-free-llm-api-resources) | A list of free LLM inference resources accessible via API. | 1 | [free-llm-api-resources.pages.dev](https://free-llm-api-resources.pages.dev) |
+| [tiennm99dev/gomoku](https://github.com/tiennm99dev/gomoku) | Multiplayer online Gomoku (five-in-a-row) — Go server, Phaser 3 client, protobuf over WebSocket, PVP/PVE/spectator modes | 1 | — |
 | [time-mocker](https://github.com/tiennm99/time-mocker) | Windows tool that injects fake time into running processes by hooking Win32 time APIs. Rust. | 1 | — |
 | [lottery-generator](https://github.com/tiennm99/lottery-generator) | Lottery number generator in Go, useful for Vietlott and similar lotteries; earlier Java and Python versions kept in history. | 1 | — |
 | [ai-labs](https://github.com/tiennm99/ai-labs) | Experiments with AI-assisted coding workflows — ClaudeKit, Superpowers, BMAD, oh-my-claudecode, gstack, and course work, merged with full history | 1 | [tiennm99.github.io/ai-labs](https://tiennm99.github.io/ai-labs/) |
@@ -48,8 +49,9 @@ Vài có URL để bấm vào xem trực tiếp (demo). URL có thể là:
 
 | Name | Description | URL |
 | --- | --- | --- |
-| [blog](https://github.com/tiennm99/blog) | Source of miti99.com — personal blog (VN/EN) built with Hugo + Stack theme. | [miti99.com](https://miti99.com) |
+| [cv](https://github.com/tiennm99/cv) | My personal CV written in Typst with RenderCV. | [tiennm99.github.io/cv](https://tiennm99.github.io/cv/) |
 | [awesome-ai-dev-tools](https://github.com/tiennm99/awesome-ai-dev-tools) | Daily-refreshed ranking of open-source AI developer tools — coding agents, ADEs, AI editors and code-review tools — by GitHub stars, with 7-day deltas, star-history charts and a tag-filtered dashboard. | [awesome-ai-dev-tools.pages.dev](https://awesome-ai-dev-tools.pages.dev/) |
+| [blog](https://github.com/tiennm99/blog) | Source of miti99.com — personal blog (VN/EN) built with Hugo + Stack theme. | [miti99.com](https://miti99.com) |
 | [tiennm99](https://github.com/tiennm99/tiennm99) | Config files for my GitHub profile. | [github.com/tiennm99](https://github.com/tiennm99) |
 | [loldle](https://github.com/tiennm99/loldle) | LoLdle-style League of Legends daily champion guessing game — SvelteKit web app, Go data scraper, and Android stub in one repo; champion data auto-updates weekly | [tiennm99.github.io/loldle](https://tiennm99.github.io/loldle/) |
 | [tiennm99bot](https://github.com/tiennm99/tiennm99bot) | Plug-n-play Telegram bot framework in Go, self-hosted on Coolify + MongoDB Atlas with cron, games, schedules, and paper trading modules. | [t.me/tiennm99bot](https://t.me/tiennm99bot) |
@@ -75,7 +77,6 @@ Vài có URL để bấm vào xem trực tiếp (demo). URL có thể là:
 | [sudoku-solver](https://github.com/tiennm99/sudoku-solver) | 9×9 Sudoku solver in the browser using recursive backtracking — plain JavaScript, Svelte 5 + Vite, on GitHub Pages. | [tiennm99.github.io/sudoku-solver](https://tiennm99.github.io/sudoku-solver/) |
 | [christmas-2022](https://github.com/tiennm99/christmas-2022) | A small just-for-fun website built on Christmas Day 2022. | [tiennm99.github.io/christmas-2022](https://tiennm99.github.io/christmas-2022/) |
 | [valentine-2025](https://github.com/tiennm99/valentine-2025) | A fun Valentine's Day 2025 website. | [tiennm99.github.io/valentine-2025](https://tiennm99.github.io/valentine-2025/) |
-| [cv](https://github.com/tiennm99/cv) | My personal CV written in Typst with RenderCV. | [tiennm99.github.io/cv](https://tiennm99.github.io/cv/) |
 | [ai-labs](https://github.com/tiennm99/ai-labs) | Experiments with AI-assisted coding workflows — ClaudeKit, Superpowers, BMAD, oh-my-claudecode, gstack, and course work, merged with full history | [tiennm99.github.io/ai-labs](https://tiennm99.github.io/ai-labs/) |
 | [bkfcduchoa/bkfcduchoa.github.io](https://github.com/bkfcduchoa/bkfcduchoa.github.io) |  | [bkfcduchoa.github.io](https://bkfcduchoa.github.io/) |
 | [sokoban](https://github.com/tiennm99/sokoban) | From-scratch Sokoban puzzle game — Svelte 5 + Vite, all 155 Microban levels, undo, progress tracking | [tiennm99.github.io/sokoban](https://tiennm99.github.io/sokoban/) |
@@ -96,22 +97,22 @@ Project của người khác/tổ chức khác mà mình gửi PR và được m
 
 | Name | Description | Merged PRs | Stars |
 | --- | --- | --- | --- |
-| [iluwatar/java-design-patterns](https://github.com/iluwatar/java-design-patterns) | Design patterns implemented in Java | 6 | 94855 |
-| [is-a-dev/register](https://github.com/is-a-dev/register) | Grab your own sweet-looking '.is-a.dev' subdomain. | 4 | 11761 |
-| [is-a-good-dev/register](https://github.com/is-a-good-dev/register) | Register for your is-a-good.dev domain! | 4 | 641 |
+| [iluwatar/java-design-patterns](https://github.com/iluwatar/java-design-patterns) | Design patterns implemented in Java | 6 | 94854 |
+| [is-a-dev/register](https://github.com/is-a-dev/register) | Grab your own sweet-looking '.is-a.dev' subdomain. | 4 | 11772 |
+| [is-a-good-dev/register](https://github.com/is-a-good-dev/register) | Register for your is-a-good.dev domain! | 4 | 642 |
 | [open-domains/register](https://github.com/open-domains/register) | Free subdomains for personal sites, open-source projects, and more. | 4 | 2599 |
-| [coollabsio/coolify](https://github.com/coollabsio/coolify) | An open-source, self-hostable PaaS alternative to Vercel, Heroku & Netlify that lets you easily deploy static sites, databases, full-stack applications and 360+ one-click services on your own servers. | 3 | 65756 |
+| [coollabsio/coolify](https://github.com/coollabsio/coolify) | An open-source, self-hostable PaaS alternative to Vercel, Heroku & Netlify that lets you easily deploy static sites, databases, full-stack applications and 360+ one-click services on your own servers. | 3 | 65795 |
 | [tarampampam/domains](https://github.com/tarampampam/domains) |  | 3 | 808 |
 | [zfoo-project/zfoo](https://github.com/zfoo-project/zfoo) | 💡Extremely fast enterprise server framework, can be used in RPC,  game server,  web server. | 3 | 2008 |
 | [old-free-domains/register](https://github.com/old-free-domains/register) | Free subdomains for personal sites, open-source projects, and more. | 2 | 599 |
-| [ripienaar/free-for-dev](https://github.com/ripienaar/free-for-dev) | A list of SaaS, PaaS and IaaS offerings that have free tiers of interest to devops and infradev | 1 | 142183 |
-| [sirmalloc/ccstatusline](https://github.com/sirmalloc/ccstatusline) | 🚀 Beautiful highly customizable statusline for Claude Code CLI with powerline support, themes, and more. | 1 | 13546 |
+| [ripienaar/free-for-dev](https://github.com/ripienaar/free-for-dev) | A list of SaaS, PaaS and IaaS offerings that have free tiers of interest to devops and infradev | 1 | 142267 |
+| [sirmalloc/ccstatusline](https://github.com/sirmalloc/ccstatusline) | 🚀 Beautiful highly customizable statusline for Claude Code CLI with powerline support, themes, and more. | 1 | 13550 |
 | [kaitranntt/ccs](https://github.com/kaitranntt/ccs) | Switch between Claude accounts, Gemini, Copilot, OpenRouter (300+ models) via CLIProxyAPI OAuth proxy. Visual dashboard, remote proxy support, WebSearch fallback. Zero-config to production-ready. | 1 | 2897 |
 | [Bogdanp/awesome-advent-of-code](https://github.com/Bogdanp/awesome-advent-of-code) | A collection of awesome resources related to the yearly Advent of Code challenge. | 1 | 3234 |
 | [onyx-dot-app/documentation](https://github.com/onyx-dot-app/documentation) | Documentation for the Onyx Software | 1 | 34 |
-| [oraios/serena](https://github.com/oraios/serena) | A powerful MCP toolkit for coding, providing semantic retrieval and editing capabilities  - the IDE for your agent | 1 | 31183 |
-| [projectlombok/lombok](https://github.com/projectlombok/lombok) | Very spicy additions to the Java programming language. | 1 | 13479 |
-| [HugoBlox/kit](https://github.com/HugoBlox/kit) | 🧱 Describe your site, AI builds it, you own it as Markdown. Snap together Tailwind blocks like Lego — landing pages, blogs, portfolios, docs & more. No AI slop. Free to deploy anywhere 👇 | 1 | 9787 |
+| [oraios/serena](https://github.com/oraios/serena) | A powerful MCP toolkit for coding, providing semantic retrieval and editing capabilities  - the IDE for your agent | 1 | 31214 |
+| [projectlombok/lombok](https://github.com/projectlombok/lombok) | Very spicy additions to the Java programming language. | 1 | 13480 |
+| [HugoBlox/kit](https://github.com/HugoBlox/kit) | 🧱 Describe your site, AI builds it, you own it as Markdown. Snap together Tailwind blocks like Lego — landing pages, blogs, portfolios, docs & more. No AI slop. Free to deploy anywhere 👇 | 1 | 9790 |
 | [tkowalcz/tjahzi](https://github.com/tkowalcz/tjahzi) | Java clients, log4j2 and logback appenders for Grafana Loki | 1 | 141 |
 | [dhyeythumar/awesome-readme-tools](https://github.com/dhyeythumar/awesome-readme-tools) | A curated list of awesome readme tools. ✌ | 1 | 275 |
 | [thedev-id/thedev.id](https://github.com/thedev-id/thedev.id) | Identity for developers on the web. | 1 | 1812 |
