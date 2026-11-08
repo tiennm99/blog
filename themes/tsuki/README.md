@@ -1,20 +1,18 @@
 # tsuki (月)
 
-[![build](https://github.com/tiennm99/tsuki/actions/workflows/pages.yml/badge.svg)](https://github.com/tiennm99/tsuki/actions/workflows/pages.yml)
-[![license](https://img.shields.io/github/license/tiennm99/tsuki)](LICENSE)
+[![license](https://img.shields.io/badge/license-Apache--2.0-blue)](LICENSE)
 [![Hugo](https://img.shields.io/badge/hugo-%E2%89%A50.146-ff4088?logo=hugo)](https://gohugo.io)
-[![CSS](https://img.shields.io/badge/CSS-%E2%89%A44KB%20gz-blue)](https://github.com/tiennm99/tsuki/actions/workflows/pages.yml)
 [![a11y](https://img.shields.io/badge/a11y-WCAG%202.2%20AA-success)](docs/accessibility.md)
 
 A Hugo blog + personal portfolio theme. The homepage *is* the portfolio — bio, featured projects, recent posts. Posts live at `/post/`. Vietnamese-first typography, View Transitions on navigation, Pagefind search, Giscus comments.
 
-> 月 (*tsuki*): the moon. Quiet, observed, returned to. Companion to [`bonsai`](https://github.com/tiennm99/bonsai) in the same naming family.
+> 月 (*tsuki*): the moon. Quiet, observed, returned to.
 
-**→ [Live demo](https://tiennm99.github.io/tsuki/)**
+**→ Live: [miti99.com](https://miti99.com)**, the blog this theme is built for.
 
 ## Status
 
-`v0.1.0` — initial release. See [CHANGELOG.md](CHANGELOG.md).
+Not published on its own; see [installation](docs/installation.md) and the [CHANGELOG](CHANGELOG.md).
 
 ## Features
 
@@ -23,27 +21,34 @@ A Hugo blog + personal portfolio theme. The homepage *is* the portfolio — bio,
 - **Search** — [Pagefind](https://pagefind.app), zero-runtime, indexed at build time
 - **Comments** — [Giscus](https://giscus.app) (GitHub Discussions)
 - **Vietnamese-first** — diacritic-safe typography, native vi date formats, ASCII heading IDs
+- **Multilingual** — vi and en i18n bundles, a language switcher and hreflang alternates when the site defines more than one language ([languages](docs/config.md#languages))
 - **Dark mode** — `prefers-color-scheme` + persistent toggle, no flash of wrong theme
-- **View Transitions API** — smooth same-document navigation in supporting browsers
+- **View Transitions** — cross-document transitions between pages (CSS `@view-transition`) in supporting browsers
 - **Table of contents** — auto-mounted on long posts, sticky on wide viewports, IntersectionObserver active highlight
-- **No build step** — pure Hugo + browser ES modules. No SCSS, no TypeScript, no bundler in the theme
-- **Light** — CSS ≤ 4 KB gz, JS ≤ 1 KB gz (excluding Pagefind UI)
+- **RSS full content** — `params.rssFullContent: true` puts each post's full content in the feed instead of its summary
+- **llms.txt** — `/llms.txt` index of the site ([outputs](docs/config.md#outputs))
+- **Prefetch** — optional Speculation Rules hints (`params.prefetch.enable`), off by default
+- **Remote-image hook** — a site's `_partials/image/remote.html` can rewrite absolute image URLs (see [`docs/customization.md`](docs/customization.md#remote-images))
+- **No external build step** — Hugo Pipes only (minify, fingerprint, `js.Build`). No SCSS, no TypeScript, no npm in the theme
+- **Light** — small per-page-kind CSS bundles and a few tiny scripts; sizes are not checked automatically
 
 ## Quick start
 
+Copy the [`themes/tsuki/`](https://github.com/tiennm99/blog/tree/main/themes/tsuki) folder into your site's `themes/`, then:
+
 ```bash
-git submodule add https://github.com/tiennm99/tsuki.git themes/tsuki
 echo 'theme: tsuki' >> hugo.yaml
 ```
 
-Full installation guide (submodule, Hugo Module, Pagefind setup, required site config): [`docs/installation.md`](docs/installation.md).
+Install Pagefind in your site for search. Full guide (Pagefind setup, required site config): [`docs/installation.md`](docs/installation.md).
 
 ## Documentation
 
-- [`docs/installation.md`](docs/installation.md) — submodule + Hugo Module + Pagefind setup
+- [`docs/installation.md`](docs/installation.md) — copy-in + Pagefind setup
 - [`docs/config.md`](docs/config.md) — full params reference
 - [`docs/data-schemas.md`](docs/data-schemas.md) — `profile.yaml` + `projects.yaml`
 - [`docs/customization.md`](docs/customization.md) — override layouts, tokens, fonts, remote images
+- [`docs/accessibility.md`](docs/accessibility.md) — WCAG 2.2 AA notes and manual checks
 - [`docs/migrating-from-stack.md`](docs/migrating-from-stack.md) — for users coming from `hugo-theme-stack`
 
 ## Search and comments

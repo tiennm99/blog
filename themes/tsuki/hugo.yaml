@@ -1,24 +1,9 @@
 languageCode: vi
 defaultContentLanguage: vi
 
-module:
-  mounts:
-    - source: archetypes
-      target: archetypes
-    - source: assets
-      target: assets
-    - source: data
-      target: data
-    - source: i18n
-      target: i18n
-    - source: layouts
-      target: layouts
-    - source: static
-      target: static
-
 # llms.txt (https://llmstxt.org) from layouts/index.llmtxt.txt.
-# Hugo merges `outputFormats` from the theme, but not `outputs`: a site that
-# sets its own `outputs.home` must add `llmtxt` there to get /llms.txt.
+# Hugo merges `outputFormats` from the theme but never `outputs`: add `llmtxt`
+# to the site's `outputs.home` to get /llms.txt.
 outputFormats:
   llmtxt:
     baseName: llms

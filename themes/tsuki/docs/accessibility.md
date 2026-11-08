@@ -1,6 +1,6 @@
 # Accessibility
 
-tsuki targets **WCAG 2.2 AA** conformance with **Lighthouse Accessibility ≥ 95** on every page kind. This document records what's covered, what's deferred, and how to measure on your own site.
+tsuki targets **WCAG 2.2 AA** conformance and aims for **Lighthouse Accessibility ≥ 95** on every page kind; the score is a target, not a recorded measurement. This document records what's covered, the known limitations, and how to measure on your own site.
 
 ## Conformance summary
 
@@ -9,15 +9,15 @@ tsuki targets **WCAG 2.2 AA** conformance with **Lighthouse Accessibility ≥ 95
 | Skip link | ✅ Shipped | First focusable; jumps to `<main id="main">` |
 | Landmark roles | ✅ Shipped | `<header>`, `<nav>`, `<main>`, `<aside>`, `<footer>` |
 | Visible focus rings | ✅ Shipped | `:focus-visible` with 2px outline + accent colour |
-| `<html lang>` correctness | ✅ Shipped | Resolves from `site.Language.Lang`; falls back to `"en"` |
-| `aria-pressed` on toggle | ✅ Shipped | SSR-rendered before paint |
+| `<html lang>` correctness | ✅ Shipped | Resolves from the language's `languageCode`, else its key; falls back to `"en"` |
+| `aria-pressed` on toggle | ✅ Shipped | The toggle stays hidden until its script runs, then reflects the active theme, including OS changes |
 | `<meta name="theme-color">` | ✅ Shipped | Light + dark variants |
 | Heading anchors | ✅ Shipped | Empty, `aria-hidden` and out of the tab order; the glyph comes from CSS, so heading names and summaries stay clean |
 | Reduced motion | ✅ Shipped | View Transitions + animations honour `prefers-reduced-motion` |
-| Colour contrast (text) | ✅ Shipped | All body text ≥ 4.5:1 in both themes; `--tsuki-fg-subtle` darkened to `#6b6b6b` (light) for AA compliance |
+| Colour contrast (text) | ✅ Shipped | All body text ≥ 4.5:1 in both themes; `--tsuki-fg-subtle` is `#6b6b6b` (light) for AA compliance |
 | Pagination disabled-state contrast | ✅ Shipped | Uses `--tsuki-fg-muted` + `cursor: not-allowed`; no `opacity` compound |
 | Tap targets ≥ 40×40 | ✅ Shipped | Header toggle/search-button 2.5rem; pagination 2.75rem; footer links padded |
-| Tap targets ≥ 48×48 (strict Lighthouse) | ⚠️ Partial | Header buttons at 40×40 (2.5rem); Lighthouse may flag, score remains ≥ 80 |
+| Tap targets ≥ 48×48 (strict Lighthouse) | ⚠️ Partial | Header buttons are 40×40 (2.5rem); the strict Lighthouse tap-target audit may flag them |
 | Forms (search) | ✅ Shipped | Pagefind UI ships its own label semantics |
 | `<details>` keyboard support | ✅ Native | Tab → Enter to toggle |
 | Drag operations (SC 2.5.7) | ✅ N/A | Theme has no drag UI |
@@ -35,18 +35,7 @@ npx lighthouse https://your-site.example.com/ \
 
 Run against **production** (a live URL), not a localhost build — service workers, caching, TLS, and font loading all affect scores.
 
-## Project baseline
-
-Measured on `https://tiennm99.github.io/tsuki/` (mobile profile, median of 3 runs). Update these when the build changes materially.
-
-| Page kind | Performance | A11y | Best Practices | SEO |
-|-----------|------------:|-----:|---------------:|----:|
-| Home (`/`) | TBD | TBD | TBD | TBD |
-| Post | TBD | TBD | TBD | TBD |
-| List (`/post/`) | TBD | TBD | TBD | TBD |
-| Search (`/search/`) | TBD | TBD | TBD | TBD |
-
-Targets: Performance ≥ 80, Accessibility ≥ 95, Best Practices ≥ 80, SEO ≥ 80.
+Check each page kind: home (`/`), a post, a list (`/post/`) and search (`/search/`). Targets (mobile profile, median of 3 runs): Performance ≥ 80, Accessibility ≥ 95, Best Practices ≥ 80, SEO ≥ 80.
 
 ## Known limitations
 
@@ -57,4 +46,4 @@ Targets: Performance ≥ 80, Accessibility ≥ 95, Best Practices ≥ 80, SEO �
 
 ## Reporting accessibility regressions
 
-Open an issue at [tiennm99/tsuki](https://github.com/tiennm99/tsuki/issues) with the WCAG 2.2 SC reference and a reproduction URL. Patches welcome.
+Open an issue at [tiennm99/blog](https://github.com/tiennm99/blog/issues) with the WCAG 2.2 SC reference and a reproduction URL. Patches welcome.

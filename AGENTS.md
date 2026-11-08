@@ -5,7 +5,7 @@ Canonical instructions for AI coding tools (Claude Code, OpenCode, Codex) workin
 ## Project Info
 
 - **Type**: Hugo static site with Vietnamese tech content
-- **Theme**: tsuki, vendored in `themes/tsuki/` (no submodule; edit it there, docs in `themes/tsuki/docs/`)
+- **Theme**: tsuki, vendored in `themes/tsuki/` (no submodule; edit it there; docs in [themes/tsuki/README.md](themes/tsuki/README.md) and [themes/tsuki/docs/](themes/tsuki/docs/); log theme changes in [themes/tsuki/CHANGELOG.md](themes/tsuki/CHANGELOG.md))
 - **Post content language**: Vietnamese (with common English tech words)
 - **User communication**: English by default; use another language only when the user explicitly requests it
 - **Timezone**: Asia/Ho_Chi_Minh (UTC+7)

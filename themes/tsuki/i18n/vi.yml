@@ -73,6 +73,7 @@
 - id: archiveEmpty
   translation: "Chưa có bài viết."
 
+# archiveCategories and archiveTags are looked up dynamically by layouts/archives/list.html.
 - id: archiveCategories
   translation: "Chuyên mục"
 

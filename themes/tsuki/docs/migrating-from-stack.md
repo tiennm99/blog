@@ -13,13 +13,16 @@ tsuki extracts Stack's information architecture (posts, tags, categories, archiv
 
 ## What changes
 
-### Replace theme submodule
+### Replace the theme
+
+Remove the Stack submodule:
 
 ```bash
 git submodule deinit themes/hugo-theme-stack
 git rm themes/hugo-theme-stack
-git submodule add https://github.com/tiennm99/tsuki themes/tsuki
 ```
+
+Then copy the `themes/tsuki/` folder from [`tiennm99/blog`](https://github.com/tiennm99/blog/tree/main/themes/tsuki) into your site (see [installation.md](installation.md)).
 
 ### Update `theme:`
 
@@ -31,7 +34,7 @@ theme: tsuki                       # was: hugo-theme-stack
 
 - `params.sidebar.*` — tsuki has no sidebar
 - `params.widgets.*` — no widget system; portfolio is in homepage hero/projects
-- `params.article.headingAnchor` — anchors render-hooked into headings unconditionally (cosmetic, opt-out is via removing the partial)
+- `params.article.headingAnchor` — the heading render hook always adds anchors; to drop them, override `_markup/render-heading.html` in your site
 - `params.colorScheme.toggleIcon` — fixed icon
 - `params.imageProcessing.*` — tsuki uses Hugo's default image processing
 - `params.comments.provider` — only Giscus is supported; no Disqus / Utterances / Waline
@@ -66,26 +69,7 @@ No content rewrite required for typical posts.
 
 ## Required additions
 
-Add these to your `hugo.yaml` (tsuki defaults don't deep-merge from theme):
-
-```yaml
-pagination:
-  pagerSize: 10
-  path: page
-
-permalinks:
-  post: /:year/:month/:day/:contentbasename/
-
-markup:
-  goldmark:
-    renderer:
-      unsafe: true
-    parser:
-      autoHeadingIDType: github-ascii
-  tableOfContents:
-    startLevel: 2
-    endLevel: 4
-```
+Add the [required block from config.md](config.md#required) to your `hugo.yaml`; Hugo does not merge those keys from the theme. It includes `markup.highlight.noClasses: false`, which the theme's syntax colours need.
 
 If your existing permalink scheme differs, **keep it** — the theme works with any permalink shape.
 
@@ -97,15 +81,15 @@ hugo --gc --minify
 
 Spot-check 5–10 posts in the rendered output. Common surprises:
 
-- **TOC appears unexpectedly**: gated by `WordCount > 400` and `Params.toc != false`. Add `toc: false` to opt out.
+- **TOC appears unexpectedly**: shown on posts over `params.toc.minWordCount` words (default 400) with at least one heading (see [config.md](config.md#table-of-contents)). Add `toc: false` to opt out.
 - **Heading IDs changed**: switching to `autoHeadingIDType: github-ascii` produces different anchor slugs. Old `#lập-trình` becomes `#lap-trinh`. Inbound links from external sites break. Mitigate with redirects, or skip the `autoHeadingIDType` change and accept Vi diacritics in fragment URLs.
 - **Search results paths**: rebuild Pagefind index (`npx pagefind --site public`); the old Fuse.js JSON index becomes dead weight.
 
-## Dropped features (consider before migrating)
+## Not supported (consider before migrating)
 
-- KaTeX math (Phase 9 follow-up; available in Stack)
-- Tag cloud widget (deferred)
-- Image gallery shortcode (deferred)
+- KaTeX math. A site can add math itself through Goldmark's passthrough extension and its own `head/custom.html` [site hook](customization.md#site-hooks).
+- Tag cloud widget
+- Image gallery shortcode
 - Any Stack-specific shortcode (`gallery`, `keyword`, `bilibili`, etc.)
 
-If you rely on these heavily, defer the migration or wait for the follow-up release.
+If you rely on these heavily, add them in your site's `layouts/` or stay on Stack.

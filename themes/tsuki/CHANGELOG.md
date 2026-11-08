@@ -1,8 +1,8 @@
 # Changelog
 
-All notable changes to tsuki will be documented here. Format follows [Keep a Changelog](https://keepachangelog.com/), versioning follows [SemVer](https://semver.org/).
+tsuki is vendored in [`tiennm99/blog`](https://github.com/tiennm99/blog/tree/main/themes/tsuki) and has no separate releases. Version entries below record the earlier standalone releases; later changes are grouped under dated headings. Format follows [Keep a Changelog](https://keepachangelog.com/).
 
-## [Unreleased]
+## 2026-11-07 — vendored into tiennm99/blog
 
 ### Added
 
@@ -14,6 +14,7 @@ All notable changes to tsuki will be documented here. Format follows [Keep a Cha
 - The largest local-image `srcset` candidate is a native-width WebP instead of the original file.
 - `code-copy.js` loads only on posts that contain a code block.
 - `toc-active.js` skips the DOM update when the active heading has not changed.
+- `theme.toml` `homepage`, `licenselink` and `demosite` point at `tiennm99/blog/themes/tsuki` and miti99.com.
 
 ### Removed
 
@@ -21,8 +22,10 @@ All notable changes to tsuki will be documented here. Format follows [Keep a Cha
 - Breadcrumbs (`params.breadcrumbs`, `_partials/breadcrumbs.html`).
 - The Giscus `preconnect` in `<head>`; the widget loads lazily at the end of the post.
 - Theme development tooling: `exampleSite/`, `scripts/smoke-tests.sh`, `.htmltest.yml`, the theme `package.json` and lockfile, `images/` and the theme's own CI workflow.
+- `module.mounts` in the theme `hugo.yaml`; the theme is no longer consumed as a Hugo Module.
+- The theme `.gitignore` and the placeholder `.gitkeep` files.
 
-## v0.3.0
+## 0.3.0
 
 Feature-parity round + Lighthouse ≥80 baseline. Delivered in six phases. Net: tsuki now ships breadcrumbs, prev/next post navigation, language switcher UI, llm.txt, English i18n bundle, and per-page-kind CSS bundles, while maintaining the ≤4 KB gz / page-kind / ≤1 KB gz JS hard caps.
 
@@ -69,7 +72,7 @@ Feature-parity round + Lighthouse ≥80 baseline. Delivered in six phases. Net: 
 - Optional Lighthouse-CI workflow (manual measurement for now via `docs/accessibility.md`)
 - Default cover-image renderer pipeline (`images.Resize` + srcset/AVIF) — see `docs/customization.md` for override snippet; built-in support targeted for v0.4.0
 
-## [0.2.1] — 2026-05-10
+## 0.2.1 — 2026-05-10
 
 Patch release. Closes 5 P1 correctness/security findings from the post-v0.2.0 review plus 2 CI hygiene items. No new features.
 
@@ -86,9 +89,9 @@ Patch release. Closes 5 P1 correctness/security findings from the post-v0.2.0 re
 - **Header navigation respects sub-path deploys** — `layouts/_partials/nav.html` pipes `Menu.URL` through `relURL`. Sites deploying under a sub-path (e.g., GitHub Pages `/repo/`) with `url:`-form menu entries now route correctly.
 - **CI Pagefind step simplified** — `.github/workflows/pages.yml` dropped the dead `if find ... | head -1 | grep -q .` guard. Layouts exist; the else branch never triggered.
 
-## [0.2.0] — 2026-05-09
+## 0.2.0 — 2026-05-09
 
-SEO baseline, accessibility polish, author UX, discovery, distribution prep, CI hardening. See [v0.2.0 tag](https://github.com/tiennm99/tsuki/releases/tag/v0.2.0) for highlights.
+SEO baseline, accessibility polish, author UX, discovery, distribution prep, CI hardening.
 
 ### Changed
 
@@ -140,7 +143,7 @@ SEO baseline, accessibility polish, author UX, discovery, distribution prep, CI 
 - **`view-transition-name: var(--tsuki-vt-name, none)`** on `.project-card` — dead declaration; nothing set the variable. Removed pending a future card-morph implementation (audit M4).
 - **Empty `[original]` block** dropped from `theme.toml` — tsuki is an original theme, not a fork; the empty fields tripped the Hugo theme registry's malformed-frontmatter check (audit L1).
 
-## [0.1.1] — 2026-05-08
+## 0.1.1 — 2026-05-08
 
 Patch release. Audit fixes and documentation/code drift. No new features.
 
@@ -160,9 +163,7 @@ Patch release. Audit fixes and documentation/code drift. No new features.
 - **Removed unused `previousPage`/`nextPage` i18n keys.** Pagination has always used `prev`/`next`.
 - **`docs/data-schemas.md`** documents the security implication of `markup.goldmark.renderer.unsafe: true` + `markdownify` on `profile.bio`. Treat `data/profile.yaml` as trusted-author input (audit C2 — documentation path).
 
-[0.1.1]: https://github.com/tiennm99/tsuki/releases/tag/v0.1.1
-
-## [0.1.0] — 2026-05-07
+## 0.1.0 — 2026-05-07
 
 Initial public release.
 
@@ -194,7 +195,3 @@ Initial public release.
 - KaTeX math support
 - Tag cloud widget
 - Image gallery shortcode
-
-[0.1.0]: https://github.com/tiennm99/tsuki/releases/tag/v0.1.0
-
-
