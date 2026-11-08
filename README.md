@@ -39,7 +39,7 @@ Site config lives in `config/_default/` (Hugo config directory split):
 - `data/profile.yaml`, `data/projects.yaml` — home page profile and featured projects
 - `layouts/` — template overrides; `layouts/_partials/head/custom.html` holds the analytics tags
 
-The tsuki theme is vendored in `themes/tsuki/` (no submodule) and is edited there directly; its docs are in `themes/tsuki/docs/`. Posts keep their content-path URLs (`/post/YYYY/MM/DD/`).
+The tsuki theme is vendored in `themes/tsuki/` (no submodule) and is edited there directly; its docs are in [themes/tsuki/README.md](themes/tsuki/README.md) and [themes/tsuki/docs/](themes/tsuki/docs/); record theme changes in [themes/tsuki/CHANGELOG.md](themes/tsuki/CHANGELOG.md). Posts keep their content-path URLs (`/post/YYYY/MM/DD/`).
 
 ## Working with AI tools
 

@@ -1,6 +1,6 @@
 /* tsuki: search page — Pagefind UI container + token mapping */
 
-/* Pagefind UI tokens — see https://pagefind.app/docs/ui/#styling.
+/* Pagefind UI tokens — see https://pagefind.app/docs/ui-usage/#customising-the-styles.
    Set on the container, not :root: pagefind-ui.css loads later and declares
    its light defaults on :root, which would win and break dark mode. */
 .search-container {

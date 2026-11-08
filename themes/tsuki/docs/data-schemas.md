@@ -4,20 +4,20 @@ The homepage portfolio is data-driven. Two YAML files in `data/`.
 
 ## `data/profile.yaml`
 
-Powers the homepage hero and the OG image fallback.
+Powers the homepage hero, the header and footer name, `/llms.txt`, and the OG image, author and publisher-logo fallbacks.
 
 ```yaml
-name: "Tien Nguyen"          # required: display name
-handle: "tiennm99"            # optional: short handle (currently unused; reserved)
+name: "Your Name"             # required: display name
 tagline: "Building tools, breaking things, writing it down."  # optional: under name
-avatar: "img/avatar.svg"      # optional: site-relative path under static/
+avatar: "img/avatar.png"      # optional: path under assets/ (processed) or static/ (as is)
+url: "https://<you>.example.com/about/"  # optional: JSON-LD author URL
 bio: |                        # optional: markdown, rendered with markdownify
-  Software engineer based in Ho Chi Minh City. I build for the web,
-  experiment with AI tooling, and write down what I learn.
+  Software engineer. I build for the web, experiment with tooling,
+  and write down what I learn.
 links:                        # optional: array of {icon, label, url}
   - icon: github               # icon name resolves to assets/icons/<name>.svg
     label: GitHub
-    url: https://github.com/tiennm99
+    url: https://github.com/<you>
   - icon: mail
     label: Email
     url: mailto:hi@example.com
@@ -31,13 +31,13 @@ Field reference:
 | field   | type   | required | notes                                     |
 |---------|--------|----------|-------------------------------------------|
 | name    | string | yes      | falls back to `site.Title` if absent      |
-| handle  | string | no       | reserved                                  |
 | tagline | string | no       | rendered as `<p>` under name              |
-| avatar  | string | no       | resolved with `relURL`; show `<img>` if set |
+| avatar  | string | no       | a raster image under `assets/` is cropped to 240×240 WebP in the hero and resized for the OG card and publisher logo; any other path (e.g. under `static/`) is linked as is |
+| url     | string | no       | JSON-LD author URL; `params.profile.url` overrides it, the site home is the fallback |
 | bio     | string | no       | markdown; `markdownify` filter applied — see security note below |
-| links   | array  | no       | empty list = no links section             |
+| links   | array  | no       | empty list = no links section; a site-relative `url` goes through `relLangURL` |
 
-Built-in icons under `assets/icons/`: `github`, `mail`, `rss`, `search`. Add your own SVGs there with `currentColor` fill.
+Built-in link icons under `assets/icons/`: `facebook`, `github`, `gitlab`, `linkedin`, `mail`, `rss` (`moon`, `search` and `sun` are UI icons). Add your own SVGs there with `currentColor` fill; see [customization.md](customization.md#add-custom-icons).
 
 > **Security note — `bio` rendering.** The theme requires `markup.goldmark.renderer.unsafe: true` (see [`docs/config.md`](config.md)) and pipes `bio` through `markdownify`. Any raw HTML in `bio` — including `<script>`, `<iframe>`, `onerror=` attributes — renders verbatim. Treat `data/profile.yaml` as **trusted-author input only**. Do not populate `bio` from a CMS, form, or any source you don't fully control. If you need to disable raw HTML site-wide, set `markup.goldmark.renderer.unsafe: false` in your `hugo.yaml` (you may lose footnotes and `<details>` blocks in posts that rely on them).
 
@@ -47,18 +47,17 @@ Powers the featured projects grid on the homepage.
 
 ```yaml
 featured:
-  - title: "bonsai"
-    tagline: "Minimalist Hugo theme for link-in-bio."
-    repo: https://github.com/tiennm99/bonsai
-    demo: https://tiennm99.github.io/bonsai/
-    image: "img/projects/bonsai.svg"
-    tags: [hugo, theme, minimal]
+  - title: "example-app"
+    tagline: "A web app with a live demo."
+    repo: https://github.com/<owner>/<repo>
+    demo: https://<app>.example.com/
+    image: "img/projects/example-app.svg"
+    tags: [web, demo]
 
-  - title: "vngeoguessr"
-    tagline: "GeoGuessr clone for Vietnamese locations."
-    repo: https://github.com/tiennm99/vngeoguessr
-    image: "img/projects/vngeoguessr.svg"
-    tags: [geo, mapillary, redis]
+  - title: "example-cli"
+    tagline: "A command-line tool with no demo."
+    repo: https://github.com/<owner>/<other-repo>
+    tags: [cli]
 ```
 
 Field reference (per project):

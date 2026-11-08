@@ -73,6 +73,7 @@
 - id: archiveEmpty
   translation: "No posts yet."
 
+# archiveCategories and archiveTags are looked up dynamically by layouts/archives/list.html.
 - id: archiveCategories
   translation: "Categories"
 
