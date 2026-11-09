@@ -1,0 +1,105 @@
+{
+  "post": "content/post/2025/09/10/index.md",
+  "newsletter": 54,
+  "newsletter_post": true,
+  "note": "*Bài viết đã được viết lại bởi Claude Code với Opus 5.5 vào ngày 27/09/2026.*",
+  "lines": [
+    {
+      "line": 1,
+      "kind": "frontmatter",
+      "text": "---"
+    },
+    {
+      "line": 2,
+      "kind": "frontmatter",
+      "text": "title: \"Newsletter #54\""
+    },
+    {
+      "line": 3,
+      "kind": "frontmatter",
+      "text": "date: 2025-09-10"
+    },
+    {
+      "line": 4,
+      "kind": "frontmatter",
+      "text": "tags: [\"AI-Assisted\", \"Monorepo\", \"Uber\", \"Deployment\", \"Unicode\", \"OAuth\", \"Caching\"]"
+    },
+    {
+      "line": 5,
+      "kind": "frontmatter",
+      "text": "categories: [\"Newsletter\"]"
+    },
+    {
+      "line": 6,
+      "kind": "frontmatter",
+      "text": "---"
+    },
+    {
+      "line": 8,
+      "kind": "italic-note",
+      "text": "*~~Do dạo này tình hình tài chính cá nhân không tốt lắm, nên mình quyết định huỷ Claude Subscription, và do đó không còn dùng Claude Code nữa. Hiện tại mình đang dùng Roo Code với model Z.AI: GLM 4.5 Air từ OpenRouter.~~ Hi vọng bài viết đủ chất lượng làm hài lòng các bạn. Mời bạn thưởng thức Newsletter #54.*"
+    },
+    {
+      "line": 10,
+      "kind": "heading",
+      "text": "## [Controlling the Rollout of Large-Scale Monorepo Changes](https://www.uber.com/in/en/blog/controlling-the-rollout-of-large-scale-monorepo-changes/)"
+    },
+    {
+      "line": 16,
+      "kind": "heading",
+      "text": "## [String Length](https://hsivonen.fi/string-length/)"
+    },
+    {
+      "line": 22,
+      "kind": "heading",
+      "text": "## [An Illustrated Guide to OAuth](https://www.ducktyped.org/p/an-illustrated-guide-to-oauth/)"
+    },
+    {
+      "line": 29,
+      "kind": "heading",
+      "text": "## [Professional Development Is a Choice](https://alexchesser.medium.com/professional-development-is-a-choice-e90fb8719259)"
+    },
+    {
+      "line": 35,
+      "kind": "heading",
+      "text": "## [Replacing a cache service with a database](https://avi.im/blag/2025/db-cache/)"
+    },
+    {
+      "line": 41,
+      "kind": "heading",
+      "text": "## Bonus: Vài ảnh hay ho đến từ [ByteByteGo](https://bytebytego.com/)"
+    },
+    {
+      "line": 43,
+      "kind": "asset",
+      "text": "![A Detailed Guide to Content Delivery Networks](https://substack-post-media.s3.amazonaws.com/public/images/f8993d4d-8879-4eeb-9635-3a5aa13816cc_2250x2624.png)"
+    },
+    {
+      "line": 44,
+      "kind": "asset",
+      "text": "![CI/CD Pipeline Explained](https://substack-post-media.s3.amazonaws.com/public/images/607358c5-2e0b-41fc-9cdd-a350e1faf144_3780x4096.jpeg)"
+    },
+    {
+      "line": 45,
+      "kind": "asset",
+      "text": "![What are some of the most popular versioning strategies?](https://substack-post-media.s3.amazonaws.com/public/images/8b1bd4d5-a708-4793-a9e6-aa96db182f54_3000x3900.png)"
+    },
+    {
+      "line": 46,
+      "kind": "asset",
+      "text": "![The Testing Pyramid](https://substack-post-media.s3.amazonaws.com/public/images/c34a8b8b-feff-4473-9eb1-dd399f5a81eb_2360x2664.jpeg)"
+    },
+    {
+      "line": 48,
+      "kind": "italic-note",
+      "text": "*Tổng kết thì mình thấy đợt thử nghiệm này cũng khá ổn. Có điều bài viết còn khá dài dòng và đôi chỗ còn sai sót từ ngữ tiếng Việt một chút. Với cái giá free thì quá được :))) Hẹn gặp lại các bạn trong các bài viết tới.*"
+    }
+  ],
+  "candidates": [
+    {
+      "line": 31,
+      "kind": "first-person",
+      "text": "Alex Chesser, lập trình viên với hơn 20 năm kinh nghiệm, cho rằng phát triển chuyên môn khác với sự trưởng thành tự nhiên qua công việc hằng ngày: nó đòi hỏi một lựa chọn có chủ đích. Kể lại hành trình của bản thân, từ công việc duy trì script Perl tại Nortel, bị sa thải sau cú sụp đổ dot-com, năm năm dạy học rồi quay lại nghề lập trình, tác giả thừa nhận phần lớn sự nghiệp chỉ học một cách bị động để giải quyết việc trước mắt. Ông cũng chỉ ra rằng các chương trình phát triển nghề nghiệp áp đặt từ trên xuống ở công ty thường thất bại, vì sự chênh lệch quyền lực giữa quản lý và nhân viên khiến không ai nói thật điều mình muốn."
+    }
+  ]
+}

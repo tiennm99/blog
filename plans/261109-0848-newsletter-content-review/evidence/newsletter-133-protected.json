@@ -1,0 +1,99 @@
+{
+  "post": "content/post/2026/10/01/index.md",
+  "newsletter": 133,
+  "newsletter_post": true,
+  "lines": [
+    {
+      "line": 1,
+      "kind": "frontmatter",
+      "text": "---"
+    },
+    {
+      "line": 2,
+      "kind": "frontmatter",
+      "text": "title: \"Newsletter #133\""
+    },
+    {
+      "line": 3,
+      "kind": "frontmatter",
+      "text": "date: 2026-10-01"
+    },
+    {
+      "line": 4,
+      "kind": "frontmatter",
+      "text": "tags: [\"AI-Assisted\", \"Go\", \"AI Agents\", \"Software Design\", \"Reliability\", \"Cloudflare\", \"Statistics\"]"
+    },
+    {
+      "line": 5,
+      "kind": "frontmatter",
+      "text": "categories: [\"Newsletter\"]"
+    },
+    {
+      "line": 6,
+      "kind": "frontmatter",
+      "text": "---"
+    },
+    {
+      "line": 8,
+      "kind": "italic-note",
+      "text": "*Mời bạn thưởng thức Newsletter #133.*"
+    },
+    {
+      "line": 10,
+      "kind": "heading",
+      "text": "## [Why Go is an Ideal Language for AI-Assisted Software Engineering](https://developers.googleblog.com/why-go-is-an-ideal-language-for-ai-assisted-software-engineering/)"
+    },
+    {
+      "line": 16,
+      "kind": "heading",
+      "text": "## [How does programming language affect token efficiency and correctness?](https://danluu.com/pl-tokens/)"
+    },
+    {
+      "line": 22,
+      "kind": "heading",
+      "text": "## [My Agentic Coding Setup, July 2026](https://domenic.me/agentic-coding-setup/)"
+    },
+    {
+      "line": 28,
+      "kind": "heading",
+      "text": "## [The Bedrock of Software Design](https://alex.draftist.io/blog/the-bedrock-of-software-design-ycqvcedsj)"
+    },
+    {
+      "line": 34,
+      "kind": "heading",
+      "text": "## [90 % of the t distribution](https://entropicthoughts.com/ninety-percent-of-the-t-distribution)"
+    },
+    {
+      "line": 40,
+      "kind": "heading",
+      "text": "## [Your agent needs a computer, not a container — introducing @cloudflare/computer](https://blog.cloudflare.com/cloudflare-computer/)"
+    },
+    {
+      "line": 46,
+      "kind": "heading",
+      "text": "## [Notes on incidents](https://www.seangoedecke.com/notes-on-incidents/)"
+    },
+    {
+      "line": 52,
+      "kind": "heading",
+      "text": "## [Beyond “Clean Code”: Why Your Comments Matter](https://blog.moertel.com/posts/2026-07-27-beyond-clean-code-why-your-comments-matter.html)"
+    },
+    {
+      "line": 58,
+      "kind": "heading",
+      "text": "## [Relying on Go](https://antonz.org/relying-on-go/)"
+    }
+  ],
+  "candidates": [
+    {
+      "line": 26,
+      "kind": "first-person",
+      "text": "Các mảnh ghép còn lại giải quyết từng yêu cầu: git worktree cho agent làm song song (anh chuộng ChatGPT hơn vì Claude đặt worktree ngay trong thư mục dự án), VS Code Remote-SSH để xem xét thay đổi, công cụ Portless bọc qua Tailscale để mỗi máy chủ phát triển có địa chỉ HTTPS riêng chỉ mình anh truy cập được, và chezmoi để đồng bộ `AGENTS.md`, skill cùng cấu hình giữa các máy. Những điểm còn thiếu gồm dev container để cách ly an toàn hơn, lịch sử phiên gắn chặt với đường dẫn thư mục, và chưa có cách sao lưu bền vững bản ghi phiên."
+    },
+    {
+      "line": 50,
+      "kind": "first-person",
+      "text": "Cách sửa hiệu quả thường rất đơn giản, điển hình là tạm tắt tính năng gây lỗi. Yếu tố quan trọng nhất là hiểu biết về hệ thống: một kỹ sư nắm rõ kho mã sẽ nhanh chóng tìm ra đúng feature flag hay commit cần hoàn tác. Người đó cũng cần dũng cảm và quyết đoán: nói rõ mình định làm gì, chờ một chút rồi làm. Xử lý sự cố giúp ghi điểm với cấp trên, nhưng tác giả nhắc rằng đó không phải nguồn uy tín bền vững, vì lãnh đạo khó phân biệt nỗ lực anh hùng với cách sửa hiển nhiên, và kết quả tốt nhất vẫn là không xảy ra sự cố."
+    }
+  ]
+}

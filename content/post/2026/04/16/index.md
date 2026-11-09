@@ -15,9 +15,9 @@ Giải pháp là chia hệ thống thành bốn tầng: HTTP chỉ lo nhận yê
 
 ## [The Garbage Collector](https://internals-for-interns.com/posts/go-garbage-collector)
 
-Bài viết đi sâu vào bộ thu gom rác (Garbage Collector - GC) của Go 1.26, phiên bản giới thiệu GreenTea GC. GC của Go thuộc loại không di chuyển đối tượng (non-moving), chạy đồng thời (concurrent) và dùng thuật toán đánh dấu ba màu (tri-color mark-and-sweep). Vì đối tượng giữ nguyên địa chỉ suốt vòng đời, con trỏ luôn hợp lệ và việc phối hợp với mã unsafe hay C trở nên đơn giản hơn. Mỗi chu trình gồm bốn giai đoạn: kết thúc quét (sweep termination), đánh dấu (mark) chạy song song với chương trình và chiếm khoảng 25% CPU, kết thúc đánh dấu (mark termination), rồi quét (sweep) theo kiểu lười gắn với nhu cầu cấp phát; toàn bộ chu trình chỉ dừng chương trình hai lần rất ngắn.
+Bài giải thích GC của Go 1.26 và GreenTea: bộ thu gom không di chuyển đối tượng, đánh dấu phần lớn đồng thời với ứng dụng rồi thu hồi vùng nhớ không còn được tham chiếu. Địa chỉ đối tượng ổn định giúp một số thao tác thuận tiện hơn, nhưng không làm mọi cách dùng `unsafe` hay con trỏ C tự động hợp lệ.
 
-Điểm mới của GreenTea là đưa cả span (vùng nhớ chứa các đối tượng cùng kích thước) vào hàng đợi thay vì từng đối tượng riêng lẻ, nhờ đó gom được nhiều đối tượng đã đánh dấu trước khi quét và tận dụng tốt bộ nhớ đệm CPU. Với span có trên 12.5% đối tượng được đánh dấu, GC dùng lệnh SIMD AVX-512 trên x86-64 để quét nhanh hơn 4-8 lần. Write barrier lai Yuasa-Dijkstra đánh dấu cả con trỏ cũ lẫn mới khi chương trình ghi đè con trỏ, bảo đảm không bỏ sót đối tượng còn sống. Khi goroutine cấp phát nhanh hơn tốc độ đánh dấu, cơ chế mark assist buộc chúng tham gia đánh dấu, tạo áp lực ngược. Cuối cùng, GC Pacer quyết định thời điểm chạy dựa trên `GOGC` (mặc định 100, tức kích hoạt khi heap tăng gấp đôi) và `GOMEMLIMIT` (giới hạn bộ nhớ tuyệt đối).
+GreenTea tổ chức việc quét theo span để cải thiện tính cục bộ bộ nhớ. Những mức tăng tốc SIMD trong bài phụ thuộc phần cứng và đường xử lý cụ thể. Write barrier và mark assist phối hợp với chương trình để theo dõi đối tượng còn sống. `GOGC` điều chỉnh mục tiêu heap theo dữ liệu sống và các gốc tham chiếu; mặc định 100 không phải mốc kích hoạt cứng khi heap vừa gấp đôi. `GOMEMLIMIT` là giới hạn mềm cho bộ nhớ do runtime quản lý, không phải trần tuyệt đối của toàn tiến trình.
 
 ## [The Skill of Using AI Agents Well](https://www.lesswrong.com/posts/9xAwybDhtgzGYPnbs/the-skill-of-using-ai-agents-well)
 
@@ -29,13 +29,13 @@ Về quyền truy cập, tác giả khuyên đưa các lệnh hiển nhiên an t
 
 Bài viết tổng hợp bảy quy tắc mà kỹ sư phần mềm thường chỉ học được sau những sai lầm đắt giá. Khi hệ thống production gặp sự cố ngay sau một lần triển khai, hãy rollback trước rồi mới điều tra, thay vì mất hàng giờ chứng minh thay đổi của mình vô can. Bản sao lưu chỉ thực sự tồn tại khi bạn đã khôi phục thành công từ nó, và bạn cần biết rõ khoảng dữ liệu có thể mất, ai được quyền khôi phục cũng như thời gian khôi phục thực tế khi dữ liệu ngày càng lớn. Log thì luôn khó cân bằng: thiếu thông tin khi có sự cố, hoặc quá dài dòng và thiếu request ID chung để truy vết giữa các dịch vụ.
 
-Mọi thay đổi chạm đến dữ liệu phải có kế hoạch rollback đã được kiểm thử, vì kế hoạch chưa từng chạy thử thì chỉ có một nửa cơ hội hoạt động. Mọi dependency bên ngoài rồi sẽ lỗi, nên cần tìm hiểu giới hạn tốc độ, kiểm thử hành vi khi dịch vụ ngừng hoạt động và chuẩn bị cache, hàng đợi hay kế hoạch thông báo cho người dùng; ghép hai hệ thống 99.9% chỉ còn khoảng 99.8% độ tin cậy. Thao tác có rủi ro cần quy tắc "4 mắt": nhờ người khác xem cùng, và việc giải thích thành lời thường tự giúp bạn phát hiện lỗi. Cuối cùng, không gì bền bằng giải pháp tạm thời, nên hãy viết giải pháp đơn giản, giới hạn nhưng sạch sẽ thay vì chắp vá.
+Mọi thay đổi chạm đến dữ liệu phải có kế hoạch rollback đã được kiểm thử, vì kế hoạch chưa chạy thử có thể thất bại; không có cơ sở cho xác suất cố định 50%. Mọi dependency bên ngoài rồi sẽ lỗi, nên cần tìm hiểu giới hạn tốc độ, kiểm thử hành vi khi dịch vụ ngừng hoạt động và chuẩn bị cache, hàng đợi hay kế hoạch thông báo cho người dùng; hai phụ thuộc nối tiếp 99,9% cho khoảng 99,8% nếu lỗi độc lập và cả hai đều phải sẵn sàng. Thao tác có rủi ro cần quy tắc "4 mắt": nhờ người khác xem cùng, và việc giải thích thành lời thường tự giúp bạn phát hiện lỗi. Cuối cùng, không gì bền bằng giải pháp tạm thời, nên hãy viết giải pháp đơn giản, giới hạn nhưng sạch sẽ thay vì chắp vá.
 
 ## [Big tech engineers need big egos](https://www.seangoedecke.com/big-tech-needs-big-egos/)
 
 Sean Goedecke phản bác quan điểm phổ biến rằng cái tôi không có chỗ trong ngành công nghệ, và lập luận rằng kỹ sư ở các công ty lớn cần một cái tôi đủ mạnh để thành công. Công việc hằng ngày của họ là liên tục đối mặt với sai lầm của chính mình và những codebase phức tạp đến mức khó hiểu nổi, nên cần niềm tin rằng mình giải quyết được cả những vấn đề tưởng như bất khả thi. Trong tổ chức, sự tự tin giúp kỹ sư giữ quan điểm kỹ thuật rõ ràng dù còn nhiều bất định, đưa ra những quyết định không được lòng số đông nhưng ảnh hưởng đến hàng trăm đồng nghiệp, và dám chỉ ra hiểu lầm của lãnh đạo cấp cao.
 
-Nghịch lý là kỹ sư hiệu quả cũng phải biết đặt cái tôi xuống trước cấu trúc tổ chức: chấp nhận dự án bị hủy, thua trong các cuộc tranh luận chính trị nội bộ hay những quyết định thiếu rõ ràng mà không oán giận. Tác giả gọi đó là kiểu "tắc kè hoa", quyết đoán với đồng nghiệp nhưng tôn trọng thứ bậc. Ông cũng cho rằng kiệt sức (burnout) không đến từ làm quá nhiều mà từ nỗ lực không được ghi nhận, nhất là khi một quyết định kỹ thuật đúng lại bị trừng phạt vì mâu thuẫn với chính trị. Sự cân bằng khó khăn này lý giải vì sao kỹ sư cấp cao giỏi luôn hiếm.
+Nghịch lý là kỹ sư hiệu quả cũng phải biết đặt cái tôi xuống trước cấu trúc tổ chức: chấp nhận dự án bị hủy, thua trong các cuộc tranh luận chính trị nội bộ hay những quyết định thiếu rõ ràng mà không oán giận. Tác giả gọi đó là kiểu "tắc kè hoa", quyết đoán với đồng nghiệp nhưng tôn trọng thứ bậc. Ông cũng cho rằng việc không được ghi nhận có thể góp phần gây kiệt sức trong trải nghiệm của ông, nhất là khi một quyết định kỹ thuật đúng lại bị trừng phạt vì mâu thuẫn với chính trị. Sự cân bằng khó khăn này lý giải vì sao kỹ sư cấp cao giỏi luôn hiếm.
 
 ## [Sorting algorithms](https://simonwillison.net/2026/Mar/11/sorting-algorithms/)
 
@@ -52,4 +52,4 @@ Sau vài lượt tinh chỉnh giao diện, sản phẩm có thêm nút "Run all"
 
 ---
 
-*Bài viết đã được viết lại bởi Claude Code với Opus 5.5 vào ngày 27/09/2026.*
+*Bài viết đã được viết lại bởi Claude Code với Opus 5.5 vào ngày 27/09/2026; được review và chỉnh sửa bởi Codex với GPT 6.1 Sol vào ngày 09/11/2026.*

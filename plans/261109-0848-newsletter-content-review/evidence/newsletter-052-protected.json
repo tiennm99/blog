@@ -1,0 +1,200 @@
+{
+  "post": "content/post/2025/09/07/index.md",
+  "newsletter": 52,
+  "newsletter_post": true,
+  "note": "*Bài viết đã được viết lại bởi Claude Code với Opus 5.5 vào ngày 27/09/2026.*",
+  "lines": [
+    {
+      "line": 1,
+      "kind": "frontmatter",
+      "text": "---"
+    },
+    {
+      "line": 2,
+      "kind": "frontmatter",
+      "text": "title: \"Newsletter #52\""
+    },
+    {
+      "line": 3,
+      "kind": "frontmatter",
+      "text": "date: 2025-09-07"
+    },
+    {
+      "line": 4,
+      "kind": "frontmatter",
+      "text": "tags: [ \"AI-Assisted\", \"Java\", \"Design-Patterns\", \"Security\", \"LLM\", \"Complexity\", \"Work-Life-Balance\" ]"
+    },
+    {
+      "line": 5,
+      "kind": "frontmatter",
+      "text": "categories: [ \"Newsletter\" ]"
+    },
+    {
+      "line": 6,
+      "kind": "frontmatter",
+      "text": "---"
+    },
+    {
+      "line": 8,
+      "kind": "italic-note",
+      "text": "*Mời bạn thưởng thức Newsletter #52.*"
+    },
+    {
+      "line": 10,
+      "kind": "heading",
+      "text": "## [Traps to Developers](https://qouteall.fun/qouteall-blog/2025/Traps%20to%20Developers)"
+    },
+    {
+      "line": 16,
+      "kind": "heading",
+      "text": "## [Active Record vs. Repository Pattern](https://javabulletin.substack.com/p/active-record-vs-repository-pattern)"
+    },
+    {
+      "line": 22,
+      "kind": "heading",
+      "text": "## [Thread.sleep(0) is not for free](https://mlangc.github.io/java/performance/2025/08/14/thread-sleep0-is-not-for-free.html)"
+    },
+    {
+      "line": 28,
+      "kind": "code",
+      "text": "```java"
+    },
+    {
+      "line": 29,
+      "kind": "code",
+      "text": "int delay = allGood ? 0 : waitShorty;"
+    },
+    {
+      "line": 30,
+      "kind": "code",
+      "text": "Thread.sleep(delay);"
+    },
+    {
+      "line": 31,
+      "kind": "code",
+      "text": "```"
+    },
+    {
+      "line": 33,
+      "kind": "code",
+      "text": "```java"
+    },
+    {
+      "line": 34,
+      "kind": "code",
+      "text": "if (!allGood) {"
+    },
+    {
+      "line": 35,
+      "kind": "code",
+      "text": "    Thread.sleep(waitShortly);"
+    },
+    {
+      "line": 36,
+      "kind": "code",
+      "text": "}"
+    },
+    {
+      "line": 37,
+      "kind": "code",
+      "text": "```"
+    },
+    {
+      "line": 39,
+      "kind": "heading",
+      "text": "## [Why do video games use kernel-mode anti-cheats?](https://malwaresourcecode.com/home/my-projects/write-ups/why-do-video-games-use-kernel-mode-anti-cheats)"
+    },
+    {
+      "line": 45,
+      "kind": "heading",
+      "text": "## [Why LLMs Can't Really Build Software](https://zed.dev/blog/why-llms-cant-build-software)"
+    },
+    {
+      "line": 51,
+      "kind": "heading",
+      "text": "## [The Java Type System is Broken](https://wouter.coekaerts.be/2018/java-type-system-broken)"
+    },
+    {
+      "line": 57,
+      "kind": "heading",
+      "text": "## [The Pragmatic Engineer 2025 Survey: What's in your tech stack? Part 2](https://newsletter.pragmaticengineer.com/p/the-pragmatic-engineer-2025-survey-part-2)"
+    },
+    {
+      "line": 63,
+      "kind": "heading",
+      "text": "## [Why do software developers love complexity?](https://kyrylo.org/software/2025/08/21/why-do-software-developers-love-complexity.html)"
+    },
+    {
+      "line": 69,
+      "kind": "heading",
+      "text": "## [The Important Things in Life](https://hamvocke.com/blog/important-things/)"
+    },
+    {
+      "line": 75,
+      "kind": "heading",
+      "text": "## Bonus: Vài ảnh hay ho đến từ [ByteByteGo](https://bytebytego.com/)"
+    },
+    {
+      "line": 77,
+      "kind": "asset",
+      "text": "![How Does SSO Work?](https://substack-post-media.s3.amazonaws.com/public/images/4bf62d5c-e538-4fba-8d4f-aa00d0bd064a_3000x3900.png)"
+    },
+    {
+      "line": 78,
+      "kind": "asset",
+      "text": "![Best Practices in API Design](https://substack-post-media.s3.amazonaws.com/public/images/e249b1bd-134e-4242-ac16-1d50daf804d3_3000x3900.png)"
+    },
+    {
+      "line": 79,
+      "kind": "asset",
+      "text": "![Top Strategies For Reliability and Fault Tolerance](https://substack-post-media.s3.amazonaws.com/public/images/82b8257a-93c3-4861-b211-88d57b12bc93_2250x2624.png)"
+    },
+    {
+      "line": 81,
+      "kind": "heading",
+      "text": "## Bonus: Một vài video thú vị"
+    },
+    {
+      "line": 83,
+      "kind": "asset",
+      "text": "[Vibes won't cut it — Chris Kelly, Augment Code](https://www.youtube.com/watch?v=Dc3qOA9WOnE)"
+    },
+    {
+      "line": 84,
+      "kind": "asset",
+      "text": "[these coding blogs will make you a better programmer](https://www.youtube.com/watch?v=Z3fwe6AAgaM)"
+    },
+    {
+      "line": 86,
+      "kind": "heading",
+      "text": "## Bonus: Một vài repository thú vị"
+    },
+    {
+      "line": 88,
+      "kind": "asset",
+      "text": "[Computer science foundation/ Interview preparation/ Junior to Senior Developer](https://github.com/bansalankit92/java-spring-fullstack-interview-question-answers)"
+    },
+    {
+      "line": 90,
+      "kind": "heading",
+      "text": "## Bonus: Một vài sách thú vị"
+    },
+    {
+      "line": 92,
+      "kind": "asset",
+      "text": "[Java interview questions and answers - Boosting your java career](https://enos.itcollege.ee/~jpoial/allalaadimised/reading/Java-Interview-Questions.pdf)"
+    },
+    {
+      "line": 94,
+      "kind": "struck",
+      "text": "~~[Java Puzzlers - Traps, Pitfalls, and Corner Cases](https://github.com/shannonasmith/Java_books/blob/main/Java%20Puzzlers%20-%20Traps%2C%20Pitfalls%2C%20and%20Corner%20Cases%20(2005).pdf)~~"
+    }
+  ],
+  "candidates": [
+    {
+      "line": 47,
+      "kind": "first-person",
+      "text": "Conrad Irwin (Zed) rút ra từ kinh nghiệm phỏng vấn rằng kỹ sư phần mềm giỏi luôn lặp một vòng: xây dựng mô hình tư duy về yêu cầu, viết mã, xây dựng mô hình tư duy về những gì mã thực sự làm, rồi tìm khác biệt để sửa mã hoặc sửa yêu cầu. LLM viết mã khá tốt và cũng biết đọc mã, chạy kiểm thử, thêm log, nhưng không duy trì được mô hình tư duy rõ ràng: chúng mặc định mã mình viết là đúng, khi kiểm thử thất bại thì đoán mò nên sửa mã hay sửa bài kiểm thử, và khi bế tắc thì xóa hết làm lại. Nguyên nhân là mô hình kém trong việc nhận ra ngữ cảnh bị thiếu, thiên lệch mạnh về thông tin gần nhất trong cửa sổ ngữ cảnh và hay bịa ra chi tiết, trong khi con người biết tạm gác ngữ cảnh để tập trung gỡ một vấn đề rồi quay lại bức tranh lớn."
+    }
+  ]
+}

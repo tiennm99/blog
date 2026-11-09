@@ -21,7 +21,7 @@ Dòng đầu tiên là phần quan trọng nhất vì nó hiện ra trong `git l
 
 ## [The Rotation Program That Keeps This Startup's Engineers Learning — and Not Leaving](https://review.firstround.com/the-rotation-program-that-keeps-this-startups-engineers-learning-and-not-leaving/)
 
-Bài phỏng vấn của First Round Review với Krista Moroder, Phó chủ tịch phụ trách kỹ thuật tại Checkr, kể về chương trình luân chuyển đã giúp giữ tỷ lệ nghỉ việc trong tổ chức của bà gần như bằng 0. Từng là giáo viên, Moroder mang theo một bài học từ phòng giáo viên: dán nhãn cạnh tên những học sinh có thầy cô đồng hành để phát hiện em nào đang bị bỏ sót. Bà tái hiện ý tưởng này bằng một bảng tính theo dõi từng kỹ sư, vì theo bà, kỹ sư rời đi sau hai, ba năm thường không chỉ vì cổ phần mà vì chán khi ngừng học hỏi, và nỗi sợ tụt hậu trước làn sóng AI càng làm điều đó rõ hơn.
+Bài phỏng vấn tháng 2/2025 của First Round Review với Krista Moroder, khi đó phụ trách kỹ thuật tại Checkr, kể về chương trình luân chuyển nhằm giúp kỹ sư tiếp tục học hỏi và gắn bó với công ty. Từng là giáo viên, Moroder mang theo một bài học từ phòng giáo viên: đánh dấu những học sinh được thầy cô quan tâm để phát hiện ai đang bị bỏ sót. Bà áp dụng ý tưởng này bằng bảng tính theo dõi cơ hội phát triển của từng kỹ sư. Theo bà, người làm lâu năm có thể muốn rời đi vì ngừng học hỏi, bên cạnh những yếu tố như cổ phần hay lo ngại tụt hậu về công nghệ.
 
 Chương trình gồm ba bước: lập bảng "nhãn dán" với ba cột (tham gia luân chuyển hoặc nhóm đặc nhiệm liên phòng ban, từng làm ở nhiều nhóm, được đào tạo cho vai trò mới) với mục tiêu mỗi kỹ sư có ít nhất một ô được đánh dấu trước năm thứ ba; đối chiếu bảng với các ưu tiên hằng quý để điều người sang nơi cần; và trao đổi kỹ trước khi chuyển hẳn. Khoảng một nửa số lượt luân chuyển kết thúc bằng việc ở lại nhóm mới, và một nhóm đặc nhiệm về AI đã trở thành nhóm chính thức. Để thuyết phục các quản lý chịu nhường người giỏi nhất, bà lập luận rằng không thể thiếu ai đó là dấu hiệu của vấn đề kế nhiệm, và cả tổ chức cần cùng đạt điểm A. Kết quả: khoảng 60% kỹ sư từ cấp staff trở lên đã gắn bó từ sáu năm trở lên.
 
@@ -57,15 +57,15 @@ Khi buộc phải đánh giá bằng văn bản, mỗi bình luận nên làm t�
 
 ## [Hash Functions Deep Dive](https://www.kirupa.com/data_structures_algorithms/hash_functions_deep_dive.htm)
 
-Kirupa giải thích hàm băm (hash function) từ nền tảng: đó là hàm nhận đầu vào bất kỳ như văn bản, tệp hay dữ liệu nhị phân và trả về đầu ra có độ dài cố định, được dùng trong lưu trữ và truy xuất dữ liệu, xác thực mật khẩu, kiểm tra tính toàn vẹn tệp, chữ ký số hay loại bỏ dữ liệu trùng lặp. Một hàm băm tốt cần đáp ứng tám tiêu chí: tất định (cùng đầu vào luôn cho cùng đầu ra), phân bố đều, tính toán nhanh (thường là O(1)), hiệu ứng tuyết lở (thay đổi nhỏ ở đầu vào làm đầu ra thay đổi lớn), kích thước đầu ra cố định, ít va chạm, khó đảo ngược và không có tương quan giữa các đầu vào giống nhau.
+Kirupa giới thiệu hàm băm qua các ví dụ chuyển chuỗi đầu vào thành giá trị có kích thước cố định. Bài trình bày tính tất định, phân bố đầu ra, va chạm và hiệu ứng tuyết lở, rồi minh họa bằng cách cộng mã ký tự. Ví dụ "hello" và "olleh" cho cùng kết quả cho thấy cách làm đơn giản dễ mất thông tin về thứ tự; thêm trọng số chỉ khắc phục được một phần.
 
-Để minh họa, tác giả tự xây dựng một hàm băm bằng JavaScript: cộng mã ký tự của chuỗi rồi giới hạn kết quả theo kích thước bảng là một số nguyên tố như 37. Hàm này nhanh chóng lộ điểm yếu khi "hello" và "olleh" cho cùng một kết quả; thêm trọng số theo vị trí ký tự giúp khắc phục trường hợp đó, nhưng nó vẫn trượt gần hết các tiêu chí. Bài học rút ra là hãy luôn dùng một hàm băm có sẵn; tác giả lấy MD5 để đối chiếu với từng tiêu chí, với đầu ra 128 bit, tương đương 32 ký tự thập lục phân. Hàm băm hiện diện ở khắp nơi, từ bảng băm tốc độ cao đến việc bảo vệ mật khẩu và xác minh tệp tải về.
+Cần phân biệt yêu cầu của bảng băm với hàm băm mật mã: tính khó đảo ngược và chống va chạm về mặt bảo mật không phải yêu cầu của mọi hàm băm. Cũng không nên coi thời gian băm chuỗi là O(1) theo độ dài đầu vào; ví dụ phải duyệt các ký tự. MD5 trong bài có đầu ra 128 bit, nhưng đã không còn phù hợp khi cần chống va chạm. Lưu mật khẩu cần thuật toán chuyên dụng, thay vì chọn một hàm băm nhanh chỉ vì nó phổ biến.
 
 ## [XOR: A Deep Dive into the Exclusive OR Operation](https://www.chiark.greenend.org.uk/~sgtatham/quasiblog/xor/)
 
 Simon Tatham phân tích sâu về phép toán XOR (hoặc loại trừ) và các ứng dụng của nó trong khoa học máy tính. Về cơ bản, XOR cho kết quả 1 khi hai bit đầu vào khác nhau và 0 khi chúng giống nhau, đồng thời có tính giao hoán và kết hợp. Tác giả đưa ra nhiều cách hiểu tương đương về phép toán này: phép so sánh "không bằng" giữa hai bit, phép đảo bit có điều kiện, phép cộng theo modulo 2, và phép tính chẵn lẻ của số bit 1.
 
-Từ những tính chất đó, bài viết đi qua các ứng dụng thực tế. Trong mật mã học, XOR được dùng để kết hợp bản rõ với dòng khóa, tạo ra cách mã hóa đơn giản mà hiệu quả và là thành phần của nhiều hệ thống mã hóa phức tạp hơn. Trong đồ họa, XOR giúp vẽ và xóa điểm ảnh dễ dàng. Ngoài ra còn có những mẹo quen thuộc như hoán đổi giá trị hai biến mà không cần biến tạm, tính trung bình hai số nguyên hay thực hiện phép cộng không nhớ.
+Từ những tính chất đó, bài viết đi qua nhiều ứng dụng. Trong mật mã học, XOR kết hợp bản rõ với dòng khóa; phần khó nằm ở việc tạo dòng khóa phù hợp, và cơ chế này riêng lẻ chưa bảo vệ tính toàn vẹn thông điệp. Trong đồ họa, áp dụng XOR lần nữa giúp hoàn tác thay đổi điểm ảnh. Tác giả còn giải thích hoán đổi giá trị hai biến, tính trung bình hai số nguyên và phép cộng không nhớ, cho thấy cùng một phép toán có thể được hiểu theo nhiều góc nhìn.
 
 ## Bonus: Vài ảnh hay ho đến từ [ByteByteGo](https://bytebytego.com/)
 
@@ -79,4 +79,4 @@ Từ những tính chất đó, bài viết đi qua các ứng dụng thực t�
 
 ---
 
-*Bài viết đã được viết lại bởi Claude Code với Opus 5.5 vào ngày 27/09/2026.*
+*Bài viết đã được viết lại bởi Claude Code với Opus 5.5 vào ngày 27/09/2026; được review và chỉnh sửa bởi Codex với GPT 6.1 Sol vào ngày 09/11/2026.*

@@ -1,0 +1,85 @@
+{
+  "post": "content/post/2025/07/29/index.md",
+  "newsletter": 39,
+  "newsletter_post": true,
+  "note": "*Bài viết đã được viết lại bởi Claude Code với Opus 5.5 vào ngày 27/09/2026.*",
+  "lines": [
+    {
+      "line": 1,
+      "kind": "frontmatter",
+      "text": "---"
+    },
+    {
+      "line": 2,
+      "kind": "frontmatter",
+      "text": "title: \"Newsletter #39\""
+    },
+    {
+      "line": 3,
+      "kind": "frontmatter",
+      "text": "date: 2025-07-29"
+    },
+    {
+      "line": 4,
+      "kind": "frontmatter",
+      "text": "tags: [\"AI-Assisted\", \"Java\", \"Interview\", \"Prompt Engineering\", \"MCP\", \"PostgreSQL\", \"Refactoring\"]"
+    },
+    {
+      "line": 5,
+      "kind": "frontmatter",
+      "text": "categories: [\"Newsletter\"]"
+    },
+    {
+      "line": 6,
+      "kind": "frontmatter",
+      "text": "---"
+    },
+    {
+      "line": 8,
+      "kind": "italic-note",
+      "text": "*Mời bạn thưởng thức Newsletter #39.*"
+    },
+    {
+      "line": 10,
+      "kind": "heading",
+      "text": "## [100+ Senior Java Developer Interview Questions and Answers – 2025 Edition](https://dev.to/haraf/100-senior-java-developer-interview-questions-and-answers-2025-edition-4f6n)"
+    },
+    {
+      "line": 16,
+      "kind": "heading",
+      "text": "## [The Prompt Engineering Playbook for Programmers](https://addyo.substack.com/p/the-prompt-engineering-playbook-for)"
+    },
+    {
+      "line": 22,
+      "kind": "heading",
+      "text": "## [Why Your AI Coding Assistant Keeps Doing It Wrong, and How To Fix It](https://blog.thepete.net/blog/2025/05/22/why-your-ai-coding-assistant-keeps-doing-it-wrong-and-how-to-fix-it/)"
+    },
+    {
+      "line": 28,
+      "kind": "heading",
+      "text": "## [Why AI Agents Need a New Protocol](https://glama.ai/blog/2025-06-06-mcp-vs-api)"
+    },
+    {
+      "line": 34,
+      "kind": "heading",
+      "text": "## [Understanding logical replication in Postgres](https://www.springtail.io/blog/postgres-logical-replication)"
+    },
+    {
+      "line": 40,
+      "kind": "heading",
+      "text": "## [One Man Armies](https://quarter--mile.com/One-Man-Armies)"
+    },
+    {
+      "line": 46,
+      "kind": "heading",
+      "text": "## [What's the relationship between developer seniority and code refactoring?](https://rdel.substack.com/p/rdel-96-whats-the-relationship-between)"
+    }
+  ],
+  "candidates": [
+    {
+      "line": 14,
+      "kind": "first-person",
+      "text": "Ba phần còn lại gồm 20 câu về mẫu thiết kế (Singleton, Factory, Strategy, Builder, Observer, Proxy, Adapter), 15 câu về thuật toán và cấu trúc dữ liệu (độ phức tạp, sắp xếp, tìm kiếm, duyệt đồ thị, Trie, bộ nhớ đệm LRU) và 15 câu về SQL và cơ sở dữ liệu (phép JOIN, chuẩn hóa, chỉ mục, tính chất ACID, tính nhất quán trong hệ phân tán). Điểm đáng giá là các câu hỏi bám vào tình huống thực tế thay vì cú pháp đơn thuần. Với lập trình viên trẻ, đây là một bản đồ tốt để biết mình còn thiếu mảng kiến thức nào trước khi hướng tới vị trí cấp cao."
+    }
+  ]
+}

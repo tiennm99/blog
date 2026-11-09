@@ -27,9 +27,9 @@ gingerBill, tác giả ngôn ngữ Odin, lập luận rằng công cụ tốt ph
 
 ## [Mysteries of Telegram DC](https://dev.moe/en/3025)
 
-Coxxs điều tra năm trung tâm dữ liệu (DC1–DC5) của Telegram: DC1 và DC3 đặt tại Miami, DC2 và DC4 tại Amsterdam, DC5 tại Singapore. Mỗi tài khoản gắn với một DC ngay lúc đăng ký, không đổi theo số điện thoại hay vị trí và không được tự chọn. Một bot thống kê từng cho thấy DC2 và DC3 không có ai, dẫn tới suy đoán rằng chúng chỉ là DC phụ. Tác giả thử cả ba cách xác định DC phổ biến trên một tài khoản DC2 mới: gọi `auth.sendCode` qua giao thức MTProto và đọc lỗi `PHONE_MIGRATE_2`, đọc trường `dc_id` trong siêu dữ liệu ảnh đại diện, và phân tích tên miền Web CDN. Cách thứ ba cho kết quả sai, vì DC2 và DC3 "mượn" tên miền của DC4 và DC1 cùng địa điểm để phục vụ Web CDN, nên người dùng DC2 đều bị nhận nhầm thành DC4 — chính là lỗi của con bot kia.
+Coxxs điều tra cách Telegram phân bổ tài khoản vào các trung tâm dữ liệu, dựa trên quan sát năm 2022. Tác giả nhận thấy cách suy ra trung tâm từ tên miền phục vụ nội dung web có thể nhầm DC2 thành DC4, vì hai nơi dùng chung hạ tầng tên miền. Lỗi này khiến một bot thống kê tưởng rằng DC2 không có người dùng.
 
-Kết luận là DC1, DC2, DC4 và DC5 được phân bổ theo mã quốc gia của số điện thoại lúc đăng ký (chẳng hạn +49 của Đức vào DC2) và đều có rất nhiều người dùng. Ngược lại, DC3 dù vẫn hoạt động nhưng gần như không còn ai: tác giả chỉ tìm được hai tài khoản DC3, và ảnh cũ nằm trên DC3 còn ảnh mới nằm trên DC1 cho thấy chúng đã được chuyển sang DC1 khoảng năm 2020. Kiểm tra hơn 10.000 số điện thoại khắp thế giới bằng phương pháp đăng nhập cũng xác nhận DC3 không nhận người dùng mới. Bài viết kèm bảng tra DC theo mã quốc gia, và tác giả lưu ý nhiều kết luận chỉ là suy đoán vì máy chủ Telegram không mã nguồn mở.
+Qua lỗi chuyển hướng khi đăng nhập và siêu dữ liệu tệp, tác giả suy luận DC2 vẫn nhận tài khoản, còn người dùng DC3 có thể đã chuyển sang DC1. Những kết luận này dựa trên mẫu quan sát, không phải mô tả nội bộ được Telegram xác nhận. Đặc biệt, không nên coi nhận định tài khoản không bao giờ đổi trung tâm là quy tắc vĩnh viễn: cơ chế phân bổ và chuyển vùng có thể thay đổi. Bài học là cần hiểu tín hiệu mình đo trước khi dùng nó để suy ra kiến trúc hệ thống.
 
 ## [How I use HTMX with Go](https://www.alexedwards.net/blog/how-i-use-htmx-with-go)
 
@@ -45,9 +45,9 @@ Khó khăn là với trình biên dịch, câu `if` này hoàn toàn vô dụng 
 
 ## [Reverse Engineering ChatGPT Web: How OpenAI Built for a Billion Users](https://performance.dev/chatgpt)
 
-Dennis Brotzky phân tích từ bên ngoài kiến trúc web của ChatGPT, trang phục vụ khoảng một tỉ người. Điểm nổi bật đầu tiên là sự "bình thường": React 19 với React Router 7, TanStack Query, Tailwind CSS và Radix UI, gần như không có khung tự chế. Ứng dụng ra mắt tháng 11/2022 trên Next.js, chuyển sang Remix năm 2024 rồi theo Remix hợp nhất vào React Router 7. Để phục vụ mọi người trên mọi thiết bị, trang dùng kết xuất phía máy chủ theo luồng với các ranh giới Suspense: tài liệu khi chưa đăng nhập chỉ nặng 84 KB sau nén, thời gian trả byte đầu tiên 50–65 mili giây, và 556 cổng tính năng, 144 cấu hình cùng 192 thử nghiệm được tính sẵn phía máy chủ rồi nhúng vào tài liệu. Họ không dùng phông chữ web mà dựa vào phông hệ thống, tách CSS theo tính năng, và toàn bộ quá trình khởi động gồm 160 phần mã có băm nội dung được sắp xếp quanh một câu hỏi duy nhất: người dùng gõ được vào khung soạn tin chưa — có hẳn cờ `deferStartupImportsUntilComposerTTFI` cho việc này.
+Dennis Brotzky khảo sát HTML, mã tải xuống và lưu lượng mạng của ChatGPT vào tháng 7/2026. Đây là phân tích từ bên ngoài, không phải tài liệu kiến trúc do OpenAI công bố hay phép đo đại diện cho mọi người dùng. Tác giả nhận diện các công nghệ quen thuộc như React, React Router, TanStack Query và các thư viện hiển thị nội dung.
 
-Kỹ thuật thật sự được dồn vào phần câu trả lời: khung soạn tin là trình soạn thảo ProseMirror, khối mã là CodeMirror, công thức toán dùng KaTeX kèm cây MathML ẩn cho trình đọc màn hình. Ngay lúc tải trang, thử thách proof-of-work của Cloudflare và hệ thống chống lạm dụng Sentinel đã chạy ngầm, còn khách chưa đăng nhập vẫn được cấp định danh ẩn danh thật để giới hạn tần suất mà không cần rào đăng nhập. Họ đo thời điểm sẵn sàng tương tác cho mọi người dùng: không đo được thì không cải thiện được.
+Điểm đáng chú ý là cách ưu tiên thời gian người dùng có thể nhập câu hỏi: kết xuất phía máy chủ, trì hoãn phần mã chưa cần, tách tài nguyên theo tính năng và chuẩn bị cấu hình trước khi giao diện hoạt động. Câu trả lời còn đòi hỏi xử lý mã nguồn, công thức toán và nội dung truyền dần. Các kích thước tải xuống, thời gian phản hồi và số cờ tính năng trong bài là ảnh chụp tại thời điểm khảo sát; không nên hiểu là bảo đảm hiệu năng hoặc số lượng cố định của sản phẩm.
 
 ## [Broker-Visible vs Client-Local Parallelism](https://jack-vanlightly.com/blog/2026/6/3/broker-visible-vs-client-local-parallelism)
 
@@ -77,4 +77,4 @@ Phần đáng học nhất là khó khăn trên môi trường thật: consumer 
 
 ---
 
-*Bài viết đã được viết lại bởi Claude Code với Opus 5.5 vào ngày 27/09/2026.*
+*Bài viết đã được viết lại bởi Claude Code với Opus 5.5 vào ngày 27/09/2026; được review và chỉnh sửa bởi Codex với GPT 6.1 Sol vào ngày 09/11/2026.*

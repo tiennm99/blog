@@ -1,0 +1,120 @@
+{
+  "post": "content/post/2025/08/05/index.md",
+  "newsletter": 46,
+  "newsletter_post": true,
+  "note": "*Bài viết đã được viết lại bởi Claude Code với Opus 5.5 vào ngày 27/09/2026.*",
+  "lines": [
+    {
+      "line": 1,
+      "kind": "frontmatter",
+      "text": "---"
+    },
+    {
+      "line": 2,
+      "kind": "frontmatter",
+      "text": "title: \"Newsletter #46\""
+    },
+    {
+      "line": 3,
+      "kind": "frontmatter",
+      "text": "date: 2025-08-05"
+    },
+    {
+      "line": 4,
+      "kind": "frontmatter",
+      "text": "tags: [ \"AI-Assisted\", \"Survey\", \"Tech Stack\", \"AI Tools\", \"Distributed Systems\", \"TDD\", \"OOP\" ]"
+    },
+    {
+      "line": 5,
+      "kind": "frontmatter",
+      "text": "categories: [ \"Newsletter\" ]"
+    },
+    {
+      "line": 6,
+      "kind": "frontmatter",
+      "text": "---"
+    },
+    {
+      "line": 8,
+      "kind": "italic-note",
+      "text": "*~~Bài viết này sẽ quay lại dùng Claude Code nha :D (chân ái là đây, chỉ khi nào ngại tốn token mới phải nhảy sang agent khác).~~ Mời bạn thưởng thức Newsletter #46.*"
+    },
+    {
+      "line": 10,
+      "kind": "heading",
+      "text": "## [The Pragmatic Engineer 2025 Survey: What's in your tech stack?](https://newsletter.pragmaticengineer.com/p/the-pragmatic-engineer-2025-survey)"
+    },
+    {
+      "line": 16,
+      "kind": "heading",
+      "text": "## [Algorithms for making interesting organic simulations](https://bleuje.com/physarum-explanation/)"
+    },
+    {
+      "line": 22,
+      "kind": "heading",
+      "text": "## [AI coding tools are shifting to a surprising place: The terminal](https://techcrunch.com/2025/07/15/ai-coding-tools-are-shifting-to-a-surprising-place-the-terminal/)"
+    },
+    {
+      "line": 28,
+      "kind": "heading",
+      "text": "## [Distributed Systems Reliability Glossary](https://antithesis.com/resources/reliability_glossary/)"
+    },
+    {
+      "line": 34,
+      "kind": "heading",
+      "text": "## [Test-Driven Development (TDD) with dbt](https://xebia.com/blog/test-driven-development-tdd-with-dbt/)"
+    },
+    {
+      "line": 40,
+      "kind": "heading",
+      "text": "## [Rethinking OOP](https://max.xz.ax/blog/rethinking-oop/)"
+    },
+    {
+      "line": 46,
+      "kind": "heading",
+      "text": "## ~~[How I Write Code That I Don't Hate Reading a Week Later](https://dev.to/resource_bunk_1077cab07da/how-i-write-code-that-i-dont-hate-reading-a-week-later-303b)~~"
+    },
+    {
+      "line": 48,
+      "kind": "struck",
+      "text": "~~Một bài viết thực tế và hữu ích về cách viết mã dễ đọc - một kỹ năng quan trọng mà nhiều lập trình viên thường bỏ qua. Tác giả chia sẻ triết lý cốt lõi: \"Viết mã như thể bạn sẽ phải debug nó lúc 2 giờ sáng, trong trạng thái buồn ngủ, với deadline cận kề.\"~~"
+    },
+    {
+      "line": 50,
+      "kind": "struck",
+      "text": "~~Các nguyên tắc chính bao gồm: đặt tên biến và hàm mô tả rõ ràng (ví dụ `parsed_user_profile_data` thay vì chỉ `d`), viết comment giải thích \"tại sao\" thay vì \"cái gì\", ưu tiên tính dễ đọc hơn là \"sự thông minh\" của mã. Thay vì viết những dòng mã phức tạp để khoe kỹ thuật, hãy tách chúng thành nhiều dòng dễ hiểu hơn.~~"
+    },
+    {
+      "line": 52,
+      "kind": "struck",
+      "text": "~~Điểm hay nhất là nguyên tắc viết hàm nhỏ và tập trung: mỗi hàm chỉ làm một việc cụ thể với tên mô tả rõ ràng như `handleLoginFormSubmission()`. Khi mã trở nên rối rắm, hãy dừng lại và tái cấu trúc thay vì cứ thêm độ phức tạp. Tác giả cũng giới thiệu các công cụ hỗ trợ như Prettier, Black cho Python, và thậm chí ChatGPT để giúp tái cấu trúc mã. Đây là những lời khuyên đơn giản nhưng cực kỳ thực tế cho bất kỳ lập trình viên nào muốn code của mình dễ bảo trì hơn.~~"
+    },
+    {
+      "line": 54,
+      "kind": "heading",
+      "text": "## [7 Habits That Quietly Made Me A 10x Developer (No, Not ChatGPT)](https://dev.to/abubakersiddique771/7-habits-that-quietly-made-me-a-10x-developer-no-not-chatgpt-13c4)"
+    },
+    {
+      "line": 60,
+      "kind": "italic-note",
+      "text": "*Claude Code thật sự là chân ái :D Xử lý nhanh, tóm tắt gọn, càng ngày càng tốt. Thật tuyệt vời!*"
+    }
+  ],
+  "candidates": [
+    {
+      "line": 24,
+      "kind": "first-person",
+      "text": "Theo TechCrunch, các công cụ lập trình bằng AI đang dịch chuyển từ trình soạn thảo mã nguồn sang terminal. Kể từ tháng 2, Anthropic, DeepMind và OpenAI lần lượt ra mắt công cụ dòng lệnh của mình (Claude Code, Gemini CLI và Codex CLI), và chúng nhanh chóng trở thành những sản phẩm được ưa chuộng nhất của các công ty này. Mike Merrill, đồng tác giả benchmark Terminal-Bench, đặt cược rằng trong tương lai 95% tương tác giữa LLM và máy tính sẽ diễn ra qua giao diện kiểu terminal. Trong khi đó, nhóm công cụ dựa trên trình soạn thảo lại có dấu hiệu chững lại: Windsurf bị chia cắt sau các thương vụ thâu tóm, còn một nghiên cứu của METR cho thấy lập trình viên dùng Cursor Pro tưởng mình nhanh hơn 20–30% nhưng thực tế lại chậm hơn gần 20%."
+    },
+    {
+      "line": 56,
+      "kind": "first-person",
+      "text": "Bài viết cho rằng trở thành \"lập trình viên 10x\" không nằm ở tài năng bẩm sinh hay làm việc 20 tiếng mỗi ngày, mà ở những thói quen nhỏ được duy trì đều đặn, không cần đến trợ lý AI. Thói quen đầu tiên là viết mã nguồn để sinh ra mã nguồn: dùng script, generator và công cụ scaffolding để tự động hóa phần khung, các endpoint CRUD, khung kiểm thử hay workflow GitHub Actions, để không phải giải cùng một bài toán hai lần. Thứ hai là thiết kế cho \"bản thân trong tương lai\" với commit message mô tả rõ, tên hàm dễ hiểu, cấu trúc thư mục hợp lý và viết README.md trước khi bắt tay xây dựng. Thứ ba là ghi một \"nhật ký debug\" ngắn gồm vấn đề, giả thuyết và kế hoạch trước khi sửa lỗi, vì viết ra buộc mình suy nghĩ rõ ràng."
+    },
+    {
+      "line": 58,
+      "kind": "first-person",
+      "text": "Các thói quen còn lại gồm tự làm những công cụ nhỏ cho riêng mình (CLI đổi tên ảnh chụp màn hình, trình sinh snippet), dành các khối 90 phút tập trung sâu không Slack hay mạng xã hội, học cách người khác tổ chức quy trình làm việc chứ không chỉ sao chép mã nguồn, và tự nhìn lại mỗi thứ Sáu với ba câu hỏi: điều gì tốt, điều gì làm mình chậm lại, và sẽ tự động hóa hay cải thiện gì tiếp theo. Theo tác giả, hiệu quả \"10x\" là kết quả cộng dồn của nhiều cải tiến nhỏ theo thời gian."
+    }
+  ]
+}

@@ -1,0 +1,129 @@
+{
+  "post": "content/post/2026/07/08/index.md",
+  "newsletter": 120,
+  "newsletter_post": true,
+  "note": "*Bài viết đã được viết lại bởi Claude Code với Opus 5.5 vào ngày 27/09/2026.*",
+  "lines": [
+    {
+      "line": 1,
+      "kind": "frontmatter",
+      "text": "---"
+    },
+    {
+      "line": 2,
+      "kind": "frontmatter",
+      "text": "title: \"Newsletter #120\""
+    },
+    {
+      "line": 3,
+      "kind": "frontmatter",
+      "text": "date: 2026-07-08"
+    },
+    {
+      "line": 4,
+      "kind": "frontmatter",
+      "text": "tags: [\"AI-Assisted\", \"Newsletter\", \"AI Agents\", \"Go\", \"Java\", \"Performance\", \"Security\"]"
+    },
+    {
+      "line": 5,
+      "kind": "frontmatter",
+      "text": "categories: [\"Newsletter\"]"
+    },
+    {
+      "line": 6,
+      "kind": "frontmatter",
+      "text": "---"
+    },
+    {
+      "line": 8,
+      "kind": "italic-note",
+      "text": "*Mời bạn thưởng thức Newsletter #120.*"
+    },
+    {
+      "line": 10,
+      "kind": "heading",
+      "text": "## [Lessons from building Claude Code: How we use skills](https://claude.com/blog/lessons-from-building-claude-code-how-we-use-skills)"
+    },
+    {
+      "line": 16,
+      "kind": "heading",
+      "text": "## [Bulkhead Pattern - Go](https://dev.to/kamal_namdeo/bulkhead-pattern-go-362c)"
+    },
+    {
+      "line": 22,
+      "kind": "heading",
+      "text": "## [Max Consecutive Ones](https://dev.to/jaspreet_singh_86ae1740ac/max-consecutive-ones-13mj)"
+    },
+    {
+      "line": 28,
+      "kind": "heading",
+      "text": "## [double, BigDecimal, or Fixed-Point?](https://blog.frankel.ch/bigdecimal-vs-double/)"
+    },
+    {
+      "line": 34,
+      "kind": "heading",
+      "text": "## [Can Java Microservices Be As Fast As Go? A 2026 Benchmark Update](https://medium.com/helidon/can-java-microservices-be-as-fast-as-go-a-2026-benchmark-update-e16a2e262fc4)"
+    },
+    {
+      "line": 40,
+      "kind": "heading",
+      "text": "## [Stop Using Conventional Commits](https://sumnerevans.com/posts/software-engineering/stop-using-conventional-commits/)"
+    },
+    {
+      "line": 46,
+      "kind": "heading",
+      "text": "## [Stop using JWTs!](https://gist.github.com/samsch/0d1f3d3b4745d778f78b230cf6061452)"
+    },
+    {
+      "line": 52,
+      "kind": "heading",
+      "text": "### Bonus"
+    },
+    {
+      "line": 54,
+      "kind": "asset",
+      "text": "**Images:**"
+    },
+    {
+      "line": 55,
+      "kind": "asset",
+      "text": "![The AI Agent Stack, Explained](https://substackcdn.com/image/fetch/$s_!N2N1!,w_1100,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F5edb76e4-d060-48d2-bd73-afe04f1cff5a_1284x1536.jpeg)"
+    },
+    {
+      "line": 56,
+      "kind": "asset",
+      "text": "![Understanding Git Reset Modes](https://substackcdn.com/image/fetch/$s_!wI2g!,w_1100,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F148840a3-d7df-4308-adad-c227f4d280e8_2360x2960.png)"
+    },
+    {
+      "line": 57,
+      "kind": "asset",
+      "text": "![How NAT Works](https://substackcdn.com/image/fetch/$s_!CKOS!,w_1100,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F8d2521b0-1dd8-4b28-afbd-34f2bb44ee50_2360x2960.png)"
+    },
+    {
+      "line": 58,
+      "kind": "asset",
+      "text": "![SLMs vs. LLMs, Clearly Explained](https://substackcdn.com/image/fetch/$s_!HMwY!,w_1100,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F6af9e24b-9be2-4a45-9f81-14ec6f4330ca_2484x3002.png)"
+    },
+    {
+      "line": 59,
+      "kind": "asset",
+      "text": "![Single Agent vs. Multi-Agent Architecture](https://substackcdn.com/image/fetch/$s_!Z5zI!,w_1100,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F5233378c-3c59-40b1-9de2-6515b9d3e928_2484x3002.png)"
+    },
+    {
+      "line": 60,
+      "kind": "asset",
+      "text": "![7 Permission Modes Every Claude Code User Should Know](https://substackcdn.com/image/fetch/$s_!U8C6!,w_1100,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F1b849efb-0467-4a5d-b735-f2296b125e9f_2484x3002.png)"
+    },
+    {
+      "line": 62,
+      "kind": "asset",
+      "text": "**Videos:**"
+    },
+    {
+      "line": 63,
+      "kind": "asset",
+      "text": "[Chạy LLM cục bộ để học và bảo vệ quyền riêng tư](https://www.youtube.com/watch?v=U8lGbSaCCYI)"
+    }
+  ],
+  "candidates": []
+}

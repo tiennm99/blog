@@ -1,0 +1,184 @@
+{
+  "post": "content/post/2025/07/21/index.md",
+  "newsletter": 32,
+  "newsletter_post": true,
+  "note": "*Bài viết đã được viết lại bởi Claude Code với Opus 5.5 vào ngày 27/09/2026.*",
+  "lines": [
+    {
+      "line": 1,
+      "kind": "frontmatter",
+      "text": "---"
+    },
+    {
+      "line": 2,
+      "kind": "frontmatter",
+      "text": "title: \"Newsletter #32\""
+    },
+    {
+      "line": 3,
+      "kind": "frontmatter",
+      "text": "date: 2025-07-21"
+    },
+    {
+      "line": 4,
+      "kind": "frontmatter",
+      "text": "tags: [\"AI-Assisted\", \"Claude Code\", \"AI Coding\", \"Windsurf\", \"Vibe Coding\", \"Web Development\", \"Software Architecture\"]"
+    },
+    {
+      "line": 5,
+      "kind": "frontmatter",
+      "text": "categories: [\"Newsletter\"]"
+    },
+    {
+      "line": 6,
+      "kind": "frontmatter",
+      "text": "draft: false"
+    },
+    {
+      "line": 7,
+      "kind": "frontmatter",
+      "text": "---"
+    },
+    {
+      "line": 9,
+      "kind": "italic-note",
+      "text": "*Đã lâu rồi mình không viết bài. Và thú thật thì những newsletter dạo trước hơi kiểu \"chạy KPI\", ~~mình cứ cố cho rất nhiều link vào và để AI Agent làm nốt phần còn lại~~. Lần này mình sẽ chọn lọc bài kĩ hơn, ~~còn viết thì vẫn để AI thôi, vì mình lười hehe =)))~~. Mong các bạn sẽ thích. Chào mừng bạn đến với Newsletter #31.*"
+    },
+    {
+      "line": 11,
+      "kind": "heading",
+      "text": "## [Claude Code: Best Practices for Agentic Coding](https://code.claude.com/docs/en/best-practices)"
+    },
+    {
+      "line": 19,
+      "kind": "heading",
+      "text": "## [OpenAI, Windsurf, and the future of work](https://www.subtle.so/openai-windsurf-and-the-future-of-ai-workspaces.html)"
+    },
+    {
+      "line": 27,
+      "kind": "heading",
+      "text": "## [Vibe Coding is Not an Excuse for Low-Quality Work](https://addyo.substack.com/p/vibe-coding-is-not-an-excuse-for)"
+    },
+    {
+      "line": 35,
+      "kind": "heading",
+      "text": "## [Event-Hidden Architectures](https://skiplabs.io/blog/event-hidden-arch)"
+    },
+    {
+      "line": 43,
+      "kind": "heading",
+      "text": "## ~~[Lessons from Distributed Systems](https://www.16elt.com/2025/04/19/lessons-from-distributed-systems/)~~"
+    },
+    {
+      "line": 45,
+      "kind": "struck",
+      "text": "~~Bài viết từ 16elt.com chia sẻ những bài học thực tế từ việc xây dựng và vận hành distributed systems ở quy mô lớn. Tác giả tổng hợp những kinh nghiệm xương máu về các vấn đề thường gặp và cách giải quyết khi làm việc với hệ thống phân tán.~~"
+    },
+    {
+      "line": 47,
+      "kind": "struck",
+      "text": "~~**Điểm chính:**~~"
+    },
+    {
+      "line": 48,
+      "kind": "struck",
+      "text": "~~- Tách riêng cache clusters: tránh chia sẻ một cache cluster cho nhiều services vì workload nặng từ Service A có thể evict dữ liệu quan trọng của Service B, gây ra performance issues khó chẩn đoán~~"
+    },
+    {
+      "line": 49,
+      "kind": "struck",
+      "text": "~~- Sử dụng message queues: queues giúp quản lý traffic spikes và service load, cung cấp buffering và resilience giữa các services như \"một người trưởng thành có trách nhiệm\" ngăn chặn service overload~~"
+    },
+    {
+      "line": 50,
+      "kind": "struck",
+      "text": "~~- Đo lường end-to-end latency: không chỉ xem xét service response times mà còn cả \"dequeue latency\" - thời gian messages chờ trong queue trước khi được xử lý~~"
+    },
+    {
+      "line": 51,
+      "kind": "struck",
+      "text": "~~- Design for failure: expect và plan cho network và service failures tiềm tàng, implement retry policies, circuit breakers, dead-letter queues cho failed messages~~"
+    },
+    {
+      "line": 52,
+      "kind": "struck",
+      "text": "~~- Đảm bảo idempotency: assume message duplicates sẽ xảy ra, thiết kế hệ thống handle repeated events một cách graceful vì message queues guarantee 'at least once' delivery~~"
+    },
+    {
+      "line": 53,
+      "kind": "struck",
+      "text": "~~- Distributed systems đòi hỏi proactive design, robust monitoring và resilient architecture để quản lý complexity và potential failure points~~"
+    },
+    {
+      "line": 54,
+      "kind": "struck",
+      "text": "~~- Monitoring và observability là chìa khóa để hiểu được hành vi thực của hệ thống trong production environment~~"
+    },
+    {
+      "line": 58,
+      "kind": "heading",
+      "text": "## ~~[Better error handling](https://meowbark.dev/Better-error-handling)~~"
+    },
+    {
+      "line": 60,
+      "kind": "struck",
+      "text": "~~Bài viết từ meowbark.dev khám phá các phương pháp xử lý lỗi hiện đại trong software development, từ traditional try/catch cho đến các kỹ thuật tiên tiến như Go-style error handling và monadic Result types. Tác giả phân tích ưu nhược điểm của từng approach và đưa ra khuyến nghị về cách chọn lựa phương pháp phù hợp.~~"
+    },
+    {
+      "line": 62,
+      "kind": "struck",
+      "text": "~~**Điểm chính:**~~"
+    },
+    {
+      "line": 63,
+      "kind": "struck",
+      "text": "~~- Ba approaches chính cho error handling: traditional try/catch, Go-style return tuples, và monadic Result types~~"
+    },
+    {
+      "line": 64,
+      "kind": "struck",
+      "text": "~~- Challenges của error handling truyền thống: thiếu type safety, unpredictable error control flow, limited type system integration~~"
+    },
+    {
+      "line": 65,
+      "kind": "struck",
+      "text": "~~- Go-style approach: return errors như part của tuple, explicitly handle failure scenarios, cung cấp clear error context~~"
+    },
+    {
+      "line": 66,
+      "kind": "struck",
+      "text": "~~- Monadic Result approach: treat errors as values, sử dụng container types như `Result<T,E>`, enable functional-style error chaining~~"
+    },
+    {
+      "line": 67,
+      "kind": "struck",
+      "text": "~~- Best practices quan trọng: phân biệt recoverable và unrecoverable errors, wrap external library errors sớm, sử dụng type-safe error handling mechanisms~~"
+    },
+    {
+      "line": 68,
+      "kind": "struck",
+      "text": "~~- Cân nhắc performance và developer experience khi chọn strategy~~"
+    },
+    {
+      "line": 69,
+      "kind": "struck",
+      "text": "~~- Recommended techniques: sử dụng libraries như `neverthrow` cho robust error management, implement error mapping và transformation~~"
+    },
+    {
+      "line": 70,
+      "kind": "struck",
+      "text": "~~- Tạo centralized error handling layers để quản lý lỗi một cách systematic~~"
+    },
+    {
+      "line": 71,
+      "kind": "struck",
+      "text": "~~- Chọn error handling strategy cân bằng giữa type safety, readability, và team expertise~~"
+    },
+    {
+      "line": 72,
+      "kind": "struck",
+      "text": "~~- Duy trì clear error communication và recovery mechanisms trong suốt application~~"
+    }
+  ],
+  "candidates": []
+}

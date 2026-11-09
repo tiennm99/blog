@@ -28,7 +28,7 @@ Coi LLM là một dạng máy tính mới với những đặc tính riêng giú
 
 Bài viết của SWE Quiz điểm nhanh các chiến lược bộ nhớ đệm (cache) phổ biến, một kiến thức nền tảng để tối ưu hiệu năng ứng dụng. Với Cache-Aside (còn gọi là tải lười), ứng dụng tự quản lý bộ nhớ đệm: kiểm tra cache trước, chỉ truy vấn cơ sở dữ liệu khi không tìm thấy, phù hợp với hệ thống đọc nhiều và chấp nhận dữ liệu cũ trong thời gian ngắn. Read-Through thì để ứng dụng chỉ làm việc với cache, còn cache tự tải dữ liệu từ cơ sở dữ liệu khi cần, nhờ đó mã nguồn ứng dụng gọn hơn.
 
-Ở phía ghi, Write-Through ghi đồng thời vào cả cache lẫn cơ sở dữ liệu, bảo đảm tính nhất quán nhưng làm chậm thao tác ghi. Write-Behind (Write-Back) chỉ ghi vào cache rồi đồng bộ bất đồng bộ xuống cơ sở dữ liệu sau, giúp ghi nhanh hơn nhưng có nguy cơ mất dữ liệu nếu cache gặp sự cố. Write-Around bỏ qua cache khi ghi và chỉ dùng cache cho việc đọc, thích hợp với dữ liệu hiếm khi được đọc lại ngay sau khi ghi. Việc chọn chiến lược nào tùy thuộc vào yêu cầu cụ thể của ứng dụng về hiệu năng, tính nhất quán và khả năng chịu lỗi.
+Ở phía ghi, Write-Through cập nhật cơ sở dữ liệu và cache trong luồng ghi, giúp hạn chế dữ liệu cũ nhưng làm tăng độ trễ; tên chiến lược không tự bảo đảm hai nơi luôn nhất quán khi có lỗi. Write-Behind (Write-Back) chỉ ghi vào cache rồi đồng bộ bất đồng bộ xuống cơ sở dữ liệu sau, giúp ghi nhanh hơn nhưng có nguy cơ mất dữ liệu nếu cache gặp sự cố. Write-Around bỏ qua cache khi ghi và chỉ dùng cache cho việc đọc, thích hợp với dữ liệu hiếm khi được đọc lại ngay sau khi ghi. Việc chọn chiến lược nào tùy thuộc vào yêu cầu cụ thể của ứng dụng về hiệu năng, tính nhất quán và khả năng chịu lỗi.
 
 ## [Some features that every JavaScript developer should know in 2025](https://waspdev.com/articles/2025-04-06/features-that-every-js-developer-must-know-in-2025)
 
@@ -44,7 +44,7 @@ Phần lớn bài viết dành cho những thách thức khi cải thiện DX: h
 
 ## [When Life Gives You Java](https://oblac.rs/when-life-gives-you-java/)
 
-Igor Spasić chia sẻ cách ông viết Java khi buộc phải dùng ngôn ngữ này nhưng vẫn muốn mã nguồn tốt, bằng những bài học mượn từ các ngôn ngữ hàm giàu tính biểu đạt hơn. Ông mặc định để mọi lớp ở phạm vi package-private và chỉ công khai khi thật cần, coi mỗi package như một mô-đun. Khoảng 95% tham chiếu được khai báo `final` để tận dụng tính bất biến, nhờ đó `null` gần như biến mất và chỉ còn xuất hiện trong phạm vi rất hẹp. Ông không còn dùng kế thừa trong mã của mình mà ưu tiên kết hợp đối tượng (composition), dù vẫn phải chấp nhận kế thừa khi tích hợp với thư viện bên ngoài.
+Igor Spasić chia sẻ cách ông viết Java khi buộc phải dùng ngôn ngữ này nhưng vẫn muốn mã nguồn tốt, bằng những bài học mượn từ các ngôn ngữ hàm giàu tính biểu đạt hơn. Ông mặc định để mọi lớp ở phạm vi package-private và chỉ công khai khi thật cần, coi mỗi package như một mô-đun. Ông khai báo khoảng 95% tham chiếu là `final` và hạn chế `null` trong phạm vi nhỏ. Đây là hai lựa chọn thiết kế riêng: `final` ngăn gán lại biến, không làm đối tượng được trỏ tới trở nên bất biến hay cấm giá trị `null`. Ông không còn dùng kế thừa trong mã của mình mà ưu tiên kết hợp đối tượng (composition), dù vẫn phải chấp nhận kế thừa khi tích hợp với thư viện bên ngoài.
 
 Tác giả tư duy theo kiểu hàm "đầu vào, xử lý, đầu ra": vì Java không có hàm hạng nhất, mỗi lớp thường chỉ gói một hàm hoặc vài hàm liên quan chặt chẽ. Các kiểu dữ liệu đại số (ADT) được mô hình hóa bằng `record` triển khai `sealed interface`, và lỗi nghiệp vụ được trả về như một phần kết quả thông qua ADT riêng cho từng loại, còn ngoại lệ chỉ dành cho lỗi thời gian chạy thật sự như lỗi bộ nhớ, I/O hay mất kết nối cơ sở dữ liệu. Hệ quả là số lượng lớp nhỏ tăng lên, nhưng đó là đánh đổi đáng giá để có mã nguồn mô-đun hơn và ít bất ngờ hơn.
 
@@ -56,4 +56,4 @@ Tác giả minh họa bằng ba ví dụ. Thứ nhất, ông tự xây dựng c�
 
 ---
 
-*Bài viết đã được viết lại bởi Claude Code với Opus 5.5 vào ngày 27/09/2026.*
+*Bài viết đã được viết lại bởi Claude Code với Opus 5.5 vào ngày 27/09/2026; được review và chỉnh sửa bởi Codex với GPT 6.1 Sol vào ngày 09/11/2026.*

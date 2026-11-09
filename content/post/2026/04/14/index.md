@@ -15,9 +15,9 @@ Checkpoints (điểm lưu trạng thái) ghi lại tiến trình làm việc, n�
 
 ## [Quantization from the ground up](https://ngrok.com/blog/quantization)
 
-Sam Rose (ngrok) giải thích từ gốc kỹ thuật lượng tử hoá (quantization) — cách nén mô hình ngôn ngữ lớn để nhỏ đi khoảng 4 lần, nhanh gấp đôi mà chỉ mất chừng 5-10% độ chính xác. Bài viết bắt đầu từ lý do mô hình lại "nặng" đến vậy: một mô hình 80 tỷ tham số như Qwen3-Coder-Next đã chiếm khoảng 159 GB, vì mỗi tham số thường được lưu bằng số thực dấu phẩy động nhiều bit. May mắn là phần lớn tham số có giá trị rất gần 0, nên có thể biểu diễn chúng bằng ít bit hơn mà không mất quá nhiều thông tin.
+Sam Rose giải thích lượng tử hóa: biểu diễn trọng số bằng ít bit hơn để giảm bộ nhớ và có thể tăng tốc suy luận. Ví dụ chuyển từ 16 xuống 4 bit giảm khoảng bốn lần phần lưu trọng số, chưa tính dữ liệu phụ trợ; không đồng nghĩa toàn bộ bộ nhớ chạy mô hình đều giảm bốn lần.
 
-Tác giả so sánh hai cách lượng tử hoá: đối xứng (symmetric) đơn giản nhưng lãng phí dải giá trị khi dữ liệu phân bố lệch, còn bất đối xứng (asymmetric) thêm một điểm zero offset và giảm sai số trung bình từ khoảng 18% xuống 8.5%. Trong thực tế, tham số được chia thành từng khối 32-256 giá trị để các giá trị ngoại lai chỉ ảnh hưởng cục bộ thay vì kéo sai toàn mô hình. Chất lượng sau khi nén được đo bằng perplexity, KL divergence và bộ câu hỏi GPQA Diamond: bản 8-bit gần như không suy giảm, 4-bit mất khoảng 5-10%, còn 2-bit giảm chất lượng rõ rệt. Đổi lại, tốc độ suy luận tăng đáng kể, từ 19.45 lên 43.32 token/giây với bản 4-bit trên máy M1 Max.
+Bài minh họa lượng tử hóa đối xứng, bất đối xứng và chia khối để hạn chế ảnh hưởng của giá trị ngoại lai. Sai số 18% và 8,5% thuộc ví dụ số nhỏ, không phải mức mất chất lượng chung của mô hình. Chất lượng cần được đo trên tác vụ và bộ đánh giá cụ thể. Mức tăng từ 19,45 lên 43,32 token/giây được ghi nhận trong phép thử 4-bit trên M1 Max; kết quả còn tùy mô hình, phần cứng và cách triển khai.
 
 ## [JPEG compression](https://www.sophielwang.com/blog/jpeg)
 
@@ -27,7 +27,7 @@ Tiếp theo, mỗi khối 8x8 điểm ảnh được biến đổi DCT (Discrete
 
 ## [What 81,000 people want from AI](https://www.anthropic.com/features/81k-interviews)
 
-Anthropic công bố kết quả nghiên cứu định tính đa ngôn ngữ lớn nhất từ trước đến nay: dùng một phiên bản Claude làm người phỏng vấn, họ trò chuyện với 80.508 người dùng Claude ở 159 quốc gia bằng 70 ngôn ngữ về điều họ mong đợi và lo ngại ở AI. Thông điệp chính là con người muốn AI giúp mình sống tốt hơn chứ không chỉ làm việc nhanh hơn. Các mong muốn hàng đầu gồm xuất sắc trong nghề nghiệp (19%), phát triển bản thân (14%), quản lý cuộc sống (14%) và có thêm thời gian tự do (11%). Đằng sau mong muốn năng suất thường là khao khát sâu hơn — tự động hoá email thực chất là để có thêm thời gian cho gia đình.
+Anthropic mô tả đây là nghiên cứu định tính đa ngôn ngữ quy mô rất lớn: dùng một phiên bản Claude làm người phỏng vấn, họ trò chuyện với 80.508 người dùng Claude ở 159 quốc gia bằng 70 ngôn ngữ về điều họ mong đợi và lo ngại ở AI. Mẫu tự nguyện gồm người dùng Claude, không đại diện toàn dân số. Các mong muốn hàng đầu gồm xuất sắc trong nghề nghiệp (19%), phát triển bản thân (14%), quản lý cuộc sống (14%) và có thêm thời gian tự do (11%). Đằng sau mong muốn năng suất thường là khao khát sâu hơn — tự động hoá email thực chất là để có thêm thời gian cho gia đình.
 
 81% người tham gia cho biết AI đã giúp họ tiến gần hơn tới mục tiêu, chủ yếu qua năng suất (32%), vai trò bạn đồng hành tư duy (17%) và học tập (10%). Mặt khác, trung bình mỗi người nêu 2.3 mối lo: độ tin cậy (27%), mất việc làm (22%), mất quyền tự chủ (22%), suy giảm nhận thức (16%) và thiếu cơ chế quản trị (15%). Lợi ích và rủi ro thường song hành trong cùng một người: ai đánh giá cao sự hỗ trợ cảm xúc từ AI thì khả năng lo ngại bị phụ thuộc cũng cao gấp 3 lần. Người dùng ở khu vực thu nhập thấp lạc quan hơn và xem AI là cơ hội, còn ở khu vực giàu có thì mối quan tâm xoay quanh việc quản lý một cuộc sống phức tạp.
 
@@ -41,25 +41,25 @@ Triển khai nhanh (dưới 2 phút) nhờ tách frontend và backend, chạy so
 
 Bài viết từ đội kỹ thuật Anthropic xử lý hai điểm yếu của AI agent khi làm việc dài: mô hình mất mạch lạc khi cửa sổ ngữ cảnh dần đầy, và có xu hướng tự đánh giá quá cao sản phẩm của chính mình. Giải pháp là một harness đa tác tử lấy cảm hứng từ GAN: Planner mở rộng yêu cầu ngắn thành đặc tả chi tiết, Generator tạo sản phẩm, còn Evaluator chấm điểm độc lập rồi gửi phản hồi ngược lại. Với việc mang tính chủ quan như thiết kế frontend, nhóm đặt ra tiêu chí chấm điểm cụ thể thay cho câu hỏi mơ hồ "có đẹp không", và cho Generator cùng Evaluator lặp 5-15 vòng, có khi chuyển hẳn sang một phong cách thẩm mỹ mới.
 
-Với tác vụ lập trình kéo dài, reset ngữ cảnh (bắt đầu phiên mới kèm tài liệu bàn giao) hiệu quả hơn nén ngữ cảnh, nhất là khi mô hình gặp hiện tượng "context anxiety" — vội kết thúc công việc vì tưởng sắp hết ngữ cảnh. Chi phí chênh lệch rõ rệt: chạy một agent đơn lẻ tốn 9 USD và 20 phút nhưng sản phẩm lỗi, còn dùng harness đầy đủ tốn 200 USD và 6 giờ nhưng cho ra ứng dụng chạy được thật. Bài học quan trọng khác là mỗi khi mô hình được nâng cấp, cần xem lại harness, vì thành phần từng cần thiết có thể trở thành gánh nặng thừa.
+Trong thí nghiệm của nhóm, bắt đầu phiên mới kèm tài liệu bàn giao hiệu quả hơn nén ngữ cảnh, nhất là khi mô hình gặp hiện tượng "context anxiety" — vội kết thúc công việc vì tưởng sắp hết ngữ cảnh. Trong ví dụ dựng công cụ làm game với Opus 4.5, chạy một agent đơn lẻ tốn 9 USD và 20 phút nhưng sản phẩm lỗi, còn dùng harness đầy đủ tốn 200 USD và 6 giờ nhưng cho ra ứng dụng chạy được thật. Bài học quan trọng khác là mỗi khi mô hình được nâng cấp, cần xem lại harness, vì thành phần từng cần thiết có thể trở thành gánh nặng thừa.
 
 ## [Why I Vibe in Go, Not Rust or Python](https://lifelog.my/episode/why-i-vibe-in-go-not-rust-or-python)
 
-Tác giả giải thích vì sao chọn Go thay vì Rust hay Python khi lập trình cùng AI (vibe coding). Theo tác giả, giữa mã nguồn do AI sinh ra và môi trường production cần nhiều lớp lọc, và Go cung cấp đủ năm lớp: trình biên dịch, hệ thống kiểu, xử lý lỗi tường minh, sự đơn giản bắt buộc, và cuối cùng là phán đoán của con người. Python thiếu kiểm tra lúc biên dịch — type hint chỉ là tuỳ chọn — nên khi AI viết hàng nghìn dòng mỗi ngày, lỗi cấu trúc chỉ lộ ra lúc chạy, thậm chí ngay trên production.
+Tác giả thích Go khi AI viết phần lớn mã nguồn vì trình biên dịch, hệ thống kiểu, công cụ thống nhất và sự đơn giản giúp rút ngắn vòng phản hồi. Đây là lựa chọn cho cách cộng tác cụ thể của ông, không phải xếp hạng ngôn ngữ cho mọi dự án.
 
-Rust thì ngược lại: đảm bảo tính đúng đắn rất tốt nhưng borrow checker và lifetime buộc con người tiêu tốn sự chú ý vào những vấn đề do ngôn ngữ đặt ra, thay vì dành cho quyết định kiến trúc hay bài toán nghiệp vụ. Go cân bằng được giữa kiểm tra lúc biên dịch và sự đơn giản; cam kết tương thích giúp mã viết năm 2024 vẫn biên dịch được năm 2026, còn việc triển khai chỉ cần một tệp binary duy nhất thay vì dựng Docker phức tạp như với Python.
+Bài gốc lưu ý Python có kiểm tra kiểu nghiêm ngặt trong CI có thể cung cấp nhiều lớp lọc tương tự. Rust kiểm tra nhiều vấn đề về bộ nhớ và quyền sở hữu, không bảo đảm mọi chương trình đúng nghiệp vụ. Tác giả thấy chi phí làm việc với Rust cao hơn trong quy trình này. Việc triển khai một tệp thực thi của Go cũng là lợi thế trong ví dụ, không có nghĩa ứng dụng Python bắt buộc dùng Docker hay Go không bao giờ cần phụ thuộc hệ thống.
 
 ## [The gold standard of optimization: A look under the hood of RollerCoaster Tycoon](https://larstofus.com/2026/03/22/the-gold-standard-of-optimization-a-look-under-the-hood-of-rollercoaster-tycoon/)
 
-RollerCoaster Tycoon được Chris Sawyer viết gần như hoàn toàn bằng Assembly — ngôn ngữ cấp thấp giúp chương trình chạy nhanh hơn hẳn C hay C++ thời bấy giờ — và đến nay vẫn được xem là chuẩn mực về tối ưu hoá trong lập trình game. Bài viết phân tích những kỹ thuật giúp trò chơi mô phỏng cả công viên với hàng nghìn khách trên phần cứng yếu. Thay vì dùng một kiểu dữ liệu chung, mỗi giá trị được cấp kích thước vừa đủ với mức tối đa dự kiến, chẳng hạn các loại tiền khác nhau dùng kiểu dữ liệu khác nhau để tiết kiệm bộ nhớ.
+RollerCoaster Tycoon được Chris Sawyer viết gần như hoàn toàn bằng Assembly; tác giả cho rằng cách này giúp kiểm soát hiệu năng, nhưng mức hơn C/C++ khó định lượng, và đến nay vẫn được xem là chuẩn mực về tối ưu hoá trong lập trình game. Bài viết phân tích những kỹ thuật giúp trò chơi mô phỏng cả công viên với hàng nghìn khách trên phần cứng yếu. Thay vì dùng một kiểu dữ liệu chung, mỗi giá trị được cấp kích thước vừa đủ với mức tối đa dự kiến, chẳng hạn các loại tiền khác nhau dùng kiểu dữ liệu khác nhau để tiết kiệm bộ nhớ.
 
 Mã nguồn thay phép nhân và chia cho luỹ thừa của 2 bằng phép dịch bit (bitshift), và điều đáng chú ý là chính các công thức trong game được thiết kế để tận dụng được thủ thuật này — mức phối hợp giữa lập trình viên và nhà thiết kế hiếm thấy ngày nay. Về thuật toán, khách tham quan không tìm đường thông minh mà đi lang thang bán ngẫu nhiên cho tới khi gặp một trò chơi. Game cũng bỏ hẳn việc phát hiện va chạm giữa khách: hàng nghìn người có thể đứng chung một ô, chỉ có chỉ số hài lòng giảm khi quá đông.
 
 ## [Queueing Requests Queues Your Capacity Problems, Too](https://pushtoprod.substack.com/p/queueing-requests-queues-your-capacity-problems-too)
 
-Bài viết chỉ ra rằng hàng đợi (queue) thường chỉ che giấu vấn đề năng lực xử lý chứ không giải quyết nó. Ví dụ, một hệ thống xử lý được 1000 request/giây mà gặp lưu lượng gấp đôi sẽ dồn lại 3.6 triệu request chỉ sau một giờ, khiến người dùng phải chờ khoảng 60 phút dù mỗi request trên server vẫn chỉ mất 1 giây. Điểm mấu chốt là độ trễ người dùng cảm nhận (perceived latency) bao gồm thời gian nằm trong hàng đợi, còn độ trễ đo ở server thì không — vì vậy dashboard giám sát vẫn "xanh" trong khi khách hàng chịu trễ nghiêm trọng.
+Hàng đợi hấp thụ đợt tăng tải bằng cách trì hoãn công việc, không tự tăng năng lực xử lý. Trong ví dụ công suất 1.000 yêu cầu/giây, nếu đầu vào tăng lên 2.000 trong một giờ thì tồn đọng 3,6 triệu yêu cầu. Thời gian chờ phải được tính vào độ trễ người dùng, thay vì chỉ đo thời gian xử lý trên máy chủ.
 
-Toán học của hàng đợi rất khắc nghiệt: chỉ cần vượt công suất 10% trong một giờ đã tồn đọng 360.000 request và trễ thêm 6 phút, vì phần thiếu hụt tích luỹ tuyến tính theo thời gian. Đổi chiến lược xếp hàng (ngẫu nhiên, theo trọng số) chỉ chia lại độ trễ giữa các request, là trò chơi tổng bằng không. Cách duy nhất thật sự hiệu quả là tăng năng lực: tăng 50% thì rút cạn hàng đợi khủng hoảng trong khoảng một giờ, còn tăng 10% phải mất tới chín giờ.
+Sau đợt tăng, nếu đầu vào vẫn bằng công suất thì hàng đợi không rút xuống. Cần có năng lực dư so với đầu vào, tăng hiệu quả xử lý hoặc giảm tải được chấp nhận. Chiến lược xếp hàng có thể thay đổi tính công bằng và độ trễ từng nhóm, nhưng không xóa phần công việc vượt công suất. Những mốc rút hàng đợi một hay chín giờ trong bài phụ thuộc số máy được bổ sung và thời điểm bổ sung, không phải công thức chung.
 
 ## [7 More Common Mistakes in Architecture Diagrams](https://www.ilograph.com/blog/posts/more-common-diagram-mistakes/)
 
@@ -83,4 +83,4 @@ Nguyên tắc tách biệt trách nhiệm cũng được nhấn mạnh: tách vi
 
 ---
 
-*Bài viết đã được viết lại bởi Claude Code với Opus 5.5 vào ngày 27/09/2026.*
+*Bài viết đã được viết lại bởi Claude Code với Opus 5.5 vào ngày 27/09/2026; được review và chỉnh sửa bởi Codex với GPT 6.1 Sol vào ngày 09/11/2026.*

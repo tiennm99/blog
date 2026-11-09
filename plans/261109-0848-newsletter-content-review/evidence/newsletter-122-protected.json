@@ -1,0 +1,89 @@
+{
+  "post": "content/post/2026/07/10/index.md",
+  "newsletter": 122,
+  "newsletter_post": true,
+  "note": "*Bài viết đã được viết lại bởi Claude Code với Opus 5.5 vào ngày 27/09/2026.*",
+  "lines": [
+    {
+      "line": 1,
+      "kind": "frontmatter",
+      "text": "---"
+    },
+    {
+      "line": 2,
+      "kind": "frontmatter",
+      "text": "title: \"Newsletter #122\""
+    },
+    {
+      "line": 3,
+      "kind": "frontmatter",
+      "text": "date: 2026-07-10"
+    },
+    {
+      "line": 4,
+      "kind": "frontmatter",
+      "text": "tags: [\"AI-Assisted\", \"Newsletter\", \"PostgreSQL\", \"Database\", \"System Design\", \"High Availability\", \"Infrastructure\"]"
+    },
+    {
+      "line": 5,
+      "kind": "frontmatter",
+      "text": "categories: [\"Newsletter\"]"
+    },
+    {
+      "line": 6,
+      "kind": "frontmatter",
+      "text": "---"
+    },
+    {
+      "line": 8,
+      "kind": "italic-note",
+      "text": "*Mời bạn thưởng thức Newsletter #122.*"
+    },
+    {
+      "line": 10,
+      "kind": "heading",
+      "text": "## [The worst take in tech: new grad hiring](https://www.scottkennedy.us/new-grads)"
+    },
+    {
+      "line": 16,
+      "kind": "heading",
+      "text": "## [Parsing Gigabytes of JSON per Second](https://arxiv.org/pdf/1902.08318)"
+    },
+    {
+      "line": 22,
+      "kind": "heading",
+      "text": "## [Six SQL patterns I use to catch transaction fraud](https://analytics.fixelsmith.com/posts/sql-fraud-patterns/)"
+    },
+    {
+      "line": 28,
+      "kind": "heading",
+      "text": "## [We replaced Redis with MySQL for inventory reservations—and it scaled (2026)](https://shopify.engineering/scaling-inventory-reservations)"
+    },
+    {
+      "line": 34,
+      "kind": "heading",
+      "text": "## [Cell-Based Architecture for Resilient Payment Systems](https://americanexpress.io/cell-based-architecture-for-resilient-payment-systems/)"
+    },
+    {
+      "line": 40,
+      "kind": "heading",
+      "text": "## [When failover isn’t safe: Building high-availability PostgreSQL on Kubernetes](https://www.datadoghq.com/blog/engineering/postgresql-ha-kubernetes/)"
+    },
+    {
+      "line": 46,
+      "kind": "heading",
+      "text": "## [From Christmas Outage to #1 App Store Ranking: An Aura Frames Postgres Scaling Retrospective](https://andyatkinson.com/postgresql-rds-scaling-aws-christmas-day-peak)"
+    },
+    {
+      "line": 52,
+      "kind": "heading",
+      "text": "## [.gitignore Isn’t the Only Way To Ignore Files in Git](https://nelson.cloud/.gitignore-isnt-the-only-way-to-ignore-files-in-git/)"
+    },
+    {
+      "line": 58,
+      "kind": "heading",
+      "text": "## [The only scalable delete in Postgres is DROP TABLE](https://planetscale.com/blog/the-only-scalable-delete)"
+    }
+  ],
+  "candidates": []
+}

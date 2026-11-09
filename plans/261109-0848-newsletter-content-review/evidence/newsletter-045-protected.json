@@ -1,0 +1,115 @@
+{
+  "post": "content/post/2025/08/04/index.md",
+  "newsletter": 45,
+  "newsletter_post": true,
+  "note": "*Bài viết đã được viết lại bởi Claude Code với Opus 5.5 vào ngày 27/09/2026.*",
+  "lines": [
+    {
+      "line": 1,
+      "kind": "frontmatter",
+      "text": "---"
+    },
+    {
+      "line": 2,
+      "kind": "frontmatter",
+      "text": "title: \"Newsletter #45\""
+    },
+    {
+      "line": 3,
+      "kind": "frontmatter",
+      "text": "date: 2025-08-04"
+    },
+    {
+      "line": 4,
+      "kind": "frontmatter",
+      "text": "tags: [ \"AI-Assisted\", \"Productivity\", \"Career\", \"Paul Graham\", \"AI Coding\", \"Search Platform\", \"Debugging\" ]"
+    },
+    {
+      "line": 5,
+      "kind": "frontmatter",
+      "text": "categories: [ \"Newsletter\" ]"
+    },
+    {
+      "line": 6,
+      "kind": "frontmatter",
+      "text": "---"
+    },
+    {
+      "line": 8,
+      "kind": "italic-note",
+      "text": "*~~Bài post được thực hiện bởi Cline + Kimi K2.~~ Mời bạn thưởng thức Newsletter #45.*"
+    },
+    {
+      "line": 10,
+      "kind": "heading",
+      "text": "## [The Best](https://www.paulgraham.com/best.html)"
+    },
+    {
+      "line": 16,
+      "kind": "heading",
+      "text": "## [AI Tools Make Developers 19% Slower, Not Faster](https://threadreaderapp.com/thread/1943360399220388093.html)"
+    },
+    {
+      "line": 22,
+      "kind": "heading",
+      "text": "## [Evolution of Uber's Search Platform](https://www.uber.com/in/en/blog/evolution-of-ubers-search-platform/)"
+    },
+    {
+      "line": 28,
+      "kind": "heading",
+      "text": "## [Vercel](https://leerob.com/vercel)"
+    },
+    {
+      "line": 34,
+      "kind": "heading",
+      "text": "## [Tools](https://lucumr.pocoo.org/2025/7/3/tools/)"
+    },
+    {
+      "line": 40,
+      "kind": "heading",
+      "text": "## [How I Build Software Quickly](https://evanhahn.com/how-i-build-software-quickly/)"
+    },
+    {
+      "line": 46,
+      "kind": "heading",
+      "text": "## [The Most Mysterious Bug I Solved at Work](https://cadence.moe/blog/2025-07-02-the-most-mysterious-bug-i-solved-at-work/)"
+    },
+    {
+      "line": 52,
+      "kind": "heading",
+      "text": "## [How to Think About Time in Programming](https://shanrauf.com/archive/how-to-think-about-time-in-programming)"
+    },
+    {
+      "line": 58,
+      "kind": "heading",
+      "text": "## [Phrase origin: Why do we \"call\" functions?](https://quuxplusone.github.io/blog/2025/04/04/etymology-of-call/)"
+    },
+    {
+      "line": 64,
+      "kind": "italic-note",
+      "text": "*Sau khi trải nghiệm lại với nhiều url thì có vẻ Cline + Kimi K2 đã tràn context, sau khi compact thì quên mất một số context, vì vậy rất dễ bị nhầm, cần nhắc lại nhiều lần về việc đây là Windows nên phải dùng các lệnh PowerShell hỗ trợ thay vì các lệnh Linux. Ngoài ra còn có vài sai lầm ngớ ngẩn như tóm tắt... sai url :>*"
+    }
+  ],
+  "candidates": [
+    {
+      "line": 18,
+      "kind": "first-person",
+      "text": "Tổ chức nghiên cứu METR đã thực hiện một thử nghiệm đối chứng ngẫu nhiên với 16 lập trình viên mã nguồn mở giàu kinh nghiệm, cùng 246 nhiệm vụ thật trên chính các kho mã của họ, vốn trung bình có hơn 22.000 sao và hơn một triệu dòng mã. Mỗi nhiệm vụ được chỉ định ngẫu nhiên là được phép hoặc không được phép dùng AI (chủ yếu là Cursor Pro với Claude 3.5/3.7). Kết quả gây bất ngờ: trước thử nghiệm, các lập trình viên dự đoán AI giúp họ nhanh hơn 24%; sau khi làm xong, họ vẫn cảm thấy mình nhanh hơn 20%; nhưng số liệu thực tế cho thấy họ chậm hơn 19% khi có AI hỗ trợ."
+    },
+    {
+      "line": 32,
+      "kind": "first-person",
+      "text": "Thứ ba, muốn mở rộng thì phải tuyển người thay vì tự làm mọi thứ, luôn tuyển dụng và giữ tiêu chuẩn cao, chỉ nhận ứng viên khiến mình thật sự hào hứng. Thứ tư, tránh quyết định đơn phương: anh từng nhảy vào một đợt ra mắt sản phẩm vào phút chót và đòi thay đổi khi thiếu bối cảnh, một điều anh hối tiếc; người lãnh đạo nên tham gia từ đầu và tạo đồng thuận trước khi ra quyết định. Cuối cùng là linh hoạt và dám nhận sai: việc tự duyệt mọi bài đăng mạng xã hội của công ty tạo ra điểm nghẽn, và khi giao quyền kèm hướng dẫn chất lượng, kết quả lại tốt hơn. Đây là những bài học hữu ích cho bất kỳ lập trình viên nào đang hướng tới vai trò dẫn dắt nhóm."
+    },
+    {
+      "line": 38,
+      "kind": "first-person",
+      "text": "Mã do mô hình sinh ra có logic rõ ràng mà con người có thể kiểm tra, chạy lặp lại với chi phí thấp sau khi đã viết xong, và dễ gỡ lỗi hơn. Ví dụ minh họa là việc Armin chuyển toàn bộ blog của mình từ reStructuredText sang Markdown: mô hình viết mã chuyển đổi dựa trên cây cú pháp, viết thêm kịch bản so sánh HTML cũ và mới để xác minh, rồi lặp lại vòng phản hồi đó gần như không cần con người can thiệp. Ở đây, mô hình đóng vai người đánh giá chất lượng mã thay vì trực tiếp thực thi từng bước. Ông kết luận MCP có vẻ là ngõ cụt cho tự động hóa quy mô lớn, và hướng đi hứa hẹn hơn là kết hợp sinh mã với việc để mô hình đánh giá kết quả sau khi chạy."
+    },
+    {
+      "line": 42,
+      "kind": "first-person",
+      "text": "Evan Hahn chia sẻ cách anh xây dựng phần mềm nhanh mà vẫn giữ chất lượng chấp nhận được. Điểm mấu chốt là cân bằng giữa tốc độ và chất lượng: hãy nhắm tới \"8 trên 10 điểm, giao đúng hạn\" thay vì theo đuổi sự hoàn hảo. Mức \"đủ tốt\" phụ thuộc vào bối cảnh, một cuộc thi làm game trong 24 giờ chấp nhận mã cẩu thả, còn máy tạo nhịp tim thì đòi hỏi sự xuất sắc, nên cần hiểu nhóm mình coi thế nào là đủ tốt. Anh khuyên nên làm bản nháp thô trước, đầy ghi chú cần làm, dữ liệu viết cứng và lỗi chưa xử lý, để sớm phát hiện vấn đề chưa lường trước, tránh tốn công vào đoạn mã rồi sẽ bị xóa và tránh trừu tượng hóa quá sớm."
+    }
+  ]
+}

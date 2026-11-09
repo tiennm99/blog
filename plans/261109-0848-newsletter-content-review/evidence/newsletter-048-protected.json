@@ -1,0 +1,110 @@
+{
+  "post": "content/post/2025/08/07/index.md",
+  "newsletter": 48,
+  "newsletter_post": true,
+  "note": "*Bài viết đã được viết lại bởi Claude Code với Opus 5.5 vào ngày 27/09/2026.*",
+  "lines": [
+    {
+      "line": 1,
+      "kind": "frontmatter",
+      "text": "---"
+    },
+    {
+      "line": 2,
+      "kind": "frontmatter",
+      "text": "title: \"Newsletter #48\""
+    },
+    {
+      "line": 3,
+      "kind": "frontmatter",
+      "text": "date: 2025-08-07"
+    },
+    {
+      "line": 4,
+      "kind": "frontmatter",
+      "text": "tags: [ \"AI-Assisted\", \"AI Coding\", \"Claude Code\", \"Prompt Engineering\", \"Pattern Matching\", \"Code Quality\", \"Career\" ]"
+    },
+    {
+      "line": 5,
+      "kind": "frontmatter",
+      "text": "categories: [ \"Newsletter\" ]"
+    },
+    {
+      "line": 6,
+      "kind": "frontmatter",
+      "text": "---"
+    },
+    {
+      "line": 8,
+      "kind": "italic-note",
+      "text": "*Mời bạn thưởng thức Newsletter #48.*"
+    },
+    {
+      "line": 10,
+      "kind": "heading",
+      "text": "## [TODOs aren't for doing](https://sophiebits.com/2025/07/21/todos-arent-for-doing)"
+    },
+    {
+      "line": 16,
+      "kind": "heading",
+      "text": "## [Automating Away Claude's Bad Habits with Hooks](https://writeaheadblogg.ing/posts/claude-hooks-auto-fix-trailing-whitespace/)"
+    },
+    {
+      "line": 22,
+      "kind": "heading",
+      "text": "## ~~[Docs for AI Agents](https://technicalwriting.dev/ai/agents/)~~"
+    },
+    {
+      "line": 28,
+      "kind": "heading",
+      "text": "## [Developers Are Using These AI Agents to Build Software 10x Faster](https://dev.to/therealmrmumba/developers-are-using-these-ai-agents-to-build-software-10x-faster-efn)"
+    },
+    {
+      "line": 34,
+      "kind": "heading",
+      "text": "## [What kind of work I want (in 2025)](https://www.seangoedecke.com/my-engineering-values-2025/)"
+    },
+    {
+      "line": 40,
+      "kind": "heading",
+      "text": "## [Welcoming The Next Generation of Programmers](https://lucumr.pocoo.org/2025/7/20/the-next-generation/)"
+    },
+    {
+      "line": 46,
+      "kind": "heading",
+      "text": "## [Pattern-matching across different languages](https://blog.frankel.ch/pattern-matching-different-languages/)"
+    },
+    {
+      "line": 52,
+      "kind": "heading",
+      "text": "## [A real-world AI coding case sample](https://blog.korny.info/2025/07/18/a-real-world-ai-coding-case-sample)"
+    },
+    {
+      "line": 58,
+      "kind": "heading",
+      "text": "## [Clowns to the Left of Me...](https://blog.korny.info/2025/07/19/clowns-to-the-left-of-me)"
+    },
+    {
+      "line": 64,
+      "kind": "heading",
+      "text": "## [Improving the prompt to the AI to get better code](https://blog.vanillajava.blog/2025/07/improving-prompt-to-ai-to-get-better.html)"
+    }
+  ],
+  "candidates": [
+    {
+      "line": 14,
+      "kind": "first-person",
+      "text": "Giá trị thật của những comment này là lưu giữ lối suy nghĩ và ngữ cảnh của người viết ban đầu. Khi một lập trình viên khác đọc lại đoạn mã và tự hỏi liệu cấu trúc này có nên được viết khác đi không, một TODO đặt đúng chỗ sẽ trả lời ngay câu hỏi đó, giúp họ tự tin tái cấu trúc thay vì chần chừ giữ nguyên vì sợ tác giả cũ biết điều gì đó mà mình không biết. Với lập trình viên mới vào nghề, đây là một cách nhìn hữu ích: hãy coi TODO như một mẩu tài liệu nhỏ gửi đến người đọc tương lai, chứ không phải danh sách việc tồn đọng cần dọn sạch."
+    },
+    {
+      "line": 24,
+      "kind": "first-person",
+      "text": "Kayce Basques ghi lại suy nghĩ về tài liệu dành cho AI agent và mối quan hệ của nó với tài liệu kỹ thuật nội bộ mà nhóm phát triển viết cho chính mình, như RFC hay hướng dẫn xây dựng dự án. Agent docs giúp kết quả của agent nhất quán hơn, đúng quy ước dự án và chính xác hơn: khi mới dùng Claude Code, tác giả thấy công cụ đoán đúng trang web là Sphinx xây dựng bằng Bazel nhưng lại chạy sai lệnh; chỉ cần ghi lệnh đúng vào agent doc là từ đó nó luôn làm đúng. Mỗi công cụ tìm một file riêng ở thư mục gốc (`CLAUDE.md` cho Claude Code, `GEMINI.md` cho Gemini CLI, `AGENTS.md` cho Codex CLI), và nội dung file được chèn nguyên vẹn vào lời nhắc hệ thống ở mọi lần gọi mô hình, nên cần giữ thật cô đọng. Ngoài ra còn có agent doc cho thư mục con và cấp người dùng."
+    },
+    {
+      "line": 60,
+      "kind": "first-person",
+      "text": "Korny bàn về cuộc tranh luận phân cực quanh công cụ lập trình bằng AI và tự đặt mình ở giữa, đúng tinh thần bài hát \"Stuck in the Middle With You\" mà tiêu đề mượn lời. Một phía là những người cổ vũ nhiệt thành, tuyên bố năng suất tăng tới 50 lần, cổ xúy viết mã mà bỏ qua bảo mật và bị cuốn theo cảm giác phấn khích khi mã được sinh ra nhanh chóng, nên thường thổi phồng khả năng và xem nhẹ rủi ro. Phía còn lại là những người hoài nghi, có lý khi phản bác các tuyên bố phóng đại, nhưng đôi khi lại coi các nghiên cứu sơ bộ là bằng chứng chắc chắn và bác bỏ công cụ chỉ sau vài lần thử với rất ít ngữ cảnh."
+    }
+  ]
+}

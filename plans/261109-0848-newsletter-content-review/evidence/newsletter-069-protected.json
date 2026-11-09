@@ -1,0 +1,135 @@
+{
+  "post": "content/post/2025/12/12/index.md",
+  "newsletter": 69,
+  "newsletter_post": true,
+  "note": "*Bài viết đã được viết lại bởi Claude Code với Opus 5.5 vào ngày 27/09/2026.*",
+  "lines": [
+    {
+      "line": 1,
+      "kind": "frontmatter",
+      "text": "---"
+    },
+    {
+      "line": 2,
+      "kind": "frontmatter",
+      "text": "title: \"Newsletter #69\""
+    },
+    {
+      "line": 3,
+      "kind": "frontmatter",
+      "text": "date: 2025-12-12"
+    },
+    {
+      "line": 4,
+      "kind": "frontmatter",
+      "text": "tags: [\"AI-Assisted\", \"Newsletter\", \"Software Architecture\", \"Java\", \"Linux\", \"AI Agents\", \"Productivity\"]"
+    },
+    {
+      "line": 5,
+      "kind": "frontmatter",
+      "text": "categories: [\"Newsletter\"]"
+    },
+    {
+      "line": 6,
+      "kind": "frontmatter",
+      "text": "---"
+    },
+    {
+      "line": 8,
+      "kind": "italic-note",
+      "text": "*Mời bạn thưởng thức Newsletter #69. ~~Bài viết này được thực hiện bởi [Claude Code](https://github.com/anthropics/claude-code), [Claude Code Router](https://github.com/musistudio/claude-code-router), [iFlow Open Platform](https://platform.iflow.cn) & GLM-4.6~~*"
+    },
+    {
+      "line": 10,
+      "kind": "heading",
+      "text": "## [How and Why Netflix Built a Real-Time Distributed Graph: Part 1 — Ingesting and Processing Data Streams at Internet Scale](https://netflixtechblog.com/how-and-why-netflix-built-a-real-time-distributed-graph-part-1-ingesting-and-processing-data-80113e124acc)"
+    },
+    {
+      "line": 16,
+      "kind": "heading",
+      "text": "## [Start Small, Scale Smart: The Real Value of Incremental Architecture](https://newsletter.optimistengineer.com/p/incremental-architecture-what-you)"
+    },
+    {
+      "line": 22,
+      "kind": "heading",
+      "text": "## [Java Interview Question - Why Collection doesn't extend Cloneable and Serializable interfaces?](https://javabulletin.substack.com/p/java-interview-question-why-collection)"
+    },
+    {
+      "line": 28,
+      "kind": "heading",
+      "text": "## [We stopped roadmap work for a week and fixed 189 bugs](https://lalitm.com/fixits-are-good-for-the-soul/)"
+    },
+    {
+      "line": 34,
+      "kind": "heading",
+      "text": "## [The Math of Why You Can't Focus at Work](https://justoffbyone.com/posts/math-of-why-you-cant-focus-at-work/)"
+    },
+    {
+      "line": 40,
+      "kind": "heading",
+      "text": "## [Tech predictions for 2026 and beyond](https://www.allthingsdistributed.com/2025/11/tech-predictions-for-2026-and-beyond.html)"
+    },
+    {
+      "line": 46,
+      "kind": "heading",
+      "text": "## [Why I (still) love Linux](https://it-notes.dragas.net/2025/11/24/why-i-still-love-linux/)"
+    },
+    {
+      "line": 52,
+      "kind": "heading",
+      "text": "## [Why (Senior) Engineers Struggle to Build AI Agents](https://www.philschmid.de/why-engineers-struggle-building-agents)"
+    },
+    {
+      "line": 58,
+      "kind": "heading",
+      "text": "## [How Java Achieves Zero-Copy File Transfer](https://javabulletin.substack.com/p/how-java-achieves-zero-copy-file)"
+    },
+    {
+      "line": 64,
+      "kind": "heading",
+      "text": "### Bonus"
+    },
+    {
+      "line": 66,
+      "kind": "asset",
+      "text": "**Images:**"
+    },
+    {
+      "line": 67,
+      "kind": "asset",
+      "text": "![Top Strategies to Build High Availability Systems](https://substack-post-media.s3.amazonaws.com/public/images/20ed383c-5900-4f31-9041-afb5581b1ad4_2250x2624.png)"
+    },
+    {
+      "line": 68,
+      "kind": "asset",
+      "text": "![Cloudflare vs. AWS vs. Azure](https://substackcdn.com/image/fetch/$s_!Eyti!,w_1100,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F862d0649-d77b-410f-95a5-6505c9eeb15a_2250x2814.png)"
+    },
+    {
+      "line": 69,
+      "kind": "asset",
+      "text": "![Popular Backend Tech Stack](https://substackcdn.com/image/fetch/$s_!52bX!,w_1100,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F65613a28-2320-4bb6-a610-5ab96b13240d_800x903.jpeg)"
+    },
+    {
+      "line": 70,
+      "kind": "asset",
+      "text": "![HTTP vs. HTTPS](https://substackcdn.com/image/fetch/$s_!JV_9!,w_1100,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fa95473e0-5a68-43c6-841e-540a6b198d6d_2360x2960.png)"
+    },
+    {
+      "line": 71,
+      "kind": "asset",
+      "text": "![Forward Proxy versus Reverse Proxy](https://substackcdn.com/image/fetch/$s_!5rGo!,w_550,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fac99f98d-49a7-4933-b06f-8da0901d210e_800x939.gif)"
+    },
+    {
+      "line": 72,
+      "kind": "asset",
+      "text": "![Things Every Developer Should Know: Concurrency is NOT parallelism](https://substackcdn.com/image/fetch/$s_!qtkE!,w_550,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F4646c2e2-a6fb-44e7-a091-73fcbd8fa498_800x1040.gif)"
+    }
+  ],
+  "candidates": [
+    {
+      "line": 50,
+      "kind": "first-person",
+      "text": "Tác giả cũng thẳng thắn phê bình: nhiều bản phân phối xa rời triết lý Unix \"làm một việc và làm tốt việc đó\", tiêu biểu là systemd; đổi mới thiếu mục đích khiến sự ổn định bị hy sinh; một số công ty hướng sự phát triển theo lợi ích riêng; và chất lượng phần mềm giảm sút do \"vibe coding\" cùng các phụ thuộc thiếu ổn định. Dù ưa chuộng BSD và illumos cho nhiều khối lượng công việc, ông vẫn quý các bản phân phối như Alpine và openSUSE, ghi nhận khả năng hỗ trợ phần cứng đã tốt hơn nhiều, biết ơn Linux vì đã mở ra sự nghiệp và việc học của mình, và tin rằng sẽ còn đồng hành cùng Linux thêm 30 năm nữa."
+    }
+  ]
+}

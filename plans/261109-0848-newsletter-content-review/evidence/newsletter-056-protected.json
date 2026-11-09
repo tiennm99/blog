@@ -1,0 +1,150 @@
+{
+  "post": "content/post/2025/09/29/index.md",
+  "newsletter": 56,
+  "newsletter_post": true,
+  "note": "*Bài viết đã được viết lại bởi Claude Code với Opus 5.5 vào ngày 27/09/2026.*",
+  "lines": [
+    {
+      "line": 1,
+      "kind": "frontmatter",
+      "text": "---"
+    },
+    {
+      "line": 2,
+      "kind": "frontmatter",
+      "text": "title: \"Newsletter #56\""
+    },
+    {
+      "line": 3,
+      "kind": "frontmatter",
+      "text": "date: 2025-09-29"
+    },
+    {
+      "line": 4,
+      "kind": "frontmatter",
+      "text": "tags: [\"AI-Assisted\", \"UUID\", \"Java\", \"Spec-Driven\", \"Sorting-Algorithms\", \"ClickHouse\", \"AI Coding\"]"
+    },
+    {
+      "line": 5,
+      "kind": "frontmatter",
+      "text": "categories: [\"Newsletter\"]"
+    },
+    {
+      "line": 6,
+      "kind": "frontmatter",
+      "text": "---"
+    },
+    {
+      "line": 8,
+      "kind": "italic-note",
+      "text": "*~~Hôm nay mình lại thử nghiệm tiếp [OpenCode](https://opencode.ai/). Kết quả là khi mình gửi 1 url thì nó... stuck luôn :v. Vì vậy mình chuyển qua thử GitHub Copilot, với OpenRouter. Kết quả ban đầu cho thấy GitHub Copilot không detect được Newsletter số trước, nó đánh lại từ #1. Và tags cũng ghi chữ thường, không đúng format mình expect. Mình không ưng ý nên xoá đi, thử lại với OpenAI Codex, kết quả thì để đọc được trang web nó đã hỏi mình n thứ, vả lại còn đòi chạy mấy lệnh python để đọc web, xong cài package bằng pip trực tiếp nữa. Mình thấy không oke với chuyện này nên chuyển qua xài thử [Claude Code Router](https://github.com/musistudio/claude-code-router), chạy Claude Code nhưng với API từ OpenRouter, với model `xAI: Grok 4 Fast`. Bài đầu tiên thấy tóm tắt khá dài.~~ Thôi thì mời bạn thưởng thức Newsletter #56 nhé.*"
+    },
+    {
+      "line": 10,
+      "kind": "heading",
+      "text": "## [I love UUID, I hate UUID](https://blog.epsiolabs.com/i-love-uuid-i-hate-uuid)"
+    },
+    {
+      "line": 16,
+      "kind": "heading",
+      "text": "## [What's new in Java 25](https://pvs-studio.com/en/blog/posts/java/1284/)"
+    },
+    {
+      "line": 22,
+      "kind": "heading",
+      "text": "## ~~[Some Best Practices for Writing Readable Automation Tests](https://blog.scottlogic.com/2025/09/04/some-best-practices-for-writing-readable-automation-tests.html)~~"
+    },
+    {
+      "line": 24,
+      "kind": "struck",
+      "text": "~~Bài viết từ Scott Logic Blog hướng dẫn các best practices để viết automation tests dễ đọc, sử dụng Playwright với TypeScript. Đối với lập trình viên junior, automation testing giúp kiểm tra ứng dụng tự động, nhưng code test khó maintain nếu không readable, dẫn đến bugs ẩn hoặc team khó collaborate.~~"
+    },
+    {
+      "line": 26,
+      "kind": "struck",
+      "text": "~~Về assertions, sử dụng expect() flexible như expect(response.status()).toBeOK() để handle codes thành công khác nhau (200, 201) mà không fail sớm, tập trung vào validations quan trọng. Với locators, ưu tiên .getByRole cho accessibility, dễ inspect qua DevTools bằng tab navigation, thay vì .getByTestID có thể confuse screen readers. Luôn advocate cho HTML roles đúng nếu thiếu.~~"
+    },
+    {
+      "line": 28,
+      "kind": "struck",
+      "text": "~~Naming conventions: Sử dụng backticks cho test names động, ví dụ test(`should return a 400 when User Information is '${variable}'`), cho phép interpolation variables. Structure: Tag tests với {tag: 'THW-000'} để filter runs theo tickets, hoặc annotations cho links chi tiết theo Playwright docs, tăng traceability và longevity.~~"
+    },
+    {
+      "line": 30,
+      "kind": "struck",
+      "text": "~~Những practices này giúp tests maintainable, accessible và team-friendly. Junior devs nên áp dụng để viết tests rõ ràng, giảm debugging time và cải thiện QA process.~~"
+    },
+    {
+      "line": 32,
+      "kind": "struck",
+      "text": "~~**Điểm chính:**~~"
+    },
+    {
+      "line": 33,
+      "kind": "struck",
+      "text": "~~- Assertions flexible: Sử dụng toBeOK() cho HTTP success codes đa dạng.~~"
+    },
+    {
+      "line": 34,
+      "kind": "struck",
+      "text": "~~- Locators accessible: Ưu tiên .getByRole qua DevTools inspection.~~"
+    },
+    {
+      "line": 35,
+      "kind": "struck",
+      "text": "~~- Dynamic naming: Backticks cho variable interpolation trong test titles.~~"
+    },
+    {
+      "line": 36,
+      "kind": "struck",
+      "text": "~~- Tagging annotations: Lưu traceability với tickets cho better collaboration.~~"
+    },
+    {
+      "line": 38,
+      "kind": "heading",
+      "text": "## [Tech Debt: Understanding its Business Impact - Optimism](https://www.optimism.io/blog/tech-debt-understanding-its-business-impact)"
+    },
+    {
+      "line": 44,
+      "kind": "heading",
+      "text": "## [Spec-Driven Development with AI: A New Approach and a Journey into the Past](https://foojay.io/today/spec-driven-development-with-ai-a-new-approach-and-a-journey-into-the-past/)"
+    },
+    {
+      "line": 50,
+      "kind": "heading",
+      "text": "## [On Good Software Engineers](https://candost.blog/on-good-software-engineers/)"
+    },
+    {
+      "line": 56,
+      "kind": "heading",
+      "text": "## [Why I do programming](https://esafev.com/notes/why-i-do-programming/)"
+    },
+    {
+      "line": 62,
+      "kind": "heading",
+      "text": "## [The unreasonable effectiveness of modern sort algorithms](https://github.com/Voultapher/sort-research-rs/blob/main/writeup/unreasonable/text.md)"
+    },
+    {
+      "line": 68,
+      "kind": "heading",
+      "text": "## [How we made ClickHouse log queries 99.5% faster with resource fingerprinting](https://signoz.io/blog/query-performance-improvement/)"
+    },
+    {
+      "line": 74,
+      "kind": "heading",
+      "text": "## [AI Coding](https://geohot.github.io/blog/jekyll/update/2025/09/12/ai-coding.html)"
+    },
+    {
+      "line": 80,
+      "kind": "italic-note",
+      "text": "*Đánh giá sơ bộ thì combo này ổn áp, chạy ổn định, không hỏi prompt linh tinh để xử lý việc đọc WebFetch, kết quả thì hơi dài dòng, nhiều lỗi vặt, mình sẽ thử thêm một số model khác trong các bài viết sắp tới để tìm được 1 combo vừa free lại chất lượng :D*"
+    }
+  ],
+  "candidates": [
+    {
+      "line": 78,
+      "kind": "first-person",
+      "text": "Tác giả dẫn một nghiên cứu cho thấy AI khiến lập trình viên cảm thấy nhanh hơn 20% nhưng thực tế lại chậm hơn 19%, và đặt câu hỏi về hàng tỷ đô la đầu tư dựa trên cảm giác đó. Ông dự đoán AI sẽ thay thế công việc lập trình giống cách trình biên dịch và bảng tính từng thay thế lực lượng lao động trước đây, không phải nhờ trí thông minh mà nhờ gom công cụ lại. Tiến bộ thực sự đến từ việc xây dựng ngôn ngữ, trình biên dịch và thư viện tốt hơn. Trong phần cập nhật, tác giả làm rõ mình phản đối sự thổi phồng chứ không phản đối AI, và ủng hộ việc nhìn nhận đúng điểm mạnh, điểm yếu của công cụ."
+    }
+  ]
+}

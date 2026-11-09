@@ -1,0 +1,124 @@
+{
+  "post": "content/post/2025/04/05/index.md",
+  "newsletter": 10,
+  "newsletter_post": true,
+  "note": "*Bài viết đã được viết lại bởi Claude Code với Opus 5.5 vào ngày 27/09/2026.*",
+  "lines": [
+    {
+      "line": 1,
+      "kind": "frontmatter",
+      "text": "---"
+    },
+    {
+      "line": 2,
+      "kind": "frontmatter",
+      "text": "title: \"Newsletter #10\""
+    },
+    {
+      "line": 3,
+      "kind": "frontmatter",
+      "text": "date: 2025-04-05"
+    },
+    {
+      "line": 4,
+      "kind": "frontmatter",
+      "text": "tags: [\"AI-Assisted\", \"Newsletter\", \"Engineering Culture\", \"Git\", \"Java\", \"Code Review\", \"Algorithms\"]"
+    },
+    {
+      "line": 5,
+      "kind": "frontmatter",
+      "text": "categories: [ \"Newsletter\" ]"
+    },
+    {
+      "line": 6,
+      "kind": "frontmatter",
+      "text": "---"
+    },
+    {
+      "line": 8,
+      "kind": "italic-note",
+      "text": "*Mời bạn thưởng thức Newsletter \\#10.*"
+    },
+    {
+      "line": 10,
+      "kind": "heading",
+      "text": "## [Gaining Years of Experience in a Few Months](https://marcgg.com/blog/2025/02/11/high-growth/)"
+    },
+    {
+      "line": 16,
+      "kind": "heading",
+      "text": "## [Writing Better Commit Messages](https://refactoringenglish.com/chapters/commit-messages/)"
+    },
+    {
+      "line": 22,
+      "kind": "heading",
+      "text": "## [The Rotation Program That Keeps This Startup's Engineers Learning — and Not Leaving](https://review.firstround.com/the-rotation-program-that-keeps-this-startups-engineers-learning-and-not-leaving/)"
+    },
+    {
+      "line": 28,
+      "kind": "heading",
+      "text": "## [Judge Your Coworkers](https://blog.staysaasy.com/p/judge-your-coworkers)"
+    },
+    {
+      "line": 34,
+      "kind": "heading",
+      "text": "## [My LLM Codegen Workflow ATM](https://harper.blog/2025/02/16/my-llm-codegen-workflow-atm/)"
+    },
+    {
+      "line": 40,
+      "kind": "heading",
+      "text": "## [Structured Logging in Spring Boot](https://www.javacodegeeks.com/structured-logging-in-spring-boot.html)"
+    },
+    {
+      "line": 46,
+      "kind": "heading",
+      "text": "## [Secret Java Stream Hacks That Will Instantly Improve Your Coding Efficiency](https://gainjavaknowledge.medium.com/secret-java-stream-hacks-that-will-instantly-improve-your-coding-efficiency-8253d57d692b)"
+    },
+    {
+      "line": 52,
+      "kind": "heading",
+      "text": "## [Death of a Thousand Nits: Code Review Best Practices](https://bitfieldconsulting.com/posts/code-review)"
+    },
+    {
+      "line": 58,
+      "kind": "heading",
+      "text": "## [Hash Functions Deep Dive](https://www.kirupa.com/data_structures_algorithms/hash_functions_deep_dive.htm)"
+    },
+    {
+      "line": 64,
+      "kind": "heading",
+      "text": "## [XOR: A Deep Dive into the Exclusive OR Operation](https://www.chiark.greenend.org.uk/~sgtatham/quasiblog/xor/)"
+    },
+    {
+      "line": 70,
+      "kind": "heading",
+      "text": "## Bonus: Vài ảnh hay ho đến từ [ByteByteGo](https://bytebytego.com/)"
+    },
+    {
+      "line": 72,
+      "kind": "asset",
+      "text": "![SOAP vs REST vs GraphQL vs RPC](https://substack-post-media.s3.amazonaws.com/public/images/6b437484-1fd8-4b59-ba05-46bb3352b053_2904x2559.jpeg)"
+    },
+    {
+      "line": 73,
+      "kind": "asset",
+      "text": "![SQS vs SNS vs EventBridge vs Kinesis](https://substack-post-media.s3.amazonaws.com/public/images/3ecf2600-10d8-4180-8328-8d790fbba0cc_1280x1557.gif)"
+    },
+    {
+      "line": 74,
+      "kind": "asset",
+      "text": "![Top 5 common ways to improve API performance](https://substack-post-media.s3.amazonaws.com/public/images/217bf342-bfd4-4088-bba3-b2734f065a20_1280x1280.gif)"
+    },
+    {
+      "line": 76,
+      "kind": "heading",
+      "text": "## Bonus 2: Vài video hay ho đến từ [Inside Java](https://inside.java/)"
+    },
+    {
+      "line": 78,
+      "kind": "asset",
+      "text": "[Project Loom and Virtual Threads: Next Phases](https://inside.java/2025/02/22/devoxxbelgium-loom-next/)"
+    }
+  ],
+  "candidates": []
+}

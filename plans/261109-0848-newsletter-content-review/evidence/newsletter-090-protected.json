@@ -1,0 +1,100 @@
+{
+  "post": "content/post/2026/03/16/index.md",
+  "newsletter": 90,
+  "newsletter_post": true,
+  "note": "*Bài viết đã được viết lại bởi Claude Code với Opus 5.5 vào ngày 27/09/2026.*",
+  "lines": [
+    {
+      "line": 1,
+      "kind": "frontmatter",
+      "text": "---"
+    },
+    {
+      "line": 2,
+      "kind": "frontmatter",
+      "text": "title: \"Newsletter #90\""
+    },
+    {
+      "line": 3,
+      "kind": "frontmatter",
+      "text": "date: 2026-03-16"
+    },
+    {
+      "line": 4,
+      "kind": "frontmatter",
+      "text": "tags: [\"AI-Assisted\", \"Newsletter\", \"Compiler\", \"AI Agents\", \"Performance\", \"System Design\", \"Nghề nghiệp\"]"
+    },
+    {
+      "line": 5,
+      "kind": "frontmatter",
+      "text": "categories: [\"Newsletter\"]"
+    },
+    {
+      "line": 6,
+      "kind": "frontmatter",
+      "text": "---"
+    },
+    {
+      "line": 8,
+      "kind": "italic-note",
+      "text": "*Mời bạn thưởng thức Newsletter #90.*"
+    },
+    {
+      "line": 10,
+      "kind": "heading",
+      "text": "## [Against Query Based Compilers](https://matklad.github.io/2026/02/25/against-query-based-compilers.html)"
+    },
+    {
+      "line": 16,
+      "kind": "heading",
+      "text": "## [The Great Developer Divide: How AI Is Reshaping the Software Job Market Into Three Tiers](https://itrevolution.com/articles/the-great-developer-divide-how-ai-is-reshaping-the-software-job-market-into-three-tiers/)"
+    },
+    {
+      "line": 22,
+      "kind": "heading",
+      "text": "## [Engineering Speed at Scale — Architectural Lessons from Sub-100-ms APIs](https://www.infoq.com/articles/engineering-speed-scale/)"
+    },
+    {
+      "line": 28,
+      "kind": "heading",
+      "text": "## [Can AI Agents Build Real Stripe Integrations?](https://stripe.com/blog/can-ai-agents-build-real-stripe-integrations)"
+    },
+    {
+      "line": 34,
+      "kind": "heading",
+      "text": "### Bonus"
+    },
+    {
+      "line": 37,
+      "kind": "asset",
+      "text": "![CPU vs GPU vs TPU](https://substackcdn.com/image/fetch/$s_!SFnp!,w_1100,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fdf0d363e-62b7-4b3f-940d-d19f7a55c610_3000x3900.png)"
+    },
+    {
+      "line": 38,
+      "kind": "asset",
+      "text": "![How OAuth 2 Works](https://substackcdn.com/image/fetch/$s_!ipY-!,w_1100,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F2931d40e-cce8-4ecd-a520-b5f80679c315_2528x3626.png)"
+    },
+    {
+      "line": 39,
+      "kind": "asset",
+      "text": "![How Distributed Tracing Works at the High Level?](https://substackcdn.com/image/fetch/$s_!Ehq9!,w_1100,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F4f417b56-c66c-45fd-8308-dab9af381ced_2252x2752.png)"
+    },
+    {
+      "line": 40,
+      "kind": "asset",
+      "text": "![Top 4 API Gateway Use Cases](https://substackcdn.com/image/fetch/$s_!4UUW!,w_1100,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F0357d808-5db9-4e18-8262-8dee58fd697d_2508x3000.jpeg)"
+    }
+  ],
+  "candidates": [
+    {
+      "line": 20,
+      "kind": "first-person",
+      "text": "Theo tác giả, AI không trực tiếp cướp việc mà đẩy nhanh các lực kinh tế khiến công việc thường quy không còn đáng giá ở mức lương cũ, tương tự hiện tượng phân cực việc làm trong ngành sản xuất nhưng với tốc độ nhanh hơn nhiều. Nhu cầu tuyển kỹ sư vẫn tăng, chỉ là chuyển dịch về chất. Các kỹ năng được nhấn mạnh gồm viết prompt, nền tảng AI/ML, thiết kế hệ thống, đọc mã nguồn thật nhanh, biết lúc nào nên giao việc cho AI và giữ thái độ hoài nghi có chủ đích với kết quả AI tạo ra. Lời khuyên cho lập trình viên là chủ động chọn tầng của mình và đầu tư vào chuyên môn lĩnh vực đặc thù như một lợi thế cạnh tranh."
+    },
+    {
+      "line": 32,
+      "kind": "first-person",
+      "text": "Kết quả vượt kỳ vọng: Claude Opus 4.5 đạt trung bình 92% ở nhóm toàn stack, còn GPT-5.2 dẫn đầu nhóm gym với 73%. Agent đã nâng cấp tích hợp Card Element cũ lên Checkout, tự dùng Stripe Link để hoàn tất giao dịch thử, và suy ngược đúng hơn 80% tham số API từ giao diện Checkout có sẵn. Dù vậy, chúng vẫn xử lý kém các tình huống mơ hồ, chẳng hạn coi lỗi 400 do dữ liệu giả là dấu hiệu endpoint hoạt động tốt, và đôi khi bỏ cuộc khi thao tác trình duyệt bị kẹt dù chỉ cần tải lại trang. Stripe công bố bộ benchmark trong AI toolkit của mình để cộng đồng cùng cải thiện công cụ cho agent; ngay trong quá trình làm, nó đã giúp họ phát hiện và sửa một số lỗi tài liệu."
+    }
+  ]
+}

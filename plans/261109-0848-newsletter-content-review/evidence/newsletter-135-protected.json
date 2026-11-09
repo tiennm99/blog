@@ -1,0 +1,93 @@
+{
+  "post": "content/post/2026/10/03/index.md",
+  "newsletter": 135,
+  "newsletter_post": true,
+  "lines": [
+    {
+      "line": 1,
+      "kind": "frontmatter",
+      "text": "---"
+    },
+    {
+      "line": 2,
+      "kind": "frontmatter",
+      "text": "title: \"Newsletter #135\""
+    },
+    {
+      "line": 3,
+      "kind": "frontmatter",
+      "text": "date: 2026-10-03"
+    },
+    {
+      "line": 4,
+      "kind": "frontmatter",
+      "text": "tags: [\"AI-Assisted\", \"Go\", \"Performance\", \"Git\", \"Algorithms\", \"Linux\", \"Software Architecture\"]"
+    },
+    {
+      "line": 5,
+      "kind": "frontmatter",
+      "text": "categories: [\"Newsletter\"]"
+    },
+    {
+      "line": 6,
+      "kind": "frontmatter",
+      "text": "---"
+    },
+    {
+      "line": 8,
+      "kind": "italic-note",
+      "text": "*Mời bạn thưởng thức Newsletter #135.*"
+    },
+    {
+      "line": 10,
+      "kind": "heading",
+      "text": "## [Git at any scale](https://cursor.com/blog/git-at-any-scale)"
+    },
+    {
+      "line": 16,
+      "kind": "heading",
+      "text": "## [Regressive JPEGs](https://maurycyz.com/projects/bad_jpeg/)"
+    },
+    {
+      "line": 22,
+      "kind": "heading",
+      "text": "## [A quick look at zero-knowledge proofs](https://bernsteinbear.com/blog/zkp/)"
+    },
+    {
+      "line": 28,
+      "kind": "heading",
+      "text": "## [The Pulse: We need to talk about migrations with AI](https://blog.pragmaticengineer.com/the-pulse-we-need-to-talk-about-migrations-with-ai/)"
+    },
+    {
+      "line": 34,
+      "kind": "heading",
+      "text": "## [The Accidental Application Runtime](https://adventures.michaelfbryan.com/posts/accidental-application-runtime)"
+    },
+    {
+      "line": 40,
+      "kind": "heading",
+      "text": "## [Generic Methods in Go 1.27](https://dominik.info/blog/go-generic-methods)"
+    },
+    {
+      "line": 46,
+      "kind": "heading",
+      "text": "## [Your executable is a SQLite database](https://fzakaria.com/2026/08/23/your-executable-is-a-sqlite-database)"
+    },
+    {
+      "line": 52,
+      "kind": "heading",
+      "text": "## [What happens when a GPU reads memory](https://blog.doubleword.ai/what-happens-when-a-gpu-reads-memory)"
+    },
+    {
+      "line": 58,
+      "kind": "heading",
+      "text": "## [A faster way to calculate the day-of-the-week](https://www.benjoffe.com/fast-day-of-week)"
+    },
+    {
+      "line": 64,
+      "kind": "heading",
+      "text": "## [Dark mode toggles: two states are enough](https://lea.verou.me/blog/2026/dark-mode-toggles/)"
+    }
+  ],
+  "candidates": []
+}

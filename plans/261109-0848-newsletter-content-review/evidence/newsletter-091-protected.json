@@ -1,0 +1,104 @@
+{
+  "post": "content/post/2026/03/17/index.md",
+  "newsletter": 91,
+  "newsletter_post": true,
+  "note": "*Bài viết đã được viết lại bởi Claude Code với Opus 5.5 vào ngày 27/09/2026.*",
+  "lines": [
+    {
+      "line": 1,
+      "kind": "frontmatter",
+      "text": "---"
+    },
+    {
+      "line": 2,
+      "kind": "frontmatter",
+      "text": "title: \"Newsletter #91\""
+    },
+    {
+      "line": 3,
+      "kind": "frontmatter",
+      "text": "date: 2026-03-17"
+    },
+    {
+      "line": 4,
+      "kind": "frontmatter",
+      "text": "tags: [\"AI-Assisted\", \"Newsletter\", \"Go\", \"Performance\", \"Concurrency\", \"AI Coding\", \"Algorithms\"]"
+    },
+    {
+      "line": 5,
+      "kind": "frontmatter",
+      "text": "categories: [\"Newsletter\"]"
+    },
+    {
+      "line": 6,
+      "kind": "frontmatter",
+      "text": "---"
+    },
+    {
+      "line": 8,
+      "kind": "italic-note",
+      "text": "*Mời bạn thưởng thức Newsletter #91.*"
+    },
+    {
+      "line": 10,
+      "kind": "heading",
+      "text": "## [How Go Slices Work Under the Hood: What Makes Them Stand Out from Other Languages](https://dev.to/ganesh-kumar/how-go-slices-work-under-the-hood-what-makes-them-stand-out-from-other-languages-42o4)"
+    },
+    {
+      "line": 16,
+      "kind": "heading",
+      "text": "## [Why Go Can't Try](https://niketpatel.com/essays/why-go-cant-try)"
+    },
+    {
+      "line": 22,
+      "kind": "heading",
+      "text": "## [The Scheduler — Understanding the Go Runtime](https://internals-for-interns.com/posts/go-runtime-scheduler)"
+    },
+    {
+      "line": 28,
+      "kind": "heading",
+      "text": "## [Go String Concatenation Performance Benchmark](https://www.winterjung.dev/en/string-concat-performance-benchmark-in-go/)"
+    },
+    {
+      "line": 34,
+      "kind": "heading",
+      "text": "## [Message Passing Is Shared Mutable State](https://causality.blog/essays/message-passing-is-shared-mutable-state/)"
+    },
+    {
+      "line": 40,
+      "kind": "heading",
+      "text": "## [Things I've Done with AI](https://sjer.red/blog/2026/built-with-ai/)"
+    },
+    {
+      "line": 46,
+      "kind": "heading",
+      "text": "## [Pushing and Pulling: Three Reactivity Algorithms](https://jonathan-frere.com/posts/reactivity-algorithms/)"
+    },
+    {
+      "line": 52,
+      "kind": "heading",
+      "text": "### Bonus"
+    },
+    {
+      "line": 54,
+      "kind": "asset",
+      "text": "**Images:**"
+    },
+    {
+      "line": 55,
+      "kind": "asset",
+      "text": "![Git Workflow: Essential Commands](https://substackcdn.com/image/fetch/$s_!Fevp!,w_1100,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Feb1ae3fa-80a7-464d-97a2-869170caaa2f_2360x2960.png)"
+    },
+    {
+      "line": 56,
+      "kind": "asset",
+      "text": "![How can Cache Systems go wrong?](https://substackcdn.com/image/fetch/$s_!huHJ!,w_1100,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F9262eb79-a1cc-4308-8f72-01fdf91e429d_1388x1782.jpeg)"
+    },
+    {
+      "line": 57,
+      "kind": "asset",
+      "text": "![Top Cyber Attacks Explained](https://substackcdn.com/image/fetch/$s_!7p1w!,w_1100,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fd5ebb98a-9f98-4c32-9268-2d14086569d8_2360x2960.png)"
+    }
+  ],
+  "candidates": []
+}

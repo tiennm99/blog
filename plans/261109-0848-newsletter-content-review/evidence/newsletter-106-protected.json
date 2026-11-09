@@ -1,0 +1,140 @@
+{
+  "post": "content/post/2026/05/28/index.md",
+  "newsletter": 106,
+  "newsletter_post": true,
+  "note": "*Bài viết đã được viết lại bởi Claude Code với Opus 5.5 vào ngày 27/09/2026.*",
+  "lines": [
+    {
+      "line": 1,
+      "kind": "frontmatter",
+      "text": "---"
+    },
+    {
+      "line": 2,
+      "kind": "frontmatter",
+      "text": "title: \"Newsletter #106\""
+    },
+    {
+      "line": 3,
+      "kind": "frontmatter",
+      "text": "date: 2026-05-28"
+    },
+    {
+      "line": 4,
+      "kind": "frontmatter",
+      "text": "tags: [\"AI-Assisted\", \"Newsletter\", \"AI\", \"LLM\", \"Software Engineering\", \"Programming Languages\", \"Productivity\"]"
+    },
+    {
+      "line": 5,
+      "kind": "frontmatter",
+      "text": "categories: [\"Newsletter\"]"
+    },
+    {
+      "line": 6,
+      "kind": "frontmatter",
+      "text": "---"
+    },
+    {
+      "line": 8,
+      "kind": "italic-note",
+      "text": "*Mời bạn thưởng thức Newsletter #106.*"
+    },
+    {
+      "line": 10,
+      "kind": "heading",
+      "text": "## [How The Heck Does GPS Work? (An Interactive Exploration)](https://perthirtysix.com/how-the-heck-does-gps-work)"
+    },
+    {
+      "line": 16,
+      "kind": "heading",
+      "text": "## [If AI Writes Your Code, Why Use Python?](https://medium.com/@NMitchem/if-ai-writes-your-code-why-use-python-bf8c4ba1a055)"
+    },
+    {
+      "line": 22,
+      "kind": "heading",
+      "text": "## [On Rendering the Sky, Sunsets, and Planets](https://blog.maximeheckel.com/posts/on-rendering-the-sky-sunsets-and-planets/)"
+    },
+    {
+      "line": 28,
+      "kind": "heading",
+      "text": "## [Starting Systems Programming, Pt 1: Programmers Write Programs](https://eblog.fly.dev/startingsystems1.html)"
+    },
+    {
+      "line": 34,
+      "kind": "heading",
+      "text": "## [Learning Software Architecture](https://matklad.github.io/2026/05/12/software-architecture.html)"
+    },
+    {
+      "line": 40,
+      "kind": "heading",
+      "text": "## [I'm an introvert. This is how I get myself to speak up.](https://newsletter.weskao.com/p/im-an-introvert-this-is-how-i-get-myself-to-speak-up)"
+    },
+    {
+      "line": 46,
+      "kind": "heading",
+      "text": "## [How I use LLMs as a staff engineer in 2026](https://www.seangoedecke.com/how-i-use-llms-in-2026/)"
+    },
+    {
+      "line": 52,
+      "kind": "heading",
+      "text": "## [Interrogatory LLM](https://martinfowler.com/bliki/InterrogatoryLLM.html)"
+    },
+    {
+      "line": 58,
+      "kind": "heading",
+      "text": "## [I don't think AI will make your processes go faster](https://frederickvanbrabant.com/blog/2026-05-15-i-dont-think-ai-will-make-your-processes-go-faster/)"
+    },
+    {
+      "line": 64,
+      "kind": "heading",
+      "text": "## [Using an Engineering Notebook](https://ntietz.com/blog/using-an-engineering-notebook/)"
+    },
+    {
+      "line": 70,
+      "kind": "heading",
+      "text": "### Bonus"
+    },
+    {
+      "line": 72,
+      "kind": "asset",
+      "text": "**Documents:**"
+    },
+    {
+      "line": 73,
+      "kind": "asset",
+      "text": "[AI eats the world](https://static1.squarespace.com/static/50363cf324ac8e905e7df861/t/6a0af5d0484fbf5fe9a7743e/1779103184855/2026-Spring-AI.pdf)"
+    }
+  ],
+  "candidates": [
+    {
+      "line": 32,
+      "kind": "first-person",
+      "text": "Bài viết mở \"hộp đen\" chương trình bằng cách biên dịch một chương trình hello world viết bằng Go rồi khảo sát trực tiếp tệp nhị phân. Người đọc tự viết từng công cụ nhỏ: findoffset để tìm vị trí một chuỗi trong tệp, echo và cat để ghi và in tệp, binpatch để sửa thẳng nội dung tệp nhị phân mà không cần biên dịch lại, cùng các công cụ hexdump để đọc phần mã lệnh. Qua đó, người đọc thấy rằng một tệp thực thi chỉ là chuỗi byte có tổ chức: chuỗi \"hello, world!\" nằm ở một vị trí cố định, còn header ELF chứa magic number, kiến trúc đích và điểm vào nơi CPU bắt đầu thực thi, với các giá trị lưu theo kiểu little-endian trên x86-64. Tinh thần tác giả muốn truyền lại: tự xây công cụ, tự nhìn dữ liệu bằng mắt mình, hiểu hệ thống thay vì dựa vào lớp trừu tượng, vì suy cho cùng tất cả chỉ là byte."
+    },
+    {
+      "line": 44,
+      "kind": "first-person",
+      "text": "Trước cuộc họp, hãy quyết định sẵn là mình sẽ phát biểu để khỏi giằng co với bản thân ngay lúc đó, và lên tiếng sớm trước khi sự tự nghi ngờ kéo dài khiến cơ hội trôi qua. Chuẩn bị vài câu mở đầu quen thuộc kiểu \"That's a great point. My POV on this is…\" giúp chen vào cuộc thảo luận dễ hơn. Văn bản như tài liệu, ghi chú là một kênh đóng góp song song, tạo ra sản phẩm có giá trị lâu dài. Họp trực tuyến cũng có lợi thế riêng cho người hướng nội (ánh sáng, khung hình, ô video nhỏ giúp bớt áp lực), và có thể nhờ một đồng nghiệp nhắc nhẹ để giữ trách nhiệm phát biểu."
+    },
+    {
+      "line": 48,
+      "kind": "first-person",
+      "text": "Sean Goedecke nhìn lại cách anh dùng LLM trong vai trò staff engineer sau hơn một năm, và thay đổi lớn nhất là agent giờ đã thật sự tốt. Năm 2025 anh chỉ nhờ AI gợi ý mã, sửa nhỏ ở vùng lạ hay hỏi đáp; nay mọi thay đổi mã nguồn đều bắt đầu bằng việc giao cho agent (chủ yếu qua ứng dụng GitHub Copilot, hàng chục phiên mỗi ngày). Anh lướt qua kết quả khoảng 30 giây, loại bỏ phần lớn vì \"không phải điều mình nghĩ\", còn lại mới duyệt kỹ và chỉnh một lượt cuối. Với lỗi phần mềm, anh giao mọi báo cáo lỗi cho agent vì nó tự chẩn đoán đúng khoảng 80%. Tuy vậy, chuyên môn con người vẫn quan trọng: có lỗi phải tới phiên agent thứ 14 mới tìm ra, sau khi anh đã bổ sung ngữ cảnh từ log, Slack, tự tái hiện lỗi và thu hẹp phạm vi tìm kiếm."
+    },
+    {
+      "line": 54,
+      "kind": "first-person",
+      "text": "Martin Fowler giới thiệu kỹ thuật \"Interrogatory LLM\": thay vì con người tự viết ra hàng trang ngữ cảnh cho một tác vụ phức tạp, ta yêu cầu LLM phỏng vấn mình, đặt mọi câu hỏi cần thiết, rồi tổng hợp thành một báo cáo ngữ cảnh để một phiên khác (có thể dùng mô hình khác) thực hiện bước tiếp theo. Ông lần đầu thấy cách làm này trong blog của Harper Reed, với điểm đáng chú ý là buộc LLM chỉ hỏi một câu mỗi lần; khi tự thử, Fowler nhận ra phải nhắc lại yêu cầu này thường xuyên."
+    },
+    {
+      "line": 56,
+      "kind": "first-person",
+      "text": "Kỹ thuật này còn dùng được theo chiều ngược lại: đưa cho LLM một tài liệu như đặc tả phần mềm và để nó phỏng vấn chuyên gia miền nhằm kiểm tra tài liệu còn chính xác không, thay cho việc bắt chuyên gia đọc duyệt vốn nhiều người thấy khó. Có thể kết hợp cả hai: một LLM xây dựng tài liệu, các LLM khác đem đi rà soát với những chuyên gia khác. Rộng hơn, dù Fowler là người coi viết là một phần của tư duy, nhiều người thấy viết rất khó; một cuộc trò chuyện với LLM có thể giúp họ biến hiểu biết của mình thành tài liệu viết."
+    },
+    {
+      "line": 68,
+      "kind": "first-person",
+      "text": "Cuốn sổ mang lại hai lợi ích chính. Thứ nhất là hỗ trợ trí nhớ: vừa có thể đọc lại xem mình đang làm gì sau khi bị gián đoạn, vừa nhờ việc viết tay giúp ghi nhớ tốt hơn. Thứ hai là công cụ tư duy: cô thường mô tả thay đổi định làm vào sổ trước khi viết mã, buộc bản thân nghĩ kỹ và phát hiện chỗ chưa hiểu trước khi gõ phím. Cô hầu như không đọc lại sổ và cũng không cho ai xem, vì \"việc viết chính là công việc\". Lời khuyên của cô: nếu chưa thử thì nên thử, rồi tự điều chỉnh định dạng, phương tiện và mức độ chi tiết cho phù hợp với bản thân."
+    }
+  ]
+}

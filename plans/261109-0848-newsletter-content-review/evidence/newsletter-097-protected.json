@@ -1,0 +1,115 @@
+{
+  "post": "content/post/2026/04/17/index.md",
+  "newsletter": 97,
+  "newsletter_post": true,
+  "note": "*Bài viết đã được viết lại bởi Claude Code với Opus 5.5 vào ngày 27/09/2026.*",
+  "lines": [
+    {
+      "line": 1,
+      "kind": "frontmatter",
+      "text": "---"
+    },
+    {
+      "line": 2,
+      "kind": "frontmatter",
+      "text": "title: \"Newsletter #97\""
+    },
+    {
+      "line": 3,
+      "kind": "frontmatter",
+      "text": "date: 2026-04-17"
+    },
+    {
+      "line": 4,
+      "kind": "frontmatter",
+      "text": "tags: [\"AI-Assisted\", \"Newsletter\", \"AI Agents\", \"System Design\", \"DevOps\", \"Memory Management\", \"Career\"]"
+    },
+    {
+      "line": 5,
+      "kind": "frontmatter",
+      "text": "categories: [\"Newsletter\"]"
+    },
+    {
+      "line": 6,
+      "kind": "frontmatter",
+      "text": "---"
+    },
+    {
+      "line": 8,
+      "kind": "italic-note",
+      "text": "*Mời bạn thưởng thức Newsletter #97.*"
+    },
+    {
+      "line": 10,
+      "kind": "heading",
+      "text": "## [Why we're rethinking cache for the AI era](https://blog.cloudflare.com/rethinking-cache-ai-humans/)"
+    },
+    {
+      "line": 16,
+      "kind": "heading",
+      "text": "## [A Behind-the-Scenes Look at How We Release the Spotify App (Part 1)](https://engineering.atspotify.com/2025/04/how-we-release-the-spotify-app-part-1)"
+    },
+    {
+      "line": 22,
+      "kind": "heading",
+      "text": "## [Components of A Coding Agent](https://magazine.sebastianraschka.com/p/components-of-a-coding-agent)"
+    },
+    {
+      "line": 28,
+      "kind": "heading",
+      "text": "## [Say the Thing You Want](https://terriblesoftware.org/2026/04/01/say-the-thing-you-want/)"
+    },
+    {
+      "line": 34,
+      "kind": "heading",
+      "text": "## [Agentic Coding and Microservices](https://www.natemeyvis.com/agentic-coding-and-microservices/)"
+    },
+    {
+      "line": 40,
+      "kind": "heading",
+      "text": "## [Garbage Collection: From First Principles to Modern Collectors in Java, Go and Python](https://shbhmrzd.github.io/systems/garbage-collection/memory-management/2026/04/01/garbage-collectors-deep-dive.html)"
+    },
+    {
+      "line": 46,
+      "kind": "heading",
+      "text": "## [I told Claude Code to build me an executive assistant](https://x.com/obie/status/2013955736292704342)"
+    },
+    {
+      "line": 52,
+      "kind": "heading",
+      "text": "### Bonus"
+    },
+    {
+      "line": 54,
+      "kind": "asset",
+      "text": "**Images:**"
+    },
+    {
+      "line": 55,
+      "kind": "asset",
+      "text": "![Monolithic vs Microservices vs Serverless](https://substackcdn.com/image/fetch/$s_!OXGA!,w_1100,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F6025205d-78d1-4aa9-b2ba-281d1b9fc57e_2484x3002.png)"
+    },
+    {
+      "line": 56,
+      "kind": "asset",
+      "text": "![CLI vs MCP](https://substackcdn.com/image/fetch/$s_!70vn!,w_1100,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F71e475fe-34fa-44f8-a564-02f946456588_2508x3042.png)"
+    },
+    {
+      "line": 57,
+      "kind": "asset",
+      "text": "![Comparing 5 Major Coding Agents](https://substackcdn.com/image/fetch/$s_!INti!,w_1100,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F29e4bde9-65ea-4d95-bc99-1802e4f74448_2484x3002.png)"
+    },
+    {
+      "line": 58,
+      "kind": "asset",
+      "text": "![JWT Visualized](https://substackcdn.com/image/fetch/$s_!ujMG!,w_1100,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F1fd50345-af15-4236-ab47-73225d1aa660_800x803.jpeg)"
+    }
+  ],
+  "candidates": [
+    {
+      "line": 30,
+      "kind": "first-person",
+      "text": "Tác giả blog Terrible Software đưa ra một lời khuyên đơn giản nhưng hay bị bỏ qua: hãy nói thẳng với manager về điều bạn muốn trong sự nghiệp. Nhiều kỹ sư đến cuối buổi 1:1, khi được hỏi \"còn gì nữa không?\", lại trả lời \"không, ổn cả\" dù đang muốn dẫn dắt dự án mới hay chuyển team, vì sợ bị coi là tự phụ, sợ bị đánh giá là chưa sẵn sàng hoặc ngại để lộ một mong muốn có thể không đạt được. Nhưng như bài viết nhận xét, một mong muốn giữ cho riêng mình thì \"không có bề mặt\" nào để người khác phản hồi, xây dựng tiếp hay giúp đỡ."
+    }
+  ]
+}

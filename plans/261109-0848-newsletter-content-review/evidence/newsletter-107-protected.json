@@ -1,0 +1,109 @@
+{
+  "post": "content/post/2026/05/30/index.md",
+  "newsletter": 107,
+  "newsletter_post": true,
+  "note": "*Bài viết đã được viết lại bởi Claude Code với Opus 5.5 vào ngày 27/09/2026.*",
+  "lines": [
+    {
+      "line": 1,
+      "kind": "frontmatter",
+      "text": "---"
+    },
+    {
+      "line": 2,
+      "kind": "frontmatter",
+      "text": "title: \"Newsletter #107\""
+    },
+    {
+      "line": 3,
+      "kind": "frontmatter",
+      "text": "date: 2026-05-30"
+    },
+    {
+      "line": 4,
+      "kind": "frontmatter",
+      "text": "tags: [\"AI-Assisted\", \"Newsletter\", \"Claude Code\", \"AI Agents\", \"Software Testing\", \"Performance\", \"Open Source\"]"
+    },
+    {
+      "line": 5,
+      "kind": "frontmatter",
+      "text": "categories: [\"Newsletter\"]"
+    },
+    {
+      "line": 6,
+      "kind": "frontmatter",
+      "text": "---"
+    },
+    {
+      "line": 8,
+      "kind": "italic-note",
+      "text": "*Mời bạn thưởng thức Newsletter #107.*"
+    },
+    {
+      "line": 10,
+      "kind": "heading",
+      "text": "## ~~[Why I'm leaving GitHub for Forgejo](https://jorijn.com/en/blog/leaving-github-for-forgejo/)~~"
+    },
+    {
+      "line": 16,
+      "kind": "heading",
+      "text": "## [Prompt Injection, Clearly Explained](https://www.youtube.com/watch?v=KDcayRssGbw)"
+    },
+    {
+      "line": 22,
+      "kind": "heading",
+      "text": "## [How Claude Code works in large codebases: Best practices and where to start](https://claude.com/blog/how-claude-code-works-in-large-codebases-best-practices-and-where-to-start)"
+    },
+    {
+      "line": 28,
+      "kind": "heading",
+      "text": "## [AI Is Doing the Testing Now](https://brijeshdeb.medium.com/ai-is-doing-the-testing-now-e489d2602d87)"
+    },
+    {
+      "line": 34,
+      "kind": "heading",
+      "text": "## [Tokenomics: the 62.5-minute rule for Claude's cache](https://skids.dev/blog/anthropic-cache-tokenomics/)"
+    },
+    {
+      "line": 40,
+      "kind": "heading",
+      "text": "## [The maintainer's dilemma](https://spf13.com/p/the-maintainers-dilemma/)"
+    },
+    {
+      "line": 46,
+      "kind": "heading",
+      "text": "## [A regression in code I didn't touch](https://blog.andr2i.com/posts/2026-05-19-a-regression-in-code-i-didn-t-touch)"
+    },
+    {
+      "line": 52,
+      "kind": "heading",
+      "text": "## [Ruby vs. Java vs. TypeScript: my experience on building a Cowork DOCX plugin](https://tanin.nanakorn.com/ruby-java-typescrip-claude-docx-plugin/)"
+    },
+    {
+      "line": 58,
+      "kind": "heading",
+      "text": "### Bonus"
+    },
+    {
+      "line": 60,
+      "kind": "asset",
+      "text": "**Images:**"
+    },
+    {
+      "line": 61,
+      "kind": "asset",
+      "text": "![Giải phẫu một AI Agent](https://substackcdn.com/image/fetch/$s_!lOfS!,w_1100,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F20aada1f-cc38-4c94-8778-eeaa7b63aceb_2484x3002.png)"
+    },
+    {
+      "line": 63,
+      "kind": "asset",
+      "text": "![REST vs GraphQL vs gRPC](https://substackcdn.com/image/fetch/$s_!eDv8!,w_1100,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Ffafb183d-5c2f-4a6e-994e-ecba33663b11_2484x3002.png)"
+    },
+    {
+      "line": 65,
+      "kind": "asset",
+      "text": "![git fetch vs git pull vs git pull --rebase](https://substackcdn.com/image/fetch/$s_!71ii!,w_1100,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F68416644-193b-4b64-8e50-2e36a950b890_2484x3002.png)"
+    }
+  ],
+  "candidates": []
+}

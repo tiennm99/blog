@@ -1,0 +1,105 @@
+{
+  "post": "content/post/2025/05/12/index.md",
+  "newsletter": 25,
+  "newsletter_post": true,
+  "note": "*Bài viết đã được viết lại bởi Claude Code với Opus 5.5 vào ngày 27/09/2026.*",
+  "lines": [
+    {
+      "line": 1,
+      "kind": "frontmatter",
+      "text": "---"
+    },
+    {
+      "line": 2,
+      "kind": "frontmatter",
+      "text": "title: \"Newsletter #25\""
+    },
+    {
+      "line": 3,
+      "kind": "frontmatter",
+      "text": "date: \"2025-05-12\""
+    },
+    {
+      "line": 4,
+      "kind": "frontmatter",
+      "text": "tags: [ \"AI-Assisted\", \"Software Engineering\", \"Career Development\", \"LLM Research\", \"Open Source\", \"AI Coding\", \"Productivity\" ]"
+    },
+    {
+      "line": 5,
+      "kind": "frontmatter",
+      "text": "categories: [ \"Newsletter\" ]"
+    },
+    {
+      "line": 6,
+      "kind": "frontmatter",
+      "text": "---"
+    },
+    {
+      "line": 8,
+      "kind": "italic-note",
+      "text": "*Mời bạn thưởng thức Newsletter #25.*"
+    },
+    {
+      "line": 10,
+      "kind": "heading",
+      "text": "## [The 13 software engineering laws](https://newsletter.manager.dev/p/the-13-software-engineering-laws)"
+    },
+    {
+      "line": 18,
+      "kind": "heading",
+      "text": "## [The Curve is Bending: Predictions on near-term AI inference spending](https://grantslatton.com/the-curve-is-bending)"
+    },
+    {
+      "line": 26,
+      "kind": "heading",
+      "text": "## [Open-Source is Just That: Understanding Boundaries in Open Source](https://vale.rocks/posts/open-source-entitlement)"
+    },
+    {
+      "line": 34,
+      "kind": "heading",
+      "text": "## [The Insanity of Being a Software Engineer](https://0x1.pt/2025/04/06/the-insanity-of-being-a-software-engineer/)"
+    },
+    {
+      "line": 42,
+      "kind": "heading",
+      "text": "## [The day I taught AI to understand code like a Senior Developer](https://nmn.gl/blog/ai-understand-senior-developer)"
+    },
+    {
+      "line": 50,
+      "kind": "heading",
+      "text": "## [Why Companies Don't Fix Bugs](https://idiallo.com/blog/companies-dont-fix-bugs)"
+    },
+    {
+      "line": 58,
+      "kind": "heading",
+      "text": "## [3 Buckets of Work Time](https://corymiller.com/3-buckets-of-work-time/)"
+    },
+    {
+      "line": 66,
+      "kind": "heading",
+      "text": "## [Dangerous Advice for Software Engineers](https://www.seangoedecke.com/dangerous-advice/)"
+    },
+    {
+      "line": 74,
+      "kind": "heading",
+      "text": "## [On the Biology of a Large Language Model](https://transformer-circuits.pub/2025/attribution-graphs/biology.html)"
+    }
+  ],
+  "candidates": [
+    {
+      "line": 60,
+      "kind": "first-person",
+      "text": "Cory Miller, Chief Evangelist làm việc từ Oklahoma với đội ngũ phần lớn ở châu Âu, xem lại lịch làm việc và nhận ra thời gian chia thành ba nhóm. Thứ nhất là trò chuyện, tức giao tiếp và cộng tác qua họp hành và Slack/Teams, chiếm nhiều thời gian hơn thường lệ vì ông vừa gia nhập đội ngũ mới. Thứ hai là làm việc, tức thực thi và bàn giao, với ông chủ yếu là sản xuất video cho nội bộ và khách hàng. Thứ ba là suy nghĩ về công việc, tức chiến lược và tầm nhìn, phần \"mơ mộng\" gắn với thế mạnh Wonder và Invention trong mô hình Working Genius, thường làm một mình trong yên tĩnh rồi mới mang ý tưởng ra cho đồng đội góp ý."
+    },
+    {
+      "line": 68,
+      "kind": "first-person",
+      "text": "Sean Goedecke ví một số lời khuyên nghề nghiệp như \"công cụ sắc bén\" kiểu ssh, kubectl hay quyền ghi vào cơ sở dữ liệu production: dùng đúng thì rất hữu ích, dùng sai thì gây hại, và cần năng lực cùng óc phán đoán để dùng tốt. Ông thường đưa ra những lời khuyên \"nguy hiểm\" như vậy: tự quyết định nên làm việc gì, đôi khi cố ý phá vỡ quy định thành văn của công ty, giữ quan điểm mạnh dù chưa chắc chắn, chấp nhận mình có chút \"láu cá\", và tránh mọi hoạt động không phục vụ việc phát hành sản phẩm. Ông lo có người áp dụng sai, nhưng vẫn cho rằng cần có nơi viết những điều này ra."
+    },
+    {
+      "line": 78,
+      "kind": "first-person",
+      "text": "Kết quả cho thấy mô hình thực hiện nhiều bước suy luận trung gian \"trong đầu\", như suy ra Texas rồi mới đến Austin khi được hỏi thủ phủ của bang chứa Dallas, song song với các lối tắt ghi nhớ. Nó có dấu hiệu lập kế hoạch trước, như chọn từ gieo vần trước khi viết câu thơ, có mạch \"siêu nhận thức\" sơ khai để biết giới hạn hiểu biết của mình, và dùng biểu diễn trừu tượng chung giữa nhiều ngôn ngữ. Nhóm tác giả thừa nhận công cụ chỉ cho kết quả thỏa đáng với khoảng một phần tư số câu lệnh, nhưng đây là bước tiến quan trọng cho khả năng diễn giải và an toàn AI."
+    }
+  ]
+}

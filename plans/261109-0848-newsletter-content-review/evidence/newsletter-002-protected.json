@@ -1,0 +1,120 @@
+{
+  "post": "content/post/2025/02/16/index.md",
+  "newsletter": 2,
+  "newsletter_post": true,
+  "note": "*Bài viết đã được viết lại bởi Claude Code với Opus 5.5 vào ngày 27/09/2026.*",
+  "lines": [
+    {
+      "line": 1,
+      "kind": "frontmatter",
+      "text": "---"
+    },
+    {
+      "line": 2,
+      "kind": "frontmatter",
+      "text": "title: \"Newsletter #2\""
+    },
+    {
+      "line": 3,
+      "kind": "frontmatter",
+      "text": "date: 2025-02-16"
+    },
+    {
+      "line": 4,
+      "kind": "frontmatter",
+      "text": "tags: [\"AI-Assisted\", \"Newsletter\", \"Databases\", \"Redis\", \"Rate Limiting\", \"Cloudflare\", \"LLMs\"]"
+    },
+    {
+      "line": 5,
+      "kind": "frontmatter",
+      "text": "categories: [ \"Newsletter\" ]"
+    },
+    {
+      "line": 6,
+      "kind": "frontmatter",
+      "text": "---"
+    },
+    {
+      "line": 8,
+      "kind": "html-block",
+      "text": "<i>"
+    },
+    {
+      "line": 9,
+      "kind": "html-block",
+      "text": "Chào các bạn, đến hẹn lại lên, đây là Newsletter #2 của mình. Cuối tuần này mình đi chơi ở Xuyên Mộc, vừa về hôm nay thôi nên giờ mới lên bài."
+    },
+    {
+      "line": 11,
+      "kind": "html-block",
+      "text": "Thôi không vòng vo nữa, vào ngay Newsletter #2 của MiTi nào."
+    },
+    {
+      "line": 12,
+      "kind": "html-block",
+      "text": "</i>"
+    },
+    {
+      "line": 14,
+      "kind": "heading",
+      "text": "## [Some things to expect in 2025](https://lwn.net/Articles/1003780/)"
+    },
+    {
+      "line": 20,
+      "kind": "heading",
+      "text": "## [Why you should use compact table columns](https://vladmihalcea.com/compact-table-columns/)"
+    },
+    {
+      "line": 26,
+      "kind": "heading",
+      "text": "## [Rate limiting with Redis: An essential guide](https://foojay.io/today/rate-limiting-with-redis-an-essential-guide/)"
+    },
+    {
+      "line": 32,
+      "kind": "heading",
+      "text": "## [Why does Cloudflare Pages have such a generous Free tier?](https://mattsayar.com/why-does-cloudflare-pages-have-such-a-generous-free-tier/)"
+    },
+    {
+      "line": 38,
+      "kind": "heading",
+      "text": "## [How I program with LLMs](https://crawshaw.io/blog/programming-with-llms)"
+    },
+    {
+      "line": 44,
+      "kind": "heading",
+      "text": "## Bonus"
+    },
+    {
+      "line": 48,
+      "kind": "heading",
+      "text": "### Bonus #1: Một vài ebook mình tìm được"
+    },
+    {
+      "line": 53,
+      "kind": "heading",
+      "text": "### Bonus #2: Vài ảnh hay ho đến từ [ByteByteGo](https://bytebytego.com/)"
+    },
+    {
+      "line": 55,
+      "kind": "asset",
+      "text": "![Cookies Vs Sessions Vs JWT Vs PASETO](https://substack-post-media.s3.amazonaws.com/public/images/11b53f30-8dba-4520-9b1a-425b54b9b84a_1280x1585.gif)"
+    },
+    {
+      "line": 56,
+      "kind": "asset",
+      "text": "![Algorithms you should know before taking System Design Interviews](https://substack-post-media.s3.amazonaws.com/public/images/fdbcc119-8f5d-4d27-9a4b-2c8bde82b537_4026x8030.jpeg)"
+    },
+    {
+      "line": 57,
+      "kind": "asset",
+      "text": "![Top 6 Load Balancing Algorithms](https://substack-post-media.s3.amazonaws.com/public/images/12dffcce-f231-48cc-915f-d53c0f8bce0c_3735x3573.jpeg)"
+    }
+  ],
+  "candidates": [
+    {
+      "line": 18,
+      "kind": "first-person",
+      "text": "Một dự án lớn có thể phát hiện mình đã hợp nhất nhiều mã nguồn do AI sinh ra mà người đóng góp không hiểu, buộc phải hoàn tác; song song là các nỗ lực xây dựng AI tạo sinh thực sự tự do. Các quỹ phần mềm tự do tiếp tục khó khăn, dù có thể ra đời quỹ chuyên hỗ trợ người bảo trì. Nhiều thiết bị phụ thuộc đám mây sẽ thành \"cục gạch\" khi nhà sản xuất phá sản, tạo cơ hội cho giải pháp tự do như Home Assistant; phần cứng mở như OpenWrt One sẽ phổ biến hơn, và các bản phân phối thay thế cho điện thoại được quan tâm trở lại. Cuối cùng, tác giả lo ngại căng thẳng toàn cầu sẽ ảnh hưởng đến cộng đồng và kêu gọi giữ vững tinh thần xây dựng hệ thống cho mọi người, đón nhận đóng góp từ bất kỳ ai."
+    }
+  ]
+}

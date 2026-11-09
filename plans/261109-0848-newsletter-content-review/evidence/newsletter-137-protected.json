@@ -1,0 +1,93 @@
+{
+  "post": "content/post/2026/10/05/index.md",
+  "newsletter": 137,
+  "newsletter_post": true,
+  "lines": [
+    {
+      "line": 1,
+      "kind": "frontmatter",
+      "text": "---"
+    },
+    {
+      "line": 2,
+      "kind": "frontmatter",
+      "text": "title: \"Newsletter #137\""
+    },
+    {
+      "line": 3,
+      "kind": "frontmatter",
+      "text": "date: 2026-10-05"
+    },
+    {
+      "line": 4,
+      "kind": "frontmatter",
+      "text": "tags: [\"AI-Assisted\", \"PostgreSQL\", \"AI Agents\", \"Software Engineering\", \"Testing\", \"Git\", \"Linux\"]"
+    },
+    {
+      "line": 5,
+      "kind": "frontmatter",
+      "text": "categories: [\"Newsletter\"]"
+    },
+    {
+      "line": 6,
+      "kind": "frontmatter",
+      "text": "---"
+    },
+    {
+      "line": 8,
+      "kind": "italic-note",
+      "text": "*Mời bạn thưởng thức Newsletter #137.*"
+    },
+    {
+      "line": 10,
+      "kind": "heading",
+      "text": "## [How to name things](https://kolemannix.com/blog/how-to-name-things/)"
+    },
+    {
+      "line": 16,
+      "kind": "heading",
+      "text": "## [Postgres Locks Explained](https://postgreslocksexplained.com/)"
+    },
+    {
+      "line": 22,
+      "kind": "heading",
+      "text": "## [A Deep (and Fuzzy) Dive Into Search](https://serenedb.com/blog/fuzzy-search-deep-dive)"
+    },
+    {
+      "line": 28,
+      "kind": "heading",
+      "text": "## [email encryption](https://computer.rip/2026-07-19-email-encryption.html)"
+    },
+    {
+      "line": 34,
+      "kind": "heading",
+      "text": "## [A shell exclamation mark is not for yelling. Be lazy.](https://refp.se/articles/your-shell-and-the-lazy-exclamation-mark)"
+    },
+    {
+      "line": 40,
+      "kind": "heading",
+      "text": "## [A coding agent is six functions in a trenchcoat](https://tidydesign.substack.com/p/a-coding-agent-is-six-functions-in)"
+    },
+    {
+      "line": 46,
+      "kind": "heading",
+      "text": "## [How well do agents use test and verification techniques?](https://danluu.com/agentic-testing/)"
+    },
+    {
+      "line": 52,
+      "kind": "heading",
+      "text": "## [How one connection kills a database](https://planetscale.com/blog/debugging-live-database-connections)"
+    },
+    {
+      "line": 58,
+      "kind": "heading",
+      "text": "## [TODOs Considered Harmful](https://frequal.com/java/TodosConsideredHarmful.html)"
+    },
+    {
+      "line": 64,
+      "kind": "heading",
+      "text": "## [git worktree gotchas](https://www.olafalders.com/2026/09/16/git-worktree-gotchas/)"
+    }
+  ],
+  "candidates": []
+}

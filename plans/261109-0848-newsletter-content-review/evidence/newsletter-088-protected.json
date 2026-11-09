@@ -1,0 +1,104 @@
+{
+  "post": "content/post/2026/03/13/index.md",
+  "newsletter": 88,
+  "newsletter_post": true,
+  "note": "*Bài viết đã được viết lại bởi Claude Code với Opus 5.5 vào ngày 27/09/2026.*",
+  "lines": [
+    {
+      "line": 1,
+      "kind": "frontmatter",
+      "text": "---"
+    },
+    {
+      "line": 2,
+      "kind": "frontmatter",
+      "text": "title: \"Newsletter #88\""
+    },
+    {
+      "line": 3,
+      "kind": "frontmatter",
+      "text": "date: 2026-03-13"
+    },
+    {
+      "line": 4,
+      "kind": "frontmatter",
+      "text": "tags: [\"AI-Assisted\", \"Newsletter\", \"Debugging\", \"Web Performance\", \"Frontend\", \"Code Quality\", \"Browser Rendering\"]"
+    },
+    {
+      "line": 5,
+      "kind": "frontmatter",
+      "text": "categories: [\"Newsletter\"]"
+    },
+    {
+      "line": 6,
+      "kind": "frontmatter",
+      "text": "---"
+    },
+    {
+      "line": 8,
+      "kind": "italic-note",
+      "text": "*Mời bạn thưởng thức Newsletter #88.*"
+    },
+    {
+      "line": 10,
+      "kind": "heading",
+      "text": "## [A Broken Heart](https://allenpike.com/2026/a-broken-heart/)"
+    },
+    {
+      "line": 16,
+      "kind": "heading",
+      "text": "## [Wrapping Code Comments](https://matklad.github.io/2026/02/21/wrapping-code-comments.html)"
+    },
+    {
+      "line": 22,
+      "kind": "heading",
+      "text": "### Bonus"
+    },
+    {
+      "line": 24,
+      "kind": "asset",
+      "text": "**Images:**"
+    },
+    {
+      "line": 25,
+      "kind": "asset",
+      "text": "![RabbitMQ vs Kafka vs Pulsar](https://substackcdn.com/image/fetch/$s_!h2M_!,w_1100,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F1d6d88ea-4355-4f29-96fa-9770907beebb_2360x2960.png)"
+    },
+    {
+      "line": 26,
+      "kind": "asset",
+      "text": "![REST vs GraphQL](https://substackcdn.com/image/fetch/$s_!8P-v!,w_1100,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F6039d506-e02f-4313-ab97-2c04f8c94d90_2360x2960.png)"
+    },
+    {
+      "line": 27,
+      "kind": "asset",
+      "text": "![Eventual Consistency in Modern Databases](https://substackcdn.com/image/fetch/$s_!yela!,w_1100,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F5ac3310f-e380-48c2-93ff-051f7606b533_2250x2624.png)"
+    },
+    {
+      "line": 28,
+      "kind": "asset",
+      "text": "![Strong Consistency In Databases](https://substackcdn.com/image/fetch/$s_!vB9v!,w_1100,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fbc02c74f-e91f-438a-8ad8-d5ba6831e7f0_2250x2624.png)"
+    },
+    {
+      "line": 29,
+      "kind": "asset",
+      "text": "![PostgreSQL versus MySQL](https://substackcdn.com/image/fetch/$s_!h8d0!,w_1100,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fc5f67fe5-0efa-4fc6-98da-d176b60b1a92_2508x3000.jpeg)"
+    },
+    {
+      "line": 30,
+      "kind": "asset",
+      "text": "![Network Protocols Explained](https://substackcdn.com/image/fetch/$s_!_roW!,w_1100,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fdbdb9cae-3bda-4a62-9077-3f9d1e13fede_2360x2960.jpeg)"
+    },
+    {
+      "line": 32,
+      "kind": "asset",
+      "text": "**Videos:**"
+    },
+    {
+      "line": 33,
+      "kind": "asset",
+      "text": "[Video: What Is Redis Really About? - ByteByteGo](https://www.youtube.com/watch?v=z_NbVtbgBJw)"
+    }
+  ],
+  "candidates": []
+}

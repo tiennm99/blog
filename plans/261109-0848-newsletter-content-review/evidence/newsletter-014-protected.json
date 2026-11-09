@@ -1,0 +1,130 @@
+{
+  "post": "content/post/2025/04/30/index.md",
+  "newsletter": 14,
+  "newsletter_post": true,
+  "note": "*Bài viết đã được viết lại bởi Claude Code với Opus 5.5 vào ngày 27/09/2026.*",
+  "lines": [
+    {
+      "line": 1,
+      "kind": "frontmatter",
+      "text": "---"
+    },
+    {
+      "line": 2,
+      "kind": "frontmatter",
+      "text": "title: \"Newsletter #14\""
+    },
+    {
+      "line": 3,
+      "kind": "frontmatter",
+      "text": "date: 2025-04-30"
+    },
+    {
+      "line": 4,
+      "kind": "frontmatter",
+      "text": "tags: [\"AI-Assisted\", \"Newsletter\", \"Algorithms\", \"Data Structures\", \"Performance\", \"AI Inference\", \"Git\"]"
+    },
+    {
+      "line": 5,
+      "kind": "frontmatter",
+      "text": "categories: [ \"Newsletter\" ]"
+    },
+    {
+      "line": 6,
+      "kind": "frontmatter",
+      "text": "---"
+    },
+    {
+      "line": 8,
+      "kind": "italic-note",
+      "text": "*Mời bạn thưởng thức Newsletter \\#14.*"
+    },
+    {
+      "line": 10,
+      "kind": "heading",
+      "text": "## [Bloom Filter: A Deep Dive](https://www.kirupa.com/data_structures_algorithms/bloom_filter.htm)"
+    },
+    {
+      "line": 16,
+      "kind": "heading",
+      "text": "## [Rethinking LLM inference: Why developer AI needs a different approach](https://www.augmentcode.com/blog/rethinking-llm-inference-why-developer-ai-needs-a-different-approach)"
+    },
+    {
+      "line": 22,
+      "kind": "heading",
+      "text": "## [Floyd’s Cycle Algorithm: Fraud Detection in Java Systems](https://dzone.com/articles/floyds-cycle-algorithm-fraud-detection-java-systems)"
+    },
+    {
+      "line": 28,
+      "kind": "heading",
+      "text": "## [Succinct data structures](https://blog.startifact.com/posts/succinct/)"
+    },
+    {
+      "line": 34,
+      "kind": "heading",
+      "text": "## [The art of engineering team focus: less is more](https://github.com/resources/insights/engineering-team-focus)"
+    },
+    {
+      "line": 40,
+      "kind": "heading",
+      "text": "## [Performance optimization, and how to do it wrong](https://genna.win/blog/convolution-simd/)"
+    },
+    {
+      "line": 46,
+      "kind": "heading",
+      "text": "## [Supercharging Discord Mobile: Our Journey to a Faster App](https://discord.com/blog/supercharging-discord-mobile-our-journey-to-a-faster-app)"
+    },
+    {
+      "line": 52,
+      "kind": "heading",
+      "text": "## [Git without a forge](https://www.chiark.greenend.org.uk/~sgtatham/quasiblog/git-no-forge/)"
+    },
+    {
+      "line": 58,
+      "kind": "heading",
+      "text": "## [40 Thoughts On Turning 40](https://newsletter.pathlesspath.com/p/40-thoughts-on-turning-40-287)"
+    },
+    {
+      "line": 64,
+      "kind": "heading",
+      "text": "## Bonus: Vài ảnh hay ho đến từ [ByteByteGo](https://bytebytego.com/)"
+    },
+    {
+      "line": 66,
+      "kind": "asset",
+      "text": "![A Cheatsheet on Comparing Key-Value Stores](https://substack-post-media.s3.amazonaws.com/public/images/f7fc4f19-ebd8-45a0-9398-469805bb4a26_1280x1532.gif)"
+    },
+    {
+      "line": 67,
+      "kind": "asset",
+      "text": "![A Handy Cheatsheet for the Most Popular Cloud Services](https://substack-post-media.s3.amazonaws.com/public/images/16fe4308-ed47-451f-a852-c476ecfb4167_1280x1977.jpeg)"
+    },
+    {
+      "line": 68,
+      "kind": "asset",
+      "text": "![Which Database Should I Use on AWS?](https://substack-post-media.s3.amazonaws.com/public/images/89a09e07-6548-4c12-87c6-0486c6177ea7_1308x1536.jpeg)"
+    },
+    {
+      "line": 70,
+      "kind": "heading",
+      "text": "## Bonus 2: Vài video hay ho đến từ [ByteByteGo](https://bytebytego.com/)"
+    },
+    {
+      "line": 72,
+      "kind": "asset",
+      "text": "[What Is the Most Popular Open-Source AI Stack?](https://www.youtube.com/watch?v=hFURlsMwU7c)"
+    }
+  ],
+  "candidates": [
+    {
+      "line": 60,
+      "kind": "first-person",
+      "text": "Paul Millerd, tác giả cuốn The Pathless Path, ghi lại 40 suy nghĩ khi vừa bước sang tuổi 40, xoay quanh sự thay đổi, công việc, tiền bạc, các mối quan hệ, việc làm cha và hạnh phúc. Ông coi quyết định rời bỏ một sự nghiệp thành công để theo con đường nhiều bất định là lựa chọn quan trọng nhất của tuổi 30, và nhấn mạnh rằng thay đổi thật sự diễn ra chậm và rối rắm chứ không đến từ một \"khoảnh khắc\" quyết định. Về công việc, ông cho rằng mong muốn thoát khỏi công việc để tự do tài chính là một sai lầm: ta không thể trốn công việc mà chỉ có thể vượt lên nó bằng cách tìm ra \"công việc tốt\", thứ mang lại sự hài lòng cả lúc đang làm lẫn khi nhìn lại. Ông cũng khuyên mọi người thử tự kinh doanh hoặc làm tự do ít nhất một năm, và nhận ra rằng thu nhập giảm mạnh sau khi nghỉ việc giúp ông thấy rõ mình thật sự coi trọng điều gì."
+    },
+    {
+      "line": 62,
+      "kind": "first-person",
+      "text": "Ở phần đời sống, ông chia sẻ may mắn khi gặp được người bạn đời và khuyên những ai còn tìm kiếm đừng bỏ cuộc, đồng thời thừa nhận làm cha là trải nghiệm khiêm nhường nhất đời mình. Những ý cuối gợi nhắc rằng theo dõi thời sự không làm ai hạnh phúc hơn, nghỉ ngơi sâu là một kỹ năng cần rèn luyện, \"làm ít đi\" là cách tháo gỡ bế tắc bị đánh giá thấp, và viết lách là một trong những hành động mạnh mẽ nhất, dù nó có thể phơi bày những khát vọng thật sự của bạn."
+    }
+  ]
+}

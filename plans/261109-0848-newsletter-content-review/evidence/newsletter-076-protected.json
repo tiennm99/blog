@@ -1,0 +1,70 @@
+{
+  "post": "content/post/2026/01/05/index.md",
+  "newsletter": 76,
+  "newsletter_post": true,
+  "note": "*Bài viết đã được viết lại bởi Claude Code với Opus 5.5 vào ngày 27/09/2026.*",
+  "lines": [
+    {
+      "line": 1,
+      "kind": "frontmatter",
+      "text": "---"
+    },
+    {
+      "line": 2,
+      "kind": "frontmatter",
+      "text": "title: \"Newsletter #76\""
+    },
+    {
+      "line": 3,
+      "kind": "frontmatter",
+      "text": "date: 2026-01-05"
+    },
+    {
+      "line": 4,
+      "kind": "frontmatter",
+      "text": "tags: [\"AI-Assisted\", \"Newsletter\", \"Networking\", \"gRPC\", \"Software Engineering\", \"AI\", \"Career\"]"
+    },
+    {
+      "line": 5,
+      "kind": "frontmatter",
+      "text": "categories: [\"Newsletter\"]"
+    },
+    {
+      "line": 6,
+      "kind": "frontmatter",
+      "text": "---"
+    },
+    {
+      "line": 8,
+      "kind": "italic-note",
+      "text": "*Mời bạn thưởng thức Newsletter #76.*"
+    },
+    {
+      "line": 10,
+      "kind": "heading",
+      "text": "## [TCP vs. UDP vs. gRPC: Choosing the Right Protocol for Your Architecture](https://designgurus.substack.com/p/an-engineers-guide-to-basic-networking)"
+    },
+    {
+      "line": 16,
+      "kind": "heading",
+      "text": "## [Software Engineering in 2026](https://benjamincongdon.me/blog/2025/12/29/Software-Engineering-in-2026/)"
+    },
+    {
+      "line": 22,
+      "kind": "heading",
+      "text": "## [Reflections on 2025](https://samuelalbanie.substack.com/p/reflections-on-2025)"
+    },
+    {
+      "line": 28,
+      "kind": "heading",
+      "text": "## [8 Predictions for 2026. What comes next in AI?](https://www.philschmid.de/2026-predictions)"
+    }
+  ],
+  "candidates": [
+    {
+      "line": 32,
+      "kind": "first-person",
+      "text": "Ba dự đoán còn lại xoay quanh mạng xã hội: \"AI rác\" biến nội dung do con người tạo ra thành thị trường cao cấp; mọi bài đăng trên X, Instagram hay LinkedIn sẽ mặc định bị coi là do AI tạo, trừ khi mang chữ ký mật mã theo chuẩn siêu dữ liệu \"Human-Signed\" (như C2PA cho máy ảnh), nếu không thuật toán sẽ hạ thứ hạng như \"nhiễu tổng hợp\"; và để chống thư rác từ tác nhân, các nền tảng sẽ tách ra một \"web người thật đã xác minh\" đòi hỏi xác thực sinh trắc học. Khép lại, tác giả không lo cho vai trò kỹ sư và cho rằng học lập trình vẫn đáng giá, vì hiểu biết kỹ thuật sâu càng quan trọng để điều khiển các hệ thống này. Lời khuyên của ông: xây dựng và học hỏi, tức quan sát kỹ những gì người khác làm, mổ xẻ để hiểu \"tại sao\" và \"như thế nào\", rồi tự làm phiên bản của mình. Tác nhân vẫn sẽ là tâm điểm, với các mẫu thiết kế thành công từ tác nhân lập trình lan sang tác nhân đa dụng, chủ động dự đoán nhu cầu thay vì chỉ chờ lời nhắc."
+    }
+  ]
+}

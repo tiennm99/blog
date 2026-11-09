@@ -1,0 +1,119 @@
+{
+  "post": "content/post/2025/05/11/index.md",
+  "newsletter": 24,
+  "newsletter_post": true,
+  "note": "*Bài viết đã được viết lại bởi Claude Code với Opus 5.5 vào ngày 27/09/2026.*",
+  "lines": [
+    {
+      "line": 1,
+      "kind": "frontmatter",
+      "text": "---"
+    },
+    {
+      "line": 2,
+      "kind": "frontmatter",
+      "text": "title: \"Newsletter #24\""
+    },
+    {
+      "line": 3,
+      "kind": "frontmatter",
+      "text": "date: \"2025-05-11\""
+    },
+    {
+      "line": 4,
+      "kind": "frontmatter",
+      "text": "tags: [ \"AI-Assisted\", \"Developer Productivity\", \"Management\", \"Code Quality\", \"System Design\", \"Performance\", \"AI\" ]"
+    },
+    {
+      "line": 5,
+      "kind": "frontmatter",
+      "text": "categories: [ \"Newsletter\" ]"
+    },
+    {
+      "line": 6,
+      "kind": "frontmatter",
+      "text": "---"
+    },
+    {
+      "line": 8,
+      "kind": "italic-note",
+      "text": "*Mời bạn thưởng thức Newsletter #24.*"
+    },
+    {
+      "line": 10,
+      "kind": "heading",
+      "text": "## [Google's principles for measuring developer productivity](https://newsletter.getdx.com/p/googles-principles-for-measuring-developer-productivity)"
+    },
+    {
+      "line": 16,
+      "kind": "heading",
+      "text": "## [In defense of ruthless managers](https://www.seangoedecke.com/ruthless-managers/)"
+    },
+    {
+      "line": 22,
+      "kind": "heading",
+      "text": "## [AI ambivalence](https://nolanlawson.com/2025/04/02/ai-ambivalence/)"
+    },
+    {
+      "line": 28,
+      "kind": "heading",
+      "text": "## [Use Abstraction to Improve Function Readability](https://testing.googleblog.com/2023/09/use-abstraction-to-improve-function.html)"
+    },
+    {
+      "line": 34,
+      "kind": "heading",
+      "text": "## [How Apple Pay Handles 41 Million Transactions a Day Securely](https://newsletter.systemdesign.one/p/how-does-apple-pay-work)"
+    },
+    {
+      "line": 40,
+      "kind": "heading",
+      "text": "## [Four Kinds of Optimisation](https://tratt.net/laurie/blog/2023/four_kinds_of_optimisation.html)"
+    },
+    {
+      "line": 46,
+      "kind": "heading",
+      "text": "## [The Fifth Kind of Optimisation](https://tratt.net/laurie/blog/2025/the_fifth_kind_of_optimisation.html)"
+    },
+    {
+      "line": 52,
+      "kind": "heading",
+      "text": "## Bonus: Vài ảnh hay ho đến từ [ByteByteGo](https://bytebytego.com/)"
+    },
+    {
+      "line": 54,
+      "kind": "asset",
+      "text": "![REST API Design Best Practices](https://substack-post-media.s3.amazonaws.com/public/images/4036e9a7-f2b6-476c-ad5d-48916db3b610_1309x1536.gif)"
+    },
+    {
+      "line": 55,
+      "kind": "asset",
+      "text": "![How to Learn Backend Development?](https://substack-post-media.s3.amazonaws.com/public/images/2a933717-1d59-46a6-ba51-76e24ae048fc_1280x1502.gif)"
+    },
+    {
+      "line": 56,
+      "kind": "asset",
+      "text": "![The Simplified Git Workflow](https://substack-post-media.s3.amazonaws.com/public/images/b9397d70-0232-4a8b-8b3e-edd4c15eb9bb_800x939.gif)"
+    },
+    {
+      "line": 57,
+      "kind": "asset",
+      "text": "![Virtualization vs Containerization](https://substack-post-media.s3.amazonaws.com/public/images/1bc9340f-de4f-4767-b2f8-f4c6529e9eea_1309x1536.gif)"
+    },
+    {
+      "line": 58,
+      "kind": "asset",
+      "text": "![How Netflix Built a Distributed Counter?](https://substack-post-media.s3.amazonaws.com/public/images/1e7afaab-de4b-4604-a557-22974fb2e3ea_1280x1532.gif)"
+    },
+    {
+      "line": 60,
+      "kind": "heading",
+      "text": "## Bonus 2: Vài video hay ho đến từ [ByteByteGo](https://bytebytego.com/)"
+    },
+    {
+      "line": 62,
+      "kind": "asset",
+      "text": "[Why Everyone's Talking About MCP?](https://www.youtube.com/watch?v=_d0duu3dED4)"
+    }
+  ],
+  "candidates": []
+}

@@ -1,0 +1,79 @@
+{
+  "post": "content/post/2025/05/09/index.md",
+  "newsletter": 22,
+  "newsletter_post": true,
+  "note": "*Bài viết đã được viết lại bởi Claude Code với Opus 5.5 vào ngày 27/09/2026.*",
+  "lines": [
+    {
+      "line": 1,
+      "kind": "frontmatter",
+      "text": "---"
+    },
+    {
+      "line": 2,
+      "kind": "frontmatter",
+      "text": "title: \"Newsletter #22\""
+    },
+    {
+      "line": 3,
+      "kind": "frontmatter",
+      "text": "date: 2025-05-09"
+    },
+    {
+      "line": 4,
+      "kind": "frontmatter",
+      "text": "tags: [ \"AI-Assisted\", \"Security\", \"Authentication\", \"Career Development\", \"Language Models\", \"Microservices\", \"Asynchronous Programming\" ]"
+    },
+    {
+      "line": 5,
+      "kind": "frontmatter",
+      "text": "categories: [ \"Newsletter\" ]"
+    },
+    {
+      "line": 6,
+      "kind": "frontmatter",
+      "text": "---"
+    },
+    {
+      "line": 8,
+      "kind": "italic-note",
+      "text": "*Mời bạn thưởng thức Newsletter #22.*"
+    },
+    {
+      "line": 10,
+      "kind": "heading",
+      "text": "## [Identity Tokens Best Practices](https://www.permit.io/blog/identity-tokens-best-practices)"
+    },
+    {
+      "line": 16,
+      "kind": "heading",
+      "text": "## [Tactical Work in the Age of Layoffs](https://www.seangoedecke.com/tactical-work-in-the-age-of-layoffs)"
+    },
+    {
+      "line": 22,
+      "kind": "heading",
+      "text": "## [Tracing Thoughts in Language Model](https://www.anthropic.com/research/tracing-thoughts-language-model)"
+    },
+    {
+      "line": 28,
+      "kind": "heading",
+      "text": "## [Why Duplicating Environments for Microservices Backfires](https://www.signadot.com/blog/why-duplicating-environments-for-microservices-backfires)"
+    },
+    {
+      "line": 34,
+      "kind": "heading",
+      "text": "## ~~[Logging Practices I Follow](https://www.16elt.com/2023/01/06/logging-practices-I-follow)~~"
+    },
+    {
+      "line": 40,
+      "kind": "heading",
+      "text": "## [Sync and Async](https://blogs.newardassociates.com/blog/2025/sync-and-async.html)"
+    },
+    {
+      "line": 46,
+      "kind": "heading",
+      "text": "## [Making Uber's Experiment Evaluation Engine 100x Faster](https://www.uber.com/en-IN/blog/making-ubers-experiment-evaluation-engine-100x-faster/)"
+    }
+  ],
+  "candidates": []
+}

@@ -1,0 +1,20 @@
+{
+  "newsletter": 93,
+  "modified": true,
+  "protected_lines_ok": true,
+  "counts_unchanged": true,
+  "all_link_urls_unchanged": true,
+  "headings_unchanged": true,
+  "struck_text_unchanged": true,
+  "summary_word_counts": [
+    298,
+    293,
+    235,
+    279,
+    235,
+    256,
+    250,
+    214
+  ],
+  "sha256": "773734444725ee0f7dfd3c824d35456eca7695f22498decb7e6bc2cec345cc74"
+}

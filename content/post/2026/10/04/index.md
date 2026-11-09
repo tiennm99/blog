@@ -51,9 +51,9 @@ Mỗi commit được build nhiều lần, biểu đồ lưu giá trị lớn nh
 
 ## [Compression is prediction](https://ngrok.com/blog/compression-is-prediction)
 
-Annie Sexton của ngrok dẫn dắt người đọc qua các khái niệm nén dữ liệu bằng một loạt demo tương tác, để đi tới kết luận: nén chính là dự đoán, và LLM là những bộ nén. Nén thật sự khai thác sự dư thừa, chẳng hạn run-length encoding thay chuỗi lặp bằng cặp ký tự và số lần. Một bộ nén gồm ba phần: transform chuẩn bị dữ liệu, model gán xác suất cho từng ký hiệu, và entropy coder biến xác suất thành dòng bit. Arithmetic coding thu hẹp dần khoảng từ 0 tới 1 theo xác suất của từng ký hiệu, nên cả thông điệp chỉ còn là một con số. Entropy, trung bình của −log₂ xác suất, là giới hạn lý thuyết cho nén lossless. Huffman coding, dùng trong gzip và Brotli, gán mã ngắn cho ký hiệu phổ biến nhưng phải làm tròn tới số bit nguyên.
+Annie Sexton dùng các ví dụ tương tác để nối nén dữ liệu với dự đoán xác suất. Bộ dự đoán gán xác suất cho ký hiệu kế tiếp, còn bộ mã hóa entropy biến các xác suất ấy thành dòng bit. Khi ký hiệu thực tế được gán xác suất cao hơn, chi phí mã hóa lý tưởng `−log₂(p)` thấp hơn. Mã hóa số học có thể tiến gần giới hạn do mô hình xác suất đặt ra; điều đó không có nghĩa toàn bộ bài toán nén không mất dữ liệu đã được giải quyết.
 
-Xác suất trở nên chính xác hơn khi xét ngữ cảnh: chữ "U" hiếm trong tiếng Anh, nhưng gần như chắc chắn xuất hiện sau "Q". LLM cũng dự đoán phân phối xác suất cho token kế tiếp, nên mã hóa token thật tốn −log₂ xác suất bit: đoán đúng và tự tin thì rẻ, tự tin mà sai thì đắt. Với một đoạn văn của Dickens, model bậc một cần 24% kích thước gốc, còn GPT-2 kết hợp arithmetic coding chỉ cần 10%. LLM không được dùng để nén hằng ngày vì cả hai đầu cần hàng gigabyte trọng số. Nén lossless gần như đã được giải quyết, bài toán còn lại là xây dựng bộ dự đoán tốt hơn, và huấn luyện LLM để giảm cross-entropy cũng chính là xây dựng một bộ nén.
+Mô hình ngôn ngữ cũng dự đoán token, nên có thể phối hợp với bộ mã hóa để nén văn bản. Bài viết minh họa bằng GPT-2 trên một đoạn Dickens, nhưng tỷ lệ đó không tính đầy đủ mọi chi phí phân phối mô hình và không đại diện cho mọi dữ liệu. Hai đầu phải dùng cùng mô hình và quy trình giải mã. Dung lượng trọng số, tính toán, bộ nhớ và tốc độ khiến tỷ lệ nén tốt hơn chưa chắc tạo thành công cụ thực dụng hơn.
 
 ## [How Anthropic Builds And How Engineering Will Change Soon](https://www.developing.dev/p/how-anthropic-builds-and-how-engineering)
 
@@ -77,3 +77,7 @@ V2 dùng số học fixed-point: nhân với 2³²/3600 + 1 để lấy giờ t�
 ![Top 12 Agent Skills You Should Know](https://substackcdn.com/image/fetch/$s_!6j7M!,w_1100,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F2d0d1c6c-a864-4b20-b1fc-2d86c8ad2fab_2484x3002.png)
 ![9 Types of API Testing](https://substackcdn.com/image/fetch/$s_!m1c9!,w_1100,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F8b053abe-404e-4bca-8e49-52a47392ab83_2484x3002.png)
 ![Forward Proxy, Reverse Proxy, and API Gateway Explained](https://substackcdn.com/image/fetch/$s_!4xag!,w_1100,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fac1ed471-18f6-45dd-ad5f-02bc6d96d375_2484x3002.png)
+
+---
+
+*Bài viết đã được review và cập nhật bởi Codex với GPT 6.1 Sol vào ngày 09/11/2026.*

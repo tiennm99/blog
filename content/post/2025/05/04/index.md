@@ -11,7 +11,7 @@ categories: [ "Newsletter" ]
 
 Scott Dietzen, CEO của Augment Code (từng là CEO của Pure Storage), bàn về một quyết định kiến trúc quan trọng của các trợ lý lập trình AI: chạy dưới dạng plugin trong IDE tiêu chuẩn hay fork hẳn VS Code. GitHub Copilot và Augment chọn cách thứ nhất, hoạt động như plugin trong VS Code, JetBrains hay Vim. Cursor và Windsurf (của Codeium) chọn cách thứ hai, sửa trực tiếp mã nguồn VS Code để tích hợp AI sâu hơn.
 
-Theo tác giả, fork mang lại lợi thế ngắn hạn nhưng người dùng phải trả giá: buộc phải rời IDE quen thuộc (đặc biệt thiệt thòi với người dùng JetBrains), không còn được Microsoft hỗ trợ, các plugin chính thức như Python, C++, Docker hay Jupyter có thể trục trặc, mất quyền truy cập kho tiện ích mở rộng của VS Code và phải chờ bên fork chuyển các tính năng mới sang. Vì lợi ích lâu dài của khách hàng, Augment chọn hướng plugin và tập trung vào thế mạnh hỗ trợ các dự án có mã nguồn lớn, phức tạp. Tác giả cũng cho biết Cursor là IDE phổ biến thứ ba mà người dùng chọn khi dùng thử Augment, cho thấy hai sản phẩm có thể bổ trợ cho nhau.
+Trong bài tháng 3/2025, tác giả lập luận rằng fork mang lại lợi thế ngắn hạn nhưng tạo chi phí lâu dài: chuyển IDE, phụ thuộc nhà cung cấp mới để được hỗ trợ và theo kịp thay đổi của VS Code. Ông cũng nêu rủi ro tương thích, cấp phép và hỗ trợ đối với tiện ích của Microsoft. Đây là lập luận từ phía Augment để giải thích lựa chọn plugin; không nên hiểu thành khẳng định mọi tiện ích hay kho mở rộng đều chắc chắn không dùng được trên mọi bản fork. Augment tập trung vào dự án lớn, phức tạp, đồng thời cho biết Cursor là IDE phổ biến thứ ba trong nhóm người dùng thử sản phẩm của họ.
 
 ## [Why I'm No Longer Talking to Architects About Microservices](https://blog.container-solutions.com/why-im-no-longer-talking-to-architects-about-microservices)
 
@@ -47,7 +47,7 @@ Theo các tác giả, trợ lý lập trình AI như Claude, ChatGPT hay GitHub 
 
 Michał Zyga (SoftwareMill) so sánh năm cách rút ngắn thời gian khởi động ứng dụng JVM, điều quan trọng với serverless và microservices. JVM khởi động chậm vì phải nạp, xác minh và khởi tạo rất nhiều lớp. Class Data Sharing (CDS) lưu sẵn các lớp lõi của JDK và được bật mặc định từ JDK 12; Application Class Data Sharing (AppCDS) mở rộng cơ chế này cho cả các lớp của ứng dụng và dễ dùng hơn từ JDK 19. GraalVM biên dịch trước (AOT) thành tệp thực thi gốc, CRaC chụp lại trạng thái tiến trình JVM bằng CRIU (chỉ chạy trên Linux) để khôi phục khi cần, còn Project Leyden là hướng cải tiến mới của JDK, lưu thêm dữ liệu tối ưu hóa.
 
-Kết quả đo trên hai máy (Intel i5 cá nhân và Xeon trên Google Cloud, mỗi cấu hình chạy 50 lần) cho thấy AppCDS giúp khởi động nhanh hơn gấp đôi so với mặc định, CRaC và GraalVM nhanh nhất, còn Project Leyden nằm ở giữa và vẫn đang phát triển. Tác giả khuyên chọn theo ngữ cảnh: AppCDS dễ áp dụng với lợi ích vừa phải, CRaC hợp với dịch vụ chạy lâu vì vẫn tận dụng được tối ưu JIT lúc chạy, còn GraalVM phù hợp với ứng dụng ngắn hạn cần khởi động cực nhanh.
+Kết quả trong bài tháng 3/2025 được đo trên ứng dụng Netty mẫu, với hai máy Intel i5 và Xeon trên Google Cloud, mỗi cấu hình chạy 50 lần. Trong phép thử này, AppCDS giảm đáng kể thời gian khởi động, CRaC và GraalVM nhanh nhất, còn bản thử nghiệm Leyden nằm ở giữa. Các kết quả không phải thứ hạng cố định cho mọi ứng dụng hay phiên bản JDK. Tác giả khuyên chọn theo ngữ cảnh: AppCDS dễ áp dụng, CRaC giữ được lợi ích JIT từ trạng thái đã chụp, còn GraalVM phù hợp khi cần khởi động nhanh bằng tệp thực thi gốc.
 
 ## [Domain Driven Design](https://dev.to/lovestaco/domain-driven-design-3i2j)
 
@@ -61,4 +61,4 @@ Các khái niệm được minh họa qua một nền tảng thương mại đi�
 
 ---
 
-*Bài viết đã được viết lại bởi Claude Code với Opus 5.5 vào ngày 27/09/2026.*
+*Bài viết đã được viết lại bởi Claude Code với Opus 5.5 vào ngày 27/09/2026; được review và chỉnh sửa bởi Codex với GPT 6.1 Sol vào ngày 09/11/2026.*

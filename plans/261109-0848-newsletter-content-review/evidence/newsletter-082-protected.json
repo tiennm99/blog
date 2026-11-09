@@ -1,0 +1,64 @@
+{
+  "post": "content/post/2026/02/19/index.md",
+  "newsletter": 82,
+  "newsletter_post": true,
+  "note": "*Bài viết đã được viết lại bởi Claude Code với Opus 5.5 vào ngày 27/09/2026.*",
+  "lines": [
+    {
+      "line": 1,
+      "kind": "frontmatter",
+      "text": "---"
+    },
+    {
+      "line": 2,
+      "kind": "frontmatter",
+      "text": "title: \"Newsletter #82\""
+    },
+    {
+      "line": 3,
+      "kind": "frontmatter",
+      "text": "date: 2026-02-19"
+    },
+    {
+      "line": 4,
+      "kind": "frontmatter",
+      "text": "tags: [\"AI-Assisted\", \"Newsletter\", \"Web Development\", \"Engineering Career\", \"Graphics\", \"DNS\", \"Software Engineering\"]"
+    },
+    {
+      "line": 5,
+      "kind": "frontmatter",
+      "text": "categories: [\"Newsletter\"]"
+    },
+    {
+      "line": 6,
+      "kind": "frontmatter",
+      "text": "---"
+    },
+    {
+      "line": 8,
+      "kind": "italic-note",
+      "text": "*Mời bạn thưởng thức Newsletter #82.*"
+    },
+    {
+      "line": 10,
+      "kind": "heading",
+      "text": "## [How the Lobsters front page works](https://blog.nilenso.com/blog/2026/01/20/lobsters-front-page/)"
+    },
+    {
+      "line": 16,
+      "kind": "heading",
+      "text": "## [Software engineers can no longer neglect their soft skills](https://www.qu8n.com/posts/most-important-software-engineering-skill-2026)"
+    },
+    {
+      "line": 22,
+      "kind": "heading",
+      "text": "## [Dithering - Part 2](https://visualrambling.space/dithering-part-2/)"
+    },
+    {
+      "line": 28,
+      "kind": "heading",
+      "text": "## [What came first: the CNAME or the A record?](https://blog.cloudflare.com/cname-a-record-order-dns-standards/)"
+    }
+  ],
+  "candidates": []
+}

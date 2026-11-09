@@ -1,0 +1,84 @@
+{
+  "post": "content/post/2026/02/02/index.md",
+  "newsletter": 79,
+  "newsletter_post": true,
+  "note": "*Bài viết đã được viết lại bởi Claude Code với Opus 5.5 vào ngày 27/09/2026.*",
+  "lines": [
+    {
+      "line": 1,
+      "kind": "frontmatter",
+      "text": "---"
+    },
+    {
+      "line": 2,
+      "kind": "frontmatter",
+      "text": "title: \"Newsletter #79\""
+    },
+    {
+      "line": 3,
+      "kind": "frontmatter",
+      "text": "date: 2026-02-02"
+    },
+    {
+      "line": 4,
+      "kind": "frontmatter",
+      "text": "tags: [\"AI-Assisted\", \"Newsletter\", \"Developer Tools\", \"Containers\", \"Claude Code\", \"LLMs\", \"Web Browsers\"]"
+    },
+    {
+      "line": 5,
+      "kind": "frontmatter",
+      "text": "categories: [\"Newsletter\"]"
+    },
+    {
+      "line": 6,
+      "kind": "frontmatter",
+      "text": "---"
+    },
+    {
+      "line": 8,
+      "kind": "italic-note",
+      "text": "*Mời bạn thưởng thức Newsletter #79.*"
+    },
+    {
+      "line": 10,
+      "kind": "heading",
+      "text": "## [ASCII characters are not pixels: a deep dive into ASCII rendering](https://alexharri.com/blog/ascii-rendering)"
+    },
+    {
+      "line": 16,
+      "kind": "heading",
+      "text": "## [From Bare Metal to Containers: A Developer's Guide to Execution Environments](https://buildsoftwaresystems.com/post/guide-to-execution-environments/)"
+    },
+    {
+      "line": 22,
+      "kind": "heading",
+      "text": "## [Run Your Project in a Dev Container, in Zed](https://zed.dev/blog/dev-containers)"
+    },
+    {
+      "line": 28,
+      "kind": "heading",
+      "text": "## [I was a top 0.01% Cursor user. Here's why I switched to Claude Code 2.0](https://blog.silennai.com/claude-code)"
+    },
+    {
+      "line": 34,
+      "kind": "heading",
+      "text": "## [LLM predictions for 2026, shared with Oxide and Friends](https://simonwillison.net/2026/Jan/8/llm-predictions-for-2026/)"
+    },
+    {
+      "line": 40,
+      "kind": "heading",
+      "text": "## [How we made Notion available offline](https://www.notion.com/blog/how-we-made-notion-available-offline)"
+    },
+    {
+      "line": 46,
+      "kind": "heading",
+      "text": "## [How Browsers Work](https://howbrowserswork.com/)"
+    },
+    {
+      "line": 52,
+      "kind": "author-note",
+      "text": "**Đánh giá**: *Không biết vì sao nhưng mình cảm thấy bài viết này khá tốt^^ Chắc do hôm qua update lại file Agents.md, để cố gắng phát huy :)))*"
+    }
+  ],
+  "candidates": []
+}

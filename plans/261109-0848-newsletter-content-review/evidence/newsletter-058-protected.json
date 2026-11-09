@@ -1,0 +1,125 @@
+{
+  "post": "content/post/2025/10/01/index.md",
+  "newsletter": 58,
+  "newsletter_post": true,
+  "note": "*Bài viết đã được viết lại bởi Claude Code với Opus 5.5 vào ngày 27/09/2026.*",
+  "lines": [
+    {
+      "line": 1,
+      "kind": "frontmatter",
+      "text": "---"
+    },
+    {
+      "line": 2,
+      "kind": "frontmatter",
+      "text": "title: \"Newsletter #58\""
+    },
+    {
+      "line": 3,
+      "kind": "frontmatter",
+      "text": "date: 2025-10-01"
+    },
+    {
+      "line": 4,
+      "kind": "frontmatter",
+      "text": "tags: [\"AI-Assisted\", \"Event-Driven\", \"Distributed Systems\", \"Security\", \"LLM\", \"Claude Code\", \"Career Development\"]"
+    },
+    {
+      "line": 5,
+      "kind": "frontmatter",
+      "text": "categories: [\"Newsletter\"]"
+    },
+    {
+      "line": 6,
+      "kind": "frontmatter",
+      "text": "---"
+    },
+    {
+      "line": 8,
+      "kind": "italic-note",
+      "text": "*~~Hôm nay mình có thử gắn [Claude Code Router](https://github.com/musistudio/claude-code-router) với model `openai/gpt-oss-120b` trên [NVIDIA NIM](https://build.nvidia.com/) nhưng bị lỗi gì đấy, sau cùng thì không được output gì. Vì vậy chúng ta lại quay lại với model `qwen3-coder` chạy trên [iFlow Platform](https://platform.iflow.cn/docs/api-mode) nhé.~~ Mời bạn thưởng thức Newsletter #58.*"
+    },
+    {
+      "line": 10,
+      "kind": "heading",
+      "text": "## [How Software Engineers Make Productive Decisions (without slowing the team down)](https://strategizeyourcareer.com/p/how-software-engineers-make-productive-decisions)"
+    },
+    {
+      "line": 16,
+      "kind": "heading",
+      "text": "## [Why are Event-Driven Systems Hard?](https://newsletter.scalablethread.com/p/why-event-driven-systems-are-hard)"
+    },
+    {
+      "line": 22,
+      "kind": "heading",
+      "text": "## [Dev Culture Is Dying: The Curious Developer Is Gone](https://dayvster.com/blog/dev-culture-is-dying-the-curious-developer-is-gone/)"
+    },
+    {
+      "line": 28,
+      "kind": "heading",
+      "text": "## [Tool Calls Are Expensive And Finite](https://www.reillywood.com/blog/tool-calls-are-expensive-and-finite/)"
+    },
+    {
+      "line": 34,
+      "kind": "heading",
+      "text": "## [Keeping Secrets Out of Logs](https://allan.reyes.sh/posts/keeping-secrets-out-of-logs/)"
+    },
+    {
+      "line": 40,
+      "kind": "heading",
+      "text": "## [Things I Believe](https://leerob.com/beliefs)"
+    },
+    {
+      "line": 46,
+      "kind": "heading",
+      "text": "## [How Claude Code is Built](https://newsletter.pragmaticengineer.com/p/how-claude-code-is-built)"
+    },
+    {
+      "line": 52,
+      "kind": "heading",
+      "text": "## Bonus: Một vài ảnh hay ho đến từ [ByteByteGo](https://bytebytego.com/)"
+    },
+    {
+      "line": 54,
+      "kind": "asset",
+      "text": "![How Java Works](https://substack-post-media.s3.amazonaws.com/public/images/1e27232c-d4f1-4f4b-94fa-7318d39f6f3e_2360x2960.png)"
+    },
+    {
+      "line": 55,
+      "kind": "asset",
+      "text": "![How Gitflow Branching Works?](https://substack-post-media.s3.amazonaws.com/public/images/9bef6181-7eed-45a9-9c7e-abd6864cc62b_2360x2960.png)"
+    },
+    {
+      "line": 56,
+      "kind": "asset",
+      "text": "![The Life of a Redis Query](https://substack-post-media.s3.amazonaws.com/public/images/9ffab5bc-5857-4544-8e25-2dbf795e6f85_3000x3900.png)"
+    },
+    {
+      "line": 57,
+      "kind": "asset",
+      "text": "![Cookies vs Sessions](https://substack-post-media.s3.amazonaws.com/public/images/1c2bd03d-66f2-4eb9-8293-7a1d49b9b9b6_2360x2920.png)"
+    },
+    {
+      "line": 58,
+      "kind": "asset",
+      "text": "![Access Control Clearly Explained](https://substack-post-media.s3.amazonaws.com/public/images/26b55058-17ae-453f-8463-4d4e717e489b_2360x2920.png)"
+    },
+    {
+      "line": 59,
+      "kind": "asset",
+      "text": "![How Git Reset Works?](https://substack-post-media.s3.amazonaws.com/public/images/00912640-ad5f-4ec7-aefa-e5eecf67dab0_3000x3900.png)"
+    },
+    {
+      "line": 60,
+      "kind": "asset",
+      "text": "![Apache Kafka Explained (At the high level)](https://substack-post-media.s3.amazonaws.com/public/images/43b73739-a975-42af-999d-8676b1605ed2_3000x3900.png)"
+    }
+  ],
+  "candidates": [
+    {
+      "line": 26,
+      "kind": "first-person",
+      "text": "Bài viết cũng chỉ ra một cuộc khủng hoảng bản sắc: lập trình viên tự định danh bằng công cụ, trở thành \"Next.js developer\" hay \"Rust developer\", thay vì bằng những vấn đề họ giải quyết. Tác giả so sánh việc phần mềm tiêu dùng chuyển sang mô hình thuê bao với việc chính người sáng tạo đánh mất quyền làm chủ sản phẩm của mình vào tay doanh nghiệp hoặc các chỉ số tăng trưởng, và đặt câu hỏi liệu họ còn quan tâm đến phần mềm mình xây dựng hay chỉ quan tâm đến doanh thu. Lời kêu gọi cuối bài là hãy quay lại làm những dự án xuất phát từ sự tò mò — kể cả những thứ không thể bán được — xây dựng vì niềm vui, rồi chia sẻ chúng để truyền cảm hứng cho người khác."
+    }
+  ]
+}

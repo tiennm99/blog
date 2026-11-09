@@ -1,0 +1,79 @@
+{
+  "post": "content/post/2025/05/15/index.md",
+  "newsletter": 28,
+  "newsletter_post": true,
+  "note": "*Bài viết đã được viết lại bởi Claude Code với Opus 5.5 vào ngày 27/09/2026.*",
+  "lines": [
+    {
+      "line": 1,
+      "kind": "frontmatter",
+      "text": "---"
+    },
+    {
+      "line": 2,
+      "kind": "frontmatter",
+      "text": "title: \"Newsletter #28\""
+    },
+    {
+      "line": 3,
+      "kind": "frontmatter",
+      "text": "date: 2025-05-15"
+    },
+    {
+      "line": 4,
+      "kind": "frontmatter",
+      "text": "tags: [ \"AI-Assisted\", \"Java\", \"JDK 24\", \"Garbage Collection\", \"Project Reactor\", \"Machine Learning\", \"Build Automation\" ]"
+    },
+    {
+      "line": 5,
+      "kind": "frontmatter",
+      "text": "categories: [ \"Newsletter\" ]"
+    },
+    {
+      "line": 6,
+      "kind": "frontmatter",
+      "text": "---"
+    },
+    {
+      "line": 8,
+      "kind": "italic-note",
+      "text": "*Mời bạn thưởng thức Newsletter #28.*"
+    },
+    {
+      "line": 10,
+      "kind": "heading",
+      "text": "## [How Airbnb Measures Listing Lifetime Value](https://medium.com/airbnb-engineering/how-airbnb-measures-listing-lifetime-value-a603bf05142c)"
+    },
+    {
+      "line": 16,
+      "kind": "heading",
+      "text": "## [Six JDK 24 Features You Should Know About](https://foojay.io/today/six-jdk-24-features-you-should-know-about/)"
+    },
+    {
+      "line": 22,
+      "kind": "heading",
+      "text": "## [JavaOne 2025: Function and Memory Access in Pure Java](https://www.infoq.com/news/2025/04/foreign-function-minborg/)"
+    },
+    {
+      "line": 28,
+      "kind": "heading",
+      "text": "## [Ultimate Guide to Project Reactor, Thread-Locals and Context Propagation](https://4comprehension.com/ultimate-guide-to-project-reactor-thread-locals-and-context-propagation/)"
+    },
+    {
+      "line": 34,
+      "kind": "heading",
+      "text": "## [JDK 24 G1/Parallel/Serial GC Changes](https://tschatzl.github.io/2025/04/01/jdk24-g1-serial-parallel-gc-changes.html)"
+    },
+    {
+      "line": 40,
+      "kind": "heading",
+      "text": "## [Making Makefiles for fun and profit](https://dev.to/aws/making-makefiles-for-fun-and-profit-kl6)"
+    },
+    {
+      "line": 46,
+      "kind": "heading",
+      "text": "## [Improving Pinterest Search Relevance Using Large Language Models](https://medium.com/pinterest-engineering/improving-pinterest-search-relevance-using-large-language-models-4cd938d4e892)"
+    }
+  ],
+  "candidates": []
+}

@@ -1,0 +1,185 @@
+{
+  "post": "content/post/2025/09/30/index.md",
+  "newsletter": 57,
+  "newsletter_post": true,
+  "note": "*Bài viết đã được viết lại bởi Claude Code với Opus 5.5 vào ngày 27/09/2026.*",
+  "lines": [
+    {
+      "line": 1,
+      "kind": "frontmatter",
+      "text": "---"
+    },
+    {
+      "line": 2,
+      "kind": "frontmatter",
+      "text": "title: \"Newsletter #57\""
+    },
+    {
+      "line": 3,
+      "kind": "frontmatter",
+      "text": "date: 2025-09-30"
+    },
+    {
+      "line": 4,
+      "kind": "frontmatter",
+      "text": "tags: [\"AI-Assisted\", \"Agentic AI\", \"Career\", \"Monorepo\", \"Distributed Systems\", \"Code Quality\", \"Java\"]"
+    },
+    {
+      "line": 5,
+      "kind": "frontmatter",
+      "text": "categories: [\"Newsletter\"]"
+    },
+    {
+      "line": 6,
+      "kind": "frontmatter",
+      "text": "---"
+    },
+    {
+      "line": 8,
+      "kind": "italic-note",
+      "text": "*~~Bài viết này được thực hiện bởi [Claude Code Router](https://github.com/musistudio/claude-code-router) với model `qwen3-coder` chạy trên [iFlow Platform](https://platform.iflow.cn/docs/api-mode).~~ Mời bạn thưởng thức Newsletter #57.*"
+    },
+    {
+      "line": 10,
+      "kind": "heading",
+      "text": "## [Agentic AI has changed my career](https://medium.com/@elliotgraebert/agentic-ai-has-changed-my-career-2c6e3dd29708)"
+    },
+    {
+      "line": 16,
+      "kind": "heading",
+      "text": "## ~~[The Evolution Of Garbage Collectors From Javas CMS To ZGC And A JVM Vs Go Vs Rust Latency Shootout](https://codemia.io/blog/path/The-Evolution-of-Garbage-Collectors-From-Javas-CMS-to-ZGC-and-a-JVM-vs-Go-vs-Rust-Latency-Shootout)~~"
+    },
+    {
+      "line": 18,
+      "kind": "struck",
+      "text": "~~Quản lý bộ nhớ là một chủ đề quan trọng trong lập trình, đặc biệt là trong các ngôn ngữ như Java, Go và Rust. Bài viết này khám phá sự tiến hóa của garbage collectors (GC) từ Concurrent Mark-Sweep (CMS) truyền thống của Java đến Z Garbage Collector (ZGC) hiện đại.~~"
+    },
+    {
+      "line": 20,
+      "kind": "struck",
+      "text": "~~ZGC là một bước tiến lớn trong việc giảm thiểu thời gian tạm dừng của ứng dụng (pause times), với mục tiêu giữ thời gian tạm dừng dưới 10ms bất kể kích thước heap. Điều này tạo ra sự khác biệt lớn về hiệu suất so với các GC thế hệ trước như CMS.~~"
+    },
+    {
+      "line": 22,
+      "kind": "struck",
+      "text": "~~Bài viết cũng so sánh hiệu suất về độ trễ giữa các nền tảng:~~"
+    },
+    {
+      "line": 23,
+      "kind": "struck",
+      "text": "~~- JVM (với ZGC): Giảm đáng kể thời gian tạm dừng nhờ cải tiến trong thiết kế GC~~"
+    },
+    {
+      "line": 24,
+      "kind": "struck",
+      "text": "~~- Go: GC hiệu quả với độ trễ thấp nhờ thuật toán concurrent và tri-color marking~~"
+    },
+    {
+      "line": 25,
+      "kind": "struck",
+      "text": "~~- Rust: Tránh hoàn toàn GC nhờ mô hình ownership, mang lại hiệu suất dự đoán được mà không có chi phí GC~~"
+    },
+    {
+      "line": 27,
+      "kind": "struck",
+      "text": "~~**Điểm chính:**~~"
+    },
+    {
+      "line": 28,
+      "kind": "struck",
+      "text": "~~- ZGC giúp giảm thời gian tạm dừng của ứng dụng xuống dưới 10ms~~"
+    },
+    {
+      "line": 29,
+      "kind": "struck",
+      "text": "~~- Go sử dụng thuật toán marking hiệu quả để giữ độ trễ thấp~~"
+    },
+    {
+      "line": 30,
+      "kind": "struck",
+      "text": "~~- Rust loại bỏ hoàn toàn nhu cầu GC nhờ ownership model~~"
+    },
+    {
+      "line": 31,
+      "kind": "struck",
+      "text": "~~- Việc lựa chọn ngôn ngữ ảnh hưởng đáng kể đến hiệu suất và trải nghiệm người dùng~~"
+    },
+    {
+      "line": 33,
+      "kind": "heading",
+      "text": "## ~~[New in Java25: Generational Shenandoah GC is no longer experimental](https://theperfparlor.com/2025/09/14/new-in-java25-generational-shenandoah-gc-is-no-longer-experimental/)~~"
+    },
+    {
+      "line": 39,
+      "kind": "heading",
+      "text": "## [If all the world were a monorepo](https://jtibs.substack.com/p/if-all-the-world-were-a-monorepo?utm_source=tldrnewsletter)"
+    },
+    {
+      "line": 45,
+      "kind": "heading",
+      "text": "## [9 Software Architecture Patterns for Distributed Systems](https://dev.to/somadevtoo/9-software-architecture-patterns-for-distributed-systems-2o86?=&aid=recZm2jVus1yqUHWw)"
+    },
+    {
+      "line": 51,
+      "kind": "heading",
+      "text": "## [Sort Lines in Source Code](https://testing.googleblog.com/2025/09/sort-lines-in-source-code.html?=&aid=recV8wgDMqTb7Hwko)"
+    },
+    {
+      "line": 57,
+      "kind": "heading",
+      "text": "## [Rating 26 years of Java changes](https://neilmadden.blog/2025/09/12/rating-26-years-of-java-changes/)"
+    },
+    {
+      "line": 64,
+      "kind": "heading",
+      "text": "## Bonus: Một vài ảnh hay ho đến từ [ByteByteGo](https://bytebytego.com/)"
+    },
+    {
+      "line": 66,
+      "kind": "asset",
+      "text": "![Python vs Java](https://substack-post-media.s3.amazonaws.com/public/images/aa5ea98b-c832-429d-8e48-63f25b7feb5a_3000x3900.jpeg)"
+    },
+    {
+      "line": 67,
+      "kind": "asset",
+      "text": "![Design Patterns Cheat Sheet](https://substack-post-media.s3.amazonaws.com/public/images/4863d93c-ca2a-4b5a-b0b4-fe3621a6c184_2250x2920.png)"
+    },
+    {
+      "line": 68,
+      "kind": "asset",
+      "text": "![Design Patterns Cheat Sheet](https://substack-post-media.s3.amazonaws.com/public/images/d6d04f12-2adc-4d8e-a9ca-2de16399066f_2250x3376.png)"
+    },
+    {
+      "line": 69,
+      "kind": "asset",
+      "text": "![CI/CD Simplified Visual Guide](https://substack-post-media.s3.amazonaws.com/public/images/a370bb6a-82d3-45ad-b6f4-a2a9a4317402_800x1099.jpeg)"
+    },
+    {
+      "line": 70,
+      "kind": "asset",
+      "text": "![How Apache Kafka Works?](https://substack-post-media.s3.amazonaws.com/public/images/5d9faeeb-3428-44c8-94fd-4b52fc287da3_3000x3900.png)"
+    },
+    {
+      "line": 71,
+      "kind": "asset",
+      "text": "![Load Balancers vs API Gateways vs Reverse Proxy](https://substack-post-media.s3.amazonaws.com/public/images/45136e24-79ee-4c6d-a53a-89df6afebef6_3000x3900.png)"
+    },
+    {
+      "line": 72,
+      "kind": "asset",
+      "text": "![Understanding Load Balancers: Traffic Management at Scale](https://substackcdn.com/image/fetch/$s_!4Uyj!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F1a1213e2-86cb-4fa8-bf72-e37ffe0da44d_2250x2624.heic)"
+    },
+    {
+      "line": 74,
+      "kind": "italic-note",
+      "text": "*Nhìn chung thì nội dung ngắn gọn, mình tương đối hài lòng, chắc khoảng 80% so với Claude Code với Claude models, nhưng vì miễn phí nên là mình rất ưng ý :)))*"
+    }
+  ],
+  "candidates": [
+    {
+      "line": 41,
+      "kind": "first-person",
+      "text": "Julie Tibshirani kể về trải nghiệm với CRAN, kho gói trung tâm của ngôn ngữ R. Trước khi chấp nhận một bản cập nhật, CRAN không chỉ kiểm tra gói được gửi lên mà còn chạy kiểm tra trên mọi gói phụ thuộc vào nó. Khi tác giả phát hành `grf` 2.0 với thay đổi phá vỡ API, CRAN chặn việc xuất bản cho đến khi gói hạ nguồn `policytree` được cập nhật. Ban đầu cô thấy vô lý: tại sao mình phải lo cho mã nguồn của người khác? Nhưng dần dần cô nhận ra đây không đơn thuần là một điểm khác trên thang đánh đổi giữa tốc độ và ổn định, mà là một sự \"đồng cảm cực độ\" trong bảo trì phần mềm: mã nguồn của người dùng cũng là trách nhiệm của người viết thư viện, giống như tư duy của một monorepo."
+    }
+  ]
+}

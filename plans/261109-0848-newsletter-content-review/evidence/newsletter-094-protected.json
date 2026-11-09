@@ -1,0 +1,100 @@
+{
+  "post": "content/post/2026/04/02/index.md",
+  "newsletter": 94,
+  "newsletter_post": true,
+  "note": "*Bài viết đã được viết lại bởi Claude Code với Opus 5.5 vào ngày 27/09/2026.*",
+  "lines": [
+    {
+      "line": 1,
+      "kind": "frontmatter",
+      "text": "---"
+    },
+    {
+      "line": 2,
+      "kind": "frontmatter",
+      "text": "title: \"Newsletter #94\""
+    },
+    {
+      "line": 3,
+      "kind": "frontmatter",
+      "text": "date: 2026-04-02"
+    },
+    {
+      "line": 4,
+      "kind": "frontmatter",
+      "text": "tags: [\"AI-Assisted\", \"AI\", \"Java\", \"Go\", \"Performance\", \"Shell\", \"Developer Productivity\"]"
+    },
+    {
+      "line": 5,
+      "kind": "frontmatter",
+      "text": "categories: [\"Newsletter\"]"
+    },
+    {
+      "line": 6,
+      "kind": "frontmatter",
+      "text": "---"
+    },
+    {
+      "line": 8,
+      "kind": "italic-note",
+      "text": "*Mời bạn thưởng thức Newsletter #94.*"
+    },
+    {
+      "line": 10,
+      "kind": "heading",
+      "text": "## [Inside the Claude Code source](https://gist.github.com/Haseeb-Qureshi/d0dc36844c19d26303ce09b42e7188c1)"
+    },
+    {
+      "line": 16,
+      "kind": "heading",
+      "text": "## ~~[AI Will Accelerate Your Tech Debt](https://securosis.com/ai/ai-will-accelerate-your-tech-debt/)~~"
+    },
+    {
+      "line": 22,
+      "kind": "heading",
+      "text": "## [How Slack Rebuilt Notifications 📣](https://slack.engineering/how-slack-rebuilt-notifications/)"
+    },
+    {
+      "line": 28,
+      "kind": "heading",
+      "text": "## [Better, Faster, and (Even) More](https://randsinrepose.com/archives/better-faster-and-even-more/)"
+    },
+    {
+      "line": 34,
+      "kind": "heading",
+      "text": "## [Java Is Fast. Your Code Might Not Be.](https://jvogel.me/posts/2026/java-is-fast-your-code-might-not-be/)"
+    },
+    {
+      "line": 40,
+      "kind": "heading",
+      "text": "## [Go Naming Conventions: A Practical Guide](https://www.alexedwards.net/blog/go-naming-conventions)"
+    },
+    {
+      "line": 46,
+      "kind": "heading",
+      "text": "## [samber/cc-skills-golang: 🧑‍🎨 A collection of Golang agentic skills that works](https://github.com/samber/cc-skills-golang)"
+    },
+    {
+      "line": 52,
+      "kind": "heading",
+      "text": "## [Small Programming Tricks](https://will-keleher.com/posts/small-programming-tricks-matter/)"
+    },
+    {
+      "line": 58,
+      "kind": "heading",
+      "text": "## [Shell Tricks That Actually Make Life Easier (And Save Your Sanity)](https://blog.hofstede.it/shell-tricks-that-actually-make-life-easier-and-save-your-sanity/)"
+    }
+  ],
+  "candidates": [
+    {
+      "line": 20,
+      "kind": "first-person",
+      "text": "Về bảo mật, dựa trên kịch bản \"Core Collapse\" của Rich Mogull, tác giả cảnh báo kẻ tấn công dùng AI sẽ tìm và khai thác lỗ hổng nhanh hơn tốc độ vá lỗi của bên phòng thủ, và tổ chức không hiểu nổi môi trường của chính mình thì không thể dùng AI để tự vệ. Khác với Mogull, ông cho rằng không thể thuê ngoài việc giảm nợ kỹ thuật. Giải pháp ông đề xuất là \"Technology Troika\": ba nhóm Tài chính/FinOps, Bảo mật và Nền tảng phối hợp xây dựng nền móng vững chắc trước khi mở toang cánh cửa AI. Việc cần làm gồm đầu tư vào phần nền tảng kém hào nhoáng như quản lý danh tính, phân loại dữ liệu và lập bản đồ phụ thuộc, đồng thời chấp nhận loại bỏ hẳn một số hệ thống thay vì tái cấu trúc. Mua thêm công cụ AI không cứu được một nền móng đã mục."
+    },
+    {
+      "line": 62,
+      "kind": "first-person",
+      "text": "Phần thứ hai dành cho Bash và Zsh: tìm kiếm lịch sử bằng Ctrl+R, nhấn Ctrl+X rồi Ctrl+E để mở trình soạn thảo khi cần viết lệnh dài, mở rộng dấu ngoặc nhọn như `cp file{,.bak}` để sao lưu nhanh hay `mkdir -p project/{src,tests,docs}` để tạo nhiều thư mục cùng lúc, thay thế tiến trình kiểu `diff <(sort file1) <(sort file2)`, và `disown` để tách tiến trình khỏi shell. Lời khuyên của tác giả: không cần học thuộc tất cả, chỉ cần chọn một thủ thuật, ép mình dùng nó trong một tuần, rồi chuyển sang thủ thuật tiếp theo."
+    }
+  ]
+}

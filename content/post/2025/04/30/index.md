@@ -21,9 +21,9 @@ Bài cũng đề cập các yêu cầu của hệ thống thực tế như hủy
 
 ## [Floyd’s Cycle Algorithm: Fraud Detection in Java Systems](https://dzone.com/articles/floyds-cycle-algorithm-fraud-detection-java-systems)
 
-Bài viết minh họa cách dùng thuật toán phát hiện chu trình của Floyd (còn gọi là "rùa và thỏ") để phát hiện gian lận trong hệ thống ngân hàng. Các tài khoản được mô hình hóa thành đỉnh, các lệnh chuyển tiền thành cạnh có hướng của một đồ thị. Một chuỗi như A → B → C → D → B tạo thành vòng lặp, là dấu hiệu điển hình của hành vi rửa tiền nhằm che giấu nguồn gốc dòng tiền. Thuật toán dùng hai con trỏ: con trỏ chậm đi một bước, con trỏ nhanh đi hai bước; nếu hai con trỏ gặp nhau thì đồ thị có chu trình. Phần cài đặt bằng Java gồm lớp lưu đồ thị chuyển tiền bằng danh sách kề trên HashMap, lớp phát hiện chu trình và một lớp kiểm thử với dữ liệu mẫu.
+Bài viết dùng giao dịch chuyển tiền để minh họa thuật toán phát hiện chu trình của Floyd, còn gọi là "rùa và thỏ". Một con trỏ đi một bước, con trỏ kia đi hai bước; nếu gặp nhau trên cùng chuỗi kế tiếp thì có chu trình. Điều kiện quan trọng là mỗi bước phải xác định được một phần tử kế tiếp duy nhất, như trong danh sách liên kết hoặc một hàm chuyển trạng thái.
 
-Ưu điểm của cách tiếp cận này là đơn giản, nhanh và gần như không tốn thêm bộ nhớ, phù hợp để giám sát giao dịch theo thời gian thực. Hạn chế là mỗi điểm xuất phát chỉ phát hiện được một chu trình; với đồ thị phức tạp có nhiều cạnh và nhiều chu trình đan xen, tìm kiếm theo chiều sâu (DFS) sẽ phù hợp hơn. Bài viết cũng điểm qua các lĩnh vực khác có thể áp dụng như phát hiện vòng lặp định tuyến trong mạng, phân tích mẫu DNA, AI/ML và blockchain, là một ví dụ dễ hiểu về việc đưa thuật toán kinh điển vào bài toán thực tế.
+Đồ thị giao dịch tổng quát có thể có nhiều cạnh đi ra từ một tài khoản. Chỉ chọn một cạnh để chạy Floyd có thể bỏ sót chu trình ở các nhánh khác, nên ví dụ không phải bộ phát hiện đầy đủ cho mọi đồ thị. Tìm kiếm theo chiều sâu là một hướng phù hợp hơn khi cần duyệt nhiều nhánh. Chu trình chuyển tiền cũng chỉ là thông tin cần phân tích thêm, không tự chứng minh có gian lận. Giá trị của ví dụ là giúp hiểu thuật toán và giới hạn của cách mô hình hóa, thay vì bảo đảm giám sát gian lận trong thực tế.
 
 ## [Succinct data structures](https://blog.startifact.com/posts/succinct/)
 
@@ -39,7 +39,7 @@ Tác giả còn khuyên "dồn lực đến mức tối đa": đưa càng nhiề
 
 ## [Performance optimization, and how to do it wrong](https://genna.win/blog/convolution-simd/)
 
-Tác giả, một người đóng góp cho thư viện học máy burn viết bằng Rust, kể lại hành trình tối ưu phép tích chập trực tiếp trên CPU bằng lệnh SIMD. Dù đã áp dụng thứ tự vòng lặp tối ưu và kỹ thuật chia khối thanh ghi theo một bài báo khoa học, phiên bản mới lại chậm hơn hơn hai lần. Các công cụ phân tích hiệu năng như cargo-flamegraph, samply hay AMD μProf đều không chỉ ra được nguyên nhân, nên tác giả phải rút gọn dần mã nguồn để khoanh vùng. Thủ phạm là sự kết hợp giữa tràn thanh ghi (CPU hiện đại chỉ có 16 thanh ghi SIMD) và quá nhiều lệnh rẽ nhánh bên trong vòng lặp nóng. Cách khắc phục là tách thành hai vòng lặp: một vòng không rẽ nhánh cho phần lớn điểm ảnh và một vòng riêng cho các điểm ảnh ở biên, đồng thời dùng đơn hình hóa lúc biên dịch để loại bỏ các trường hợp phổ biến như không đệm hoặc bước nhảy bằng một.
+Tác giả, một người đóng góp cho thư viện học máy burn viết bằng Rust, kể lại hành trình tối ưu phép tích chập trực tiếp trên CPU bằng lệnh SIMD. Dù đã áp dụng thứ tự vòng lặp và kỹ thuật chia khối thanh ghi theo một bài báo, phiên bản mới lại chậm hơn hơn hai lần. Sau khi dùng công cụ phân tích và rút gọn mã nguồn, tác giả xác định vấn đề nằm ở áp lực thanh ghi cùng các nhánh trong vòng lặp nóng. Giới hạn 16 thanh ghi SIMD được bàn đến thuộc bối cảnh kiến trúc và tập lệnh đang xét, không phải mọi CPU hiện đại. Cách khắc phục là tách phần lớn điểm ảnh sang vòng lặp không rẽ nhánh, xử lý biên riêng và chuyên biệt hóa một số trường hợp khi biên dịch.
 
 Bất ngờ lớn nhất đến từ trình biên dịch: khi thêm nhánh, hàm ngoài cùng vượt quá giới hạn kích thước inline của Rust, khiến các lệnh SIMD không còn được inline và hiệu năng lại sụt giảm. Giải pháp đơn giản là đánh dấu cả hàm cấp cao nhất bằng `#[inline(always)]`. Bài viết là bài học thực tế đáng giá: tối ưu hiệu năng đòi hỏi đo đạc cẩn thận, hiểu phần cứng và đôi khi phải "cãi nhau" với trình biên dịch.
 
@@ -47,7 +47,7 @@ Bất ngờ lớn nhất đến từ trình biên dịch: khi thêm nhánh, hàm
 
 Discord chia sẻ loạt cải tiến hiệu năng cho ứng dụng di động xây dựng bằng React Native, đặc biệt nhắm tới những người dùng tham gia rất nhiều máy chủ. Danh sách máy chủ được viết lại theo kiểu ảo hóa, chỉ giữ trong bộ nhớ những mục đang hiển thị, giúp người dùng có hơn 100 máy chủ giảm 14% bộ nhớ lúc khởi động và 10% thời gian khởi động. Danh sách tin nhắn (vốn đã là thành phần gốc) được tối ưu bằng cơ chế tái sử dụng thành phần, nạp trễ các phần ít dùng và đổ sẵn các phần tử thường gặp vào vùng tái sử dụng, giảm tới 60% khung hình chậm và khoảng 12% bộ nhớ. Trên Android, bộ chọn emoji được viết lại hoàn toàn bằng mã gốc để loại bỏ hiện tượng khung hình trống khi cuộn trên máy cấu hình thấp, còn emoji động chuyển từ GIF sang WebP để đạt 60 khung hình mỗi giây.
 
-Với danh sách kênh, nhóm quay lại dùng FastList tự phát triển thay cho FlashList của Shopify vì FlashList hay bị trống nội dung trên máy Android giá rẻ; họ còn tạo thêm FastestList dựa trên RecyclerView gốc của Android. Trên iOS, bộ chọn ảnh dùng ảnh thu nhỏ chất lượng thấp trong lúc chờ ảnh đẹp hơn và đổi kích thước xem trước sang 256x256 để tận dụng bộ nhớ đệm của PhotoKit, loại bỏ 4,5 giây chờ. Năm 2025, Discord dự định bật New Architecture của React Native, thử nghiệm static Hermes và chuyển logic cốt lõi sang Rust.
+Với danh sách kênh, nhóm quay lại dùng FastList tự phát triển thay cho FlashList của Shopify vì FlashList hay bị trống nội dung trên máy Android giá rẻ; họ còn tạo thêm FastestList dựa trên RecyclerView gốc của Android. Trên iOS, bộ chọn ảnh dùng ảnh thu nhỏ chất lượng thấp trong lúc chờ ảnh đẹp hơn và đổi kích thước xem trước sang 256x256 để tận dụng bộ nhớ đệm của PhotoKit, loại bỏ 4,5 giây chờ trong tình huống được đo. Bài viết còn nêu kế hoạch cho năm 2025 như bật New Architecture của React Native, thử nghiệm static Hermes và chuyển logic cốt lõi sang Rust; đó là lộ trình tại thời điểm công bố.
 
 ## [Git without a forge](https://www.chiark.greenend.org.uk/~sgtatham/quasiblog/git-no-forge/)
 
@@ -73,4 +73,4 @@ Paul Millerd, tác giả cuốn The Pathless Path, ghi lại 40 suy nghĩ khi v�
 
 ---
 
-*Bài viết đã được viết lại bởi Claude Code với Opus 5.5 vào ngày 27/09/2026.*
+*Bài viết đã được viết lại bởi Claude Code với Opus 5.5 vào ngày 27/09/2026; được review và chỉnh sửa bởi Codex với GPT 6.1 Sol vào ngày 09/11/2026.*

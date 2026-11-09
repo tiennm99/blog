@@ -1,0 +1,99 @@
+{
+  "post": "content/post/2025/08/31/index.md",
+  "newsletter": 51,
+  "newsletter_post": true,
+  "note": "*Bài viết đã được viết lại bởi Claude Code với Opus 5.5 vào ngày 27/09/2026.*",
+  "lines": [
+    {
+      "line": 1,
+      "kind": "frontmatter",
+      "text": "---"
+    },
+    {
+      "line": 2,
+      "kind": "frontmatter",
+      "text": "title: \"Newsletter #51\""
+    },
+    {
+      "line": 3,
+      "kind": "frontmatter",
+      "text": "date: 2025-08-31"
+    },
+    {
+      "line": 4,
+      "kind": "frontmatter",
+      "text": "tags: [\"AI-Assisted\", \"Algorithms\", \"Data Structures\", \"Performance\", \"Claude Code\", \"HTTP\", \"Search Engine\"]"
+    },
+    {
+      "line": 5,
+      "kind": "frontmatter",
+      "text": "categories: [\"Newsletter\"]"
+    },
+    {
+      "line": 6,
+      "kind": "frontmatter",
+      "text": "---"
+    },
+    {
+      "line": 8,
+      "kind": "italic-note",
+      "text": "*Chào các bạn, nay lại đến chu kỳ lười biếng của mình rồi (với thật ra thì dạo trước cày kha khá rồi nên nội dung còn lại cũng không nhiều), nên mình sẽ chuyển sang viết khoảng 1-2 bài/tuần tuỳ cảm hứng. Với tuần rồi mình cũng có được idol ✨🌙 của mình giới thiệu cuốn sách ~~[Tìm mình trong thế giới hậu tuổi thơ](https://nhanam.vn/tim-minh-trong-the-gioi-hau-tuoi-tho-nha-nam)~~, cũng khá hay, nếu hứng thú các bạn có thể tìm đọc. Còn giờ thì mời bạn thưởng thức Newsletter #51.*"
+    },
+    {
+      "line": 10,
+      "kind": "heading",
+      "text": "## [p-fast trie: lexically ordered hash map](https://dotat.at/@/2025-08-04-p-fast-trie.html)"
+    },
+    {
+      "line": 16,
+      "kind": "heading",
+      "text": "## [Big O vs Hardware: Better Complexity ≠ Better Performance](https://blog.codingconfessions.com/p/big-o-vs-hardware)"
+    },
+    {
+      "line": 22,
+      "kind": "heading",
+      "text": "## [Claude Code Is All You Need](https://dwyer.co.za/static/claude-code-is-all-you-need.html)"
+    },
+    {
+      "line": 28,
+      "kind": "heading",
+      "text": "## [HTTP is not simple](https://daniel.haxx.se/blog/2025/08/08/http-is-not-simple/)"
+    },
+    {
+      "line": 34,
+      "kind": "heading",
+      "text": "## [Building a web search engine from scratch in two months with 3 billion neural embeddings](https://blog.wilsonl.in/search-engine/)"
+    },
+    {
+      "line": 40,
+      "kind": "heading",
+      "text": "## Bonus: Vài ảnh hay ho đến từ [ByteByteGo](https://bytebytego.com/)"
+    },
+    {
+      "line": 42,
+      "kind": "asset",
+      "text": "![What is the SOLID Principle?](https://substack-post-media.s3.amazonaws.com/public/images/7136a64a-5300-4eed-852f-cdaf6cf73c6a_3000x3900.png)"
+    },
+    {
+      "line": 43,
+      "kind": "asset",
+      "text": "![Common HTTP Status Codes](https://substack-post-media.s3.amazonaws.com/public/images/fe53c806-a56f-4004-97e8-bbc6b5b9eb3d_3000x3900.jpeg)"
+    },
+    {
+      "line": 44,
+      "kind": "asset",
+      "text": "![How Clean Architecture Works?](https://substack-post-media.s3.amazonaws.com/public/images/db0481bd-807d-419c-a71e-913a13cb855e_1280x808.jpeg)"
+    },
+    {
+      "line": 45,
+      "kind": "asset",
+      "text": "![How does Docker Work?](https://substack-post-media.s3.amazonaws.com/public/images/ba21dab1-a39e-4c3a-a815-08d8be09de49_2360x2492.png)"
+    },
+    {
+      "line": 46,
+      "kind": "asset",
+      "text": "![A Guide to Top Caching Strategies](https://substack-post-media.s3.amazonaws.com/public/images/7f891bc7-8657-47ff-8974-efcfcc0f0bb1_2250x2624.png)"
+    }
+  ],
+  "candidates": []
+}

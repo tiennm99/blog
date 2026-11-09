@@ -34,7 +34,7 @@ Một công ty khác, cũng làm việc từ xa, phải sa thải một kỹ sư
 
 ## [Underusing Snapshot Testing](https://matklad.github.io/2025/04/15/underusing-snapshot-testing.html)
 
-Aleksey Kladov (matklad), tác giả của rust-analyzer, chia sẻ lý do anh cho rằng bản thân vẫn chưa tận dụng hết snapshot testing. Ý tưởng khá đơn giản: chuyển kết quả của bài kiểm thử thành dạng văn bản, so sánh với giá trị mong đợi được viết ngay trong mã nguồn dưới dạng chuỗi, và dùng công cụ để tự động cập nhật chuỗi đó theo kết quả thực tế. Lợi ích quen thuộc là giúp phần mềm dễ thay đổi: khi yêu cầu hoặc cấu trúc dữ liệu thay đổi, chỉ cần chạy lại kiểm thử ở chế độ cập nhật.
+Aleksey Kladov (matklad), tác giả của rust-analyzer, chia sẻ lý do anh cho rằng bản thân vẫn chưa tận dụng hết snapshot testing. Ý tưởng khá đơn giản: chuyển kết quả của bài kiểm thử thành dạng văn bản, so sánh với giá trị mong đợi được viết ngay trong mã nguồn dưới dạng chuỗi, và dùng công cụ để tự động cập nhật chuỗi đó theo kết quả thực tế. Lợi ích là dễ cập nhật dữ liệu mong đợi khi yêu cầu thay đổi: công cụ ghi lại đầu ra mới để người viết rà soát, thay vì phải sửa từng chuỗi thủ công.
 
 Điều mới mà tác giả nhận ra đến từ ví dụ viết hàm mã hóa hoán vị (permutation encoding) bằng Zig — một bài toán mà yêu cầu gần như không bao giờ thay đổi. Với kiểm thử dựa trên assert, chương trình dừng ngay ở lỗi đầu tiên và kết quả phải tìm trong cửa sổ terminal, xa nơi đang viết mã. Khi chuyển sang snapshot, mọi kết quả sai đều hiện ngay trong mã nguồn, giúp nhìn được toàn cảnh và nhanh chóng phát hiện hai lỗi lệch một đơn vị (off-by-one). Theo tác giả, snapshot test giữ dữ liệu gần với lập trình viên, rút ngắn vòng phản hồi và hoạt động như một REPL có thể lặp lại, nên vẫn tăng tốc phát triển ngay cả khi yêu cầu không đổi. Phần cuối bài còn giải thích vì sao vài ví dụ cụ thể vẫn hữu ích bên cạnh kiểm thử vét cạn toàn bộ các hoán vị.
 
@@ -42,9 +42,9 @@ Aleksey Kladov (matklad), tác giả của rust-analyzer, chia sẻ lý do anh c
 
 ## [Principles for coding securely with LLMs](https://www.seangoedecke.com/ai-security/)
 
-Sean Goedecke cho rằng bảo mật khi làm việc với LLM không nên được xem là một danh sách dài các mối đe dọa rời rạc, mà xuất phát từ một nguyên tắc duy nhất: LLM đôi khi hành xử độc hại, vì vậy hãy đối xử với đầu ra của nó như dữ liệu do người dùng nhập vào. Prompt injection là không thể tránh khỏi — chỉ cần đưa nội dung do người khác tạo (trang web, tài liệu, tệp quy tắc của Cursor) vào ngữ cảnh là đã trao cho họ quyền điều khiển mô hình, và không mô hình nào miễn nhiễm với kỹ thuật jailbreak.
+Sean Goedecke đề xuất nguyên tắc bảo mật khi dùng LLM: xem đầu ra mô hình như dữ liệu đầu vào không đáng tin. Nội dung lấy từ web, tài liệu hay tệp quy tắc có thể chứa chỉ dẫn nhằm thao túng mô hình; hệ thống không nên dựa riêng vào khả năng mô hình chống prompt injection để bảo vệ dữ liệu và hành động.
 
-Từ đó, mọi công cụ mà LLM được phép gọi phải được phân quyền như một API công khai cho người dùng: ví dụ dùng `fetch_messages()` thay vì `fetch_messages(user_id)` để mô hình không thể đọc tin nhắn của người khác; các hành động ảnh hưởng tới nhiều người như gửi tin hay chuyển tiền cần người dùng xác nhận thủ công. Máy chủ MCP về bản chất là thư viện từ xa, nên bạn đang tin tưởng chủ sở hữu máy chủ chứ không chỉ giao diện của nó. Ngay cả khi không bị tấn công, LLM vẫn có thể ảo giác hoặc làm điều liều lĩnh, vì thế bước phê duyệt của con người cần được cài trong mã nguồn của công cụ chứ không phải trong prompt. Tác giả cũng lưu ý rủi ro từ mô hình tự huấn luyện (lệch mục tiêu hoặc làm lộ dữ liệu nhạy cảm) và tấn công từ chối dịch vụ (DoS), do LLM phản hồi chậm và tốn tài nguyên GPU; hãy giới hạn số phiên đồng thời, độ dài token và quyền truy cập công cụ.
+Công cụ cần kiểm tra quyền như API cho người dùng. Chẳng hạn, lấy danh tính từ phiên đã xác thực thay vì tin `user_id` do mô hình chọn; dạng `fetch_messages()` chỉ minh họa giới hạn này, không tự thay thế kiểm tra quyền phía máy chủ. Tác giả khuyên đặt cơ chế phê duyệt hành động nhạy cảm trong mã ứng dụng, thay vì chỉ viết yêu cầu vào prompt. Dùng máy chủ MCP cũng đòi hỏi đánh giá bên cung cấp và quyền được trao. Cuối cùng, cần giới hạn tài nguyên như số phiên đồng thời và độ dài đầu ra, vì ngay cả lỗi vô ý cũng có thể gây tốn kém hoặc gián đoạn.
 
 ---
 
@@ -72,4 +72,4 @@ Tác giả chỉ ra cái giá của việc im lặng: sự cố kéo dài vì kh
 
 ---
 
-*Bài viết đã được viết lại bởi Claude Code với Opus 5.5 vào ngày 27/09/2026.*
+*Bài viết đã được viết lại bởi Claude Code với Opus 5.5 vào ngày 27/09/2026; được review và chỉnh sửa bởi Codex với GPT 6.1 Sol vào ngày 09/11/2026.*

@@ -19,7 +19,7 @@ Một dự án lớn có thể phát hiện mình đã hợp nhất nhiều mã 
 
 ## [Why you should use compact table columns](https://vladmihalcea.com/compact-table-columns/)
 
-Vlad Mihalcea giải thích vì sao nên chọn kiểu cột nhỏ gọn khi thiết kế lược đồ cơ sở dữ liệu. Các hệ quản trị cơ sở dữ liệu quan hệ giữ những trang dữ liệu đã đọc từ đĩa trong Buffer Pool (như shared buffers của PostgreSQL); vì RAM nhanh hơn SSD rất nhiều lần, cột càng gọn thì mỗi trang chứa càng nhiều bản ghi và mục chỉ mục, và truy vấn càng dễ được phục vụ từ bộ nhớ. StackOverflow là minh chứng: họ phục vụ khoảng 11 nghìn truy vấn mỗi giây chỉ với một nút SQL Server hoạt động, nhờ 1,5 TB RAM cho cơ sở dữ liệu 2,8 TB cùng lược đồ tiết kiệm — không dùng UUID 16 byte cho khóa chính và khóa ngoại, phần lớn khóa chính là int (4 byte) hoặc tinyint (1 byte) thay vì bigint, enum chỉ chiếm 1 byte, và cột VARCHAR có giới hạn độ dài.
+Vlad Mihalcea giải thích vì sao nên chọn kiểu cột nhỏ gọn khi thiết kế lược đồ cơ sở dữ liệu. Các hệ quản trị cơ sở dữ liệu quan hệ giữ những trang dữ liệu đã đọc từ đĩa trong bộ nhớ đệm (như shared buffers của PostgreSQL); vì RAM nhanh hơn SSD rất nhiều lần, cột càng gọn thì mỗi trang chứa càng nhiều bản ghi và mục chỉ mục, và truy vấn càng dễ được phục vụ từ bộ nhớ. Theo số liệu lịch sử tác giả dẫn, StackOverflow phục vụ khoảng 11 nghìn truy vấn mỗi giây chỉ với một nút SQL Server hoạt động, dùng 1,5 TB RAM cho cơ sở dữ liệu 2,8 TB cùng lược đồ tiết kiệm: khóa chính và khóa ngoại không dùng UUID 16 byte, nhiều khóa dùng int (4 byte) hoặc tinyint (1 byte), enum chiếm 1 byte và VARCHAR có giới hạn độ dài.
 
 Tác giả minh họa bằng số liệu đo thực tế. Trên MySQL, với bảng customer năm triệu bản ghi, dùng tinyint thay vì smallint cho một khóa ngoại có chỉ mục tiết kiệm khoảng 71,59 MB; mười cột như vậy trên bảng một trăm triệu bản ghi sẽ chênh lệch tới khoảng 14,3 GB. PostgreSQL không có tinyint và còn căn chỉnh dữ liệu (data alignment), nên cần sắp xếp thứ tự cột theo cách "Column Tetris" để tránh phần đệm lãng phí; khi đó, dùng smallint thay vì int giúp bảng customer nhỏ hơn 38 MB. Bài học: chọn kiểu dữ liệu vừa đủ là chiến lược tối ưu hiệu năng đã được StackOverflow kiểm chứng suốt hơn 15 năm.
 
@@ -31,9 +31,9 @@ Bài viết so sánh năm thuật toán phổ biến. Leaky Bucket xử lý yêu
 
 ## [Why does Cloudflare Pages have such a generous Free tier?](https://mattsayar.com/why-does-cloudflare-pages-have-such-a-generous-free-tier/)
 
-Matt Sayar, người đang lưu trữ trang cá nhân trên Cloudflare Pages, tự hỏi vì sao ngày nay lại có nhiều dịch vụ lưu trữ miễn phí chất lượng đến vậy. Giới hạn đáng lo nhất là băng thông, vì một bài viết bất ngờ lan truyền có thể khiến bạn phải trả hóa đơn lớn hoặc trang bị sập. Khi so sánh, GitHub Pages có giới hạn mềm 100 GB mỗi tháng, Netlify và AWS S3 khoảng 100 GB, GitLab Pages giới hạn theo số yêu cầu mỗi phút, còn Cloudflare Pages hoàn toàn không giới hạn băng thông.
+Matt Sayar tìm hiểu vì sao Cloudflare Pages cung cấp gói miễn phí rộng rãi cho trang tĩnh. Trong bảng so sánh ở thời điểm viết bài, tác giả ghi nhận Cloudflare Pages không giới hạn băng thông, còn các dịch vụ khác đặt hạn mức hoặc giới hạn theo số yêu cầu. Đây là thông tin theo bối cảnh bài viết, cần kiểm tra lại chính sách khi chọn dịch vụ.
 
-Tác giả đưa ra ba lý do thực tế. Thứ nhất, một trang tĩnh rất nhẹ — trang của anh chỉ khoảng 2,2 MB — nên với mạng lưới phủ rộng, bộ nhớ đệm và các kỹ thuật tối ưu của Cloudflare, chi phí phục vụ gần như không đáng kể. Thứ hai, Cloudflare hưởng lợi từ một internet nhanh và an toàn: càng nhiều người dùng internet thì càng nhiều doanh nghiệp đưa dịch vụ lên mạng và cần mua sản phẩm bảo mật — đúng thứ Cloudflare bán, giống tinh thần của dịch vụ DNS 1.1.1.1 hay tính năng chống DDoS miễn phí. Thứ ba là mô hình freemium: người dùng thử miễn phí, có ấn tượng tốt, rồi sau này giới thiệu hoặc đề xuất sản phẩm trả phí khi công ty cần. Ban đầu tác giả không tìm thấy tuyên bố chính thức nào về băng thông, sau đó cộng đồng Hacker News đã chỉ ra bài viết của Cloudflare về cam kết duy trì gói miễn phí; dù vậy, anh vẫn giữ một phần trang trên GitHub để phòng khi chính sách thay đổi.
+Anh đưa ra ba cách lý giải: trang tĩnh tương đối nhẹ, dễ phục vụ qua mạng lưới và bộ nhớ đệm; một Internet nhanh, an toàn giúp mở rộng thị trường cho sản phẩm bảo mật; người dùng miễn phí có thể giới thiệu hoặc mua dịch vụ trả phí sau này. Ví dụ 2,2 MB trong bài là dung lượng trang đang đọc, không phải toàn bộ website. Đây chủ yếu là lập luận của tác giả, cùng các phát biểu của Cloudflare được bổ sung qua thảo luận cộng đồng. Anh vẫn lưu trữ một phần website trên GitHub để có phương án thay thế nếu chính sách đổi.
 
 ## [How I program with LLMs](https://crawshaw.io/blog/programming-with-llms)
 
@@ -58,4 +58,4 @@ Tuần này có kha khá bonus đến từ nhiều nguồn khác nhau
 
 ---
 
-*Bài viết đã được viết lại bởi Claude Code với Opus 5.5 vào ngày 27/09/2026.*
+*Bài viết đã được viết lại bởi Claude Code với Opus 5.5 vào ngày 27/09/2026; được review và chỉnh sửa bởi Codex với GPT 6.1 Sol vào ngày 09/11/2026.*

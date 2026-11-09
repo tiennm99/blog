@@ -1,0 +1,79 @@
+{
+  "post": "content/post/2026/07/01/index.md",
+  "newsletter": 114,
+  "newsletter_post": true,
+  "note": "*Bài viết đã được viết lại bởi Claude Code với Opus 5.5 vào ngày 27/09/2026.*",
+  "lines": [
+    {
+      "line": 1,
+      "kind": "frontmatter",
+      "text": "---"
+    },
+    {
+      "line": 2,
+      "kind": "frontmatter",
+      "text": "title: \"Newsletter #114\""
+    },
+    {
+      "line": 3,
+      "kind": "frontmatter",
+      "text": "date: 2026-07-01"
+    },
+    {
+      "line": 4,
+      "kind": "frontmatter",
+      "text": "tags: [\"AI-Assisted\", \"Newsletter\", \"Go\", \"AI Engineering\", \"Software Architecture\", \"Algorithms\", \"Interview\"]"
+    },
+    {
+      "line": 5,
+      "kind": "frontmatter",
+      "text": "categories: [\"Newsletter\"]"
+    },
+    {
+      "line": 6,
+      "kind": "frontmatter",
+      "text": "---"
+    },
+    {
+      "line": 8,
+      "kind": "italic-note",
+      "text": "*Mời bạn thưởng thức Newsletter #114.*"
+    },
+    {
+      "line": 10,
+      "kind": "heading",
+      "text": "## [Go errors are a story, most teams lose the plot](https://robinsiep.com/blog/posts/go-errors/)"
+    },
+    {
+      "line": 16,
+      "kind": "heading",
+      "text": "## [The Last Technical Interview](https://steve-yegge.medium.com/the-last-technical-interview-bc13ddcf4564)"
+    },
+    {
+      "line": 22,
+      "kind": "heading",
+      "text": "## [Guidelines for Respectful Use of AI](https://www.elidedbranches.com/2026/05/guidelines-for-respectful-use-of-ai.html)"
+    },
+    {
+      "line": 28,
+      "kind": "heading",
+      "text": "## [Software After AI](https://tomtunguz.com/harnessing-ai/)"
+    },
+    {
+      "line": 34,
+      "kind": "heading",
+      "text": "## [Design Patterns Are Dead. Long Live Design Patterns.](https://medium.com/google-cloud/design-patterns-are-dead-long-live-design-patterns-b2c2602fbdc4)"
+    },
+    {
+      "line": 40,
+      "kind": "heading",
+      "text": "## [Merge Intervals](https://dev.to/jaspreet_singh_86ae1740ac/merge-intervals-89l)"
+    },
+    {
+      "line": 46,
+      "kind": "heading",
+      "text": "## [Best Time to Buy and Sell Stock](https://dev.to/jaspreet_singh_86ae1740ac/best-time-to-buy-and-sell-stock-3792)"
+    }
+  ],
+  "candidates": []
+}

@@ -1,0 +1,150 @@
+{
+  "post": "content/post/2025/12/10/index.md",
+  "newsletter": 67,
+  "newsletter_post": true,
+  "note": "*Bài viết đã được viết lại bởi Claude Code với Opus 5.5 vào ngày 27/09/2026.*",
+  "lines": [
+    {
+      "line": 1,
+      "kind": "frontmatter",
+      "text": "---"
+    },
+    {
+      "line": 2,
+      "kind": "frontmatter",
+      "text": "title: \"Newsletter #67\""
+    },
+    {
+      "line": 3,
+      "kind": "frontmatter",
+      "text": "date: 2025-12-10"
+    },
+    {
+      "line": 4,
+      "kind": "frontmatter",
+      "text": "tags: [\"AI-Assisted\", \"Build Systems\", \"Bazel\", \"Agentic Coding\", \"AI Development\", \"Refactoring\", \"Software Engineering\"]"
+    },
+    {
+      "line": 5,
+      "kind": "frontmatter",
+      "text": "categories: [\"Newsletter\"]"
+    },
+    {
+      "line": 6,
+      "kind": "frontmatter",
+      "text": "---"
+    },
+    {
+      "line": 8,
+      "kind": "italic-note",
+      "text": "*~~Bài viết này mình đã thử cải thiện AGENTS.md lại. Kết quả mình tự đánh giá ở cuối bài nhé.~~ Mời bạn thưởng thức Newsletter #67.*"
+    },
+    {
+      "line": 10,
+      "kind": "heading",
+      "text": "## [Build better software to build software better](https://slack.engineering/build-better-software-to-build-software-better/)"
+    },
+    {
+      "line": 16,
+      "kind": "heading",
+      "text": "## ~~[Things I Don't Like in Configuration Languages](https://medv.io/blog/things-i-dont-like-in-configuration-languages/)~~"
+    },
+    {
+      "line": 18,
+      "kind": "struck",
+      "text": "~~Anton Medvedev phân tích các vấn đề của nhiều ngôn ngữ configuration khác nhau và giải thích tại sao ông quyết định tạo ra ngôn ngữ MAML (Minimal And Markup Language) của riêng mình. Bài viết cung cấp cái nhìn sâu sắc về ưu và nhược điểm của từng ngôn ngữ configuration từ YAML, JSON đến các ngôn ngữ mới hơn.~~"
+    },
+    {
+      "line": 20,
+      "kind": "struck",
+      "text": "~~**Điểm chính:**~~"
+    },
+    {
+      "line": 21,
+      "kind": "struck",
+      "text": "~~- YAML có specification quá phức tạp và nhiều features không cần thiết~~"
+    },
+    {
+      "line": 22,
+      "kind": "struck",
+      "text": "~~- JSON đã chiến thắng như một universal data-interchange format, nhưng có vài điểm nhỏ cần cải thiện~~"
+    },
+    {
+      "line": 23,
+      "kind": "struck",
+      "text": "~~- TOML thiếu null value và cú pháp array of tables khó hiểu~~"
+    },
+    {
+      "line": 24,
+      "kind": "struck",
+      "text": "~~- Nhiều ngôn ngữ như Pkl, CUE, Dhall thực chất là full programming languages, không chỉ là markup languages~~"
+    },
+    {
+      "line": 25,
+      "kind": "struck",
+      "text": "~~- Tác giả tạo MAML dựa trên JSON với strict specification và tên gọi độc đáo~~"
+    },
+    {
+      "line": 26,
+      "kind": "struck",
+      "text": "~~- MAML giữ tính readable của JSON nhưng thêm comments và multiline strings~~"
+    },
+    {
+      "line": 28,
+      "kind": "heading",
+      "text": "## [Here's What's Next in Agentic Coding](https://seconds0.substack.com/p/heres-whats-next-in-agentic-coding/)"
+    },
+    {
+      "line": 34,
+      "kind": "heading",
+      "text": "## ~~[Why agents DO NOT write most of our code - a reality check](https://octomind.dev/blog/why-agents-do-not-write-most-of-our-code-a-reality-check/)~~"
+    },
+    {
+      "line": 40,
+      "kind": "heading",
+      "text": "## [Clarifying the Rule of Three in Refactoring](https://blog.jbrains.ca/permalink/clarifying-the-rule-of-three-in-refactoring/)"
+    },
+    {
+      "line": 46,
+      "kind": "heading",
+      "text": "### Bonus"
+    },
+    {
+      "line": 48,
+      "kind": "asset",
+      "text": "**Images:**"
+    },
+    {
+      "line": 49,
+      "kind": "asset",
+      "text": "![Top Strategies to Share Data Between Services](https://substackcdn.com/image/fetch/$s_!9vpY!,w_1100,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Ff5f41f86-4bf2-4b21-85aa-69659c039111_2250x2624.png)"
+    },
+    {
+      "line": 50,
+      "kind": "asset",
+      "text": "![Scalability Patterns for Modern Distributed Systems](https://substackcdn.com/image/fetch/$s_!aRQC!,w_1100,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fa760cf81-6245-4051-be41-f867616e0faf_2250x2862.png)"
+    },
+    {
+      "line": 52,
+      "kind": "asset",
+      "text": "**Videos:**"
+    },
+    {
+      "line": 53,
+      "kind": "asset",
+      "text": "[Design a Web Crawler: FAANG Interview Question](https://www.youtube.com/watch?v=6u25GckPhLU)"
+    },
+    {
+      "line": 55,
+      "kind": "author-note",
+      "text": "**Đánh giá:** *Process url tạm ổn, đã bớt dùng tiếng Anh nhưng lại có một chút... tiếng Trung :| Process phần bonus thì hơi lủng. Chủ yếu là do khi gửi url AI thì AI khó mà tìm ra được tiêu đề phù hợp, thậm chí còn ghi trật lất không liên quan nữa.*"
+    }
+  ],
+  "candidates": [
+    {
+      "line": 38,
+      "kind": "first-person",
+      "text": "Theo tác giả, vấn đề nghiêm trọng nhất là lập trình viên mất dần mô hình tư duy về kho mã khi AI liên tục đẩy vào hàng nghìn dòng thay đổi, khiến mỗi lần phải tự xử lý một lỗi khó lại giống như vừa chuyển sang công ty mới. Vấn đề thứ hai là AI không biết giới hạn của mình và luôn tự tin làm được, trong khi một thực tập sinh còn biết nói \"tôi chưa từng làm việc này\". Dù vậy, AI vẫn hữu ích để động não, gỡ lỗi, gợi ý hoàn thành mã, viết kiểm thử đơn vị và tái cấu trúc đoạn mã nhỏ; các tác tử chuyên biệt trong phạm vi hẹp vẫn mang lại giá trị thực."
+    }
+  ]
+}

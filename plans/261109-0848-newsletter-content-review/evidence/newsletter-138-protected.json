@@ -1,0 +1,104 @@
+{
+  "post": "content/post/2026/10/06/index.md",
+  "newsletter": 138,
+  "newsletter_post": true,
+  "lines": [
+    {
+      "line": 1,
+      "kind": "frontmatter",
+      "text": "---"
+    },
+    {
+      "line": 2,
+      "kind": "frontmatter",
+      "text": "title: \"Newsletter #138\""
+    },
+    {
+      "line": 3,
+      "kind": "frontmatter",
+      "text": "date: 2026-10-06"
+    },
+    {
+      "line": 4,
+      "kind": "frontmatter",
+      "text": "tags: [\"AI-Assisted\", \"AI Agents\", \"LLMs\", \"Software Engineering\", \"Distributed Systems\", \"Git\", \"Java\"]"
+    },
+    {
+      "line": 5,
+      "kind": "frontmatter",
+      "text": "categories: [\"Newsletter\"]"
+    },
+    {
+      "line": 6,
+      "kind": "frontmatter",
+      "text": "---"
+    },
+    {
+      "line": 8,
+      "kind": "italic-note",
+      "text": "*Mời bạn thưởng thức Newsletter #138.*"
+    },
+    {
+      "line": 10,
+      "kind": "heading",
+      "text": "## [What I believe about the future of software development](https://thorstenball.com/blog/2026/09/19/what-i-believe-about-the-future-of-software-development/)"
+    },
+    {
+      "line": 16,
+      "kind": "heading",
+      "text": "## [Trying the Software Factory pattern.](https://lethain.com/software-factory-experiment/)"
+    },
+    {
+      "line": 22,
+      "kind": "heading",
+      "text": "## [Back to Coupling and Cohesion](https://bastrich.tech/coupling-and-cohesion/)"
+    },
+    {
+      "line": 28,
+      "kind": "heading",
+      "text": "## [Introducing System One Models & Jev](https://typesafe.ai/blog/introducing-system-one-models-and-jev)"
+    },
+    {
+      "line": 34,
+      "kind": "heading",
+      "text": "## [System One Models 🚦 Explained](https://unzip.dev/0x025-system-one-models/)"
+    },
+    {
+      "line": 40,
+      "kind": "heading",
+      "text": "## [How Data Is Replicated In Distributed Systems | Raft From Scratch - Part 1](https://sushantdhiman.dev/blog/raft/)"
+    },
+    {
+      "line": 46,
+      "kind": "heading",
+      "text": "## [Jev means structured output is interesting again](https://www.seangoedecke.com/jev-means-structured-output-is-interesting-again/)"
+    },
+    {
+      "line": 52,
+      "kind": "heading",
+      "text": "## [Why do we listen to people with no skin in the game?](https://rednafi.com/zephyr/no-skin-in-the-game/)"
+    },
+    {
+      "line": 58,
+      "kind": "heading",
+      "text": "## [You can run git on object storage if you re-make packfiles](https://www.tigrisdata.com/blog/objgit-packfiles/)"
+    },
+    {
+      "line": 64,
+      "kind": "heading",
+      "text": "## [Why CAFEBABE?](https://www.artima.com/insidejvm/whyCAFEBABE.html)"
+    }
+  ],
+  "candidates": [
+    {
+      "line": 20,
+      "kind": "first-person",
+      "text": "Bước tiếp theo là software factory pattern: lặp trên một mục tiêu rộng, để harness tự thúc đẩy tiến độ. Phiên bản đầu là skill `/linear-project-loop`, đọc một Linear project và kiểm tra xem đã có RFC trên Notion mô tả mục tiêu, cách đo và hướng tiếp cận, cùng dashboard Datadog hoặc query Snowflake đo tiến độ hay chưa; nếu thiếu, nó cùng bạn tạo ra. Sau đó nó rà metric và issue, thêm việc mới, rồi làm task không bị chặn như viết pull request, nhắc review, đặt câu hỏi. Khi mô tả project đã cũ, vòng lặp chạy lại từ đầu. Pattern này buộc tác giả nhận ra chỗ vô tình giữ thông tin mục tiêu cho riêng mình, và giúp theo dõi project sau khi release, như phát hiện ngay khi tỷ lệ lỗi của tính năng passkeys tăng. Cuối cùng, các mảnh ghép chỉ cộng hưởng khi có đủ nhau: Datadog MCP, Snowflake, Linear làm nguồn trạng thái duy nhất và một harness chạy độc lập với laptop."
+    },
+    {
+      "line": 36,
+      "kind": "first-person",
+      "text": "Agam More giải thích System One model, với ví dụ Jev của TypeSafe AI, như một câu lệnh if nhanh, rẻ và biết mình chắc chắn đến mức nào. Bạn đưa vào một trạng thái cùng câu hỏi có kiểu, model trả về JSON kèm xác suất cho từng đáp án, giống một bài thi trắc nghiệm. Có ba loại câu hỏi: Choice chọn một lựa chọn trong tập cho trước, Score chấm điểm theo thang bạn định nghĩa, còn Noul trả về khả năng một mệnh đề là đúng. Ví dụ, với ticket than phiền tích hợp Stripe lỗi ba ngày, model định tuyến sang bộ phận technical với xác suất 0.85 và đánh dấu khẩn cấp. Jev được huấn luyện hai vòng như chat model, nhưng vòng hai dùng RLCD thưởng cho xác suất trung thực, với dữ liệu hoàn toàn synthetic. Model không thể trả giá trị nằm ngoài schema, nhưng vẫn có thể chọn sai."
+    }
+  ]
+}

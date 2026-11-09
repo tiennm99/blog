@@ -1,0 +1,89 @@
+{
+  "post": "content/post/2026/07/09/index.md",
+  "newsletter": 121,
+  "newsletter_post": true,
+  "note": "*Bài viết đã được viết lại bởi Claude Code với Opus 5.5 vào ngày 27/09/2026.*",
+  "lines": [
+    {
+      "line": 1,
+      "kind": "frontmatter",
+      "text": "---"
+    },
+    {
+      "line": 2,
+      "kind": "frontmatter",
+      "text": "title: \"Newsletter #121\""
+    },
+    {
+      "line": 3,
+      "kind": "frontmatter",
+      "text": "date: 2026-07-09"
+    },
+    {
+      "line": 4,
+      "kind": "frontmatter",
+      "text": "tags: [\"AI-Assisted\", \"Newsletter\", \"Go\", \"Performance\", \"System Design\", \"Linux\", \"Engineering Culture\"]"
+    },
+    {
+      "line": 5,
+      "kind": "frontmatter",
+      "text": "categories: [\"Newsletter\"]"
+    },
+    {
+      "line": 6,
+      "kind": "frontmatter",
+      "text": "---"
+    },
+    {
+      "line": 8,
+      "kind": "italic-note",
+      "text": "*Mời bạn thưởng thức Newsletter #121.*"
+    },
+    {
+      "line": 10,
+      "kind": "heading",
+      "text": "## [How 2004 RuneScape fit a multiplayer RPG into 56k dial-up](https://jkm.dev/posts/how-2004-runescape-fit-a-multiplayer-rpg-into-56k-dialup/)"
+    },
+    {
+      "line": 16,
+      "kind": "heading",
+      "text": "## [How does struct{} take zero bytes in Go](https://www.bud1m.com/blog/go-empty-struct/)"
+    },
+    {
+      "line": 22,
+      "kind": "heading",
+      "text": "## [Is Cloudflare silently killing the web hosting industry?](https://webhosting.today/2026/06/17/is-cloudflare-silently-killing-the-web-hosting-industry/)"
+    },
+    {
+      "line": 28,
+      "kind": "heading",
+      "text": "## [Don't Stack Weaknesses](https://staysaasy.com/startups/2026/06/16/stacked-weaknesses.html)"
+    },
+    {
+      "line": 34,
+      "kind": "heading",
+      "text": "## [System Design Cheatsheet](https://gist.github.com/SuyashDive2005/be5865a9755ca1dd50523f7aeeae4417)"
+    },
+    {
+      "line": 40,
+      "kind": "heading",
+      "text": "## [SQLite improving performance with pre-sort](https://andersmurphy.com/2026/06/07/sqlite-improving-performance-with-pre-sort.html)"
+    },
+    {
+      "line": 46,
+      "kind": "heading",
+      "text": "## [Why is Meta destroying its engineering organization?](https://newsletter.pragmaticengineer.com/p/why-is-meta-destroying-its-engineering)"
+    },
+    {
+      "line": 52,
+      "kind": "heading",
+      "text": "## [CS 6120: Advanced Compilers: The Self-Guided Online Course](https://www.cs.cornell.edu/courses/cs6120/2025fa/self-guided/)"
+    },
+    {
+      "line": 58,
+      "kind": "heading",
+      "text": "## [epoll vs io_uring in Linux](https://sibexi.co/posts/epoll-vs-io_uring/)"
+    }
+  ],
+  "candidates": []
+}

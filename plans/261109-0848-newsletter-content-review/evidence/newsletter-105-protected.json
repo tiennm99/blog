@@ -1,0 +1,90 @@
+{
+  "post": "content/post/2026/05/27/index.md",
+  "newsletter": 105,
+  "newsletter_post": true,
+  "note": "*Bài viết đã được viết lại bởi Claude Code với Opus 5.5 vào ngày 27/09/2026.*",
+  "lines": [
+    {
+      "line": 1,
+      "kind": "frontmatter",
+      "text": "---"
+    },
+    {
+      "line": 2,
+      "kind": "frontmatter",
+      "text": "title: \"Newsletter #105\""
+    },
+    {
+      "line": 3,
+      "kind": "frontmatter",
+      "text": "date: 2026-05-27"
+    },
+    {
+      "line": 4,
+      "kind": "frontmatter",
+      "text": "tags: [\"AI-Assisted\", \"Newsletter\", \"AI Agents\", \"AI Coding\", \"Software Architecture\", \"Programming Languages\", \"Systems Programming\"]"
+    },
+    {
+      "line": 5,
+      "kind": "frontmatter",
+      "text": "categories: [\"Newsletter\"]"
+    },
+    {
+      "line": 6,
+      "kind": "frontmatter",
+      "text": "---"
+    },
+    {
+      "line": 8,
+      "kind": "italic-note",
+      "text": "*Mời bạn thưởng thức Newsletter #105.*"
+    },
+    {
+      "line": 10,
+      "kind": "heading",
+      "text": "## [Virtual Memory: A Deep Dive into Page Tables, TLBs, and Linux Internals](https://blog.codingconfessions.com/p/virtual-memory)"
+    },
+    {
+      "line": 16,
+      "kind": "heading",
+      "text": "## [Orchestrating AI Code Review at scale](https://blog.cloudflare.com/ai-code-review/)"
+    },
+    {
+      "line": 22,
+      "kind": "heading",
+      "text": "## [The 8 Levels of Agentic Engineering](https://www.bassimeledath.com/blog/levels-of-agentic-engineering)"
+    },
+    {
+      "line": 28,
+      "kind": "heading",
+      "text": "## [Hexagonal Architecture is Not a Layered Architecture: Topology, Safety, and When to Walk Away](https://dev.to/bing_yu/hexagonal-architecture-is-not-a-layered-architecture-topology-safety-and-when-to-walk-away-4dln)"
+    },
+    {
+      "line": 34,
+      "kind": "heading",
+      "text": "## [Spec-Driven Development: How AI Coding Moves Beyond Vibe Coding](https://www.vitaliihonchar.com/insights/spec-driven-development)"
+    },
+    {
+      "line": 40,
+      "kind": "heading",
+      "text": "## [Go vs Java: The Minimalist vs The Enterprise Veteran](https://dev.to/adamthedeveloper/go-vs-java-the-minimalist-vs-the-enterprise-veteran-1gg3)"
+    },
+    {
+      "line": 46,
+      "kind": "heading",
+      "text": "## [The ultimate guide to /goal](https://x.com/Saboo_Shubham_/status/2054988166541770782)"
+    },
+    {
+      "line": 52,
+      "kind": "heading",
+      "text": "## [The AI-Native Developer](https://newsletter.getdx.com/p/the-ai-native-developer)"
+    }
+  ],
+  "candidates": [
+    {
+      "line": 26,
+      "kind": "first-person",
+      "text": "Tác giả nhấn mạnh vài bài học xuyên suốt. Hiệu ứng \"multiplayer\" khiến năng suất của một người phụ thuộc nhiều vào cấp độ của đồng đội: người ở cấp 7 vẫn bị chặn nếu đồng nghiệp review PR thủ công ở cấp 2. Đặt ràng buộc (constraints) cho agent hiệu quả hơn đưa danh sách chỉ dẫn (instructions), vì agent dễ bám cứng vào từng bước và bỏ qua những yêu cầu không được nói ra. Cuối cùng, dùng nhiều mô hình cho các vai trò khác nhau cho kết quả tổng thể tốt hơn, và mô hình triển khai không nên tự review sản phẩm của chính mình để tránh thiên kiến."
+    }
+  ]
+}

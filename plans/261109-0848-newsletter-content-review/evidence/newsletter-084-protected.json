@@ -1,0 +1,100 @@
+{
+  "post": "content/post/2026/02/26/index.md",
+  "newsletter": 84,
+  "newsletter_post": true,
+  "note": "*Bài viết đã được viết lại bởi Claude Code với Opus 5.5 vào ngày 27/09/2026.*",
+  "lines": [
+    {
+      "line": 1,
+      "kind": "frontmatter",
+      "text": "---"
+    },
+    {
+      "line": 2,
+      "kind": "frontmatter",
+      "text": "title: \"Newsletter #84\""
+    },
+    {
+      "line": 3,
+      "kind": "frontmatter",
+      "text": "date: 2026-02-26"
+    },
+    {
+      "line": 4,
+      "kind": "frontmatter",
+      "text": "tags: [\"AI-Assisted\", \"Newsletter\", \"AI Coding\", \"Performance\", \"Go\", \"Clean Architecture\", \"Software Engineering\"]"
+    },
+    {
+      "line": 5,
+      "kind": "frontmatter",
+      "text": "categories: [\"Newsletter\"]"
+    },
+    {
+      "line": 6,
+      "kind": "frontmatter",
+      "text": "---"
+    },
+    {
+      "line": 8,
+      "kind": "italic-note",
+      "text": "*Mời bạn thưởng thức Newsletter #84.*"
+    },
+    {
+      "line": 10,
+      "kind": "heading",
+      "text": "## [Automatic programming](https://antirez.com/news/159)"
+    },
+    {
+      "line": 16,
+      "kind": "heading",
+      "text": "## [Software Performance Engineering: The Ideas I Keep Coming Back To](https://ricomariani.medium.com/software-performance-engineering-the-ideas-i-keep-coming-back-to-6f421b6a9505)"
+    },
+    {
+      "line": 22,
+      "kind": "heading",
+      "text": "## [Go's synctest is amazing](https://oblique.security/blog/go-synctest/)"
+    },
+    {
+      "line": 28,
+      "kind": "heading",
+      "text": "## [Why Clean Architecture Confuses Everyone (And How I Learned to Stop Worrying)](https://dev.to/rpereira15/why-clean-architecture-confuses-everyone-and-how-i-learned-to-stop-worrying-1i5k)"
+    },
+    {
+      "line": 34,
+      "kind": "heading",
+      "text": "## [The third golden age of software engineering – thanks to AI](https://newsletter.pragmaticengineer.com/p/the-third-golden-age-of-software)"
+    },
+    {
+      "line": 40,
+      "kind": "heading",
+      "text": "## [AI coding workflow](https://newsletter.systemdesign.one/p/ai-coding-workflow)"
+    },
+    {
+      "line": 46,
+      "kind": "heading",
+      "text": "### Bonus"
+    },
+    {
+      "line": 48,
+      "kind": "asset",
+      "text": "**Images:**"
+    },
+    {
+      "line": 49,
+      "kind": "asset",
+      "text": "![Git pull vs. git fetch](https://substack-post-media.s3.amazonaws.com/public/images/625a6789-c32d-4a27-a5f5-c174fb920637_2360x2960.png)"
+    },
+    {
+      "line": 50,
+      "kind": "asset",
+      "text": "![Top Authentication Techniques](https://substackcdn.com/image/fetch/$s_!-Lov!,w_1100,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fcf928dd3-de16-4605-a702-762df269c9f2_2250x2862.png)"
+    }
+  ],
+  "candidates": [
+    {
+      "line": 12,
+      "kind": "first-person",
+      "text": "Antirez, tác giả của Redis, dùng thuật ngữ \"lập trình tự động\" (automatic programming) để gọi quá trình viết phần mềm với sự hỗ trợ của AI, và ông tin rằng chẳng bao lâu nữa đó sẽ chỉ đơn giản là \"viết phần mềm\". Ông tách bạch nó với \"vibe coding\": vibe coding là để mô hình ngôn ngữ tự sinh ra phần mềm từ một mô tả chung chung, người dùng gần như đứng ngoài quá trình và chỉ báo lại khi có gì đó không chạy. Lập trình tự động thì khác: người lập trình hiểu rõ chuyện gì đang diễn ra, liên tục định hướng mô hình theo tầm nhìn của mình ở nhiều cấp độ, từ kiến trúc tổng thể cho đến việc chỉ AI cách viết một hàm cụ thể, và quyết định cả việc *làm gì*. Vì thế cùng một mô hình nhưng kết quả sẽ rất khác nhau tùy vào người cầm lái."
+    }
+  ]
+}

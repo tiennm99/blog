@@ -1,0 +1,130 @@
+{
+  "post": "content/post/2026/02/03/index.md",
+  "newsletter": 80,
+  "newsletter_post": true,
+  "note": "*Bài viết đã được viết lại bởi Claude Code với Opus 5.5 vào ngày 27/09/2026.*",
+  "lines": [
+    {
+      "line": 1,
+      "kind": "frontmatter",
+      "text": "---"
+    },
+    {
+      "line": 2,
+      "kind": "frontmatter",
+      "text": "title: \"Newsletter #80\""
+    },
+    {
+      "line": 3,
+      "kind": "frontmatter",
+      "text": "date: 2026-02-03"
+    },
+    {
+      "line": 4,
+      "kind": "frontmatter",
+      "text": "tags: [\"AI-Assisted\", \"Newsletter\", \"AI Agents\", \"Go\", \"Databases\", \"Developer Tools\", \"IntelliJ IDEA\"]"
+    },
+    {
+      "line": 5,
+      "kind": "frontmatter",
+      "text": "categories: [\"Newsletter\"]"
+    },
+    {
+      "line": 6,
+      "kind": "frontmatter",
+      "text": "---"
+    },
+    {
+      "line": 8,
+      "kind": "italic-note",
+      "text": "*Mời bạn thưởng thức Newsletter #80.*"
+    },
+    {
+      "line": 10,
+      "kind": "heading",
+      "text": "## [The Agent Skills Directory](https://www.skills.sh/)"
+    },
+    {
+      "line": 16,
+      "kind": "heading",
+      "text": "## [Results from the 2025 Go Developer Survey](https://go.dev/blog/survey2025)"
+    },
+    {
+      "line": 22,
+      "kind": "heading",
+      "text": "## [An Honest Review of Go](https://benraz.dev/blog/golang_review.html)"
+    },
+    {
+      "line": 28,
+      "kind": "heading",
+      "text": "## [The challenges of soft delete](https://atlas9.dev/blog/soft-delete.html)"
+    },
+    {
+      "line": 34,
+      "kind": "heading",
+      "text": "## [I got paid minimum wage to solve an impossible problem.](https://tiespetersen.substack.com/p/i-got-paid-minimum-wage-to-solve)"
+    },
+    {
+      "line": 40,
+      "kind": "heading",
+      "text": "## [Command completion (..) in IntelliJ IDEA](https://foojay.io/today/command-completion-intellij-idea/)"
+    },
+    {
+      "line": 46,
+      "kind": "heading",
+      "text": "### Bonus"
+    },
+    {
+      "line": 48,
+      "kind": "asset",
+      "text": "**Images:**"
+    },
+    {
+      "line": 49,
+      "kind": "asset",
+      "text": "![The Must-Know Fundamentals of Distributed Systems](https://substack-post-media.s3.amazonaws.com/public/images/8d53556e-5fbc-4ceb-ac64-cc5f3b211c5d_2250x2624.png)"
+    },
+    {
+      "line": 50,
+      "kind": "asset",
+      "text": "![What Happens When You Enter Google.com](https://substackcdn.com/image/fetch/$s_!yb_V!,w_1100,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F16cec58a-02f8-4daf-8669-d1208ac5fc18_2360x2960.jpeg)"
+    },
+    {
+      "line": 51,
+      "kind": "asset",
+      "text": "![Understanding the Linux Directory Structure](https://substackcdn.com/image/fetch/$s_!LIIv!,w_1100,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F631f49cf-2eff-4941-ba22-b2c482eb24ec_2360x2960.png)"
+    },
+    {
+      "line": 52,
+      "kind": "asset",
+      "text": "![Symmetric vs. Asymmetric Encryption](https://substackcdn.com/image/fetch/$s_!gxq4!,w_1100,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F11498f7e-5457-425f-9d50-90f5ebc31187_2360x2960.jpeg)"
+    },
+    {
+      "line": 53,
+      "kind": "asset",
+      "text": "![Network Troubleshooting Test Flow](https://substackcdn.com/image/fetch/$s_!XFaF!,w_1100,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F5140ecd2-ac9e-46d1-bde6-00f727309778_800x1003.jpeg)"
+    },
+    {
+      "line": 56,
+      "kind": "asset",
+      "text": "**Videos:**"
+    },
+    {
+      "line": 57,
+      "kind": "asset",
+      "text": "[Tác Nhân Trí Tuệ Nhân Tạo Là Gì & Chúng Hoạt Động Như Thế Nào?](https://www.youtube.com/watch?v=oP6DS_x5K0Y)"
+    }
+  ],
+  "candidates": [
+    {
+      "line": 38,
+      "kind": "first-person",
+      "text": "Từ đó, tác giả mở rộng bài học ra nhiều lĩnh vực: thuật toán mạng xã hội tối ưu cho mức độ tương tác chứ không phải hạnh phúc, hệ thống gợi ý tối ưu cho thời gian xem đến mức người dùng xem thuyết âm mưu suốt 6 tiếng, các mô hình ngôn ngữ lớn tối ưu cho việc nghe có vẻ tự tin chứ không phải cho sự đúng đắn, còn doanh nghiệp tối ưu lợi nhuận mà bỏ qua môi trường và đạo đức. Thông điệp cốt lõi: sự chính xác về kỹ thuật là vô nghĩa nếu bạn đang giải sai bài toán, và điều quan trọng nhất là xác định mình nên tối ưu cho điều gì ngay từ đầu."
+    },
+    {
+      "line": 44,
+      "kind": "first-person",
+      "text": "Bạn cũng có thể dùng nó để điều hướng, đổi tên bằng `..rename`, trích xuất phương thức, tạo biến cục bộ hay thêm JavaDoc; muốn dùng trong tệp chỉ đọc thì chỉ cần bật tùy chọn tương ứng trong cài đặt. Một số lệnh có bí danh, ví dụ `..change name` thay cho `..rename`, nên không cần nhớ chính xác tên lệnh. Hoàn thành lệnh không thay thế mà bổ sung cho phím tắt, hoàn thành hậu tố và live template, giúp bạn giữ mạch làm việc, tập trung vào việc mình muốn làm gì thay vì làm thế nào, và có thể khám phá ra những tính năng mạnh mẽ trước giờ chưa biết."
+    }
+  ]
+}

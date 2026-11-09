@@ -1,0 +1,114 @@
+{
+  "post": "content/post/2025/02/08/index.md",
+  "newsletter": 1,
+  "newsletter_post": true,
+  "note": "*Bài viết đã được viết lại bởi Claude Code với Opus 5.5 vào ngày 27/09/2026.*",
+  "lines": [
+    {
+      "line": 1,
+      "kind": "frontmatter",
+      "text": "---"
+    },
+    {
+      "line": 2,
+      "kind": "frontmatter",
+      "text": "title: \"Newsletter #1\""
+    },
+    {
+      "line": 3,
+      "kind": "frontmatter",
+      "text": "date: 2025-02-08"
+    },
+    {
+      "line": 4,
+      "kind": "frontmatter",
+      "text": "tags: [\"AI-Assisted\", \"Newsletter\", \"Databases\", \"Java\", \"JVM\", \"Performance\", \"Concurrency\"]"
+    },
+    {
+      "line": 5,
+      "kind": "frontmatter",
+      "text": "categories: [ \"Newsletter\" ]"
+    },
+    {
+      "line": 6,
+      "kind": "frontmatter",
+      "text": "---"
+    },
+    {
+      "line": 8,
+      "kind": "html-block",
+      "text": "<i>"
+    },
+    {
+      "line": 9,
+      "kind": "html-block",
+      "text": "Xin chào các bạn, đây lại là một lần mình quay viết blog sau chuỗi ngày lười biếng :D"
+    },
+    {
+      "line": 11,
+      "kind": "html-block",
+      "text": "Một vấn đề mình nhận ra nhưng lười sửa đổi đó là mình đọc nhiều blog, nghịch nhiều tool, nhưng không có cái nào mình thật sự nghiêm túc, đủ để viết thành một blog chất lượng cả. Nếu có gì tâm đắc thì mình cũng quá lười để viết lại."
+    },
+    {
+      "line": 13,
+      "kind": "html-block",
+      "text": "Vì vậy mình chuyển sang thử một hình thức khác, đó là tổng hợp lại những bài blog hay mà mình đã tìm thấy, đọc được trong tuần vừa qua và tổng hợp lại thành một bản newsletter hàng tuần. Mong được mọi người ủng hộ."
+    },
+    {
+      "line": 15,
+      "kind": "html-block",
+      "text": "Không lòng vòng nữa, sau đây là Newsletter #1 của mình."
+    },
+    {
+      "line": 16,
+      "kind": "html-block",
+      "text": "</i>"
+    },
+    {
+      "line": 18,
+      "kind": "heading",
+      "text": "## [Seconds Since the Epoch](https://aphyr.com/posts/378-seconds-since-the-epoch)"
+    },
+    {
+      "line": 24,
+      "kind": "heading",
+      "text": "## [B-Trees: More Than I Thought I'd Want to Know](https://benjamincongdon.me/blog/2021/08/17/B-Trees-More-Than-I-Thought-Id-Want-to-Know/)"
+    },
+    {
+      "line": 30,
+      "kind": "heading",
+      "text": "## [SQL NULLs are Weird!](http://raymondtukpe.com/sql-nulls-are-weird.html)"
+    },
+    {
+      "line": 36,
+      "kind": "heading",
+      "text": "## [Understanding JVM Garbage Collector Performance](https://mill-build.org/blog/6-garbage-collector-perf.html)"
+    },
+    {
+      "line": 42,
+      "kind": "heading",
+      "text": "## [A Deep Dive into JVM Start-Up](https://www.youtube.com/watch?v=ED1oc7gn5uY)"
+    },
+    {
+      "line": 48,
+      "kind": "heading",
+      "text": "## [Parallel processing with Virtual Threads - A comparative analysis](https://www.dhaval-shah.com/parallel-processing-virtual-threads-reactor-vs-jdk/)"
+    },
+    {
+      "line": 54,
+      "kind": "heading",
+      "text": "## Bonus: Vài ảnh hay ho đến từ [ByteByteGo](https://bytebytego.com/)"
+    },
+    {
+      "line": 56,
+      "kind": "asset",
+      "text": "![A Cheatsheet On Message Queues](https://substack-post-media.s3.amazonaws.com/public/images/2ae8b491-b794-446b-8ca5-25ac552161be_1417x1600.png)"
+    },
+    {
+      "line": 57,
+      "kind": "asset",
+      "text": "![From Monolith to Microservices: Key Transition Patterns](https://substack-post-media.s3.amazonaws.com/public/images/015e9750-7334-424b-b0c4-9c39bc5dd2d2_1600x1596.png)"
+    }
+  ],
+  "candidates": []
+}

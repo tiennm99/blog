@@ -1,0 +1,124 @@
+{
+  "post": "content/post/2026/03/20/index.md",
+  "newsletter": 92,
+  "newsletter_post": true,
+  "note": "*Bài viết đã được viết lại bởi Claude Code với Opus 5.5 vào ngày 27/09/2026.*",
+  "lines": [
+    {
+      "line": 1,
+      "kind": "frontmatter",
+      "text": "---"
+    },
+    {
+      "line": 2,
+      "kind": "frontmatter",
+      "text": "title: \"Newsletter #92\""
+    },
+    {
+      "line": 3,
+      "kind": "frontmatter",
+      "text": "date: 2026-03-20"
+    },
+    {
+      "line": 4,
+      "kind": "frontmatter",
+      "text": "tags: [\"AI-Assisted\", \"Newsletter\", \"AI Infrastructure\", \"Machine Learning\", \"Redis\", \"Compression\", \"AI Agents\"]"
+    },
+    {
+      "line": 5,
+      "kind": "frontmatter",
+      "text": "categories: [\"Newsletter\"]"
+    },
+    {
+      "line": 6,
+      "kind": "frontmatter",
+      "text": "---"
+    },
+    {
+      "line": 8,
+      "kind": "italic-note",
+      "text": "*Mời bạn thưởng thức Newsletter #92.*"
+    },
+    {
+      "line": 10,
+      "kind": "heading",
+      "text": "## ~~[How I became good at leading incidents](https://tomasztomczyk.com/blog/2026/how-i-became-good-at-leading-incidents/)~~"
+    },
+    {
+      "line": 12,
+      "kind": "struck",
+      "text": "~~Tomasz Tomczyk chia sẻ những bài học từ hơn 100 sự cố mà anh đã dẫn dắt trong suốt sự nghiệp, nhấn mạnh rằng quản lý sự cố không chỉ là kỹ năng kỹ thuật mà còn là tư duy phân tích và khả năng lãnh đạo dưới áp lực. Anh cho rằng mỗi sự cố là cơ hội để hiểu sâu hơn về hệ thống và xây dựng văn hóa học hỏi từ thất bại.~~"
+    },
+    {
+      "line": 14,
+      "kind": "struck",
+      "text": "~~Để xử lý sự cố hiệu quả, bạn cần nắm vững quy trình triển khai và toàn bộ ngăn xếp công nghệ từ DNS đến tầng ứng dụng, đồng thời thiết lập hệ thống giám sát toàn diện. Khi xảy ra sự cố, hãy phân công điều tra theo từng chủ đề cụ thể, đưa ra quyết định dứt khoát khi cần vô hiệu hóa tính năng, và cung cấp thông tin cập nhật kịp thời cho các bên liên quan. Việc lập tài liệu các mẫu lỗi phổ biến vào runbook và thực hành qua các bài tập chaos engineering cũng giúp đội nhóm chuẩn bị tốt hơn cho các tình huống thực tế.~~"
+    },
+    {
+      "line": 16,
+      "kind": "struck",
+      "text": "~~**Điểm chính:**~~"
+    },
+    {
+      "line": 17,
+      "kind": "struck",
+      "text": "~~- Nắm vững quy trình triển khai và toàn bộ ngăn xếp công nghệ để nhanh chóng xác định nguyên nhân sự cố~~"
+    },
+    {
+      "line": 18,
+      "kind": "struck",
+      "text": "~~- Đọc hiểu stack trace và sử dụng công cụ theo dõi lỗi như Sentry để điều tra sâu hơn~~"
+    },
+    {
+      "line": 19,
+      "kind": "struck",
+      "text": "~~- Xây dựng văn hóa tâm lý an toàn để thất bại trở thành cơ hội học hỏi~~"
+    },
+    {
+      "line": 20,
+      "kind": "struck",
+      "text": "~~- Phân công điều tra chiến lược và đưa ra quyết định dứt khoát trong thời điểm căng thẳng~~"
+    },
+    {
+      "line": 21,
+      "kind": "struck",
+      "text": "~~- Lập tài liệu runbook và thực hành game day để chuẩn bị cho các sự cố thực tế~~"
+    },
+    {
+      "line": 23,
+      "kind": "heading",
+      "text": "## [Decision Trees](https://mlu-explain.github.io/decision-tree/)"
+    },
+    {
+      "line": 29,
+      "kind": "heading",
+      "text": "## ~~[Container không phải là ranh giới bảo mật](https://www.lucavall.in/blog/containers-are-not-a-security-boundary)~~"
+    },
+    {
+      "line": 35,
+      "kind": "heading",
+      "text": "## [An ode to bzip](https://purplesyringa.moe/blog/an-ode-to-bzip/)"
+    },
+    {
+      "line": 41,
+      "kind": "heading",
+      "text": "## [Why Arm is becoming the CPU foundation for AI data center architecture](https://newsroom.arm.com/blog/why-system-architects-default-to-arm-in-ai-data-centers)"
+    },
+    {
+      "line": 47,
+      "kind": "heading",
+      "text": "## [We built an Agent Skill so AI writes Redis code](https://redis.io/blog/we-built-an-agent-skill-so-ai-writes-redis-code/)"
+    },
+    {
+      "line": 53,
+      "kind": "heading",
+      "text": "## [Inside the Archive: The Tech Behind Your 2025 Wrapped Highlights](https://engineering.atspotify.com/2026/3/inside-the-archive-2025-wrapped)"
+    },
+    {
+      "line": 59,
+      "kind": "heading",
+      "text": "## [Managing Multiple Agents](https://fffej.substack.com/p/managing-multiple-agents)"
+    }
+  ],
+  "candidates": []
+}

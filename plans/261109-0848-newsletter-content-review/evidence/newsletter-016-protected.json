@@ -1,0 +1,110 @@
+{
+  "post": "content/post/2025/05/03/index.md",
+  "newsletter": 16,
+  "newsletter_post": true,
+  "note": "*Bài viết đã được viết lại bởi Claude Code với Opus 5.5 vào ngày 27/09/2026.*",
+  "lines": [
+    {
+      "line": 1,
+      "kind": "frontmatter",
+      "text": "---"
+    },
+    {
+      "line": 2,
+      "kind": "frontmatter",
+      "text": "title: \"Newsletter #16\""
+    },
+    {
+      "line": 3,
+      "kind": "frontmatter",
+      "text": "date: 2025-05-03"
+    },
+    {
+      "line": 4,
+      "kind": "frontmatter",
+      "text": "tags: [ \"AI-Assisted\", \"Programming Languages\", \"Code Quality\", \"Readability\", \"Latency\", \"Tech Industry\", \"Career\" ]"
+    },
+    {
+      "line": 5,
+      "kind": "frontmatter",
+      "text": "categories: [ \"Newsletter\" ]"
+    },
+    {
+      "line": 6,
+      "kind": "frontmatter",
+      "text": "---"
+    },
+    {
+      "line": 8,
+      "kind": "italic-note",
+      "text": "*Mời bạn thưởng thức Newsletter \\#16.*"
+    },
+    {
+      "line": 10,
+      "kind": "heading",
+      "text": "## [Choosing Languages](https://steveklabnik.com/writing/choosing-languages)"
+    },
+    {
+      "line": 16,
+      "kind": "heading",
+      "text": "## [How Long Should Functions Be?](https://tidyfirst.substack.com/p/how-long-should-functions-be)"
+    },
+    {
+      "line": 22,
+      "kind": "heading",
+      "text": "## [What Makes Code Hard To Read: Visual Patterns of Complexity](https://seeinglogic.com/posts/visual-readability-patterns/)"
+    },
+    {
+      "line": 28,
+      "kind": "heading",
+      "text": "## [IO Devices and Latency](https://planetscale.com/blog/io-devices-and-latency)"
+    },
+    {
+      "line": 34,
+      "kind": "heading",
+      "text": "## [The good times in tech are over](https://www.seangoedecke.com/good-times-are-over/)"
+    },
+    {
+      "line": 40,
+      "kind": "heading",
+      "text": "## ~~[Once You're Laid Off, You'll Never Be the Same Again](https://mertbulan.com/2025/01/26/once-you-are-laid-off-you-will-never-be-the-same-again/)~~"
+    },
+    {
+      "line": 46,
+      "kind": "heading",
+      "text": "## Bonus: Vài ảnh hay ho đến từ [ByteByteGo](https://bytebytego.com/)"
+    },
+    {
+      "line": 48,
+      "kind": "asset",
+      "text": "![What is MCP?](https://substack-post-media.s3.amazonaws.com/public/images/840e868d-2c83-4b1b-a881-df1da6c6e332_1309x1536.gif)"
+    },
+    {
+      "line": 49,
+      "kind": "asset",
+      "text": "![How to Design a System like Instagram](https://substack-post-media.s3.amazonaws.com/public/images/6ff106a0-de83-48b0-9eb4-3f8bf0d43a57_1280x1566.gif)"
+    },
+    {
+      "line": 50,
+      "kind": "asset",
+      "text": "![How to load your websites at lightning speed](https://substack-post-media.s3.amazonaws.com/public/images/214c0c6c-2426-49d0-9fa8-cdb9ce089dcc_1280x1585.gif)"
+    }
+  ],
+  "candidates": [
+    {
+      "line": 14,
+      "kind": "first-person",
+      "text": "Phần sâu sắc nhất là câu chuyện cá nhân. Năm 2013, khi còn trong nhóm Rails, ông từng chế giễu một người viết công cụ `grep` bằng Node và khiến tác giả tổn thương. Sự việc giúp ông nhận ra lời nói của mình có sức ảnh hưởng, và rằng \"văn hóa khinh miệt\" trong cộng đồng Ruby lúc đó đã tác động đến mình. Khi đến với Rust, ông chủ động góp phần xây dựng văn hóa bàn về Rust dựa trên ưu điểm của chính nó thay vì chê bai ngôn ngữ khác, và vì thế càng khó chịu với trào lưu \"viết lại bằng Rust\" lần này. Thông điệp cuối: mỗi người chọn ngôn ngữ vì những lý do riêng, nên khi không đồng tình, không có lý do gì để cư xử khó chịu."
+    },
+    {
+      "line": 24,
+      "kind": "first-person",
+      "text": "Trong lúc rà soát một dự án để tìm lỗi, tác giả nhận thấy mình mệt mỏi rất nhanh dù mã nguồn có chất lượng tốt, và nguyên nhân không nằm ở độ phức tạp chu trình (cyclomatic complexity) như ông dự đoán mà ở khả năng đọc hiểu. Hiện chưa có thước đo phổ biến nào cho khả năng đọc hiểu, nên ông dựa vào hai chỉ số gần nhất. Bộ chỉ số Halstead từ thập niên 70 đếm số toán tử và toán hạng: càng nhiều thì người đọc càng phải suy luận nhiều về cách chúng tương tác. Chỉ số Cognitive Complexity của SonarSource thì cộng điểm mỗi khi luồng xử lý bị ngắt khỏi thứ tự tuyến tính và mỗi khi có cấu trúc điều khiển lồng nhau. Ngoài ra, ông phân tích thêm hình dạng hàm, cách đặt tên và vòng đời của biến."
+    },
+    {
+      "line": 38,
+      "kind": "first-person",
+      "text": "Hệ quả là các công ty buộc phải tập trung vào vài mục tiêu mà ban lãnh đạo thực sự quan tâm, và nhiều hoạt động như đóng góp mã nguồn mở hay trải nghiệm lập trình viên bị cắt ngân sách. Ông khuyên kỹ sư nên chấp nhận rằng lợi ích của mình giờ có thể mâu thuẫn với lợi ích của công ty; bạn vẫn được quyền theo đuổi điều mình cho là đúng, nhưng sẽ phải trả giá, nhất là với các bạn junior. Mặt tích cực là ngành công nghệ đã gần với thực tế hơn và luật chơi cũng rõ ràng hơn: tạo ra giá trị cho công ty thì được thưởng, không tạo ra giá trị thì bị phạt, và \"giá trị\" nghĩa là thúc đẩy các kế hoạch cụ thể của ban lãnh đạo."
+    }
+  ]
+}

@@ -1,0 +1,79 @@
+{
+  "post": "content/post/2026/07/23/index.md",
+  "newsletter": 126,
+  "newsletter_post": true,
+  "note": "*Bài viết đã được viết lại bởi Claude Code với Opus 5.5 vào ngày 27/09/2026.*",
+  "lines": [
+    {
+      "line": 1,
+      "kind": "frontmatter",
+      "text": "---"
+    },
+    {
+      "line": 2,
+      "kind": "frontmatter",
+      "text": "title: \"Newsletter #126\""
+    },
+    {
+      "line": 3,
+      "kind": "frontmatter",
+      "text": "date: 2026-07-23"
+    },
+    {
+      "line": 4,
+      "kind": "frontmatter",
+      "text": "tags: [\"AI-Assisted\", \"Go\", \"Performance\", \"Backend\", \"Concurrency\", \"Security\", \"Databases\"]"
+    },
+    {
+      "line": 5,
+      "kind": "frontmatter",
+      "text": "categories: [\"Newsletter\"]"
+    },
+    {
+      "line": 6,
+      "kind": "frontmatter",
+      "text": "---"
+    },
+    {
+      "line": 8,
+      "kind": "italic-note",
+      "text": "*Mời bạn thưởng thức Newsletter #126.*"
+    },
+    {
+      "line": 10,
+      "kind": "heading",
+      "text": "## [2. Portable Executables](https://anteiku.fun/papers/an-introduction-to-modern-malware-development-for-red-teams/02_portable_executables/)"
+    },
+    {
+      "line": 16,
+      "kind": "heading",
+      "text": "## [How 4 bytes of padding make array clearing 49% faster](https://blog.andr2i.com/posts/2026-06-22-optimization-catalog-how-4-bytes-of-padding-make-array-clearing-49-faster)"
+    },
+    {
+      "line": 22,
+      "kind": "heading",
+      "text": "## ~~[Engineering High-Performance Parsers with Data-Oriented Design](https://www.arshad.fyi/writings/engineering-high-performance-parsers)~~"
+    },
+    {
+      "line": 28,
+      "kind": "heading",
+      "text": "## [How To Learn Go Fast: A Practical Roadmap For Senior Backend Developers](https://dev.to/nazar-boyko/how-to-learn-go-fast-a-practical-roadmap-for-senior-backend-developers-18l5)"
+    },
+    {
+      "line": 34,
+      "kind": "heading",
+      "text": "## [How To Prepare For A Golang Interview: A Practical Guide For Mid & Senior Engineers](https://dev.to/nazar-boyko/how-to-prepare-for-a-golang-interview-a-practical-guide-for-mid-senior-engineers-200p)"
+    },
+    {
+      "line": 40,
+      "kind": "heading",
+      "text": "## [Shard your locks: benchmarking 6 Go cache designs](https://strebkov.dev/posts/shard-your-locks/)"
+    },
+    {
+      "line": 46,
+      "kind": "heading",
+      "text": "## [The .join() That Should Be a Bug](https://kronotop.com/blog/the-join-that-should-be-a-bug/)"
+    }
+  ],
+  "candidates": []
+}

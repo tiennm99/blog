@@ -1,0 +1,115 @@
+{
+  "post": "content/post/2026/04/16/index.md",
+  "newsletter": 96,
+  "newsletter_post": true,
+  "note": "*Bài viết đã được viết lại bởi Claude Code với Opus 5.5 vào ngày 27/09/2026.*",
+  "lines": [
+    {
+      "line": 1,
+      "kind": "frontmatter",
+      "text": "---"
+    },
+    {
+      "line": 2,
+      "kind": "frontmatter",
+      "text": "title: \"Newsletter #96\""
+    },
+    {
+      "line": 3,
+      "kind": "frontmatter",
+      "text": "date: 2026-04-16"
+    },
+    {
+      "line": 4,
+      "kind": "frontmatter",
+      "text": "tags: [\"AI-Assisted\", \"Go\", \"Garbage Collection\", \"AI Agent\", \"Software Engineering\", \"Clean Architecture\", \"Algorithms\"]"
+    },
+    {
+      "line": 5,
+      "kind": "frontmatter",
+      "text": "categories: [\"Newsletter\"]"
+    },
+    {
+      "line": 6,
+      "kind": "frontmatter",
+      "text": "---"
+    },
+    {
+      "line": 8,
+      "kind": "italic-note",
+      "text": "*Mời bạn thưởng thức Newsletter #96.*"
+    },
+    {
+      "line": 10,
+      "kind": "heading",
+      "text": "## [Clean Architecture → Separation of Concerns trong Go](https://vjerci.com/writings/clean/separation-of-concerns/)"
+    },
+    {
+      "line": 16,
+      "kind": "heading",
+      "text": "## [The Garbage Collector](https://internals-for-interns.com/posts/go-garbage-collector)"
+    },
+    {
+      "line": 22,
+      "kind": "heading",
+      "text": "## [The Skill of Using AI Agents Well](https://www.lesswrong.com/posts/9xAwybDhtgzGYPnbs/the-skill-of-using-ai-agents-well)"
+    },
+    {
+      "line": 28,
+      "kind": "heading",
+      "text": "## [The unwritten laws of software engineering](https://newsletter.manager.dev/p/the-unwritten-laws-of-software-engineering)"
+    },
+    {
+      "line": 34,
+      "kind": "heading",
+      "text": "## [Big tech engineers need big egos](https://www.seangoedecke.com/big-tech-needs-big-egos/)"
+    },
+    {
+      "line": 40,
+      "kind": "heading",
+      "text": "## [Sorting algorithms](https://simonwillison.net/2026/Mar/11/sorting-algorithms/)"
+    },
+    {
+      "line": 46,
+      "kind": "heading",
+      "text": "### Bonus"
+    },
+    {
+      "line": 48,
+      "kind": "asset",
+      "text": "**Images:**"
+    },
+    {
+      "line": 49,
+      "kind": "asset",
+      "text": "![12 Claude Code Features Every Engineer Should Know](https://substackcdn.com/image/fetch/w_1100,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F438c4c2f-0fa8-4748-9953-b63fd69674f4_2508x3000.png)"
+    },
+    {
+      "line": 50,
+      "kind": "asset",
+      "text": "![How does REST API work?](https://substackcdn.com/image/fetch/w_1100,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F75e97a13-b186-4f16-ab59-f9a96867f744_1899x1536.jpeg)"
+    },
+    {
+      "line": 51,
+      "kind": "asset",
+      "text": "![7 Key Load Balancer Use Cases](https://substackcdn.com/image/fetch/w_1100,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F0169578f-af50-4b3a-b8ed-542ee7ebf80f_2250x2814.png)"
+    }
+  ],
+  "candidates": [
+    {
+      "line": 24,
+      "kind": "first-person",
+      "text": "Bài viết chia sẻ kinh nghiệm thực tế khi làm việc với AI agent, xoay quanh một nhận định cốt lõi: nút thắt cổ chai là sự chú ý của con người chứ không phải năng lực của AI. Vì vậy, tác giả tập trung vào quy trình giúp giảm ma sát cho chính mình: luôn dùng mô hình tốt nhất với mức suy luận cao nhất, bật ghi log chi tiết để AI tự điều tra lỗi, và cho mỗi phiên AI một nhánh riêng bằng git worktree để nhiều phiên chạy song song mà không đụng tệp của nhau. Những việc có thể song song hóa, như kiểm thử năm kịch bản cùng lúc, nên giao cho nhiều subagent."
+    },
+    {
+      "line": 30,
+      "kind": "first-person",
+      "text": "Bài viết tổng hợp bảy quy tắc mà kỹ sư phần mềm thường chỉ học được sau những sai lầm đắt giá. Khi hệ thống production gặp sự cố ngay sau một lần triển khai, hãy rollback trước rồi mới điều tra, thay vì mất hàng giờ chứng minh thay đổi của mình vô can. Bản sao lưu chỉ thực sự tồn tại khi bạn đã khôi phục thành công từ nó, và bạn cần biết rõ khoảng dữ liệu có thể mất, ai được quyền khôi phục cũng như thời gian khôi phục thực tế khi dữ liệu ngày càng lớn. Log thì luôn khó cân bằng: thiếu thông tin khi có sự cố, hoặc quá dài dòng và thiếu request ID chung để truy vết giữa các dịch vụ."
+    },
+    {
+      "line": 36,
+      "kind": "first-person",
+      "text": "Sean Goedecke phản bác quan điểm phổ biến rằng cái tôi không có chỗ trong ngành công nghệ, và lập luận rằng kỹ sư ở các công ty lớn cần một cái tôi đủ mạnh để thành công. Công việc hằng ngày của họ là liên tục đối mặt với sai lầm của chính mình và những codebase phức tạp đến mức khó hiểu nổi, nên cần niềm tin rằng mình giải quyết được cả những vấn đề tưởng như bất khả thi. Trong tổ chức, sự tự tin giúp kỹ sư giữ quan điểm kỹ thuật rõ ràng dù còn nhiều bất định, đưa ra những quyết định không được lòng số đông nhưng ảnh hưởng đến hàng trăm đồng nghiệp, và dám chỉ ra hiểu lầm của lãnh đạo cấp cao."
+    }
+  ]
+}

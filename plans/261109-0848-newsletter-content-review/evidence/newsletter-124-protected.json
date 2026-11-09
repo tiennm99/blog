@@ -1,0 +1,84 @@
+{
+  "post": "content/post/2026/07/12/index.md",
+  "newsletter": 124,
+  "newsletter_post": true,
+  "note": "*Bài viết đã được viết lại bởi Claude Code với Opus 5.5 vào ngày 27/09/2026.*",
+  "lines": [
+    {
+      "line": 1,
+      "kind": "frontmatter",
+      "text": "---"
+    },
+    {
+      "line": 2,
+      "kind": "frontmatter",
+      "text": "title: \"Newsletter #124\""
+    },
+    {
+      "line": 3,
+      "kind": "frontmatter",
+      "text": "date: 2026-07-12"
+    },
+    {
+      "line": 4,
+      "kind": "frontmatter",
+      "text": "tags: [\"AI-Assisted\", \"Newsletter\", \"Go\", \"Java\", \"Software Architecture\", \"System Design\", \"Career Development\"]"
+    },
+    {
+      "line": 5,
+      "kind": "frontmatter",
+      "text": "categories: [\"Newsletter\"]"
+    },
+    {
+      "line": 6,
+      "kind": "frontmatter",
+      "text": "---"
+    },
+    {
+      "line": 8,
+      "kind": "italic-note",
+      "text": "*Mời bạn thưởng thức Newsletter #124.*"
+    },
+    {
+      "line": 10,
+      "kind": "heading",
+      "text": "## [Riding Technology Waves](https://staysaasy.com/strategy/2026/06/22/riding-technology-waves.html)"
+    },
+    {
+      "line": 16,
+      "kind": "heading",
+      "text": "## [Find a new role](https://larahogan.me/blog/identify-new-role/)"
+    },
+    {
+      "line": 22,
+      "kind": "heading",
+      "text": "## [I Stored a Website in a Favicon](https://www.timwehrle.de/blog/i-stored-a-website-in-a-favicon)"
+    },
+    {
+      "line": 28,
+      "kind": "heading",
+      "text": "## [AntiPatterns Never Left, We Just Stopped Calling Them by Name](https://dev.to/leonpennings/antipatterns-never-left-we-just-stopped-calling-them-by-name-969)"
+    },
+    {
+      "line": 34,
+      "kind": "heading",
+      "text": "## [5 More Advanced Java Tips That Senior Engineers Actually Use](https://dev.to/cyclopt_dimitrisk/5-more-advanced-java-tips-that-senior-engineers-actually-use-bbp)"
+    },
+    {
+      "line": 40,
+      "kind": "heading",
+      "text": "## [Go's Type System — Structs, Interfaces, and Life Without Inheritance](https://dev.to/mihirmohapatra/gos-type-system-structs-interfaces-and-life-without-inheritance-2lb7)"
+    },
+    {
+      "line": 46,
+      "kind": "heading",
+      "text": "## [Conduit: The Gateway I Built to Forget About](https://dev.to/adamthedeveloper/conduit-the-gateway-i-built-to-forget-about-2ann)"
+    },
+    {
+      "line": 52,
+      "kind": "heading",
+      "text": "## [The Reflect Package](https://internals-for-interns.com/posts/go-runtime-reflect)"
+    }
+  ],
+  "candidates": []
+}

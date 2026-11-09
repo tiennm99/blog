@@ -1,0 +1,139 @@
+{
+  "post": "content/post/2026/10/04/index.md",
+  "newsletter": 136,
+  "newsletter_post": true,
+  "lines": [
+    {
+      "line": 1,
+      "kind": "frontmatter",
+      "text": "---"
+    },
+    {
+      "line": 2,
+      "kind": "frontmatter",
+      "text": "title: \"Newsletter #136\""
+    },
+    {
+      "line": 3,
+      "kind": "frontmatter",
+      "text": "date: 2026-10-04"
+    },
+    {
+      "line": 4,
+      "kind": "frontmatter",
+      "text": "tags: [\"AI-Assisted\", \"AI Agents\", \"Software Engineering\", \"Performance\", \"Algorithms\", \"PostgreSQL\", \"Claude Code\"]"
+    },
+    {
+      "line": 5,
+      "kind": "frontmatter",
+      "text": "categories: [\"Newsletter\"]"
+    },
+    {
+      "line": 6,
+      "kind": "frontmatter",
+      "text": "---"
+    },
+    {
+      "line": 8,
+      "kind": "italic-note",
+      "text": "*Mời bạn thưởng thức Newsletter #136.*"
+    },
+    {
+      "line": 10,
+      "kind": "heading",
+      "text": "## [Fast and Hard Code](https://lucumr.pocoo.org/2026/8/22/fast-hard-code/)"
+    },
+    {
+      "line": 16,
+      "kind": "heading",
+      "text": "## [Shipping Video Calling on Facebook](https://molochinations.substack.com/p/shipping-video-calling-on-facebook)"
+    },
+    {
+      "line": 22,
+      "kind": "heading",
+      "text": "## [AI is removing the middle class of software engineering](https://blog.florianherrengt.com/ai-removing-middle-class-software-engineering.html)"
+    },
+    {
+      "line": 28,
+      "kind": "heading",
+      "text": "## [The fastest double-to-string algorithm you’ve never heard of](https://vitaut.net/posts/2026/yy-dtoa/)"
+    },
+    {
+      "line": 34,
+      "kind": "heading",
+      "text": "## [Quake Shareware, a CD-ROM just a little too full](https://fabiensanglard.net/quake_shareware_cd/index.html)"
+    },
+    {
+      "line": 40,
+      "kind": "heading",
+      "text": "## [How Instacart Built a Modern Search Infrastructure on Postgres](https://tech.instacart.com/how-instacart-built-a-modern-search-infrastructure-on-postgres-c528fa601d54)"
+    },
+    {
+      "line": 46,
+      "kind": "heading",
+      "text": "## [curl performance](https://daniel.haxx.se/blog/2026/08/14/curl-performance-2/)"
+    },
+    {
+      "line": 52,
+      "kind": "heading",
+      "text": "## [Compression is prediction](https://ngrok.com/blog/compression-is-prediction)"
+    },
+    {
+      "line": 58,
+      "kind": "heading",
+      "text": "## [How Anthropic Builds And How Engineering Will Change Soon](https://www.developing.dev/p/how-anthropic-builds-and-how-engineering)"
+    },
+    {
+      "line": 64,
+      "kind": "heading",
+      "text": "## [A faster way to convert a timestamp ➜ Hour, Min, Sec](https://www.benjoffe.com/fast-time-of-day)"
+    },
+    {
+      "line": 70,
+      "kind": "heading",
+      "text": "### Bonus"
+    },
+    {
+      "line": 72,
+      "kind": "asset",
+      "text": "**Videos:**"
+    },
+    {
+      "line": 73,
+      "kind": "asset",
+      "text": "[Giải thích HTTP và HTTPS](https://www.youtube.com/watch?v=WvSVSbGo0wI)"
+    },
+    {
+      "line": 76,
+      "kind": "asset",
+      "text": "**Images:**"
+    },
+    {
+      "line": 77,
+      "kind": "asset",
+      "text": "![Top 12 Agent Skills You Should Know](https://substackcdn.com/image/fetch/$s_!6j7M!,w_1100,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F2d0d1c6c-a864-4b20-b1fc-2d86c8ad2fab_2484x3002.png)"
+    },
+    {
+      "line": 78,
+      "kind": "asset",
+      "text": "![9 Types of API Testing](https://substackcdn.com/image/fetch/$s_!m1c9!,w_1100,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F8b053abe-404e-4bca-8e49-52a47392ab83_2484x3002.png)"
+    },
+    {
+      "line": 79,
+      "kind": "asset",
+      "text": "![Forward Proxy, Reverse Proxy, and API Gateway Explained](https://substackcdn.com/image/fetch/$s_!4xag!,w_1100,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fac1ed471-18f6-45dd-ad5f-02bc6d96d375_2484x3002.png)"
+    }
+  ],
+  "candidates": [
+    {
+      "line": 12,
+      "kind": "first-person",
+      "text": "Theo Armin Ronacher, dù meme \"lập trình đã được giải quyết\" đúng tới đâu, thì việc làm quen với một ngôn ngữ không còn quan trọng, vì ma sát với con người không cản trở agent. Vì vậy, LLM khiến lựa chọn ngôn ngữ ít hệ trọng hơn nhiều so với trước. Không thích thì viết lại bằng ngôn ngữ khác, kể cả ngôn ngữ mình chưa từng biết. Hệ quả là người ta chọn ngôn ngữ dựa nhiều hơn vào hình ảnh và marketing của nó. Ông thấy nhiều người giờ ship code Rust dù trước đây sẽ không chọn nó. Ông cho rằng một phần nguyên nhân đến từ hai xu hướng gần đây: người ta nói nhiều hơn về phần mềm nhanh, và về việc LLM rất giỏi tối ưu code mà không làm thay đổi hành vi."
+    },
+    {
+      "line": 48,
+      "kind": "first-person",
+      "text": "Daniel Stenberg kể chuyện curl cuối cùng cũng có bộ test hiệu năng công khai tại curl.se/perf, sau nhiều năm ý tưởng này bị gác lại vì quá khó và không ai nhận làm. Thấy Grafana quá phức tạp, ông quyết định không để sự hoàn hảo cản trở điều tốt và bắt đầu bằng những gì mình đã biết. Hạ tầng cloud dùng chung không đủ ổn định cho test hiệu năng, nên ông chạy trên chính máy phát triển nhiều nhân của mình. Một shell script cập nhật source từ git, build và chạy test, chẳng hạn tốc độ tải file 100 GB từ localhost hay số lần và kích thước cấp phát bộ nhớ cho một HTTP download. Script thứ hai phân tích log và vẽ biểu đồ, script thứ ba chạy qua crontab mỗi hai mươi phút, rồi kết quả tự động được đẩy lên website. Chỉ vài giờ sau khi dữ liệu công khai, các developer đã gửi thay đổi để cải thiện số liệu, minh bạch thật sự giúp ích."
+    }
+  ]
+}

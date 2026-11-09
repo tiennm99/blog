@@ -31,13 +31,13 @@ Tác giả tiếp tục đi vào các chi tiết cài đặt: trang có khe (slo
 
 Tác giả chia sẻ một hành vi dễ gây bất ngờ gặp phải khi làm việc với Convoy và LiteQueue: trong SQL, `NULL = NULL` không trả về đúng mà trả về NULL, vì NULL đại diện cho một giá trị chưa biết. Hệ quả là với ràng buộc UNIQUE, mỗi giá trị NULL được coi là khác nhau, nên một cột (hoặc một tổ hợp cột như `UNIQUE(email, deleted_at)`) vẫn có thể chứa nhiều dòng "trùng lặp" khi có NULL. Hành vi này được kiểm chứng trên SQLite, PostgreSQL và MySQL, và tài liệu của SQLite cũng thừa nhận sự thiếu nhất quán: NULL được coi là khác nhau với UNIQUE nhưng lại giống nhau với SELECT DISTINCT và UNION.
 
-Để đảm bảo tính duy nhất, bài viết đưa ra hai cách. Cách thứ nhất là thêm một cột sinh tự động dùng `COALESCE` để thay NULL bằng một giá trị cố định; cách này làm bảng rộng hơn và gặp lỗi khi xóa cùng một bản ghi hai lần. Cách thứ hai, được tác giả khuyến nghị, là tạo chỉ mục duy nhất một phần trên cột `email` với điều kiện `deleted_at IS NULL`, vừa tốn ít dung lượng vừa ít lỗi hơn. Ngoài ra, các hệ quản trị cơ sở dữ liệu hiện đại còn hỗ trợ `IS [NOT] DISTINCT FROM` để so sánh các giá trị NULL một cách rõ ràng.
+Để đảm bảo tính duy nhất, bài viết đưa ra hai cách. Cách thứ nhất là thêm một cột sinh tự động dùng `COALESCE` để thay NULL bằng một giá trị cố định; cách này làm bảng rộng hơn và vẫn gây xung đột nếu hai dòng có cùng email và cùng thời điểm xóa. Cách thứ hai, được tác giả khuyến nghị, là tạo chỉ mục duy nhất một phần trên cột `email` với điều kiện `deleted_at IS NULL`, chỉ áp dụng ràng buộc cho các dòng chưa bị xóa. Bài cũng giới thiệu `IS [NOT] DISTINCT FROM` để so sánh có xét NULL, nhưng cần kiểm tra cú pháp được hệ quản trị đang dùng hỗ trợ.
 
 ## [Understanding JVM Garbage Collector Performance](https://mill-build.org/blog/6-garbage-collector-perf.html)
 
-Bài viết trên blog của Mill giúp bạn hiểu bộ thu gom rác (GC) của JVM từ nền tảng lý thuyết đến số liệu đo đạc thực tế. Tác giả bắt đầu với một GC sao chép đơn giản: lần theo các tham chiếu từ gốc để tìm những đối tượng còn sống (live-set), sao chép chúng sang nửa heap còn trống rồi xóa sạch nửa cũ; đồng thời so sánh với cơ chế đếm tham chiếu, vốn không nén được heap và không thu hồi được các tham chiếu vòng. Từ mô hình này rút ra vài kết luận quan trọng: cấp phát bộ nhớ rất rẻ, thời gian dừng tỉ lệ với kích thước live-set chứ không phụ thuộc vào lượng rác, còn chi phí GC giảm dần khi heap càng lớn so với live-set.
+Li Haoyi giải thích hiệu năng bộ thu gom rác (GC) của JVM bằng mô hình sao chép: lần theo tham chiếu từ gốc, chuyển các đối tượng còn sống sang vùng nhớ khác rồi thu hồi vùng cũ. Trong mô hình này, chi phí mỗi lần thu gom phụ thuộc chủ yếu vào lượng dữ liệu còn sống; vùng nhớ trống lớn hơn giúp giảm tần suất thu gom.
 
-Các phép đo với G1 (GC mặc định) và ZGC xác nhận những nhận định trên. Thêm bộ nhớ không làm giảm thời gian dừng mà chỉ tăng thông lượng; đối tượng sống ngắn được thu gom nhanh hơn nhiều nhờ tối ưu theo thế hệ; còn ZGC có thể đưa thời gian dừng xuống vài mili giây nếu bạn chấp nhận cấp thêm khoảng gấp đôi bộ nhớ. Phần tổng kết đưa ra các lời khuyên thực tế: giảm live-set bằng cách chuyển dữ liệu lớn ra ngoài tiến trình (SQLite, Redis, Memcached), cẩn trọng với bộ nhớ đệm LRU đặt ngay trong tiến trình, và lưu ý rằng gộp nhiều tiến trình nhỏ thành một tiến trình lớn có thể khiến thời gian dừng tệ hơn.
+Các phép đo trên Java 23 cho thấy với G1, tăng kích thước vùng nhớ không nhất thiết giảm thời gian dừng, còn đối tượng sống ngắn được xử lý hiệu quả hơn. Với ZGC, thời gian dừng xuống vài mili giây khi vùng nhớ đủ lớn, trong các phép đo này thường từ bốn lần lượng dữ liệu còn sống. Kết quả phụ thuộc cách cấp phát, cấu hình và môi trường chạy. Tác giả khuyên chú ý lượng dữ liệu giữ trong tiến trình, đặc biệt bộ nhớ đệm LRU, thay vì chỉ tăng RAM.
 
 ## [A Deep Dive into JVM Start-Up](https://www.youtube.com/watch?v=ED1oc7gn5uY)
 
@@ -49,7 +49,7 @@ Phần cuối video giới thiệu những thay đổi sắp tới với Project
 
 Tiếp nối bài viết trước so sánh xử lý song song giữa Spring Core Reactor và JDK 21, lần này tác giả đánh giá hai cách tiếp cận đó khi chạy trên luồng ảo (virtual thread). Bài viết nhắc lại hạn chế của luồng hệ điều hành: tốn tài nguyên, số luồng đồng thời có giới hạn, thao tác chặn làm giảm khả năng mở rộng và chi phí chuyển ngữ cảnh cao. Luồng ảo thuộc Project Loom do JVM quản lý nên rất rẻ để tạo và chặn, có thể tạo tới hàng triệu luồng, và đặc biệt phù hợp với các tác vụ nặng về I/O. Tác giả trình bày mã nguồn cho cả hai phiên bản: một dùng `CompletableFuture` với bộ thực thi luồng ảo của JDK, một dùng `Flux` và `Mono` của Reactor chạy trên cùng bộ thực thi đó.
 
-Kết quả đo với danh sách 100.000, 250.000 và 500.000 đối tượng cho thấy phiên bản JDK nhanh hơn Reactor rất nhiều, và khoảng cách càng lớn khi số đối tượng tăng. Đổi lại, phiên bản JDK chiếm nhiều bộ nhớ hơn hẳn ở vùng Old Gen, có thời gian dừng GC và thời gian CPU dành cho GC cao hơn, nhưng theo tác giả những điều này không ảnh hưởng đáng kể đến độ trễ của ứng dụng. Kết luận của bài: với luồng ảo, JDK là lựa chọn hiển nhiên; còn với luồng nền tảng truyền thống, Spring Core Reactor lại nhanh hơn đôi chút.
+Trong phép đo của tác giả với 100.000, 250.000 và 500.000 đối tượng, phiên bản JDK hoàn thành nhanh hơn Reactor, nhưng sử dụng nhiều bộ nhớ Old Gen hơn và dành nhiều thời gian hơn cho GC. Với luồng nền tảng, Reactor lại nhanh hơn đôi chút. Đây là kết quả của hai cách cài đặt và khối lượng công việc cụ thể trong bài; khi áp dụng, cần đánh giá cả thời gian xử lý lẫn mức sử dụng tài nguyên của ứng dụng thực tế.
 
 ## Bonus: Vài ảnh hay ho đến từ [ByteByteGo](https://bytebytego.com/)
 
@@ -58,4 +58,4 @@ Kết quả đo với danh sách 100.000, 250.000 và 500.000 đối tượng ch
 
 ---
 
-*Bài viết đã được viết lại bởi Claude Code với Opus 5.5 vào ngày 27/09/2026.*
+*Bài viết đã được viết lại bởi Claude Code với Opus 5.5 vào ngày 27/09/2026; được review và chỉnh sửa bởi Codex với GPT 6.1 Sol vào ngày 09/11/2026.*

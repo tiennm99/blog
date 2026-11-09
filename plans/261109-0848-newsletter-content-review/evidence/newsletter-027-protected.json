@@ -1,0 +1,64 @@
+{
+  "post": "content/post/2025/05/14/index.md",
+  "newsletter": 27,
+  "newsletter_post": true,
+  "note": "*Bài viết đã được viết lại bởi Claude Code với Opus 5.5 vào ngày 27/09/2026.*",
+  "lines": [
+    {
+      "line": 1,
+      "kind": "frontmatter",
+      "text": "---"
+    },
+    {
+      "line": 2,
+      "kind": "frontmatter",
+      "text": "title: \"Newsletter #27\""
+    },
+    {
+      "line": 3,
+      "kind": "frontmatter",
+      "text": "date: 2025-05-14"
+    },
+    {
+      "line": 4,
+      "kind": "frontmatter",
+      "text": "tags: [ \"AI-Assisted\", \"Vite\", \"Cloudflare\", \"Frontend\", \"AI Coding\", \"Data Engineering\", \"Career Development\" ]"
+    },
+    {
+      "line": 5,
+      "kind": "frontmatter",
+      "text": "categories: [ \"Newsletter\" ]"
+    },
+    {
+      "line": 6,
+      "kind": "frontmatter",
+      "text": "---"
+    },
+    {
+      "line": 8,
+      "kind": "italic-note",
+      "text": "*Mời bạn thưởng thức Newsletter #27.*"
+    },
+    {
+      "line": 10,
+      "kind": "heading",
+      "text": "## [\"Just use Vite\"... with the Workers runtime](https://blog.cloudflare.com/introducing-the-cloudflare-vite-plugin/)"
+    },
+    {
+      "line": 16,
+      "kind": "heading",
+      "text": "## [The Best Programmers I Know](https://endler.dev/2025/best-programmers/)"
+    },
+    {
+      "line": 22,
+      "kind": "heading",
+      "text": "## [RDEL #87: How do AI coding tools actually change developer work?](https://rdel.substack.com/p/rdel-87-how-do-ai-coding-tools-actually)"
+    },
+    {
+      "line": 28,
+      "kind": "heading",
+      "text": "## [Overclocking dbt: Discord's Custom Solution in Processing Petabytes of Data](https://discord.com/blog/overclocking-dbt-discords-custom-solution-in-processing-petabytes-of-data)"
+    }
+  ],
+  "candidates": []
+}

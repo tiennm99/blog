@@ -1,0 +1,89 @@
+{
+  "post": "content/post/2025/05/18/index.md",
+  "newsletter": 31,
+  "newsletter_post": true,
+  "note": "*Bài viết đã được viết lại bởi Claude Code với Opus 5.5 vào ngày 27/09/2026.*",
+  "lines": [
+    {
+      "line": 1,
+      "kind": "frontmatter",
+      "text": "---"
+    },
+    {
+      "line": 2,
+      "kind": "frontmatter",
+      "text": "title: \"Newsletter #31\""
+    },
+    {
+      "line": 3,
+      "kind": "frontmatter",
+      "text": "date: 2025-05-18"
+    },
+    {
+      "line": 4,
+      "kind": "frontmatter",
+      "text": "tags: [\"AI-Assisted\", \"Testing\", \"CI/CD\", \"Hiring\", \"LLMs\", \"Security\", \"Career Growth\"]"
+    },
+    {
+      "line": 5,
+      "kind": "frontmatter",
+      "text": "categories: [\"Newsletter\"]"
+    },
+    {
+      "line": 6,
+      "kind": "frontmatter",
+      "text": "draft: false"
+    },
+    {
+      "line": 7,
+      "kind": "frontmatter",
+      "text": "---"
+    },
+    {
+      "line": 9,
+      "kind": "italic-note",
+      "text": "*Chào mừng bạn đến với Newsletter #31.*"
+    },
+    {
+      "line": 11,
+      "kind": "heading",
+      "text": "## [Optimizing Our E2E Pipeline](https://slack.engineering/speedup-e2e-testing/)"
+    },
+    {
+      "line": 19,
+      "kind": "heading",
+      "text": "## [DoorDash's Fast Travel Estimates](https://careersatdoordash.com/blog/doordash-fast-travel-estimates/)"
+    },
+    {
+      "line": 27,
+      "kind": "heading",
+      "text": "## [Tech Hiring: Is This an Inflection Point?](https://blog.pragmaticengineer.com/tech-hiring-is-this-an-inflection-point/)"
+    },
+    {
+      "line": 35,
+      "kind": "heading",
+      "text": "## [Underusing Snapshot Testing](https://matklad.github.io/2025/04/15/underusing-snapshot-testing.html)"
+    },
+    {
+      "line": 43,
+      "kind": "heading",
+      "text": "## [Principles for coding securely with LLMs](https://www.seangoedecke.com/ai-security/)"
+    },
+    {
+      "line": 51,
+      "kind": "heading",
+      "text": "## [How I don't use LLMs](https://www.gleech.org/llms)"
+    },
+    {
+      "line": 59,
+      "kind": "heading",
+      "text": "## [How Senior Software Engineers Can Learn from Junior Engineers](https://www.infoq.com/news/2025/04/software-engineers-learning/)"
+    },
+    {
+      "line": 67,
+      "kind": "heading",
+      "text": "## [As an engineer, I'd rather be called stupid than stay silent](https://shiftmag.dev/asking-questions-engineering-career-advice-4895/)"
+    }
+  ],
+  "candidates": []
+}

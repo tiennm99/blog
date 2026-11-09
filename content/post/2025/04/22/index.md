@@ -9,7 +9,7 @@ categories: [ "Newsletter" ]
 
 ## [Designing a Distributed ID Generator](https://siddharthsabron.in/blog/id-generator/)
 
-Bài viết giải thích cách tác giả xây dựng một bộ sinh ID 64 bit theo kiểu Snowflake cho hệ thống phân tán, không cần một dịch vụ điều phối trung tâm như cơ chế tự tăng (auto-increment) của cơ sở dữ liệu. Trước hết, tác giả lý giải vì sao không nên dùng chuỗi ngẫu nhiên làm khóa chính: so sánh chuỗi chậm hơn so sánh số, chỉ mục phình to hơn, và việc chèn giá trị ngẫu nhiên vào B-tree gây phân mảnh cũng như làm giảm tính cục bộ khi truy cập dữ liệu. Ngược lại, ID dạng số tăng dần theo thời gian giúp chỉ mục gọn nhẹ và bản ghi mới luôn được thêm vào cuối cây.
+Bài viết giải thích cách xây dựng bộ sinh ID 64 bit kiểu Snowflake cho hệ thống phân tán. Tác giả so sánh khóa dạng số với chuỗi ngẫu nhiên về chi phí so sánh, kích thước chỉ mục và tính cục bộ khi truy cập. ID có thành phần thời gian có thể giảm việc chèn rải rác vào chỉ mục so với giá trị hoàn toàn ngẫu nhiên. Tuy nhiên, chúng chỉ có thứ tự gần đúng theo thời gian trên toàn hệ thống; không nên hiểu rằng mọi bản ghi mới luôn được thêm vào cuối cây hoặc không còn cần quản lý mã shard.
 
 Phần chính mô tả cấu trúc ID: 41 bit cho mốc thời gian tính bằng mili giây kể từ một mốc epoch tự chọn (đủ dùng khoảng 69 năm), 10 bit cho mã shard (tối đa 1024 shard) và 12 bit cho số thứ tự (4096 ID mỗi mili giây trên mỗi shard), sau đó ghép lại bằng phép dịch bit và phép OR. Tác giả cũng thẳng thắn chỉ ra những điểm cần bổ sung trước khi đưa vào môi trường production, như xử lý tràn số thứ tự, lệch đồng hồ và cơ chế cấp phát mã shard. Đây là bài đọc hữu ích để hiểu vì sao lựa chọn kiểu dữ liệu cho khóa chính ảnh hưởng trực tiếp đến hiệu năng.
 
@@ -51,7 +51,7 @@ Bốn mẫu còn lại tập trung vào xử lý dữ liệu và điều phối:
 
 ## [Extending Java APIs - Add Missing Features Without the Hassle](https://foojay.io/today/extending-java-apis-add-missing-features-without-the-hassle/)
 
-Shai Almog giới thiệu tính năng extension của Manifold, giúp bổ sung phương thức còn thiếu vào các lớp có sẵn của Java mà không phải chờ phiên bản Java mới. Lập trình viên chỉ cần viết một lớp đánh dấu `@Extension` trong package có tên trùng với lớp cần mở rộng, dùng phương thức static với tham số đầu tiên gắn `@This`. Ví dụ, có thể thêm `map()` trực tiếp vào `Collection` để bỏ bước gọi `stream()`. Manifold không thực sự sửa lớp mà thay lời gọi bằng lời gọi tới extension ngay lúc biên dịch, nên không phát sinh chi phí khi chạy. Nếu sau này Java bổ sung phương thức cùng chữ ký, phương thức thật sẽ được ưu tiên, giúp việc nâng cấp diễn ra suôn sẻ.
+Shai Almog giới thiệu tính năng extension của Manifold, giúp bổ sung cách gọi phương thức cho các lớp Java có sẵn. Lập trình viên viết lớp `@Extension` trong package chứa tên đầy đủ của kiểu cần mở rộng và dùng phương thức static với tham số đầu tiên gắn `@This`. Ví dụ, có thể gọi `map()` trên `Collection` mà không viết bước `stream()`. Manifold chuyển lời gọi thành lời gọi tới phương thức mở rộng khi biên dịch, thay vì sửa lớp gốc lúc chạy. Cơ chế này không có nghĩa phần việc bên trong phương thức không tốn tài nguyên. Nếu Java bổ sung phương thức cùng chữ ký, phương thức thật được ưu tiên.
 
 Manifold còn có sẵn nhiều thư viện extension cho collection, `String`, I/O và JSON, chẳng hạn `removePrefix()` hay `padStart()`, và mảng cũng được bổ sung các phương thức như `isEmpty()`. Bài viết còn trình bày structural interface với `@Structural`, cho phép dùng `String` và `Collection` qua cùng một interface tự định nghĩa mà không cần khai báo implements, khiến Java có dáng dấp của một ngôn ngữ kiểu cấu trúc. Đây là công cụ thú vị cho những ai muốn viết Java gọn gàng hơn.
 
@@ -59,7 +59,7 @@ Manifold còn có sẵn nhiều thư viện extension cho collection, `String`, 
 
 Alexander Obregon giải thích cơ chế giúp Spring Boot cập nhật cấu hình mà không phải khởi động lại ứng dụng. Mặc định, cấu hình chỉ được nạp lúc khởi động. Để thay đổi có hiệu lực khi ứng dụng đang chạy, ta thường lấy cấu hình từ Spring Cloud Config Server, đánh dấu các bean cần làm mới bằng `@RefreshScope`, rồi kích hoạt làm mới qua endpoint `/actuator/refresh` của Actuator.
 
-Bài viết đi sâu vào những gì xảy ra bên trong: khi endpoint được gọi, Spring phát ra một `RefreshEvent`; `ConfigurableEnvironment` được cập nhật giá trị mới từ nguồn cấu hình bên ngoài; các bean thuộc `@RefreshScope`, vốn được bọc trong proxy tạo bằng CGLIB, sẽ bị hủy và tạo lại với cấu hình mới. Tác giả lưu ý thuộc tính không nằm trong bean có thể làm mới chỉ có hiệu lực sau lần khởi động lại, và một singleton phụ thuộc vào bean refresh-scope vẫn giữ tham chiếu cũ. Với hệ thống nhiều instance, Spring Cloud Bus dùng message broker như RabbitMQ hoặc Kafka để phát sự kiện làm mới tới mọi dịch vụ cùng lúc qua `/actuator/bus-refresh`. Bài viết giúp hiểu rõ cơ chế thay vì chỉ dùng annotation theo thói quen.
+Bên trong, Spring Cloud cập nhật môi trường cấu hình và làm mất hiệu lực các đối tượng được lưu trong refresh scope. Các bean này được truy cập qua proxy; đối tượng đích được tạo lại khi phương thức được gọi tiếp theo, không nhất thiết ngay lúc nhận yêu cầu làm mới. Một singleton giữ proxy vẫn có thể dùng đối tượng đích mới, nên không nên kết luận rằng nó luôn giữ bean cũ. Việc làm mới cũng không áp dụng tự động cho mọi thuộc tính và mọi loại bean. Với nhiều bản sao dịch vụ, Spring Cloud Bus có thể truyền sự kiện qua RabbitMQ hoặc Kafka; quá trình phân phối không phải một lần cập nhật nguyên tử đồng thời trên toàn hệ thống.
 
 ## [Building High-Performance RPC Services with gRPC and Spring Boot](https://www.javacodegeeks.com/2025/03/building-high-performance-rpc-services-with-grpc-and-spring-boot.html)
 
@@ -77,4 +77,4 @@ Phần thực hành đi qua các bước: thêm thư viện `grpc-spring-boot-st
 
 ---
 
-*Bài viết đã được viết lại bởi Claude Code với Opus 5.5 vào ngày 27/09/2026.*
+*Bài viết đã được viết lại bởi Claude Code với Opus 5.5 vào ngày 27/09/2026; được review và chỉnh sửa bởi Codex với GPT 6.1 Sol vào ngày 09/11/2026.*

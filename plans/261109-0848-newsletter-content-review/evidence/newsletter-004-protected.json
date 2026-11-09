@@ -1,0 +1,115 @@
+{
+  "post": "content/post/2025/02/27/index.md",
+  "newsletter": 4,
+  "newsletter_post": true,
+  "note": "*Bài viết đã được viết lại bởi Claude Code với Opus 5.5 vào ngày 27/09/2026.*",
+  "lines": [
+    {
+      "line": 1,
+      "kind": "frontmatter",
+      "text": "---"
+    },
+    {
+      "line": 2,
+      "kind": "frontmatter",
+      "text": "title: \"Newsletter #4\""
+    },
+    {
+      "line": 3,
+      "kind": "frontmatter",
+      "text": "date: 2025-02-27"
+    },
+    {
+      "line": 4,
+      "kind": "frontmatter",
+      "text": "tags: [\"AI-Assisted\", \"Newsletter\", \"Java\", \"Programming Languages\", \"Redis\", \"Engineering Career\", \"Game Development\"]"
+    },
+    {
+      "line": 5,
+      "kind": "frontmatter",
+      "text": "categories: [ \"Newsletter\" ]"
+    },
+    {
+      "line": 6,
+      "kind": "frontmatter",
+      "text": "---"
+    },
+    {
+      "line": 8,
+      "kind": "html-block",
+      "text": "<i>"
+    },
+    {
+      "line": 9,
+      "kind": "html-block",
+      "text": "Chào các bạn, tuần rồi mình có tìm thấy kha khá bài, nhưng cho vào cùng một newsletter thì lại quá dài. Nên hôm nay mình đăng thêm 1 newsletter giữa tuần nữa nhé ^^."
+    },
+    {
+      "line": 10,
+      "kind": "html-block",
+      "text": "</i>"
+    },
+    {
+      "line": 12,
+      "kind": "heading",
+      "text": "## [Management Mantras](https://blog.staysaasy.com/p/management-mantras)"
+    },
+    {
+      "line": 18,
+      "kind": "heading",
+      "text": "## [The Ultimate Guide to Programming Languages: Choosing the Right Tool for the Job](https://dev.to/mohammad-reza-mahdiani/the-ultimate-guide-to-programming-languages-choosing-the-right-tool-for-the-job-4be2)"
+    },
+    {
+      "line": 24,
+      "kind": "heading",
+      "text": "## [Discovery Coding](http://jimmyhmiller.com/discovery-coding)"
+    },
+    {
+      "line": 30,
+      "kind": "heading",
+      "text": "## [Building a best-selling game with a tiny team](https://newsletter.pragmaticengineer.com/p/thronefall)"
+    },
+    {
+      "line": 36,
+      "kind": "heading",
+      "text": "## [Serving a billion web requests with boring code](https://notes.billmill.org/blog/2024/06/Serving_a_billion_web_requests_with_boring_code.html)"
+    },
+    {
+      "line": 42,
+      "kind": "heading",
+      "text": "## [Java Language Evolution in 2025 - Inside Java Newscast #84](https://www.youtube.com/watch?v=dPzle3EN4CM)"
+    },
+    {
+      "line": 46,
+      "kind": "heading",
+      "text": "## [Valhalla - Java's Epic Refactor](https://www.youtube.com/watch?v=Dhn-JgZaBWo)"
+    },
+    {
+      "line": 50,
+      "kind": "heading",
+      "text": "## [How might AI change programming?](https://registerspill.thorstenball.com/p/how-might-ai-change-programming)"
+    },
+    {
+      "line": 56,
+      "kind": "heading",
+      "text": "## [Hands-On Career: The Evolution of a Java Champion](https://blog.vanillajava.blog/2025/01/hands-on-career-evolution-of-java.html)"
+    },
+    {
+      "line": 62,
+      "kind": "heading",
+      "text": "## [Token Bucket Rate Limiter (Redis & Java)](https://foojay.io/today/token-bucket-rate-limiter-redis-java/)"
+    },
+    {
+      "line": 66,
+      "kind": "heading",
+      "text": "## Bonus?"
+    }
+  ],
+  "candidates": [
+    {
+      "line": 16,
+      "kind": "first-person",
+      "text": "Nguyên tắc thứ ba là \"tôi có thể sửa được\". Công ty càng lớn thì càng có nhiều người để đổ lỗi. Tác giả cho rằng ở những công ty tốt, nếu mọi dự án bạn tham gia đều thất bại thì bạn phải tự chứng minh mình không có lỗi, vì vậy người quản lý cần hướng dẫn đội nhận trách nhiệm với mọi vấn đề cản trở kết quả. Cuối cùng, quản lý là việc diễn ra hằng ngày: phần lớn công việc là những việc không dễ chịu như thúc đẩy mọi người làm tốt hơn, giải quyết xung đột và đưa ra phản hồi. Giá trị của người quản lý nằm ở việc thay đổi hành vi, và điều đó đến từ sự tích lũy của những lần nhắc nhở, hỗ trợ nhỏ mỗi ngày chứ không phải vài quyết định lớn hiếm hoi."
+    }
+  ]
+}

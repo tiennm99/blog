@@ -1,0 +1,115 @@
+{
+  "post": "content/post/2025/07/25/index.md",
+  "newsletter": 36,
+  "newsletter_post": true,
+  "note": "*Bài viết đã được viết lại bởi Claude Code với Opus 5.5 vào ngày 27/09/2026.*",
+  "lines": [
+    {
+      "line": 1,
+      "kind": "frontmatter",
+      "text": "---"
+    },
+    {
+      "line": 2,
+      "kind": "frontmatter",
+      "text": "title: \"Newsletter #36\""
+    },
+    {
+      "line": 3,
+      "kind": "frontmatter",
+      "text": "date: 2025-07-25"
+    },
+    {
+      "line": 4,
+      "kind": "frontmatter",
+      "text": "tags: [ \"AI-Assisted\", \"Kỹ Thuật Phần Mềm\", \"Phát Triển Bản Thân\", \"AI\", \"Thiết kế hệ thống\", \"Algorithms\", \"Code Review\" ]"
+    },
+    {
+      "line": 5,
+      "kind": "frontmatter",
+      "text": "categories: [ \"Newsletter\" ]"
+    },
+    {
+      "line": 6,
+      "kind": "frontmatter",
+      "text": "---"
+    },
+    {
+      "line": 8,
+      "kind": "italic-note",
+      "text": "*Mời bạn thưởng thức Newsletter #36.*"
+    },
+    {
+      "line": 10,
+      "kind": "heading",
+      "text": "## [What Makes Strong Engineers Strong](https://www.seangoedecke.com/what-makes-strong-engineers-strong/)"
+    },
+    {
+      "line": 15,
+      "kind": "heading",
+      "text": "## [How do AI Code Reviews Impact Engineering Teams?](https://rdel.substack.com/p/rdel-92-how-do-ai-code-reviews-impact)"
+    },
+    {
+      "line": 21,
+      "kind": "heading",
+      "text": "## [Writing that changed how I think about PL](https://bernsteinbear.com/blog/pl-writing/)"
+    },
+    {
+      "line": 27,
+      "kind": "heading",
+      "text": "## ~~[LLMs are Making Me Dumber](https://vvvincent.me/llms-are-making-me-dumber/)~~"
+    },
+    {
+      "line": 29,
+      "kind": "struck",
+      "text": "~~Vincent Cheng đã đặt ra một câu hỏi thú vị và gây tranh cãi: liệu các mô hình ngôn ngữ lớn (LLMs) có đang khiến chúng ta trở nên \"ngu đần\" hơn không? Tác giả chia sẻ những quan sát cá nhân về cách AI đang ảnh hưởng đến quá trình học tập và phát triển kỹ năng của mình.~~"
+    },
+    {
+      "line": 31,
+      "kind": "struck",
+      "text": "~~Tác giả chỉ ra những \"đường tắt\" trong học tập mà AI mang lại: sử dụng LLMs để hoàn thành các dự án lập trình mà không hiểu sâu về mã nguồn, giải bài tập toán bằng cách để AI tạo ra đáp án, hoặc soạn thảo email mà không luyện tập kỹ năng viết. Những hành vi này có thể dẫn đến việc \"thoái hóa\" khả năng giải quyết vấn đề và hy sinh độ sâu của việc học để đổi lấy tốc độ đầu ra.~~"
+    },
+    {
+      "line": 33,
+      "kind": "struck",
+      "text": "~~Tuy nhiên, Vincent cũng thừa nhận những lợi ích ngắn hạn về năng suất và đưa ra những phép so sánh lịch sử với máy tính bỏ túi, GPS hay cuộc cách mạng công nghiệp. Ông nhận ra sự không chắc chắn về tác động dài hạn và đề xuất một chiến lược cân bằng.~~"
+    },
+    {
+      "line": 35,
+      "kind": "struck",
+      "text": "~~Giải pháp mà tác giả đưa ra là có ý thức bảo tồn các kỹ năng cốt lõi như tư duy độc lập, ra quyết định và tập trung dài hạn, đồng thời sử dụng LLMs một cách chiến lược mà vẫn duy trì được tính chủ động cá nhân. Như ông viết: \"Việc chuyển giao hoàn toàn sẽ làm tê liệt việc học thực sự nhưng tối đa hóa tốc độ và đầu ra ngắn hạn, và việc tìm ra sự cân bằng phù hợp là rất quan trọng.\"~~"
+    },
+    {
+      "line": 37,
+      "kind": "heading",
+      "text": "## [How Cursor Indexes Codebases Fast](https://read.engineerscodex.com/p/how-cursor-indexes-codebases-fast)"
+    },
+    {
+      "line": 43,
+      "kind": "heading",
+      "text": "## [A Leap Year Check in Three Instructions](https://hueffner.de/falk/blog/a-leap-year-check-in-three-instructions.html)"
+    },
+    {
+      "line": 49,
+      "kind": "heading",
+      "text": "## [Reservoir Sampling](https://samwho.dev/reservoir-sampling/)"
+    },
+    {
+      "line": 55,
+      "kind": "heading",
+      "text": "## [Beware the Complexity Merchants](https://chrlschn.dev/blog/2025/05/beware-the-complexity-merchants/)"
+    },
+    {
+      "line": 61,
+      "kind": "heading",
+      "text": "## [Asserting Implications](https://tigerbeetle.com/blog/2025-05-26-asserting-implications/)"
+    }
+  ],
+  "candidates": [
+    {
+      "line": 57,
+      "kind": "first-person",
+      "text": "Charles Chen cảnh báo về \"những kẻ buôn bán độ phức tạp\": những kỹ sư đưa sự phức tạp không cần thiết vào hệ thống, có thể vì cái tôi, có thể vì cố ý tự bảo vệ vị trí của mình. Bằng cách xây dựng những hệ thống rắc rối mà chỉ họ hiểu, họ tạo ra \"lãnh địa\" riêng luôn đòi hỏi sự chú ý, ngân sách và nhân lực, rồi dùng chính những khó khăn đó để biện minh cho việc được giữ lại và có thêm ảnh hưởng, kèm câu hỏi quen thuộc \"Nếu không thì ai sẽ giải quyết đống phức tạp này?\". Tác giả dẫn lời Ray Ozzie: \"Độ phức tạp giết chết mọi thứ. Nó hút cạn sức sống của lập trình viên; nó khiến sản phẩm khó lập kế hoạch, xây dựng và kiểm thử.\""
+    }
+  ]
+}

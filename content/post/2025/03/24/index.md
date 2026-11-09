@@ -25,7 +25,7 @@ Theo ông, quản lý thường khá rộng lượng khi bạn đưa ra một nh
 
 Zak Knill tổng hợp bốn mẫu thiết kế phổ biến để xây dựng tính năng thời gian thực, vốn đòi hỏi máy chủ chủ động gửi thay đổi của một người dùng tới những người dùng khác. Mẫu poke/pull dễ tích hợp nhất: máy chủ chỉ "chọc" các client để chúng tự gọi lại API lấy trạng thái mới, nhưng dễ khiến nhiều client cùng dồn yêu cầu về máy chủ, có thể giảm nhẹ bằng bộ nhớ đệm hoặc giãn thời điểm gửi. Push state gửi thẳng toàn bộ trạng thái mới nên client khó bị lệch, nhưng không mở rộng tốt khi trạng thái lớn và client khó biết chính xác điều gì đã thay đổi. Push ops chỉ gửi thao tác thay đổi (như cập nhật trường `completed` của một việc cần làm) nên gọn nhẹ hơn, nhưng cần cơ chế lấy trạng thái ban đầu và đòi hỏi máy chủ nắm đúng trạng thái của client. Event sourcing gửi chính sự kiện đã xảy ra, buộc mỗi client tự cài đặt logic nghiệp vụ để diễn giải sự kiện đó.
 
-Về tầng vận chuyển, WebSocket, SSE hay polling đều hoạt động theo từng cặp một client với một máy chủ qua HTTP. Khi hệ thống mở rộng theo chiều ngang với nhiều bản sao máy chủ, máy chủ nhận thay đổi thường không phải máy chủ đang giữ kết nối của các client cần nhận cập nhật. Thay vì để mỗi bản sao liên tục thăm dò cơ sở dữ liệu, tác giả gợi ý dùng các dịch vụ Pub/Sub để đảm nhận phần hạ tầng kết nối và phân phối dữ liệu.
+Về tầng vận chuyển, bài điểm qua WebSocket, SSE và cơ chế thăm dò. Các kết nối giữa máy khách và máy chủ chưa tự giải quyết việc phân phối cập nhật trên toàn hệ thống. Khi mở rộng theo chiều ngang, máy chủ nhận thay đổi có thể không giữ kết nối của những máy khách cần được thông báo. Thay vì để mỗi bản sao liên tục thăm dò cơ sở dữ liệu, tác giả gợi ý dùng cơ chế Pub/Sub để phân phối dữ liệu giữa các thành phần.
 
 
 ## [Optimizing the databases at Quora](https://quoraengineering.quora.com/Optimizing-the-databases-at-Quora)
@@ -42,7 +42,7 @@ Từ đó, bài viết đánh giá Aperture, dự án mã nguồn mở của Flu
 
 
 ## [Zero Configuration Service Mesh with On-Demand Cluster Discovery](https://netflixtechblog.com/zero-configuration-service-mesh-with-on-demand-cluster-discovery-ac6483b52a51)
-Đội ngũ Netflix kể lại hành trình chuyển sang service mesh. Netflix bắt đầu chuyển lên đám mây từ năm 2008 và chạy hoàn toàn trên AWS từ năm 2010, khi hầu hết công cụ cloud-native còn chưa tồn tại, nên họ tự xây dựng Eureka để khám phá dịch vụ và Ribbon cho giao tiếp giữa các tiến trình (IPC). Kiến trúc này phục vụ tốt suốt một thập kỷ, nhưng khi lưu lượng nội bộ pha trộn REST, GraphQL, gRPC trên nhiều ngôn ngữ, cùng nhu cầu về các tính năng như giới hạn đồng thời thích ứng hay circuit breaking, việc duy trì thư viện riêng cho từng ngôn ngữ trở nên tốn kém. Service mesh với Envoy làm proxy cho phép tập trung các tính năng IPC vào một nơi.
+Đội ngũ Netflix kể lại hành trình chuyển sang service mesh. Netflix bắt đầu chuyển lên đám mây từ năm 2008; theo bài viết, riêng hệ thống phát trực tuyến đã chạy hoàn toàn trên AWS từ năm 2010. Khi công cụ cloud-native còn ít, họ tự xây dựng Eureka để khám phá dịch vụ và Ribbon cho giao tiếp giữa các tiến trình (IPC). Kiến trúc này phục vụ tốt suốt một thập kỷ, nhưng khi lưu lượng nội bộ pha trộn REST, GraphQL, gRPC trên nhiều ngôn ngữ, cùng nhu cầu về các tính năng như giới hạn đồng thời thích ứng hay circuit breaking, việc duy trì thư viện riêng cho từng ngôn ngữ trở nên tốn kém. Service mesh với Envoy làm proxy cho phép tập trung các tính năng IPC vào một nơi.
 
 Trở ngại lớn là Envoy yêu cầu khai báo trước mọi cluster mà dịch vụ cần gọi, trong khi mỗi dịch vụ có thể giao tiếp với hàng chục cluster và chủ dịch vụ thường không nắm rõ danh sách này; còn đẩy toàn bộ cluster tới mọi proxy thì không khả thi vì có tới hàng triệu endpoint. Netflix hợp tác với Kinvolk và cộng đồng Envoy xây dựng tính năng On-Demand Cluster Discovery: khi request tới một cluster chưa biết, Envoy tạm dừng request, hỏi control plane qua CDS, lấy endpoint qua EDS dựa trên dữ liệu Eureka rồi tiếp tục xử lý. Nhờ vậy việc chuyển đổi không cần cấu hình gì thêm, đổi lại request đầu tiên tới mỗi cluster chậm thêm vài mili giây, nên các dịch vụ cực kỳ nhạy độ trễ phải khai báo trước cluster hoặc làm nóng kết nối.
 
@@ -54,9 +54,9 @@ Cách thứ ba, Experiment Effects, làm ngược quy trình A/B testing: với 
 
 
 ## [Meta's Hyperscale Infrastructure: Overview and Insights](https://cacm.acm.org/research/metas-hyperscale-infrastructure-overview-and-insights/)
-Chunqiang Tang tổng quan cơ sở hạ tầng hyperscale của Meta cùng những bài học rút ra, với lập luận rằng dù ít kỹ sư trực tiếp xây dựng hạ tầng ở quy mô này, nhiều công nghệ phổ biến ngày nay đều khởi nguồn từ đó. Văn hóa kỹ thuật của Meta xoay quanh bốn điểm: phát triển nhanh với triển khai liên tục, cởi mở công nghệ với monorepo và các dự án mã nguồn mở như PyTorch, Llama, Presto, nghiên cứu ngay trên hệ thống thật thay vì có phòng nghiên cứu riêng, và chuẩn hóa hạ tầng dùng chung (chẳng hạn các sản phẩm đều hội tụ về ZippyDB làm kho key-value). Để tăng năng suất, Meta đẩy triển khai liên tục lên quy mô cực lớn với hơn 100.000 thay đổi cấu hình mỗi ngày và 97% dịch vụ triển khai hoàn toàn tự động, trong khi số kỹ sư viết serverless function nhiều hơn khoảng 50% so với số người viết dịch vụ truyền thống.
+Trong bài nghiên cứu tháng 2/2025, Chunqiang Tang giới thiệu hạ tầng quy mô lớn của Meta qua bốn nét văn hóa: phát triển nhanh, cởi mở công nghệ, nghiên cứu trên hệ thống thực tế và dùng chung hạ tầng. Nhận xét về việc không có phòng nghiên cứu riêng nói đến nghiên cứu hệ thống, không phải mọi hoạt động nghiên cứu của Meta. Bài mô tả cách chuẩn hóa công cụ và tái sử dụng thành phần như ZippyDB để các nhóm sản phẩm không phải tự xây lại cùng một khả năng.
 
-Để giảm chi phí phần cứng, Meta coi toàn bộ trung tâm dữ liệu trên thế giới như một cỗ máy duy nhất, tự động phân bổ và di chuyển tải giữa các khu vực, kết hợp thiết kế phần cứng với phần mềm để bù đắp giới hạn của phần cứng giá rẻ, và phân tầng lưu trữ theo dữ liệu nóng, ấm, lạnh. Về AI, Meta đồng thiết kế toàn bộ ngăn xếp từ PyTorch, bộ tăng tốc AI, hạ tầng mạng đến các mô hình như Llama, và dự đoán trước cuối thập kỷ này hơn một nửa điện năng của trung tâm dữ liệu sẽ dành cho AI.
+Ở tầng vận hành, Meta hướng tới quản lý các trung tâm dữ liệu toàn cầu như một cỗ máy: phân bổ tài nguyên và di chuyển tải giữa các khu vực, kết hợp thiết kế phần cứng với phần mềm, đồng thời phân tầng lưu trữ. Với AI, cách tiếp cận đồng thiết kế trải từ PyTorch đến bộ tăng tốc, mạng và mô hình. Những kinh nghiệm này gợi ý cách tận dụng hạ tầng dùng chung và tối ưu toàn hệ thống, dù phần lớn dự án không cần quy mô tương tự.
 
 
 ## [Incremental Platforms: Monolithic Modular Architecture](https://newsletter.optimistengineer.com/p/incremental-platforms-monolithic)
@@ -85,4 +85,4 @@ Lợi ích của kiến trúc này gồm triển khai và vận hành đơn gi�
 
 ---
 
-*Bài viết đã được viết lại bởi Claude Code với Opus 5.5 vào ngày 27/09/2026.*
+*Bài viết đã được viết lại bởi Claude Code với Opus 5.5 vào ngày 27/09/2026; được review và chỉnh sửa bởi Codex với GPT 6.1 Sol vào ngày 09/11/2026.*

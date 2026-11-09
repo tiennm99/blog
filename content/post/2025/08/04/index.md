@@ -23,7 +23,7 @@ Nhóm nghiên cứu nhấn mạnh rằng kết quả chỉ đúng trong bối c�
 
 Bài viết kể lại hành trình phát triển nền tảng tìm kiếm của Uber qua ba giai đoạn. Ban đầu, Uber dùng Elasticsearch (dựa trên Apache Lucene) gần như một "hộp đen", đội ngũ kỹ sư chủ yếu lo vận hành ổn định. Hạn chế lớn là cơ chế gần thời gian thực của Lucene: dữ liệu mới chỉ tìm được sau khi được đẩy xuống chỉ mục, gây độ trễ cho các tình huống gấp như ghép hành khách với tài xế. Từ năm 2019, Uber tự xây dựng Sia, mở rộng Lucene với chỉ mục trực tiếp trong bộ nhớ để tìm kiếm thời gian thực, chuyển sang giao tiếp gRPC/Protobuf gọn nhẹ hơn, nạp dữ liệu kiểu kéo qua Kafka và triển khai chủ động ở nhiều vùng. Tuy vậy, kiến trúc phức tạp khiến việc đón nhận tính năng mới của Lucene như tìm kiếm vector rất khó, trong khi phần lớn tình huống thực ra không cần độ tươi thời gian thực.
 
-Năm 2024, với dự án Sunrise, Uber nhận ra việc tự duy trì hệ thống riêng không còn bền vững và chuyển sang OpenSearch, đồng thời trở thành thành viên sáng lập của OpenSearch Software Foundation. Kiến trúc hiện tại tách biệt luồng ghi và luồng đọc: dữ liệu từ Kafka được gộp thành một phân đoạn tối ưu rồi lưu lên kho từ xa, còn bộ tìm kiếm chỉ việc tải về để phục vụ truy vấn, giữ mọi chi phí nạp dữ liệu ngoài đường truy vấn. Uber cũng đóng góp ngược lại cho OpenSearch 3.0 như nạp dữ liệu kiểu kéo và API gRPC. Bài học rút ra: giải pháp tự xây rất tốn kém khi hệ sinh thái thay đổi nhanh, và chỉ nên chấp nhận độ phức tạp ở chỗ thật sự cần.
+Năm 2024, với dự án Sunrise, Uber nhận ra việc tự duy trì hệ thống riêng không còn bền vững và chuyển sang OpenSearch, đồng thời trở thành thành viên sáng lập của OpenSearch Software Foundation. Kiến trúc hiện tại tách biệt luồng ghi và luồng đọc: dữ liệu từ Kafka được gộp thành một phân đoạn tối ưu rồi lưu lên kho từ xa, còn bộ tìm kiếm chỉ việc tải về để phục vụ truy vấn, giữ mọi chi phí nạp dữ liệu ngoài đường truy vấn. Uber cũng đóng góp ngược lại cho OpenSearch 3.0 như nạp dữ liệu kiểu kéo và API gRPC. Câu chuyện cho thấy chi phí duy trì giải pháp riêng khi hệ sinh thái liên tục thay đổi.
 
 ## [Vercel](https://leerob.com/vercel)
 
@@ -51,7 +51,7 @@ Quá trình điều tra dần hé lộ manh mối: các thư bị lỗi đều b
 
 ## [How to Think About Time in Programming](https://shanrauf.com/archive/how-to-think-about-time-in-programming)
 
-Shan Rauf xây dựng một mô hình tư duy rõ ràng để xử lý thời gian trong lập trình. Nền tảng là thời gian tuyệt đối gồm "khoảnh khắc" và "khoảng thời gian", được biểu diễn bằng số giây tính từ một mốc gọi là epoch, như Unix lấy ngày 1/1/1970, giúp so sánh và tính toán chỉ bằng phép toán số học. Con người lại dùng thời gian dân sự theo lịch Gregorian, với các tháng dài ngắn khác nhau. UTC định nghĩa giây theo đồng hồ nguyên tử và thỉnh thoảng chèn giây nhuận để khớp với chuyển động quay của Trái Đất, nên một ngày có thể dài 86401 hoặc 86399 giây; Date của JavaScript bỏ qua giây nhuận. Múi giờ không phải thực thể cố định mà là tập quy tắc có thể thay đổi: khi chuyển giờ mùa hè, có những giờ dân sự bị bỏ qua hoặc lặp lại hai lần, và cơ sở dữ liệu múi giờ IANA (như America/New_York) lưu toàn bộ lịch sử các quy tắc đó.
+Shan Rauf phân biệt khoảnh khắc, khoảng thời gian và thời gian dân sự. Một khoảnh khắc có thể được biểu diễn bằng độ lệch từ epoch; khoảng thời gian là độ dài giữa hai khoảnh khắc, không tự gắn với một epoch. Lịch, UTC và múi giờ là các lớp quy tắc để diễn đạt thời gian. Khi đổi giờ mùa hè, một giờ địa phương có thể không tồn tại hoặc xuất hiện hai lần. Cơ sở dữ liệu IANA lưu các quy tắc và chuyển đổi đã biết, nhưng không bảo đảm toàn bộ lịch sử mọi địa điểm đều chính xác, đặc biệt trước năm 1970.
 
 Về thực hành, tin nhắn trò chuyện nên lưu theo UTC rồi hiển thị theo múi giờ người xem. Với sự kiện, cần xét ý định: buổi học ở một địa điểm cụ thể nên lưu giờ địa phương kèm mã múi giờ, còn sự kiện tuyệt đối như nhật thực thì lưu theo UTC. Tác giả khuyên đóng gói sẵn cơ sở dữ liệu IANA và cập nhật định kỳ, dùng dữ liệu Unicode CLDR để hiển thị tên múi giờ thân thiện, và đừng bao giờ coi độ lệch UTC là bất biến. Lời khuyên "cứ dùng UTC" chưa đủ, vì chuyển sang UTC quá sớm sẽ làm mất thông tin về ý định ban đầu của người dùng.
 
@@ -65,4 +65,4 @@ Dòng thời gian cho thấy rõ sự tiến hóa: năm 1947, John Mauchly viế
 
 ---
 
-*Bài viết đã được viết lại bởi Claude Code với Opus 5.5 vào ngày 27/09/2026.*
+*Bài viết đã được viết lại bởi Claude Code với Opus 5.5 vào ngày 27/09/2026; được review và chỉnh sửa bởi Codex với GPT 6.1 Sol vào ngày 09/11/2026.*

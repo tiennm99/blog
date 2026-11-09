@@ -1,0 +1,94 @@
+{
+  "post": "content/post/2026/06/11/index.md",
+  "newsletter": 111,
+  "newsletter_post": true,
+  "note": "*Bài viết đã được viết lại bởi Claude Code với Opus 5.5 vào ngày 27/09/2026.*",
+  "lines": [
+    {
+      "line": 1,
+      "kind": "frontmatter",
+      "text": "---"
+    },
+    {
+      "line": 2,
+      "kind": "frontmatter",
+      "text": "title: \"Newsletter #111\""
+    },
+    {
+      "line": 3,
+      "kind": "frontmatter",
+      "text": "date: 2026-06-11"
+    },
+    {
+      "line": 4,
+      "kind": "frontmatter",
+      "text": "tags: [\"AI-Assisted\", \"Newsletter\", \"Rust\", \"PostgreSQL\", \"LLMs\", \"AI Agents\", \"Infrastructure\"]"
+    },
+    {
+      "line": 5,
+      "kind": "frontmatter",
+      "text": "categories: [\"Newsletter\"]"
+    },
+    {
+      "line": 6,
+      "kind": "frontmatter",
+      "text": "---"
+    },
+    {
+      "line": 8,
+      "kind": "italic-note",
+      "text": "*Mời bạn thưởng thức Newsletter #111.*"
+    },
+    {
+      "line": 10,
+      "kind": "heading",
+      "text": "## [Learnings from 100K Lines of Rust with AI](https://zfhuang99.github.io/rust/claude%20code/codex/contracts/spec-driven%20development/2025/12/01/rust-with-ai.html)"
+    },
+    {
+      "line": 16,
+      "kind": "heading",
+      "text": "## [Always Be Blaming](https://matklad.github.io/2026/05/18/always-be-blaming.html)"
+    },
+    {
+      "line": 22,
+      "kind": "heading",
+      "text": "## [Scaling PostgreSQL to power 800 million ChatGPT users](https://openai.com/index/scaling-postgresql/)"
+    },
+    {
+      "line": 28,
+      "kind": "heading",
+      "text": "## [Scaling Managed Agents: Decoupling the brain from the hands](https://www.anthropic.com/engineering/managed-agents)"
+    },
+    {
+      "line": 34,
+      "kind": "heading",
+      "text": "### Bonus"
+    },
+    {
+      "line": 36,
+      "kind": "asset",
+      "text": "**Images:**"
+    },
+    {
+      "line": 37,
+      "kind": "asset",
+      "text": "![How does Claude Code keep long sessions from running out of context?](https://substackcdn.com/image/fetch/$s_!fap_!,w_1100,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fc111a2c6-71bd-45a7-8938-e8bb4f772cbc_1378x1390.png)"
+    },
+    {
+      "line": 38,
+      "kind": "asset",
+      "text": "![How does a request actually travel through Claude Code?](https://substackcdn.com/image/fetch/$s_!VfjL!,w_1100,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F38f19060-e838-440a-971d-bdc1f2d3a167_1280x1546.jpeg)"
+    },
+    {
+      "line": 39,
+      "kind": "asset",
+      "text": "![Forward Proxy, Reverse Proxy, and API Gateway Explained](https://substackcdn.com/image/fetch/$s_!cqW0!,w_1100,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F2e0de719-d0ac-497e-8f9c-b9c841422db8_2484x3002.png)"
+    },
+    {
+      "line": 40,
+      "kind": "asset",
+      "text": "![RAGs vs Agents](https://substackcdn.com/image/fetch/$s_!eLEi!,w_1100,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F52ccd4c2-dc53-4b9a-95b9-d87d6c353f88_2484x3002.png)"
+    }
+  ],
+  "candidates": []
+}

@@ -1,0 +1,105 @@
+{
+  "post": "content/post/2025/08/06/index.md",
+  "newsletter": 47,
+  "newsletter_post": true,
+  "note": "*Bài viết đã được viết lại bởi Claude Code với Opus 5.5 vào ngày 27/09/2026.*",
+  "lines": [
+    {
+      "line": 1,
+      "kind": "frontmatter",
+      "text": "---"
+    },
+    {
+      "line": 2,
+      "kind": "frontmatter",
+      "text": "title: \"Newsletter #47\""
+    },
+    {
+      "line": 3,
+      "kind": "frontmatter",
+      "text": "date: 2025-08-06"
+    },
+    {
+      "line": 4,
+      "kind": "frontmatter",
+      "text": "tags: [ \"AI-Assisted\", \"LLM\", \"AI Agents\", \"Git\", \"Code Review\", \"CLI\", \"Concurrency\" ]"
+    },
+    {
+      "line": 5,
+      "kind": "frontmatter",
+      "text": "categories: [ \"Newsletter\" ]"
+    },
+    {
+      "line": 6,
+      "kind": "frontmatter",
+      "text": "---"
+    },
+    {
+      "line": 8,
+      "kind": "italic-note",
+      "text": "*Mời bạn thưởng thức Newsletter #47.*"
+    },
+    {
+      "line": 10,
+      "kind": "heading",
+      "text": "## [Coding with LLMs in the summer of 2025 (an update)](https://antirez.com/news/154)"
+    },
+    {
+      "line": 16,
+      "kind": "heading",
+      "text": "## [Artisanal Handcrafted Git Repositories](https://drew.silcock.dev/blog/artisanal-git/)"
+    },
+    {
+      "line": 22,
+      "kind": "heading",
+      "text": "## [Why I'm Betting Against AI Agents in 2025 (Despite Building Them)](https://utkarshkanwat.com/writing/betting-against-agents)"
+    },
+    {
+      "line": 27,
+      "kind": "heading",
+      "text": "## [Rethinking CLI interfaces for AI](https://www.notcheckmark.com/2025/07/rethinking-cli-interfaces-for-ai/)"
+    },
+    {
+      "line": 33,
+      "kind": "heading",
+      "text": "## [Asynchrony is not Concurrency](https://kristoff.it/blog/asynchrony-is-not-concurrency/)"
+    },
+    {
+      "line": 39,
+      "kind": "heading",
+      "text": "## [How Does AI Disrupt Accountability in Code Reviews?](https://rdel.substack.com/p/rdel-102-how-does-ai-disrupt-accountability)"
+    },
+    {
+      "line": 45,
+      "kind": "heading",
+      "text": "## [Vibecoding a High Performance System](https://andrewkchan.dev/posts/systems.html)"
+    },
+    {
+      "line": 51,
+      "kind": "heading",
+      "text": "## [Two Simple Rules to Fix Code Reviews](https://serce.me/posts/2025-07-17-two-simple-rules-to-fix-code-reviews)"
+    },
+    {
+      "line": 57,
+      "kind": "heading",
+      "text": "## [Reading QR codes without a computer!](https://qr.blinry.org/)"
+    }
+  ],
+  "candidates": [
+    {
+      "line": 12,
+      "kind": "first-person",
+      "text": "Antirez, cha đẻ của Redis, cập nhật cách anh làm việc với LLM. Theo anh, các mô hình hàng đầu như Gemini 2.5 PRO có thể khuếch đại năng lực lập trình viên: loại bỏ lỗi trước khi chúng đến tay người dùng (điều anh trải nghiệm khi xây dựng Vector Sets cho Redis), viết nhanh mã nguồn thử nghiệm để kiểm chứng ý tưởng, cùng thiết kế giải pháp, và làm việc với công nghệ nằm ngoài chuyên môn của mình. Tuy nhiên, LLM hiện là \"bộ khuếch đại tốt\" nhưng là \"ban nhạc một người\" tồi: khi tự xử lý mục tiêu phức tạp, chúng tạo ra mã nguồn cồng kềnh, dễ vỡ và đầy lựa chọn kém tối ưu, nên anh từ chối vibe coding trong phần lớn trường hợp."
+    },
+    {
+      "line": 14,
+      "kind": "first-person",
+      "text": "Để đạt hiệu quả, lập trình viên cần cung cấp ngữ cảnh thật lớn: tài liệu, phần lớn mã nguồn liên quan, cùng toàn bộ hiểu biết của mình về vấn đề, gồm những hướng tưởng hay nhưng thực ra tệ, những hướng giải quyết tiềm năng, mục tiêu, bất biến và phong cách mã nguồn mong muốn. Với công nghệ mới mà mô hình chưa biết, chỉ cần đưa README vào ngữ cảnh là đủ. Anh khuyên dùng Gemini 2.5 PRO (mạnh hơn về suy luận, phát hiện lỗi phức tạp) và Claude Opus 4, đồng thời tránh coding agent hay trình soạn thảo tích hợp agent, tránh RAG, và tự tay chép mã nguồn giữa terminal và giao diện web để luôn nằm trong vòng lặp. Theo anh, hiện tại giữ quyền kiểm soát là cách tận dụng AI tốt nhất, còn né tránh LLM vì định kiến cũng là một rủi ro."
+    },
+    {
+      "line": 41,
+      "kind": "first-person",
+      "text": "Số RDEL #102 của Lizzie Matusov tóm tắt một nghiên cứu định tính về việc review mã nguồn có sự hỗ trợ của LLM ảnh hưởng thế nào đến tinh thần trách nhiệm của kỹ sư. Nhóm nghiên cứu phỏng vấn 16 kỹ sư, sau đó tổ chức bốn nhóm thảo luận mô phỏng cả review giữa đồng nghiệp lẫn review có LLM hỗ trợ. Kết quả cho thấy bốn động lực nội tại tạo nên trách nhiệm cá nhân với chất lượng mã nguồn: tiêu chuẩn cá nhân, sự chính trực nghề nghiệp, niềm tự hào về chất lượng mã nguồn và danh tiếng chuyên môn. Khi review bắt đầu, trách nhiệm chuyển từ cá nhân sang tập thể: kỹ sư điều chỉnh giọng điệu, cởi mở với góp ý và đồng bộ tiêu chuẩn của mình với chuẩn mực của nhóm."
+    }
+  ]
+}

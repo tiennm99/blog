@@ -1,0 +1,80 @@
+{
+  "post": "content/post/2026/02/24/index.md",
+  "newsletter": 83,
+  "newsletter_post": true,
+  "note": "*Bài viết đã được viết lại bởi Claude Code với Opus 5.5 vào ngày 27/09/2026.*",
+  "lines": [
+    {
+      "line": 1,
+      "kind": "frontmatter",
+      "text": "---"
+    },
+    {
+      "line": 2,
+      "kind": "frontmatter",
+      "text": "title: \"Newsletter #83\""
+    },
+    {
+      "line": 3,
+      "kind": "frontmatter",
+      "text": "date: 2026-02-24"
+    },
+    {
+      "line": 4,
+      "kind": "frontmatter",
+      "text": "tags: [\"AI-Assisted\", \"Newsletter\", \"Data Engineering\", \"PostgreSQL\", \"AI Agents\", \"Prompt Engineering\", \"Software Engineering\"]"
+    },
+    {
+      "line": 5,
+      "kind": "frontmatter",
+      "text": "categories: [\"Newsletter\"]"
+    },
+    {
+      "line": 6,
+      "kind": "frontmatter",
+      "text": "---"
+    },
+    {
+      "line": 8,
+      "kind": "italic-note",
+      "text": "*Mời bạn thưởng thức Newsletter #83.*"
+    },
+    {
+      "line": 10,
+      "kind": "heading",
+      "text": "## [How Uber Scaled Data Replication to Move Petabytes Every Day](https://www.uber.com/en-IN/blog/scaled-data-replication/)"
+    },
+    {
+      "line": 16,
+      "kind": "heading",
+      "text": "## [How to write a good spec for AI agents](https://addyosmani.com/blog/good-spec/)"
+    },
+    {
+      "line": 22,
+      "kind": "heading",
+      "text": "## [Unconventional PostgreSQL Optimizations](https://hakibenita.com/postgresql-unconventional-optimizations)"
+    },
+    {
+      "line": 28,
+      "kind": "heading",
+      "text": "## [Software engineering when machine writes the code](https://www.shayon.dev/post/2026/19/software-engineering-when-the-machine-writes-code/)"
+    },
+    {
+      "line": 33,
+      "kind": "heading",
+      "text": "## [A Guide to Effective Prompt Engineering](https://blog.bytebytego.com/p/a-guide-to-effective-prompt-engineering)"
+    }
+  ],
+  "candidates": [
+    {
+      "line": 20,
+      "kind": "first-person",
+      "text": "Nguyên tắc thứ ba là chia nhiệm vụ thành các lời nhắc nhỏ theo mô-đun thay vì một lời nhắc khổng lồ, vì hiện tượng \"lời nguyền của chỉ dẫn\" khiến chất lượng giảm rõ rệt khi mô hình phải tuân theo quá nhiều yêu cầu cùng lúc. Nguyên tắc thứ tư là tích hợp kiểm soát chất lượng: ranh giới ba tầng \"Luôn làm\", \"Hỏi trước\" và \"Không bao giờ làm\", cùng các bước tự kiểm tra. Cuối cùng, coi đặc tả là tài liệu sống, kiểm thử thường xuyên và cập nhật khi yêu cầu thay đổi. Bài viết cũng cảnh báo các bẫy như yêu cầu mơ hồ kiểu \"làm gì đó thật hay\", nhồi ngữ cảnh mà không tóm tắt, bỏ qua bước con người xem xét mã nguồn, và làm nhanh hơn khả năng kiểm chứng của chính mình."
+    },
+    {
+      "line": 35,
+      "kind": "first-person",
+      "text": "ByteByteGo trình bày hướng dẫn về kỹ thuật viết prompt (prompt engineering), tức cách soạn chỉ dẫn để mô hình ngôn ngữ trả về kết quả mong muốn. Ai cũng viết được prompt, nhưng viết prompt cho kết quả tốt ổn định là kỹ năng khác. Một prompt thường gồm bốn phần: mô tả nhiệm vụ, ngữ cảnh nền, ví dụ minh họa và yêu cầu cụ thể. Các API hiện đại còn tách thành system prompt (hướng dẫn hành vi) và user prompt (nhiệm vụ thực tế). Sự rõ ràng là yếu tố quan trọng nhất: nói chính xác điều mình muốn, định nghĩa định dạng đầu ra và không mặc định rằng mô hình đã biết; cung cấp đủ ngữ cảnh cũng giúp giảm ảo giác. Bài viết nhắc đến khả năng học trong ngữ cảnh từ ví dụ ngay trong prompt, và lưu ý mô hình thường tiếp thu chỉ dẫn ở đầu và cuối prompt tốt hơn phần giữa."
+    }
+  ]
+}

@@ -1,0 +1,94 @@
+{
+  "post": "content/post/2026/05/05/index.md",
+  "newsletter": 102,
+  "newsletter_post": true,
+  "note": "*Bài viết đã được viết lại bởi Claude Code với Opus 5.5 vào ngày 27/09/2026.*",
+  "lines": [
+    {
+      "line": 1,
+      "kind": "frontmatter",
+      "text": "---"
+    },
+    {
+      "line": 2,
+      "kind": "frontmatter",
+      "text": "title: \"Newsletter #102\""
+    },
+    {
+      "line": 3,
+      "kind": "frontmatter",
+      "text": "date: 2026-05-05"
+    },
+    {
+      "line": 4,
+      "kind": "frontmatter",
+      "text": "tags: [\"AI-Assisted\", \"AI Agents\", \"GitHub Actions\", \"Software Engineering\", \"Database\", \"System Design\", \"Productivity\"]"
+    },
+    {
+      "line": 5,
+      "kind": "frontmatter",
+      "text": "categories: [\"Newsletter\"]"
+    },
+    {
+      "line": 6,
+      "kind": "frontmatter",
+      "text": "---"
+    },
+    {
+      "line": 8,
+      "kind": "italic-note",
+      "text": "*Mời bạn thưởng thức Newsletter #102.*"
+    },
+    {
+      "line": 10,
+      "kind": "heading",
+      "text": "## [A GitHub agentic workflow](https://blog.frankel.ch/agentic-github-workflows/)"
+    },
+    {
+      "line": 16,
+      "kind": "heading",
+      "text": "## [The 20 Software Engineering Laws](https://newsletter.techworld-with-milan.com/p/the-20-software-engineering-laws)"
+    },
+    {
+      "line": 22,
+      "kind": "heading",
+      "text": "## [Databases Were Not Designed For This](https://arpitbhayani.me/blogs/defensive-databases/)"
+    },
+    {
+      "line": 28,
+      "kind": "heading",
+      "text": "## [Finishing Things](https://ratfactor.com/finishing-things)"
+    },
+    {
+      "line": 34,
+      "kind": "heading",
+      "text": "### Bonus"
+    },
+    {
+      "line": 36,
+      "kind": "asset",
+      "text": "**Images:**"
+    },
+    {
+      "line": 37,
+      "kind": "asset",
+      "text": "![Data Warehouse vs Data Lake vs Data Mesh](https://substackcdn.com/image/fetch/$s_!9kS2!,w_1100,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F71595c9b-f94f-4ae8-851e-ea4f07342c29_2484x3002.png)"
+    },
+    {
+      "line": 38,
+      "kind": "asset",
+      "text": "![API Concepts Every Software Engineer Should Know](https://substackcdn.com/image/fetch/$s_!U4gw!,w_1100,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F8e8297aa-f856-4b2b-af5d-986023db89e7_2508x3000.png)"
+    },
+    {
+      "line": 39,
+      "kind": "asset",
+      "text": "![Polling vs Long Polling vs Webhooks vs SSE](https://substackcdn.com/image/fetch/$s_!SAsk!,w_1100,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F7616a6b1-8eb6-4dc3-9456-b0e57bc9b0ee_2484x3002.png)"
+    },
+    {
+      "line": 40,
+      "kind": "asset",
+      "text": "![SLA vs SLO vs SLI](https://substackcdn.com/image/fetch/$s_!SJN6!,w_1100,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F47ce48f1-06e7-4663-b822-96cc7d1307d0_2484x3002.png)"
+    }
+  ],
+  "candidates": []
+}

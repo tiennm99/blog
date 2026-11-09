@@ -1,0 +1,104 @@
+{
+  "post": "content/post/2025/04/01/index.md",
+  "newsletter": 9,
+  "newsletter_post": true,
+  "note": "*Bài viết đã được viết lại bởi Claude Code với Opus 5.5 vào ngày 27/09/2026.*",
+  "lines": [
+    {
+      "line": 1,
+      "kind": "frontmatter",
+      "text": "---"
+    },
+    {
+      "line": 2,
+      "kind": "frontmatter",
+      "text": "title: \"Newsletter #9\""
+    },
+    {
+      "line": 3,
+      "kind": "frontmatter",
+      "text": "date: 2025-04-01"
+    },
+    {
+      "line": 4,
+      "kind": "frontmatter",
+      "text": "tags: [\"AI-Assisted\", \"Newsletter\", \"Infrastructure\", \"Java\", \"Go\", \"Redis\", \"Observability\"]"
+    },
+    {
+      "line": 5,
+      "kind": "frontmatter",
+      "text": "categories: [ \"Newsletter\" ]"
+    },
+    {
+      "line": 6,
+      "kind": "frontmatter",
+      "text": "---"
+    },
+    {
+      "line": 8,
+      "kind": "italic-note",
+      "text": "*Mời bạn thưởng thức Newsletter \\#9.*"
+    },
+    {
+      "line": 10,
+      "kind": "heading",
+      "text": "## [To avoid being replaced by LLMs, do what they can't](https://www.seangoedecke.com/what-llms-cant-do/)"
+    },
+    {
+      "line": 16,
+      "kind": "heading",
+      "text": "## [How Instagram Scaled Its Infrastructure To Support a Billion Users](https://blog.bytebytego.com/p/how-instagram-scaled-its-infrastructure)"
+    },
+    {
+      "line": 22,
+      "kind": "heading",
+      "text": "## [The State of Scala & Clojure Surveys](https://www.jvm-weekly.com/p/the-state-of-scala-and-clojure-surveys)"
+    },
+    {
+      "line": 28,
+      "kind": "heading",
+      "text": "## [LinkedIn Integrates Protocol Buffers With Rest.li for Improved Microservices Performance](https://www.linkedin.com/blog/engineering/infrastructure/linkedin-integrates-protocol-buffers-with-rest-li-for-improved-m)"
+    },
+    {
+      "line": 34,
+      "kind": "heading",
+      "text": "## [Story: Redis and its creator antirez](https://blog.brachiosoft.com/en/posts/redis/)"
+    },
+    {
+      "line": 40,
+      "kind": "heading",
+      "text": "## [Tracing: structured logging, but better in every way](https://andydote.co.uk/2023/09/19/tracing-is-better/)"
+    },
+    {
+      "line": 46,
+      "kind": "heading",
+      "text": "## [Software engineering job openings hit five-year low?](https://newsletter.pragmaticengineer.com/p/software-engineering-job-openings)"
+    },
+    {
+      "line": 52,
+      "kind": "heading",
+      "text": "## [We switched from Java to Go and don't regret it](https://glasskube.dev/blog/from-java-to-go/)"
+    },
+    {
+      "line": 58,
+      "kind": "heading",
+      "text": "## [Secure Java applications: A deep look into 3 different issues](https://developers.redhat.com/articles/2024/11/18/secure-java-applications-deep-look-3-different-issues)"
+    },
+    {
+      "line": 64,
+      "kind": "heading",
+      "text": "## [Java Devs Rejoice! This Open-Source Secret Weapon Will Cut Your Coding Time in Half](https://www.indiehackers.com/post/java-devs-rejoice-this-open-source-secret-weapon-will-cut-your-coding-time-in-half-a7869a56de)"
+    },
+    {
+      "line": 70,
+      "kind": "heading",
+      "text": "## Bonus: Vài video hay ho đến từ [Inside Java](https://inside.java/)"
+    },
+    {
+      "line": 72,
+      "kind": "asset",
+      "text": "[Garbage Collection in Java - The progress since JDK 8](https://inside.java/2025/02/15/devoxxbelgium-gc-progress/)"
+    }
+  ],
+  "candidates": []
+}

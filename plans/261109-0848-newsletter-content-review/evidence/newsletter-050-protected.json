@@ -1,0 +1,210 @@
+{
+  "post": "content/post/2025/08/09/index.md",
+  "newsletter": 50,
+  "newsletter_post": true,
+  "note": "*Bài viết đã được viết lại bởi Claude Code với Opus 5.5 vào ngày 27/09/2026.*",
+  "lines": [
+    {
+      "line": 1,
+      "kind": "frontmatter",
+      "text": "---"
+    },
+    {
+      "line": 2,
+      "kind": "frontmatter",
+      "text": "title: \"Newsletter #50\""
+    },
+    {
+      "line": 3,
+      "kind": "frontmatter",
+      "text": "date: 2025-08-09"
+    },
+    {
+      "line": 4,
+      "kind": "frontmatter",
+      "text": "tags: [\"AI-Assisted\", \"AI Coding\", \"Claude Code\", \"Java\", \"Concurrency\", \"System Design\", \"Event-Driven-Architecture\"]"
+    },
+    {
+      "line": 5,
+      "kind": "frontmatter",
+      "text": "categories: [\"Newsletter\"]"
+    },
+    {
+      "line": 6,
+      "kind": "frontmatter",
+      "text": "---"
+    },
+    {
+      "line": 8,
+      "kind": "italic-note",
+      "text": "*Mời bạn thưởng thức Newsletter #50.*"
+    },
+    {
+      "line": 10,
+      "kind": "heading",
+      "text": "## [There is No Memory Safety Without Thread Safety](https://www.ralfj.de/blog/2025/07/24/memory-safety.html)"
+    },
+    {
+      "line": 16,
+      "kind": "heading",
+      "text": "## [I Know When You're Vibe Coding](https://alexkondov.com/i-know-when-youre-vibe-coding/)"
+    },
+    {
+      "line": 22,
+      "kind": "heading",
+      "text": "## [The 7 Most Influential Papers in Computer Science History](https://terriblesoftware.org/2025/01/22/the-7-most-influential-papers-in-computer-science-history/)"
+    },
+    {
+      "line": 28,
+      "kind": "heading",
+      "text": "## [Programming Vehicles in Games](https://wassimulator.com/blog/programming/programming_vehicles_in_games.html)"
+    },
+    {
+      "line": 34,
+      "kind": "heading",
+      "text": "## [Periodic Table of System Design Principles](https://github.com/jarulraj/periodic-table)"
+    },
+    {
+      "line": 40,
+      "kind": "heading",
+      "text": "## [Curing Your AI 10x Engineer Imposter Syndrome](https://colton.dev/blog/curing-your-ai-10x-engineer-imposter-syndrome/)"
+    },
+    {
+      "line": 46,
+      "kind": "heading",
+      "text": "## [Demystifying Claude Code Hooks](https://www.brethorsting.com/blog/2025/08/demystifying-claude-code-hooks/)"
+    },
+    {
+      "line": 50,
+      "kind": "code",
+      "text": "```json"
+    },
+    {
+      "line": 51,
+      "kind": "code",
+      "text": "{"
+    },
+    {
+      "line": 52,
+      "kind": "code",
+      "text": "  \"hooks\": {"
+    },
+    {
+      "line": 53,
+      "kind": "code",
+      "text": "    \"PreToolUse\": ["
+    },
+    {
+      "line": 54,
+      "kind": "code",
+      "text": "      {"
+    },
+    {
+      "line": 55,
+      "kind": "code",
+      "text": "        \"matcher\": \"Bash\","
+    },
+    {
+      "line": 56,
+      "kind": "code",
+      "text": "        \"hooks\": ["
+    },
+    {
+      "line": 57,
+      "kind": "code",
+      "text": "          {"
+    },
+    {
+      "line": 58,
+      "kind": "code",
+      "text": "            \"type\": \"command\","
+    },
+    {
+      "line": 59,
+      "kind": "code",
+      "text": "            \"command\": \"if echo \\\"$CLAUDE_TOOL_INPUT\\\" | jq -r '.command' | grep -q '^git commit'; then ./claude-hooks/precommit.sh; fi\","
+    },
+    {
+      "line": 60,
+      "kind": "code",
+      "text": "            \"timeout\": 180"
+    },
+    {
+      "line": 61,
+      "kind": "code",
+      "text": "          }"
+    },
+    {
+      "line": 62,
+      "kind": "code",
+      "text": "        ]"
+    },
+    {
+      "line": 63,
+      "kind": "code",
+      "text": "      }"
+    },
+    {
+      "line": 64,
+      "kind": "code",
+      "text": "    ]"
+    },
+    {
+      "line": 65,
+      "kind": "code",
+      "text": "  }"
+    },
+    {
+      "line": 66,
+      "kind": "code",
+      "text": "}"
+    },
+    {
+      "line": 67,
+      "kind": "code",
+      "text": "```"
+    },
+    {
+      "line": 71,
+      "kind": "heading",
+      "text": "## [What the Hell is GetOpaque in Java](https://mlangc.github.io/java/concurrency/2025/08/03/what-the-hell-is-get-opaque.html)"
+    },
+    {
+      "line": 77,
+      "kind": "heading",
+      "text": "## [How Far Can We Push AI Autonomy in Code Generation?](https://martinfowler.com/articles/pushing-ai-autonomy.html)"
+    },
+    {
+      "line": 83,
+      "kind": "heading",
+      "text": "## [Onboarding for Coding Agents](https://www.fuzzycomputer.com/posts/onboarding)"
+    },
+    {
+      "line": 89,
+      "kind": "heading",
+      "text": "## [Why Java is Still Worth Learning in 2025: A Developer's 25-Year Journey](https://foojay.io/today/why-java-is-still-worth-learning-in-2025-a-developers-25-year-journey/)"
+    },
+    {
+      "line": 95,
+      "kind": "heading",
+      "text": "## [Why You Should Rethink Legacy and Consider Event-Driven Architecture](https://blog.scottlogic.com/2025/08/06/rethink-legacy-consider-event-driven-architecture.html)"
+    }
+  ],
+  "candidates": [
+    {
+      "line": 14,
+      "kind": "first-person",
+      "text": "Các ngôn ngữ khác chọn một trong hai hướng để ngăn tình huống này. Java, C#, OCaml, JavaScript và WebAssembly chấp nhận trả giá về hiệu năng để mọi chương trình, kể cả khi có data race, vẫn giữ nguyên các bất biến của ngôn ngữ; Rust và gần đây là Swift thì dùng hệ thống kiểu đủ mạnh để loại bỏ data race ngay từ lúc biên dịch. Go không chọn hướng nào, nên theo tác giả, nói chính xác thì Go không phải ngôn ngữ an toàn bộ nhớ, dù trên thực tế Go vẫn gần với nhóm ngôn ngữ an toàn hơn nhiều so với C. Bài viết giúp lập trình viên hiểu rõ ngôn ngữ mình dùng thực sự đảm bảo điều gì, đặc biệt khi viết chương trình đồng thời."
+    },
+    {
+      "line": 30,
+      "kind": "first-person",
+      "text": "Wassim (Wassimulator), dựa trên bài nói của mình tại Better Software Conference, chia sẻ những nguyên tắc cơ bản để lập trình xe cộ trong game. Điểm xuất phát là game không phải bộ máy vật lý mà là trải nghiệm: Mario Kart và iRacing đều lập trình xe nhưng ưu tiên những cảm giác rất khác nhau, nên câu hỏi đầu tiên là muốn truyền tải trải nghiệm gì. Trò chơi đầu tay AV-Racer của tác giả dựa hoàn toàn vào các mẹo và \"con số ma thuật\"; nó đủ vui nhưng vỡ ở các trường hợp biên, và bài học rút ra là bạn không thể bẻ cong thực tế một cách thuyết phục nếu chưa hiểu mình đang bẻ cong nó thành gì."
+    },
+    {
+      "line": 44,
+      "kind": "first-person",
+      "text": "Theo tác giả, những lời tuyên bố \"10x\" đến từ người đo sai, người có lợi ích tài chính gắn với AI, hoặc những ông chủ muốn nhân viên cảm thấy bấp bênh. Kỹ sư \"10x\" thật sự, nếu có, là người biết ngăn chặn công việc không cần thiết, điều mà AI hầu như không làm được, thậm chí còn khuyến khích làm quá tay. Anh cũng cho rằng hoàn toàn ổn khi hy sinh một chút năng suất để công việc thú vị hơn, vì ép bản thân làm theo cách mình ghét chỉ dẫn đến kiệt sức. Kết luận của bài: bạn không bỏ lỡ điều gì cả; hãy tin vào bản thân, bạn đã đủ giỏi rồi, và bớt lướt LinkedIn đi."
+    }
+  ]
+}

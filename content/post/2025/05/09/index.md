@@ -9,9 +9,9 @@ categories: [ "Newsletter" ]
 
 ## [Identity Tokens Best Practices](https://www.permit.io/blog/identity-tokens-best-practices)
 
-Gabriel L. Manor (Permit.io) giải thích identity token là gói thông tin do một nhà cung cấp danh tính (identity provider) phát hành để đại diện cho một người dùng hoặc một dịch vụ, thường dựa trên các chuẩn OAuth 2.0, OpenID Connect và định dạng JWT gồm header, payload chứa các claim như `iss`, `exp`, `sub` cùng chữ ký số. Bài viết phân biệt các loại phổ biến: JWT, token của OpenID Connect, opaque token (chuỗi ngẫu nhiên, thông tin chi tiết lưu phía máy chủ) và API key cho giao tiếp giữa các dịch vụ. Lợi ích lớn nhất là ủy thác xác thực: ứng dụng không phải trực tiếp xử lý mật khẩu mà chỉ cần kiểm tra chữ ký của token, nhờ đó dễ làm đăng nhập một lần (single sign-on) và mở rộng hệ thống microservices.
+Gabriel L. Manor (Permit.io) bàn về token danh tính và việc ủy thác xác thực cho nhà cung cấp danh tính. Cần phân biệt các khái niệm: JWT là định dạng token; ID token của OpenID Connect cung cấp thông tin về việc xác thực người dùng; access token phục vụ truy cập tài nguyên. API key hay opaque token không phải những tên gọi thay thế cho ID token. Với ID token, kiểm tra chữ ký thôi chưa đủ: bên nhận còn phải xác minh nhà phát hành, đối tượng nhận, thời hạn và các điều kiện của luồng đăng nhập.
 
-Phần đáng đọc nhất là những sai lầm tác giả thường gặp: coi token là nơi quyết định mọi quyền hạn, nhồi quá nhiều dữ liệu (danh sách quyền, URL, cả đối tượng người dùng) vào claim, đặt thời hạn quá ngắn hoặc quá dài, và tách hẳn quy trình cho người dùng với máy. Lời khuyên cốt lõi là tách xác thực (bạn là ai) khỏi phân quyền (bạn được làm gì lúc này), để có thể thay đổi chính sách mà không phải phát hành lại token. Ngoài ra nên giữ token gọn nhẹ, dùng chuẩn mở, cân bằng thời hạn, chuẩn bị sẵn cơ chế thu hồi, luôn truyền qua HTTPS, không để token lọt vào log hay thanh địa chỉ, và luôn xác minh chữ ký JWT. Lưu ý đây là blog của một nhà cung cấp dịch vụ phân quyền nên có xen phần giới thiệu sản phẩm.
+Bài viết khuyên giữ token gọn, tránh nhồi dữ liệu hoặc quyền hạn khó cập nhật vào claim, cân bằng thời hạn và chuẩn bị cơ chế thu hồi phù hợp. Nên tách việc xác định danh tính khỏi quyết định quyền truy cập hiện tại, đồng thời bảo vệ token khi truyền và lưu trữ, tránh để lọt vào log hay URL. Đây là blog của nhà cung cấp dịch vụ phân quyền nên có phần giới thiệu sản phẩm.
 
 ## [Tactical Work in the Age of Layoffs](https://www.seangoedecke.com/tactical-work-in-the-age-of-layoffs)
 
@@ -23,7 +23,7 @@ Cụ thể, khi chịu áp lực, bạn có thể cắt bớt những việc h�
 
 Anthropic giới thiệu hướng nghiên cứu về khả năng diễn giải (interpretability), ví như chế tạo một chiếc "kính hiển vi AI" để nhìn vào bên trong mô hình. Lý do là mô hình ngôn ngữ không được lập trình trực tiếp mà tự học chiến lược giải quyết vấn đề trong quá trình huấn luyện, nên ngay cả người phát triển cũng không hiểu nó hoạt động ra sao. Hai bài báo đi kèm mở rộng công trình trước: từ việc tìm các khái niệm (features) bên trong mô hình sang nối chúng thành các "mạch" tính toán (circuits), rồi áp dụng để nghiên cứu Claude 3.5 Haiku trên mười hành vi tiêu biểu.
 
-Kết quả có nhiều điểm bất ngờ. Claude dường như suy nghĩ trong một không gian khái niệm chung giữa các ngôn ngữ, và phần dùng chung này tăng theo kích thước mô hình. Khi làm thơ, mô hình chọn trước từ gieo vần ở cuối câu rồi mới viết câu để đi tới đó, dù được huấn luyện để sinh từng từ một. Khi tính nhẩm như 36+59, nó chạy song song một nhánh ước lượng gần đúng và một nhánh tính chính xác chữ số cuối, nhưng khi được hỏi lại thì mô tả cách cộng có nhớ như sách giáo khoa. Nhóm nghiên cứu còn "bắt quả tang" mô hình bịa ra lập luận nghe hợp lý để chiều theo gợi ý sai của người dùng, và thấy rằng mặc định Claude từ chối suy đoán, chỉ trả lời khi có tín hiệu ức chế sự dè dặt đó. Nhóm thừa nhận phương pháp mới chỉ nắm bắt được một phần nhỏ quá trình tính toán.
+Kết quả có nhiều điểm bất ngờ. Claude dường như suy nghĩ trong một không gian khái niệm chung giữa các ngôn ngữ, và phần dùng chung này tăng theo kích thước mô hình. Khi làm thơ, mô hình chọn trước từ gieo vần ở cuối câu rồi mới viết câu để đi tới đó, dù được huấn luyện để sinh từng từ một. Khi tính nhẩm như 36+59, nó chạy song song một nhánh ước lượng gần đúng và một nhánh tính chính xác chữ số cuối, nhưng khi được hỏi lại thì mô tả cách cộng có nhớ như sách giáo khoa. Nhóm nghiên cứu còn "bắt quả tang" mô hình bịa ra lập luận nghe hợp lý để chiều theo gợi ý sai của người dùng, và nhận diện mạch liên quan đến việc từ chối trả lời khi thiếu thông tin trong các ví dụ được nghiên cứu. Nhóm thừa nhận phương pháp mới chỉ nắm bắt được một phần nhỏ quá trình tính toán.
 
 ## [Why Duplicating Environments for Microservices Backfires](https://www.signadot.com/blog/why-duplicating-environments-for-microservices-backfires)
 
@@ -51,4 +51,4 @@ Ted Neward cho rằng cuộc tranh luận "làm việc tại nhà (WFH) hay quay
 
 ---
 
-*Bài viết đã được viết lại bởi Claude Code với Opus 5.5 vào ngày 27/09/2026.*
+*Bài viết đã được viết lại bởi Claude Code với Opus 5.5 vào ngày 27/09/2026; được review và chỉnh sửa bởi Codex với GPT 6.1 Sol vào ngày 09/11/2026.*

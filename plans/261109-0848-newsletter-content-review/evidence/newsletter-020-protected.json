@@ -1,0 +1,99 @@
+{
+  "post": "content/post/2025/05/07/index.md",
+  "newsletter": 20,
+  "newsletter_post": true,
+  "note": "*Bài viết đã được viết lại bởi Claude Code với Opus 5.5 vào ngày 27/09/2026.*",
+  "lines": [
+    {
+      "line": 1,
+      "kind": "frontmatter",
+      "text": "---"
+    },
+    {
+      "line": 2,
+      "kind": "frontmatter",
+      "text": "title: \"Newsletter #20\""
+    },
+    {
+      "line": 3,
+      "kind": "frontmatter",
+      "text": "date: 2025-05-07"
+    },
+    {
+      "line": 4,
+      "kind": "frontmatter",
+      "text": "tags: [ \"AI-Assisted\", \"Java\", \"JDK 24\", \"Memory Management\", \"Git\", \"Vibe Coding\", \"Algorithms\" ]"
+    },
+    {
+      "line": 5,
+      "kind": "frontmatter",
+      "text": "categories: [ \"Newsletter\" ]"
+    },
+    {
+      "line": 6,
+      "kind": "frontmatter",
+      "text": "---"
+    },
+    {
+      "line": 8,
+      "kind": "italic-note",
+      "text": "*Mời bạn thưởng thức Newsletter #20.*"
+    },
+    {
+      "line": 10,
+      "kind": "heading",
+      "text": "## [Performance Improvements in JDK 24](https://inside.java/2025/03/19/performance-improvements-in-jdk24/)"
+    },
+    {
+      "line": 16,
+      "kind": "heading",
+      "text": "## [Clean your Memory: From Finalize to Cleaner](https://blog.frankel.ch/java-cleaner/)"
+    },
+    {
+      "line": 22,
+      "kind": "heading",
+      "text": "## [5 Hidden Git Tips for Java Developers](https://www.azul.com/blog/5-hidden-git-tips-for-java-developers/)"
+    },
+    {
+      "line": 28,
+      "kind": "heading",
+      "text": "## [Simplify Your System by Challenging the Status-Quo and Learning from Other Ecosystems](https://www.infoq.com/podcasts/simplify-system-learning-ecosystems/)"
+    },
+    {
+      "line": 34,
+      "kind": "heading",
+      "text": "## [About \"vibe coding\"](https://tryingthings.wordpress.com/2025/03/24/about-vibe-coding/)"
+    },
+    {
+      "line": 40,
+      "kind": "heading",
+      "text": "## [Visual-Focused Algorithms Cheat Sheet](https://photonlines.substack.com/p/visual-focused-algorithms-cheat-sheet)"
+    },
+    {
+      "line": 46,
+      "kind": "heading",
+      "text": "## Bonus: Vài ảnh hay ho đến từ [ByteByteGo](https://bytebytego.com/)"
+    },
+    {
+      "line": 48,
+      "kind": "asset",
+      "text": "![3 Steps to Master Your Software](https://substack-post-media.s3.amazonaws.com/public/images/81074d22-5821-4aec-bb2d-0a099d06b6ac_1600x840.png)"
+    },
+    {
+      "line": 49,
+      "kind": "asset",
+      "text": "![The Ultimate Software Architect Roadmap](https://substack-post-media.s3.amazonaws.com/public/images/67c39b9a-9a91-4e57-9e24-7714b4f806dd_1280x1349.gif)"
+    },
+    {
+      "line": 50,
+      "kind": "asset",
+      "text": "![How Two-factor Authentication (2FA) Works?](https://substack-post-media.s3.amazonaws.com/public/images/fb1b1cd1-eac3-4b66-a391-9ec73f6c37f3_1280x1502.gif)"
+    },
+    {
+      "line": 51,
+      "kind": "asset",
+      "text": "![How Amazon S3 Works?](https://substack-post-media.s3.amazonaws.com/public/images/3efae3ad-8c45-4fb2-a79f-6b3387b0751e_1280x1601.gif)"
+    }
+  ],
+  "candidates": []
+}

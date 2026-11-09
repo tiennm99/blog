@@ -1,0 +1,125 @@
+{
+  "post": "content/post/2026/07/06/index.md",
+  "newsletter": 118,
+  "newsletter_post": true,
+  "note": "*Bài viết đã được viết lại bởi Claude Code với Opus 5.5 vào ngày 27/09/2026.*",
+  "lines": [
+    {
+      "line": 1,
+      "kind": "frontmatter",
+      "text": "---"
+    },
+    {
+      "line": 2,
+      "kind": "frontmatter",
+      "text": "title: \"Newsletter #118\""
+    },
+    {
+      "line": 3,
+      "kind": "frontmatter",
+      "text": "date: 2026-07-06"
+    },
+    {
+      "line": 4,
+      "kind": "frontmatter",
+      "text": "tags: [\"AI-Assisted\", \"Newsletter\", \"AI Agents\", \"Software Engineering\", \"Testing\", \"Performance\", \"Go\"]"
+    },
+    {
+      "line": 5,
+      "kind": "frontmatter",
+      "text": "categories: [\"Newsletter\"]"
+    },
+    {
+      "line": 6,
+      "kind": "frontmatter",
+      "text": "---"
+    },
+    {
+      "line": 8,
+      "kind": "italic-note",
+      "text": "*Mời bạn thưởng thức Newsletter #118.*"
+    },
+    {
+      "line": 10,
+      "kind": "heading",
+      "text": "## [Telling the story right: efficient logging in Go](https://robinsiep.com/blog/posts/go-logs/)"
+    },
+    {
+      "line": 16,
+      "kind": "heading",
+      "text": "## [On CPU Physics and CPU Cycles](https://6it.dev/blog/on-cpu-physics-and-cpu-cycles-80730)"
+    },
+    {
+      "line": 22,
+      "kind": "heading",
+      "text": "## [The Log Is the Agent](https://x.com/ishaansehgal/status/2065129901427130678)"
+    },
+    {
+      "line": 28,
+      "kind": "heading",
+      "text": "## [Software Is Not A Single-Player Game](https://www.davidpoll.com/2026/06/software-is-not-a-single-player-game/)"
+    },
+    {
+      "line": 34,
+      "kind": "heading",
+      "text": "## [Cleaning up after AI rockstar developers](https://www.codingwithjesse.com/blog/rockstar-developers/)"
+    },
+    {
+      "line": 40,
+      "kind": "heading",
+      "text": "## [A new era for software testing](https://antirez.com/news/168)"
+    },
+    {
+      "line": 46,
+      "kind": "heading",
+      "text": "## [Nobody Pushed Back: Why Engineers Stay Silent Until It's Too Late](https://howtocenterdiv.com/beyond-the-div/nobody-pushed-back)"
+    },
+    {
+      "line": 51,
+      "kind": "heading",
+      "text": "## [Loop Engineering](https://addyo.substack.com/p/loop-engineering)"
+    },
+    {
+      "line": 57,
+      "kind": "heading",
+      "text": "### Bonus"
+    },
+    {
+      "line": 59,
+      "kind": "asset",
+      "text": "**Images:**"
+    },
+    {
+      "line": 60,
+      "kind": "asset",
+      "text": "![Latency vs Throughput vs Bandwidth](https://substackcdn.com/image/fetch/$s_!Y582!,w_1100,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F1b5057ba-3667-446b-9760-b726da1431f4_2484x3002.png)"
+    },
+    {
+      "line": 61,
+      "kind": "asset",
+      "text": "![7 Permission Modes Every Claude Code User Should Know](https://substackcdn.com/image/fetch/$s_!bdjh!,w_1100,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fc9c8ec17-676c-441a-9c97-d08f8eec804f_2484x3002.png)"
+    },
+    {
+      "line": 63,
+      "kind": "asset",
+      "text": "**Videos:**"
+    },
+    {
+      "line": 64,
+      "kind": "asset",
+      "text": "[CPU, GPU và TPU khác nhau thế nào?](https://www.youtube.com/watch?v=MUWAbpg1xLo)"
+    }
+  ],
+  "candidates": [
+    {
+      "line": 36,
+      "kind": "first-person",
+      "text": "Jesse Skinner dùng hình ảnh \"rockstar developer\" để nói về một rủi ro quen thuộc: một người rất giỏi, rất nhanh, mê công nghệ mới, có thể một mình viết lại phần lõi hệ thống, nhưng để lại mã nguồn mà cả đội khó hiểu và khó bảo trì. Khi người đó rời đi, những người ở lại phải trả giá thật: mất nhiều thời gian chỉ để chạy được dự án, lần theo luồng dữ liệu rối rắm, học thêm ngôn ngữ hay thư viện lạ, và thuyết phục tổ chức rằng hệ thống cần được cứu thay vì tiếp tục tin vào hào quang cũ."
+    },
+    {
+      "line": 48,
+      "kind": "first-person",
+      "text": "Bài viết lập luận rằng nhiều thảm họa kiến trúc xảy ra không phải vì kỹ sư không biết vấn đề, mà vì họ biết nhưng không thấy an toàn để lên tiếng. Trong phòng họp, một quyết định kỹ thuật có thể được thông qua dưới nhãn \"alignment\" dù nhiều người không thật sự đồng tình; vài tháng sau hệ thống sụp đổ, ai cũng nói mình đã thấy trước. Đây là một mẫu lặp lại: rủi ro kỹ thuật đã rõ, những người gần hệ thống nhất nhìn thấy nó, nhưng cái giá xã hội và nghề nghiệp của việc phản biện cao hơn cái giá của im lặng."
+    }
+  ]
+}

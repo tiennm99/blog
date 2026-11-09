@@ -1,0 +1,165 @@
+{
+  "post": "content/post/2025/12/15/index.md",
+  "newsletter": 72,
+  "newsletter_post": true,
+  "note": "*Bài viết đã được viết lại bởi Claude Code với Opus 5.5 vào ngày 27/09/2026.*",
+  "lines": [
+    {
+      "line": 1,
+      "kind": "frontmatter",
+      "text": "---"
+    },
+    {
+      "line": 2,
+      "kind": "frontmatter",
+      "text": "title: \"Newsletter #72\""
+    },
+    {
+      "line": 3,
+      "kind": "frontmatter",
+      "text": "date: 2025-12-15"
+    },
+    {
+      "line": 4,
+      "kind": "frontmatter",
+      "text": "tags: [\"AI-Assisted\", \"Newsletter\", \"Compilers\", \"System Design\", \"Replication\", \"DDD\", \"Software Architecture\"]"
+    },
+    {
+      "line": 5,
+      "kind": "frontmatter",
+      "text": "categories: [\"Newsletter\"]"
+    },
+    {
+      "line": 6,
+      "kind": "frontmatter",
+      "text": "---"
+    },
+    {
+      "line": 8,
+      "kind": "italic-note",
+      "text": "*Mời bạn thưởng thức Newsletter #72.*"
+    },
+    {
+      "line": 10,
+      "kind": "heading",
+      "text": "## [The Easiest Way to Build a Type Checker](https://jimmyhmiller.com/easiest-way-to-build-type-checker)"
+    },
+    {
+      "line": 16,
+      "kind": "heading",
+      "text": "## [Deprecation](https://abseil.io/resources/swe-book/html/ch15.html)"
+    },
+    {
+      "line": 22,
+      "kind": "heading",
+      "text": "## [16 Replication Concepts Every Software Engineer Should Know (Simple Guide for 2026)](https://designgurus.substack.com/p/16-replication-concepts-every-software)"
+    },
+    {
+      "line": 28,
+      "kind": "heading",
+      "text": "## [50 System Design Concepts for Beginners in 90 Minutes [2026 Edition]](https://designgurus.substack.com/p/50-system-design-concepts-for-beginners)"
+    },
+    {
+      "line": 34,
+      "kind": "heading",
+      "text": "## [DDD: A Toolbox, Not a Religion](https://threedots.tech/episode/ddd-toolbox-not-religion)"
+    },
+    {
+      "line": 40,
+      "kind": "heading",
+      "text": "### Bonus"
+    },
+    {
+      "line": 42,
+      "kind": "asset",
+      "text": "**Images:**"
+    },
+    {
+      "line": 43,
+      "kind": "asset",
+      "text": "![Saga Pattern Demystified: Orchestration vs Choreography](https://substackcdn.com/image/fetch/$s_!lwoL!,w_1100,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fb1ec5785-ad8a-4350-b07d-005f7b04b1f1_2250x2624.png)"
+    },
+    {
+      "line": 44,
+      "kind": "asset",
+      "text": "![Virtualization vs. Containerization](https://substackcdn.com/image/fetch/$s_!SfCa!,w_1100,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F55ac4874-04fc-4ea7-a083-bde8f6f99cf5_2360x2960.png)"
+    },
+    {
+      "line": 45,
+      "kind": "asset",
+      "text": "![5 REST API Authentication Methods](https://substackcdn.com/image/fetch/$s_!zlUS!,w_1100,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F156acc80-7588-4fc1-8f43-7fa1458d646c_2360x2770.png)"
+    },
+    {
+      "line": 46,
+      "kind": "asset",
+      "text": "![What is a Firewall?](https://substackcdn.com/image/fetch/$s_!CYiE!,w_1100,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F5eb76d35-fba8-48de-84d1-228060740d89_2360x2960.png)"
+    },
+    {
+      "line": 47,
+      "kind": "asset",
+      "text": "![Modem vs. Router](https://substackcdn.com/image/fetch/$s_!fKIx!,w_1100,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F7278af0a-b8cb-4b72-bd48-341e92286b1b_2360x2960.png)"
+    },
+    {
+      "line": 48,
+      "kind": "asset",
+      "text": "![A Guide to Service Mesh Architectural Pattern](https://substackcdn.com/image/fetch/$s_!zdVq!,w_1100,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F60a16dc3-e973-4d2d-a0c2-7d426d5fe6c9_2250x2624.png)"
+    },
+    {
+      "line": 49,
+      "kind": "asset",
+      "text": "![What is a REST API?](https://substackcdn.com/image/fetch/$s_!Q7Mr!,w_1100,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F73400113-5bd5-4c40-a7e3-7346fb229256_3000x3900.jpeg)"
+    },
+    {
+      "line": 50,
+      "kind": "asset",
+      "text": "![How Java HashMaps Work?](https://substackcdn.com/image/fetch/$s_!Phtx!,w_1100,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fa7dce573-ac95-46cc-a80d-62f80e6f0602_800x989.jpeg)"
+    },
+    {
+      "line": 51,
+      "kind": "asset",
+      "text": "![Virtualization Explained: From Bare Metal to Hosted Hypervisors](https://substackcdn.com/image/fetch/$s_!1-F-!,w_1100,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F473c684e-3c14-44c1-9889-97fef9caef15_2360x2960.png)"
+    },
+    {
+      "line": 52,
+      "kind": "asset",
+      "text": "![Must-Know System Performance Strategies](https://substackcdn.com/image/fetch/$s_!yDvA!,w_1100,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fa3c9b76d-b1b9-4284-a64e-16faa832544e_2250x2624.png)"
+    },
+    {
+      "line": 53,
+      "kind": "asset",
+      "text": "![Apache Kafka vs. RabbitMQ](https://substackcdn.com/image/fetch/$s_!_5Is!,w_1100,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F6ebf5287-65fa-4db7-8490-54792fd1886c_2360x2920.png)"
+    },
+    {
+      "line": 54,
+      "kind": "asset",
+      "text": "![The HTTP Mindmap](https://substackcdn.com/image/fetch/$s_!1Hk2!,w_1100,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fced11d9e-ce25-439e-9a56-4ccf37c1854f_2360x2770.png)"
+    },
+    {
+      "line": 55,
+      "kind": "asset",
+      "text": "![How DNS Works](https://substackcdn.com/image/fetch/$s_!hn6T!,w_1100,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fa0f70b08-6fa9-4413-9bd4-0571f99dba60_2360x2664.png)"
+    },
+    {
+      "line": 56,
+      "kind": "asset",
+      "text": "![Can a web server provide real-time updates?](https://substackcdn.com/image/fetch/$s_!Sny4!,w_1100,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F7911abd9-06ce-48f4-98c5-c3305b752fb7_800x1142.jpeg)"
+    },
+    {
+      "line": 58,
+      "kind": "asset",
+      "text": "**Videos:**"
+    },
+    {
+      "line": 59,
+      "kind": "asset",
+      "text": "[How Does a URL Shortener Work?](https://www.youtube.com/watch?v=HHUi8F_qAXM)"
+    }
+  ],
+  "candidates": [
+    {
+      "line": 20,
+      "kind": "first-person",
+      "text": "Nhóm tác giả chỉ ra vì sao việc này khó: định luật Hyrum khiến người dùng phụ thuộc vào những hành vi không được cam kết, hệ thống mới hiếm khi tương đương hoàn toàn hệ thống cũ, kỹ sư gắn bó cảm xúc với mã nguồn mình viết, và việc xin nguồn lực cho công việc dọn dẹp thường khó thuyết phục. Google phân biệt loại bỏ mang tính khuyến nghị với loại bỏ bắt buộc có hạn chót, đồng thời nhấn mạnh vai trò của người chịu trách nhiệm rõ ràng, các mốc thời gian, việc hỗ trợ di chuyển và công cụ như phân tích tĩnh hay thay đổi quy mô lớn để chặn cách dùng mới. Bài học quan trọng cho lập trình viên là nên thiết kế hệ thống sao cho có thể thay thế từng phần ngay từ đầu, và ưu tiên cải tiến tại chỗ thay vì viết lại toàn bộ."
+    }
+  ]
+}

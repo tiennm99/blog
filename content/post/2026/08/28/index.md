@@ -9,8 +9,9 @@ categories: ["Newsletter"]
 
 ## [Some new agentic patterns](https://blog.fsck.com/2026/07/05/new-patterns/)
 
-Jesse Vincent, người tạo ra bộ SDK agent mã nguồn mở Lace, chia sẻ những mô hình (pattern) mới mà công ty Prime Radiant của anh đang dùng để đưa agent AI vào công việc hằng ngày. Các agent ở đây không chờ được hỏi mới trả lời mà chủ động làm việc ngay trong Slack: Scribble theo dõi các vấn đề phát sinh và tự cập nhật tài liệu nội bộ, Nora hỗ trợ mảng go-to-market và tự đề xuất cơ hội như các hội thảo nên đăng ký diễn thuyết, còn Sen là nhóm agent trợ lý cá nhân lo phân loại email, lên lịch và tra cứu thông tin.
-Mô hình đáng chú ý nhất được tác giả gọi là "agentic user in the loop": khi phát triển Sen 2.0, Claude Code làm việc trực tiếp với một agent khác tên Ada-sen mà không cần con người đứng giữa chuyển lời. Claude đề xuất thay đổi, Ada đọc đặc tả, nêu câu hỏi, kiểm thử thực tế rồi phản hồi, và hai bên cứ thế lặp lại, có khi xây xong cả tính năng qua đêm. Về bảo mật, tác giả dựa vào nguyên tắc chia tách quyền hạn: agent chính không được tự liên lạc ra ngoài, thông tin đăng nhập nằm trong 1Password và chỉ được chèn vào request qua một proxy trung gian, mọi subagent muốn dùng chúng đều phải xin phép một agent trọng tài, nhờ đó bí mật không bao giờ lọt vào transcript. Dù vậy, anh thừa nhận rủi ro "Lethal Trifecta" do Simon Willison đặt tên vẫn còn nguyên: một agent vừa đọc được dữ liệu riêng tư, vừa liên lạc được ra ngoài, vừa tiếp xúc nội dung không đáng tin thì luôn cần biện pháp giảm thiểu.
+Jesse Vincent chia sẻ cách Prime Radiant đưa các tác nhân AI vào Slack: Scribble cập nhật tài liệu, Nora hỗ trợ tiếp cận thị trường, còn Sen làm trợ lý cá nhân. Khi xây dựng Sen mới trên Lace, anh cho Claude Code trao đổi trực tiếp với Ada-sen để đề xuất, triển khai và kiểm thử thay đổi. Đây là kinh nghiệm của nhóm, không phải bảo đảm rằng tác nhân có thể thay người duyệt mọi công việc.
+
+Thiết kế bảo mật chia tách quyền hạn: tác nhân chính nhờ tác nhân phụ liên lạc ra ngoài, còn một tác nhân trọng tài xét quyền dùng thông tin đăng nhập. Proxy thay chuỗi tạm bằng bí mật thật trong yêu cầu HTTPS. Tuy nhiên, tác giả thừa nhận vẫn còn khoảng trống, nhất là khi đăng nhập qua trình duyệt. Cơ chế này nhằm giảm nguy cơ lộ bí mật, không bảo đảm bí mật không bao giờ xuất hiện trong bản ghi hay loại bỏ hoàn toàn nguy cơ bị nội dung độc hại điều khiển.
 
 ## [Why I Stopped Arguing With People](https://wangcong.org/2026-06-30-why-i-stopped-arguing-with-people.html)
 
@@ -32,14 +33,15 @@ Anh khuyên nên kiên nhẫn, vì chờ thêm để hiểu rõ vấn đề thì
 
 ## [Let AI Burn](https://www.wheresyoured.at/let-ai-burn/)
 
-Ed Zitron lập luận rằng ngành AI là một bong bóng dựng trên sự thổi phồng và dòng tiền chạy vòng, nên nếu nó vỡ thì chính phủ không nên giải cứu. Theo tác giả, tình huống này khác hẳn khủng hoảng 2008: ngân hàng khi đó là hạ tầng sống còn của nền kinh tế, còn các công ty AI thì không, và ngoài SoftBank với hơn 40 tỷ USD cho OpenAI vay thì cũng không có rủi ro sụp đổ dây chuyền tương tự. Riêng năm 2026, OpenAI và Anthropic đã huy động hơn 300 tỷ USD nhưng vẫn lỗ nặng; hai công ty này chiếm tới 89% doanh thu của nhóm startup AI lớn nhất, còn phần còn lại của ngành chỉ tạo ra khoảng 20 tỷ USD mỗi năm.
-Tác giả bác bỏ phép so sánh quen thuộc với bong bóng dot-com: cáp quang thời đó xây thừa vẫn dùng được nhiều năm, còn GPU hẹp mục đích và nhanh mất giá. Các hyperscaler dự kiến chi 765 tỷ USD vốn đầu tư trong 2026 và hơn 1.000 tỷ USD trong 2027, riêng OpenAI tiêu khoảng 50 tỷ USD cho hạ tầng tính toán trong năm nay. Zitron cũng bác đề xuất của Sam Altman trao cho chính phủ Mỹ 5% cổ phần trị giá 42 tỷ USD, vì con số ấy còn chưa bằng chi phí tính toán một năm và không giải quyết được việc thua lỗ. Kết luận của ông: hãy để thị trường tự đào thải, vì một gói cứu trợ sẽ phải bơm tiền mãi mà không có điểm dừng.
+Trong bài bình luận tháng 7/2026, Ed Zitron phản đối việc dùng tiền công cứu trợ ngành AI nếu bong bóng đầu tư vỡ. Ông cho rằng doanh thu chưa chứng minh được mức chi hạ tầng và định giá, đồng thời lo ngại dòng tiền luân chuyển giữa nhà đầu tư, công ty mô hình và nhà cung cấp tính toán. Các con số huy động vốn, doanh thu và chi tiêu được ông tổng hợp hoặc ước tính tại thời điểm viết, không phải số liệu đã kiểm toán trong bản tin này.
+
+Zitron cũng phản bác phép so sánh với bong bóng dot-com: theo ông, GPU nhanh mất giá và khó để lại lợi ích lâu dài tương tự cáp quang xây thừa. Kết luận không cứu trợ là lập trường của tác giả; nhận định rằng ngành AI thiếu vai trò thiết yếu và rủi ro dây chuyền thấp là luận điểm cần tranh luận, không phải kết quả dự báo chắc chắn.
 
 ## [When AI Costs More Than the Engineer](https://tomtunguz.com/ai-spend-breakeven-2029/)
 
-Tomasz Tunguz chỉ ra một sự đảo ngược trong bài toán chi phí của ngành phần mềm: ở các công ty AI hàng đầu, tiền chi cho năng lực tính toán đã vượt tiền lương. Anthropic tiêu khoảng 2 triệu USD tính toán cho mỗi nhân sự mỗi năm, gấp 2,3 lần chi phí nhân sự tính đủ (khoảng 500 nghìn USD mỗi người). Đổi lại, doanh thu trên mỗi nhân sự của Anthropic đạt 14 triệu USD và OpenAI đạt 6,5 triệu USD, cao nhất toàn cầu và vượt xa mức 250-600 nghìn USD thường thấy ở các công ty SaaS.
+Tomasz Tunguz dùng các ước tính tháng 6/2026 để so sánh tiền tính toán AI với chi phí nhân sự. Ông cho rằng tại một số công ty AI, hạ tầng đã chiếm phần lớn chi phí, trong khi mức sử dụng ở các doanh nghiệp phần mềm rất chênh lệch. Bài viết đặt cạnh nhau số liệu trên mỗi nhân viên, mỗi kỹ sư và tỷ lệ trên tổng quỹ lương; không nên coi chúng là cùng một thước đo hay suy ra trực tiếp tỷ lệ từ các con số ước tính ấy.
 
-Phần còn lại của thị trường vẫn ở rất xa. Nhóm 1% công ty phần mềm dẫn đầu chi khoảng 89 nghìn USD cho AI mỗi kỹ sư mỗi năm, tương đương 40% mức lương 224 nghìn USD, trong khi công ty ở mức trung vị chỉ chi 137 USD. Tác giả dựng ba kịch bản cho năm 2029: kịch bản thấp là 106 nghìn USD mỗi kỹ sư (41% lương), kịch bản cơ sở 363 nghìn USD (140%) và kịch bản cao 596 nghìn USD (230%), tức ngang tỷ lệ của Anthropic hiện nay. Kết quả phụ thuộc vào hai lực kéo ngược chiều. Một bên là giá token đã giảm khoảng 10 lần mỗi năm suốt ba năm qua, các mô hình open-weight thu hẹp khoảng cách chất lượng với chi phí thấp hơn, và doanh nghiệp có thể giới hạn mức dùng theo vai trò. Bên kia là giá mô hình tiên tiến giữ nguyên, còn các quy trình agentic đốt token nhiều hơn hẳn, đến mức Goldman Sachs dự báo lượng token tiêu thụ tăng 24 lần vào năm 2030.
+Tác giả dựng ba kịch bản chi AI năm 2029, từ khoảng 106 nghìn đến 596 nghìn USD mỗi kỹ sư mỗi năm. Đây là mô hình giả định về giá và mức sử dụng, không phải dự báo đã được xác nhận. Giá trên mỗi đơn vị năng lực có thể giảm, nhưng tác nhân làm nhiều bước cũng có thể tiêu thụ nhiều hơn. Doanh nghiệp cần đo chi phí trên kết quả công việc thực tế thay vì chỉ nhìn giá token hoặc sao chép ngân sách của các phòng thí nghiệm AI.
 
 ## [The best code is the one you shift+delete](https://ayende.com/blog/204067-a/the-best-code-is-the-one-you-shift-delete/)
 
@@ -55,4 +57,4 @@ Trường hợp thứ hai ngược lại: refactor cách thực thi truy vấn t
 
 ---
 
-*Bài viết đã được viết lại bởi Claude Code với Opus 5.5 vào ngày 27/09/2026.*
+*Bài viết đã được viết lại bởi Claude Code với Opus 5.5 vào ngày 27/09/2026; được review và chỉnh sửa bởi Codex với GPT 6.1 Sol vào ngày 09/11/2026.*

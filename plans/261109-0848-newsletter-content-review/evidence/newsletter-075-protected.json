@@ -1,0 +1,94 @@
+{
+  "post": "content/post/2025/12/28/index.md",
+  "newsletter": 75,
+  "newsletter_post": true,
+  "note": "*Bài viết đã được viết lại bởi Claude Code với Opus 5.5 vào ngày 27/09/2026.*",
+  "lines": [
+    {
+      "line": 1,
+      "kind": "frontmatter",
+      "text": "---"
+    },
+    {
+      "line": 2,
+      "kind": "frontmatter",
+      "text": "title: \"Newsletter #75\""
+    },
+    {
+      "line": 3,
+      "kind": "frontmatter",
+      "text": "date: 2025-12-28"
+    },
+    {
+      "line": 4,
+      "kind": "frontmatter",
+      "text": "tags: [\"AI-Assisted\", \"Newsletter\", \"System Design\", \"Microservices\", \"Linux\", \"Load Balancing\", \"High Availability\"]"
+    },
+    {
+      "line": 5,
+      "kind": "frontmatter",
+      "text": "categories: [\"Newsletter\"]"
+    },
+    {
+      "line": 6,
+      "kind": "frontmatter",
+      "text": "---"
+    },
+    {
+      "line": 8,
+      "kind": "italic-note",
+      "text": "*Mời bạn thưởng thức Newsletter #75.*"
+    },
+    {
+      "line": 10,
+      "kind": "heading",
+      "text": "## [Front-End vs. Back-End vs. System Design – What's the Difference in Interviews?](https://designgurus.substack.com/p/front-end-vs-back-end-vs-system-design)"
+    },
+    {
+      "line": 16,
+      "kind": "heading",
+      "text": "## [Why Starting with Microservices Can Be Your Biggest Architectural Mistake](https://designgurus.substack.com/p/why-starting-with-microservices-can)"
+    },
+    {
+      "line": 22,
+      "kind": "heading",
+      "text": "## [The Linux kernel is just a program](https://serversfor.dev/linux-inside-out/the-linux-kernel-is-just-a-program/)"
+    },
+    {
+      "line": 28,
+      "kind": "heading",
+      "text": "## [Why Your Load Balancer is the Bottleneck (and How to Fix It)](https://designgurus.substack.com/p/dont-let-your-load-balancer-crash)"
+    },
+    {
+      "line": 34,
+      "kind": "heading",
+      "text": "## [The High Availability Blueprint: Designing Systems That Never Sleep](https://designgurus.substack.com/p/the-high-availability-blueprint-designing)"
+    },
+    {
+      "line": 40,
+      "kind": "heading",
+      "text": "## Bonus"
+    },
+    {
+      "line": 42,
+      "kind": "heading",
+      "text": "### Images"
+    },
+    {
+      "line": 44,
+      "kind": "asset",
+      "text": "![Common Network Protocols Every Engineer Should Know](https://substackcdn.com/image/fetch/$s_!ETm5!,w_1100,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F2112a03d-cc48-4db5-9740-94adc1a7efbf_2360x2920.png)"
+    },
+    {
+      "line": 45,
+      "kind": "asset",
+      "text": "![8 Popular Network Protocols](https://substackcdn.com/image/fetch/$s_!5bFA!,w_1100,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F722913d5-a10f-44c2-98ed-edc27a92a137_1444x1882.jpeg)"
+    },
+    {
+      "line": 46,
+      "kind": "asset",
+      "text": "![9 best practices for developing microservices](https://substackcdn.com/image/fetch/$s_!pen8!,w_1100,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F22fdf2d2-5ce5-4c2b-90f9-3bcfcecb5fc1_1370x1536.jpeg)"
+    }
+  ],
+  "candidates": []
+}

@@ -1,0 +1,104 @@
+{
+  "post": "content/post/2026/05/04/index.md",
+  "newsletter": 101,
+  "newsletter_post": true,
+  "note": "*Bài viết đã được viết lại bởi Claude Code với Opus 5.5 vào ngày 27/09/2026.*",
+  "lines": [
+    {
+      "line": 1,
+      "kind": "frontmatter",
+      "text": "---"
+    },
+    {
+      "line": 2,
+      "kind": "frontmatter",
+      "text": "title: \"Newsletter #101\""
+    },
+    {
+      "line": 3,
+      "kind": "frontmatter",
+      "text": "date: 2026-05-04"
+    },
+    {
+      "line": 4,
+      "kind": "frontmatter",
+      "text": "tags: [\"AI-Assisted\", \"Newsletter\", \"LLM\", \"AI Agent\", \"Git\", \"Algorithms\", \"Developer Productivity\"]"
+    },
+    {
+      "line": 5,
+      "kind": "frontmatter",
+      "text": "categories: [\"Newsletter\"]"
+    },
+    {
+      "line": 6,
+      "kind": "frontmatter",
+      "text": "---"
+    },
+    {
+      "line": 8,
+      "kind": "italic-note",
+      "text": "*Mời bạn thưởng thức Newsletter #101.*"
+    },
+    {
+      "line": 10,
+      "kind": "heading",
+      "text": "## [AI-Assisted Engineering: Q1 2026 Impact Report](https://newsletter.getdx.com/p/ai-assisted-engineering-q1-2026-impact)"
+    },
+    {
+      "line": 16,
+      "kind": "heading",
+      "text": "## [My AI Workflow (Without Losing My Skills)](https://marcgg.com/blog/2026/04/15/my-current-ai-workflow/)"
+    },
+    {
+      "line": 22,
+      "kind": "heading",
+      "text": "## [Managing Context in Long-Run Agentic Applications](https://slack.engineering/managing-context-in-long-run-agentic-applications/)"
+    },
+    {
+      "line": 28,
+      "kind": "heading",
+      "text": "## [How The Heck Does Shazam Work?](https://perthirtysix.com/how-the-heck-does-shazam-work)"
+    },
+    {
+      "line": 34,
+      "kind": "heading",
+      "text": "## [Agents with Taste](https://emilkowal.ski/ui/agents-with-taste)"
+    },
+    {
+      "line": 40,
+      "kind": "heading",
+      "text": "## [Floating Point from Scratch: Hard Mode](https://essenceia.github.io/projects/floating_dragon/)"
+    },
+    {
+      "line": 46,
+      "kind": "heading",
+      "text": "## [The Peril of Laziness Lost](https://bcantrill.dtrace.org/2026/04/12/the-peril-of-laziness-lost/)"
+    },
+    {
+      "line": 52,
+      "kind": "heading",
+      "text": "## [Cleaning Up Merged Git Branches: A One-Liner from the CIA's Leaked Dev Docs](https://spencer.wtf/2026/02/20/cleaning-up-merged-git-branches-a-one-liner-from-the-cias-leaked-dev-docs.html)"
+    },
+    {
+      "line": 56,
+      "kind": "code",
+      "text": "```bash"
+    },
+    {
+      "line": 57,
+      "kind": "code",
+      "text": "git branch --merged origin/main | grep -vE \"^\\s*(\\*|main|develop)\" | xargs -n 1 git branch -d"
+    },
+    {
+      "line": 58,
+      "kind": "code",
+      "text": "```"
+    },
+    {
+      "line": 62,
+      "kind": "heading",
+      "text": "## [Agent Harness Engineering](https://addyosmani.com/blog/agent-harness-engineering/)"
+    }
+  ],
+  "candidates": []
+}

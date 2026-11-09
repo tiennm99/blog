@@ -1,0 +1,125 @@
+{
+  "post": "content/post/2025/12/08/index.md",
+  "newsletter": 65,
+  "newsletter_post": true,
+  "note": "*Bài viết đã được viết lại bởi Claude Code với Opus 5.5 vào ngày 27/09/2026.*",
+  "lines": [
+    {
+      "line": 1,
+      "kind": "frontmatter",
+      "text": "---"
+    },
+    {
+      "line": 2,
+      "kind": "frontmatter",
+      "text": "title: \"Newsletter #65\""
+    },
+    {
+      "line": 3,
+      "kind": "frontmatter",
+      "text": "date: 2025-12-08"
+    },
+    {
+      "line": 4,
+      "kind": "frontmatter",
+      "text": "tags: [\"AI-Assisted\", \"Engineering Leadership\", \"Incidents\", \"Linux\", \"Build Systems\", \"Claude Code\", \"AI Coding\"]"
+    },
+    {
+      "line": 5,
+      "kind": "frontmatter",
+      "text": "categories: [\"Newsletter\"]"
+    },
+    {
+      "line": 6,
+      "kind": "frontmatter",
+      "text": "---"
+    },
+    {
+      "line": 8,
+      "kind": "italic-note",
+      "text": "*~~Dạo gần đây mấy model free trên OpenRouter đang không ổn định lắm, lúc dùng được lúc thì không. Sẵn còn vài $ credit trên đấy nên nay tranh thủ bào nốt rồi chuyển qua iFlow dùng hẳn (cho đến khi iFlow hết free :v).~~ Mời bạn thưởng thức Newsletter #65. ~~Bài viết này được thực hiện bởi [Claude Code](https://github.com/anthropics/claude-code), [Claude Code Router](https://github.com/musistudio/claude-code-router), [OpenRouter](https://openrouter.ai) & [Anthropic: Claude Sonnet 4.5](https://openrouter.ai/anthropic/claude-sonnet-4.5) (model 'xịn' nhe hehe)~~*"
+    },
+    {
+      "line": 10,
+      "kind": "heading",
+      "text": "## [Scaling Engineering Teams: Lessons from Google, Facebook, and Netflix](https://greenido.dev/2025/09/25/scaling-engineering-teams-lessons-from-google-facebook-and-netflix/)"
+    },
+    {
+      "line": 16,
+      "kind": "heading",
+      "text": "## [The Trap of Excessive AI Use](https://dpereira.substack.com/p/the-trap-of-excessive-ai-use)"
+    },
+    {
+      "line": 22,
+      "kind": "heading",
+      "text": "## [How Google, Amazon, and CrowdStrike Broke Millions of Systems](https://newsletter.techworld-with-milan.com/p/how-google-amazon-and-crowdstrike)"
+    },
+    {
+      "line": 28,
+      "kind": "heading",
+      "text": "## [The Linux Boot Process: From Power Button to Kernel](https://www.0xkato.xyz/linux-boot/)"
+    },
+    {
+      "line": 34,
+      "kind": "heading",
+      "text": "## [Build System Tradeoffs](https://jyn.dev/build-system-tradeoffs)"
+    },
+    {
+      "line": 40,
+      "kind": "heading",
+      "text": "## [How I Use Every Claude Code Feature](https://blog.sshh.io/p/how-i-use-every-claude-code-feature)"
+    },
+    {
+      "line": 46,
+      "kind": "heading",
+      "text": "## [If you don't tinker, you don't have taste](https://seated.ro/blog/tinkering-a-lost-art)"
+    },
+    {
+      "line": 52,
+      "kind": "heading",
+      "text": "## Bonus: Vài ảnh hay ho đến từ [ByteByteGo](https://bytebytego.com/)"
+    },
+    {
+      "line": 54,
+      "kind": "asset",
+      "text": "![10 Key Data Structures We Use Every Day](https://substackcdn.com/image/fetch/$s_!Fxka!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F60f07f90-6f22-4b1f-ab2e-d98e8ccc755a_3000x3900.png)"
+    },
+    {
+      "line": 55,
+      "kind": "asset",
+      "text": "![IP Address Cheat Sheet Every Engineer Should Know](https://substackcdn.com/image/fetch/$s_!Nizo!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fffa24eaf-4fc7-4278-a0df-faddb41c765f_2048x2662.png)"
+    },
+    {
+      "line": 56,
+      "kind": "asset",
+      "text": "![Which Protocols Run on TCP and UDP](https://substackcdn.com/image/fetch/$s_!ZdF6!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fef416976-ae0f-48f5-86e1-0189c0b9be88_2360x2664.png)"
+    },
+    {
+      "line": 58,
+      "kind": "author-note",
+      "text": "**Đánh giá:** *Uầy, đang process url cuối thì hit limit mất rồi. Ban đầu còn 2$ (cỡ 52k) mà process được có 7 urls, tính ra là ~7.5k vnđ/bài. Khá là chát đó chứ :v Mà kết quả thì cũng chưa ưng ý lắm, vẫn còn lạm dụng tiếng Anh. Nhìn vào bài cuối là thấy rõ. Cũng có thể là vấn đề ở file AGENTS.md của mình, để mình optimize lại sau vậy. Dù gì thì mình cũng đã đạt được mục đích là tranh thủ bào để quay lại xài đồ free rồi :v Hẹn gặp lại các bạn trong các bài viết tiếp theo :D.*"
+    }
+  ],
+  "candidates": [
+    {
+      "line": 18,
+      "kind": "first-person",
+      "text": "David Pereira, tác giả cuốn \"Untrapping Product Teams\", cho rằng lạm dụng AI sẽ khiến chúng ta trở nên tầm thường chứ không giỏi hơn. Ông không phản đối AI mà phản đối tư duy \"tự động hóa mọi thứ\": nếu AI làm được thì mình không cần bận tâm. AI giúp ta nhanh hơn nhưng không khôn ngoan hơn. Ông chỉ ra những thói quen đáng lo: giao việc xếp ưu tiên cho AI, nhờ AI viết tài liệu yêu cầu sản phẩm thay vì tự nghĩ điều gì quan trọng, tóm tắt mọi thứ thay vì học chậm, và thay nghiên cứu thực tế bằng nhận định do AI tạo ra. Tư duy phản biện, thấu hiểu hành vi con người và thách thức giả định phải thuộc về chính mình; nghịch lý là càng nhiều người vội giao hết cho AI thì người không làm vậy càng có giá trị."
+    },
+    {
+      "line": 20,
+      "kind": "first-person",
+      "text": "Pereira kể những thói quen \"lỗi thời\" của mình như đọc mọi tin nhắn, tự viết email để có thời gian suy nghĩ, đọc trọn từng cuốn sách, ghi chép tay và làm từng việc một, và coi đó là lợi thế cạnh tranh. Dù vậy, AI vẫn hữu ích khi tăng tốc việc giá trị thấp (bản nháp biên bản họp, tổng hợp tính năng của đối thủ), khám phá phương án thay thế và phản biện giả định, viết lại thông điệp cho từng đối tượng, và gợi ý nhiều phương án thử nghiệm để học nhanh hơn. Nguyên tắc của ông là \"AI có thể viết nháp, nhưng tôi quyết định\": hãy giao việc chứ đừng giao quyền sở hữu, vì để AI quyết định là chuyển từ tận dụng công cụ sang buông bỏ trách nhiệm."
+    },
+    {
+      "line": 30,
+      "kind": "first-person",
+      "text": "Bài viết giải thích dễ hiểu quá trình Linux khởi động trên máy x86, từ lúc bấm nút nguồn đến khi kernel bắt đầu chạy. Khi có điện, CPU tự đặt lại về real mode, chế độ 16-bit có từ chip 8086, rồi nhảy đến reset vector tại `0xFFFFFFF0`, nơi firmware đặt sẵn lệnh nhảy vào mã của mình. BIOS kiểu cũ tìm ổ đĩa có sector 512 byte đầu tiên kết thúc bằng `0x55` `0xAA`, còn UEFI hiện đại đọc được hệ thống tệp và nạp chương trình khởi động lớn hơn. Bootloader như GRUB nạp kernel vào bộ nhớ, điền setup header rồi chuyển quyền cho chương trình setup. Chương trình này dựng môi trường dự đoán được: căn chỉnh thanh ghi segment, tạo stack, xóa vùng BSS và hỏi firmware bản đồ RAM qua lời gọi e820. Tiếp theo là hai bước chuyển chế độ: sang protected mode 32-bit (tắt ngắt, mở đường A20, nạp GDT và IDT tối thiểu, bật bit PE trong CR0), rồi sang long mode 64-bit (bật PAE trong CR4, dựng bảng trang ánh xạ đồng nhất, ghi địa chỉ bảng vào CR3, bật bit LME trong EFER)."
+    },
+    {
+      "line": 50,
+      "kind": "first-person",
+      "text": "Theo tác giả, dùng Git qua dòng lệnh thay vì GitHub Desktop hay biết phím tắt vim nên là mức tối thiểu chứ không phải điều hiếm có, nhưng cũng cần cân bằng: lần cuối tác giả chỉnh cấu hình neovim đã là sáu tháng trước. Chỉ trong một tuần, tác giả lần đầu viết fragment shader GLSL, macro thủ tục trong Rust, template C++, một ứng dụng Swift và dùng thêm trình soạn thảo Helix, dù không việc nào thật sự cần thiết. Thông điệp chính là \"gu\", khả năng phân biệt sự tầm thường với sự xuất sắc, chỉ hình thành khi bạn thử nhiều thứ, giữ cái mình thích và bỏ cái không hợp; vì thế hãy đặt câu hỏi với lối mòn, thử nghiệm và làm hỏng mọi thứ, mỗi ngày."
+    }
+  ]
+}

@@ -1,0 +1,110 @@
+{
+  "post": "content/post/2025/05/06/index.md",
+  "newsletter": 19,
+  "newsletter_post": true,
+  "note": "*Bài viết đã được viết lại bởi Claude Code với Opus 5.5 vào ngày 27/09/2026.*",
+  "lines": [
+    {
+      "line": 1,
+      "kind": "frontmatter",
+      "text": "---"
+    },
+    {
+      "line": 2,
+      "kind": "frontmatter",
+      "text": "title: \"Newsletter #19\""
+    },
+    {
+      "line": 3,
+      "kind": "frontmatter",
+      "text": "date: 2025-05-06"
+    },
+    {
+      "line": 4,
+      "kind": "frontmatter",
+      "text": "tags: [ \"AI-Assisted\", \"Java\", \"Kubernetes\", \"CI/CD\", \"Kafka\", \"AI Coding\", \"Writing\" ]"
+    },
+    {
+      "line": 5,
+      "kind": "frontmatter",
+      "text": "categories: [ \"Newsletter\" ]"
+    },
+    {
+      "line": 6,
+      "kind": "frontmatter",
+      "text": "---"
+    },
+    {
+      "line": 8,
+      "kind": "italic-note",
+      "text": "*Mời bạn thưởng thức Newsletter #19.*"
+    },
+    {
+      "line": 10,
+      "kind": "heading",
+      "text": "## [A love letter to the CSV format](https://github.com/medialab/xan/blob/master/docs/LOVE_LETTER.md)"
+    },
+    {
+      "line": 16,
+      "kind": "heading",
+      "text": "## [The role of developer skills in agentic coding](https://martinfowler.com/articles/exploring-gen-ai/13-role-of-developer-skills.html)"
+    },
+    {
+      "line": 22,
+      "kind": "heading",
+      "text": "## [CI/CD DevOps Pipeline Project: Deployment of Java Application on Kubernetes](https://dev.to/prodevopsguytech/cicd-devops-pipeline-project-deployment-of-java-application-on-kubernetes-4fi2)"
+    },
+    {
+      "line": 28,
+      "kind": "heading",
+      "text": "## [Road to JDK 25: Over-Engineering Tic-Tac-Toe (Java 24)](https://briancorbinxyz.medium.com/road-to-jdk-25-over-engineering-tic-tac-toe-java-24-565c7f9b06d0)"
+    },
+    {
+      "line": 34,
+      "kind": "heading",
+      "text": "## [Oracle reveals five new features coming to Java](https://www.infoworld.com/article/3848288/oracle-reveals-five-new-features-coming-to-java.html)"
+    },
+    {
+      "line": 40,
+      "kind": "heading",
+      "text": "## [Java bytecode hacking for fun and profit](https://cory.li/bytecode-hacking/)"
+    },
+    {
+      "line": 46,
+      "kind": "heading",
+      "text": "## [How to Write Blog Posts that Developers Read](https://refactoringenglish.com/chapters/write-blog-posts-developers-read/)"
+    },
+    {
+      "line": 52,
+      "kind": "heading",
+      "text": "## [The New Look and Feel of Apache Kafka 4.0](https://thenewstack.io/the-new-look-and-feel-of-apache-kafka-4-0/)"
+    },
+    {
+      "line": 58,
+      "kind": "heading",
+      "text": "## [Five Things AI Will Not Change](https://metastable.org/five/)"
+    },
+    {
+      "line": 64,
+      "kind": "heading",
+      "text": "## Bonus: Vài ảnh hay ho đến từ [ByteByteGo](https://bytebytego.com/)"
+    },
+    {
+      "line": 66,
+      "kind": "asset",
+      "text": "![Object Oriented Programming Fundamentals](https://substack-post-media.s3.amazonaws.com/public/images/5321bec2-0079-47e2-92e9-1cd9950227c8_2250x2624.png)"
+    }
+  ],
+  "candidates": [
+    {
+      "line": 38,
+      "kind": "first-person",
+      "text": "Derived record creation giúp tạo một record mới từ record có sẵn một cách ngắn gọn, không cần tự viết các phương thức \"wither\" (phiên bản bất biến của setter). Cuối cùng, Stable Values — tính năng đã được xác nhận đưa vào JDK 25 phát hành tháng 9/2025 — là các đối tượng chứa dữ liệu bất biến mà JVM coi như hằng số, mang lại tối ưu hiệu năng tương tự trường `final` nhưng linh hoạt hơn về thời điểm khởi tạo, qua đó cải thiện thời gian khởi động ứng dụng. Nhìn chung, các đề xuất này cho thấy Java đang tiếp tục hiện đại hóa mô hình đối tượng và hiệu năng của mình."
+    },
+    {
+      "line": 50,
+      "kind": "first-person",
+      "text": "Hai nguyên tắc còn lại liên quan đến trình bày. Thêm hình ảnh là thay đổi hiệu quả nhất: ảnh chụp màn hình, biểu đồ, sơ đồ — thậm chí một bức vẽ MS Paint vụng về vẫn hấp dẫn hơn ảnh do AI tạo. Cuối cùng, hãy phục vụ người đọc lướt, vì nhiều người chỉ nhìn các tiêu đề và hình ảnh trước khi quyết định có đọc kỹ hay không; tác giả còn cung cấp một bookmarklet giúp xem bài viết của mình dưới góc nhìn đó. Mỗi nguyên tắc đều đi kèm ví dụ từ chính các bài viết của ông, và chúng cũng áp dụng tốt cho tài liệu kỹ thuật hay email trong công việc."
+    }
+  ]
+}

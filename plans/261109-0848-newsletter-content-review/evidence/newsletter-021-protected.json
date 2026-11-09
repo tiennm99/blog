@@ -1,0 +1,95 @@
+{
+  "post": "content/post/2025/05/08/index.md",
+  "newsletter": 21,
+  "newsletter_post": true,
+  "note": "*Bài viết đã được viết lại bởi Claude Code với Opus 5.5 vào ngày 27/09/2026.*",
+  "lines": [
+    {
+      "line": 1,
+      "kind": "frontmatter",
+      "text": "---"
+    },
+    {
+      "line": 2,
+      "kind": "frontmatter",
+      "text": "title: \"Newsletter #21\""
+    },
+    {
+      "line": 3,
+      "kind": "frontmatter",
+      "text": "date: 2025-05-08"
+    },
+    {
+      "line": 4,
+      "kind": "frontmatter",
+      "text": "tags: [ \"AI-Assisted\", \"Java\", \"JVM\", \"Garbage Collection\", \"Concurrency\", \"Spring Boot\", \"Payment Systems\" ]"
+    },
+    {
+      "line": 5,
+      "kind": "frontmatter",
+      "text": "categories: [ \"Newsletter\" ]"
+    },
+    {
+      "line": 6,
+      "kind": "frontmatter",
+      "text": "---"
+    },
+    {
+      "line": 8,
+      "kind": "italic-note",
+      "text": "*Mời bạn thưởng thức Newsletter #21.*"
+    },
+    {
+      "line": 10,
+      "kind": "heading",
+      "text": "## [How to Monitor JVM's Non-Heap Memory Usage](https://www.baeldung.com/java-jvm-monitor-non-heap-memory-usage)"
+    },
+    {
+      "line": 17,
+      "kind": "heading",
+      "text": "## [Unlocking the Power of Interfaces: Creative Approaches in Java](https://gainjavaknowledge.medium.com/unlocking-the-power-of-interfaces-creative-approaches-in-java-635f390a1e0d)"
+    },
+    {
+      "line": 23,
+      "kind": "heading",
+      "text": "## [How Java Manages Thread Synchronization with Locks and Monitors](https://medium.com/@AlexanderObregon/how-java-manages-thread-synchronization-with-locks-and-monitors-541ce7c7a0b2)"
+    },
+    {
+      "line": 29,
+      "kind": "heading",
+      "text": "## [Building a Custom Spring Boot Starter for Shared Logic](https://medium.com/@AlexanderObregon/building-a-custom-spring-boot-starter-for-shared-logic-9be5699aff18)"
+    },
+    {
+      "line": 35,
+      "kind": "heading",
+      "text": "## [Real-World Garbage Collection Solutions](https://dzone.com/articles/real-world-garbage-collection-solutions)"
+    },
+    {
+      "line": 41,
+      "kind": "heading",
+      "text": "## [Java Naming Conventions](https://www.baeldung.com/java-naming-conventions)"
+    },
+    {
+      "line": 47,
+      "kind": "heading",
+      "text": "## [Vibe Coding vs Reality](https://cendyne.dev/posts/2025-03-19-vibe-coding-vs-reality.html)"
+    },
+    {
+      "line": 53,
+      "kind": "heading",
+      "text": "## [Sell Yourself, Sell Your Work](https://www.solipsys.co.uk/new/SellYourselfSellYourWork.html)"
+    },
+    {
+      "line": 59,
+      "kind": "heading",
+      "text": "## [Building Resilient Payment Systems at SSENSE: Our Journey Towards Asynchronous Processing](https://medium.com/ssense-tech/building-resilient-payment-systems-at-ssense-our-journey-towards-asynchronous-processing-56d46dc2b348)"
+    }
+  ],
+  "candidates": [
+    {
+      "line": 55,
+      "kind": "first-person",
+      "text": "Bài viết ngắn trên blog solipsys.co.uk nhắc rằng làm ra sản phẩm kỹ thuật xuất sắc thôi là chưa đủ: nếu bạn giam mình trong phòng, làm việc tuyệt vời mà không kể cho ai, thì không ai biết, không ai hưởng lợi và công sức coi như mất. Tác giả từng gặp nhiều người rất giỏi nhưng ngại viết báo cáo vì cho rằng việc đó nhàm chán, khó và không liên quan. Thực tế, bạn cần viết và trình bày rõ ràng, súc tích — lỗi chính tả hay văn phong lộn xộn đủ làm mất một phần người đọc — để công việc của bạn giúp người khác tiết kiệm thời gian và mang lại uy tín cho chính bạn."
+    }
+  ]
+}

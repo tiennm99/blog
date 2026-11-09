@@ -1,0 +1,89 @@
+{
+  "post": "content/post/2025/07/23/index.md",
+  "newsletter": 34,
+  "newsletter_post": true,
+  "note": "*Bài viết đã được viết lại bởi Claude Code với Opus 5.5 vào ngày 27/09/2026.*",
+  "lines": [
+    {
+      "line": 1,
+      "kind": "frontmatter",
+      "text": "---"
+    },
+    {
+      "line": 2,
+      "kind": "frontmatter",
+      "text": "title: \"Newsletter #34\""
+    },
+    {
+      "line": 3,
+      "kind": "frontmatter",
+      "text": "date: 2025-07-23"
+    },
+    {
+      "line": 4,
+      "kind": "frontmatter",
+      "text": "tags: [ \"AI-Assisted\", \"TDD\", \"Java\", \"System Design\", \"Performance\", \"Career\", \"AI Coding\" ]"
+    },
+    {
+      "line": 5,
+      "kind": "frontmatter",
+      "text": "categories: [ \"Newsletter\" ]"
+    },
+    {
+      "line": 6,
+      "kind": "frontmatter",
+      "text": "---"
+    },
+    {
+      "line": 8,
+      "kind": "italic-note",
+      "text": "*Mời bạn thưởng thức Newsletter #34.*"
+    },
+    {
+      "line": 10,
+      "kind": "heading",
+      "text": "## [Why TDD Doesn't Lead to Dumb Code](https://tidyfirst.substack.com/p/why-tdd-doesnt-lead-to-dumb-code)"
+    },
+    {
+      "line": 16,
+      "kind": "heading",
+      "text": "## [How Discord Indexes Trillions of Messages](https://discord.com/blog/how-discord-indexes-trillions-of-messages)"
+    },
+    {
+      "line": 22,
+      "kind": "heading",
+      "text": "## [Data Oriented Programming (DOP) in Java](https://nejckorasa.github.io/posts/data-oriented-programming-in-java/)"
+    },
+    {
+      "line": 28,
+      "kind": "heading",
+      "text": "## [Why performance optimization is hard work](https://purplesyringa.moe/blog/why-performance-optimization-is-hard-work/)"
+    },
+    {
+      "line": 34,
+      "kind": "heading",
+      "text": "## [Good vs Great Animations](https://emilkowal.ski/ui/good-vs-great-animations)"
+    },
+    {
+      "line": 40,
+      "kind": "heading",
+      "text": "## [Senior engineers should make side bets](https://www.seangoedecke.com/side-bets/)"
+    },
+    {
+      "line": 46,
+      "kind": "heading",
+      "text": "## [Avoiding Skill Atrophy in the Age of AI](https://addyo.substack.com/p/avoiding-skill-atrophy-in-the-age)"
+    },
+    {
+      "line": 52,
+      "kind": "heading",
+      "text": "## [Cursor best practices](https://x.com/paraschopra/status/1917466537637859544)"
+    },
+    {
+      "line": 54,
+      "kind": "asset",
+      "text": "![Cursor best practices](https://pbs.twimg.com/media/Gpw1p1waYAAeAyY?format=jpg)"
+    }
+  ],
+  "candidates": []
+}

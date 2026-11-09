@@ -1,0 +1,140 @@
+{
+  "post": "content/post/2026/04/14/index.md",
+  "newsletter": 95,
+  "newsletter_post": true,
+  "note": "*Bài viết đã được viết lại bởi Claude Code với Opus 5.5 vào ngày 27/09/2026.*",
+  "lines": [
+    {
+      "line": 1,
+      "kind": "frontmatter",
+      "text": "---"
+    },
+    {
+      "line": 2,
+      "kind": "frontmatter",
+      "text": "title: \"Newsletter #95\""
+    },
+    {
+      "line": 3,
+      "kind": "frontmatter",
+      "text": "date: 2026-04-14"
+    },
+    {
+      "line": 4,
+      "kind": "frontmatter",
+      "text": "tags: [\"AI-Assisted\", \"Newsletter\", \"Claude Code\", \"System Design\", \"Performance\", \"AI\", \"Go\"]"
+    },
+    {
+      "line": 5,
+      "kind": "frontmatter",
+      "text": "categories: [\"Newsletter\"]"
+    },
+    {
+      "line": 6,
+      "kind": "frontmatter",
+      "text": "---"
+    },
+    {
+      "line": 8,
+      "kind": "italic-note",
+      "text": "*Mời bạn thưởng thức Newsletter #95.*"
+    },
+    {
+      "line": 10,
+      "kind": "heading",
+      "text": "## [12 Claude Code Features Every Engineer Should Know: Subagents, CLAUDE.md, Checkpoints, MCP, and more](https://www.youtube.com/watch?v=E4fzxVMOav4)"
+    },
+    {
+      "line": 16,
+      "kind": "heading",
+      "text": "## [Quantization from the ground up](https://ngrok.com/blog/quantization)"
+    },
+    {
+      "line": 22,
+      "kind": "heading",
+      "text": "## [JPEG compression](https://www.sophielwang.com/blog/jpeg)"
+    },
+    {
+      "line": 28,
+      "kind": "heading",
+      "text": "## [What 81,000 people want from AI](https://www.anthropic.com/features/81k-interviews)"
+    },
+    {
+      "line": 34,
+      "kind": "heading",
+      "text": "## ~~[Scaling a Monolith to 1M LOC: 113 Pragmatic Lessons from Tech Lead to CTO](https://www.semicolonandsons.com/articles/scaling-a-monolith-to-1m-loc-113-pragmatic-lessons-from-tech-lead-to-cto)~~"
+    },
+    {
+      "line": 40,
+      "kind": "heading",
+      "text": "## [Harness design for long-running application development](https://www.anthropic.com/engineering/harness-design-long-running-apps)"
+    },
+    {
+      "line": 46,
+      "kind": "heading",
+      "text": "## [Why I Vibe in Go, Not Rust or Python](https://lifelog.my/episode/why-i-vibe-in-go-not-rust-or-python)"
+    },
+    {
+      "line": 52,
+      "kind": "heading",
+      "text": "## [The gold standard of optimization: A look under the hood of RollerCoaster Tycoon](https://larstofus.com/2026/03/22/the-gold-standard-of-optimization-a-look-under-the-hood-of-rollercoaster-tycoon/)"
+    },
+    {
+      "line": 58,
+      "kind": "heading",
+      "text": "## [Queueing Requests Queues Your Capacity Problems, Too](https://pushtoprod.substack.com/p/queueing-requests-queues-your-capacity-problems-too)"
+    },
+    {
+      "line": 64,
+      "kind": "heading",
+      "text": "## [7 More Common Mistakes in Architecture Diagrams](https://www.ilograph.com/blog/posts/more-common-diagram-mistakes/)"
+    },
+    {
+      "line": 70,
+      "kind": "heading",
+      "text": "## [How to Do AI-Assisted Engineering](https://newsletter.eng-leadership.com/p/how-to-do-ai-assisted-engineering)"
+    },
+    {
+      "line": 76,
+      "kind": "heading",
+      "text": "### Bonus"
+    },
+    {
+      "line": 78,
+      "kind": "asset",
+      "text": "**Images:**"
+    },
+    {
+      "line": 79,
+      "kind": "asset",
+      "text": "![Load Balancer vs API Gateway](https://substackcdn.com/image/fetch/$s_!YJG0!,w_1100,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fd3e5a12b-4237-4661-b090-d518a6da7f20_2508x3000.png)"
+    },
+    {
+      "line": 80,
+      "kind": "asset",
+      "text": "![REST vs gRPC](https://substackcdn.com/image/fetch/$s_!LrVm!,w_1100,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F7a20a0cb-3142-4c32-b772-f002f1a288fd_2880x3862.jpeg)"
+    },
+    {
+      "line": 81,
+      "kind": "asset",
+      "text": "![Session-Based vs JWT-Based Authentication](https://substackcdn.com/image/fetch/$s_!6SID!,w_1100,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F14a25337-0104-4c6c-b91a-3a2cd6afd6e4_2508x3000.png)"
+    },
+    {
+      "line": 82,
+      "kind": "asset",
+      "text": "![A Cheat Sheet on The Most-Used Linux Commands](https://substackcdn.com/image/fetch/$s_!LuLK!,w_1100,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fa8dd9e12-2979-4040-a138-08723094b8cf_2536x3436.jpeg)"
+    }
+  ],
+  "candidates": [
+    {
+      "line": 30,
+      "kind": "first-person",
+      "text": "Anthropic công bố kết quả nghiên cứu định tính đa ngôn ngữ lớn nhất từ trước đến nay: dùng một phiên bản Claude làm người phỏng vấn, họ trò chuyện với 80.508 người dùng Claude ở 159 quốc gia bằng 70 ngôn ngữ về điều họ mong đợi và lo ngại ở AI. Thông điệp chính là con người muốn AI giúp mình sống tốt hơn chứ không chỉ làm việc nhanh hơn. Các mong muốn hàng đầu gồm xuất sắc trong nghề nghiệp (19%), phát triển bản thân (14%), quản lý cuộc sống (14%) và có thêm thời gian tự do (11%). Đằng sau mong muốn năng suất thường là khao khát sâu hơn — tự động hoá email thực chất là để có thêm thời gian cho gia đình."
+    },
+    {
+      "line": 42,
+      "kind": "first-person",
+      "text": "Bài viết từ đội kỹ thuật Anthropic xử lý hai điểm yếu của AI agent khi làm việc dài: mô hình mất mạch lạc khi cửa sổ ngữ cảnh dần đầy, và có xu hướng tự đánh giá quá cao sản phẩm của chính mình. Giải pháp là một harness đa tác tử lấy cảm hứng từ GAN: Planner mở rộng yêu cầu ngắn thành đặc tả chi tiết, Generator tạo sản phẩm, còn Evaluator chấm điểm độc lập rồi gửi phản hồi ngược lại. Với việc mang tính chủ quan như thiết kế frontend, nhóm đặt ra tiêu chí chấm điểm cụ thể thay cho câu hỏi mơ hồ \"có đẹp không\", và cho Generator cùng Evaluator lặp 5-15 vòng, có khi chuyển hẳn sang một phong cách thẩm mỹ mới."
+    }
+  ]
+}

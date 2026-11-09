@@ -1,0 +1,85 @@
+{
+  "post": "content/post/2026/06/06/index.md",
+  "newsletter": 109,
+  "newsletter_post": true,
+  "note": "*Bài viết đã được viết lại bởi Claude Code với Opus 5.5 vào ngày 27/09/2026.*",
+  "lines": [
+    {
+      "line": 1,
+      "kind": "frontmatter",
+      "text": "---"
+    },
+    {
+      "line": 2,
+      "kind": "frontmatter",
+      "text": "title: \"Newsletter #109\""
+    },
+    {
+      "line": 3,
+      "kind": "frontmatter",
+      "text": "date: 2026-06-06"
+    },
+    {
+      "line": 4,
+      "kind": "frontmatter",
+      "text": "tags: [\"AI-Assisted\", \"AI\", \"DevOps\", \"Distributed Systems\", \"Developer Experience\", \"Database\", \"Software Engineering\"]"
+    },
+    {
+      "line": 5,
+      "kind": "frontmatter",
+      "text": "categories: [\"Newsletter\"]"
+    },
+    {
+      "line": 6,
+      "kind": "frontmatter",
+      "text": "---"
+    },
+    {
+      "line": 8,
+      "kind": "italic-note",
+      "text": "*Mời bạn thưởng thức Newsletter #109.*"
+    },
+    {
+      "line": 10,
+      "kind": "heading",
+      "text": "## [A History of IDEs at Google](https://laurent.le-brun.eu/blog/a-history-of-ides-at-google)"
+    },
+    {
+      "line": 16,
+      "kind": "heading",
+      "text": "## [Finding zombies in our systems: A real-world story of CPU bottlenecks](https://medium.com/pinterest-engineering/finding-zombies-in-our-systems-a-real-world-story-of-cpu-bottlenecks-ea4722e552eb)"
+    },
+    {
+      "line": 22,
+      "kind": "heading",
+      "text": "## [Programming Still Sucks.](https://www.stvn.sh/writing/programming-still-sucks-fqffhyp)"
+    },
+    {
+      "line": 28,
+      "kind": "heading",
+      "text": "## [How Container Filesystem Works: Building a Docker-like Container From Scratch](https://labs.iximiuz.com/tutorials/container-filesystem-from-scratch)"
+    },
+    {
+      "line": 34,
+      "kind": "heading",
+      "text": "## [Using AI to write better code more slowly](https://nolanlawson.com/2026/05/25/using-ai-to-write-better-code-more-slowly/)"
+    },
+    {
+      "line": 40,
+      "kind": "heading",
+      "text": "## [How CockroachDB Built Vector Indexing at Scale](https://blog.bytebytego.com/p/how-cockroachdb-built-vector-indexing)"
+    }
+  ],
+  "candidates": [
+    {
+      "line": 26,
+      "kind": "first-person",
+      "text": "Điểm nhức nhối nhất là câu hỏi các lập trình viên junior đi đâu. Giá trị của họ không nằm ở mã nguồn họ viết hôm nay mà ở chỗ một ngày họ sẽ thành senior hiểu mọi ngóc ngách hệ thống; bỏ chế độ học việc để tối ưu đầu ra, vài năm sau ta sẽ không còn ai kế cận. Trung tâm cảm xúc của bài là Sara, một chuyên gia hạ tầng lớn tuổi thừa hưởng tri thức từ Ben và giữ cho công ty vận hành nhờ một cron job bí ẩn mà không ai khác hiểu. Khi Sara nghỉ, công ty sẽ cần người thay thế nhưng không còn cơ chế nào để đào tạo ra người đó. Thảm họa, theo tác giả, không nằm ở công nghệ mà ở việc tổ chức tự phá hoại chính mình."
+    },
+    {
+      "line": 36,
+      "kind": "first-person",
+      "text": "Giữa cơn sốt \"vibe coding\", Nolan Lawson đặt câu hỏi ngược: nếu nhiều người dùng LLM để sinh ra mã nguồn kém chất lượng thật nhanh, liệu có thể dùng chính công cụ đó để viết mã tốt hơn nhưng chậm hơn? Câu trả lời của ông là có. Quy trình của ông xoay quanh việc review bằng nhiều model: cho Claude, Codex và Cursor Bugbot cùng xem xét một pull request một cách độc lập, xếp lỗi theo mức critical, high, medium, low, rồi tự mình tổng hợp và kiểm chứng để loại bỏ cảnh báo sai. Dùng nhiều model khác nhau, xóa ngữ cảnh giữa các lượt, giúp giảm khả năng tất cả cùng \"ảo giác\" ra một lỗi không có thật. Sau đó ông để agent sửa các lỗi critical và high, lặp lại tới khi hết, cân nhắc xem lỗi còn lại có đáng công sửa không, và bỏ hẳn pull request nếu lộ ra sai lầm ở tầng kiến trúc."
+    }
+  ]
+}

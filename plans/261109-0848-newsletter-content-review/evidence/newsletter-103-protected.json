@@ -1,0 +1,135 @@
+{
+  "post": "content/post/2026/05/23/index.md",
+  "newsletter": 103,
+  "newsletter_post": true,
+  "note": "*Bài viết đã được viết lại bởi Claude Code với Opus 5.5 vào ngày 27/09/2026.*",
+  "lines": [
+    {
+      "line": 1,
+      "kind": "frontmatter",
+      "text": "---"
+    },
+    {
+      "line": 2,
+      "kind": "frontmatter",
+      "text": "title: \"Newsletter #103\""
+    },
+    {
+      "line": 3,
+      "kind": "frontmatter",
+      "text": "date: 2026-05-23"
+    },
+    {
+      "line": 4,
+      "kind": "frontmatter",
+      "text": "tags: [\"AI-Assisted\", \"Newsletter\", \"AI\", \"Career\", \"Performance\", \"Algorithms\", \"Security\"]"
+    },
+    {
+      "line": 5,
+      "kind": "frontmatter",
+      "text": "categories: [\"Newsletter\"]"
+    },
+    {
+      "line": 6,
+      "kind": "frontmatter",
+      "text": "---"
+    },
+    {
+      "line": 8,
+      "kind": "italic-note",
+      "text": "*Mời bạn thưởng thức Newsletter #103.*"
+    },
+    {
+      "line": 10,
+      "kind": "heading",
+      "text": "## [Drunk Post: Things I've Learned as a Senior Engineer](https://luminousmen.substack.com/p/drunk-post-things-ive-learned-as)"
+    },
+    {
+      "line": 16,
+      "kind": "heading",
+      "text": "## [How I Use AI to Code](https://www.chrismdp.com/coding-with-ai-april-2026/)"
+    },
+    {
+      "line": 22,
+      "kind": "heading",
+      "text": "## [Email is crazy](https://samkhawase.com/blog/email-is-crazy/)"
+    },
+    {
+      "line": 28,
+      "kind": "heading",
+      "text": "## [High Performance Git](https://gitperf.com/)"
+    },
+    {
+      "line": 34,
+      "kind": "heading",
+      "text": "## [You can beat the binary search](https://lemire.me/blog/2026/04/27/you-can-beat-the-binary-search/)"
+    },
+    {
+      "line": 40,
+      "kind": "heading",
+      "text": "## [How might a browser be developed?](https://aifoc.us/how-might-a-browser-be-developed/)"
+    },
+    {
+      "line": 46,
+      "kind": "heading",
+      "text": "## [Agentic Coding is a Trap](https://larsfaye.com/articles/agentic-coding-is-a-trap)"
+    },
+    {
+      "line": 52,
+      "kind": "heading",
+      "text": "## [Be the Idiot](https://luminousmen.substack.com/p/be-the-idiot)"
+    },
+    {
+      "line": 58,
+      "kind": "heading",
+      "text": "## [3 constraints before I build anything](https://jordanlord.co.uk/blog/3-constraints/)"
+    },
+    {
+      "line": 64,
+      "kind": "heading",
+      "text": "## [Swissing a Table](https://philpearl.github.io/post/swissing_a_table/)"
+    },
+    {
+      "line": 70,
+      "kind": "heading",
+      "text": "## [The AI engineering stack we built internally — on the platform we ship](https://blog.cloudflare.com/internal-ai-engineering-stack/)"
+    },
+    {
+      "line": 76,
+      "kind": "heading",
+      "text": "### Bonus"
+    },
+    {
+      "line": 78,
+      "kind": "asset",
+      "text": "**Images:**"
+    },
+    {
+      "line": 79,
+      "kind": "asset",
+      "text": "![MCP vs Skills, Clearly Explained](https://substackcdn.com/image/fetch/$s_!7jIm!,w_1100,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F5632abfa-88b9-4f40-8feb-13b4a7c6e1ce_2484x3002.png)"
+    },
+    {
+      "line": 80,
+      "kind": "asset",
+      "text": "![5 Way to Defend Prompt Injection](https://substackcdn.com/image/fetch/$s_!gUOK!,w_1100,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F32f62036-5c89-4686-941e-57d84297de42_2484x3002.png)"
+    }
+  ],
+  "candidates": [
+    {
+      "line": 12,
+      "kind": "first-person",
+      "text": "Bài viết lưu giữ lại một bài đăng nổi tiếng trên r/ExperiencedDevs, nơi một kỹ sư dữ liệu với 10 năm kinh nghiệm \"ngà ngà say\" và viết ra mọi bài học nghề nghiệp của mình. Tài khoản gốc đã bị xóa, nhưng sự thẳng thắn hiếm có khiến bài viết vẫn được chia sẻ rộng rãi. Về sự nghiệp, tác giả cho rằng chuyển công ty là cách thăng tiến hiệu quả nhất, chức danh ít quan trọng hơn những gì bạn thực sự làm được, và càng gần sản phẩm, gần doanh thu thì bạn càng được coi trọng, bất kể công việc kỹ thuật đến đâu."
+    },
+    {
+      "line": 50,
+      "kind": "first-person",
+      "text": "Tác giả cho rằng AI đang tăng tốc sai chỗ: chúng ta không thực sự cần viết mã nhanh hơn, nhất là mã mình không hiểu, và với nhiều người, viết mã chính là cách tư duy và lập kế hoạch. Ngoài ra còn có rủi ro phụ thuộc nhà cung cấp — khi Claude gặp sự cố, nhiều nhóm phải ngừng làm việc — và chi phí token khó dự đoán, trong khi chi phí nhân sự thì cố định. Giải pháp của ông là hạ AI xuống vai trò phụ trợ: dùng AI để lập đặc tả và kế hoạch nhưng tự viết từ 20% đến 100% mã nguồn tùy nhiệm vụ, không bao giờ sinh nhiều mã hơn mức có thể review trong một lần ngồi, và không nhờ AI làm việc mà bản thân chưa từng hoặc không thể tự làm."
+    },
+    {
+      "line": 56,
+      "kind": "first-person",
+      "text": "Tác giả chia sẻ bốn câu hỏi \"ngốc\" đã cứu mình nhiều lần: điều gì xảy ra khi nó thất bại, làm sao biết nó đang chạy đúng, \"xong\" trông như thế nào, và bạn có thể cho xem ví dụ không. Cách hỏi cũng quan trọng: thay vì \"Sao chúng ta lại làm điều ngớ ngẩn này?\", hãy hỏi \"Có lý do cụ thể nào khiến chúng ta dùng X ở đây không?\" — tức là giả định mình đang thiếu ngữ cảnh chứ không phải người khác sai. Khoảng 80% trường hợp tác giả đúng là thiếu thông tin, 20% còn lại câu hỏi mở ra một cuộc thảo luận hữu ích. Bởi thứ duy nhất đắt hơn việc trông ngốc trong cuộc họp là xây sai sản phẩm vì không ai dám hỏi."
+    }
+  ]
+}

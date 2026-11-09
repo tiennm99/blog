@@ -1,0 +1,100 @@
+{
+  "post": "content/post/2025/05/16/index.md",
+  "newsletter": 29,
+  "newsletter_post": true,
+  "note": "*Bài viết đã được viết lại bởi Claude Code với Opus 5.5 vào ngày 27/09/2026.*",
+  "lines": [
+    {
+      "line": 1,
+      "kind": "frontmatter",
+      "text": "---"
+    },
+    {
+      "line": 2,
+      "kind": "frontmatter",
+      "text": "title: \"Newsletter #29\""
+    },
+    {
+      "line": 3,
+      "kind": "frontmatter",
+      "text": "date: 2025-05-16"
+    },
+    {
+      "line": 4,
+      "kind": "frontmatter",
+      "text": "tags: [\"AI-Assisted\", \"Process Optimization\", \"Vibe Coding\", \"Cloudflare\", \"Career Development\", \"Productivity\", \"MCP\"]"
+    },
+    {
+      "line": 5,
+      "kind": "frontmatter",
+      "text": "categories: [\"Newsletter\"]"
+    },
+    {
+      "line": 6,
+      "kind": "frontmatter",
+      "text": "draft: false"
+    },
+    {
+      "line": 7,
+      "kind": "frontmatter",
+      "text": "---"
+    },
+    {
+      "line": 9,
+      "kind": "italic-note",
+      "text": "*Chào mừng bạn đến với Newsletter #29 - Tổng hợp tin tức công nghệ hôm nay.*"
+    },
+    {
+      "line": 11,
+      "kind": "heading",
+      "text": "## [A Clean Approach to Process Optimization](https://queue.acm.org/detail.cfm?id=3722546)"
+    },
+    {
+      "line": 19,
+      "kind": "heading",
+      "text": "## [Microsoft's Original Source Code Released for 50th Anniversary](https://www.gatesnotes.com/microsoft-original-source-code)"
+    },
+    {
+      "line": 27,
+      "kind": "heading",
+      "text": "## [No code is dead. Long live vibe coding](https://kenneth.io/post/no-code-is-dead-long-live-vibe-coding)"
+    },
+    {
+      "line": 35,
+      "kind": "heading",
+      "text": "## [Simple, scalable, and global: Containers are coming to Cloudflare Workers in June 2025](https://blog.cloudflare.com/cloudflare-containers-coming-2025/)"
+    },
+    {
+      "line": 43,
+      "kind": "heading",
+      "text": "## [The types of companies you can work for and what they do for your career](https://www.elenaverna.com/p/the-types-of-companies-you-can-work)"
+    },
+    {
+      "line": 51,
+      "kind": "heading",
+      "text": "## [How to Create a Chain Reaction of Good Habits](https://jamesclear.com/domino-effect)"
+    },
+    {
+      "line": 59,
+      "kind": "heading",
+      "text": "## [The Post-Developer Era](https://www.joshwcomeau.com/blog/the-post-developer-era/)"
+    },
+    {
+      "line": 67,
+      "kind": "heading",
+      "text": "## [Everything Wrong With Model Context Protocol (MCP)](https://blog.sshh.io/p/everything-wrong-with-mcp)"
+    }
+  ],
+  "candidates": [
+    {
+      "line": 47,
+      "kind": "first-person",
+      "text": "Hai kiểu còn lại là \"Công ty lối sống\" (Lifestyle Boats), thường tự chủ tài chính, có lãi và tăng trưởng bền vững như Basecamp, rất tốt cho người mới nhờ môi trường có hỗ trợ; và \"Hướng tới xã hội\" (Social Good Seekers), nơi tác động xã hội được đặt trên doanh thu, lương có thể thấp hơn nhưng sự hài lòng cao. Để nhận diện một công ty, hãy hỏi về số nhân sự, tốc độ tăng trưởng doanh thu ba năm gần nhất và công ty còn bao lâu trước khi phải gọi vốn tiếp. Đồng thời, hãy tự hỏi mình chịu được bao nhiêu thay đổi và áp lực, có cần vai trò rõ ràng không, và ưu tiên tài chính hiện tại là gì."
+    },
+    {
+      "line": 71,
+      "kind": "first-person",
+      "text": "Nghiêm trọng hơn là bảo mật của chính mô hình ngôn ngữ. Mô tả công cụ thường được đưa vào system prompt nên có quyền lớn để chi phối agent; máy chủ có thể âm thầm đổi tên và mô tả công cụ sau khi người dùng đã chấp thuận, và dữ liệu kéo về từ bên thứ tư, như một dòng trong cơ sở dữ liệu, có thể chứa prompt injection. Việc tổng hợp dữ liệu dễ dàng còn giúp nhân viên suy ra thông tin nhạy cảm từ những gì vốn được phép xem. Cuối cùng, độ tin cậy của mô hình giảm khi có quá nhiều công cụ, và bộ công cụ đơn giản kiểu liệt kê hay đọc tệp không đủ cho những truy vấn mà người dùng kỳ vọng. Tác giả kết luận rằng cần cùng lúc một giao thức an toàn mặc định, ứng dụng biết bảo vệ người dùng và người dùng hiểu rõ lựa chọn của mình."
+    }
+  ]
+}

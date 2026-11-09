@@ -1,0 +1,93 @@
+{
+  "post": "content/post/2026/10/07/index.md",
+  "newsletter": 139,
+  "newsletter_post": true,
+  "lines": [
+    {
+      "line": 1,
+      "kind": "frontmatter",
+      "text": "---"
+    },
+    {
+      "line": 2,
+      "kind": "frontmatter",
+      "text": "title: \"Newsletter #139\""
+    },
+    {
+      "line": 3,
+      "kind": "frontmatter",
+      "text": "date: 2026-10-07"
+    },
+    {
+      "line": 4,
+      "kind": "frontmatter",
+      "text": "tags: [\"AI-Assisted\", \"PostgreSQL\", \"Go\", \"Performance\", \"Distributed Systems\", \"Database\", \"Networking\"]"
+    },
+    {
+      "line": 5,
+      "kind": "frontmatter",
+      "text": "categories: [\"Newsletter\"]"
+    },
+    {
+      "line": 6,
+      "kind": "frontmatter",
+      "text": "---"
+    },
+    {
+      "line": 8,
+      "kind": "italic-note",
+      "text": "*Mời bạn thưởng thức Newsletter #139.*"
+    },
+    {
+      "line": 10,
+      "kind": "heading",
+      "text": "## [What Go Taught Us About Java Garbage Collection](https://dev.to/codenameone/what-go-taught-us-about-java-garbage-collection-25ha)"
+    },
+    {
+      "line": 16,
+      "kind": "heading",
+      "text": "## [How We Built a Real-Time Stock Pricing System at Scale](https://itnext.io/how-we-built-real-time-stock-pricing-at-mofid-brokerage-031015ce1301)"
+    },
+    {
+      "line": 22,
+      "kind": "heading",
+      "text": "## [Saving another 100TB of RAM with math (and Rust)](https://blog.cloudflare.com/saving-100-tb-of-ram-with-math/)"
+    },
+    {
+      "line": 28,
+      "kind": "heading",
+      "text": "## [Postgres DELETE Can Actualy Scale](https://www.dbos.dev/blog/scaling-deletions-in-postgres)"
+    },
+    {
+      "line": 34,
+      "kind": "heading",
+      "text": "## [Where PostgreSQL stores row locks](https://boringsql.com/posts/row-locks-on-the-page/)"
+    },
+    {
+      "line": 40,
+      "kind": "heading",
+      "text": "## [A 40ms Go GC pause caused by swap](https://frn.sh/go-gc/)"
+    },
+    {
+      "line": 46,
+      "kind": "heading",
+      "text": "## [How to optimize when you can’t do anything!](https://hdombrovskaya.wordpress.com/2026/08/25/how-to-optimize-when-you-cant-do-anything/)"
+    },
+    {
+      "line": 52,
+      "kind": "heading",
+      "text": "## [Four ways to do super fast packet processing in Go](https://toonk.io/packetio/)"
+    },
+    {
+      "line": 58,
+      "kind": "heading",
+      "text": "## [How Uber Protects Against Retry Storms](https://www.uber.com/us/en/blog/protecting-against-retry-storms/)"
+    },
+    {
+      "line": 64,
+      "kind": "heading",
+      "text": "## [The Real Cost of a Single Insert in Postgres](https://www.tigerdata.com/blog/real-cost-of-single-insert-in-postgres)"
+    }
+  ],
+  "candidates": []
+}
