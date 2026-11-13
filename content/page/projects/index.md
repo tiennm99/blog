@@ -26,6 +26,7 @@ Dù không biết người ta star vì điều gì nữa 🤡🤡
 | [ghglance](https://github.com/tiennm99/ghglance) | Generate SVG cards summarizing a GitHub user's profile, written in Go. Drop-in profile-summary alternative. | 1 | [ghglance.miti99.dev](https://ghglance.miti99.dev) |
 | [export-telegram-group-members](https://github.com/tiennm99/export-telegram-group-members) | Export Telegram group members to CSV using Telethon — admin auth required for full member visibility. | 1 | — |
 | [traefik-cloudflare-dns](https://github.com/tiennm99/traefik-cloudflare-dns) | Go daemon that creates Cloudflare DNS records for the Traefik hosts of your Docker containers, and deletes its own records after the host has been down for a while. Works with Coolify. | 1 | — |
+| [claude-code-routine-trigger](https://github.com/tiennm99/claude-code-routine-trigger) | Fire Claude Code routines on a schedule via the /fire API — GitHub Actions at the root, self-hosted Go daemon in self-hosted/, Cloudflare Worker in cloudflare-worker/ | 1 | — |
 | [cheahjs-free-llm-api-resources](https://github.com/tiennm99/cheahjs-free-llm-api-resources) | A list of free LLM inference resources accessible via API. | 1 | [free-llm-api-resources.pages.dev](https://free-llm-api-resources.pages.dev) |
 | [tiennm99dev/gomoku](https://github.com/tiennm99dev/gomoku) | Multiplayer online Gomoku (five-in-a-row) — Go server, Phaser 3 client, protobuf over WebSocket, PVP/PVE/spectator modes | 1 | — |
 | [time-mocker](https://github.com/tiennm99/time-mocker) | Windows tool that injects fake time into running processes by hooking Win32 time APIs. Rust. | 1 | — |
@@ -49,10 +50,10 @@ Vài có URL để bấm vào xem trực tiếp (demo). URL có thể là:
 
 | Name | Description | URL |
 | --- | --- | --- |
-| [tiennm99bot](https://github.com/tiennm99/tiennm99bot) | Plug-n-play Telegram bot framework in Go, self-hosted on Coolify + MongoDB Atlas with cron, games, schedules, and paper trading modules. | [t.me/tiennm99bot](https://t.me/tiennm99bot) |
 | [awesome-ai-dev-tools](https://github.com/tiennm99/awesome-ai-dev-tools) | Daily-refreshed ranking of open-source AI developer tools — coding agents, ADEs, AI editors and code-review tools — by GitHub stars, with 7-day deltas, star-history charts and a tag-filtered dashboard. | [awesome-ai-dev-tools.pages.dev](https://awesome-ai-dev-tools.pages.dev/) |
 | [tiennm99](https://github.com/tiennm99/tiennm99) | Config files for my GitHub profile. | [github.com/tiennm99](https://github.com/tiennm99) |
 | [blog](https://github.com/tiennm99/blog) | Source of miti99.com — personal blog (VN/EN) built with Hugo + Stack theme. | [miti99.com](https://miti99.com) |
+| [tiennm99bot](https://github.com/tiennm99/tiennm99bot) | Plug-n-play Telegram bot framework in Go, self-hosted on Coolify + MongoDB Atlas with cron, games, schedules, and paper trading modules. | [t.me/tiennm99bot](https://t.me/tiennm99bot) |
 | [cv](https://github.com/tiennm99/cv) | My personal CV written in Typst with RenderCV. | [tiennm99.github.io/cv](https://tiennm99.github.io/cv/) |
 | [noitu](https://github.com/tiennm99/noitu) | Vietnamese word-chain game (nối từ) on the web: play a bot or 2–4 players online. Go server, SvelteKit, Protobuf over WebSocket, Wiktionary dictionary. | [noitu.miti99.dev](https://noitu.miti99.dev) |
 | [loldle](https://github.com/tiennm99/loldle) | LoLdle-style League of Legends daily champion guessing game — SvelteKit web app, Go data scraper, and Android stub in one repo; champion data auto-updates weekly | [tiennm99.github.io/loldle](https://tiennm99.github.io/loldle/) |
@@ -97,25 +98,25 @@ Project của người khác/tổ chức khác mà mình gửi PR và được m
 
 | Name | Description | Merged PRs | Stars |
 | --- | --- | --- | --- |
-| [iluwatar/java-design-patterns](https://github.com/iluwatar/java-design-patterns) | Design patterns implemented in Java | 6 | 94863 |
-| [is-a-dev/register](https://github.com/is-a-dev/register) | Grab your own sweet-looking '.is-a.dev' subdomain. | 4 | 11804 |
-| [is-a-good-dev/register](https://github.com/is-a-good-dev/register) | Register for your is-a-good.dev domain! | 4 | 641 |
-| [open-domains/register](https://github.com/open-domains/register) | Free subdomains for personal sites, open-source projects, and more. | 4 | 2600 |
-| [coollabsio/coolify](https://github.com/coollabsio/coolify) | An open-source, self-hostable PaaS alternative to Vercel, Heroku & Netlify that lets you easily deploy static sites, databases, full-stack applications and 360+ one-click services on your own servers. | 3 | 66005 |
+| [iluwatar/java-design-patterns](https://github.com/iluwatar/java-design-patterns) | Design patterns implemented in Java | 6 | 94866 |
+| [is-a-dev/register](https://github.com/is-a-dev/register) | Grab your own sweet-looking '.is-a.dev' subdomain. | 4 | 11817 |
+| [is-a-good-dev/register](https://github.com/is-a-good-dev/register) | Register for your is-a-good.dev domain! | 4 | 642 |
+| [open-domains/register](https://github.com/open-domains/register) | Free subdomains for personal sites, open-source projects, and more. | 4 | 2602 |
+| [coollabsio/coolify](https://github.com/coollabsio/coolify) | An open-source, self-hostable PaaS alternative to Vercel, Heroku & Netlify that lets you easily deploy static sites, databases, full-stack applications and 360+ one-click services on your own servers. | 3 | 66054 |
 | [tarampampam/domains](https://github.com/tarampampam/domains) |  | 3 | 808 |
 | [zfoo-project/zfoo](https://github.com/zfoo-project/zfoo) | 💡Extremely fast enterprise server framework, can be used in RPC,  game server,  web server. | 3 | 2006 |
-| [old-free-domains/register](https://github.com/old-free-domains/register) | Free subdomains for personal sites, open-source projects, and more. | 2 | 600 |
-| [ripienaar/free-for-dev](https://github.com/ripienaar/free-for-dev) | A list of SaaS, PaaS and IaaS offerings that have free tiers of interest to devops and infradev | 1 | 142708 |
-| [oraios/serena](https://github.com/oraios/serena) | A powerful MCP toolkit for coding, providing semantic retrieval and editing capabilities  - the IDE for your agent | 1 | 31330 |
-| [sirmalloc/ccstatusline](https://github.com/sirmalloc/ccstatusline) | 🚀 Beautiful highly customizable statusline for Claude Code CLI with powerline support, themes, and more. | 1 | 13590 |
-| [kaitranntt/ccs](https://github.com/kaitranntt/ccs) | Switch between Claude accounts, Gemini, Copilot, OpenRouter (300+ models) via CLIProxyAPI OAuth proxy. Visual dashboard, remote proxy support, WebSearch fallback. Zero-config to production-ready. | 1 | 2897 |
-| [Bogdanp/awesome-advent-of-code](https://github.com/Bogdanp/awesome-advent-of-code) | A collection of awesome resources related to the yearly Advent of Code challenge. | 1 | 3234 |
+| [old-free-domains/register](https://github.com/old-free-domains/register) | Free subdomains for personal sites, open-source projects, and more. | 2 | 601 |
+| [ripienaar/free-for-dev](https://github.com/ripienaar/free-for-dev) | A list of SaaS, PaaS and IaaS offerings that have free tiers of interest to devops and infradev | 1 | 142763 |
+| [oraios/serena](https://github.com/oraios/serena) | A powerful MCP toolkit for coding, providing semantic retrieval and editing capabilities  - the IDE for your agent | 1 | 31364 |
+| [sirmalloc/ccstatusline](https://github.com/sirmalloc/ccstatusline) | 🚀 Beautiful highly customizable statusline for Claude Code CLI with powerline support, themes, and more. | 1 | 13596 |
+| [kaitranntt/ccs](https://github.com/kaitranntt/ccs) | Switch between Claude accounts, Gemini, Copilot, OpenRouter (300+ models) via CLIProxyAPI OAuth proxy. Visual dashboard, remote proxy support, WebSearch fallback. Zero-config to production-ready. | 1 | 2899 |
+| [Bogdanp/awesome-advent-of-code](https://github.com/Bogdanp/awesome-advent-of-code) | A collection of awesome resources related to the yearly Advent of Code challenge. | 1 | 3233 |
 | [onyx-dot-app/documentation](https://github.com/onyx-dot-app/documentation) | Documentation for the Onyx Software | 1 | 34 |
 | [projectlombok/lombok](https://github.com/projectlombok/lombok) | Very spicy additions to the Java programming language. | 1 | 13484 |
-| [HugoBlox/kit](https://github.com/HugoBlox/kit) | 🧱 Describe your site, AI builds it, you own it as Markdown. Snap together Tailwind blocks like Lego — landing pages, blogs, portfolios, docs & more. No AI slop. Free to deploy anywhere 👇 | 1 | 9794 |
+| [HugoBlox/kit](https://github.com/HugoBlox/kit) | 🧱 Describe your site, AI builds it, you own it as Markdown. Snap together Tailwind blocks like Lego — landing pages, blogs, portfolios, docs & more. No AI slop. Free to deploy anywhere 👇 | 1 | 9795 |
 | [tkowalcz/tjahzi](https://github.com/tkowalcz/tjahzi) | Java clients, log4j2 and logback appenders for Grafana Loki | 1 | 141 |
-| [dhyeythumar/awesome-readme-tools](https://github.com/dhyeythumar/awesome-readme-tools) | A curated list of awesome readme tools. ✌ | 1 | 277 |
-| [thedev-id/thedev.id](https://github.com/thedev-id/thedev.id) | Identity for developers on the web. | 1 | 1819 |
+| [dhyeythumar/awesome-readme-tools](https://github.com/dhyeythumar/awesome-readme-tools) | A curated list of awesome readme tools. ✌ | 1 | 278 |
+| [thedev-id/thedev.id](https://github.com/thedev-id/thedev.id) | Identity for developers on the web. | 1 | 1822 |
 | [is-amazing/register](https://github.com/is-amazing/register) | Register your is-amaz.ing project domain here! | 1 | 149 |
 | [DavidNiessen/SimpleGuicePlugin](https://github.com/DavidNiessen/SimpleGuicePlugin) | An example for dependency injection (Google Guice) in a Spigot plugin | 1 | 2 |
 
