@@ -80,10 +80,13 @@ Follow `docs/newsletter/post-mechanics.md` to resolve/create the target post, th
 ```
 Create `### Bonus` / `**Images:**` if missing.
 
-### 6. Report
+### 6. Translate
+Mirror the new entry into `index.en.md` per post-mechanics §7 (the label stays verbatim).
+
+### 7. Report
 ```
 ✅ Image added to Newsletter #[number] (Bonus → Images)
-📄 content/post/YYYY/MM/DD/index.md
+📄 content/post/YYYY/MM/DD/index.md (+ index.en.md)
 🏷️  label: "[label]"  (source: candidate-pick | caption | user-input; post: [postTitle])
 🖼️  [clean_image_url]
 📊 [tally]
@@ -96,4 +99,5 @@ The tally comes from `post-stats` — see *Post tally* in the shared post mechan
 - [ ] Label confirmed (caption if present, else user picked from candidates, else typed)
 - [ ] Candidates shown deduped, with numbering kept stable across images from the same post
 - [ ] Entry under Bonus → **Images** (section/subsection created if missing)
+- [ ] English entry mirrored, `translation-check` ok (post-mechanics §7)
 - [ ] Label preserves original source language, wording, capitalization, and punctuation unless the user requested translation

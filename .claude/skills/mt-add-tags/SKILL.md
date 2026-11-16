@@ -98,6 +98,8 @@ tags: ["Tag1", "Tag2", "Tag3", "Tag4", "Tag5", "Tag6"]
 
 Replace the entire existing `tags:` line. Preserve all other frontmatter fields exactly.
 
+When the post has a translation (`index.en.md` or another `index.<lang>.md`), write the same `tags:` line there too: tags are shared across languages and `translation-check` requires them to match.
+
 ## Proactive behavior (before commit)
 
 Before any git commit (the AGENTS.md pre-commit rule), list every new or modified post, staged or not:

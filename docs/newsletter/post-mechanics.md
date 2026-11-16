@@ -150,3 +150,7 @@ This table owns the skip rules; handlers defer to it.
 | `accessible: false` (403, 429, challenge, HEAD rejected, 000) | Not a skip — continue; for articles try WebFetch, then the `mt-fetch-url` chain |
 | Extraction fails | Skip and report only after WebFetch and every `mt-fetch-url` tier fail |
 | Directory missing | Create directories |
+
+## 7. English translation
+
+The site is bilingual (Vietnamese at `/`, English under `/en/`), and every newsletter keeps an English sibling `index.en.md`. After each successful insertion into `index.md`, mirror that one entry into English by invoking the **`mt-translate-post`** skill in `entry` mode with the post path and the new entry's heading or URL. It creates `index.en.md` when the post has none yet and verifies the pair with `translation-check`. Report the English file next to the Vietnamese one.

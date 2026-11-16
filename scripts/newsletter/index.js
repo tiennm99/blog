@@ -18,6 +18,9 @@ Commands:
   post-stats <path/to/index.md>              count the post's articles/images/videos/documents
   protected-lines <index.md> [--against <snapshot.json>]
                                              lines a rewrite must keep; verify them after
+  translation-status [--lang en] [--category <name>] [path...]
+                                             list untranslated and stale posts
+  translation-check <index.md> [--lang en]   verify a translation keeps the source's structure
 `;
 
 // A reader that closes early (`… | head -3`) makes the next write fail with
@@ -63,6 +66,8 @@ const COMMANDS = {
   "fetch-via-defuddle": { module: "./fetch-via-defuddle.js", fn: "runFetchViaDefuddle" },
   "post-stats": { module: "./post-stats.js", fn: "runPostStats" },
   "protected-lines": { module: "./protected-lines.js", fn: "runProtectedLines" },
+  "translation-status": { module: "./translation.js", fn: "runTranslationStatus" },
+  "translation-check": { module: "./translation.js", fn: "runTranslationCheck" },
 };
 
 /** @returns {Promise<void>} */

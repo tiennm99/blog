@@ -49,7 +49,7 @@ module per subcommand) and is invoked from the repo root:
 node scripts/newsletter <command> [args]
 ```
 
-The eight subcommands, their arguments, output shapes and exit codes are
+The ten subcommands, their arguments, output shapes and exit codes are
 documented once in **[docs/newsletter/engine-commands.md](docs/newsletter/engine-commands.md)**.
 
 The engine has npm dependencies, so a fresh clone needs `npm ci` from the repo
@@ -71,6 +71,7 @@ The newsletter workflow adds URLs (articles, YouTube videos, images) to the targ
   - `mt-add-image` — image → Bonus → Images (labels Substack images via source-post lookup)
   - `mt-add-tags` — add/update tags in post frontmatter
   - `mt-rewrite-newsletter` — rewrite existing newsletter summaries with a newer model, keeping handwritten lines and stamping a rewrite note
+  - `mt-translate-post` — create or sync a post's English `index.en.md` from its Vietnamese `index.md`; also lists untranslated and stale posts. The `mt-add-*` handlers and `mt-rewrite-newsletter` call it, so newsletters stay bilingual as they grow
   - `mt-fetch-url` — fallback web fetch chain (local defuddle, the defuddle.md proxy, a reader proxy, then a local headless browser via agent-browser); use only when built-in WebFetch is blocked
 - **Codex** — discovers the repository-scoped adapters in `.agents/skills/`. Ask it to add a URL for implicit routing or invoke `$mt-add-url` explicitly.
 
@@ -90,6 +91,7 @@ Codex automatically discovers checked-in skills from `.agents/skills/`. No insta
 - `$mt-add-image <url>` — add an image directly
 - `$mt-add-tags [post]` — add or update tags
 - `$mt-rewrite-newsletter [model] [scope]` — rewrite existing newsletters with a newer model
+- `$mt-translate-post [post | pending]` — translate a post into English, or sync every untranslated or stale one
 - `$mt-fetch-url <url>` — fallback after the built-in fetch fails
 
 Codex detects skill changes automatically; restart Codex if an update does not appear.
@@ -98,6 +100,6 @@ Codex detects skill changes automatically; restart Codex if an update does not a
 
 ## Git Workflow Rules
 
-**Before any git commit**, run the `mt-add-tags` pre-commit check on every staged or new `content/post/YYYY/MM/DD/index.md` (the skill defines what counts as minimal tags).
+**Before any git commit**, run the `mt-add-tags` pre-commit check on every staged or new `content/post/YYYY/MM/DD/index.md` (the skill defines what counts as minimal tags), then run `node scripts/newsletter translation-status` and bring every changed post's English version in sync with `mt-translate-post`. Commit each `index.md` together with its `index.en.md`.
 
 Stage only the post files you changed, because unrelated local edits may be present; never `git add -A`. Commit as `docs(newsletter): add newsletter N`. A daily bot commit (`chore(projects): refresh projects list`, from `.github/workflows/update-projects.yml`) often lands on main first, so push with `git pull --rebase --autostash && git push`.
