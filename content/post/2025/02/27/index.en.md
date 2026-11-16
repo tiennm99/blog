@@ -1,0 +1,74 @@
+---
+title: "Newsletter #4"
+date: 2025-02-27
+tags: ["AI-Assisted", "Newsletter", "Java", "Programming Languages", "Redis", "Engineering Career", "Game Development"]
+categories: [ "Newsletter" ]
+---
+
+<i>
+Hello everyone, I found quite a lot of articles last week, and cramming them all into a single issue would have made it way too long. So today I'm posting an extra mid-week newsletter ^^.
+</i>
+
+## [Management Mantras](https://blog.staysaasy.com/p/management-mantras)
+
+This post on the Stay SaaSy blog distills four mantras for engineering managers. The first is "don't do anyone any favors": everyone at a company should be working on the highest-priority thing they can do, so when someone says "let me do you a favor," it's usually either already their job, a broken process, or a subversion of priorities. That leads directly to the second mantra: employees don't need charity. Whatever the company provides to employees is either compensation they have earned or a core responsibility of management—so when you tell a report they got a raise and they thank you, tell them "don't thank me, you earned it."
+
+The third mantra is "I can fix it." The larger a company grows, the easier it is to point fingers elsewhere. At good companies, if every project you touch fails, the burden is on you to prove it wasn't your fault; managers must coach their teams to take ownership of anything blocking their results. Finally, management is an everyday job: most of the work consists of uncomfortable tasks like pushing people to do better, resolving conflicts, and delivering tough feedback. A manager's value lies in changing behavior, and that comes from the compounding effect of small daily nudges and coaching moments rather than a few dramatic decisions a year.
+
+## [The Ultimate Guide to Programming Languages: Choosing the Right Tool for the Job](https://dev.to/mohammad-reza-mahdiani/the-ultimate-guide-to-programming-languages-choosing-the-right-tool-for-the-job-4be2)
+
+This DEV Community article surveys five popular programming languages in 2025 along with their strengths and trade-offs. Python is easy to learn and boasts a rich ecosystem for machine learning, data science, web development, and automation, though it is slower than compiled languages and poorly suited for mobile apps. JavaScript remains the "king of the web": running natively in browsers, on servers via Node.js, and across platforms with Electron or React Native, at the cost of dynamic typing pitfalls at runtime. Java is the enterprise workhorse thanks to the JVM, stability, and scalability, despite verbose syntax and slower startup for small apps. C++ excels at raw performance and hardware control—ideal for game engines, embedded systems, and simulations—but has a steep learning curve and manual memory management. Rust is the rising star offering memory safety without a garbage collector, well suited for systems programming, WebAssembly, and cryptography, though its ecosystem is still smaller.
+
+Looking at broader trends, Python still leads in machine learning even as Julia gains ground in high-performance numerical computing; Solidity and Rust stand out in blockchain development; and Kotlin Multiplatform and Flutter (Dart) are popular for unifying mobile, web, and desktop development. The author's conclusion: there is no silver-bullet language, and the right choice depends on project requirements, team expertise, and long-term goals.
+
+## [Discovery Coding](http://jimmyhmiller.com/discovery-coding)
+
+Jimmy Miller borrows a familiar distinction from fiction writing: some writers outline everything in advance, while others discover the story in the act of writing. He calls the programming equivalent "Discovery Coding"—understanding a problem by writing code first rather than designing everything up front. A discovery coder asks what the new code needs to accomplish and how different parts of the system interact, and only by writing code and feeling where the system "pushes back" do they chart a path forward. This style is easily dismissed as messy, especially in a culture that prizes static type systems and rigid upfront constraints, but the author stresses separating the creative process from the finished artifact: discovery coders can still produce clean, rigorous code once they understand the problem.
+
+Even natural outliners can benefit from this approach: because you don't walk in with a pre-baked solution, exploratory coding helps you avoid forcing a familiar pattern onto a new problem and loads the system's real constraints into your head. Tools that support live programming against a running system (like Clojure or Smalltalk) and instant visual feedback are especially helpful here. The post closes with a call to accept that programmers think in different ways: a less tidy process doesn't mean a worse outcome, and software design is ultimately a human activity.
+
+## [Building a best-selling game with a tiny team](https://newsletter.pragmaticengineer.com/p/thronefall)
+
+This episode of The Pragmatic Engineer Podcast features Jonas Tyroller, one of the two developers behind *Thronefall*, a minimalist strategy game blending tower defense and kingdom building that sold roughly one million copies in its first year. Jonas built the game using Unity, C#, and Blender, structuring each level as a scene populated with scripted game objects. Surprisingly, the duo did no code reviews, wrote no unit tests, and pushed straight to `main`: for a small, ship-once game built by two experienced developers, those practices weren't worth the overhead, even if they matter on larger teams. Bugs were caught primarily through constant playtesting, beta testing, and post-launch player feedback.
+
+Their workflow started with rapid prototyping—spending just 1–2 days per prototype and prioritizing gameplay feel before visuals—to find an idea that was both commercially viable and fun for them to build. The biggest technical challenge was unit pathfinding: they bought an off-the-shelf A* plugin and customized it so troop movement felt natural. Jonas also used ChatGPT to generate boilerplate code, translate shader code, and get up to speed on unfamiliar topics. Key takeaways: indie game development demands wearing many hats—from design and programming to music composition and marketing; the way to get good at making games is to make lots of them; and with Unity and today's wealth of tutorials, getting started has never been more accessible.
+
+## [Serving a billion web requests with boring code](https://notes.billmill.org/blog/2024/06/Serving_a_billion_web_requests_with_boring_code.html)
+
+Bill Mill recounts designing the backend API system for the US government's Medicare Plan Finder, where millions of Americans compare and enroll in health insurance plans. The system serves around 5 million requests a day with an average latency under 10 milliseconds, totaling well over a billion requests. Guided by the "Choose Boring Technology" philosophy, the team picked PostgreSQL, Go, and React. Their only two architectural bets were splitting the backend into three coarse-grained services (`druginfo`, `planinfo`, `beneinfo`), each with its own database, and using gRPC for inter-service communication. While gRPC provided code-defined interfaces, its tooling proved clunky and the author admits they probably would have been better off without it; on the flip side, `grpc-gateway` served over a billion requests without a single outage.
+
+Several other decisions leaned heavily into simplicity: enforcing strict backward compatibility (only adding fields, never removing them), building multi-criteria search by concatenating SQL strings inside a single long but thoroughly commented function instead of standing up Elasticsearch, and rebuilding the databases from scratch every day via a shell-script-and-cron ETL pipeline that used PostgreSQL's `COPY` command to load over 250 million rows. The author's biggest regret was writing brittle SQL-mock unit tests that were painful to maintain instead of testing against a real database instance. The takeaway: high-quality, resilient software can absolutely be built within the constraints of government contracting.
+
+## [Java Language Evolution in 2025 - Inside Java Newscast #84](https://www.youtube.com/watch?v=dPzle3EN4CM)
+
+Episode #84 of the Inside Java Newscast reviews how the Java language is evolving in 2025 under Project Amber, the initiative focused on language syntax and developer productivity features. Active preview features include flexible constructor bodies (allowing statements to run before `super()` or `this()`), simplified `main` methods and compact source files for smaller programs, single-statement module imports, and primitive types in `instanceof` and `switch` pattern matching. The video distinguishes these from earlier-stage explorations such as deconstruction patterns for extracting data from objects, "withers" for creating modified copies of records, and the redesign of string templates, before touching briefly on serialization improvements.
+
+## [Valhalla - Java's Epic Refactor](https://www.youtube.com/watch?v=Dhn-JgZaBWo)
+
+In this Devoxx Belgium 2024 talk, Brian Goetz explains Project Valhalla, the long-running effort to heal the rift between objects and primitives in Java. At the center are value classes, which let developers model data with standard class abstractions while enabling flat, dense memory layouts like primitives. The talk also covers null-restricted types, tearing analysis under concurrent updates, and stricter object initialization rules.
+
+## [How might AI change programming?](https://registerspill.thorstenball.com/p/how-might-ai-change-programming)
+
+Thorsten Ball argues that AI is undeniably going to change programming, pointing to a string of tools Claude wrote for him: a Python script that converts a newsletter RSS feed into Markdown, an MCP server for Tailscale, over 200 lines of Rust, and a small Go server that renders Markdown files—most of which worked on the very first try. Even though AI isn't equally effective across every codebase yet, writing and rewriting certain kinds of code has become dirt cheap, and that shift will reshape software development just as compilers, the Internet, version control, and Stack Overflow did. The real question is how.
+
+The author poses a series of thought-provoking open questions: will new programming languages struggle to gain traction when LLMs lack training data for them? Will we check prompts into version control alongside source code, or structure systems as collections of tiny programs that fit neatly into an AI's context window? Will `CONTEXT.md` become the new `robots.txt`, guiding AI agents through a repository? Will we see a new form of technical debt when codebases are over-optimized for the quirks of today's models? Will compilers emit richer, more contextual error messages tailored for AI self-correction, and will function names grow longer and more descriptive because they help LLMs reason better? The post doesn't claim to have the answers, but offers plenty of food for thought about the future of the craft.
+
+## [Hands-On Career: The Evolution of a Java Champion](https://blog.vanillajava.blog/2025/01/hands-on-career-evolution-of-java.html)
+
+Peter Lawrey, founder of Chronicle Software and a ten-year Java Champion, reflects on more than 30 years of coding and what a programming career looks like in the era of generative AI. He outlines eight dimensions of career growth—ranging from technical depth, problem-solving, and collaboration/communication to business acumen and strategic management—and traces how an engineer's focus shifts from junior developer up to principal engineer or solutions architect. When you start your own company, that scope expands further into sales, finance, legal, and HR. Just as ATMs didn't eliminate bank tellers but shifted them toward higher-value relationship work, developers will adapt and gravitate toward problems that still demand human judgment.
+
+On working with AI, the author emphasizes that LLMs are statistical rather than deterministic, meaning their output is only probabilistically correct and requires domain experts to verify. A practical tip is to ask the AI to produce a plan before writing code, which consistently yields more complete results; maintaining living requirements and design documents alongside the project (documentation-driven development) also keeps AI outputs much more consistent. AI remains weak at self-evaluation, quantitative performance analysis, and aesthetic judgment. His conclusion: the ability to choose the right code matters more than the ability to type it out, and AI cannot replace hard-won experience, domain expertise, or engineering judgment.
+
+## [Token Bucket Rate Limiter (Redis & Java)](https://foojay.io/today/token-bucket-rate-limiter-redis-java/)
+
+This tutorial walks through implementing the Token Bucket rate-limiting algorithm using Redis and Java. The core idea is a "bucket" that refills with tokens at a constant rate; each incoming request consumes one token and is rejected if the bucket is empty, while the bucket's maximum capacity allows the system to absorb short bursts of traffic. In Redis, each client has two keys storing its current token count and the timestamp of the last refill; on every request, the application reads both values, calculates how many tokens to add based on elapsed time (capped at the bucket capacity), deducts one token if available, and writes the updated state back inside a `MULTI`/`EXEC` transaction (because the reads happen outside the transaction, the operation is not strictly atomic under concurrent requests). The author uses Jedis to build a `TokenBucketRateLimiter` class and tests it with Redis TestContainers, JUnit 5, and AssertJ across scenarios such as allowing requests within capacity, rejecting when tokens are exhausted, refilling over time, isolating multiple clients, and not counting rejected requests. Full source code in both Java and Kotlin is available on GitHub.
+
+One subtlety to watch out for: the code floors the number of newly generated tokens using integer division, yet updates the last-refill timestamp on every request—including rejected ones. If requests arrive continuously faster than the time needed to mint a single token, the accumulated fractional time is lost and the bucket fails to refill at the intended rate.
+
+## Bonus?
+
+Boohoo, no bonus items this time around, folks :<
+
+---
+
+*This post was rewritten by Claude Code with Opus 5.5 on 27/09/2026; reviewed and edited by Codex with GPT 6.1 Sol on 09/11/2026, and re-verified by Claude Code with Sonnet 5.5 on 16/11/2026.*
