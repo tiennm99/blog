@@ -33,9 +33,9 @@ Lời khuyên rút ra là đừng trộn nhiều mức trừu tượng trong cù
 
 ## [How Apple Pay Handles 41 Million Transactions a Day Securely](https://newsletter.systemdesign.one/p/how-does-apple-pay-work)
 
-Neo Kim giải thích kiến trúc Apple Pay qua câu chuyện một du khách dùng iPhone chạm để qua cổng tàu điện ngầm ở London, kèm lưu ý rằng bài viết dựa trên tìm hiểu cá nhân và có thể khác với cách triển khai thực tế. Khi người dùng thêm thẻ vào Apple Wallet, Apple không lưu thông tin thẻ trên iPhone hay máy chủ của Apple mà gửi dữ liệu thẻ cùng siêu dữ liệu thiết bị, dưới dạng mã hóa, đến mạng thanh toán như Visa hoặc MasterCard. Mạng thanh toán xác minh thẻ rồi tạo số tài khoản thiết bị (DAN), một số ngẫu nhiên không thể đảo ngược, gắn riêng với từng cặp thẻ và iPhone, được cất trong secure element, một con chip chuyên biệt không ai truy cập được. Khi thanh toán, đầu đọc gửi thông tin giao dịch sang iPhone qua NFC; người dùng xác thực bằng Touch ID hoặc Face ID, và dữ liệu sinh trắc học chỉ nằm trong secure enclave, một bộ xử lý tách biệt, nên không bao giờ rời khỏi máy.
+Neo Kim giải thích kiến trúc Apple Pay qua câu chuyện một du khách dùng iPhone chạm để qua cổng tàu điện ngầm ở London, kèm lưu ý rằng bài viết dựa trên tìm hiểu cá nhân và có thể khác với cách triển khai thực tế. Khi người dùng thêm thẻ vào Apple Wallet, dữ liệu thẻ cùng siêu dữ liệu thiết bị được mã hóa và chuyển qua Apple tới mạng thanh toán như Visa hoặc MasterCard; số thẻ gốc không được lưu đầy đủ trên iPhone hay máy chủ Apple. Mạng thanh toán xác minh thẻ rồi tạo số tài khoản thiết bị (DAN), một số ngẫu nhiên không thể đảo ngược, gắn riêng với từng cặp thẻ và iPhone, được cất trong secure element, một con chip chuyên biệt khó truy cập từ bên ngoài. Khi thanh toán, đầu đọc gửi thông tin giao dịch sang iPhone qua NFC; người dùng xác thực bằng Touch ID hoặc Face ID, và dữ liệu sinh trắc học chỉ nằm trong secure enclave, một bộ xử lý tách biệt, nên không rời khỏi máy.
 
-Tiếp đó, secure element kết hợp DAN với chi tiết giao dịch để tạo một cryptogram, giống như mật khẩu dùng một lần theo thời gian, rồi gửi yêu cầu cấp phép đi mà không kèm DAN. Mạng thanh toán tự tạo lại cryptogram từ bản sao DAN để đối chiếu, sau đó trả về mã phản hồi cùng một cryptogram phản hồi để phía thiết bị kiểm tra ngược lại. Nhờ dựa trên đặc tả thanh toán không tiếp xúc EMV, Apple Pay vẫn hoạt động khi điện thoại không có kết nối mạng và an toàn hơn thẻ vật lý vì không để lộ số thẻ cho bất kỳ ai.
+Tiếp đó, secure element kết hợp DAN với chi tiết giao dịch để tạo một cryptogram, giống như mật khẩu dùng một lần theo thời gian, rồi gửi yêu cầu cấp phép đi mà người bán không hề nhận được số thẻ gốc. Mạng thanh toán tự tạo lại cryptogram từ bản sao DAN để đối chiếu, sau đó trả về mã phản hồi cùng một cryptogram phản hồi để phía thiết bị kiểm tra ngược lại. Nhờ dựa trên đặc tả thanh toán không tiếp xúc EMV, Apple Pay vẫn hoạt động khi điện thoại không có kết nối mạng và an toàn hơn thẻ vật lý vì không để lộ số thẻ cho bất kỳ ai.
 
 ## [Four Kinds of Optimisation](https://tratt.net/laurie/blog/2023/four_kinds_of_optimisation.html)
 
@@ -63,4 +63,4 @@ Trong bài tiếp nối, Laurence Tratt thừa nhận đã bỏ sót một kỹ 
 
 ---
 
-*Bài viết đã được viết lại bởi Claude Code với Opus 5.5 vào ngày 27/09/2026.*
+*Bài viết đã được viết lại bởi Claude Code với Opus 5.5 vào ngày 27/09/2026; được review và chỉnh sửa bởi Codex với GPT 6.1 Sol vào ngày 09/11/2026, rà soát lại bởi Claude Code với Sonnet 5.5 vào ngày 16/11/2026.*

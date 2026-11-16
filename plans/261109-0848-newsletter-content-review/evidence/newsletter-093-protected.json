@@ -1,0 +1,114 @@
+{
+  "post": "content/post/2026/03/28/index.md",
+  "newsletter": 93,
+  "newsletter_post": true,
+  "note": "*Bài viết đã được viết lại bởi Claude Code với Opus 5.5 vào ngày 27/09/2026.*",
+  "lines": [
+    {
+      "line": 1,
+      "kind": "frontmatter",
+      "text": "---"
+    },
+    {
+      "line": 2,
+      "kind": "frontmatter",
+      "text": "title: \"Newsletter #93\""
+    },
+    {
+      "line": 3,
+      "kind": "frontmatter",
+      "text": "date: 2026-03-28"
+    },
+    {
+      "line": 4,
+      "kind": "frontmatter",
+      "text": "tags: [\"AI-Assisted\", \"Newsletter\", \"AI\", \"PostgreSQL\", \"Rust\", \"System Design\", \"Performance\"]"
+    },
+    {
+      "line": 5,
+      "kind": "frontmatter",
+      "text": "categories: [\"Newsletter\"]"
+    },
+    {
+      "line": 6,
+      "kind": "frontmatter",
+      "text": "---"
+    },
+    {
+      "line": 8,
+      "kind": "italic-note",
+      "text": "*Mời bạn thưởng thức Newsletter #93.*"
+    },
+    {
+      "line": 10,
+      "kind": "heading",
+      "text": "## [Lessons from Building Claude Code: How We Use Skills](https://x.com/trq212/status/2033949937936085378)"
+    },
+    {
+      "line": 16,
+      "kind": "heading",
+      "text": "## [The Future Of Software Engineering with Anthropic](https://www.akashbajwa.co/p/the-future-of-software-engineering)"
+    },
+    {
+      "line": 22,
+      "kind": "heading",
+      "text": "## [Rob Pike's 5 Rules of Programming](https://www.cs.unc.edu/~stotts/COMP590-059-f24/robsrules.html)"
+    },
+    {
+      "line": 28,
+      "kind": "heading",
+      "text": "## [Introduction to PostgreSQL Indexes](https://dlt.github.io/blog/posts/introduction-to-postgresql-indexes/)"
+    },
+    {
+      "line": 34,
+      "kind": "heading",
+      "text": "## [Using Rust and Postgres for everything: patterns learned over the years](https://kerkour.com/rust-postgres-everything)"
+    },
+    {
+      "line": 40,
+      "kind": "heading",
+      "text": "## [air traffic control: the IBM 9020](https://computer.rip/2026-01-17-air-traffic-control-9020.html)"
+    },
+    {
+      "line": 46,
+      "kind": "heading",
+      "text": "## [SFQ: Simple, Stateless, Stochastic Fairness](https://brooker.co.za/blog/2026/02/25/sfq.html)"
+    },
+    {
+      "line": 52,
+      "kind": "heading",
+      "text": "## [How many branches can your CPU predict?](https://lemire.me/blog/2026/03/18/how-many-branches-can-your-cpu-predict/)"
+    },
+    {
+      "line": 58,
+      "kind": "heading",
+      "text": "### Bonus"
+    },
+    {
+      "line": 60,
+      "kind": "asset",
+      "text": "**Images:**"
+    },
+    {
+      "line": 61,
+      "kind": "asset",
+      "text": "![Different Types of Tests](https://substackcdn.com/image/fetch/$s_!tS1T!,w_1100,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F958d36d9-6b19-4949-b6a6-6aa614ede834_2508x2960.jpeg)"
+    },
+    {
+      "line": 62,
+      "kind": "asset",
+      "text": "![How Single Sign-On (SSO) Works](https://substackcdn.com/image/fetch/$s_!c4WE!,w_1100,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fd86cd367-494f-4031-9793-f27e6142e54b_2508x3000.png)"
+    },
+    {
+      "line": 63,
+      "kind": "asset",
+      "text": "![How LLMs Use AI Agents with Deep Research](https://substackcdn.com/image/fetch/$s_!em-f!,w_1100,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F7e7e23e9-2a5a-4b06-a3fa-ccb6c5493f1d_2508x3000.png)"
+    },
+    {
+      "line": 64,
+      "kind": "asset",
+      "text": "![How hackers steal passwords](https://substackcdn.com/image/fetch/$s_!kRPi!,w_1100,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F3d3b2bb9-fc09-48d9-89b7-52bc37098af9_2360x2960.png)"
+    }
+  ],
+  "candidates": []
+}

@@ -63,9 +63,9 @@ Lỗi bị tranh chấp nằm ở hàm so khớp tên máy chủ với chứng c
 
 ## [How LLMs Actually Work](https://www.0xkato.xyz/how-llms-actually-work/)
 
-Bài viết giải thích cách mô hình ngôn ngữ lớn hoạt động mà không đi sâu vào toán học. Văn bản đầu vào được bộ tách từ chia thành các token và chuyển thành mã số, sau đó bảng nhúng biến mỗi mã thành một véc-tơ mang ý nghĩa đã học, nên những token có nghĩa gần nhau sẽ có véc-tơ gần nhau. Vì cơ chế chú ý không tự biết thứ tự, mô hình cần thêm thông tin vị trí; các mô hình hiện đại dùng RoPE, xoay véc-tơ truy vấn và khóa theo một góc phụ thuộc vào vị trí của token. Trong mỗi khối transformer, cơ chế chú ý so khớp truy vấn với khóa để quyết định lấy bao nhiêu thông tin từ véc-tơ giá trị của các token khác, còn nhiều đầu chú ý chạy song song giúp theo dõi cùng lúc các quan hệ ngữ pháp, tham chiếu và mẫu lặp.
+Bài giải thích mô hình ngôn ngữ dựa trên transformer sinh token tự hồi quy, không đi sâu toán học. Văn bản đầu vào được bộ tách từ chia thành các token và chuyển thành mã số, sau đó bảng nhúng biến mỗi mã thành một véc-tơ mang ý nghĩa đã học, nên những token có nghĩa gần nhau sẽ có véc-tơ gần nhau. Vì cơ chế chú ý không tự biết thứ tự, mô hình cần thêm thông tin vị trí; nhiều mô hình hiện đại dùng RoPE, xoay véc-tơ truy vấn và khóa theo một góc phụ thuộc vào vị trí của token. Trong mỗi khối transformer, cơ chế chú ý so khớp truy vấn với khóa để quyết định lấy bao nhiêu thông tin từ véc-tơ giá trị của các token khác, còn nhiều đầu chú ý chạy song song giúp theo dõi cùng lúc các quan hệ ngữ pháp, tham chiếu và mẫu lặp.
 
-Sau bước trao đổi giữa các token, mạng truyền thẳng xử lý riêng từng véc-tơ và chứa phần lớn tham số cũng như kiến thức của mô hình. Kết nối dư giúp thông tin tích lũy qua nhiều lớp mà không bị ghi đè, còn chuẩn hóa giữ cho độ lớn véc-tơ ổn định khi huấn luyện. Cuối cùng, véc-tơ của token cuối được chuyển thành phân phối xác suất trên toàn bộ từ vựng; mô hình lấy mẫu token tiếp theo, nối vào chuỗi rồi lặp lại, với nhiệt độ quyết định độ đa dạng của đầu ra. Các mô hình hiện đại dùng chung bộ khung này và chỉ khác nhau ở cấu hình, dữ liệu và cách huấn luyện.
+Sau bước trao đổi giữa các token, mạng truyền thẳng xử lý riêng từng véc-tơ và chứa phần lớn tham số cũng như kiến thức của mô hình. Kết nối dư giúp thông tin tích lũy qua nhiều lớp mà không bị ghi đè, còn chuẩn hóa giữ cho độ lớn véc-tơ ổn định khi huấn luyện. Cuối cùng, véc-tơ của token cuối được chuyển thành phân phối xác suất trên toàn bộ từ vựng; mô hình lấy mẫu token tiếp theo, nối vào chuỗi rồi lặp lại, với nhiệt độ quyết định độ đa dạng của đầu ra. Nhiều mô hình transformer chia sẻ bộ khung này, nhưng kiến trúc, cấu hình và cách huấn luyện vẫn có thể khác.
 
 ### Bonus
 
@@ -78,4 +78,4 @@ Sau bước trao đổi giữa các token, mạng truyền thẳng xử lý riê
 
 ---
 
-*Bài viết đã được viết lại bởi Claude Code với Opus 5.5 vào ngày 27/09/2026.*
+*Bài viết đã được viết lại bởi Claude Code với Opus 5.5 vào ngày 27/09/2026; được review và chỉnh sửa bởi Codex với GPT 6.1 Sol vào ngày 09/11/2026.*

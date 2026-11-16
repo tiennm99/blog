@@ -1,0 +1,129 @@
+{
+  "post": "content/post/2025/12/20/index.md",
+  "newsletter": 73,
+  "newsletter_post": true,
+  "note": "*Bài viết đã được viết lại bởi Claude Code với Opus 5.5 vào ngày 27/09/2026.*",
+  "lines": [
+    {
+      "line": 1,
+      "kind": "frontmatter",
+      "text": "---"
+    },
+    {
+      "line": 2,
+      "kind": "frontmatter",
+      "text": "title: \"Newsletter #73\""
+    },
+    {
+      "line": 3,
+      "kind": "frontmatter",
+      "text": "date: 2025-12-20"
+    },
+    {
+      "line": 4,
+      "kind": "frontmatter",
+      "text": "tags: [\"AI-Assisted\", \"Newsletter\", \"Go\", \"Databases\", \"Performance\", \"Caching\", \"System Design\"]"
+    },
+    {
+      "line": 5,
+      "kind": "frontmatter",
+      "text": "categories: [\"Newsletter\"]"
+    },
+    {
+      "line": 6,
+      "kind": "frontmatter",
+      "text": "---"
+    },
+    {
+      "line": 8,
+      "kind": "italic-note",
+      "text": "*~~Gầy đây mình mới biết [OpenRouter đã hỗ trợ tích hợp Claude Code](https://openrouter.ai/docs/guides/guides/claude-code-integration), nên nay dùng thử. Bài viết này được thực hiện bởi [Claude Code](https://claude.com/product/claude-code) + [Open Router](https://openrouter.ai/) + [Z.AI: GLM 4.5 Air (free)](https://openrouter.ai/z-ai/glm-4.5-air:free).~~ Mời bạn thưởng thức Newsletter #73.*"
+    },
+    {
+      "line": 10,
+      "kind": "heading",
+      "text": "## [System Design Deep Dive: Time Series Databases (TSDBs) Explained](https://designgurus.substack.com/p/system-design-deep-dive-time-series)"
+    },
+    {
+      "line": 16,
+      "kind": "heading",
+      "text": "## [How Memory Maps (mmap) Deliver 25x Faster File Access in Go](https://info.varnish-software.com/blog/how-memory-maps-mmap-deliver-25x-faster-file-access-in-go)"
+    },
+    {
+      "line": 22,
+      "kind": "heading",
+      "text": "## [Bloom filters](https://eli.thegreenplace.net/2025/bloom-filters)"
+    },
+    {
+      "line": 28,
+      "kind": "heading",
+      "text": "## [What the heck is AEAD again?](https://ochagavia.nl/blog/what-the-heck-is-aead-again/)"
+    },
+    {
+      "line": 34,
+      "kind": "heading",
+      "text": "## [Ceilometer: Uber's Adaptive Benchmarking Framework](https://www.uber.com/in/en/blog/ceilometer-ubers-adaptive-benchmarking-framework/)"
+    },
+    {
+      "line": 40,
+      "kind": "heading",
+      "text": "## [Useful patterns for building HTML tools](https://simonwillison.net/2025/Dec/10/html-tools/)"
+    },
+    {
+      "line": 46,
+      "kind": "heading",
+      "text": "## [Memory Allocation in Go](https://nghiant3223.github.io/2025/06/03/memory_allocation_in_go.html)"
+    },
+    {
+      "line": 52,
+      "kind": "heading",
+      "text": "## [System Design Masterclass: Building a Global CDN and Edge Caching Strategy](https://designgurus.substack.com/p/system-design-masterclass-building)"
+    },
+    {
+      "line": 58,
+      "kind": "heading",
+      "text": "## [Protect Your API: A Developer's Guide to Rate Limiting and Throttling](https://designgurus.substack.com/p/system-design-blueprint-designing)"
+    },
+    {
+      "line": 64,
+      "kind": "heading",
+      "text": "## [ACID vs BASE: The System Design Interview](https://designgurus.substack.com/p/acid-vs-base-the-system-design-interview)"
+    },
+    {
+      "line": 70,
+      "kind": "heading",
+      "text": "## [Hash tables in Go and advantage of self-hosted compilers](https://rushter.com/blog/go-and-hashmaps/)"
+    },
+    {
+      "line": 76,
+      "kind": "heading",
+      "text": "## [Gist of Go: Concurrency](https://antonz.org/go-concurrency/)"
+    },
+    {
+      "line": 82,
+      "kind": "heading",
+      "text": "## [The State of AI Coding 2025 | Greptile](https://www.greptile.com/state-of-ai-coding)"
+    },
+    {
+      "line": 88,
+      "kind": "heading",
+      "text": "## Bonus"
+    },
+    {
+      "line": 90,
+      "kind": "heading",
+      "text": "### Images"
+    },
+    {
+      "line": 92,
+      "kind": "asset",
+      "text": "![A Guide to Retry Pattern in Distributed Systems](https://substackcdn.com/image/fetch/$s_!VQTW!,w_1100,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fee73de9e-d2ee-407a-ac6e-93679bdd887d_2250x2624.png)"
+    },
+    {
+      "line": 95,
+      "kind": "author-note",
+      "text": "**Đánh giá:** *Tốc độ xử lý urls rất chậm, mình mất cực nhiều thời gian so với trước kia để xử lý 1 url. Tóm tắt khi ngắn khi dài, lại còn đôi khi lẫn lộn kí tự tiếng Trung vào nữa (có vẻ là do model của Z.AI)*"
+    }
+  ],
+  "candidates": []
+}

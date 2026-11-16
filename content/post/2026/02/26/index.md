@@ -21,7 +21,7 @@ Bộ nhớ mới là nút thắt thực sự, vì khoảng cách tốc độ gi�
 
 ## [Go's synctest is amazing](https://oblique.security/blog/go-synctest/)
 
-Eric Chiang từ Oblique chia sẻ kinh nghiệm dùng gói `testing/synctest` của Go 1.25 để kiểm thử một phần mã nguồn đầy vòng lặp chạy nền, như xóa bản ghi hết hạn trong cơ sở dữ liệu hay bầu chọn leader giữa các instance. Điểm được nhắc đến nhiều nhất là synctest chạy kiểm thử trong một "bong bóng" với đồng hồ ảo, nên `time.Sleep` gần như hoàn tất tức thì. Nhưng theo tác giả, giá trị lớn hơn là khả năng suy luận một cách xác định về *thứ tự* các sự kiện. Synctest chỉ đẩy thời gian tới khi mọi goroutine trong bong bóng đều bị chặn, chủ yếu ở thao tác channel, wait group hoặc các hàm thời gian, rồi tiến đồng hồ vừa đủ để mở khóa lần gọi sleep ngắn nhất. Nhờ vậy có thể dùng thời gian làm công cụ đồng bộ hóa, điều vốn không nên làm trong chương trình thông thường; chẳng hạn một vòng lặp chờ mỗi phút sẽ luôn chạy đúng ba lần sau ba phút ảo.
+Eric Chiang từ Oblique chia sẻ kinh nghiệm dùng gói `testing/synctest` của Go 1.25 để kiểm thử một phần mã nguồn đầy vòng lặp chạy nền, như xóa bản ghi hết hạn trong cơ sở dữ liệu hay bầu chọn leader giữa các instance. Điểm được nhắc đến nhiều nhất là synctest chạy kiểm thử trong một "bong bóng" với đồng hồ ảo, nên `time.Sleep` gần như hoàn tất tức thì. Nhưng theo tác giả, giá trị lớn hơn là khả năng suy luận một cách xác định về *thứ tự* các sự kiện. Synctest chỉ đẩy thời gian tới khi mọi goroutine trong bong bóng đều bị chặn bền vững, chủ yếu ở thao tác channel, wait group hoặc các hàm thời gian, rồi tiến đồng hồ vừa đủ để mở khóa lần gọi sleep ngắn nhất. Nhờ vậy có thể dùng thời gian làm công cụ đồng bộ hóa, điều vốn không nên làm trong chương trình thông thường; chẳng hạn một vòng lặp chờ mỗi phút sẽ luôn chạy đúng ba lần sau ba phút ảo.
 
 Áp dụng vào thực tế, chỉ cần sleep lâu hơn chu kỳ của `RunDeleteExpiredSessions`, test sẽ biết chắc lần xóa phiên hết hạn đã hoàn tất trước khi kiểm tra kết quả, và toàn bộ test chạy chưa tới một giây. Nhóm của tác giả còn áp dụng synctest cho logic bầu chọn leader gồm hàng chục vòng lặp mà không phải sửa mã nguồn, dừng ở bất kỳ thời điểm nào để kiểm tra trạng thái cơ sở dữ liệu. Tác giả lưu ý vẫn cần hiểu thao tác nào được tính là bị chặn và đảm bảo mọi goroutine được dọn dẹp đúng cách.
 
@@ -51,4 +51,4 @@ Tác giả còn áp dụng một dạng đa tác tử gọn nhẹ với bốn va
 
 ---
 
-*Bài viết đã được viết lại bởi Claude Code với Opus 5.5 vào ngày 27/09/2026.*
+*Bài viết đã được viết lại bởi Claude Code với Opus 5.5 vào ngày 27/09/2026; được review và chỉnh sửa bởi Codex với GPT 6.1 Sol vào ngày 09/11/2026, rà soát lại bởi Claude Code với Sonnet 5.5 vào ngày 16/11/2026.*

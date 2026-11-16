@@ -1,0 +1,109 @@
+{
+  "post": "content/post/2026/04/18/index.md",
+  "newsletter": 98,
+  "newsletter_post": true,
+  "note": "*Bài viết đã được viết lại bởi Claude Code với Opus 5.5 vào ngày 27/09/2026.*",
+  "lines": [
+    {
+      "line": 1,
+      "kind": "frontmatter",
+      "text": "---"
+    },
+    {
+      "line": 2,
+      "kind": "frontmatter",
+      "text": "title: \"Newsletter #98\""
+    },
+    {
+      "line": 3,
+      "kind": "frontmatter",
+      "text": "date: 2026-04-18"
+    },
+    {
+      "line": 4,
+      "kind": "frontmatter",
+      "text": "tags: [\"AI-Assisted\", \"Newsletter\", \"AI Coding Agents\", \"Go\", \"Git\", \"Software Engineering\", \"Design Systems\"]"
+    },
+    {
+      "line": 5,
+      "kind": "frontmatter",
+      "text": "categories: [\"Newsletter\"]"
+    },
+    {
+      "line": 6,
+      "kind": "frontmatter",
+      "text": "---"
+    },
+    {
+      "line": 8,
+      "kind": "italic-note",
+      "text": "*Mời bạn thưởng thức Newsletter #98.*"
+    },
+    {
+      "line": 10,
+      "kind": "heading",
+      "text": "## [Impeccable: Design fluency for AI harnesses](https://impeccable.style/)"
+    },
+    {
+      "line": 16,
+      "kind": "heading",
+      "text": "## [getdesign.md — DESIGN.md collection for AI coding agents](https://getdesign.md/)"
+    },
+    {
+      "line": 22,
+      "kind": "heading",
+      "text": "## [Which Java Construct Should You Use? Let Change Drivers Decide](https://dev.to/yannick555/which-java-construct-should-you-use-let-change-drivers-decide-3159)"
+    },
+    {
+      "line": 28,
+      "kind": "heading",
+      "text": "## [The Git Commands I Run Before Reading Any Code](https://piechowski.io/post/git-commands-before-reading-code/)"
+    },
+    {
+      "line": 34,
+      "kind": "heading",
+      "text": "## [Chess in Pure SQL](https://www.dbpro.app/blog/chess-in-pure-sql)"
+    },
+    {
+      "line": 40,
+      "kind": "heading",
+      "text": "## [Git’s Magic Files](https://nesbitt.io/2026/02/05/git-magic-files.html)"
+    },
+    {
+      "line": 46,
+      "kind": "heading",
+      "text": "## [Adding Correctness Conditions to Code Changes](https://jessitron.com/2026/04/06/adding-correctness-conditions-to-code-changes/)"
+    },
+    {
+      "line": 52,
+      "kind": "heading",
+      "text": "## [The impact of AI on software engineers in 2026: key trends. Part 1](https://newsletter.pragmaticengineer.com/p/the-impact-of-ai-on-software-engineers-2026)"
+    },
+    {
+      "line": 58,
+      "kind": "heading",
+      "text": "## [Flat Error Codes Are Not Enough](https://home.expurple.me/posts/flat-error-codes-are-not-enough/)"
+    },
+    {
+      "line": 64,
+      "kind": "heading",
+      "text": "## [Who will be the senior engineers of 2035?](https://theengineeringmanager.substack.com/p/who-will-be-the-senior-engineers)"
+    },
+    {
+      "line": 70,
+      "kind": "heading",
+      "text": "## [Repository pattern in Go service](https://pawelgrzybek.com/repository-pattern-in-go-service/)"
+    },
+    {
+      "line": 76,
+      "kind": "heading",
+      "text": "## [Go Bitwise Flags and Bitmasks: Configuration Pattern Guide](https://iampavel.dev/blog/go-bitwise-flags-config)"
+    },
+    {
+      "line": 82,
+      "kind": "heading",
+      "text": "## [The Best Library Might Do Less](https://martiansoftware.com/articles/the-best-library-might-do-less)"
+    }
+  ],
+  "candidates": []
+}

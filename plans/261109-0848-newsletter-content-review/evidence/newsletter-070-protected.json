@@ -1,0 +1,110 @@
+{
+  "post": "content/post/2025/12/13/index.md",
+  "newsletter": 70,
+  "newsletter_post": true,
+  "note": "*Bài viết đã được viết lại bởi Claude Code với Opus 5.5 vào ngày 27/09/2026.*",
+  "lines": [
+    {
+      "line": 1,
+      "kind": "frontmatter",
+      "text": "---"
+    },
+    {
+      "line": 2,
+      "kind": "frontmatter",
+      "text": "title: \"Newsletter #70\""
+    },
+    {
+      "line": 3,
+      "kind": "frontmatter",
+      "text": "date: 2025-12-13"
+    },
+    {
+      "line": 4,
+      "kind": "frontmatter",
+      "text": "tags: [\"AI-Assisted\", \"Newsletter\", \"Developer Productivity\", \"Engineering Career\", \"Testing\", \"Code Quality\", \"AI Coding\"]"
+    },
+    {
+      "line": 5,
+      "kind": "frontmatter",
+      "text": "categories: [\"Newsletter\"]"
+    },
+    {
+      "line": 6,
+      "kind": "frontmatter",
+      "text": "---"
+    },
+    {
+      "line": 8,
+      "kind": "italic-note",
+      "text": "*Mời bạn thưởng thức Newsletter #70.*"
+    },
+    {
+      "line": 10,
+      "kind": "heading",
+      "text": "## [The developer productivity paradox: Why faster coding doesn't mean faster software delivery](https://gradle.com/blog/developer-productivity-paradox-faster-coding-slower-delivery/)"
+    },
+    {
+      "line": 16,
+      "kind": "heading",
+      "text": "## [What Actually Makes You Senior](https://terriblesoftware.org/2025/11/25/what-actually-makes-you-senior/)"
+    },
+    {
+      "line": 22,
+      "kind": "heading",
+      "text": "## [Becoming unblockable](https://www.seangoedecke.com/unblockable/)"
+    },
+    {
+      "line": 28,
+      "kind": "heading",
+      "text": "## [Treat test code like production code](https://blog.ploeh.dk/2025/12/01/treat-test-code-like-production-code/)"
+    },
+    {
+      "line": 34,
+      "kind": "heading",
+      "text": "## [How good engineers write bad code at big companies](https://www.seangoedecke.com/bad-code-at-big-companies/)"
+    },
+    {
+      "line": 40,
+      "kind": "heading",
+      "text": "## [The Success Trap](https://mikefisher.substack.com/p/the-success-trap)"
+    },
+    {
+      "line": 46,
+      "kind": "heading",
+      "text": "## [Writing a good CLAUDE.md](https://www.humanlayer.dev/blog/writing-a-good-claude-md)"
+    },
+    {
+      "line": 52,
+      "kind": "heading",
+      "text": "## [We should all be using dependency cooldowns](https://blog.yossarian.net/2025/11/21/We-should-all-be-using-dependency-cooldowns)"
+    }
+  ],
+  "candidates": [
+    {
+      "line": 12,
+      "kind": "first-person",
+      "text": "Bài viết của Trisha Gee (Gradle) tổng kết một chủ đề nổi bật tại DPE Summit 2025: nghịch lý năng suất nhà phát triển. Gần như mọi lập trình viên đã dùng AI (khoảng 90%) và hơn 80% tin rằng mình làm việc hiệu quả hơn, nhưng các chỉ số tổ chức gần như không nhúc nhích. Báo cáo DORA 2025 cho thấy AI không phải vấn đề cũng không phải lời giải, mà là tấm gương phản chiếu và bộ khuếch đại những điểm mạnh, điểm yếu sẵn có. Vì mô hình AI luôn có một tỷ lệ dự đoán sai nhất định, lượng mã nguồn sinh ra càng nhiều thì hệ thống càng kém ổn định nếu quy trình phân phối phần mềm không đủ vững. Chi phí chuyển đổi ngữ cảnh cũng nuốt mất phần thời gian tiết kiệm được: mỗi lần bị ngắt quãng tốn 15–20 phút để lấy lại tập trung, và chính AI tạo thêm những lần ngắt mới như kiểm tra kết quả, chỉnh câu lệnh hay chuyển công cụ để tìm lỗi."
+    },
+    {
+      "line": 26,
+      "kind": "first-person",
+      "text": "Khi gặp lỗi từ dịch vụ của đội khác, đừng vội kết luận mình bị chặn mà hãy tự đọc mã nguồn và nhật ký của họ; giờ đây có thể nhờ các tác tử AI như Codex hay Claude Code phân tích, và theo tác giả chúng trả lời đúng khoảng một phần ba số lần. Ngoài ra, hãy xây dựng quan hệ với kỹ sư các đội khác bằng cách hữu ích với họ để có kênh hợp tác không chính thức nhanh hơn, và tận dụng \"hỗ trợ từ trên cao\" của giám đốc hay phó chủ tịch bằng cách chọn dự án phù hợp với ưu tiên của công ty."
+    },
+    {
+      "line": 30,
+      "kind": "first-person",
+      "text": "Mark Seemann cho rằng mã kiểm thử cần được đối xử như mã chạy trên môi trường thật: áp dụng cùng tiêu chuẩn viết mã, dễ đọc, được tổ chức tốt và cũng phải qua duyệt mã. Thực tế mã kiểm thử thường bị xem nhẹ: thụt lề đúng chuẩn nhưng đầy trùng lặp do sao chép, nhiều \"mã zombie\" bị vô hiệu hóa bằng chú thích, dùng thời gian chờ tùy ý thay cho đồng bộ luồng đúng cách. Tiêu chuẩn viết mã và nguyên tắc thiết kế tồn tại không phải để chiều máy tính mà để con người, thường là chính mình trong tương lai, có thể hiểu và bảo trì. Khi độ bao phủ kiểm thử tốt, lượng mã kiểm thử rất lớn nên càng cần giữ nó theo nguyên tắc DRY; nếu không, một thay đổi nhỏ sẽ gây ra \"Shotgun Surgery\", làm hàng loạt bài kiểm thử hỏng và phải sửa từng cái."
+    },
+    {
+      "line": 36,
+      "kind": "first-person",
+      "text": "Sean Goedecke giải thích vì sao các công ty công nghệ lớn tuyển nhiều kỹ sư giỏi mà vẫn tạo ra mã nguồn kém chất lượng. Lý do chính là các công ty này **đầy kỹ sư làm việc ngoài chuyên môn của mình**. Nhân viên trung bình chỉ ở lại một đến hai năm, lại thêm tái cơ cấu nội bộ liên tục, trong khi nhiều dịch vụ đã tồn tại cả chục năm. Vì thế phần lớn thay đổi mã được thực hiện bởi \"người mới\", những người mới làm quen với công ty, cơ sở mã hay ngôn ngữ lập trình trong vòng sáu tháng. Những \"lão làng\" am hiểu hệ thống có thể duyệt mã kỹ, nhưng vai trò này hoàn toàn không chính thức và họ luôn quá tải vì còn phải lo việc riêng."
+    },
+    {
+      "line": 44,
+      "kind": "first-person",
+      "text": "Bài viết đưa ra ba ví dụ: một kỹ sư được thăng tiến lên quản lý đến mức không còn tự xây dựng gì, cuối cùng chấp nhận giảm lương để quay lại viết mã ở một công ty khởi nghiệp; Kodak phát minh ra máy ảnh kỹ thuật số năm 1975 nhưng xếp xó vì phim là nguồn sống của họ; và Radiohead chủ động làm mới mình bằng *Kid A* sau thành công của *OK Computer*. Để thoát bẫy, tổ chức cần thể chế hóa sự tò mò bằng thời gian dành riêng cho thử nghiệm, còn cá nhân nên thường xuyên đặt mình vào vị trí người mới học, coi trọng tốc độ học hỏi hơn sự ổn định. Với người lãnh đạo, đó là tinh thần \"quản gia\": nắm giữ thành công nhẹ nhàng và tối ưu cho sự đổi mới chứ không chỉ kết quả, bởi theo tác giả, tự do chứ không phải thành tựu mới là thước đo thật sự của thành công."
+    }
+  ]
+}

@@ -1,0 +1,85 @@
+{
+  "post": "content/post/2025/07/31/index.md",
+  "newsletter": 41,
+  "newsletter_post": true,
+  "note": "*Bài viết đã được viết lại bởi Claude Code với Opus 5.5 vào ngày 27/09/2026.*",
+  "lines": [
+    {
+      "line": 1,
+      "kind": "frontmatter",
+      "text": "---"
+    },
+    {
+      "line": 2,
+      "kind": "frontmatter",
+      "text": "title: \"Newsletter #41\""
+    },
+    {
+      "line": 3,
+      "kind": "frontmatter",
+      "text": "date: 2025-07-31"
+    },
+    {
+      "line": 4,
+      "kind": "frontmatter",
+      "text": "tags: [\"AI-Assisted\", \"Performance\", \"Algorithms\", \"AI Coding\", \"Claude Code\", \"Vibe Coding\", \"SQL\"]"
+    },
+    {
+      "line": 5,
+      "kind": "frontmatter",
+      "text": "categories: [\"Newsletter\"]"
+    },
+    {
+      "line": 6,
+      "kind": "frontmatter",
+      "text": "---"
+    },
+    {
+      "line": 8,
+      "kind": "italic-note",
+      "text": "*Mời bạn thưởng thức Newsletter #41.*"
+    },
+    {
+      "line": 10,
+      "kind": "heading",
+      "text": "## [The Fastest Way to Detect a Vowel in a String](https://austinhenley.com/blog/vowels.html)"
+    },
+    {
+      "line": 16,
+      "kind": "heading",
+      "text": "## [Writing Toy Software Is A Joy](https://blog.jsbarretto.com/post/software-is-joy)"
+    },
+    {
+      "line": 22,
+      "kind": "heading",
+      "text": "## [Field Notes From Shipping Real Code With Claude](https://diwank.space/field-notes-from-shipping-real-code-with-claude)"
+    },
+    {
+      "line": 28,
+      "kind": "heading",
+      "text": "## [Why Generative AI Coding Tools and Agents Do Not Work For Me](https://blog.miguelgrinberg.com/post/why-generative-ai-coding-tools-and-agents-do-not-work-for-me)"
+    },
+    {
+      "line": 34,
+      "kind": "heading",
+      "text": "## [AI coding assistants aren't really making devs feel more productive](https://leaddev.com/velocity/ai-coding-assistants-arent-really-making-devs-feel-more-productive)"
+    },
+    {
+      "line": 40,
+      "kind": "heading",
+      "text": "## [How to Vibe Code as a Senior Engineer](https://blog.alexmaccaw.com/how-to-vibe-code-as-a-senior-engineer)"
+    },
+    {
+      "line": 46,
+      "kind": "heading",
+      "text": "## [SQL Noir - Interactive SQL Game](https://www.sqlnoir.com/blog/games-to-learn-sql)"
+    }
+  ],
+  "candidates": [
+    {
+      "line": 30,
+      "kind": "first-person",
+      "text": "Miguel Grinberg, tác giả Flask-SocketIO và nhiều thư viện Python quen thuộc, giải thích vì sao các công cụ và agent AI sinh mã nguồn không phù hợp với ông. Lập luận chính là chúng không giúp ông làm nhanh hơn: vì luôn là người chịu trách nhiệm cho mã nguồn mình đưa lên môi trường sản phẩm, dù có AI hay không, ông phải đọc và hiểu kỹ từng dòng trước khi commit. Việc review mã nguồn do AI viết mất ngang bằng, thậm chí lâu hơn tự viết, nên phần thời gian \"tiết kiệm\" được bị triệt tiêu ngay ở khâu kiểm tra bắt buộc này."
+    }
+  ]
+}

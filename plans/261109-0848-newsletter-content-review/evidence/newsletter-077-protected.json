@@ -1,0 +1,119 @@
+{
+  "post": "content/post/2026/01/24/index.md",
+  "newsletter": 77,
+  "newsletter_post": true,
+  "note": "*Bài viết đã được viết lại bởi Claude Code với Opus 5.5 vào ngày 27/09/2026.*",
+  "lines": [
+    {
+      "line": 1,
+      "kind": "frontmatter",
+      "text": "---"
+    },
+    {
+      "line": 2,
+      "kind": "frontmatter",
+      "text": "title: \"Newsletter #77\""
+    },
+    {
+      "line": 3,
+      "kind": "frontmatter",
+      "text": "date: 2026-01-24"
+    },
+    {
+      "line": 4,
+      "kind": "frontmatter",
+      "text": "tags: [\"AI-Assisted\", \"Newsletter\", \"Java\", \"Go\", \"Kotlin\", \"Rust\", \"Error Handling\"]"
+    },
+    {
+      "line": 5,
+      "kind": "frontmatter",
+      "text": "categories: [\"Newsletter\"]"
+    },
+    {
+      "line": 6,
+      "kind": "frontmatter",
+      "text": "---"
+    },
+    {
+      "line": 8,
+      "kind": "italic-note",
+      "text": "*Mời bạn thưởng thức Newsletter #77.*"
+    },
+    {
+      "line": 10,
+      "kind": "heading",
+      "text": "## [Stop Forwarding Errors, Start Designing Them](https://fast.github.io/blog/stop-forwarding-errors-start-designing-them/)"
+    },
+    {
+      "line": 16,
+      "kind": "heading",
+      "text": "## [Clock Synchronization Is a Nightmare](https://arpitbhayani.me/blogs/clock-sync-nightmare/)"
+    },
+    {
+      "line": 22,
+      "kind": "heading",
+      "text": "## [Java - Learning Roadmap](https://nemorize.com/roadmaps/java)"
+    },
+    {
+      "line": 28,
+      "kind": "heading",
+      "text": "## [The Ultimate Guide to Successfully Adopting Kotlin in a Java-Dominated Environment](https://blog.jetbrains.com/kotlin/2025/12/the-ultimate-guide-to-successfully-adopting-kotlin-in-a-java-dominated-environment/)"
+    },
+    {
+      "line": 34,
+      "kind": "heading",
+      "text": "## [Rust vs Go](https://bitfieldconsulting.com/posts/rust-vs-go)"
+    },
+    {
+      "line": 40,
+      "kind": "heading",
+      "text": "## [The most popular Go dependency is…](https://blog.thibaut-rousseau.com/blog/the-most-popular-go-dependency-is/)"
+    },
+    {
+      "line": 46,
+      "kind": "heading",
+      "text": "## [go.sum Is Not a Lockfile](https://words.filippo.io/gosum/)"
+    },
+    {
+      "line": 52,
+      "kind": "heading",
+      "text": "## [Forgejo Actions Notification Development](https://chris-besch.com/articles/forgejo_actions_notification/)"
+    },
+    {
+      "line": 58,
+      "kind": "heading",
+      "text": "### Bonus"
+    },
+    {
+      "line": 62,
+      "kind": "asset",
+      "text": "![Message Brokers 101](https://substackcdn.com/image/fetch/w_1100,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F3ec94ed4-46b2-40bd-8d28-a25fdde639c8_2250x2624.png)"
+    },
+    {
+      "line": 63,
+      "kind": "asset",
+      "text": "![Cloud Load Balancer Cheat Sheet](https://substackcdn.com/image/fetch/$s_!hXRV!,w_1100,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fe99863c7-7ab7-4f61-9961-af7e4c6ee64f.png)"
+    },
+    {
+      "line": 64,
+      "kind": "asset",
+      "text": "![How CQRS Works?](https://substackcdn.com/image/fetch/$s_!XvtW!,w_1100,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F1ded3402-4eb5-4818-861f-7661f1cefe82.tif)"
+    },
+    {
+      "line": 65,
+      "kind": "asset",
+      "text": "![How does Docker Work?](https://substackcdn.com/image/fetch/$s_!SUjA!,w_1100,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fd91a5538-a69e-468c-bf83-058bb78753ca_2360x2770.png)"
+    },
+    {
+      "line": 66,
+      "kind": "asset",
+      "text": "![Containerization Explained: From Build to Runtime](https://substackcdn.com/image/fetch/$s_!4qBZ!,w_1100,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Ff0945414-9cea-4e64-8dd4-3abcc404f73e_2360x2960.png)"
+    },
+    {
+      "line": 67,
+      "kind": "asset",
+      "text": "![Must-Know Message Broker Patterns](https://substackcdn.com/image/fetch/$s_!n8BK!,w_1100,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fa51a75cc-09a9-4fed-af8a-c32a64f8ab60_2250x2624.png)"
+    }
+  ],
+  "candidates": []
+}

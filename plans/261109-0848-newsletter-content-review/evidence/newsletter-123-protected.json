@@ -1,0 +1,115 @@
+{
+  "post": "content/post/2026/07/11/index.md",
+  "newsletter": 123,
+  "newsletter_post": true,
+  "note": "*Bài viết đã được viết lại bởi Claude Code với Opus 5.5 vào ngày 27/09/2026.*",
+  "lines": [
+    {
+      "line": 1,
+      "kind": "frontmatter",
+      "text": "---"
+    },
+    {
+      "line": 2,
+      "kind": "frontmatter",
+      "text": "title: \"Newsletter #123\""
+    },
+    {
+      "line": 3,
+      "kind": "frontmatter",
+      "text": "date: 2026-07-11"
+    },
+    {
+      "line": 4,
+      "kind": "frontmatter",
+      "text": "tags: [\"AI-Assisted\", \"Newsletter\", \"AI\", \"System Design\", \"Reliability\", \"Career Development\", \"Networking\"]"
+    },
+    {
+      "line": 5,
+      "kind": "frontmatter",
+      "text": "categories: [\"Newsletter\"]"
+    },
+    {
+      "line": 6,
+      "kind": "frontmatter",
+      "text": "---"
+    },
+    {
+      "line": 8,
+      "kind": "italic-note",
+      "text": "*Mời bạn thưởng thức Newsletter #123.*"
+    },
+    {
+      "line": 10,
+      "kind": "heading",
+      "text": "## [Our Collective Bike Shed Moment](https://muratbuffalo.blogspot.com/2026/06/our-collective-bike-shed-moment.html)"
+    },
+    {
+      "line": 16,
+      "kind": "heading",
+      "text": "## [p99 0 ms* autocomplete for 240 million domain names](https://ruurtjan.com/articles/p99-0ms-autocomplete-for-240-million-domain-names)"
+    },
+    {
+      "line": 22,
+      "kind": "heading",
+      "text": "## [Building Reliable Agentic AI Systems](https://martinfowler.com/articles/reliable-llm-bayer.html)"
+    },
+    {
+      "line": 28,
+      "kind": "heading",
+      "text": "## [Growing as an engineer in a world of AI](https://nlopes.dev/writing/growing-as-an-engineer-in-a-world-of-ai)"
+    },
+    {
+      "line": 34,
+      "kind": "heading",
+      "text": "## [Note To My Younger Self](https://yewjin.substack.com/p/note-to-my-younger-self)"
+    },
+    {
+      "line": 40,
+      "kind": "heading",
+      "text": "## [Google hits 50% IPv6](https://blog.apnic.net/2026/04/28/google-hits-50-ipv6/)"
+    },
+    {
+      "line": 46,
+      "kind": "heading",
+      "text": "## [The unwritten laws of software engineering](https://www.manager.dev/newsletter/the-unwritten-laws-of-software-engineering)"
+    },
+    {
+      "line": 52,
+      "kind": "heading",
+      "text": "### Bonus"
+    },
+    {
+      "line": 54,
+      "kind": "asset",
+      "text": "**Images:**"
+    },
+    {
+      "line": 55,
+      "kind": "asset",
+      "text": "![Top Anti-Patterns in Service Architecture](https://substackcdn.com/image/fetch/$s_!mGbr!,w_1100,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F8558b1b2-984f-4c42-bb23-e63a2252533c_2650x3068.png)"
+    }
+  ],
+  "candidates": [
+    {
+      "line": 36,
+      "kind": "first-person",
+      "text": "Sau hai thập kỷ làm việc tại các công ty công nghệ lớn, tác giả đúc kết tám nguyên tắc nghề nghiệp đơn giản nhưng khó duy trì. Hãy yêu công việc thực tế thay vì chạy theo chức danh, xem công việc đầu tiên như phòng thí nghiệm để học cách giải quyết vấn đề; liên tục hỏi “tại sao” để tìm nguyên nhân gốc; xây dựng quan hệ chân thành bằng sự giúp đỡ thật lòng nhưng vẫn giữ ranh giới rõ ràng; tạo niềm vui trong môi trường làm việc; lắng nghe, giải thích phù hợp với người nghe và biết khi nào nên im lặng; ghi lại tác động của mình hằng tuần và chủ động xin phản hồi cụ thể rồi hành động ngay, để có bằng chứng cho sự tiến bộ và điều chỉnh sớm; và khi có thể, chọn người quản lý giúp mình trưởng thành thay vì chọn chức danh hấp dẫn, vì họ ảnh hưởng mạnh đến cách suy nghĩ và quỹ đạo nghề nghiệp dài hạn."
+    },
+    {
+      "line": 38,
+      "kind": "first-person",
+      "text": "Tác giả thừa nhận đây không phải quy tắc tuyệt đối và góc nhìn của mình mang thiên kiến của người thành công. Khi công việc tốt, người quản lý tốt, sự tử tế, khả năng được ghi nhận và sức khỏe tinh thần xung đột với nhau, lựa chọn phải dựa vào giai đoạn nghề nghiệp, kỹ năng còn thiếu, hoàn cảnh cá nhân và thời gian đánh đổi. Một câu hỏi hữu ích khi phân vân là điều gì vẫn còn giá trị sau năm năm: dự án thường bị lãng quên, còn kỹ năng, cách suy nghĩ và các mối quan hệ tốt tiếp tục sinh lợi lâu dài."
+    },
+    {
+      "line": 48,
+      "kind": "first-person",
+      "text": "Bài viết tổng hợp bảy quy tắc vận hành mà kỹ sư thường chỉ thấm sau khi gặp sự cố. Nếu hệ thống hỏng ngay sau một lần triển khai, hãy quay lui để khôi phục ổn định trước rồi mới điều tra, thay vì mất thời gian chứng minh thay đổi của mình vô can. Bản sao lưu chỉ đáng tin khi đã được thử khôi phục định kỳ, và đội ngũ biết rõ lượng dữ liệu có thể mất, ai có quyền thực hiện cùng thời gian phục hồi. Nhật ký cần đủ thông tin, có mã liên kết xuyên dịch vụ và dễ tìm kiếm, nhưng không dài đến mức che khuất tín hiệu quan trọng."
+    },
+    {
+      "line": 50,
+      "kind": "first-person",
+      "text": "Mọi thay đổi dữ liệu phải có đường quay lui nhanh, cụ thể và đã được kiểm thử. Phụ thuộc bên ngoài chắc chắn sẽ có lúc chậm, giới hạn yêu cầu hoặc ngừng hoạt động, nên cần hiểu giới hạn tốc độ, tác động khi gián đoạn, cam kết dịch vụ và chuẩn bị phương án như bộ nhớ đệm, hàng đợi hoặc dùng dữ liệu cũ. Với thao tác rủi ro, nguyên tắc bốn mắt giúp phát hiện sai lầm trước khi thực hiện; nếu bạn ngại gọi ai đó vào đêm khuya để cùng kiểm tra, đó chính là dấu hiệu càng không nên làm một mình. Cuối cùng, giải pháp tạm thời thường sống lâu hơn dự kiến, vì vậy phiên bản tối thiểu vẫn phải đơn giản và đủ chất lượng để tồn tại lâu dài, chứ không phải một bản vá mong manh chờ sửa sau."
+    }
+  ]
+}

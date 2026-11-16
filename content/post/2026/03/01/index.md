@@ -53,7 +53,7 @@ Theo tác giả, framework giải quyết ba vấn đề. "Đơn giản hóa" th
 
 Tác giả, người mê đường sá từ khi chơi SimCity 2000, phân tích vì sao đường trong game xây dựng thành phố, dù ngày càng tiến bộ, vẫn có gì đó sai: đường nối cao tốc gấp khúc hoặc uốn lượn thiếu thực tế, làn tốc độ cao bị bẻ cong quá gắt, bán kính góc giao lộ trông kỳ lạ. Gốc rễ nằm ở đường cong Bézier, công cụ quen thuộc của lập trình viên game: thanh lịch và linh hoạt nhưng không giữ được hình dạng và độ cong khi dịch song song. Ngoài đời, hai bánh xe trên cùng trục luôn cách nhau một khoảng cố định, tạo ra hai vệt song song; còn đường song song với một đường Bézier không còn là Bézier, nên ở khúc cua gắt, lưới đường bị bóp méo hoặc tự cắt nhau.
 
-Giải pháp là cung tròn: dịch song song bao nhiêu thì kết quả vẫn là cung tròn song song với ban đầu, và ghép các cung có bán kính khác nhau có thể tạo mọi hình dạng theo đúng nguyên tắc kỹ thuật. Cung tròn còn cho phép tính giao điểm bằng công thức O(1) thay vì phương pháp lặp phức tạp như Bézier. Hạn chế của cung tròn là độ cong không đổi, khiến lực ngang tăng đột ngột khi vào cua ở tốc độ cao; kỹ sư cầu đường dùng đường cong chuyển tiếp như clothoid, có độ cong tăng dần nhưng toán học rất phức tạp. Với đường đô thị tốc độ thấp, cung tròn đã đủ tốt. Tác giả tự xây dựng hệ thống đường vì tò mò và vì tài nguyên dành cho nhà phát triển độc lập còn quá sơ sài, và muốn chia sẻ giải pháp tốt hơn cho cộng đồng.
+Giải pháp là cung tròn: dịch song song (miễn bán kính còn hợp lệ) thì kết quả vẫn là cung tròn đồng tâm với ban đầu, và ghép các cung có bán kính khác nhau có thể tạo nhiều hình dạng theo đúng nguyên tắc kỹ thuật. Cung tròn còn cho phép tính giao điểm bằng công thức O(1) thay vì phương pháp lặp phức tạp như Bézier. Hạn chế của cung tròn là độ cong không đổi, khiến lực ngang tăng đột ngột khi vào cua ở tốc độ cao; kỹ sư cầu đường dùng đường cong chuyển tiếp như clothoid, có độ cong tăng dần nhưng toán học rất phức tạp. Với đường đô thị tốc độ thấp, cung tròn đã đủ tốt. Tác giả tự xây dựng hệ thống đường vì tò mò và vì tài nguyên dành cho nhà phát triển độc lập còn quá sơ sài, và muốn chia sẻ giải pháp tốt hơn cho cộng đồng.
 
 ### Bonus
 
@@ -62,4 +62,4 @@ Giải pháp là cung tròn: dịch song song bao nhiêu thì kết quả vẫn 
 
 ---
 
-*Bài viết đã được viết lại bởi Claude Code với Opus 5.5 vào ngày 27/09/2026.*
+*Bài viết đã được viết lại bởi Claude Code với Opus 5.5 vào ngày 27/09/2026; được review và chỉnh sửa bởi Codex với GPT 6.1 Sol vào ngày 09/11/2026, rà soát lại bởi Claude Code với Sonnet 5.5 vào ngày 16/11/2026.*

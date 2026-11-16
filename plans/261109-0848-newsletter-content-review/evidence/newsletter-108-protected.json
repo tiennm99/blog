@@ -1,0 +1,64 @@
+{
+  "post": "content/post/2026/06/04/index.md",
+  "newsletter": 108,
+  "newsletter_post": true,
+  "note": "*Bài viết đã được viết lại bởi Claude Code với Opus 5.5 vào ngày 27/09/2026.*",
+  "lines": [
+    {
+      "line": 1,
+      "kind": "frontmatter",
+      "text": "---"
+    },
+    {
+      "line": 2,
+      "kind": "frontmatter",
+      "text": "title: \"Newsletter #108\""
+    },
+    {
+      "line": 3,
+      "kind": "frontmatter",
+      "text": "date: 2026-06-04"
+    },
+    {
+      "line": 4,
+      "kind": "frontmatter",
+      "text": "tags: [\"AI-Assisted\", \"AI Coding\", \"Software Engineering\", \"Developer Productivity\", \"Mental Models\", \"Code Quality\", \"Testing\"]"
+    },
+    {
+      "line": 5,
+      "kind": "frontmatter",
+      "text": "categories: [\"Newsletter\"]"
+    },
+    {
+      "line": 6,
+      "kind": "frontmatter",
+      "text": "---"
+    },
+    {
+      "line": 8,
+      "kind": "italic-note",
+      "text": "*Mời bạn thưởng thức Newsletter #108.*"
+    },
+    {
+      "line": 10,
+      "kind": "heading",
+      "text": "## [Coding is solved? Software is not.](https://arcplane.ai/journal/software-is-not-solved)"
+    },
+    {
+      "line": 16,
+      "kind": "heading",
+      "text": "## [Ideas](https://www.noahzender.com/ideas)"
+    },
+    {
+      "line": 22,
+      "kind": "heading",
+      "text": "## [AI productivity debate](https://newsletter.getdx.com/p/ai-productivity-debate)"
+    },
+    {
+      "line": 28,
+      "kind": "heading",
+      "text": "## [Maintainability sensors for coding agents](https://martinfowler.com/articles/sensors-for-coding-agents.html)"
+    }
+  ],
+  "candidates": []
+}

@@ -1,0 +1,304 @@
+{
+  "post": "content/post/2025/08/03/index.md",
+  "newsletter": 44,
+  "newsletter_post": true,
+  "note": "*Bài viết đã được viết lại bởi Claude Code với Opus 5.5 vào ngày 27/09/2026.*",
+  "lines": [
+    {
+      "line": 1,
+      "kind": "frontmatter",
+      "text": "---"
+    },
+    {
+      "line": 2,
+      "kind": "frontmatter",
+      "text": "title: \"Newsletter #44\""
+    },
+    {
+      "line": 3,
+      "kind": "frontmatter",
+      "text": "date: 2025-08-03"
+    },
+    {
+      "line": 4,
+      "kind": "frontmatter",
+      "text": "tags:"
+    },
+    {
+      "line": 5,
+      "kind": "frontmatter",
+      "text": "  ["
+    },
+    {
+      "line": 6,
+      "kind": "frontmatter",
+      "text": "    \"AI-Assisted\","
+    },
+    {
+      "line": 7,
+      "kind": "frontmatter",
+      "text": "    \"Công cụ lập trình\","
+    },
+    {
+      "line": 8,
+      "kind": "frontmatter",
+      "text": "    \"Cursor\","
+    },
+    {
+      "line": 9,
+      "kind": "frontmatter",
+      "text": "    \"Quy trình phát triển\","
+    },
+    {
+      "line": 10,
+      "kind": "frontmatter",
+      "text": "    \"Kỹ năng chuyên môn\","
+    },
+    {
+      "line": 11,
+      "kind": "frontmatter",
+      "text": "    \"AI Coding\","
+    },
+    {
+      "line": 12,
+      "kind": "frontmatter",
+      "text": "    \"Git\","
+    },
+    {
+      "line": 13,
+      "kind": "frontmatter",
+      "text": "  ]"
+    },
+    {
+      "line": 14,
+      "kind": "frontmatter",
+      "text": "categories: [\"Newsletter\"]"
+    },
+    {
+      "line": 15,
+      "kind": "frontmatter",
+      "text": "---"
+    },
+    {
+      "line": 17,
+      "kind": "italic-note",
+      "text": "_~~Như đã đề cập, hôm nay mình sẽ thử Newsletter với Roo Code. Các post tiếp theo sẽ dùng Roo Code + Qwen 3 Coder.~~ Mời bạn thưởng thức Newsletter #44._"
+    },
+    {
+      "line": 19,
+      "kind": "heading",
+      "text": "## [Cursor Unveils Game-Changing Web App for AI Coding Agents](https://opentools.ai/news/cursor-unveils-game-changing-web-app-for-ai-coding-agents)"
+    },
+    {
+      "line": 25,
+      "kind": "heading",
+      "text": "## [The Heart of Software Engineering Still Beats](https://annievella.com/posts/the-heart-of-software-engineering-still-beats/)"
+    },
+    {
+      "line": 31,
+      "kind": "heading",
+      "text": "## [Expert Generalist](https://martinfowler.com/articles/expert-generalist.html)"
+    },
+    {
+      "line": 37,
+      "kind": "italic-note",
+      "text": "_Trên đây là các bài dùng Roo Code với Qwen 3 Coder, nhìn chung thì tương đối chậm và tốn khá nhiều request. Sau đây mình sẽ dùng thử Roo Code với Kimi K2_"
+    },
+    {
+      "line": 39,
+      "kind": "heading",
+      "text": "## [Writing code was never the bottleneck](https://ordep.dev/posts/writing-code-was-never-the-bottleneck)"
+    },
+    {
+      "line": 45,
+      "kind": "heading",
+      "text": "## [Building Tiny AI Tools](https://www.seangoedecke.com/building-tiny-ai-tools/)"
+    },
+    {
+      "line": 51,
+      "kind": "heading",
+      "text": "## [Modern Git Commands and Features You Should Be Using](https://martinheinz.dev/blog/109)"
+    },
+    {
+      "line": 55,
+      "kind": "code",
+      "text": "```bash"
+    },
+    {
+      "line": 56,
+      "kind": "code",
+      "text": "git switch other-branch"
+    },
+    {
+      "line": 57,
+      "kind": "code",
+      "text": "git switch -  # Quay lại branch trước đó"
+    },
+    {
+      "line": 58,
+      "kind": "code",
+      "text": "git switch remote-branch  # Chuyển sang remote branch và tự động tracking"
+    },
+    {
+      "line": 59,
+      "kind": "code",
+      "text": "```"
+    },
+    {
+      "line": 61,
+      "kind": "code",
+      "text": "```bash"
+    },
+    {
+      "line": 62,
+      "kind": "code",
+      "text": "# Bỏ stage changes"
+    },
+    {
+      "line": 63,
+      "kind": "code",
+      "text": "git restore --staged some-file.py"
+    },
+    {
+      "line": 64,
+      "kind": "code",
+      "text": ""
+    },
+    {
+      "line": 65,
+      "kind": "code",
+      "text": "# Bỏ stage và discard changes"
+    },
+    {
+      "line": 66,
+      "kind": "code",
+      "text": "git restore --staged --worktree some-file.py"
+    },
+    {
+      "line": 67,
+      "kind": "code",
+      "text": ""
+    },
+    {
+      "line": 68,
+      "kind": "code",
+      "text": "# Khôi phục file về commit cụ thể"
+    },
+    {
+      "line": 69,
+      "kind": "code",
+      "text": "git restore --source HEAD~2 some-file.py"
+    },
+    {
+      "line": 70,
+      "kind": "code",
+      "text": "```"
+    },
+    {
+      "line": 72,
+      "kind": "code",
+      "text": "```bash"
+    },
+    {
+      "line": 73,
+      "kind": "code",
+      "text": "git clone --no-checkout https://github.com/example/monorepo"
+    },
+    {
+      "line": 74,
+      "kind": "code",
+      "text": "cd monorepo"
+    },
+    {
+      "line": 75,
+      "kind": "code",
+      "text": "git sparse-checkout init --cone"
+    },
+    {
+      "line": 76,
+      "kind": "code",
+      "text": "git checkout main  # Chỉ checkout file trong root"
+    },
+    {
+      "line": 77,
+      "kind": "code",
+      "text": "git sparse-checkout set service/common  # Chỉ lấy thư mục cần thiết"
+    },
+    {
+      "line": 78,
+      "kind": "code",
+      "text": "```"
+    },
+    {
+      "line": 80,
+      "kind": "code",
+      "text": "```bash"
+    },
+    {
+      "line": 81,
+      "kind": "code",
+      "text": "git worktree add ../hotfix master  # Tạo worktree mới từ master"
+    },
+    {
+      "line": 82,
+      "kind": "code",
+      "text": "cd ../hotfix  # Làm việc độc lập"
+    },
+    {
+      "line": 83,
+      "kind": "code",
+      "text": "git worktree list  # Liệt kê các worktree"
+    },
+    {
+      "line": 84,
+      "kind": "code",
+      "text": "```"
+    },
+    {
+      "line": 86,
+      "kind": "code",
+      "text": "```bash"
+    },
+    {
+      "line": 87,
+      "kind": "code",
+      "text": "git bisect start"
+    },
+    {
+      "line": 88,
+      "kind": "code",
+      "text": "git bisect bad HEAD      # Commit hiện tại bị lỗi"
+    },
+    {
+      "line": 89,
+      "kind": "code",
+      "text": "git bisect good abc123   # Commit cuối cùng hoạt động tốt"
+    },
+    {
+      "line": 90,
+      "kind": "code",
+      "text": "# Git tự động checkout commit ở giữa"
+    },
+    {
+      "line": 91,
+      "kind": "code",
+      "text": "git bisect good/bad      # Test và báo cáo kết quả"
+    },
+    {
+      "line": 92,
+      "kind": "code",
+      "text": "git bisect reset         # Quay lại commit ban đầu"
+    },
+    {
+      "line": 93,
+      "kind": "code",
+      "text": "```"
+    },
+    {
+      "line": 97,
+      "kind": "italic-note",
+      "text": "_Sau khi trải nghiệm mình nhận thấy Kimi K2 luôn phản hồi nhanh hơn Qwen 3 Coder, dù dùng Cline hay Roo Code, và Roo Code gọi nhiều request hơn Cline, tuy nhiên độ hài lòng về kết quả thì cũng xêm xêm. Vì OpenRouter limit dựa trên số lần request chứ không phải tổng lượng token nên có lẽ mình sẽ chọn Cline + Kimi K2 để dùng tạm mỗi khi Claude Code chạm quota._"
+    }
+  ],
+  "candidates": []
+}

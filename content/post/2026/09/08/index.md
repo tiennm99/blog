@@ -9,7 +9,7 @@ categories: ["Newsletter"]
 
 ## [How Anthropic runs large-scale code migrations with Claude Code](https://claude.com/blog/ai-code-migration)
 
-Chuyển một dự án lớn sang ngôn ngữ khác từng là việc kéo dài nhiều năm, nên thường chỉ được làm khi không còn lựa chọn nào khác. Anthropic cho thấy bài toán này đã đổi khác: Bun chuyển một triệu dòng mã nguồn từ Zig sang Rust trong chưa đầy hai tuần, tiêu tốn khoảng 5,9 tỷ token đầu vào và 690 triệu token đầu ra (tương đương 165.000 đô theo giá API). Đổi lại, toàn bộ bộ kiểm thử hiện có đều vượt qua trước khi hợp nhất, tệp nhị phân nhỏ hơn 19%, hiệu năng tăng 2–5%, và một phép đo bộ nhớ giảm từ 6.745MB xuống 609MB. Một ví dụ khác là 165.000 dòng Python được chuyển sang TypeScript chỉ trong một cuối tuần.
+Chuyển một dự án lớn sang ngôn ngữ khác từng là việc kéo dài nhiều năm, nên thường chỉ được làm khi không còn lựa chọn nào khác. Anthropic cho thấy bài toán này đã đổi khác: Bun chuyển một triệu dòng mã nguồn từ Zig sang Rust trong chưa đầy hai tuần, tiêu tốn khoảng 5,9 tỷ token đầu vào và 690 triệu token đầu ra (tương đương 165.000 đô theo giá API). Đổi lại, toàn bộ bộ kiểm thử hiện có đều vượt qua trước khi hợp nhất (sau đó vẫn có 19 lỗi hồi quy, đều đã được sửa), tệp nhị phân nhỏ hơn 19%, hiệu năng tăng 2–5%, và một phép đo bộ nhớ giảm từ 6.745MB xuống 609MB. Một ví dụ khác là 165.000 dòng Python được chuyển sang TypeScript chỉ trong một cuối tuần.
 
 Quy trình gồm sáu bước: viết bộ quy tắc dịch kèm bản đồ phụ thuộc, thử quy tắc trên nhóm tệp mẫu, dịch toàn bộ bằng các agent chạy song song, chạy vòng lặp biên dịch với agent sửa lỗi và agent phản biện, kiểm thử nhanh để bắt lỗi lúc chạy, rồi đối chiếu hành vi với mã gốc. Bài học cốt lõi là không sửa mã nguồn mà sửa vòng lặp sinh ra nó: lỗi lặp lại thì cập nhật bộ quy tắc rồi sinh lại, thay vì vá tay từng tệp. Muốn vậy cần có trước một "trọng tài" khách quan như trình biên dịch hay bộ kiểm thử, và hàng đợi công việc có thể tiếp tục lại được. Chi phí cũng nên phân bổ có chủ đích: mô hình nhỏ như Sonnet dịch số lượng lớn, mô hình lớn như Fable hay Opus viết quy tắc và rà soát.
 
@@ -51,4 +51,4 @@ Podium, một dịch vụ bảng xếp hạng mã nguồn mở, chọn luật r�
 
 ---
 
-*Bài viết đã được viết lại bởi Claude Code với Opus 5.5 vào ngày 27/09/2026.*
+*Bài viết đã được viết lại bởi Claude Code với Opus 5.5 vào ngày 27/09/2026; được review và chỉnh sửa bởi Codex với GPT 6.1 Sol vào ngày 09/11/2026, rà soát lại bởi Claude Code với Sonnet 5.5 vào ngày 16/11/2026.*

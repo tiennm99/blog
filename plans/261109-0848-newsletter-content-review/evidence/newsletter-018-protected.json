@@ -1,0 +1,169 @@
+{
+  "post": "content/post/2025/05/05/index.md",
+  "newsletter": 18,
+  "newsletter_post": true,
+  "note": "*Bài viết đã được viết lại bởi Claude Code với Opus 5.5 vào ngày 27/09/2026.*",
+  "lines": [
+    {
+      "line": 1,
+      "kind": "frontmatter",
+      "text": "---"
+    },
+    {
+      "line": 2,
+      "kind": "frontmatter",
+      "text": "title: \"Newsletter #18\""
+    },
+    {
+      "line": 3,
+      "kind": "frontmatter",
+      "text": "date: 2025-05-05"
+    },
+    {
+      "line": 4,
+      "kind": "frontmatter",
+      "text": "tags: [ \"AI-Assisted\", \"Git\", \"UI Design\", \"Java\", \"Distributed Locking\", \"Markdown\", \"AI Coding\" ]"
+    },
+    {
+      "line": 5,
+      "kind": "frontmatter",
+      "text": "categories: [ \"Newsletter\" ]"
+    },
+    {
+      "line": 6,
+      "kind": "frontmatter",
+      "text": "---"
+    },
+    {
+      "line": 8,
+      "kind": "italic-note",
+      "text": "*Mời bạn thưởng thức Newsletter #18.*"
+    },
+    {
+      "line": 10,
+      "kind": "heading",
+      "text": "## [No Longer My Favorite Git Commit](https://mtlynch.io/no-longer-my-favorite-git-commit/)"
+    },
+    {
+      "line": 16,
+      "kind": "heading",
+      "text": "## [Our interfaces have lost their senses](https://wattenberger.com/thoughts/our-interfaces-have-lost-their-senses)"
+    },
+    {
+      "line": 22,
+      "kind": "heading",
+      "text": "## [Labeled Breaks in Java: Useful Tool or Code Smell?](https://www.baeldung.com/java-labeled-break)"
+    },
+    {
+      "line": 26,
+      "kind": "code",
+      "text": "```java"
+    },
+    {
+      "line": 27,
+      "kind": "code",
+      "text": "outer: // <-- label"
+    },
+    {
+      "line": 28,
+      "kind": "code",
+      "text": "for (int i = 0; i < 5; i++) {"
+    },
+    {
+      "line": 29,
+      "kind": "code",
+      "text": "    for (int j = 0; j < 5; j++) {"
+    },
+    {
+      "line": 30,
+      "kind": "code",
+      "text": "        println(i + \", \" + j);"
+    },
+    {
+      "line": 31,
+      "kind": "code",
+      "text": "        if (j == 2) {"
+    },
+    {
+      "line": 32,
+      "kind": "code",
+      "text": "            break outer; // thoát khỏi vòng lặp ngoài"
+    },
+    {
+      "line": 33,
+      "kind": "code",
+      "text": "        }"
+    },
+    {
+      "line": 34,
+      "kind": "code",
+      "text": "    }"
+    },
+    {
+      "line": 35,
+      "kind": "code",
+      "text": "}"
+    },
+    {
+      "line": 36,
+      "kind": "code",
+      "text": "```"
+    },
+    {
+      "line": 40,
+      "kind": "heading",
+      "text": "## [Distributed Locking: A Practical Guide](https://www.architecture-weekly.com/p/distributed-locking-a-practical-guide)"
+    },
+    {
+      "line": 46,
+      "kind": "heading",
+      "text": "## [If it is worth keeping, save it in Markdown](https://p.migdal.pl/blog/2025/02/markdown-saves)"
+    },
+    {
+      "line": 52,
+      "kind": "heading",
+      "text": "## [The Software Engineering Identity Crisis](https://annievella.com/posts/the-software-engineering-identity-crisis/)"
+    },
+    {
+      "line": 58,
+      "kind": "heading",
+      "text": "## [Revenge of the junior developer](https://sourcegraph.com/blog/revenge-of-the-junior-developer)"
+    },
+    {
+      "line": 64,
+      "kind": "heading",
+      "text": "## Bonus: Vài ảnh hay ho đến từ [ByteByteGo](https://bytebytego.com/)"
+    },
+    {
+      "line": 66,
+      "kind": "asset",
+      "text": "![How does SSO Work?](https://substack-post-media.s3.amazonaws.com/public/images/111cec1b-a195-4ff5-963c-714ceecd01ab_1280x1664.gif)"
+    },
+    {
+      "line": 67,
+      "kind": "asset",
+      "text": "![How Java Virtual Threads Work?](https://substack-post-media.s3.amazonaws.com/public/images/b415d54d-0dbd-428d-a09c-3de0332c0f71_1280x1502.gif)"
+    },
+    {
+      "line": 68,
+      "kind": "asset",
+      "text": "![Memcached vs Redis](https://substack-post-media.s3.amazonaws.com/public/images/8ef255cc-ebbb-4710-9faf-f366274a2bef_1280x1373.gif)"
+    },
+    {
+      "line": 69,
+      "kind": "asset",
+      "text": "![The Shopify Tech Stack](https://substack-post-media.s3.amazonaws.com/public/images/2370fff4-b515-484e-a081-4ce73b2c62c2_1280x1566.gif)"
+    },
+    {
+      "line": 71,
+      "kind": "heading",
+      "text": "## Bonus 2: Vài video hay ho đến từ [ByteByteGo](https://bytebytego.com/)"
+    },
+    {
+      "line": 73,
+      "kind": "asset",
+      "text": "[What Are AI Agents Really About?](https://www.youtube.com/watch?v=eHEHE2fpnWQ)"
+    }
+  ],
+  "candidates": []
+}

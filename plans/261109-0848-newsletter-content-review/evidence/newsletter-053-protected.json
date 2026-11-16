@@ -1,0 +1,84 @@
+{
+  "post": "content/post/2025/09/09/index.md",
+  "newsletter": 53,
+  "newsletter_post": true,
+  "note": "*Bài viết đã được viết lại bởi Claude Code với Opus 5.5 vào ngày 27/09/2026.*",
+  "lines": [
+    {
+      "line": 1,
+      "kind": "frontmatter",
+      "text": "---"
+    },
+    {
+      "line": 2,
+      "kind": "frontmatter",
+      "text": "title: \"Newsletter #53\""
+    },
+    {
+      "line": 3,
+      "kind": "frontmatter",
+      "text": "date: 2025-09-09"
+    },
+    {
+      "line": 4,
+      "kind": "frontmatter",
+      "text": "tags: [\"AI-Assisted\", \"Security\", \"Gaming\", \"Algorithms\", \"Kafka\", \"Distributed Systems\", \"Vibe Coding\"]"
+    },
+    {
+      "line": 5,
+      "kind": "frontmatter",
+      "text": "categories: [\"Newsletter\"]"
+    },
+    {
+      "line": 6,
+      "kind": "frontmatter",
+      "text": "---"
+    },
+    {
+      "line": 8,
+      "kind": "italic-note",
+      "text": "*~~Bài này mình thử nghiệm tổng hợp tất cả code agent rules trước đây về thành 1 file AGENTS.md duy nhất, sau đó trỏ CLAUDE.md đọc file này.~~ Mời bạn thưởng thức Newsletter #53.*"
+    },
+    {
+      "line": 10,
+      "kind": "heading",
+      "text": "## [Anti-cheat, Secure Boot & TPM](https://andrewmoore.ca/blog/post/anticheat-secure-boot-tpm/)"
+    },
+    {
+      "line": 16,
+      "kind": "heading",
+      "text": "## [Left to Right Programming](https://graic.net/p/left-to-right-programming)"
+    },
+    {
+      "line": 22,
+      "kind": "heading",
+      "text": "## [Big O Notation](https://samwho.dev/big-o/)"
+    },
+    {
+      "line": 28,
+      "kind": "heading",
+      "text": "## [Personal AI Evaluations August 2025](https://darkcoding.net/software/personal-ai-evals-aug-2025/)"
+    },
+    {
+      "line": 34,
+      "kind": "heading",
+      "text": "## [How to Keep Services Running During Failures](https://newsletter.scalablethread.com/p/how-to-keep-services-running-during)"
+    },
+    {
+      "line": 40,
+      "kind": "heading",
+      "text": "## [Why Was Apache Kafka Created?](https://bigdata.2minutestreaming.com/p/why-was-apache-kafka-created)"
+    },
+    {
+      "line": 46,
+      "kind": "heading",
+      "text": "## [How We Vibe Code at a FAANG](https://www.reddit.com/r/vibecoding/comments/1myakhd/how_we_vibe_code_at_a_faang/)"
+    },
+    {
+      "line": 52,
+      "kind": "italic-note",
+      "text": "*Đánh giá hiệu quả của AGENTS.md: Chưa được tốt lắm, còn chứa tiếng Anh nhiều. Mình sẽ cố gắng cải thiện thêm trong các bài viết tới. Hẹn gặp lại*"
+    }
+  ],
+  "candidates": []
+}

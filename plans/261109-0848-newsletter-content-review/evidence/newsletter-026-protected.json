@@ -1,0 +1,160 @@
+{
+  "post": "content/post/2025/05/13/index.md",
+  "newsletter": 26,
+  "newsletter_post": true,
+  "note": "*Bài viết đã được viết lại bởi Claude Code với Opus 5.5 vào ngày 27/09/2026.*",
+  "lines": [
+    {
+      "line": 1,
+      "kind": "frontmatter",
+      "text": "---"
+    },
+    {
+      "line": 2,
+      "kind": "frontmatter",
+      "text": "title: \"Newsletter #26\""
+    },
+    {
+      "line": 3,
+      "kind": "frontmatter",
+      "text": "date: \"2025-05-13\""
+    },
+    {
+      "line": 4,
+      "kind": "frontmatter",
+      "text": "tags: [ \"AI-Assisted\", \"Software Design\", \"Java\", \"Structured Concurrency\", \"Git\", \"Local Development\", \"AI Agents\" ]"
+    },
+    {
+      "line": 5,
+      "kind": "frontmatter",
+      "text": "categories: [ \"Newsletter\" ]"
+    },
+    {
+      "line": 6,
+      "kind": "frontmatter",
+      "text": "---"
+    },
+    {
+      "line": 8,
+      "kind": "italic-note",
+      "text": "*Mời bạn thưởng thức Newsletter #26.*"
+    },
+    {
+      "line": 10,
+      "kind": "heading",
+      "text": "## [The Philosophy of Software Design – with John Ousterhout](https://newsletter.pragmaticengineer.com/p/the-philosophy-of-software-design)"
+    },
+    {
+      "line": 16,
+      "kind": "heading",
+      "text": "## [20 years of Git. Still weird, still wonderful](https://blog.gitbutler.com/20-years-of-git)"
+    },
+    {
+      "line": 22,
+      "kind": "heading",
+      "text": "## [A Modest Critique of Optional Handling](https://mccue.dev/pages//4-5-25-optional-critique)"
+    },
+    {
+      "line": 28,
+      "kind": "heading",
+      "text": "## [Project Loom: Structured Concurrency in Java](https://rockthejvm.com/articles/structured-concurrency-in-java)"
+    },
+    {
+      "line": 34,
+      "kind": "heading",
+      "text": "## [Go's HTTP Server Patterns in Java 25](https://mccue.dev/pages/4-5-25-go-http-server)"
+    },
+    {
+      "line": 40,
+      "kind": "heading",
+      "text": "## [Java is dying and it paid off my mortgage](https://alyosha.net/posts/java-is-dying-and-it-paid-off-my-mortgage/)"
+    },
+    {
+      "line": 46,
+      "kind": "heading",
+      "text": "## [.localhost domains](https://inclouds.space/localhost-domains)"
+    },
+    {
+      "line": 50,
+      "kind": "code",
+      "text": "```bash"
+    },
+    {
+      "line": 51,
+      "kind": "code",
+      "text": "# /etc/hosts"
+    },
+    {
+      "line": 52,
+      "kind": "code",
+      "text": "127.0.0.1 inclouds.localhost"
+    },
+    {
+      "line": 53,
+      "kind": "code",
+      "text": ""
+    },
+    {
+      "line": 54,
+      "kind": "code",
+      "text": "# Caddyfile"
+    },
+    {
+      "line": 55,
+      "kind": "code",
+      "text": "inclouds.localhost {"
+    },
+    {
+      "line": 56,
+      "kind": "code",
+      "text": "    reverse_proxy localhost:5050"
+    },
+    {
+      "line": 57,
+      "kind": "code",
+      "text": "    tls internal"
+    },
+    {
+      "line": 58,
+      "kind": "code",
+      "text": "    encode gzip zstd"
+    },
+    {
+      "line": 59,
+      "kind": "code",
+      "text": "}"
+    },
+    {
+      "line": 60,
+      "kind": "code",
+      "text": "```"
+    },
+    {
+      "line": 64,
+      "kind": "heading",
+      "text": "## [AI 50: AI Agents Move Beyond Chat](https://sequoiacap.com/article/ai-50-2025/)"
+    },
+    {
+      "line": 66,
+      "kind": "asset",
+      "text": "![](https://sequoiacap.com/wp-content/uploads/sites/6/2025/04/ai-50-2025.png)"
+    },
+    {
+      "line": 72,
+      "kind": "heading",
+      "text": "## Vài ảnh hay ho đến từ [ByteByteGo](https://bytebytego.com/)"
+    },
+    {
+      "line": 74,
+      "kind": "asset",
+      "text": "![A Cheatsheet On OOP Design Patterns](https://substack-post-media.s3.amazonaws.com/public/images/65279cf0-3266-445d-852b-a45d6ac9afa4_2250x2862.png)"
+    }
+  ],
+  "candidates": [
+    {
+      "line": 42,
+      "kind": "first-person",
+      "text": "Alyosha kể lại nỗi lo khi còn là một lập trình viên junior chuyên về Java. Trên Hacker News hay YouTube, Java gần như vắng bóng so với JavaScript và các công nghệ đang \"hot\", khiến tác giả sợ rằng mình đang đặt cược sự nghiệp vào một ngôn ngữ sắp lỗi thời. Nhưng khi thực sự bước vào thị trường việc làm, tác giả nhận ra điều ngược lại: các vị trí Java dẫn đầu về lương và phúc lợi, phần lớn đến từ những công ty ổn định vẫn âm thầm vận hành hệ thống trên Java."
+    }
+  ]
+}

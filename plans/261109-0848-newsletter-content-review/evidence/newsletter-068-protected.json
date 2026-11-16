@@ -1,0 +1,140 @@
+{
+  "post": "content/post/2025/12/11/index.md",
+  "newsletter": 68,
+  "newsletter_post": true,
+  "note": "*Bài viết đã được viết lại bởi Claude Code với Opus 5.5 vào ngày 27/09/2026.*",
+  "lines": [
+    {
+      "line": 1,
+      "kind": "frontmatter",
+      "text": "---"
+    },
+    {
+      "line": 2,
+      "kind": "frontmatter",
+      "text": "title: \"Newsletter #68\""
+    },
+    {
+      "line": 3,
+      "kind": "frontmatter",
+      "text": "date: 2025-12-11"
+    },
+    {
+      "line": 4,
+      "kind": "frontmatter",
+      "text": "tags: [\"AI-Assisted\", \"Debugging\", \"Open Source\", \"system-performance\", \"Networking\", \"JavaScript\", \"Algorithms\"]"
+    },
+    {
+      "line": 5,
+      "kind": "frontmatter",
+      "text": "categories: [\"Newsletter\"]"
+    },
+    {
+      "line": 6,
+      "kind": "frontmatter",
+      "text": "---"
+    },
+    {
+      "line": 8,
+      "kind": "italic-note",
+      "text": "*Mời bạn thưởng thức Newsletter #68. ~~Bài viết này được thực hiện bởi [Claude Code](https://github.com/anthropics/claude-code), [Claude Code Router](https://github.com/musistudio/claude-code-router), [iFlow Open Platform](https://platform.iflow.cn) & GLM-4.6 (Bài này mình config CCR dùng nhiều models trên iFlow Platform)~~*"
+    },
+    {
+      "line": 10,
+      "kind": "heading",
+      "text": "## [Conscious Debugging: 10 Effective Strategies That Actually Work 🐛](https://thetshaped.dev/p/conscious-debugging-10-effective-debugging-strategies-debug-like-pro)"
+    },
+    {
+      "line": 16,
+      "kind": "heading",
+      "text": "## [The fate of \"small\" open source](https://nolanlawson.com/2025/11/16/the-fate-of-small-open-source/)"
+    },
+    {
+      "line": 22,
+      "kind": "heading",
+      "text": "## [Programming Languages in the Age of AI Agents](https://alexn.org/blog/2025/11/16/programming-languages-in-the-age-of-ai-agents/)"
+    },
+    {
+      "line": 28,
+      "kind": "heading",
+      "text": "## [\"Numbers Everyone Should Know\" from Jeff Dean](https://brenocon.com/dean_perf.html)"
+    },
+    {
+      "line": 34,
+      "kind": "heading",
+      "text": "## [The Internet is Cool. Thank you, TCP](https://cefboud.com/posts/tcp-deep-dive-internals/)"
+    },
+    {
+      "line": 40,
+      "kind": "heading",
+      "text": "## [Myths Programmers Believe about CPU Caches](https://software.rajivprab.com/2018/04/29/myths-programmers-believe-about-cpu-caches/)"
+    },
+    {
+      "line": 46,
+      "kind": "heading",
+      "text": "## [Why NaN !== NaN in JavaScript (and the IEEE 754 story behind it)](https://pzarycki.com/en/posts/js-nan/)"
+    },
+    {
+      "line": 52,
+      "kind": "heading",
+      "text": "## [Towards interplanetary QUIC traffic](https://ochagavia.nl/blog/towards-interplanetary-quic-traffic/)"
+    },
+    {
+      "line": 58,
+      "kind": "heading",
+      "text": "## [Bloom filters: the niche trick behind a 16× faster API](https://incident.io/blog/bloom-filters)"
+    },
+    {
+      "line": 64,
+      "kind": "heading",
+      "text": "## [making things true](https://threadreaderapp.com/thread/1990057444253241545.html)"
+    },
+    {
+      "line": 70,
+      "kind": "heading",
+      "text": "## [What Good Execution Looks Like](https://yusufaytas.com/what-good-execution-looks-like/)"
+    },
+    {
+      "line": 76,
+      "kind": "heading",
+      "text": "### Bonus"
+    },
+    {
+      "line": 78,
+      "kind": "asset",
+      "text": "**Images:**"
+    },
+    {
+      "line": 79,
+      "kind": "asset",
+      "text": "![How to Design Good APIs](https://substackcdn.com/image/fetch/$s_!tANe!,w_1100,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F7f80d730-11c4-4d55-81bf-fa4629cc2f0f_2360x2960.png)"
+    },
+    {
+      "line": 80,
+      "kind": "asset",
+      "text": "![Types of Virtualization](https://substackcdn.com/image/fetch/$s_!gReB!,w_1100,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fc2e93eb2-84ab-427f-b587-e14b599e0fee_2360x2960.png)"
+    },
+    {
+      "line": 82,
+      "kind": "asset",
+      "text": "**Videos:**"
+    },
+    {
+      "line": 83,
+      "kind": "asset",
+      "text": "[Why is Kafka Popular?](https://www.youtube.com/watch?v=7_wkWQ9rB5I)"
+    }
+  ],
+  "candidates": [
+    {
+      "line": 18,
+      "kind": "first-person",
+      "text": "Nolan Lawson nhìn lại `blob-util`, thư viện npm nhỏ anh viết cách đây khoảng 10 năm và vẫn có hơn 5 triệu lượt tải mỗi tuần. Khi khoảng 80% lập trình viên đã dùng AI trong công việc, những tiện ích kiểu này có thể được LLM sinh ra ngay theo yêu cầu — anh thử nhờ Claude viết hàm chuyển `Blob` sang `ArrayBuffer` và nhận được kết quả gần giống phiên bản của mình. Nhiều người coi đó là tiến bộ: ít phụ thuộc hơn, tránh được rủi ro về hiệu năng, bảo trì và chuỗi cung ứng. Nhưng tác giả cho rằng có thứ đã mất đi: `blob-util` được viết với tinh thần của người thầy, kèm hướng dẫn giúp người dùng hiểu cách làm việc hiệu quả với JavaScript. Khi ta đề cao câu trả lời tức thì hơn việc học và hiểu, động lực để viết thư viện và giảng giải về vấn đề cũng giảm theo."
+    },
+    {
+      "line": 66,
+      "kind": "first-person",
+      "text": "Trong chuỗi bài đăng này, Ryo Lu cho rằng thiết kế không phải chuyện thẩm mỹ như chọn màu hay trau chuốt giao diện, mà là cách nhìn xuyên qua bề mặt để hiểu cấu trúc bên dưới: phân rã một thứ phức tạp thành các thành phần cơ bản, hiểu mối quan hệ giữa chúng rồi tái tổ hợp thành thứ đơn giản và mạnh mẽ hơn. Khi làm Notion, nhóm không cố tạo thêm một ứng dụng ghi chú hay quản lý công việc mà tìm \"nguyên tử\" của phần mềm: khối (block), cơ sở dữ liệu, góc nhìn (view) và quan hệ. Từ góc nhìn đó, Asana, Linear, Evernote hay Airtable chỉ là những tổ hợp cứng nhắc của cùng các khái niệm nền, còn Notion trao cho người dùng bộ Lego để tự lắp thứ họ cần. Cursor làm điều tương tự ở một tầng khác, xóa bớt rào cản giữa ý định của con người và phần mềm chạy được: bạn mô tả điều mình muốn, AI lo phần phân rã thành mã nguồn."
+    }
+  ]
+}

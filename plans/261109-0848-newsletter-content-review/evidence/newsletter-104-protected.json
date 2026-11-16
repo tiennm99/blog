@@ -1,0 +1,110 @@
+{
+  "post": "content/post/2026/05/24/index.md",
+  "newsletter": 104,
+  "newsletter_post": true,
+  "note": "*Bài viết đã được viết lại bởi Claude Code với Opus 5.5 vào ngày 27/09/2026.*",
+  "lines": [
+    {
+      "line": 1,
+      "kind": "frontmatter",
+      "text": "---"
+    },
+    {
+      "line": 2,
+      "kind": "frontmatter",
+      "text": "title: \"Newsletter #104\""
+    },
+    {
+      "line": 3,
+      "kind": "frontmatter",
+      "text": "date: 2026-05-24"
+    },
+    {
+      "line": 4,
+      "kind": "frontmatter",
+      "text": "tags: [\"AI-Assisted\", \"Newsletter\", \"AI Agents\", \"Software Design\", \"Go\", \"GitHub\", \"Engineering Productivity\"]"
+    },
+    {
+      "line": 5,
+      "kind": "frontmatter",
+      "text": "categories: [\"Newsletter\"]"
+    },
+    {
+      "line": 6,
+      "kind": "frontmatter",
+      "text": "---"
+    },
+    {
+      "line": 8,
+      "kind": "italic-note",
+      "text": "*Mời bạn thưởng thức Newsletter #104.*"
+    },
+    {
+      "line": 10,
+      "kind": "heading",
+      "text": "## [Designing the AI-native engineering organization](https://newsletter.getdx.com/p/designing-the-ai-native-engineering)"
+    },
+    {
+      "line": 16,
+      "kind": "heading",
+      "text": "## [10 Lessons for Agentic Coding](https://www.dbreunig.com/2026/05/04/10-lessons-for-agentic-coding.html)"
+    },
+    {
+      "line": 22,
+      "kind": "heading",
+      "text": "## [Just Fucking Use Go](https://blainsmith.com/articles/just-fucking-use-go/)"
+    },
+    {
+      "line": 28,
+      "kind": "heading",
+      "text": "## [Symptoms of Bad Software Design](https://newsletter.optimistengineer.com/p/symptoms-of-bad-software-design)"
+    },
+    {
+      "line": 34,
+      "kind": "heading",
+      "text": "## [Claude Code is Not Making Your Product Better](https://ethanding.substack.com/p/claude-code-is-not-making-your-product)"
+    },
+    {
+      "line": 40,
+      "kind": "heading",
+      "text": "## [The Pulse: AI load breaks GitHub – why not other vendors?](https://blog.pragmaticengineer.com/the-pulse-ai-load-breaks-github/)"
+    },
+    {
+      "line": 46,
+      "kind": "heading",
+      "text": "## [You Need AI That Reduces Maintenance Costs](https://www.jamesshore.com/v2/blog/2026/you-need-ai-that-reduces-your-maintenance-costs)"
+    },
+    {
+      "line": 52,
+      "kind": "heading",
+      "text": "## [Cognitive Surrender](https://addyosmani.com/blog/cognitive-surrender/)"
+    },
+    {
+      "line": 58,
+      "kind": "heading",
+      "text": "### Bonus"
+    },
+    {
+      "line": 60,
+      "kind": "asset",
+      "text": "**Images:**"
+    },
+    {
+      "line": 61,
+      "kind": "asset",
+      "text": "![Claude Code vs. OpenClaw: 5 Design Dimensions](https://substackcdn.com/image/fetch/$s_!oEvb!,w_1100,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F49df56c9-1f92-4f88-bd16-8cd59dab407c_2484x3002.jpeg)"
+    },
+    {
+      "line": 62,
+      "kind": "asset",
+      "text": "![Why Does Git Revert Cause Conflicts?](https://substackcdn.com/image/fetch/$s_!6UGD!,w_1100,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F265133fd-d0f8-48c0-b170-73f6e6a49fec_1280x1605.jpeg)"
+    }
+  ],
+  "candidates": [
+    {
+      "line": 54,
+      "kind": "first-person",
+      "text": "Addy Osmani giới thiệu khái niệm \"cognitive surrender\" từ nghiên cứu của Steven Shaw và Gideon Nave (Wharton). Cần phân biệt nó với \"cognitive offloading\": offloading là giao cho AI phần \"làm thế nào\" nhưng vẫn tự phán đoán kết quả, còn surrender là khi ta ngừng tự xây dựng câu trả lời, đầu ra của AI trở thành đầu ra của mình. Qua ba thí nghiệm với 1.372 người, khi AI trả lời sai, người tham gia chấp nhận câu trả lời sai trong 73% trường hợp, và sự tự tin của họ còn tăng lên dù một nửa đáp án bị cố tình làm sai. Với lập trình viên, điều này xảy ra khi duyệt PR 600 dòng chỉ vì kiểm thử đã xanh, để agent sửa lỗi mà không hiểu lỗi gốc, hay để agent quyết định thiết kế."
+    }
+  ]
+}

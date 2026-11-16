@@ -29,7 +29,7 @@ Các mẫu kỹ thuật chính gồm gọi song song bất đồng bộ (async f
 
 Stripe muốn biết liệu AI agent có thể tự xây dựng trọn vẹn một tích hợp thanh toán hay không, bởi với thanh toán, một tích hợp "gần đúng" vẫn là thất bại. Họ xây dựng bộ benchmark gồm 11 môi trường mô phỏng dự án thực tế, có mã nguồn, cơ sở dữ liệu, script và khóa API thử nghiệm, chấm điểm bằng các bài kiểm thử tự động qua API và giao diện. Các tác vụ chia thành ba nhóm: chỉ backend (di chuyển dữ liệu, nâng cấp phiên bản API), toàn stack (phải dùng trình duyệt để nộp bài), và các bài tập "gym" đi sâu vào một tính năng như Checkout hay subscription. Mọi mô hình đều chạy trên cùng một harness dựa trên goose, với MCP server cung cấp terminal, trình duyệt và công cụ tìm kiếm tài liệu.
 
-Kết quả vượt kỳ vọng: Claude Opus 4.5 đạt trung bình 92% ở nhóm toàn stack, còn GPT-5.2 dẫn đầu nhóm gym với 73%. Agent đã nâng cấp tích hợp Card Element cũ lên Checkout, tự dùng Stripe Link để hoàn tất giao dịch thử, và suy ngược đúng hơn 80% tham số API từ giao diện Checkout có sẵn. Dù vậy, chúng vẫn xử lý kém các tình huống mơ hồ, chẳng hạn coi lỗi 400 do dữ liệu giả là dấu hiệu endpoint hoạt động tốt, và đôi khi bỏ cuộc khi thao tác trình duyệt bị kẹt dù chỉ cần tải lại trang. Stripe công bố bộ benchmark trong AI toolkit của mình để cộng đồng cùng cải thiện công cụ cho agent; ngay trong quá trình làm, nó đã giúp họ phát hiện và sửa một số lỗi tài liệu.
+Kết quả vượt kỳ vọng: Claude Opus 4.5 đạt trung bình 92% trên bốn tác vụ toàn stack, còn GPT-5.2 dẫn đầu nhóm gym với 73% trên hai tác vụ. Agent đã nâng cấp tích hợp Card Element cũ lên Checkout, tự dùng Stripe Link để hoàn tất giao dịch thử, và suy ngược đúng hơn 80% tham số API từ giao diện Checkout có sẵn. Dù vậy, chúng vẫn xử lý kém các tình huống mơ hồ, chẳng hạn coi lỗi 400 do dữ liệu giả là dấu hiệu endpoint hoạt động tốt, và đôi khi bỏ cuộc khi thao tác trình duyệt bị kẹt dù chỉ cần tải lại trang. Stripe công bố bộ benchmark trong AI toolkit của mình để cộng đồng cùng cải thiện công cụ cho agent; ngay trong quá trình làm, nó đã giúp họ phát hiện và sửa một số lỗi tài liệu.
 
 ### Bonus
 
@@ -41,4 +41,4 @@ Kết quả vượt kỳ vọng: Claude Opus 4.5 đạt trung bình 92% ở nhó
 
 ---
 
-*Bài viết đã được viết lại bởi Claude Code với Opus 5.5 vào ngày 27/09/2026.*
+*Bài viết đã được viết lại bởi Claude Code với Opus 5.5 vào ngày 27/09/2026; được review và chỉnh sửa bởi Codex với GPT 6.1 Sol vào ngày 09/11/2026, rà soát lại bởi Claude Code với Sonnet 5.5 vào ngày 16/11/2026.*

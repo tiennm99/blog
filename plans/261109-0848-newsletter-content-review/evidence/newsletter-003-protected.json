@@ -1,0 +1,154 @@
+{
+  "post": "content/post/2025/02/23/index.md",
+  "newsletter": 3,
+  "newsletter_post": true,
+  "note": "*Bài viết đã được viết lại bởi Claude Code với Opus 5.5 vào ngày 27/09/2026.*",
+  "lines": [
+    {
+      "line": 1,
+      "kind": "frontmatter",
+      "text": "---"
+    },
+    {
+      "line": 2,
+      "kind": "frontmatter",
+      "text": "title: \"Newsletter #3\""
+    },
+    {
+      "line": 3,
+      "kind": "frontmatter",
+      "text": "date: 2025-02-23"
+    },
+    {
+      "line": 4,
+      "kind": "frontmatter",
+      "text": "tags: [\"AI-Assisted\", \"Newsletter\", \"Java\", \"JVM\", \"Redis\", \"Database Sharding\", \"Career\"]"
+    },
+    {
+      "line": 5,
+      "kind": "frontmatter",
+      "text": "categories: [ \"Newsletter\" ]"
+    },
+    {
+      "line": 6,
+      "kind": "frontmatter",
+      "text": "---"
+    },
+    {
+      "line": 8,
+      "kind": "html-block",
+      "text": "<i>"
+    },
+    {
+      "line": 9,
+      "kind": "html-block",
+      "text": "Chào các bạn, lại một cuối tuần nữa trôi qua, mời các bạn chill chill cùng Newsletter #3 của MiTi."
+    },
+    {
+      "line": 10,
+      "kind": "html-block",
+      "text": "</i>"
+    },
+    {
+      "line": 12,
+      "kind": "heading",
+      "text": "## [Java's Plans for 2025 - Inside Java Newscast #83](https://www.youtube.com/watch?v=y26XGt8d_kI)"
+    },
+    {
+      "line": 16,
+      "kind": "heading",
+      "text": "## ~~[Why You Should Learn Kotlin in 2025](https://dev.to/empiree/why-you-should-learn-kotlin-in-2025-47g0)~~"
+    },
+    {
+      "line": 18,
+      "kind": "struck",
+      "text": "~~Bài viết này trên Dev.to khuyến khích các nhà phát triển tìm hiểu Kotlin vào năm 2025, nhấn mạnh các tính năng hiện đại, khả năng tương tác với Java và các ứng dụng đa dạng của nó. Bài đăng này cũng thảo luận về thị trường việc làm và mức lương tiềm năng cho các nhà phát triển Kotlin.~~"
+    },
+    {
+      "line": 20,
+      "kind": "heading",
+      "text": "## [Mastering Java Logging: Best Practices for Effective Application Monitoring](https://dev.to/nithinbharathwaj/mastering-java-logging-best-practices-for-effective-application-monitoring-20h7)"
+    },
+    {
+      "line": 26,
+      "kind": "heading",
+      "text": "## [Fixed Window Counter Rate Limiter (Redis & Java)](https://foojay.io/today/fixed-window-counter-rate-limiter-redis-java/)"
+    },
+    {
+      "line": 32,
+      "kind": "heading",
+      "text": "## [How JVM handles exceptions](https://foojay.io/today/how-jvm-handles-exceptions/)"
+    },
+    {
+      "line": 38,
+      "kind": "heading",
+      "text": "## [Database Sharding Explained](https://architecturenotes.co/p/database-sharding-explained)"
+    },
+    {
+      "line": 44,
+      "kind": "heading",
+      "text": "## [Protecting your time from predators in large tech companies](https://www.seangoedecke.com/predators/)"
+    },
+    {
+      "line": 50,
+      "kind": "heading",
+      "text": "## [How to improve your WFH lighting to reduce eye strain](https://rustle.ca/posts/articles/work-from-home-lighting)"
+    },
+    {
+      "line": 56,
+      "kind": "heading",
+      "text": "## [Working fast and slow](https://www.seangoedecke.com/working-fast-and-slow/)"
+    },
+    {
+      "line": 62,
+      "kind": "heading",
+      "text": "## Bonus"
+    },
+    {
+      "line": 64,
+      "kind": "heading",
+      "text": "### Bonus #1: Vài ảnh hay ho đến từ [ByteByteGo](https://bytebytego.com/)"
+    },
+    {
+      "line": 66,
+      "kind": "asset",
+      "text": "![Top Strategies to Reduce Latency](https://substack-post-media.s3.amazonaws.com/public/images/fe9062b4-fd0e-4530-8e20-eea854b8490e_2250x2814.png)"
+    },
+    {
+      "line": 67,
+      "kind": "asset",
+      "text": "![The Ultimate API Learning Roadmap](https://substack-post-media.s3.amazonaws.com/public/images/9c309ad3-78a8-4511-a6f2-e69c06d5c500_1280x1566.gif)"
+    },
+    {
+      "line": 68,
+      "kind": "asset",
+      "text": "![10 Essential Components of a Production Web Application](https://substack-post-media.s3.amazonaws.com/public/images/a44f9f4b-193d-484e-bbf1-169751104380_1280x1568.gif)"
+    },
+    {
+      "line": 69,
+      "kind": "asset",
+      "text": "![How do we design effective and safe APIs?](https://substack-post-media.s3.amazonaws.com/public/images/d5155be3-163d-479c-a75e-632e0f98dd36_3006x3453.jpeg)"
+    },
+    {
+      "line": 70,
+      "kind": "asset",
+      "text": "![Code First v.s. API First](https://substack-post-media.s3.amazonaws.com/public/images/aad520f5-00d9-4606-af4b-fdb5d1ac63c4_1600x1483.png)"
+    },
+    {
+      "line": 71,
+      "kind": "asset",
+      "text": "![Oauth 2.0 Explained With Simple Terms](https://substack-post-media.s3.amazonaws.com/public/images/bb375f63-bf06-4956-b3a3-914fd6aa2d91_1280x1664.jpeg)"
+    },
+    {
+      "line": 72,
+      "kind": "asset",
+      "text": "![Session, Cookie, JWT, Token, SSO, and OAuth 2.0 Explained in One Diagram](https://substack-post-media.s3.amazonaws.com/public/images/c1155e03-c3dc-4192-8e05-e6b87dc6a574_1280x1664.gif)"
+    },
+    {
+      "line": 74,
+      "kind": "heading",
+      "text": "### Bonus #2: Một vài link hay ho khác"
+    }
+  ],
+  "candidates": []
+}

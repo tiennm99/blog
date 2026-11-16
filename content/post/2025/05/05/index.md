@@ -41,7 +41,7 @@ for (int i = 0; i < 5; i++) {
 
 Oskar Dudycz giải thích khóa phân tán, cơ chế đảm bảo chỉ một tiến trình được thao tác trên một tài nguyên dùng chung tại một thời điểm khi ứng dụng chạy trên nhiều máy hoặc nhiều microservice. Nó cần thiết khi nhiều tiến trình cùng ghi một bản ghi, khi thông điệp được giao nhiều lần, hay khi tác vụ định kỳ chạy trên nhiều nút. Quy trình cơ bản: nút gửi yêu cầu tới bộ quản lý khóa, nếu chưa ai giữ thì tạo khóa, thực hiện thao tác quan trọng rồi giải phóng; nếu nút gặp sự cố, cơ chế TTL hoặc nút tạm thời (ephemeral) sẽ tự xóa khóa để tránh khóa "zombie". Tác giả so sánh bốn lựa chọn: Redis với lệnh `SET ... NX EX` đơn giản, nhanh nhưng có rủi ro khi mạng bị phân vùng; ZooKeeper/etcd nhất quán mạnh nhờ cơ chế đồng thuận đa số nhưng vận hành nặng hơn; khóa cơ sở dữ liệu như `SELECT ... FOR UPDATE` hay advisory lock của PostgreSQL, tiện khi chỉ có một cơ sở dữ liệu nhưng khó mở rộng; và chạy duy nhất một bản sao trên Kubernetes, không cần khóa nhưng mất khả năng mở rộng, tính sẵn sàng cao, và đôi khi vẫn có thể tạm thời xuất hiện hai pod.
 
-Bài viết cũng bàn về các rủi ro như deadlock, tranh chấp khóa, điểm lỗi đơn, lệch đồng hồ và phân vùng mạng. Lời khuyên cuối cùng: hãy tránh khóa phân tán nếu có thể, dùng khóa có chừng mực vì khóa quá nhiều làm giảm tính song song, chọn công cụ phù hợp với hạ tầng sẵn có, và luôn lên kế hoạch cho sự cố bằng khóa có thời hạn.
+Bài viết cũng bàn về các rủi ro như deadlock, tranh chấp khóa, điểm lỗi đơn, lệch đồng hồ và phân vùng mạng. Lưu ý TTL chỉ giúp tránh khóa kẹt vĩnh viễn: khóa hết hạn không tự dừng công việc của tiến trình cũ, nên vẫn phải xét tác vụ chạy quá lâu hoặc mất kết nối. Lời khuyên cuối cùng: hãy tránh khóa phân tán nếu có thể, dùng khóa có chừng mực vì khóa quá nhiều làm giảm tính song song, chọn công cụ phù hợp với hạ tầng sẵn có, và luôn lên kế hoạch cho sự cố bằng khóa có thời hạn.
 
 ## [If it is worth keeping, save it in Markdown](https://p.migdal.pl/blog/2025/02/markdown-saves)
 
@@ -74,4 +74,4 @@ Phần "báo thù" nằm ở cuối: trái với dự đoán trong bài "The Dea
 
 ---
 
-*Bài viết đã được viết lại bởi Claude Code với Opus 5.5 vào ngày 27/09/2026.*
+*Bài viết đã được viết lại bởi Claude Code với Opus 5.5 vào ngày 27/09/2026; được review và chỉnh sửa bởi Codex với GPT 6.1 Sol vào ngày 09/11/2026, rà soát lại bởi Claude Code với Sonnet 5.5 vào ngày 16/11/2026.*

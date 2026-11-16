@@ -41,11 +41,11 @@ Nhiều quyết định khác cũng đề cao sự đơn giản: tuân thủ tư
 
 ## [Java Language Evolution in 2025 - Inside Java Newscast #84](https://www.youtube.com/watch?v=dPzle3EN4CM)
 
-Tập Inside Java Newscast #84 điểm lại các hướng phát triển của ngôn ngữ Java trong năm 2025 thông qua Project Amber, dự án chuyên cải tiến cú pháp và tính năng ngôn ngữ. Các nội dung chính gồm thân hàm tạo linh hoạt (cho phép chạy lệnh trước khi gọi `super()` hoặc `this()`), hàm main đơn giản hóa giúp viết chương trình nhỏ gọn hơn, nhập cả module bằng một lệnh, và pattern matching cho kiểu dữ liệu nguyên thủy trong `instanceof` và `switch`. Video cũng bàn về những ý tưởng xa hơn như phân rã cấu trúc để trích xuất dữ liệu từ đối tượng, "withers" để tạo bản sao của record với vài giá trị được thay đổi, tiến độ của chuỗi mẫu (string templates) và cải tiến cơ chế tuần tự hóa. Đây là bản tóm lược hữu ích để lập trình viên Java nắm được ngôn ngữ đang đi về đâu và chuẩn bị tận dụng các tính năng mới.
+Tập Inside Java Newscast #84 điểm lại các hướng phát triển của ngôn ngữ Java trong năm 2025 thông qua Project Amber, dự án chuyên cải tiến cú pháp và tính năng ngôn ngữ. Nhóm tính năng xem trước gồm thân hàm tạo linh hoạt (cho phép chạy lệnh trước khi gọi `super()` hoặc `this()`), hàm main đơn giản hóa giúp viết chương trình nhỏ gọn hơn, nhập cả module bằng một lệnh, và pattern matching cho kiểu dữ liệu nguyên thủy trong `instanceof` và `switch`. Video phân biệt chúng với các hướng còn đang thăm dò như phân rã cấu trúc để trích xuất dữ liệu từ đối tượng, "withers" để tạo bản sao của record với vài giá trị được thay đổi và chuỗi mẫu (string templates), rồi nhắc đến cải tiến cơ chế tuần tự hóa.
 
 ## [Valhalla - Java's Epic Refactor](https://www.youtube.com/watch?v=Dhn-JgZaBWo)
 
-Trong video này, Brian Goetz cập nhật tiến độ của Project Valhalla, dự án được ví như cuộc "tái cấu trúc vĩ đại" của Java nhằm hiện đại hóa hệ thống kiểu của ngôn ngữ. Mục tiêu là mang lại hiệu năng tốt hơn trong khi giúp việc lập trình trở nên đơn giản hơn, và video giải thích các tính năng mới cùng định hướng của dự án.
+Trong bài trình bày tại Devoxx Belgium 2024, Brian Goetz giải thích Project Valhalla, dự án nhằm thu hẹp khác biệt giữa lớp và kiểu nguyên thủy trong Java. Trọng tâm là lớp giá trị, cho phép mô hình hóa dữ liệu bằng lớp nhưng hướng tới cách bố trí bộ nhớ gọn hơn. Video còn bàn về kiểu không chấp nhận null, phân tích việc gán giá trị và các quy tắc khởi tạo chặt chẽ.
 
 ## [How might AI change programming?](https://registerspill.thorstenball.com/p/how-might-ai-change-programming)
 
@@ -61,7 +61,9 @@ Về cách dùng AI, tác giả nhấn mạnh công cụ này mang tính thống
 
 ## [Token Bucket Rate Limiter (Redis & Java)](https://foojay.io/today/token-bucket-rate-limiter-redis-java/)
 
-Bài viết hướng dẫn triển khai thuật toán giới hạn tốc độ Token Bucket bằng Redis và Java. Ý tưởng là một "cái xô" được nạp token với tốc độ cố định, mỗi yêu cầu tiêu thụ một token và bị từ chối khi xô rỗng; nhờ xô có sức chứa tối đa, hệ thống vẫn chịu được các đợt tăng lưu lượng ngắn. Với Redis, mỗi client có hai khóa lưu số token và thời điểm nạp gần nhất; mỗi khi có yêu cầu, chương trình đọc hai giá trị này, tính số token cần nạp thêm theo thời gian đã trôi qua (không vượt quá sức chứa), trừ một token nếu còn, rồi ghi lại bằng giao dịch MULTI/EXEC. Tác giả dùng thư viện Jedis để xây dựng lớp `TokenBucketRateLimiter`, sau đó viết kiểm thử với Redis TestContainers, JUnit 5 và AssertJ cho các tình huống như cho phép yêu cầu trong sức chứa, từ chối khi hết token, nạp lại dần theo thời gian, xử lý độc lập nhiều client và không đếm các yêu cầu bị từ chối. Mã nguồn đầy đủ bằng Java và Kotlin có sẵn trên GitHub.
+Bài viết hướng dẫn triển khai thuật toán giới hạn tốc độ Token Bucket bằng Redis và Java. Ý tưởng là một "cái xô" được nạp token với tốc độ cố định, mỗi yêu cầu tiêu thụ một token và bị từ chối khi xô rỗng; nhờ xô có sức chứa tối đa, hệ thống vẫn chịu được các đợt tăng lưu lượng ngắn. Với Redis, mỗi client có hai khóa lưu số token và thời điểm nạp gần nhất; mỗi khi có yêu cầu, chương trình đọc hai giá trị này, tính số token cần nạp thêm theo thời gian đã trôi qua (không vượt quá sức chứa), trừ một token nếu còn, rồi ghi lại bằng giao dịch MULTI/EXEC (bước đọc nằm ngoài giao dịch nên thao tác chưa nguyên tử khi có nhiều yêu cầu đồng thời). Tác giả dùng thư viện Jedis để xây dựng lớp `TokenBucketRateLimiter`, sau đó viết kiểm thử với Redis TestContainers, JUnit 5 và AssertJ cho các tình huống như cho phép yêu cầu trong sức chứa, từ chối khi hết token, nạp lại dần theo thời gian, xử lý độc lập nhiều client và không đếm các yêu cầu bị từ chối. Mã nguồn đầy đủ bằng Java và Kotlin có sẵn trên GitHub.
+
+Ngoài ra, mã làm tròn xuống số token bổ sung nhưng cập nhật mốc thời gian ở mọi yêu cầu, kể cả yêu cầu bị từ chối. Nếu các yêu cầu liên tục đến trước khi đủ thời gian tạo một token, phần thời gian tích lũy có thể bị mất và xô không được nạp đúng tốc độ dự kiến.
 
 ## Bonus?
 
@@ -69,4 +71,4 @@ Huhu, đợt này hỏng có bonus nào hết nha mọi người :<
 
 ---
 
-*Bài viết đã được viết lại bởi Claude Code với Opus 5.5 vào ngày 27/09/2026.*
+*Bài viết đã được viết lại bởi Claude Code với Opus 5.5 vào ngày 27/09/2026; được review và chỉnh sửa bởi Codex với GPT 6.1 Sol vào ngày 09/11/2026, rà soát lại bởi Claude Code với Sonnet 5.5 vào ngày 16/11/2026.*

@@ -1,0 +1,129 @@
+{
+  "post": "content/post/2025/04/12/index.md",
+  "newsletter": 11,
+  "newsletter_post": true,
+  "note": "*Bài viết đã được viết lại bởi Claude Code với Opus 5.5 vào ngày 27/09/2026.*",
+  "lines": [
+    {
+      "line": 1,
+      "kind": "frontmatter",
+      "text": "---"
+    },
+    {
+      "line": 2,
+      "kind": "frontmatter",
+      "text": "title: \"Newsletter #11\""
+    },
+    {
+      "line": 3,
+      "kind": "frontmatter",
+      "text": "date: 2025-04-12"
+    },
+    {
+      "line": 4,
+      "kind": "frontmatter",
+      "text": "tags: [\"AI-Assisted\", \"Newsletter\", \"Data Engineering\", \"Software Architecture\", \"Leadership\", \"Code Quality\", \"Java\"]"
+    },
+    {
+      "line": 5,
+      "kind": "frontmatter",
+      "text": "categories: [ \"Newsletter\" ]"
+    },
+    {
+      "line": 6,
+      "kind": "frontmatter",
+      "text": "---"
+    },
+    {
+      "line": 8,
+      "kind": "italic-note",
+      "text": "*Mời bạn thưởng thức Newsletter \\#11.*"
+    },
+    {
+      "line": 10,
+      "kind": "heading",
+      "text": "## [Enabling near real-time data analytics on the data lake](https://engineering.grab.com/enabling-near-realtime-data-analytics)"
+    },
+    {
+      "line": 16,
+      "kind": "heading",
+      "text": "## [The Ultimate Guide To Software Architecture Documentation](https://www.workingsoftware.dev/software-architecture-documentation-the-ultimate-guide/)"
+    },
+    {
+      "line": 22,
+      "kind": "heading",
+      "text": "## [Beyond the Basics: Designing for a Million Users](https://javarevisited.substack.com/p/beyond-the-basics-designing-for-a)"
+    },
+    {
+      "line": 28,
+      "kind": "heading",
+      "text": "## [Decision-Making Pitfalls for Technical Leaders](https://chelseatroy.com/2024/10/16/decision-making-pitfalls-for-technical-leaders/)"
+    },
+    {
+      "line": 34,
+      "kind": "heading",
+      "text": "## [How I know I'm working with a strong engineer](https://www.seangoedecke.com/thoughts-about-engineers/)"
+    },
+    {
+      "line": 40,
+      "kind": "heading",
+      "text": "## [Ugly Code and Dumb Things](https://lucumr.pocoo.org/2025/2/20/ugly-code/)"
+    },
+    {
+      "line": 46,
+      "kind": "heading",
+      "text": "## [Development Philosophy](https://develop.sentry.dev/getting-started/philosophy/)"
+    },
+    {
+      "line": 52,
+      "kind": "heading",
+      "text": "## [AI is Stifling Tech Adoption](https://vale.rocks/posts/ai-is-stifling-tech-adoption)"
+    },
+    {
+      "line": 58,
+      "kind": "heading",
+      "text": "## [February - The Rest of the Story - JVM Weekly vol. 119](https://www.jvm-weekly.com/p/february-the-rest-of-the-story-jvm)"
+    },
+    {
+      "line": 64,
+      "kind": "heading",
+      "text": "## [Manager Antipatterns](https://blogs.newardassociates.com/blog/2024/management-antipatterns.html)"
+    },
+    {
+      "line": 70,
+      "kind": "heading",
+      "text": "## [Pause – Decision-Making Superpower](https://read.perspectiveship.com/p/pause)"
+    },
+    {
+      "line": 76,
+      "kind": "heading",
+      "text": "## [APOSD vs Clean Code](https://github.com/johnousterhout/aposd-vs-clean-code/blob/main/README.md)"
+    },
+    {
+      "line": 82,
+      "kind": "heading",
+      "text": "## [The Software Engineer Spectrum: Speed vs. Accuracy](https://benhowdle.im/software-engineer-spectrum)"
+    },
+    {
+      "line": 88,
+      "kind": "heading",
+      "text": "## [LLM Ecosystem Predictions](https://www.moderndescartes.com/essays/llm_predictions/)"
+    },
+    {
+      "line": 94,
+      "kind": "heading",
+      "text": "## [The Right Kind of Stubborn](https://www.paulgraham.com/persistence.html)"
+    },
+    {
+      "line": 100,
+      "kind": "heading",
+      "text": "## Bonus: Vài ảnh hay ho đến từ [ByteByteGo](https://bytebytego.com/)"
+    },
+    {
+      "line": 102,
+      "kind": "asset",
+      "text": "![Data Consistency Strategies For Microservices](https://substack-post-media.s3.amazonaws.com/public/images/ae95d38c-41f8-4eb7-885e-f7fafa4ca45d_2250x2624.png)"
+    }
+  ],
+  "candidates": []
+}

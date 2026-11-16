@@ -1,0 +1,95 @@
+{
+  "post": "content/post/2025/12/03/index.md",
+  "newsletter": 63,
+  "newsletter_post": true,
+  "note": "*Bài viết đã được viết lại bởi Claude Code với Opus 5.5 vào ngày 27/09/2026.*",
+  "lines": [
+    {
+      "line": 1,
+      "kind": "frontmatter",
+      "text": "---"
+    },
+    {
+      "line": 2,
+      "kind": "frontmatter",
+      "text": "title: \"Newsletter #63\""
+    },
+    {
+      "line": 3,
+      "kind": "frontmatter",
+      "text": "date: 2025-12-03"
+    },
+    {
+      "line": 4,
+      "kind": "frontmatter",
+      "text": "tags: [\"AI-Assisted\", \"Software Design\", \"Code Review\", \"Software Quality\", \"AI Agents\", \"SQL\", \"Database\"]"
+    },
+    {
+      "line": 5,
+      "kind": "frontmatter",
+      "text": "categories: [\"Newsletter\"]"
+    },
+    {
+      "line": 6,
+      "kind": "frontmatter",
+      "text": "---"
+    },
+    {
+      "line": 8,
+      "kind": "italic-note",
+      "text": "*Mời bạn thưởng thức Newsletter #63.*"
+    },
+    {
+      "line": 10,
+      "kind": "heading",
+      "text": "## [Simplify your code with functional core, imperative shell](https://testing.googleblog.com/2025/10/simplify-your-code-functional-core.html)"
+    },
+    {
+      "line": 16,
+      "kind": "heading",
+      "text": "## [RDEL #94: How do experienced engineers actually review code?](https://rdel.substack.com/p/rdel-94-how-do-experienced-engineers)"
+    },
+    {
+      "line": 22,
+      "kind": "heading",
+      "text": "## [The Great Software Quality Collapse: How We Normalized Catastrophe](https://techtrenches.dev/p/the-great-software-quality-collapse)"
+    },
+    {
+      "line": 28,
+      "kind": "heading",
+      "text": "## [Building an Agent That Leverages Throwaway Code](https://lucumr.pocoo.org/2025/10/17/code/)"
+    },
+    {
+      "line": 34,
+      "kind": "heading",
+      "text": "## [Measuring Engineering Productivity](https://justoffbyone.com/posts/measuring-engineering-productivity/)"
+    },
+    {
+      "line": 40,
+      "kind": "heading",
+      "text": "## [Scripts I wrote that I use all the time](https://evanhahn.com/scripts-i-wrote-that-i-use-all-the-time/)"
+    },
+    {
+      "line": 46,
+      "kind": "heading",
+      "text": "## [SQL Anti-Patterns You Should Avoid](https://datamethods.substack.com/p/sql-anti-patterns-you-should-avoid)"
+    },
+    {
+      "line": 52,
+      "kind": "heading",
+      "text": "## [Build Your Own Database](https://www.nan.fyi/database)"
+    }
+  ],
+  "candidates": [
+    {
+      "line": 20,
+      "kind": "first-person",
+      "text": "Ngoài nội dung PR, người review còn tra cứu issue tracker (44%), các thảo luận trước đó (40%), công cụ bên ngoài và hiểu biết riêng về hệ thống cũng như quy ước của tổ chức. Sự hiểu biết được bồi đắp dần qua cộng tác chứ không phải đọc một mình. Từ đó, bài viết khuyến nghị người quản lý hỗ trợ việc review theo từng commit, file hoặc tính năng, yêu cầu mô tả PR chất lượng nêu rõ mục đích và lý do, đồng thời tự động hóa các kiểm tra ít giá trị như định dạng bằng linter và CI để người review tập trung vào kiến trúc và logic."
+    },
+    {
+      "line": 36,
+      "kind": "first-person",
+      "text": "Can Duruk chia sẻ hệ thống đo lường năng suất kỹ thuật mà anh xây dựng tại Felt, công ty SaaS phát triển từ 2 lên 25 kỹ sư và có ngày triển khai tới 25 lần. Nguyên tắc cốt lõi là phần lớn \"giấy tờ\" do quản lý đảm nhận chứ không đổ lên kỹ sư. Hằng ngày, kỹ sư viết standup bất đồng bộ trên kênh Slack #standups gồm việc hôm qua, việc hôm nay và vướng mắc, chỉ mất khoảng 5–10 phút. Hằng tuần, quản lý tổng hợp changelog từ GitHub, phân loại PR theo kỹ sư và theo nhóm tính năng, sửa lỗi hay trải nghiệm lập trình; các buổi 1:1 xoay quanh con người, sản phẩm và quy trình, với ghi chú chung trên Notion; mỗi nhóm có vài phút trình bày thành quả tuần trong buổi All-Hands. Theo thời gian thực, PR được merge sẽ tự thông báo lên Slack, và kỹ sư tự xác nhận thay đổi của mình chạy đúng trên production rồi đánh dấu bằng emoji."
+    }
+  ]
+}

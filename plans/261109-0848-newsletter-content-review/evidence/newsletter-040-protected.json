@@ -1,0 +1,84 @@
+{
+  "post": "content/post/2025/07/30/index.md",
+  "newsletter": 40,
+  "newsletter_post": true,
+  "note": "*Bài viết đã được viết lại bởi Claude Code với Opus 5.5 vào ngày 27/09/2026.*",
+  "lines": [
+    {
+      "line": 1,
+      "kind": "frontmatter",
+      "text": "---"
+    },
+    {
+      "line": 2,
+      "kind": "frontmatter",
+      "text": "title: \"Newsletter #40\""
+    },
+    {
+      "line": 3,
+      "kind": "frontmatter",
+      "text": "date: 2025-07-30"
+    },
+    {
+      "line": 4,
+      "kind": "frontmatter",
+      "text": "tags: [\"AI-Assisted\", \"Java\", \"Concurrency\", \"Testing\", \"AI Agents\", \"Performance\", \"Database\"]"
+    },
+    {
+      "line": 5,
+      "kind": "frontmatter",
+      "text": "categories: [\"Newsletter\"]"
+    },
+    {
+      "line": 6,
+      "kind": "frontmatter",
+      "text": "---"
+    },
+    {
+      "line": 8,
+      "kind": "italic-note",
+      "text": "*Mời bạn thưởng thức Newsletter #40.*"
+    },
+    {
+      "line": 10,
+      "kind": "heading",
+      "text": "## [A new way to test multi-threaded and concurrent Java](https://vmlens.com/blog/new-way-to-test-multi-threaded-concurrent-java/)"
+    },
+    {
+      "line": 16,
+      "kind": "heading",
+      "text": "## [Feature Freeze for JDK 25: What Will the New Edition Bring?](https://www.jvm-weekly.com/p/feature-freeze-for-jdk-25-what-will)"
+    },
+    {
+      "line": 22,
+      "kind": "heading",
+      "text": "## [If Virtual Threads are the solution, what is the problem?](https://webtide.com/if-virtual-threads-are-the-solution-what-is-the-problem/)"
+    },
+    {
+      "line": 28,
+      "kind": "heading",
+      "text": "## [Agentic Coding Recommendations](https://lucumr.pocoo.org/2025/6/12/agentic-coding/)"
+    },
+    {
+      "line": 34,
+      "kind": "heading",
+      "text": "## [AI Changes Everything](https://lucumr.pocoo.org/2025/6/4/changes/)"
+    },
+    {
+      "line": 40,
+      "kind": "heading",
+      "text": "## [How I program with Agents](https://crawshaw.io/blog/programming-with-agents)"
+    },
+    {
+      "line": 46,
+      "kind": "heading",
+      "text": "## [Performance Best Practise No. 1: Optimize Database Operations](https://foojay.io/today/performance-best-practise-no-1-optimize-database-operations/)"
+    },
+    {
+      "line": 52,
+      "kind": "heading",
+      "text": "## [Agent Rules - A collection of rules and knowledge for AI coding assistants](https://github.com/steipete/agent-rules)"
+    }
+  ],
+  "candidates": []
+}

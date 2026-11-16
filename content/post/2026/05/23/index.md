@@ -21,9 +21,9 @@ Một harness tốt gồm hướng dẫn cố định trong CLAUDE.md hoặc AGE
 
 ## [Email is crazy](https://samkhawase.com/blog/email-is-crazy/)
 
-Email là một trong những công nghệ truyền thông thành công nhất lịch sử, nhưng bên dưới là một hệ thống chắp vá với hơn 100 RFC. Sam Khawase lần theo hành trình một bức thư từ Alice đến Bob: ứng dụng thư chỉ "nộp" thư cho máy chủ, máy chủ chuyển thư tra bản ghi MX trong DNS để tìm nơi nhận, và email thực chất là hệ thống hàng đợi có cơ chế thử lại trong nhiều ngày chứ không phải thời gian thực. SMTP được thiết kế cuối thập niên 70 cho mạng học thuật dựa trên sự tin tưởng, nên địa chỉ phong bì (`MAIL FROM`) và tiêu đề `From` mà người dùng nhìn thấy được phép khác nhau — lỗ hổng gốc rễ khiến phishing và thư rác hoạt động được.
+Email là một trong những công nghệ truyền thông thành công nhất lịch sử, nhưng bên dưới là một hệ thống chắp vá với hơn 100 RFC. Sam Khawase lần theo hành trình một bức thư từ Alice đến Bob: ứng dụng thư chỉ "nộp" thư cho máy chủ, máy chủ chuyển thư tra bản ghi MX trong DNS để tìm nơi nhận, và email thực chất là hệ thống hàng đợi có cơ chế thử lại trong nhiều ngày chứ không phải thời gian thực. SMTP ra đời từ thời mạng học thuật dựa trên sự tin tưởng, nên địa chỉ phong bì (`MAIL FROM`) và tiêu đề `From` mà người dùng nhìn thấy được phép khác nhau — một lỗ hổng gốc rễ khiến phishing và thư rác hoạt động được.
 
-Thay vì sửa SMTP, ngành công nghiệp vá thêm ba lớp: SPF (danh sách IP được phép gửi, nhưng hỏng khi thư bị chuyển tiếp), DKIM (chữ ký mật mã với khóa công khai đặt trên DNS) và DMARC (buộc tiêu đề `From` khớp với tên miền đã xác thực, kèm chính sách none, quarantine hoặc reject). Thư còn phải qua lớp lọc riêng của từng nhà cung cấp: uy tín IP, uy tín tên miền, phân tích nội dung, quét virus và kiểm tra liên kết. Mã hóa cũng chỉ là "Opportunistic TLS": nếu máy chủ nhận không hỗ trợ `STARTTLS`, kết nối rơi về văn bản thuần, và TLS chỉ mã hóa đường truyền chứ không mã hóa đầu cuối. Tệ nhất, thư có thể bị âm thầm chuyển vào mục thư rác mà không ai được báo — hoàn toàn hợp lệ theo RFC 5321. Dù vậy, email vẫn chuyển tin cậy hàng tỷ tin nhắn mỗi ngày.
+Thay vì sửa SMTP, ngành công nghiệp vá thêm ba lớp: SPF (danh sách IP được phép gửi, nhưng hỏng khi thư bị chuyển tiếp), DKIM (chữ ký mật mã với khóa công khai đặt trên DNS) và DMARC (yêu cầu tên miền trong tiêu đề `From` khớp với tên miền đã xác thực qua SPF hoặc DKIM, kèm chính sách none, quarantine hoặc reject). Thư còn phải qua lớp lọc riêng của từng nhà cung cấp: uy tín IP, uy tín tên miền, phân tích nội dung, quét virus và kiểm tra liên kết. Mã hóa thường chỉ là "Opportunistic TLS": nếu máy chủ nhận không hỗ trợ `STARTTLS`, kết nối rơi về văn bản thuần (chính sách như MTA-STS có thể bắt buộc TLS), và TLS chỉ mã hóa đường truyền chứ không mã hóa đầu cuối. Tệ nhất, thư có thể bị âm thầm chuyển vào mục thư rác mà không ai được báo — hoàn toàn hợp lệ theo RFC 5321. Dù vậy, email vẫn chuyển tin cậy hàng tỷ tin nhắn mỗi ngày.
 
 ## [High Performance Git](https://gitperf.com/)
 
@@ -35,7 +35,7 @@ Nội dung đi từ đối tượng, refs, index và duyệt lịch sử đến 
 
 Daniel Lemire tìm cách tăng tốc việc kiểm tra một giá trị trong mảng số nguyên 16-bit đã sắp xếp — thao tác thường gặp trong định dạng Roaring Bitmap, vốn đang dùng tìm kiếm nhị phân. Ông dựa trên hai nhận xét: CPU hiện đại (cả ARM 64-bit lẫn x64) đều có lệnh SIMD so sánh tám số 16-bit cùng lúc, và có khả năng song song ở mức bộ nhớ rất tốt, nên chia mảng làm bốn thay vì làm đôi có thể hiệu quả hơn. Từ đó ra đời thuật toán SIMD Quad: chia mảng thành các khối 16 phần tử, dùng tìm kiếm nội suy bậc bốn trên phần tử cuối của mỗi khối để khoanh vùng, rồi dùng SIMD kiểm tra cả 16 phần tử trong khối đó cùng lúc.
 
-Kết quả đo trên Apple M4 và Intel Emerald Rapids cho thấy SIMD Quad nhanh hơn tìm kiếm nhị phân trong mọi trường hợp: trên Intel nhanh hơn hơn 2 lần khi bộ nhớ đệm "nóng", còn trên Apple thì hơn 2 lần khi bộ nhớ đệm "lạnh". Phần "bậc bốn" gần như không tạo khác biệt trên Apple, nhưng giúp đáng kể trên Intel với mảng lớn và bộ nhớ đệm lạnh. Bài học rút ra: các thuật toán kinh điển không được thiết kế cho những máy tính có nhiều khả năng song song như hiện nay, nên vẫn còn nhiều dư địa để cải thiện hiệu năng.
+Kết quả đo trên Apple M4 và Intel Emerald Rapids cho thấy SIMD Quad nhanh hơn tìm kiếm nhị phân trong các phép đo của bài: trên Intel nhanh hơn hơn 2 lần khi bộ nhớ đệm "nóng", còn trên Apple thì hơn 2 lần khi bộ nhớ đệm "lạnh". Phần "bậc bốn" gần như không tạo khác biệt trên Apple, nhưng giúp đáng kể trên Intel với mảng lớn và bộ nhớ đệm lạnh. Bài học rút ra: các thuật toán kinh điển không được thiết kế cho những máy tính có nhiều khả năng song song như hiện nay, nên vẫn còn nhiều dư địa để cải thiện hiệu năng.
 
 ## [How might a browser be developed?](https://aifoc.us/how-might-a-browser-be-developed/)
 
@@ -65,7 +65,7 @@ Ràng buộc thứ hai: công nghệ lõi phải tách rời được khỏi s�
 
 Phil Pearl tìm hiểu Swiss table — thiết kế bảng băm đứng sau cách triển khai map mới của Go — bằng cách đi từng bước từ một bảng băm địa chỉ mở đơn giản. Đầu tiên, anh thay dò tuyến tính bằng chuỗi dò có bước tăng dần như Go; sau đó gom 8 cặp khóa–giá trị thành một nhóm; tiếp theo thêm 8 byte điều khiển cho mỗi nhóm (bit cao nhất đánh dấu ô trống, 7 bit thấp lưu một phần giá trị băm); và cuối cùng dùng thủ thuật thao tác bit trên số 64-bit để so khớp cả 8 byte điều khiển cùng lúc thay vì kiểm tra từng ô.
 
-Kết quả đo thời gian chèn cho thấy Swiss table không phải lúc nào cũng thắng: khi bảng còn vơi (khoảng 10–4000 phần tử), nó chậm hơn bảng đơn giản khoảng 19–36%, chỉ vượt lên khi bảng đầy dần và nhanh hơn tới 71,65% khi bảng đầy hoàn toàn (32.768 phần tử). Theo tác giả, lợi ích lớn nhất là bảng có thể chạy ở mức lấp đầy cao mà hiệu năng giảm rất ít — tức là cơ hội tiết kiệm bộ nhớ hơn là tăng tốc vượt bậc. Hiện map của Go chỉ dùng SIMD trên chip Intel, chưa dùng trên ARM, nên tác giả để dành hướng SIMD cho bài viết sau.
+Kết quả đo thời gian chèn cho thấy Swiss table không phải lúc nào cũng thắng: khi bảng còn vơi (khoảng 10–4000 phần tử), nó chậm hơn bảng đơn giản khoảng 19–36%, chỉ vượt lên khi bảng đầy dần và giảm thời gian chèn tới 71,65% khi bảng đầy hoàn toàn (32.768 phần tử). Theo tác giả, lợi ích lớn nhất là bảng có thể chạy ở mức lấp đầy cao mà hiệu năng giảm rất ít — tức là cơ hội tiết kiệm bộ nhớ hơn là tăng tốc vượt bậc. Hiện map của Go dùng SIMD trên amd64 (Intel), nhưng chưa dùng trên ARM, nên tác giả để dành hướng SIMD cho bài viết sau.
 
 ## [The AI engineering stack we built internally — on the platform we ship](https://blog.cloudflare.com/internal-ai-engineering-stack/)
 
@@ -81,4 +81,4 @@ Tầng tri thức dùng Backstage làm danh mục dịch vụ và tự động s
 
 ---
 
-*Bài viết đã được viết lại bởi Claude Code với Opus 5.5 vào ngày 27/09/2026.*
+*Bài viết đã được viết lại bởi Claude Code với Opus 5.5 vào ngày 27/09/2026; được review và chỉnh sửa bởi Codex với GPT 6.1 Sol vào ngày 09/11/2026, rà soát lại bởi Claude Code với Sonnet 5.5 vào ngày 16/11/2026.*

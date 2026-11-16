@@ -21,7 +21,7 @@ Ronacher cũng thẳng thắn về điểm yếu: nếu không cẩn thận, tá
 
 ## [The Weird Concept of Branchless Programming](https://sanixdk.xyz/blogs/the-weird-concept-of-branchless-programming)
 
-Lập trình không nhánh (branchless programming) là kỹ thuật viết lại các câu lệnh điều kiện thành phép toán số học và thao tác bit, hoặc dùng lệnh như `cmov`, để CPU không phải đoán hướng rẽ. Bộ dự đoán nhánh của CPU hiện đại làm việc rất tốt khi điều kiện có quy luật, nhưng khi dữ liệu ngẫu nhiên như đầu vào người dùng hay mảng bị xáo trộn, mỗi lần đoán sai buộc CPU xả pipeline và mất khoảng 15–20 chu kỳ. Mã không nhánh vì vậy chạy đều hơn và có thời gian thực thi ổn định, điều đặc biệt quan trọng trong mật mã học để chống tấn công kênh kề.
+Lập trình không nhánh (branchless programming) là kỹ thuật viết lại các câu lệnh điều kiện thành phép toán số học và thao tác bit, hoặc dùng lệnh như `cmov`, để CPU không phải đoán hướng rẽ. Bộ dự đoán nhánh của CPU hiện đại làm việc rất tốt khi điều kiện có quy luật, nhưng khi dữ liệu ngẫu nhiên như đầu vào người dùng hay mảng bị xáo trộn, mỗi lần đoán sai buộc CPU xả pipeline và mất khoảng 15–20 chu kỳ. Mã không nhánh vì vậy chạy đều hơn và thường có thời gian thực thi ổn định hơn, điều quan trọng trong mật mã học để chống tấn công kênh kề, dù bản thân việc bỏ nhánh chưa bảo đảm thời gian hằng: truy cập bộ nhớ, trình biên dịch và lệnh máy vẫn cần được kiểm tra.
 
 Tác giả minh họa bằng ba ví dụ viết bằng C với độ phức tạp tăng dần: tính giá trị tuyệt đối bằng mặt nạ tạo từ phép dịch phải số học 31 bit, hàm `clamp` giới hạn giá trị trong khoảng từ min đến max mà không cần `if`, và hàm `partition` của thuật toán sắp xếp nhanh tăng chỉ số trực tiếp bằng kết quả phép so sánh. Kết quả đo cho thấy `abs` và `clamp` gần như không nhanh hơn vì bộ dự đoán nhánh đã xử lý tốt, chỉ `partition` với điều kiện khó đoán là nhanh hơn khoảng 1,2 lần. Thông điệp chính: lập trình không nhánh là "dao mổ, không phải búa tạ", nên dùng cho vòng lặp nóng có điều kiện khó đoán, mã nhạy cảm về thời gian hay vector hóa SIMD; còn khi sự dễ đọc quan trọng hơn vài nano giây, cứ viết `if` như bình thường.
 
@@ -57,4 +57,4 @@ Gu tệ nghĩa là những giá trị bạn ưu tiên không hợp với dự á
 
 ---
 
-*Bài viết đã được viết lại bởi Claude Code với Opus 5.5 vào ngày 27/09/2026.*
+*Bài viết đã được viết lại bởi Claude Code với Opus 5.5 vào ngày 27/09/2026; được review và chỉnh sửa bởi Codex với GPT 6.1 Sol vào ngày 09/11/2026, rà soát lại bởi Claude Code với Sonnet 5.5 vào ngày 16/11/2026.*

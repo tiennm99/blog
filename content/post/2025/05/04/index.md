@@ -47,7 +47,7 @@ Theo các tác giả, trợ lý lập trình AI như Claude, ChatGPT hay GitHub 
 
 Michał Zyga (SoftwareMill) so sánh năm cách rút ngắn thời gian khởi động ứng dụng JVM, điều quan trọng với serverless và microservices. JVM khởi động chậm vì phải nạp, xác minh và khởi tạo rất nhiều lớp. Class Data Sharing (CDS) lưu sẵn các lớp lõi của JDK và được bật mặc định từ JDK 12; Application Class Data Sharing (AppCDS) mở rộng cơ chế này cho cả các lớp của ứng dụng và dễ dùng hơn từ JDK 19. GraalVM biên dịch trước (AOT) thành tệp thực thi gốc, CRaC chụp lại trạng thái tiến trình JVM bằng CRIU (chỉ chạy trên Linux) để khôi phục khi cần, còn Project Leyden là hướng cải tiến mới của JDK, lưu thêm dữ liệu tối ưu hóa.
 
-Kết quả đo trên hai máy (Intel i5 cá nhân và Xeon trên Google Cloud, mỗi cấu hình chạy 50 lần) cho thấy AppCDS giúp khởi động nhanh hơn gấp đôi so với mặc định, CRaC và GraalVM nhanh nhất, còn Project Leyden nằm ở giữa và vẫn đang phát triển. Tác giả khuyên chọn theo ngữ cảnh: AppCDS dễ áp dụng với lợi ích vừa phải, CRaC hợp với dịch vụ chạy lâu vì vẫn tận dụng được tối ưu JIT lúc chạy, còn GraalVM phù hợp với ứng dụng ngắn hạn cần khởi động cực nhanh.
+Kết quả đo trên ứng dụng Netty mẫu, chạy trên hai máy (Intel i5 cá nhân và Xeon trên Google Cloud, mỗi cấu hình chạy 50 lần) cho thấy AppCDS giúp khởi động nhanh hơn gấp đôi so với mặc định, CRaC và GraalVM nhanh nhất, còn Project Leyden nằm ở giữa và vẫn đang phát triển. Tác giả khuyên chọn theo ngữ cảnh: AppCDS dễ áp dụng với lợi ích vừa phải, CRaC hợp với dịch vụ chạy lâu vì vẫn tận dụng được tối ưu JIT lúc chạy, còn GraalVM phù hợp với ứng dụng ngắn hạn cần khởi động cực nhanh.
 
 ## [Domain Driven Design](https://dev.to/lovestaco/domain-driven-design-3i2j)
 
@@ -61,4 +61,4 @@ Các khái niệm được minh họa qua một nền tảng thương mại đi�
 
 ---
 
-*Bài viết đã được viết lại bởi Claude Code với Opus 5.5 vào ngày 27/09/2026.*
+*Bài viết đã được viết lại bởi Claude Code với Opus 5.5 vào ngày 27/09/2026; được review và chỉnh sửa bởi Codex với GPT 6.1 Sol vào ngày 09/11/2026, rà soát lại bởi Claude Code với Sonnet 5.5 vào ngày 16/11/2026.*

@@ -27,7 +27,7 @@ Tiếp theo, mỗi khối 8x8 điểm ảnh được biến đổi DCT (Discrete
 
 ## [What 81,000 people want from AI](https://www.anthropic.com/features/81k-interviews)
 
-Anthropic công bố kết quả nghiên cứu định tính đa ngôn ngữ lớn nhất từ trước đến nay: dùng một phiên bản Claude làm người phỏng vấn, họ trò chuyện với 80.508 người dùng Claude ở 159 quốc gia bằng 70 ngôn ngữ về điều họ mong đợi và lo ngại ở AI. Thông điệp chính là con người muốn AI giúp mình sống tốt hơn chứ không chỉ làm việc nhanh hơn. Các mong muốn hàng đầu gồm xuất sắc trong nghề nghiệp (19%), phát triển bản thân (14%), quản lý cuộc sống (14%) và có thêm thời gian tự do (11%). Đằng sau mong muốn năng suất thường là khao khát sâu hơn — tự động hoá email thực chất là để có thêm thời gian cho gia đình.
+Anthropic công bố nghiên cứu định tính đa ngôn ngữ lớn nhất từ trước đến nay: dùng một phiên bản Claude làm người phỏng vấn, họ trò chuyện với 80.508 người dùng Claude (mẫu tự nguyện) ở 159 quốc gia bằng 70 ngôn ngữ về điều họ mong đợi và lo ngại ở AI. Thông điệp chính là con người muốn AI giúp mình sống tốt hơn chứ không chỉ làm việc nhanh hơn. Các mong muốn hàng đầu gồm xuất sắc trong nghề nghiệp (19%), phát triển bản thân (14%), quản lý cuộc sống (14%) và có thêm thời gian tự do (11%). Đằng sau mong muốn năng suất thường là khao khát sâu hơn — tự động hoá email thực chất là để có thêm thời gian cho gia đình.
 
 81% người tham gia cho biết AI đã giúp họ tiến gần hơn tới mục tiêu, chủ yếu qua năng suất (32%), vai trò bạn đồng hành tư duy (17%) và học tập (10%). Mặt khác, trung bình mỗi người nêu 2.3 mối lo: độ tin cậy (27%), mất việc làm (22%), mất quyền tự chủ (22%), suy giảm nhận thức (16%) và thiếu cơ chế quản trị (15%). Lợi ích và rủi ro thường song hành trong cùng một người: ai đánh giá cao sự hỗ trợ cảm xúc từ AI thì khả năng lo ngại bị phụ thuộc cũng cao gấp 3 lần. Người dùng ở khu vực thu nhập thấp lạc quan hơn và xem AI là cơ hội, còn ở khu vực giàu có thì mối quan tâm xoay quanh việc quản lý một cuộc sống phức tạp.
 
@@ -41,7 +41,7 @@ Triển khai nhanh (dưới 2 phút) nhờ tách frontend và backend, chạy so
 
 Bài viết từ đội kỹ thuật Anthropic xử lý hai điểm yếu của AI agent khi làm việc dài: mô hình mất mạch lạc khi cửa sổ ngữ cảnh dần đầy, và có xu hướng tự đánh giá quá cao sản phẩm của chính mình. Giải pháp là một harness đa tác tử lấy cảm hứng từ GAN: Planner mở rộng yêu cầu ngắn thành đặc tả chi tiết, Generator tạo sản phẩm, còn Evaluator chấm điểm độc lập rồi gửi phản hồi ngược lại. Với việc mang tính chủ quan như thiết kế frontend, nhóm đặt ra tiêu chí chấm điểm cụ thể thay cho câu hỏi mơ hồ "có đẹp không", và cho Generator cùng Evaluator lặp 5-15 vòng, có khi chuyển hẳn sang một phong cách thẩm mỹ mới.
 
-Với tác vụ lập trình kéo dài, reset ngữ cảnh (bắt đầu phiên mới kèm tài liệu bàn giao) hiệu quả hơn nén ngữ cảnh, nhất là khi mô hình gặp hiện tượng "context anxiety" — vội kết thúc công việc vì tưởng sắp hết ngữ cảnh. Chi phí chênh lệch rõ rệt: chạy một agent đơn lẻ tốn 9 USD và 20 phút nhưng sản phẩm lỗi, còn dùng harness đầy đủ tốn 200 USD và 6 giờ nhưng cho ra ứng dụng chạy được thật. Bài học quan trọng khác là mỗi khi mô hình được nâng cấp, cần xem lại harness, vì thành phần từng cần thiết có thể trở thành gánh nặng thừa.
+Trong thí nghiệm của nhóm, bắt đầu phiên mới kèm tài liệu bàn giao hiệu quả hơn nén ngữ cảnh, nhất là khi mô hình gặp hiện tượng "context anxiety" — vội kết thúc công việc vì tưởng sắp hết ngữ cảnh. Trong ví dụ dựng công cụ làm game với Opus 4.5, chạy một agent đơn lẻ tốn 9 USD và 20 phút nhưng sản phẩm lỗi, còn dùng harness đầy đủ tốn 200 USD và 6 giờ nhưng cho ra ứng dụng chạy được thật. Bài học quan trọng khác là mỗi khi mô hình được nâng cấp, cần xem lại harness, vì thành phần từng cần thiết có thể trở thành gánh nặng thừa.
 
 ## [Why I Vibe in Go, Not Rust or Python](https://lifelog.my/episode/why-i-vibe-in-go-not-rust-or-python)
 
@@ -51,7 +51,7 @@ Rust thì ngược lại: đảm bảo tính đúng đắn rất tốt nhưng bo
 
 ## [The gold standard of optimization: A look under the hood of RollerCoaster Tycoon](https://larstofus.com/2026/03/22/the-gold-standard-of-optimization-a-look-under-the-hood-of-rollercoaster-tycoon/)
 
-RollerCoaster Tycoon được Chris Sawyer viết gần như hoàn toàn bằng Assembly — ngôn ngữ cấp thấp giúp chương trình chạy nhanh hơn hẳn C hay C++ thời bấy giờ — và đến nay vẫn được xem là chuẩn mực về tối ưu hoá trong lập trình game. Bài viết phân tích những kỹ thuật giúp trò chơi mô phỏng cả công viên với hàng nghìn khách trên phần cứng yếu. Thay vì dùng một kiểu dữ liệu chung, mỗi giá trị được cấp kích thước vừa đủ với mức tối đa dự kiến, chẳng hạn các loại tiền khác nhau dùng kiểu dữ liệu khác nhau để tiết kiệm bộ nhớ.
+RollerCoaster Tycoon được Chris Sawyer viết gần như hoàn toàn bằng Assembly — ngôn ngữ cấp thấp cho phép kiểm soát hiệu năng chặt hơn C hay C++ thời bấy giờ — và đến nay vẫn được xem là chuẩn mực về tối ưu hoá trong lập trình game. Bài viết phân tích những kỹ thuật giúp trò chơi mô phỏng cả công viên với hàng nghìn khách trên phần cứng yếu. Thay vì dùng một kiểu dữ liệu chung, mỗi giá trị được cấp kích thước vừa đủ với mức tối đa dự kiến, chẳng hạn các loại tiền khác nhau dùng kiểu dữ liệu khác nhau để tiết kiệm bộ nhớ.
 
 Mã nguồn thay phép nhân và chia cho luỹ thừa của 2 bằng phép dịch bit (bitshift), và điều đáng chú ý là chính các công thức trong game được thiết kế để tận dụng được thủ thuật này — mức phối hợp giữa lập trình viên và nhà thiết kế hiếm thấy ngày nay. Về thuật toán, khách tham quan không tìm đường thông minh mà đi lang thang bán ngẫu nhiên cho tới khi gặp một trò chơi. Game cũng bỏ hẳn việc phát hiện va chạm giữa khách: hàng nghìn người có thể đứng chung một ô, chỉ có chỉ số hài lòng giảm khi quá đông.
 
@@ -83,4 +83,4 @@ Nguyên tắc tách biệt trách nhiệm cũng được nhấn mạnh: tách vi
 
 ---
 
-*Bài viết đã được viết lại bởi Claude Code với Opus 5.5 vào ngày 27/09/2026.*
+*Bài viết đã được viết lại bởi Claude Code với Opus 5.5 vào ngày 27/09/2026; được review và chỉnh sửa bởi Codex với GPT 6.1 Sol vào ngày 09/11/2026, rà soát lại bởi Claude Code với Sonnet 5.5 vào ngày 16/11/2026.*

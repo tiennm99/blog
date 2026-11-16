@@ -19,27 +19,27 @@ Tập Inside Java Newscast #83 do kênh Java chính thức phát hành điểm q
 
 ## [Mastering Java Logging: Best Practices for Effective Application Monitoring](https://dev.to/nithinbharathwaj/mastering-java-logging-best-practices-for-effective-application-monitoring-20h7)
 
-Bài viết trên Dev.to tổng hợp các thực hành tốt khi ghi log cho ứng dụng Java. Tác giả khuyên dùng SLF4J làm lớp trừu tượng kết hợp với Logback, để có thể đổi thư viện ghi log bên dưới mà không phải sửa mã nguồn, đồng thời giải thích cách chọn đúng cấp log từ TRACE đến FATAL nhằm tránh vừa bỏ sót lỗi quan trọng vừa làm nhiễu hệ thống cảnh báo. Bài cũng hướng dẫn ghi log có cấu trúc dưới dạng JSON với logstash-logback-encoder và dùng MDC để tự động gắn thông tin ngữ cảnh như mã yêu cầu hay mã người dùng vào mọi dòng log.
+Bài viết trên Dev.to tổng hợp các thực hành tốt khi ghi log cho ứng dụng Java. Tác giả khuyên dùng SLF4J làm lớp trừu tượng kết hợp với Logback, để có thể đổi thư viện ghi log bên dưới mà không phải sửa mã nguồn, đồng thời giải thích cách chọn đúng cấp log từ TRACE đến FATAL nhằm tránh vừa bỏ sót lỗi quan trọng vừa làm nhiễu hệ thống cảnh báo (bài nhắc cả mức FATAL, nhưng SLF4J và Logback chỉ có TRACE, DEBUG, INFO, WARN, ERROR). Bài cũng hướng dẫn ghi log có cấu trúc dưới dạng JSON với logstash-logback-encoder và dùng MDC để tự động gắn thông tin ngữ cảnh như mã yêu cầu hay mã người dùng vào mọi dòng log.
 
-Phần sau tập trung vào hiệu năng và vận hành: dùng appender bất đồng bộ, tránh tính toán tốn kém trong câu lệnh log và trì hoãn việc tạo thông điệp bằng biểu thức lambda. Về bảo mật, tác giả nhấn mạnh việc che dữ liệu nhạy cảm như số thẻ tín dụng hay mật khẩu. Cuối cùng, bài giới thiệu cách gom log tập trung bằng ELK hoặc Graylog và thiết lập xoay vòng, lưu giữ log theo thời gian để không làm đầy ổ đĩa.
+Phần sau tập trung vào hiệu năng và vận hành: dùng appender bất đồng bộ, tránh tính toán tốn kém trong câu lệnh log và trì hoãn việc tạo thông điệp (với SLF4J 2 có thể truyền `Supplier` qua API chuỗi lời gọi). Về bảo mật, tác giả nhấn mạnh việc che dữ liệu nhạy cảm như số thẻ tín dụng hay mật khẩu. Cuối cùng, bài giới thiệu cách gom log tập trung bằng ELK hoặc Graylog và thiết lập xoay vòng, lưu giữ log theo thời gian để không làm đầy ổ đĩa.
 
 ## [Fixed Window Counter Rate Limiter (Redis & Java)](https://foojay.io/today/fixed-window-counter-rate-limiter-redis-java/)
 
 Bài viết trên foojay.io hướng dẫn xây dựng bộ giới hạn tần suất yêu cầu theo thuật toán bộ đếm cửa sổ cố định bằng Redis và Java. Thuật toán chia thời gian thành các khoảng cố định, đếm số yêu cầu trong mỗi khoảng và từ chối khi vượt ngưỡng; ưu điểm là đơn giản, nhưng có thể bị dồn yêu cầu tại ranh giới giữa hai cửa sổ. Phần cài đặt dùng Jedis với mỗi khách hàng một khóa riêng: đọc bộ đếm bằng GET, sau đó trong một giao dịch MULTI/EXEC tăng bộ đếm bằng INCR và đặt thời hạn bằng EXPIRE với cờ NX, để thời hạn chỉ được gán khi khóa vừa được tạo và cửa sổ không bị kéo dài sau mỗi yêu cầu.
 
-Bài cũng trình bày cách kiểm thử với Redis TestContainers, JUnit 5 và AssertJ, bao quát các trường hợp: yêu cầu trong giới hạn được chấp nhận, yêu cầu vượt giới hạn bị từ chối, bộ đếm được đặt lại khi cửa sổ hết hạn, các khách hàng có bộ đếm độc lập và yêu cầu bị từ chối không bị tính thêm vào bộ đếm.
+Bài cũng trình bày cách kiểm thử với Redis TestContainers, JUnit 5 và AssertJ, bao quát các trường hợp: yêu cầu trong giới hạn được chấp nhận, yêu cầu vượt giới hạn bị từ chối, bộ đếm được đặt lại khi cửa sổ hết hạn, các khách hàng có bộ đếm độc lập và yêu cầu bị từ chối không bị tính thêm vào bộ đếm. Cần lưu ý bước đọc và kiểm tra nằm ngoài giao dịch MULTI/EXEC, nên các yêu cầu đồng thời vẫn có thể cùng vượt ngưỡng; muốn chặt hơn cần Lua hoặc WATCH kèm thử lại.
 
 ## [How JVM handles exceptions](https://foojay.io/today/how-jvm-handles-exceptions/)
 
-Bài viết trên foojay.io giải thích cơ chế xử lý ngoại lệ bên trong máy ảo Java (JVM) ở mức bytecode. Mỗi phương thức có một bảng ngoại lệ, trong đó mỗi dòng xác định một khoảng lệnh được bảo vệ (from, to), vị trí nhảy tới để xử lý (target) và kiểu ngoại lệ cần bắt, hoặc "any" đối với khối finally. Khi gặp lệnh athrow, JVM lấy đối tượng ngoại lệ khỏi ngăn xếp toán hạng rồi tra bảng này để tìm trình xử lý phù hợp; nếu không tìm thấy, nó lần ngược lên các khung gọi hàm cho đến khi gặp trình xử lý hoặc chương trình kết thúc.
+Bài viết trên foojay.io giải thích cơ chế xử lý ngoại lệ bên trong máy ảo Java (JVM) ở mức bytecode. Phương thức có thể có bảng ngoại lệ, trong đó mỗi dòng xác định một khoảng lệnh được bảo vệ (from, to), vị trí nhảy tới để xử lý (target) và kiểu ngoại lệ cần bắt, hoặc "any" cho trình xử lý mọi kiểu ngoại lệ. Khi gặp lệnh athrow, JVM lấy đối tượng ngoại lệ khỏi ngăn xếp toán hạng rồi tra bảng này để tìm trình xử lý phù hợp; nếu không tìm thấy, nó lần ngược lên các khung gọi hàm. Nếu ngoại lệ không được bắt ở đâu trong chuỗi gọi, luồng đang chạy sẽ kết thúc sau bước xử lý ngoại lệ chưa được bắt.
 
-Tác giả cũng phân tích cách trình biên dịch chuyển khối try-catch-finally thành bytecode: khối catch và khối finally có các dòng riêng trong bảng ngoại lệ, và các dòng kiểu "any" bảo đảm finally luôn được thực thi, kể cả khi ngoại lệ phát sinh ngay trong khối catch. Đây là bài đọc hữu ích nếu bạn muốn hiểu điều gì thực sự diễn ra khi một ngoại lệ được ném ra.
+Tác giả cũng phân tích cách trình biên dịch chuyển khối try-catch-finally thành bytecode. Trong ví dụ, mã finally xuất hiện trên đường chạy bình thường, còn các dòng "any" đưa luồng điều khiển qua finally khi ngoại lệ phát sinh trong try hoặc catch. Đây là bài đọc hữu ích nếu bạn muốn hiểu điều gì thực sự diễn ra khi một ngoại lệ được ném ra.
 
 ## [Database Sharding Explained](https://architecturenotes.co/p/database-sharding-explained)
 
 Bài viết trên Architecture Notes giải thích sharding, kỹ thuật chia dữ liệu ra nhiều máy khi một máy chủ cơ sở dữ liệu không còn đáp ứng được tải. Trước khi sharding, tác giả khuyên cân nhắc các phương án đơn giản hơn: không làm gì nếu chưa có điểm nghẽn rõ ràng, nâng cấp phần cứng theo chiều dọc, nhân bản dữ liệu để tăng khả năng đọc, hoặc chuyển bớt dữ liệu sang các hệ thống chuyên dụng như Elasticsearch cho tìm kiếm hay S3 cho tệp lớn.
 
-Bài tiếp tục trình bày ba cách sharding: dựa trên hàm băm của khóa (phân bố đều nhưng khó chia lại), dựa trên khoảng giá trị (cần bảng tra cứu và khóa có độ phân tán tốt để tránh điểm nóng), và dựa trên quan hệ (giữ dữ liệu liên quan trên cùng một shard). Tác giả làm rõ vai trò của khóa shard, phân biệt shard logic với shard vật lý, và giải thích vì sao giao dịch trải trên nhiều shard cần giao thức cam kết hai pha, kéo theo chi phí ghi thêm và độ phức tạp đáng kể. Thông điệp chính là sharding giúp mở rộng quy mô nhưng đổi lại gánh nặng vận hành rất lớn.
+Bài tiếp tục trình bày ba cách sharding: dựa trên hàm băm của khóa (phân bố đều nhưng khó chia lại), dựa trên khoảng giá trị (cần bảng tra cứu và khóa có độ phân tán tốt để tránh điểm nóng), và dựa trên quan hệ (giữ dữ liệu liên quan trên cùng một shard). Tác giả làm rõ vai trò của khóa shard, phân biệt shard logic với shard vật lý, rồi giới thiệu cam kết hai pha như một cách phối hợp giao dịch trên nhiều shard khi cần bảo đảm tính nguyên tử, với chi phí ghi thêm và độ phức tạp đáng kể. Thông điệp chính là sharding giúp mở rộng quy mô nhưng đổi lại gánh nặng vận hành rất lớn.
 
 ## [Protecting your time from predators in large tech companies](https://www.seangoedecke.com/predators/)
 
@@ -77,4 +77,4 @@ Khi thiếu tập trung, ông chuyển sang các việc nhẹ hơn như xử lý
 
 ---
 
-*Bài viết đã được viết lại bởi Claude Code với Opus 5.5 vào ngày 27/09/2026.*
+*Bài viết đã được viết lại bởi Claude Code với Opus 5.5 vào ngày 27/09/2026; được review và chỉnh sửa bởi Codex với GPT 6.1 Sol vào ngày 09/11/2026, rà soát lại bởi Claude Code với Sonnet 5.5 vào ngày 16/11/2026.*

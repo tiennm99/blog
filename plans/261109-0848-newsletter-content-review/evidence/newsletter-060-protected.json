@@ -1,0 +1,215 @@
+{
+  "post": "content/post/2025/10/12/index.md",
+  "newsletter": 60,
+  "newsletter_post": true,
+  "note": "*Bài viết đã được viết lại bởi Claude Code với Opus 5.5 vào ngày 27/09/2026.*",
+  "lines": [
+    {
+      "line": 1,
+      "kind": "frontmatter",
+      "text": "---"
+    },
+    {
+      "line": 2,
+      "kind": "frontmatter",
+      "text": "title: \"Newsletter #60\""
+    },
+    {
+      "line": 3,
+      "kind": "frontmatter",
+      "text": "date: 2025-10-12"
+    },
+    {
+      "line": 4,
+      "kind": "frontmatter",
+      "text": "tags: [\"AI-Assisted\", \"Diff Algorithm\", \"Go\", \"Write-Ahead Log\", \"Cloud Platforms\", \"Engineering Management\", \"Career Development\"]"
+    },
+    {
+      "line": 5,
+      "kind": "frontmatter",
+      "text": "categories: [\"Newsletter\"]"
+    },
+    {
+      "line": 6,
+      "kind": "frontmatter",
+      "text": "---"
+    },
+    {
+      "line": 8,
+      "kind": "italic-note",
+      "text": "*Mời bạn thưởng thức Newsletter #60.*"
+    },
+    {
+      "line": 10,
+      "kind": "heading",
+      "text": "## [Diff Algorithms](https://flo.znkr.io/diff/)"
+    },
+    {
+      "line": 16,
+      "kind": "heading",
+      "text": "## [Building a Resilient Data Platform with Write-Ahead Log at Netflix](https://netflixtechblog.com/building-a-resilient-data-platform-with-write-ahead-log-at-netflix-127b6712359a)"
+    },
+    {
+      "line": 22,
+      "kind": "heading",
+      "text": "## [Vercel vs Cloudflare: Two Philosophies of Building for Developers](https://bharath.sh/writing/vercel-vs-cloudflare)"
+    },
+    {
+      "line": 28,
+      "kind": "heading",
+      "text": "## [Distracting Software Engineers Is Way More Harmful Than Most Managers Think](https://workweave.dev/blog/distracting-software-engineers-is-more-harmful-than-managers-think-even-in-the-ai-times)"
+    },
+    {
+      "line": 34,
+      "kind": "heading",
+      "text": "## [Common Problems Managing Senior Engineers](https://emdiary.substack.com/p/common-problems-managing-senior-engineers)"
+    },
+    {
+      "line": 40,
+      "kind": "heading",
+      "text": "## [Career Advice, or Something Like It](https://brooker.co.za/blog/2025/06/20/career.html)"
+    },
+    {
+      "line": 46,
+      "kind": "heading",
+      "text": "## ~~[My Productivity Rules](https://www.16elt.com/2025/10/08/studying-while-busy/)~~"
+    },
+    {
+      "line": 48,
+      "kind": "struck",
+      "text": "~~Bài viết trình bày các mẹo thực tế để nâng cao hiệu suất học tập, nhấn mạnh vào việc lập kế hoạch, quản lý năng lượng, trung thực về nỗ lực, xem xét hàng ngày và giảm thiểu sự phân tâm. Bài viết cung cấp các quy tắc như chuẩn bị ngày mới vào buổi tối trước, nghỉ ngơi khi năng lượng thấp, trung thực về mức độ nỗ lực thực sự, phản chiếu lại tiến độ hàng ngày và loại bỏ các yếu tố gây xao nhãng như điện thoại hay các ứng dụng hấp dẫn.~~"
+    },
+    {
+      "line": 50,
+      "kind": "struck",
+      "text": "~~**Điểm chính:**~~"
+    },
+    {
+      "line": 51,
+      "kind": "struck",
+      "text": "~~- Lập kế hoạch ngày mới vào buổi tối trước để tránh tình trạng trì hoãn buổi sáng~~"
+    },
+    {
+      "line": 52,
+      "kind": "struck",
+      "text": "~~- Phối hợp cường độ học tập với mức năng lượng trong ngày~~"
+    },
+    {
+      "line": 53,
+      "kind": "struck",
+      "text": "~~- Trung thực về mức độ nỗ lực thực sự mà bạn bỏ ra~~"
+    },
+    {
+      "line": 54,
+      "kind": "struck",
+      "text": "~~- Phản chiếu lại tiến độ hàng ngày để cải thiện kế hoạch trong tương lai~~"
+    },
+    {
+      "line": 55,
+      "kind": "struck",
+      "text": "~~- Loại bỏ các yếu tố gây xao nhãng bằng cách giữ các ứng dụng hấp dẫn ngoài tầm nhìn~~"
+    },
+    {
+      "line": 57,
+      "kind": "heading",
+      "text": "## Bonus: Vài ảnh thú vị đến từ [ByteByteGo](https://bytebytego.com/)"
+    },
+    {
+      "line": 58,
+      "kind": "italic-note",
+      "text": "*Nay mình đã gặp phải một số vấn đề khá phiền vì đã lưu quá nhiều ảnh sưu tầm trong bài viết. Cụ thể là mình mất hơn 17p để build site này khi dùng một máy tính khác :v*"
+    },
+    {
+      "line": 59,
+      "kind": "code",
+      "text": "```"
+    },
+    {
+      "line": 60,
+      "kind": "code",
+      "text": "..."
+    },
+    {
+      "line": 61,
+      "kind": "code",
+      "text": "                   | VI"
+    },
+    {
+      "line": 62,
+      "kind": "code",
+      "text": "-------------------+------"
+    },
+    {
+      "line": 63,
+      "kind": "code",
+      "text": "  Pages            | 587"
+    },
+    {
+      "line": 64,
+      "kind": "code",
+      "text": "  Paginator pages  | 130"
+    },
+    {
+      "line": 65,
+      "kind": "code",
+      "text": "  Non-page files   | 195"
+    },
+    {
+      "line": 66,
+      "kind": "code",
+      "text": "  Static files     |   2"
+    },
+    {
+      "line": 67,
+      "kind": "code",
+      "text": "  Processed images | 361"
+    },
+    {
+      "line": 68,
+      "kind": "code",
+      "text": "  Aliases          | 236"
+    },
+    {
+      "line": 69,
+      "kind": "code",
+      "text": "  Cleaned          |   0"
+    },
+    {
+      "line": 70,
+      "kind": "code",
+      "text": ""
+    },
+    {
+      "line": 71,
+      "kind": "code",
+      "text": "Built in 1043990 ms"
+    },
+    {
+      "line": 72,
+      "kind": "code",
+      "text": "..."
+    },
+    {
+      "line": 73,
+      "kind": "code",
+      "text": "```"
+    },
+    {
+      "line": 74,
+      "kind": "italic-note",
+      "text": "*Nên mình quyết định đổi sang sử dụng url gốc thay vì thêm hình vào repo. Điểm yếu là có thể ảnh sẽ bị gỡ, và không được xử lý để giảm kích thước, làm tăng thời gian load lên. Mình sẽ cố gắng update lại các ảnh trong các post trước đây luôn (vào một ngày nào đó đẹp trời và mình siêng năng :3)*"
+    },
+    {
+      "line": 76,
+      "kind": "asset",
+      "text": "![TCP vs UDP](https://substackcdn.com/image/fetch/$s_!KwvJ!,w_1100,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F8ac50da4-feb8-4781-8bb2-e74244aa889f_2250x2814.png)"
+    }
+  ],
+  "candidates": [
+    {
+      "line": 26,
+      "kind": "first-person",
+      "text": "Sự khác biệt này khớp với cách hai công ty kiếm tiền. Vercel thu lợi từ tốc độ phát triển: khuyến khích lập trình viên làm nhanh rồi nâng dần lên các gói trả phí. Cloudflare thì kiếm tiền từ chính quy mô, tức lượng sử dụng, băng thông và tài nguyên tính toán duy trì lâu dài. Mỗi bên nhìn đối thủ theo góc tiêu cực: Cloudflare cho rằng Vercel che giấu chi phí thật, còn Vercel thấy Cloudflare phức tạp không cần thiết, nhưng cả hai cách tiếp cận đều hợp lý trong phạm vi của mình. Khi điện toán biên và các khối lượng công việc AI phát triển, hai nền tảng đang dần hội tụ, cùng cố gắng mang lại trải nghiệm phát triển tốt đi kèm hạ tầng mạnh mẽ."
+    }
+  ]
+}

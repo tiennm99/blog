@@ -17,13 +17,13 @@ Tác giả phân tích hai loại tính cục bộ: tính cục bộ theo thời
 
 ## [Consistent Hashing](https://eli.thegreenplace.net/2025/consistent-hashing/)
 
-Cách phân phối dữ liệu đơn giản `hash % N` lên N nút hoạt động tốt cho tới khi số nút thay đổi: chỉ cần thêm hoặc bớt một nút, gần như mọi phần tử đều bị gán sang vị trí mới, gây ra hàng loạt cache miss đúng vào lúc hệ thống đang chịu tải cao. Consistent hashing khắc phục điều này bằng cách dùng cùng một hàm băm để ánh xạ cả nút lẫn phần tử lên một vòng tròn, rồi gán mỗi phần tử cho nút gần nhất theo chiều kim đồng hồ. Nhờ vậy khi nút thay đổi, chỉ khoảng M/N phần tử (M là tổng số phần tử) phải chuyển chỗ thay vì toàn bộ.
+Cách phân phối dữ liệu đơn giản `hash % N` lên N nút hoạt động tốt cho tới khi số nút thay đổi: chỉ cần thêm hoặc bớt một nút, gần như mọi phần tử đều bị gán sang vị trí mới, gây ra hàng loạt cache miss đúng vào lúc hệ thống đang chịu tải cao. Consistent hashing khắc phục điều này bằng cách dùng cùng một hàm băm để ánh xạ cả nút lẫn phần tử lên một vòng tròn, rồi gán mỗi phần tử cho nút gần nhất theo chiều kim đồng hồ. Nhờ vậy khi nút thay đổi, chỉ khoảng M/N phần tử (M là tổng số phần tử, N là số nút, với giả định phân bố cân bằng) phải chuyển chỗ thay vì toàn bộ.
 
 Về cài đặt, tác giả lưu vị trí các nút trong mảng đã sắp xếp trên một vòng rời rạc, và việc tìm nút phụ trách một phần tử chỉ là một lần tìm kiếm nhị phân, vừa nhanh vừa thân thiện với cache. Vấn đề còn lại là vị trí ngẫu nhiên khiến khoảng cách giữa các nút rất chênh lệch: với 20 nút, có nút nhận nhiều phần tử gấp khoảng 40 lần nút khác. Giải pháp là nút ảo, tức ánh xạ mỗi nút thật tới nhiều điểm trên vòng tròn; thử nghiệm với 10 nút ảo mỗi nút giúp phân bố đều hơn hẳn. Kỹ thuật này ra đời tại MIT cho bài toán web cache, trở thành nền tảng của Akamai và ảnh hưởng tới hệ thống lưu trữ Dynamo của AWS.
 
 ## [How to stop Linux threads cleanly](https://mazzo.li/posts/stopping-linux-threads.html)
 
-Bài viết bàn về một bài toán khó hơn nhiều so với việc tạo luồng: dừng một luồng trong Linux nhưng vẫn cho nó cơ hội chạy các thao tác dọn dẹp. Cách đơn giản nhất là vòng lặp gần như bận (quasi-busy loop): luồng kiểm tra một cờ atomic sau mỗi lượt công việc, với điều kiện mỗi lượt kết thúc đủ nhanh. Cách này dễ hiểu nhưng buộc phải cấu trúc lại mã nguồn. `pthread_cancel()` thoạt nhìn hấp dẫn nhưng có lỗi nghiêm trọng: destructor trong C++ hiện đại mặc định là `noexcept` nên chương trình có thể sập khi việc hủy kích hoạt unwinding, và việc hủy giữa chừng một giao dịch sẽ phá vỡ tính nhất quán của dữ liệu.
+Bài viết bàn về một bài toán khó hơn nhiều so với việc tạo luồng: dừng một luồng trong Linux nhưng vẫn cho nó cơ hội chạy các thao tác dọn dẹp. Cách đơn giản nhất là vòng lặp gần như bận (quasi-busy loop): luồng kiểm tra một cờ atomic sau mỗi lượt công việc, với điều kiện mỗi lượt kết thúc đủ nhanh. Cách này dễ hiểu nhưng buộc phải cấu trúc lại mã nguồn. `pthread_cancel()` thoạt nhìn hấp dẫn nhưng có lỗi nghiêm trọng: trên glibc/libstdc++, cancellation dùng forced unwinding; nếu đi qua ranh giới `noexcept`, chẳng hạn khi bị hủy bên trong destructor, chương trình có thể kết thúc, và việc hủy giữa chừng một giao dịch sẽ phá vỡ tính nhất quán của dữ liệu.
 
 Hướng tiếp cận dựa trên tín hiệu như SIGUSR1 kết hợp kiểm soát signal mask cho phép ngắt các lời gọi hệ thống đang bị chặn, nhưng vẫn còn race condition vì không dễ kiểm tra cờ và gọi syscall một cách nguyên tử. Với các syscall có biến thể nhận signal mask như `ppoll`, `pselect`, `epoll_pwait`, vấn đề này được xử lý gọn. Với các syscall còn lại, tác giả trình bày một mẹo dùng rseq (restartable sequences, có từ Linux 4.18) để gộp việc kiểm tra cờ và gọi syscall thành một khối nguyên tử, nhân hệ điều hành sẽ hủy khối nếu luồng bị ngắt giữa chừng. Kết luận là không có giải pháp hoàn hảo: vòng lặp kiểm tra cờ đủ cho phần lớn ứng dụng, cách dùng tín hiệu phù hợp với mã nặng I/O, còn rseq đòi hỏi inline assembly nên chỉ dành cho trường hợp đặc biệt.
 
@@ -64,4 +64,4 @@ David Teller điểm lại những ngôn ngữ lập trình đã thay đổi cá
 
 ---
 
-*Bài viết đã được viết lại bởi Claude Code với Opus 5.5 vào ngày 27/09/2026.*
+*Bài viết đã được viết lại bởi Claude Code với Opus 5.5 vào ngày 27/09/2026; được review và chỉnh sửa bởi Codex với GPT 6.1 Sol vào ngày 09/11/2026, rà soát lại bởi Claude Code với Sonnet 5.5 vào ngày 16/11/2026.*

@@ -66,10 +66,10 @@ Thị trường việc làm vẫn khó khăn, nhưng theo tác giả nguyên nh�
 
 ## [Everything Wrong With Model Context Protocol (MCP)](https://blog.sshh.io/p/everything-wrong-with-mcp)
 
-Shrivu Shankar phân tích những lỗ hổng và hạn chế của Model Context Protocol, tiêu chuẩn để kết nối công cụ và dữ liệu bên thứ ba với các trợ lý AI như Claude, ChatGPT hay Cursor. Về bảo mật giao thức, phiên bản đầu không định nghĩa cơ chế xác thực và bản đặc tả sau đó lại bị chê phức tạp; máy chủ MCP chạy cục bộ qua stdio tạo đường tắt để người dùng ít kinh nghiệm tải và chạy mã độc; nhiều máy chủ còn tin tưởng đầu vào và thực thi luôn. Về trải nghiệm, MCP không phân biệt mức độ rủi ro giữa công cụ đọc nhật ký và công cụ xóa tệp, không kiểm soát chi phí token, và chỉ trả về dữ liệu không có cấu trúc.
+Shrivu Shankar phân tích những lỗ hổng và hạn chế của Model Context Protocol, tiêu chuẩn để kết nối công cụ và dữ liệu bên thứ ba với các trợ lý AI như Claude, ChatGPT hay Cursor. Về bảo mật giao thức, phiên bản đầu không định nghĩa cơ chế xác thực và bản đặc tả sau đó lại bị chê phức tạp; máy chủ MCP chạy cục bộ qua stdio tạo đường tắt để người dùng ít kinh nghiệm tải và chạy mã độc; nhiều máy chủ còn tin tưởng đầu vào và thực thi luôn. Về trải nghiệm, MCP không phân biệt mức độ rủi ro giữa công cụ đọc nhật ký và công cụ xóa tệp, không kiểm soát chi phí token, và ở thời điểm viết bài chỉ trả về dữ liệu không có cấu trúc, điều các đặc tả sau đã bổ sung.
 
 Nghiêm trọng hơn là bảo mật của chính mô hình ngôn ngữ. Mô tả công cụ thường được đưa vào system prompt nên có quyền lớn để chi phối agent; máy chủ có thể âm thầm đổi tên và mô tả công cụ sau khi người dùng đã chấp thuận, và dữ liệu kéo về từ bên thứ tư, như một dòng trong cơ sở dữ liệu, có thể chứa prompt injection. Việc tổng hợp dữ liệu dễ dàng còn giúp nhân viên suy ra thông tin nhạy cảm từ những gì vốn được phép xem. Cuối cùng, độ tin cậy của mô hình giảm khi có quá nhiều công cụ, và bộ công cụ đơn giản kiểu liệt kê hay đọc tệp không đủ cho những truy vấn mà người dùng kỳ vọng. Tác giả kết luận rằng cần cùng lúc một giao thức an toàn mặc định, ứng dụng biết bảo vệ người dùng và người dùng hiểu rõ lựa chọn của mình.
 
 ---
 
-*Bài viết đã được viết lại bởi Claude Code với Opus 5.5 vào ngày 27/09/2026.*
+*Bài viết đã được viết lại bởi Claude Code với Opus 5.5 vào ngày 27/09/2026; được review và chỉnh sửa bởi Codex với GPT 6.1 Sol vào ngày 09/11/2026, rà soát lại bởi Claude Code với Sonnet 5.5 vào ngày 16/11/2026.*

@@ -44,7 +44,7 @@ Tác giả so sánh với thời làm Elasticsearch, nơi việc để từng d�
 
 ## [9 Software Architecture Patterns for Distributed Systems](https://dev.to/somadevtoo/9-software-architecture-patterns-for-distributed-systems-2o86?=&aid=recZm2jVus1yqUHWw)
 
-Bài viết giới thiệu chín mẫu kiến trúc thường gặp trong hệ thống phân tán, vừa hữu ích khi thiết kế thực tế vừa hay xuất hiện trong phỏng vấn thiết kế hệ thống. Nhóm giao tiếp gồm: Peer-to-Peer, nơi các nút trao đổi trực tiếp mà không cần bộ điều phối trung tâm, dùng trong chia sẻ tệp và blockchain; API Gateway, điểm vào thống nhất cho các dịch vụ phía sau, đảm nhận bảo mật và cân bằng tải trong kiến trúc microservices; Pub-Sub, tách bên gửi và bên nhận thông điệp qua một broker, phù hợp cho nhắn tin thời gian thực, hệ thống hướng sự kiện và IoT; và Request-Response, mô hình đồng bộ trong đó máy khách chờ phản hồi từ máy chủ, phổ biến ở REST API và ứng dụng web.
+Bài viết giới thiệu chín mẫu kiến trúc thường gặp trong hệ thống phân tán, vừa hữu ích khi thiết kế thực tế vừa hay xuất hiện trong phỏng vấn thiết kế hệ thống. Nhóm giao tiếp gồm: Peer-to-Peer, nơi các nút trao đổi trực tiếp mà không cần bộ điều phối trung tâm, dùng trong chia sẻ tệp và blockchain; API Gateway, điểm vào thống nhất cho các dịch vụ phía sau, đảm nhận bảo mật và cân bằng tải trong kiến trúc microservices; Pub-Sub, tách bên gửi và bên nhận thông điệp qua một broker, phù hợp cho nhắn tin thời gian thực, hệ thống hướng sự kiện và IoT; và Request-Response, nơi máy khách gửi yêu cầu và nhận phản hồi tương ứng từ máy chủ, phổ biến ở REST API và ứng dụng web (mẫu này không bắt buộc phải thực thi đồng bộ).
 
 Nhóm quản lý và xử lý dữ liệu gồm: Event Sourcing, lưu trạng thái dưới dạng chuỗi sự kiện bất biến để dễ kiểm toán và phát lại, thường thấy trong hệ thống tài chính; ETL (trích xuất, biến đổi, nạp) để gom dữ liệu từ nhiều nguồn vào kho dữ liệu phục vụ phân tích và di chuyển dữ liệu; Batching, gom dữ liệu thành lô rồi xử lý một lần để tăng hiệu năng; Streaming Processing, xử lý luồng dữ liệu liên tục theo thời gian thực cho tài chính, IoT hay an ninh mạng; và Orchestration, dùng một bộ điều phối trung tâm để sắp xếp luồng công việc giữa các dịch vụ. Theo tác giả, hiểu rõ điểm mạnh và sự đánh đổi của từng mẫu sẽ giúp bạn xây dựng hệ thống tin cậy, dễ mở rộng và dễ bảo trì khi yêu cầu thay đổi.
 
@@ -75,4 +75,4 @@ Neil Madden nhìn lại 26 năm làm việc với Java, từ Java 1.1.8 năm 199
 
 ---
 
-*Bài viết đã được viết lại bởi Claude Code với Opus 5.5 vào ngày 27/09/2026.*
+*Bài viết đã được viết lại bởi Claude Code với Opus 5.5 vào ngày 27/09/2026; được review và chỉnh sửa bởi Codex với GPT 6.1 Sol vào ngày 09/11/2026, rà soát lại bởi Claude Code với Sonnet 5.5 vào ngày 16/11/2026.*

@@ -17,7 +17,7 @@ Tác giả đề xuất một thuật toán lai với hai chế độ: chế đ�
 
 Burak Karakan, người đã làm việc chuyên nghiệp với Go suốt 8 năm và đang xây dựng Bruin — công cụ ETL mã nguồn mở viết bằng Go — cho rằng Go là ngôn ngữ phù hợp nhất để lập trình cùng AI agent. Lý do đầu tiên là Go được biên dịch: agent sinh ra rất nhiều mã nguồn trông có vẻ đúng, và trình biên dịch cùng hệ thống kiểu tĩnh giúp agent lặp lại cho đến khi loại bỏ được cả một nhóm lỗi về kiểu và tham số. So với Rust, Go có cú pháp và khái niệm đơn giản hơn, biên dịch nhanh hơn nên vòng phản hồi ngắn hơn, và lượng mã Go ngoài kia cũng nhiều hơn. Sự đơn giản còn giúp con người dễ đọc và nhận ra khi agent đang đi theo một hướng thiết kế kỳ lạ.
 
-Go cũng là ngôn ngữ có quan điểm rõ ràng: có một cách chuẩn để chạy kiểm thử, định dạng mã hay xây dựng tệp thực thi, nên agent chỉ cần gọi `gofmt` thay vì cài thêm công cụ như thường thấy ở JavaScript. Việc biên dịch đa nền tảng dễ dàng cho phép chạy toàn bộ kiểm thử trên nhiều hệ điều hành sau mỗi thay đổi, một lợi thế lớn khi dùng background agent chạy trong các sandbox mà ta không kiểm soát được môi trường. Theo trải nghiệm cá nhân của tác giả, agent viết Go đúng ngay lần đầu khoảng 95% thời gian — không phải vì dữ liệu huấn luyện nhiều hơn Python, mà vì Go thường chỉ có một cách làm cho mỗi việc. Tác giả thừa nhận nhận định này khá cảm tính và có thể mất dần giá trị.
+Go cũng là ngôn ngữ có quan điểm rõ ràng: có một cách chuẩn để chạy kiểm thử, định dạng mã hay xây dựng tệp thực thi, nên agent chỉ cần gọi `gofmt` thay vì cài thêm công cụ như thường thấy ở JavaScript. Biên dịch chéo ra nhiều nền tảng dễ dàng nên có thể kiểm thử trên nhiều hệ điều hành sau mỗi thay đổi (dù chạy kiểm thử vẫn cần môi trường đích hoặc giả lập phù hợp), một lợi thế lớn khi dùng background agent chạy trong các sandbox mà ta không kiểm soát được môi trường. Theo trải nghiệm cá nhân của tác giả, agent viết Go đúng ngay lần đầu khoảng 95% thời gian — không phải vì dữ liệu huấn luyện nhiều hơn Python, mà vì Go thường chỉ có một cách làm cho mỗi việc. Tác giả thừa nhận nhận định này khá cảm tính và có thể mất dần giá trị.
 
 ## [Your Agent Needs a Harness, Not a Framework](https://x.com/djfarrelly/status/2028556984396452250)
 
@@ -75,4 +75,4 @@ Nhiều bài viết dừng ở giải pháp đặt giá trị trong dấu ngoặ
 
 ---
 
-*Bài viết đã được viết lại bởi Claude Code với Opus 5.5 vào ngày 27/09/2026.*
+*Bài viết đã được viết lại bởi Claude Code với Opus 5.5 vào ngày 27/09/2026; được review và chỉnh sửa bởi Codex với GPT 6.1 Sol vào ngày 09/11/2026, rà soát lại bởi Claude Code với Sonnet 5.5 vào ngày 16/11/2026.*

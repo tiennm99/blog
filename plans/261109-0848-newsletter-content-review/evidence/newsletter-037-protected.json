@@ -1,0 +1,135 @@
+{
+  "post": "content/post/2025/07/26/index.md",
+  "newsletter": 37,
+  "newsletter_post": true,
+  "note": "*Bài viết đã được viết lại bởi Claude Code với Opus 5.5 vào ngày 27/09/2026.*",
+  "lines": [
+    {
+      "line": 1,
+      "kind": "frontmatter",
+      "text": "---"
+    },
+    {
+      "line": 2,
+      "kind": "frontmatter",
+      "text": "title: \"Newsletter #37\""
+    },
+    {
+      "line": 3,
+      "kind": "frontmatter",
+      "text": "date: 2025-07-26"
+    },
+    {
+      "line": 4,
+      "kind": "frontmatter",
+      "text": "tags: [ \"AI-Assisted\", \"Nix\", \"DevOps\", \"Developer Experience\", \"AI Coding\", \"Git\", \"WebSockets\" ]"
+    },
+    {
+      "line": 5,
+      "kind": "frontmatter",
+      "text": "categories: [ \"Newsletter\" ]"
+    },
+    {
+      "line": 6,
+      "kind": "frontmatter",
+      "text": "---"
+    },
+    {
+      "line": 8,
+      "kind": "italic-note",
+      "text": "*Mời bạn thưởng thức Newsletter #37.*"
+    },
+    {
+      "line": 10,
+      "kind": "heading",
+      "text": "## [I Think It's Time to Give Nix a Chance](https://maych.in/blog/its-time-to-give-nix-a-chance/)"
+    },
+    {
+      "line": 16,
+      "kind": "heading",
+      "text": "## [You Can Choose Tools That Make You Happy](https://borretti.me/article/you-can-choose-tools-that-make-you-happy)"
+    },
+    {
+      "line": 22,
+      "kind": "heading",
+      "text": "## ~~[The Copilot Delusion](https://deplet.ing/the-copilot-delusion/)~~"
+    },
+    {
+      "line": 24,
+      "kind": "struck",
+      "text": "~~Bài viết này đưa ra những phê phán sâu sắc về các trợ lý lập trình AI như GitHub Copilot và ảnh hưởng tiêu cực của chúng đến ngành phát triển phần mềm. Tác giả lập luận rằng các công cụ AI này tạo ra mã nguồn mà không có sự hiểu biết thực sự về kiến trúc hệ thống hay những phức tạp kỹ thuật sâu xa.~~"
+    },
+    {
+      "line": 26,
+      "kind": "struck",
+      "text": "~~Vấn đề cốt lõi là việc phụ thuộc vào AI làm suy giảm kỹ năng tư duy phản biện và học hỏi của lập trình viên. Khi \"gia công tư duy cho AI\", chúng ta cũng đang \"gia công việc học\" cho chúng. Các công cụ này thiếu trực giác về hiệu năng phần cứng, quản lý bộ nhớ, và tối ưu hóa - những yếu tố then chốt trong phát triển phần mềm chất lượng cao.~~"
+    },
+    {
+      "line": 28,
+      "kind": "struck",
+      "text": "~~Tác giả lo ngại về tác động văn hóa trong ngành kỹ thuật phần mềm, có thể tạo ra một thế hệ lập trình viên ưu tiên sản lượng nhanh hơn chất lượng, đe dọa \"linh hồn hacker\" và sự tò mò kỹ thuật sâu sắc. Nguy cơ là sẽ có nhiều người nghĩ mình giỏi chỉ vì bot của họ vượt qua được CI, nhưng thực tế thiếu hiểu biết căn bản.~~"
+    },
+    {
+      "line": 30,
+      "kind": "struck",
+      "text": "~~**Mối lo ngại chính:**~~"
+    },
+    {
+      "line": 31,
+      "kind": "struck",
+      "text": "~~- AI tạo mã mà không hiểu kiến trúc hệ thống~~"
+    },
+    {
+      "line": 32,
+      "kind": "struck",
+      "text": "~~- Suy giảm kỹ năng tư duy phản biện của lập trình viên~~"
+    },
+    {
+      "line": 33,
+      "kind": "struck",
+      "text": "~~- Thiếu hiểu biết về hiệu năng và tối ưu hóa~~"
+    },
+    {
+      "line": 34,
+      "kind": "struck",
+      "text": "~~- Nguy cơ tạo ra thế hệ lập trình viên \"giỏi trên giấy\"~~"
+    },
+    {
+      "line": 36,
+      "kind": "heading",
+      "text": "## [Why Cline Doesn't Index Your Codebase (And Why That's a Good Thing)](https://cline.bot/blog/why-cline-doesnt-index-your-codebase-and-why-thats-a-good-thing)"
+    },
+    {
+      "line": 42,
+      "kind": "heading",
+      "text": "## [The Perfect Commit](https://simonwillison.net/2022/Oct/29/the-perfect-commit/)"
+    },
+    {
+      "line": 48,
+      "kind": "heading",
+      "text": "## [The Software Engineering Kanagawa Moment](https://pashabitz.substack.com/p/the-software-engineering-kawagara)"
+    },
+    {
+      "line": 54,
+      "kind": "heading",
+      "text": "## [WebSockets guarantee order - so why are my messages scrambled?](https://www.sitongpeng.com/writing/websockets-guarantee-order-so-why-are-my-messages-scrambled)"
+    },
+    {
+      "line": 60,
+      "kind": "heading",
+      "text": "## [Why agents are bad pair programmers](https://justin.searls.co/posts/why-agents-are-bad-pair-programmers/)"
+    }
+  ],
+  "candidates": [
+    {
+      "line": 18,
+      "kind": "first-person",
+      "text": "Bài viết lập luận rằng lựa chọn công nghệ của lập trình viên phần lớn đến từ cảm xúc chứ không thuần lý trí như họ vẫn nói. Người ta chọn công cụ theo thẩm mỹ và hình ảnh bản thân muốn hướng tới: dùng Emacs vì thấy mình thuộc giới tinh hoa trí tuệ, dùng NetBSD vì hợp với hình tượng nhân vật cyberpunk. Sau đó họ dựng lên những lý lẽ kỹ thuật để che đi động cơ thật, bằng các chiêu quen thuộc như xem nhẹ nhược điểm lớn của công cụ ít người dùng (\"ừ thì phải tự viết một máy chủ HTTP\"), bịa ra những ưu điểm đáng ngờ, hoặc chê bai mơ hồ các lựa chọn phổ biến kiểu \"Docker quá phức tạp\" hay \"C++ rèn luyện bản lĩnh, còn Rust khiến bạn yếu đi\"."
+    },
+    {
+      "line": 20,
+      "kind": "first-person",
+      "text": "Tác giả không phản đối việc chọn công cụ theo cảm xúc, miễn là đừng tự lừa mình và lừa người khác. Nếu chọn một thứ vì thẩm mỹ hay bản sắc, hãy theo đuổi nó trọn vẹn và có chủ đích; điều không nên là khẳng định SNOBOL có tương lai thực tế, hay nói với sếp rằng quyết định đó hoàn toàn dựa trên tính toán hợp lý. Thông điệp cốt lõi: bạn được phép chọn công cụ khiến mình hạnh phúc, chỉ cần thành thật về lý do. Tác giả cũng nhắc rằng đam mê cần đi kèm sự tỉnh táo, bởi những lựa chọn cực đoan tách rời lý trí có thể khiến bạn mất nhiều năm cho những hướng đi bế tắc."
+    }
+  ]
+}

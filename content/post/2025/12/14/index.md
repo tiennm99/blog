@@ -9,7 +9,7 @@ categories: ["Newsletter"]
 
 ## [A modern guide to SQL JOINs](https://kb.databasedesignbook.com/posts/sql-joins/)
 
-Alexey Makhotkin viết một hướng dẫn dài về SQL JOIN theo cách tiếp cận khác hẳn các bài hướng dẫn thông thường: dạy LEFT JOIN trước rồi mới đến INNER JOIN, và chỉ dùng phép so sánh bằng giữa hai ID trong điều kiện ON, mọi điều kiện lọc khác đều đưa xuống WHERE. Tác giả chia phép nối thành ba trường hợp. Trường hợp N:1, khi khóa chính nằm ở vế phải của điều kiện ON, là hữu ích và nhanh nhất vì số dòng kết quả không bao giờ vượt quá số dòng của bảng bên trái. Trường hợp 1:N khá kỳ quặc và nên tránh, còn M:N là nguồn gốc của nhiều lỗi khó thấy. Toàn bộ ví dụ dùng một cơ sở dữ liệu nhỏ gồm bảng nhân viên và bảng thanh toán, kèm các câu truy vấn chạy sẵn trên dbfiddle.uk.
+Alexey Makhotkin viết một hướng dẫn dài về SQL JOIN theo cách tiếp cận khác hẳn các bài hướng dẫn thông thường: dạy LEFT JOIN trước rồi mới đến INNER JOIN, và chỉ dùng phép so sánh bằng giữa hai ID trong điều kiện ON, mọi điều kiện lọc khác đều đưa xuống WHERE. Tác giả chia phép nối thành ba trường hợp. Trường hợp N:1, khi khóa chính nằm ở vế phải của điều kiện ON, là hữu ích nhất vì số dòng kết quả không bao giờ vượt quá số dòng của bảng bên trái. Trường hợp 1:N khá kỳ quặc và nên tránh, còn M:N là nguồn gốc của nhiều lỗi khó thấy. Toàn bộ ví dụ dùng một cơ sở dữ liệu nhỏ gồm bảng nhân viên và bảng thanh toán, kèm các câu truy vấn chạy sẵn trên dbfiddle.uk.
 
 Phần sau giải thích INNER JOIN như một tích Descartes đã được lọc, cách tự nối bảng để xử lý dữ liệu phân cấp như quan hệ quản lý, và lý do sơ đồ Venn là cách minh họa gây hiểu lầm: nó không thể hiện được việc số dòng bị nhân lên. Tác giả cũng cho rằng RIGHT JOIN là thừa, và phân tích kỹ lỗi đếm trùng khi xâu chuỗi nhiều LEFT JOIN rồi GROUP BY, cùng cách thiết kế lại truy vấn để vừa đúng vừa nhanh. Thông điệp xuyên suốt: SQL quá dễ dãi, không bảo vệ bạn khỏi những sai lầm đơn giản, nên hãy tự đặt kỷ luật khi viết truy vấn.
 
@@ -41,7 +41,7 @@ Quá trình này gặp nhiều trở ngại: dữ liệu được tuần tự h�
 
 Gunnar Morling bàn về idempotency key, cơ chế giúp đạt được xử lý đúng một lần (exactly-once processing) trong hệ thống phân tán, dù việc giao tin nhắn đúng một lần là không thể đảm bảo. Bên nhận so sánh khóa của tin nhắn đến với các khóa đã xử lý để bỏ qua bản trùng, và việc xử lý tin nhắn cùng lưu khóa phải diễn ra nguyên tử, thường trong cùng một giao dịch cơ sở dữ liệu. Tác giả xem xét ba cách tạo khóa. UUIDv4 đơn giản nhưng buộc bên nhận lưu mọi khóa đã gặp; UUIDv7 hay ULID có thêm phần dấu thời gian nên có thể loại bỏ các khóa cũ. Dãy số tăng đơn điệu giúp bên nhận chỉ cần nhớ giá trị lớn nhất, nhưng lại gây khó cho bên gửi khi có nhiều yêu cầu đồng thời, vì việc cấp số phải được tuần tự hóa và dễ trở thành nút thắt.
 
-Cách thứ ba là suy ra khóa từ nhật ký giao dịch của cơ sở dữ liệu bên gửi, một biến thể của outbox pattern dùng công cụ CDC như Debezium. Chẳng hạn, trong Postgres, số thứ tự LSN của các sự kiện commit trong WAL luôn tăng đơn điệu nên có thể dùng làm khóa. Tác giả kết luận không có giải pháp nào hoàn hảo: UUIDs kèm thời hạn lưu thường là đủ cho nhiều trường hợp, còn khi khối lượng tin nhắn càng lớn thì cách dùng dãy tăng đơn điệu từ nhật ký giao dịch càng hấp dẫn, đổi lại là thêm độ phức tạp vận hành.
+Cách thứ ba là suy ra khóa từ nhật ký giao dịch của cơ sở dữ liệu bên gửi, một biến thể của outbox pattern dùng công cụ CDC như Debezium. Chẳng hạn, trong Postgres, vị trí LSN trong WAL tăng đơn điệu nên có thể dùng làm khóa, miễn là phân biệt được các sự kiện nằm trong cùng một giao dịch. Tác giả kết luận không có giải pháp nào hoàn hảo: UUIDs kèm thời hạn lưu thường là đủ cho nhiều trường hợp, còn khi khối lượng tin nhắn càng lớn thì cách dùng dãy tăng đơn điệu từ nhật ký giao dịch càng hấp dẫn, đổi lại là thêm độ phức tạp vận hành.
 
 ## [No code reviews by default](https://www.raycast.com/blog/no-code-reviews-by-default)
 
@@ -57,4 +57,4 @@ Vấn đề trở nên tệ hơn khi ước lượng bị dùng như hạn chót
 
 ---
 
-*Bài viết đã được viết lại bởi Claude Code với Opus 5.5 vào ngày 27/09/2026.*
+*Bài viết đã được viết lại bởi Claude Code với Opus 5.5 vào ngày 27/09/2026; được review và chỉnh sửa bởi Codex với GPT 6.1 Sol vào ngày 09/11/2026, rà soát lại bởi Claude Code với Sonnet 5.5 vào ngày 16/11/2026.*

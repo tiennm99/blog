@@ -1,0 +1,95 @@
+{
+  "post": "content/post/2025/12/09/index.md",
+  "newsletter": 66,
+  "newsletter_post": true,
+  "note": "*Bài viết đã được viết lại bởi Claude Code với Opus 5.5 vào ngày 27/09/2026.*",
+  "lines": [
+    {
+      "line": 1,
+      "kind": "frontmatter",
+      "text": "---"
+    },
+    {
+      "line": 2,
+      "kind": "frontmatter",
+      "text": "title: \"Newsletter #66\""
+    },
+    {
+      "line": 3,
+      "kind": "frontmatter",
+      "text": "date: 2025-12-09"
+    },
+    {
+      "line": 4,
+      "kind": "frontmatter",
+      "text": "tags: [\"AI-Assisted\", \"Software Architecture\", \"Books\", \"AI Coding\", \"Testing\", \"PostgreSQL\", \"Kafka\"]"
+    },
+    {
+      "line": 5,
+      "kind": "frontmatter",
+      "text": "categories: [\"Newsletter\"]"
+    },
+    {
+      "line": 6,
+      "kind": "frontmatter",
+      "text": "---"
+    },
+    {
+      "line": 8,
+      "kind": "italic-note",
+      "text": "*~~Dùng api free của iFlow cũng nhiều rồi, nên nay mình dùng thử cli của iFlow - [iFlow CLI](https://github.com/iflow-ai/iflow-cli) xem sao, model được dùng là GLM-4.6.~~ Mời bạn thưởng thức Newsletter #66.*"
+    },
+    {
+      "line": 10,
+      "kind": "heading",
+      "text": "## [The Ultimate List of Best Software Architecture Books (2026)](https://www.workingsoftware.dev/the-ultimate-list-of-software-architecture-books/?&aid=recmw058VtqAJCyyK)"
+    },
+    {
+      "line": 16,
+      "kind": "heading",
+      "text": "## [How I use AI (Oct 2025)](https://ben.stolovitz.com/posts/how_use_ai_oct_2025/?utm_source=tldrnewsletter)"
+    },
+    {
+      "line": 22,
+      "kind": "heading",
+      "text": "## [Stop Vibe Coding Your Unit Tests](https://www.andy-gallagher.com/blog/stop-vibe-coding-your-unit-tests/?utm_source=tldrnewsletter)"
+    },
+    {
+      "line": 28,
+      "kind": "heading",
+      "text": "## [Game design is simple, actually](https://www.raphkoster.com/2025/11/03/game-design-is-simple-actually/?utm_source=tldrnewsletter)"
+    },
+    {
+      "line": 34,
+      "kind": "heading",
+      "text": "## [Architectural debt is not just technical debt](https://frederickvanbrabant.com/blog/2025-10-31-architectural-debt-is-not-just-technical-debt/?&aid=recufcl24hU9MXCJC)"
+    },
+    {
+      "line": 40,
+      "kind": "heading",
+      "text": "## [The Search Problem: Why Your Computer Finds Things Faster Than You Do](https://deyaa1251.github.io/deyaa1251/posts/b_tree/?utm_source=bonobopress&utm_medium=newsletter&utm_campaign=2155)"
+    },
+    {
+      "line": 46,
+      "kind": "heading",
+      "text": "## [Kafka is fast -- I'll use Postgres](https://topicpartition.io/blog/postgres-pubsub-queue-benchmarks?utm_source=bonobopress&utm_medium=newsletter&utm_campaign=2155)"
+    },
+    {
+      "line": 52,
+      "kind": "heading",
+      "text": "## [You Need To Become A Full Stack Person](https://den.dev/blog/full-stack-person/?utm_source=tldrnewsletter)"
+    },
+    {
+      "line": 58,
+      "kind": "author-note",
+      "text": "**Đánh giá**: *Phần đầu iFlow CLI làm khá tốt, nhưng mà càng về sau thì càng lạm dụng tiếng Anh nhiều. Điểm cộng là iFlow CLI có thể access nhiều url, bằng cách bypass sử dụng proxy (Tuy nhiên proxy của Trung Quốc nên nhìn cũng hơi ghê). Trong quá trình sử dụng thì cũng thấy nhiều dòng để toàn tiếng Trung Quốc làm khó hiểu và hơi rén :v Mình sẽ cố gắng cải thiện AGENTS.md và thử lại sau.*"
+    }
+  ],
+  "candidates": [
+    {
+      "line": 20,
+      "kind": "first-person",
+      "text": "Tóm tắt và chép lời là điểm mạnh ấn tượng: AI có thể cô đọng hàng trăm trang tài liệu hay cả một buổi họp chỉ trong vài phút. Ngược lại, tác giả không để AI viết thay mình vì coi blog là cách thể hiện bản thân; anh chỉ dùng AI như một biên tập viên khó tính để gợi ý từ ngữ tốt hơn, rồi tự viết lại theo ý mình. Với tranh ảnh và âm nhạc do AI tạo ra, anh dè dặt nhất, cho rằng chúng thiếu chiều sâu sáng tạo và sự kết nối giữa con người với nhau."
+    }
+  ]
+}

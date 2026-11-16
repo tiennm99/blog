@@ -51,7 +51,7 @@ Giải pháp là không giải tuần tự hóa nữa: Refinery chỉ đọc ch�
 
 ## [From Junior to Senior: 7 API Design Patterns That Scale](https://designgurus.substack.com/p/from-junior-to-senior-7-api-design)
 
-Bài viết trình bày bảy quyết định kiến trúc giúp API mở rộng tốt, cũng là điểm khác biệt giữa lập trình viên junior (tập trung vào logic) và senior (tập trung vào cách các hệ thống giao tiếp với nhau). Thứ nhất, thiết kế hướng tài nguyên: thay vì các endpoint kiểu RPC như `POST /updateUserEmail`, hãy dùng danh từ như `/users` và để phương thức HTTP (GET, POST, PUT, PATCH, DELETE) thể hiện hành động, giúp API dễ đoán. Thứ hai, trả đúng mã trạng thái HTTP thay vì luôn trả `200 OK` kèm lỗi trong nội dung, vì công cụ giám sát, cân bằng tải và bộ nhớ đệm dựa vào mã này; phân biệt 4xx (lỗi phía client) với 5xx (lỗi phía máy chủ) rất quan trọng khi gỡ lỗi. Thứ ba, phân trang: phân trang theo offset chậm dần khi dữ liệu lớn vì cơ sở dữ liệu phải đọc qua các dòng bị bỏ qua, còn phân trang theo cursor dựa trên chỉ mục nên luôn nhanh.
+Bài viết trình bày bảy quyết định kiến trúc giúp API mở rộng tốt, cũng là điểm khác biệt giữa lập trình viên junior (tập trung vào logic) và senior (tập trung vào cách các hệ thống giao tiếp với nhau). Thứ nhất, thiết kế hướng tài nguyên: thay vì các endpoint kiểu RPC như `POST /updateUserEmail`, hãy dùng danh từ như `/users` và để phương thức HTTP (GET, POST, PUT, PATCH, DELETE) thể hiện hành động, giúp API dễ đoán. Thứ hai, trả đúng mã trạng thái HTTP thay vì luôn trả `200 OK` kèm lỗi trong nội dung, vì công cụ giám sát, cân bằng tải và bộ nhớ đệm dựa vào mã này; phân biệt 4xx (lỗi phía client) với 5xx (lỗi phía máy chủ) rất quan trọng khi gỡ lỗi. Thứ ba, phân trang: phân trang theo offset chậm dần khi dữ liệu lớn vì cơ sở dữ liệu phải đọc qua các dòng bị bỏ qua, còn phân trang theo cursor dựa trên chỉ mục nên giữ được tốc độ ổn định.
 
 Thứ tư, idempotency key giúp tránh xử lý trùng một yêu cầu, ví dụ trừ tiền hai lần khi người dùng bấm gửi lại vì mạng mất phản hồi. Thứ năm, giới hạn tần suất (rate limiting) bảo vệ hệ thống khỏi quá tải. Thứ sáu, đánh phiên bản API để không làm hỏng các client đang dùng. Thứ bảy, tài liệu đầy đủ với OpenAPI/Swagger. Thiết kế API tốt tạo nền tảng ổn định để doanh nghiệp phát triển, còn thiết kế kém sẽ trở thành điểm nghẽn.
 
@@ -69,4 +69,4 @@ Thứ tư, idempotency key giúp tránh xử lý trùng một yêu cầu, ví d�
 
 ---
 
-*Bài viết đã được viết lại bởi Claude Code với Opus 5.5 vào ngày 27/09/2026.*
+*Bài viết đã được viết lại bởi Claude Code với Opus 5.5 vào ngày 27/09/2026; được review và chỉnh sửa bởi Codex với GPT 6.1 Sol vào ngày 09/11/2026, rà soát lại bởi Claude Code với Sonnet 5.5 vào ngày 16/11/2026.*

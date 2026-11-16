@@ -1,0 +1,140 @@
+{
+  "post": "content/post/2025/03/04/index.md",
+  "newsletter": 5,
+  "newsletter_post": true,
+  "note": "*Bài viết đã được viết lại bởi Claude Code với Opus 5.5 vào ngày 27/09/2026.*",
+  "lines": [
+    {
+      "line": 1,
+      "kind": "frontmatter",
+      "text": "---"
+    },
+    {
+      "line": 2,
+      "kind": "frontmatter",
+      "text": "title: \"Newsletter #5\""
+    },
+    {
+      "line": 3,
+      "kind": "frontmatter",
+      "text": "date: 2025-03-04"
+    },
+    {
+      "line": 4,
+      "kind": "frontmatter",
+      "text": "tags: [\"AI-Assisted\", \"Newsletter\", \"Java\", \"Reliability\", \"Soft Skills\", \"Engineering Career\", \"AI Coding\"]"
+    },
+    {
+      "line": 5,
+      "kind": "frontmatter",
+      "text": "categories: [ \"Newsletter\" ]"
+    },
+    {
+      "line": 6,
+      "kind": "frontmatter",
+      "text": "---"
+    },
+    {
+      "line": 8,
+      "kind": "html-block",
+      "text": "<i>"
+    },
+    {
+      "line": 9,
+      "kind": "html-block",
+      "text": "Chào các bạn, cuối tuần rồi MiTi hơi lười nên không lên bài. Mời các bạn thưởng thức Newsletter #5 nhé!"
+    },
+    {
+      "line": 10,
+      "kind": "html-block",
+      "text": "</i>"
+    },
+    {
+      "line": 12,
+      "kind": "heading",
+      "text": "## [5 Advanced Java Reflection Techniques for Dynamic Programming](https://dev.to/nithinbharathwaj/5-advanced-java-reflection-techniques-for-dynamic-programming-4ph1)"
+    },
+    {
+      "line": 18,
+      "kind": "heading",
+      "text": "## [Mistakes You Apparently Just Have to Make Yourself](https://medium.com/@mcfunley/mistakes-you-apparently-just-have-to-make-yourself-cc2dd2bfc25c)"
+    },
+    {
+      "line": 24,
+      "kind": "heading",
+      "text": "## [Service Reliability Mathematics](https://addyosmani.com/blog/service-reliability/)"
+    },
+    {
+      "line": 30,
+      "kind": "heading",
+      "text": "## ~~[How to write a good design document](https://grantslatton.com/how-to-design-document)~~"
+    },
+    {
+      "line": 32,
+      "kind": "struck",
+      "text": "~~Bài viết \"How to Design Document\" đưa ra lời khuyên hữu ích về cách viết tài liệu thiết kế hiệu quả. Tài liệu thiết kế, theo tác giả, là một báo cáo kỹ thuật phác thảo chiến lược triển khai của một hệ thống trong bối cảnh trade-offs và constraints. Mục tiêu chính là thuyết phục người đọc (và quan trọng nhất là chính tác giả) rằng thiết kế này là tối ưu trong tình hình hiện tại.~~"
+    },
+    {
+      "line": 34,
+      "kind": "struck",
+      "text": "~~Tác giả so sánh việc viết tài liệu thiết kế với việc viết một chứng minh toán học. Để đạt được hiệu quả cao nhất, cần tuân thủ tổ chức tốt, tương tự như tổ chức code. Người viết nên tránh tạo ra \"spaghetti design docs\" bằng cách đảm bảo mọi câu văn đều liên kết và dễ hiểu. Mục tiêu là không gây bất ngờ cho người đọc, giúp họ cảm thấy giải pháp rõ ràng ngay cả khi nó đòi hỏi nhiều suy nghĩ phức tạp.~~"
+    },
+    {
+      "line": 36,
+      "kind": "struck",
+      "text": "~~Bài viết cũng nhấn mạnh tầm quan trọng của việc nắm bắt được tâm lý của người đọc và dự đoán những phản đối có thể xảy ra. Hơn nữa, cần chỉnh sửa để loại bỏ mọi từ ngữ thừa thãi, vì sự chú ý của người đọc là một nguồn tài nguyên hạn chế. Tác giả khuyến khích việc thực hành bằng cách đánh giá các tài liệu khác và chắt lọc ý tưởng thành các tweet ngắn gọn.~~"
+    },
+    {
+      "line": 38,
+      "kind": "struck",
+      "text": "~~Cuối cùng, bài viết gợi ý tổ chức tài liệu thành các bullet point có thể tóm tắt trong một câu duy nhất và sử dụng footnote cho các chi tiết phức tạp để không làm gián đoạn mạch chính của tài liệu.~~"
+    },
+    {
+      "line": 40,
+      "kind": "heading",
+      "text": "## [Picking your battles when you are hyper-rational](https://newsletter.weskao.com/p/picking-your-battles-hyper-rational)"
+    },
+    {
+      "line": 46,
+      "kind": "heading",
+      "text": "## [Measuring Programmer Influence, Kinda Sorta](https://tidyfirst.substack.com/p/measuring-programmer-influence-kinda)"
+    },
+    {
+      "line": 52,
+      "kind": "heading",
+      "text": "## [Building personal software with Claude](https://blog.nelhage.com/post/personal-software-with-claude/)"
+    },
+    {
+      "line": 58,
+      "kind": "heading",
+      "text": "## Bonus: Vài ảnh hay ho đến từ [ByteByteGo](https://bytebytego.com/)"
+    },
+    {
+      "line": 60,
+      "kind": "asset",
+      "text": "![Git vs GitHub](https://substack-post-media.s3.amazonaws.com/public/images/1112c07d-db40-484e-917b-0071ed7cf354_1280x1532.gif)"
+    },
+    {
+      "line": 61,
+      "kind": "asset",
+      "text": "![A Cheatsheet on Database Performance](https://substack-post-media.s3.amazonaws.com/public/images/5fd8bdda-52dd-454f-be79-ad548f17810b_1280x1557.gif)"
+    },
+    {
+      "line": 62,
+      "kind": "asset",
+      "text": "![18 Common Ports Worth Knowing](https://substack-post-media.s3.amazonaws.com/public/images/35ae3f82-afa0-47b9-a2a0-58b6c6d8cfb1_1280x1476.gif)"
+    }
+  ],
+  "candidates": [
+    {
+      "line": 22,
+      "kind": "first-person",
+      "text": "Mục cuối cùng mang tính tự trào: ai cũng nghĩ mình là người đầu tiên mắc cả 13 lỗi trên và tác giả đang nói về chính họ. Bài viết khép lại bằng lời quảng cáo hài hước cho startup Skyliner của tác giả, ví nó như chiếc \"áo trói\" giúp bạn khỏi tự làm đau bản thân. Với lập trình viên mới, đây là danh sách đáng đọc lại mỗi khi sắp đưa ra một quyết định kiến trúc lớn."
+    },
+    {
+      "line": 42,
+      "kind": "first-person",
+      "text": "Wes Kao chia sẻ một thói quen phổ biến ở những người có tư duy logic cao (hyper-rational): mải chứng minh mình \"đúng về mặt kỹ thuật\" mà đánh mất hiệu quả thực tế, thắng một trận nhỏ nhưng thua cả cuộc chiến. Chị minh họa bằng hai email suýt gửi đi. Ở ví dụ đầu, một nhà tuyển dụng hẹn gọi \"sáng nay\" trong khi giờ bên Wes đã gần trưa; thay vì liệt kê mọi cách hiểu về múi giờ, chị chọn cách hiểu hữu ích nhất và chỉ đưa ra vài khung giờ trống để chốt lịch thật nhanh. Ở ví dụ thứ hai, bộ phận tài chính của khách hàng cho biết chị không cần điền thông tin trên hệ thống thanh toán, dù chính hệ thống đó đã gửi email yêu cầu; chị suýt viết một đoạn dài giải thích vì sao bị nhầm, nhưng cuối cùng chỉ gửi đúng một câu cảm ơn vì đã làm rõ."
+    }
+  ]
+}

@@ -1,0 +1,84 @@
+{
+  "post": "content/post/2025/07/22/index.md",
+  "newsletter": 33,
+  "newsletter_post": true,
+  "note": "*Bài viết đã được viết lại bởi Claude Code với Opus 5.5 vào ngày 27/09/2026.*",
+  "lines": [
+    {
+      "line": 1,
+      "kind": "frontmatter",
+      "text": "---"
+    },
+    {
+      "line": 2,
+      "kind": "frontmatter",
+      "text": "title: \"Newsletter #33\""
+    },
+    {
+      "line": 3,
+      "kind": "frontmatter",
+      "text": "date: 2025-07-22"
+    },
+    {
+      "line": 4,
+      "kind": "frontmatter",
+      "text": "tags: [\"AI-Assisted\", \"Java\", \"Garbage Collection\", \"JavaScript\", \"AI Agents\", \"Refactoring\", \"UX\"]"
+    },
+    {
+      "line": 5,
+      "kind": "frontmatter",
+      "text": "categories: [\"Newsletter\"]"
+    },
+    {
+      "line": 6,
+      "kind": "frontmatter",
+      "text": "---"
+    },
+    {
+      "line": 8,
+      "kind": "italic-note",
+      "text": "*Mời bạn thưởng thức Newsletter #33.*"
+    },
+    {
+      "line": 10,
+      "kind": "heading",
+      "text": "## [How ZGC allocates memory for the Java heap](https://joelsiks.com/posts/zgc-heap-memory-allocation/)"
+    },
+    {
+      "line": 16,
+      "kind": "heading",
+      "text": "## [Optimizing the Garbage Collector when Migrating Cloud Workloads](https://foojay.io/today/optimizing-the-garbage-collector-when-migrating-cloud-workloads/)"
+    },
+    {
+      "line": 22,
+      "kind": "heading",
+      "text": "## [How JavaScript Works Behind the Scenes](https://www.deepintodev.com/blog/how-javascript-works-behind-the-scenes)"
+    },
+    {
+      "line": 28,
+      "kind": "heading",
+      "text": "## [Why embedding models should match + Advice for starting a blog](https://foojay.io/today/breaktime-tech-talks-ep39-why-embedding-models-should-match-advice-for-starting-a-blog/)"
+    },
+    {
+      "line": 34,
+      "kind": "heading",
+      "text": "## [HULA: Human-in-the-loop LLM-based agents for software development](https://www.atlassian.com/blog/atlassian-engineering/hula-blog-autodev-paper-human-in-the-loop-software-development-agents)"
+    },
+    {
+      "line": 40,
+      "kind": "heading",
+      "text": "## [Refactoring Gone Wild: Avoiding Code Smells and Cleaning Up the Mess](https://techhub.iodigital.com/articles/refactoring-gone-wild-avoiding-code-smells-and-cleaning-up-the-mess)"
+    },
+    {
+      "line": 46,
+      "kind": "heading",
+      "text": "## [How to write error messages that actually help users rather than frustrate them](https://piccalil.li/blog/how-to-write-error-messages-that-actually-help-users-rather-than-frustrate-them/)"
+    },
+    {
+      "line": 52,
+      "kind": "heading",
+      "text": "## [The difficulty in big tech](https://www.seangoedecke.com/difficulty-in-big-tech/)"
+    }
+  ],
+  "candidates": []
+}

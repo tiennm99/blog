@@ -18,7 +18,7 @@ _~~Như đã đề cập, hôm nay mình sẽ thử Newsletter với Roo Code. C
 
 ## [Cursor Unveils Game-Changing Web App for AI Coding Agents](https://opentools.ai/news/cursor-unveils-game-changing-web-app-for-ai-coding-agents)
 
-Anysphere, công ty đứng sau trình soạn thảo AI Cursor, vừa ra mắt một ứng dụng web cho phép quản lý các agent lập trình AI ngay trên trình duyệt. Thay vì phải mở IDE, người dùng có thể giao việc cho agent bằng ngôn ngữ tự nhiên, theo dõi tiến độ và gộp các thay đổi mã nguồn mà agent tạo ra từ bất kỳ thiết bị nào có kết nối Internet. Ứng dụng này bổ sung cho IDE sẵn có chứ không thay thế nó, và hiện chỉ dành cho người dùng gói Pro trở lên.
+Anysphere, công ty đứng sau trình soạn thảo AI Cursor, vừa ra mắt một ứng dụng web cho phép quản lý các agent lập trình AI ngay trên trình duyệt. Thay vì phải mở IDE, người dùng có thể giao việc cho agent bằng ngôn ngữ tự nhiên, theo dõi tiến độ và gộp các thay đổi mã nguồn mà agent tạo ra từ bất kỳ thiết bị nào có kết nối Internet. Ứng dụng này bổ sung cho IDE sẵn có chứ không thay thế nó, và khi ra mắt chỉ dành cho người dùng gói Pro trở lên.
 
 Bài viết cũng nêu bối cảnh: Cursor đã đạt hơn 500 triệu USD doanh thu định kỳ hằng năm và được hơn một nửa số công ty trong danh sách Fortune 500 sử dụng, còn CEO của Anysphere dự đoán đến năm 2026, agent AI sẽ đảm nhận khoảng 20% khối lượng công việc của một kỹ sư phần mềm. Dù phản hồi của cộng đồng nhìn chung tích cực, vẫn còn những băn khoăn về khả năng xử lý các kho mã nguồn lớn, về giá cả và quyền riêng tư. Với lập trình viên trẻ, đây là tín hiệu rõ ràng rằng kỹ năng giao việc và kiểm soát agent AI đang dần trở thành một phần của công việc hằng ngày.
 
@@ -50,7 +50,7 @@ Hai ví dụ được nêu là gh-standup, một tiện ích mở rộng cho Git
 
 ## [Modern Git Commands and Features You Should Be Using](https://martinheinz.dev/blog/109)
 
-Phần lớn chúng ta dùng Git hằng ngày nhưng chỉ quanh quẩn với `add`, `commit`, `push`, `pull` như thể vẫn đang ở năm 2005. Martin Heinz giới thiệu các lệnh hiện đại hơn: `git switch` (Git 2.23) thay `git checkout` trong việc chuyển nhánh, có kiểm tra an toàn để tránh mất dữ liệu và tiện ích như `git switch -` để quay lại nhánh trước; `git restore` gom chức năng khôi phục tệp vốn rải rác ở `reset` và `checkout` với cú pháp rõ ràng hơn; `git sparse-checkout` (Git 2.25) chỉ lấy những thư mục cần thiết trong monorepo lớn, giúp tăng tốc cả trên máy cá nhân lẫn CI/CD; `git worktree` cho phép mở nhiều nhánh cùng lúc ở các thư mục riêng mà không cần stash hay clone thêm; và `git bisect` dùng tìm kiếm nhị phân để xác định commit gây ra lỗi.
+Phần lớn chúng ta dùng Git hằng ngày nhưng chỉ quanh quẩn với `add`, `commit`, `push`, `pull` như thể vẫn đang ở năm 2005. Martin Heinz giới thiệu các lệnh hiện đại hơn: `git switch` (Git 2.23) thay `git checkout` trong việc chuyển nhánh, có kiểm tra an toàn để tránh mất dữ liệu và tiện ích như `git switch -` để quay lại nhánh trước; `git restore` gom chức năng khôi phục tệp vốn rải rác ở `reset` và `checkout` với cú pháp rõ ràng hơn; `git sparse-checkout` (Git 2.25) chỉ hiện những thư mục cần thiết trong thư mục làm việc của monorepo lớn, và kết hợp với clone một phần thì còn giảm cả dữ liệu tải về; `git worktree` cho phép mở nhiều nhánh cùng lúc ở các thư mục riêng mà không cần stash hay clone thêm; và `git bisect` dùng tìm kiếm nhị phân để xác định commit gây ra lỗi.
 
 ```bash
 git switch other-branch
@@ -98,4 +98,4 @@ _Sau khi trải nghiệm mình nhận thấy Kimi K2 luôn phản hồi nhanh h�
 
 ---
 
-*Bài viết đã được viết lại bởi Claude Code với Opus 5.5 vào ngày 27/09/2026.*
+*Bài viết đã được viết lại bởi Claude Code với Opus 5.5 vào ngày 27/09/2026; được review và chỉnh sửa bởi Codex với GPT 6.1 Sol vào ngày 09/11/2026, rà soát lại bởi Claude Code với Sonnet 5.5 vào ngày 16/11/2026.*

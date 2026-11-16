@@ -1,0 +1,94 @@
+{
+  "post": "content/post/2025/05/04/index.md",
+  "newsletter": 17,
+  "newsletter_post": true,
+  "note": "*Bài viết đã được viết lại bởi Claude Code với Opus 5.5 vào ngày 27/09/2026.*",
+  "lines": [
+    {
+      "line": 1,
+      "kind": "frontmatter",
+      "text": "---"
+    },
+    {
+      "line": 2,
+      "kind": "frontmatter",
+      "text": "title: \"Newsletter #17\""
+    },
+    {
+      "line": 3,
+      "kind": "frontmatter",
+      "text": "date: 2025-05-04"
+    },
+    {
+      "line": 4,
+      "kind": "frontmatter",
+      "text": "tags: [ \"AI-Assisted\", \"Microservices\", \"Software Architecture\", \"Domain-Driven Design\", \"Vibe Coding\", \"JVM\", \"Career\" ]"
+    },
+    {
+      "line": 5,
+      "kind": "frontmatter",
+      "text": "categories: [ \"Newsletter\" ]"
+    },
+    {
+      "line": 6,
+      "kind": "frontmatter",
+      "text": "---"
+    },
+    {
+      "line": 8,
+      "kind": "italic-note",
+      "text": "*Mời bạn thưởng thức Newsletter #17.*"
+    },
+    {
+      "line": 10,
+      "kind": "heading",
+      "text": "## [To fork or not to fork?](https://www.augmentcode.com/blog/to-fork-or-not-to-fork)"
+    },
+    {
+      "line": 16,
+      "kind": "heading",
+      "text": "## [Why I'm No Longer Talking to Architects About Microservices](https://blog.container-solutions.com/why-im-no-longer-talking-to-architects-about-microservices)"
+    },
+    {
+      "line": 22,
+      "kind": "heading",
+      "text": "## [Not all AI-assisted programming is vibe coding (but vibe coding rocks)](https://simonwillison.net/2025/Mar/19/vibe-coding/)"
+    },
+    {
+      "line": 28,
+      "kind": "heading",
+      "text": "## [Career advice in 2025.](https://lethain.com/career-advice-2025)"
+    },
+    {
+      "line": 34,
+      "kind": "heading",
+      "text": "## [Tips For Better Interactions](https://staysaasy.com/saas/2025/03/17/interactions.html)"
+    },
+    {
+      "line": 40,
+      "kind": "heading",
+      "text": "## [Code is the new no-code](https://lumberjack.so/code-is-the-new-no-code/)"
+    },
+    {
+      "line": 46,
+      "kind": "heading",
+      "text": "## [How to Improve JVM-Based Application Startup Time?](https://softwaremill.com/how-to-improve-jvm-based-application-startup-time/)"
+    },
+    {
+      "line": 52,
+      "kind": "heading",
+      "text": "## [Domain Driven Design](https://dev.to/lovestaco/domain-driven-design-3i2j)"
+    },
+    {
+      "line": 58,
+      "kind": "heading",
+      "text": "## Bonus: Vài ảnh hay ho đến từ [ByteByteGo](https://bytebytego.com/)"
+    },
+    {
+      "line": 60,
+      "kind": "asset",
+      "text": "![Monolith vs Microservices vs Modular Monoliths](https://substack-post-media.s3.amazonaws.com/public/images/66d12ddc-2abe-4a98-82d5-ee177e80487c_1470x1600.png)"
+    }
+  ],
+  "candidates": []
+}

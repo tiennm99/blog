@@ -1,0 +1,95 @@
+{
+  "post": "content/post/2026/07/02/index.md",
+  "newsletter": 115,
+  "newsletter_post": true,
+  "note": "*Bài viết đã được viết lại bởi Claude Code với Opus 5.5 vào ngày 27/09/2026.*",
+  "lines": [
+    {
+      "line": 1,
+      "kind": "frontmatter",
+      "text": "---"
+    },
+    {
+      "line": 2,
+      "kind": "frontmatter",
+      "text": "title: \"Newsletter #115\""
+    },
+    {
+      "line": 3,
+      "kind": "frontmatter",
+      "text": "date: 2026-07-02"
+    },
+    {
+      "line": 4,
+      "kind": "frontmatter",
+      "text": "tags: [\"AI-Assisted\", \"Newsletter\", \"Go\", \"AI Engineering\", \"Software Engineering\", \"Testing\", \"Performance\"]"
+    },
+    {
+      "line": 5,
+      "kind": "frontmatter",
+      "text": "categories: [\"Newsletter\"]"
+    },
+    {
+      "line": 6,
+      "kind": "frontmatter",
+      "text": "---"
+    },
+    {
+      "line": 8,
+      "kind": "italic-note",
+      "text": "*Mời bạn thưởng thức Newsletter #115.*"
+    },
+    {
+      "line": 10,
+      "kind": "heading",
+      "text": "## [Go Experiments Explained](https://www.alexedwards.net/blog/go-experiments-explained)"
+    },
+    {
+      "line": 16,
+      "kind": "heading",
+      "text": "## [Low-Level Network Optimizations: Socket Options That Matter](https://goperf.dev/02-networking/low-level-optimizations/)"
+    },
+    {
+      "line": 22,
+      "kind": "heading",
+      "text": "## [When Is 100% Vibe Coding OK ?](https://dev.to/realvorl/when-is-100-vibe-coding-ok--38p)"
+    },
+    {
+      "line": 28,
+      "kind": "heading",
+      "text": "## [Self-calling executables](https://log.pfad.fr/2026/self-calling-executable/)"
+    },
+    {
+      "line": 34,
+      "kind": "heading",
+      "text": "## [Modern Engineering Values](https://cpojer.net/posts/modern-engineering-values)"
+    },
+    {
+      "line": 40,
+      "kind": "heading",
+      "text": "## [Building Software Is Learning](https://registerspill.thorstenball.com/p/building-software-is-learning)"
+    },
+    {
+      "line": 46,
+      "kind": "heading",
+      "text": "## [You Must Fix Your Asserts](https://kristoff.it/blog/fix-your-asserts/)"
+    },
+    {
+      "line": 52,
+      "kind": "heading",
+      "text": "## [The Software Engineering Books I keep recommending](https://newsletter.techworld-with-milan.com/p/best-software-engineering-books-2026)"
+    }
+  ],
+  "candidates": [
+    {
+      "line": 42,
+      "kind": "first-person",
+      "text": "Thorsten Ball công khai một tin nhắn nội bộ gửi đội Amp về việc vì sao xây phần mềm mới luôn là quá trình học. Kịch bản \"cần tính năng này\", \"làm xong rồi\", \"đúng ý tôi\" gần như không bao giờ xảy ra khi không có đặc tả; thực tế thường là \"không phải ý tôi\", \"có ba cách làm, chọn cách nào?\" hoặc \"dùng thử rồi, không thích\". Lý do là người ta chỉ thực sự hiểu mình đang xây gì trong lúc xây, và muốn tránh hoàn toàn thì phải đặc tả đầy đủ từ đầu, mà đặc tả đầy đủ thì chính là lập trình."
+    },
+    {
+      "line": 56,
+      "kind": "first-person",
+      "text": "Nhóm tư duy viết mã gồm `The Pragmatic Programmer`, `Clean Code` (một số quy tắc đã lỗi thời) và `A Philosophy of Software Design`, cuốn tác giả hay đọc lại nhất. Kiến trúc có `Fundamentals of Software Architecture`, `Software Architecture: The Hard Parts` và `Domain-Driven Design Quickly`; hệ thống và dữ liệu có `Designing Data-Intensive Applications` bản thứ hai cùng `Understanding Distributed Systems` dễ tiếp cận hơn. Mảng AI có `The Hundred-Page Language Models Book` về cách mô hình ngôn ngữ hoạt động và `AI Engineering` của Chip Huyen về xây ứng dụng AI thực tế. Các nhóm còn lại gồm `The Art of Unit Testing` cho kiểm thử, `Accelerate` với bốn chỉ số DORA và `Refactoring` cho quy trình phát triển, cùng `The Software Engineer's Guidebook` và `Deep Work` cho sự nghiệp. Tác giả cũng giới thiệu cuốn sách mới của mình về các định luật trong kỹ thuật phần mềm."
+    }
+  ]
+}

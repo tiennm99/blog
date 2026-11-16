@@ -35,7 +35,7 @@ Bên cạnh đó, hệ sinh thái Java rất đồ sộ, từ thư viện chuẩ
 
 Bài viết so sánh hai kiến trúc phổ biến là monolith và microservices để giúp đội ngũ phát triển chọn hướng phù hợp. Với monolith, toàn bộ giao diện, logic nghiệp vụ và thao tác cơ sở dữ liệu nằm chung trong một khối triển khai duy nhất, nên dễ xây dựng, kiểm thử, gỡ lỗi và vận hành. Đổi lại, muốn mở rộng thì phải nhân bản cả hệ thống thay vì chỉ phần cần thiết, đội ngũ lớn dễ vướng xung đột khi gộp mã nguồn, công nghệ bị khóa cứng cho toàn bộ ứng dụng, và mỗi thay đổi nhỏ đều buộc phải triển khai lại mọi thứ, làm tăng rủi ro.
 
-Microservices chia ứng dụng thành các dịch vụ độc lập, mỗi dịch vụ đảm nhận một chức năng nghiệp vụ và giao tiếp qua API. Cách này cho phép mở rộng có chọn lọc, các nhóm làm việc tự chủ, mỗi dịch vụ tự chọn công nghệ phù hợp và lỗi ở một dịch vụ không kéo sập cả hệ thống. Tuy vậy, cái giá phải trả là độ phức tạp cao: cần công cụ điều phối, giám sát, cơ chế khám phá dịch vụ, đồng thời phải xử lý độ trễ mạng và bài toán nhất quán dữ liệu. Bài viết giới thiệu mẫu SAGA để quản lý giao dịch phân tán bằng chuỗi giao dịch cục bộ kèm hành động bù trừ, với hai cách triển khai là choreography (dựa trên sự kiện, phi tập trung) và orchestration (dựa trên lệnh, tập trung). Kết luận của tác giả: lựa chọn phụ thuộc vào nhu cầu ứng dụng, quy mô đội ngũ và mục tiêu dài hạn.
+Microservices chia ứng dụng thành các dịch vụ độc lập, mỗi dịch vụ đảm nhận một chức năng nghiệp vụ và giao tiếp qua API. Cách này cho phép mở rộng có chọn lọc, các nhóm làm việc tự chủ và mỗi dịch vụ tự chọn công nghệ phù hợp. Việc tách dịch vụ có thể giúp cô lập lỗi, nhưng không bảo đảm lỗi ở một nơi sẽ không lan sang các dịch vụ phụ thuộc. Cái giá phải trả là độ phức tạp cao: cần công cụ điều phối, giám sát, khám phá dịch vụ, đồng thời phải xử lý độ trễ mạng và tính nhất quán dữ liệu. Bài viết giới thiệu mẫu SAGA gồm chuỗi giao dịch cục bộ kèm hành động bù trừ, với hai cách triển khai là choreography (dựa trên sự kiện, phi tập trung) và orchestration (có bộ điều phối tập trung). Lựa chọn kiến trúc phụ thuộc vào nhu cầu ứng dụng, quy mô đội ngũ và mục tiêu dài hạn.
 
 ## [Designing a Scalable Architecture - with Some Spring Boot Examples](https://dev.to/jhonifaber/designing-a-scalable-architecture-with-some-spring-boot-examples-340o)
 
@@ -68,4 +68,4 @@ Peter Lawrey, chuyên gia về Java hiệu năng cao, cho thấy việc cấp ph
 
 ---
 
-*Bài viết đã được viết lại bởi Claude Code với Opus 5.5 vào ngày 27/09/2026.*
+*Bài viết đã được viết lại bởi Claude Code với Opus 5.5 vào ngày 27/09/2026; được review và chỉnh sửa bởi Codex với GPT 6.1 Sol vào ngày 09/11/2026, rà soát lại bởi Claude Code với Sonnet 5.5 vào ngày 16/11/2026.*

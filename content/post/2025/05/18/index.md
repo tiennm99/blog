@@ -34,7 +34,7 @@ Một công ty khác, cũng làm việc từ xa, phải sa thải một kỹ sư
 
 ## [Underusing Snapshot Testing](https://matklad.github.io/2025/04/15/underusing-snapshot-testing.html)
 
-Aleksey Kladov (matklad), tác giả của rust-analyzer, chia sẻ lý do anh cho rằng bản thân vẫn chưa tận dụng hết snapshot testing. Ý tưởng khá đơn giản: chuyển kết quả của bài kiểm thử thành dạng văn bản, so sánh với giá trị mong đợi được viết ngay trong mã nguồn dưới dạng chuỗi, và dùng công cụ để tự động cập nhật chuỗi đó theo kết quả thực tế. Lợi ích quen thuộc là giúp phần mềm dễ thay đổi: khi yêu cầu hoặc cấu trúc dữ liệu thay đổi, chỉ cần chạy lại kiểm thử ở chế độ cập nhật.
+Aleksey Kladov (matklad), tác giả của rust-analyzer, chia sẻ lý do anh cho rằng bản thân vẫn chưa tận dụng hết snapshot testing. Ý tưởng khá đơn giản: chuyển kết quả của bài kiểm thử thành dạng văn bản, so sánh với giá trị mong đợi được viết ngay trong mã nguồn dưới dạng chuỗi, và dùng công cụ để tự động cập nhật chuỗi đó theo kết quả thực tế. Lợi ích là dễ cập nhật dữ liệu mong đợi khi yêu cầu thay đổi: công cụ ghi lại đầu ra mới để người viết rà soát, thay vì phải sửa từng chuỗi thủ công.
 
 Điều mới mà tác giả nhận ra đến từ ví dụ viết hàm mã hóa hoán vị (permutation encoding) bằng Zig — một bài toán mà yêu cầu gần như không bao giờ thay đổi. Với kiểm thử dựa trên assert, chương trình dừng ngay ở lỗi đầu tiên và kết quả phải tìm trong cửa sổ terminal, xa nơi đang viết mã. Khi chuyển sang snapshot, mọi kết quả sai đều hiện ngay trong mã nguồn, giúp nhìn được toàn cảnh và nhanh chóng phát hiện hai lỗi lệch một đơn vị (off-by-one). Theo tác giả, snapshot test giữ dữ liệu gần với lập trình viên, rút ngắn vòng phản hồi và hoạt động như một REPL có thể lặp lại, nên vẫn tăng tốc phát triển ngay cả khi yêu cầu không đổi. Phần cuối bài còn giải thích vì sao vài ví dụ cụ thể vẫn hữu ích bên cạnh kiểm thử vét cạn toàn bộ các hoán vị.
 
@@ -72,4 +72,4 @@ Tác giả chỉ ra cái giá của việc im lặng: sự cố kéo dài vì kh
 
 ---
 
-*Bài viết đã được viết lại bởi Claude Code với Opus 5.5 vào ngày 27/09/2026.*
+*Bài viết đã được viết lại bởi Claude Code với Opus 5.5 vào ngày 27/09/2026; được review và chỉnh sửa bởi Codex với GPT 6.1 Sol vào ngày 09/11/2026, rà soát lại bởi Claude Code với Sonnet 5.5 vào ngày 16/11/2026.*

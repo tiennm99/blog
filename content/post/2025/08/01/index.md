@@ -11,7 +11,7 @@ categories: [ "Newsletter" ]
 
 Austin Z. Henley cho rằng có những thuật toán và cấu trúc dữ liệu thật sự thú vị, từng xuất hiện trong phỏng vấn và làm thay đổi cách ông nhìn nhận vấn đề, và đề xuất sáu cái tên nên tự tay cài đặt. Sắp xếp topo dùng mỗi khi cần sắp xếp các phần tử phụ thuộc lẫn nhau, như thứ tự tác vụ trong hệ thống build hay thứ tự tính các ô trong bảng tính. Phân tích cú pháp đệ quy xuống cho phép ánh xạ từng luật ngữ pháp thành một hàm, đủ để dựng một trình biên dịch đơn giản trong vài giờ. Thuật toán so sánh chuỗi Myers là thuật toán mặc định mà Git dùng để hiển thị khác biệt giữa hai phiên bản.
 
-Bộ lọc Bloom là cửa ngõ vào thế giới cấu trúc dữ liệu xác suất: với rất ít bộ nhớ, nó khẳng định chắc chắn một phần tử không có mặt, còn trường hợp ngược lại chỉ là "có thể có"; tác giả thừa nhận chưa từng cần nó ngoài phỏng vấn. Bảng mảnh lưu các thao tác chỉnh sửa thay vì chỉ giữ văn bản cuối cùng, nhờ đó tính năng hoàn tác và lưu tăng dần trở nên đơn giản, và được dùng trong bộ đệm văn bản của VS Code. Cuối cùng, cây Splay là cây nhị phân tự tối ưu, đưa phần tử vừa truy cập lên gốc mà không cần lưu thêm siêu dữ liệu, giống một cây có sẵn bộ nhớ đệm và dễ cài đặt hơn nhiều so với cây đỏ-đen. Cuối bài là vài gợi ý bổ sung như trie, cây phân đoạn hay union-find.
+Bộ lọc Bloom là cửa ngõ vào thế giới cấu trúc dữ liệu xác suất: với rất ít bộ nhớ, nó khẳng định chắc chắn một phần tử không có mặt, còn trường hợp ngược lại chỉ là "có thể có"; tác giả thừa nhận chưa từng cần nó ngoài phỏng vấn. Bảng mảnh biểu diễn văn bản bằng các đoạn tham chiếu tới vùng nội dung gốc và phần được thêm vào, giúp chỉnh sửa mà không liên tục sao chép toàn bộ chuỗi, nhờ đó hoàn tác và lưu tăng dần trở nên đơn giản; VS Code dùng biến thể dựa trên ý tưởng này. Cuối cùng, cây Splay là cây nhị phân tự tối ưu, đưa phần tử vừa truy cập lên gốc mà không cần lưu thêm siêu dữ liệu, giống một cây có sẵn bộ nhớ đệm và dễ cài đặt hơn nhiều so với cây đỏ-đen. Cuối bài là vài gợi ý bổ sung như trie, cây phân đoạn hay union-find.
 
 ## [Everything I know about good system design](https://www.seangoedecke.com/good-system-design/)
 
@@ -27,7 +27,7 @@ Vì vậy thị trường rất khó cạnh tranh: các giải pháp mã nguồn
 
 ## [Java, What's Old? Part I: Collections](https://foojay.io/today/java-whats-old-part-i-collections/)
 
-Anthony Goubard giới thiệu những viên ngọc ẩn trong Collections của JDK, tất cả đều có từ Java 8 trở về trước nên dùng được ngay. Thay vì `Optional<Integer>`, Java có sẵn `OptionalInt`, `OptionalLong` và `OptionalDouble` làm việc trực tiếp với kiểu nguyên thủy. `IntSummaryStatistics` và `DoubleSummaryStatistics` ghi nhận giá trị nhỏ nhất, lớn nhất, tổng, số lượng và trung bình, hỗ trợ gộp nhiều bộ thống kê; tác giả phát hiện ra chúng khi tham gia One Billion Row Challenge. `LinkedHashMap` có một hàm khởi tạo cho phép sắp xếp theo thứ tự truy cập thay vì thứ tự chèn, kết hợp với việc ghi đè `removeEldestEntry` là có ngay một bộ nhớ đệm LRU gọn nhẹ, chỉ cần bọc bằng `Collections.synchronizedMap` khi dùng từ nhiều luồng.
+Anthony Goubard giới thiệu những viên ngọc ẩn trong Collections của JDK, tất cả đều có từ Java 8 trở về trước nên dùng được ngay. Thay vì `Optional<Integer>`, Java có sẵn `OptionalInt`, `OptionalLong` và `OptionalDouble` làm việc trực tiếp với kiểu nguyên thủy. `IntSummaryStatistics` và `DoubleSummaryStatistics` ghi nhận giá trị nhỏ nhất, lớn nhất, tổng, số lượng và trung bình, hỗ trợ gộp nhiều bộ thống kê; tác giả phát hiện ra chúng khi tham gia One Billion Row Challenge. `LinkedHashMap` có một hàm khởi tạo cho phép sắp xếp theo thứ tự truy cập thay vì thứ tự chèn, kết hợp với việc ghi đè `removeEldestEntry` là có ngay một bộ nhớ đệm LRU gọn nhẹ, có thể bọc bằng `Collections.synchronizedMap` cho truy cập đa luồng; việc duyệt và chuỗi thao tác cần nguyên tử vẫn phải đồng bộ đúng cách.
 
 `WeakHashMap` giữ tham chiếu yếu tới khóa nên bộ thu gom rác có thể xóa mục khi không còn tham chiếu mạnh nào; giá trị thì không, và mục có thể biến mất bất cứ lúc nào nên không hợp để duyệt hay kiểm tra rồi mới lấy. Tác giả dùng nó để lưu tạm chuỗi thời gian đã định dạng trong trình quản lý tệp Ant Commander Pro, giảm tải CPU khi cuộn bảng. Cuối cùng, `BitSet` lưu mỗi giá trị boolean bằng khoảng 1 bit, co giãn kích thước linh hoạt và có nhiều phương thức thao tác bit, tiết kiệm hơn hẳn `boolean[]` hay `List<Boolean>`.
 
@@ -63,4 +63,4 @@ Theo tác giả, C#, Swift và Rust cứ mãi thêm tính năng, và ngay cả J
 
 ---
 
-*Bài viết đã được viết lại bởi Claude Code với Opus 5.5 vào ngày 27/09/2026.*
+*Bài viết đã được viết lại bởi Claude Code với Opus 5.5 vào ngày 27/09/2026; được review và chỉnh sửa bởi Codex với GPT 6.1 Sol vào ngày 09/11/2026, rà soát lại bởi Claude Code với Sonnet 5.5 vào ngày 16/11/2026.*
