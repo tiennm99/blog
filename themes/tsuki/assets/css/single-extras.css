@@ -21,13 +21,13 @@
   .prev-next-next { text-align: start; }
 }
 
-details {
+.post-content details {
   border: 1px solid var(--tsuki-border); border-radius: var(--tsuki-radius);
   padding: var(--tsuki-space-3) var(--tsuki-space-4);
   margin-block: var(--tsuki-space-4);
 }
-details > summary { cursor: pointer; font-weight: 550; }
-details[open] > summary { margin-block-end: var(--tsuki-space-3); }
+.post-content details > summary { cursor: pointer; font-weight: 550; }
+.post-content details[open] > summary { margin-block-end: var(--tsuki-space-3); }
 
 .code-copy:hover { background: var(--tsuki-code-bg); }
 .code-copy[data-state="copied"] { opacity: 1; color: var(--tsuki-accent); border-color: var(--tsuki-accent); }

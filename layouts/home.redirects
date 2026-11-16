@@ -15,6 +15,8 @@
   is computed from the current posts, so it covers every old page and only
   adds harmless rules as posts are added.
 */ -}}
+{{- /* Cloudflare reads only the root _redirects, so other languages get an empty file. */ -}}
+{{- if eq .Language.Lang site.Sites.Default.Language.Lang -}}
 {{- $posts := where site.RegularPages "Section" "post" -}}
 {{- $pages := int (math.Ceil (div (float (len $posts)) 5.0)) -}}
 {{- range seq $pages }}
@@ -24,3 +26,4 @@
 /page/page/2/ /page/ 301
 /categories/page/1/ /categories/ 301
 /tags/page/:n/ /tags/ 301
+{{- end }}

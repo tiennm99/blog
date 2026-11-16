@@ -1,5 +1,19 @@
+# Vietnamese is the default and stays at the site root; other languages live
+# under /<lang>/. A post gets a translation from a sibling file in its bundle,
+# for example index.en.md next to index.md.
 vi:
   languageName: Tiếng Việt
+  languageCode: vi
   languagedirection: ltr
   title: miti99
   weight: 1
+en:
+  languageName: English
+  languageCode: en
+  languagedirection: ltr
+  title: miti99
+  weight: 2
+  params:
+    comments:
+      giscus:
+        lang: en

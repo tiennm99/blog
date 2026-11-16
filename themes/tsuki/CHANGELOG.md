@@ -2,6 +2,15 @@
 
 tsuki is vendored in [`tiennm99/blog`](https://github.com/tiennm99/blog/tree/main/themes/tsuki) and has no separate releases. Version entries below record the earlier standalone releases; later changes are grouped under dated headings. Format follows [Keep a Changelog](https://keepachangelog.com/).
 
+## 2026-11-16 — language dropdown
+
+### Changed
+
+- The language switcher is a dropdown that lists only the languages the current page exists in, instead of a link to every language's home.
+- The reader's language pick is stored (`tsuki-lang`) and later visits open the matching translation when one exists.
+- Pagefind assets load from the site root on every language.
+- The post `details` styles apply only inside post content.
+
 ## 2026-11-07 — vendored into tiennm99/blog
 
 ### Added

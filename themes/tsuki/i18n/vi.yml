@@ -130,3 +130,6 @@
 
 - id: table
   translation: "Bảng"
+
+- id: language
+  translation: "Ngôn ngữ"

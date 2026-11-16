@@ -21,7 +21,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     env:
-      HUGO_VERSION: 0.154.0
+      HUGO_VERSION: 0.154.5
       NODE_VERSION: 24
       TZ: Asia/Ho_Chi_Minh
     steps:
