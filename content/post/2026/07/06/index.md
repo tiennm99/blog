@@ -41,7 +41,7 @@ Jesse Skinner dùng hình ảnh "rockstar developer" để nói về một rủi
 
 Antirez nhận định lập trình tự động bằng AI giúp tăng tốc nhưng phải đánh đổi chất lượng cấu trúc của mã, còn với QA, LLM mở ra cách tự động hóa mạnh hơn mà không hy sinh chất lượng. Bộ kiểm thử truyền thống gồm unit test và integration test vẫn cần thiết, nhưng phủ hết mọi dòng mã không có nghĩa là phủ hết mọi trạng thái. Kiểm thử tích hợp vốn khó vì vấn đề thời gian, thiết lập phức tạp và đầu ra chỉ đánh giá được bằng mắt, nên nhiều bài kiểm thử thủ công bị bỏ qua.
 
-Đề xuất của tác giả là viết một file Markdown yêu cầu AI agent đóng vai kỹ sư QA, thực hiện loạt kiểm thử thủ công trên bản phát hành mới. Agent bắt đầu bằng việc đọc các commit mới so với bản đã phát hành, xác định vùng có thể bị ảnh hưởng, rồi tập trung săn các lỗi hồi quy cụ thể. Với DwarfStar, một inference engine cho LLM mã nguồn mở, agent kiểm tra suy luận phân tán giữa hai máy MacBook với mọi file GGUF có sẵn, đồng thời kiểm tra suy giảm tốc độ mà tác giả không phải ghi sẵn con số chuẩn; vẫn cần phép đo so sánh phù hợp. Với Redis Arrays, agent tự xây một ứng dụng lớn, dựng môi trường có replication và persistence, mô phỏng nhiều ngày sử dụng với nhiều người dùng để tìm hành vi bất thường. Agent còn có thể chỉ ra tính năng gây bất ngờ, thiếu tài liệu hay cẩu thả. Antirez tin rằng QA tự động có thể nâng chuẩn chất lượng mỗi bản phát hành, phần nào bù lại chất lượng mã thấp hơn khi viết nhanh bằng AI.
+Đề xuất của tác giả là viết một file Markdown yêu cầu AI agent đóng vai kỹ sư QA, thực hiện loạt kiểm thử thủ công trên bản phát hành mới. Agent bắt đầu bằng việc đọc các commit mới so với bản đã phát hành, xác định vùng có thể bị ảnh hưởng, rồi tập trung săn các lỗi hồi quy cụ thể. Với DwarfStar, một inference engine cho LLM mã nguồn mở, agent kiểm tra suy luận phân tán giữa hai máy MacBook với mọi file GGUF có sẵn, đồng thời phát hiện suy giảm tốc độ mà không cần biết trước tốc độ cũ, vì đó là mục tiêu thay đổi theo từng bản. Với Redis Arrays, agent tự xây một ứng dụng lớn, dựng môi trường có replication và persistence, mô phỏng nhiều ngày sử dụng với nhiều người dùng để tìm hành vi bất thường. Agent còn có thể chỉ ra tính năng gây bất ngờ, thiếu tài liệu hay cẩu thả. Antirez tin rằng QA tự động có thể nâng chuẩn chất lượng mỗi bản phát hành, phần nào bù lại chất lượng mã thấp hơn khi viết nhanh bằng AI.
 
 ## [Nobody Pushed Back: Why Engineers Stay Silent Until It's Too Late](https://howtocenterdiv.com/beyond-the-div/nobody-pushed-back)
 
@@ -66,4 +66,4 @@ Một vòng lặp gồm năm khối. Automation chạy theo lịch để phân l
 
 ---
 
-*Bài viết đã được viết lại bởi Claude Code với Opus 5.5 vào ngày 27/09/2026; được review và chỉnh sửa bởi Codex với GPT 6.1 Sol vào ngày 09/11/2026.*
+*Bài viết đã được viết lại bởi Claude Code với Opus 5.5 vào ngày 27/09/2026; được review và chỉnh sửa bởi Codex với GPT 6.1 Sol vào ngày 09/11/2026, rà soát lại bởi Claude Code với Sonnet 5.5 vào ngày 16/11/2026.*

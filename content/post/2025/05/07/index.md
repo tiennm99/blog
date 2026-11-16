@@ -17,7 +17,7 @@ Bài viết trên Inside.java tổng hợp những cải tiến hiệu năng đ�
 
 Stefano Fago giải thích rằng bộ thu gom rác (GC) của Java chỉ quản lý bộ nhớ, không tự giải phóng các tài nguyên bên ngoài như socket hay file handle; nếu quản lý sai, ứng dụng có thể rò rỉ tài nguyên, chậm dần hoặc sập. Cách cũ là ghi đè `finalize()`, nhưng phương thức này đã bị đánh dấu lỗi thời vì thời điểm chạy không đoán trước được, đối tượng phải qua thêm một chu kỳ GC mới được thu hồi, có thể gây rò rỉ nếu đối tượng vô tình bị giữ lại, và luồng Finalizer riêng dễ gây tranh chấp. Giải pháp thay thế là Cleaner API, có từ Java 9: bên dưới nó dùng `PhantomReference` cùng một luồng daemon nền, nhưng che giấu sự phức tạp của các lớp Reference. Bạn đăng ký đối tượng kèm một hành động dọn dẹp, và khi đối tượng không còn truy cập được, hành động đó được đưa vào hàng đợi để chạy trên luồng nền.
 
-Cleaner có thể kết hợp với `AutoCloseable`: phương thức `close()` gọi `clean()` để dọn dẹp tường minh, còn việc dọn tự động là lưới an toàn. Nên ưu tiên try-with-resources hoặc `close()` khi có thể, vì Cleaner không bảo đảm thời điểm dọn tài nguyên hay việc hành động sẽ chạy trước khi chương trình thoát. Hành động dọn dẹp không được giữ tham chiếu tới đối tượng đăng ký; lambda truy cập trường của đối tượng dễ vô tình vi phạm điều này. Hành động cũng cần ngắn gọn, không chặn và sẵn sàng chạy đồng thời với các hành động khác.
+Cleaner có thể kết hợp với `AutoCloseable`: phương thức `close()` gọi `clean()` để dọn dẹp ngay khi cần, còn Cleaner đóng vai trò lưới an toàn. Tuy vậy, tác giả nhấn mạnh chỉ nên dùng Cleaner khi không thể giải phóng tài nguyên bằng try-with-resources hoặc gọi `close()` tường minh, vì cơ chế này dọn dẹp bất đồng bộ và tốn chi phí hơn do cần luồng nền. Khi viết hành động dọn dẹp, nên tránh lambda truy cập trường của đối tượng vì dễ vô tình giữ tham chiếu tới chính đối tượng cần dọn, khiến nó không bao giờ được thu hồi; hành động cũng cần ngắn gọn và không chặn, vì nhiều hành động có thể chạy đồng thời trên cùng một Cleaner.
 
 ## [5 Hidden Git Tips for Java Developers](https://www.azul.com/blog/5-hidden-git-tips-for-java-developers/)
 
@@ -52,4 +52,4 @@ Các phần tiếp theo bao quát tìm kiếm chuỗi, nén và mã hóa dữ li
 
 ---
 
-*Bài viết đã được viết lại bởi Claude Code với Opus 5.5 vào ngày 27/09/2026; được review và chỉnh sửa bởi Codex với GPT 6.1 Sol vào ngày 09/11/2026.*
+*Bài viết đã được viết lại bởi Claude Code với Opus 5.5 vào ngày 27/09/2026; được review và chỉnh sửa bởi Codex với GPT 6.1 Sol vào ngày 09/11/2026, rà soát lại bởi Claude Code với Sonnet 5.5 vào ngày 16/11/2026.*

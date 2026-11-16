@@ -55,9 +55,9 @@ Olson nhấn mạnh mục tiêu để Valkey "không phải dự án của một
 
 ## [Stack Overflow is almost dead](https://blog.pragmaticengineer.com/stack-overflow-is-almost-dead)
 
-Stack Overflow, nơi từng là điểm đến quen thuộc của hàng triệu lập trình viên, đang suy giảm nghiêm trọng: theo dữ liệu từ công cụ truy vấn của chính trang này, số câu hỏi mỗi tháng vào tháng 5/2025 đã rơi về mức rất thấp, gần những ngày đầu của trang. Sự đi xuống diễn ra qua nhiều giai đoạn. Từ năm 2014, khi người kiểm duyệt có công cụ hiệu quả hơn, câu hỏi bị đóng nhanh hơn và bài "chất lượng thấp" bị xóa hàng loạt, khiến nhiều người, nhất là người mới, cảm thấy không được chào đón. Đại dịch năm 2020 tạm thời đẩy lưu lượng tăng lên khi lập trình viên làm việc từ xa và thay việc hỏi đồng nghiệp bằng tìm kiếm trên mạng, nhưng xu hướng giảm quay lại ngay sau đó — tức là từ hai năm trước khi ChatGPT xuất hiện, cho thấy vấn đề mang tính cấu trúc. Năm 2021, Stack Overflow được Prosus mua lại.
+Stack Overflow, nơi từng là điểm đến quen thuộc của hàng triệu lập trình viên, đang suy giảm nghiêm trọng: theo dữ liệu từ công cụ truy vấn của chính trang này, số câu hỏi mỗi tháng vào tháng 5/2025 đã rơi về mức ngang thời điểm ra mắt năm 2009. Sự đi xuống diễn ra qua nhiều giai đoạn. Từ năm 2014, khi người kiểm duyệt có công cụ hiệu quả hơn, câu hỏi bị đóng nhanh hơn và bài "chất lượng thấp" bị xóa hàng loạt, khiến nhiều người, nhất là người mới, cảm thấy không được chào đón. Đại dịch năm 2020 tạm thời đẩy lưu lượng tăng lên khi lập trình viên làm việc từ xa và thay việc hỏi đồng nghiệp bằng tìm kiếm trên mạng, nhưng xu hướng giảm quay lại ngay sau đó — tức là từ hai năm trước khi ChatGPT xuất hiện, cho thấy vấn đề mang tính cấu trúc. Năm 2021, Stack Overflow được Prosus mua lại.
 
-Tác giả nhận xét đà giảm tăng mạnh sau khi ChatGPT ra mắt tháng 11/2022 và cho rằng LLM là một nguyên nhân. Đây là diễn giải của ông về xu hướng; số câu hỏi giảm không tự chứng minh mọi câu trả lời AI đều có chất lượng tương đương Stack Overflow. Tác giả cho rằng câu hỏi không còn là trang này có tiếp tục suy giảm hay không, mà là khi nào nó đóng cửa hoặc được bán lại với giá thấp hơn nhiều. Dù vậy, nhu cầu lập trình viên giúp đỡ lẫn nhau vẫn sẽ tồn tại qua các máy chủ Discord, nhóm nhắn tin hay những nền tảng mới.
+Đòn quyết định đến khi ChatGPT ra mắt vào tháng 11/2022: số câu hỏi lao dốc vì các mô hình ngôn ngữ lớn trả lời nhanh hơn, lịch sự hơn và, theo tác giả, chất lượng tương đương — trớ trêu thay, nhờ được huấn luyện trên chính dữ liệu của Stack Overflow. Tác giả cho rằng câu hỏi không còn là trang này có tiếp tục suy giảm hay không, mà là khi nào nó đóng cửa hoặc được bán lại với giá thấp hơn nhiều. Dù vậy, nhu cầu lập trình viên giúp đỡ lẫn nhau vẫn sẽ tồn tại qua các máy chủ Discord, nhóm nhắn tin hay những nền tảng mới.
 
 ## [Why I use WebAssembly](https://nasso.dev/blog/why-i-use-wasm)
 
@@ -67,4 +67,4 @@ Quan trọng hơn, tác giả coi WASM như một "định dạng nhị phân ph
 
 ---
 
-*Bài viết đã được viết lại bởi Claude Code với Opus 5.5 vào ngày 27/09/2026; được review và chỉnh sửa bởi Codex với GPT 6.1 Sol vào ngày 09/11/2026.*
+*Bài viết đã được viết lại bởi Claude Code với Opus 5.5 vào ngày 27/09/2026; được review và chỉnh sửa bởi Codex với GPT 6.1 Sol vào ngày 09/11/2026, rà soát lại bởi Claude Code với Sonnet 5.5 vào ngày 16/11/2026.*

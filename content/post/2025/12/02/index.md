@@ -11,7 +11,7 @@ categories: ["Newsletter"]
 
 Trong bài tháng 10/2025, Simon Willison giới thiệu **Claude Skills** của Anthropic, một cách đơn giản để bổ sung năng lực mới cho mô hình: mỗi skill là một thư mục chứa tệp Markdown hướng dẫn mô hình cách làm một việc, kèm tài liệu phụ và các script viết sẵn nếu cần. Điểm khiến nó thành một tính năng thực thụ là khi bắt đầu phiên làm việc, Claude chỉ đọc phần mô tả ngắn trong YAML frontmatter của từng skill (vài chục token mỗi skill) và chỉ nạp toàn bộ nội dung khi yêu cầu của người dùng thực sự liên quan. Simon Willison thử skill **slack-gif-creator** để tạo ảnh GIF so sánh Skills với MCP: Claude viết script Python dùng thư viện PIL dựng ảnh động, rồi gọi hàm kiểm tra có sẵn trong skill để bảo đảm tệp không vượt giới hạn 2MB của Slack. Ảnh đầu tiên khá tệ, nhưng skill rất dễ chỉnh sửa.
 
-Cách triển khai Skills mà bài mô tả dựa vào môi trường có hệ thống tệp và khả năng chạy lệnh, như Claude Code, Codex CLI hay Gemini CLI; đây là khác biệt lớn nhất so với MCP hay ChatGPT Plugins. Theo tác giả, hướng dẫn kết hợp công cụ thực thi có thể biến Claude Code thành agent đa năng, chẳng hạn phục vụ báo chí dữ liệu. Một bộ công cụ MCP lớn có thể tốn hàng chục nghìn token mô tả khi nạp đầy đủ; đó không phải chi phí cố định của giao thức. Trong so sánh của tác giả, Skills chỉ là Markdown cùng chút metadata, dễ chia sẻ và dùng được với cả mô hình khác. Chính sự đơn giản là điểm mạnh của nó.
+Skills phụ thuộc hoàn toàn vào môi trường thực thi mã nguồn có hệ thống tệp và khả năng chạy lệnh, như Claude Code, Codex CLI hay Gemini CLI; đây là khác biệt lớn nhất so với MCP hay ChatGPT Plugins. Theo tác giả, Claude Code thực chất là một agent đa năng: chỉ cần một thư mục Markdown mô tả cách lấy dữ liệu điều tra dân số, nạp vào SQLite hay DuckDB, xuất bản dưới dạng Parquet và trực quan hóa bằng D3 là đã có một agent phục vụ báo chí dữ liệu. So với MCP vốn tiêu tốn hàng chục nghìn token chỉ để mô tả công cụ và có đặc tả giao thức phức tạp, Skills chỉ là Markdown cùng chút metadata, dễ chia sẻ và dùng được với cả mô hình khác. Chính sự đơn giản là điểm mạnh của nó.
 
 ## [Environment variables are a legacy mess: Let's dive deep into them](https://allvpv.org/haotic-journey-through-envvars/)
 
@@ -21,7 +21,7 @@ Kernel rất dễ dãi về định dạng: chấp nhận tên trùng lặp, chu
 
 ## [Examples are the best documentation](https://rakhim.exotext.com/examples-are-the-best-documentation)
 
-Theo trải nghiệm cá nhân, tác giả ước tính 95% lần tra cứu chỉ cần một ví dụ, nhưng thường khó tìm trong tài liệu chính thức. Tài liệu kỹ thuật thường được viết cho người đã am hiểu hệ sinh thái, trong khi lập trình viên phải chuyển qua lại giữa nhiều dự án, ngôn ngữ và framework, lần nào cũng tốn công khôi phục ngữ cảnh. Chẳng hạn, chữ ký `max(iterable, /, *, key=None)` trong tài liệu Python đòi hỏi phải hiểu `*`, `/`, tham số chỉ theo vị trí, iterable và tham số chỉ theo từ khóa, trong khi vài dòng ví dụ dưới đây trả lời ngay câu hỏi thường gặp nhất:
+Tác giả cho rằng ví dụ là dạng tài liệu hữu ích nhất: 95% số lần tra cứu, chỉ một ví dụ đơn giản là đủ, nhưng tài liệu chính thức hiếm khi có. Tài liệu kỹ thuật thường được viết cho người đã am hiểu hệ sinh thái, trong khi lập trình viên phải chuyển qua lại giữa nhiều dự án, ngôn ngữ và framework, lần nào cũng tốn công khôi phục ngữ cảnh. Chẳng hạn, chữ ký `max(iterable, /, *, key=None)` trong tài liệu Python đòi hỏi phải hiểu `*`, `/`, tham số chỉ theo vị trí, iterable và tham số chỉ theo từ khóa, trong khi vài dòng ví dụ dưới đây trả lời ngay câu hỏi thường gặp nhất:
 
 ```
 max(4, 6) # → 6
@@ -59,4 +59,4 @@ Quy trình của ông gồm: lập kế hoạch cùng "oracle", chia việc thà
 
 ---
 
-*Bài viết đã được viết lại bởi Claude Code với Opus 5.5 vào ngày 27/09/2026; được review và chỉnh sửa bởi Codex với GPT 6.1 Sol vào ngày 09/11/2026.*
+*Bài viết đã được viết lại bởi Claude Code với Opus 5.5 vào ngày 27/09/2026; được review và chỉnh sửa bởi Codex với GPT 6.1 Sol vào ngày 09/11/2026, rà soát lại bởi Claude Code với Sonnet 5.5 vào ngày 16/11/2026.*

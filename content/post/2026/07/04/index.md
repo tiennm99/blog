@@ -11,7 +11,7 @@ categories: ["Newsletter"]
 
 Brian Houck giới thiệu bài báo "8 Myths on Software Engineering and GenAI" mà ông đồng tác giả, gom tám hiểu lầm phổ biến về AI trong kỹ thuật phần mềm thành ba nhóm: lập trình viên thực sự dùng thời gian thế nào, đo tác động của AI ra sao, và AI được áp dụng trong tổ chức thật như thế nào. Một nghiên cứu năm 2025 cho thấy lập trình viên chỉ dành khoảng 14% thời gian để viết mã, phần còn lại là thiết kế, họp, rà soát mã và phối hợp. Vì vậy công cụ sinh mã chỉ là một đòn bẩy nhỏ, và tăng tốc một khâu dễ đẩy nút thắt sang khâu rà soát. Đo năng suất bằng số dòng mã, kể cả dòng do AI sinh ra, làm phình thêm gánh nặng rà soát; PR throughput tốt hơn nhưng vẫn cần đặt trong một bộ chỉ số cân bằng.
 
-Kết quả nghiên cứu về công cụ AI rất khác nhau: có nghiên cứu thấy tăng tốc rõ, có nghiên cứu trung tính, và một nghiên cứu trên lập trình viên giàu kinh nghiệm ghi nhận dùng AI làm tăng thời gian thực hiện trong điều kiện thử nghiệm. Nhiệm vụ, kinh nghiệm và cả cách viết prompt đều ảnh hưởng đến kết quả. Về áp dụng, dữ liệu được bài dẫn ghi nhận 80% dùng công cụ AI nhưng chỉ 29% tin độ chính xác. Thông điệp cuối cùng là tác động của AI phụ thuộc vào hệ thống công việc quanh lập trình viên nhiều hơn vào mô hình: tổ chức cần xây dựng niềm tin, quy trình, guardrail và cách đo ở cấp hệ thống, thay vì chỉ mua giấy phép rồi chờ năng suất tự tăng.
+Kết quả nghiên cứu về công cụ AI rất khác nhau: có nghiên cứu thấy tăng tốc rõ, có nghiên cứu trung tính, và một nghiên cứu cho thấy lập trình viên giàu kinh nghiệm còn mất thêm 18% thời gian khi dùng AI. Nhiệm vụ, kinh nghiệm và cả cách viết prompt đều ảnh hưởng đến kết quả. Về áp dụng, 80% lập trình viên dùng công cụ AI nhưng chỉ 29% tin vào độ chính xác của chúng. Thông điệp cuối cùng là tác động của AI phụ thuộc vào hệ thống công việc quanh lập trình viên nhiều hơn vào mô hình: tổ chức cần xây dựng niềm tin, quy trình, guardrail và cách đo ở cấp hệ thống, thay vì chỉ mua giấy phép rồi chờ năng suất tự tăng.
 
 ## [You Don't Love systemd Timers Enough](https://blog.tjll.net/you-dont-love-systemd-timers-enough/)
 
@@ -57,4 +57,4 @@ Bài viết cũng giải thích vì sao kích thước working set quan trọng 
 
 ---
 
-*Bài viết đã được viết lại bởi Claude Code với Opus 5.5 vào ngày 27/09/2026; được review và chỉnh sửa bởi Codex với GPT 6.1 Sol vào ngày 09/11/2026.*
+*Bài viết đã được viết lại bởi Claude Code với Opus 5.5 vào ngày 27/09/2026; được review và chỉnh sửa bởi Codex với GPT 6.1 Sol vào ngày 09/11/2026, rà soát lại bởi Claude Code với Sonnet 5.5 vào ngày 16/11/2026.*

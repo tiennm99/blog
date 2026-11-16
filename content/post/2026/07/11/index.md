@@ -9,7 +9,7 @@ categories: ["Newsletter"]
 
 ## [Our Collective Bike Shed Moment](https://muratbuffalo.blogspot.com/2026/06/our-collective-bike-shed-moment.html)
 
-Bài viết mượn “Định luật về sự tầm thường” của Parkinson: một ủy ban giả tưởng chỉ dành mười phút cho thiết kế lò phản ứng hạt nhân vì không ai hiểu đủ để tranh luận, nhưng lại mất bốn mươi lăm phút bàn về màu sơn nhà để xe đạp. Tác giả cho rằng cả xã hội đang lặp lại cuộc họp ấy trước AI. Theo ông, LLM đã tiến bộ mạnh trong lập trình, phương pháp hình thức và suy luận; điều này không có nghĩa ảo giác đã biến mất, vậy mà nhiều người vẫn liên tục dời tiêu chuẩn đánh giá, còn số đông thì thờ ơ như thể chưa có gì thay đổi.
+Bài viết mượn “Định luật về sự tầm thường” của Parkinson: một ủy ban giả tưởng chỉ dành mười phút cho thiết kế lò phản ứng hạt nhân vì không ai hiểu đủ để tranh luận, nhưng lại mất bốn mươi lăm phút bàn về màu sơn nhà để xe đạp. Tác giả cho rằng cả xã hội đang lặp lại cuộc họp ấy trước AI. LLM đã lần lượt vượt qua các rào cản từng bị xem là giới hạn, từ chuyện không biết lập trình đến ảo giác, và ngày càng giỏi về phương pháp hình thức lẫn suy luận, vậy mà nhiều người vẫn liên tục dời tiêu chuẩn đánh giá, còn số đông thì thờ ơ như thể chưa có gì thay đổi.
 
 Tác giả giải thích sự thờ ơ đó bằng thiên kiến bình thường hóa, khiến con người mặc định tương lai sẽ gần giống hiện tại, và hiệu ứng “vấn đề của người khác” của Douglas Adams, khiến những thay đổi lớn bị chủ động bỏ qua. Học công cụ mới để trụ vững trong vài năm tới là chiến lược cá nhân hợp lý, nhưng không trả lời được câu hỏi về những thập kỷ sắp tới. Điều đáng lo là ngay cả những người lẽ ra phải dẫn dắt cuộc thảo luận, gồm nhà công nghệ, nhà nghiên cứu, nhà kinh tế, nhà hoạch định chính sách, đạo đức, quân sự và giáo dục, vẫn chưa bàn về tác động dài hạn của AI ở độ sâu cần thiết, trong khi sự chú ý tiếp tục dồn vào các tranh cãi bề mặt.
 
@@ -56,4 +56,4 @@ Mọi thay đổi dữ liệu phải có đường quay lui nhanh, cụ thể v�
 
 ---
 
-*Bài viết đã được viết lại bởi Claude Code với Opus 5.5 vào ngày 27/09/2026; được review và chỉnh sửa bởi Codex với GPT 6.1 Sol vào ngày 09/11/2026.*
+*Bài viết đã được viết lại bởi Claude Code với Opus 5.5 vào ngày 27/09/2026; được review và chỉnh sửa bởi Codex với GPT 6.1 Sol vào ngày 09/11/2026, rà soát lại bởi Claude Code với Sonnet 5.5 vào ngày 16/11/2026.*

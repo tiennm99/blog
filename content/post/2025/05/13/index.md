@@ -65,7 +65,7 @@ Tác giả thừa nhận việc sửa thủ công nhiều tệp cấu hình vẫ
 
 ![](https://sequoiacap.com/wp-content/uploads/sites/6/2025/04/ai-50-2025.png)
 
-Konstantine Buhler từ Sequoia Capital phân tích danh sách AI 50 năm 2025 và chỉ ra một bước chuyển lớn: AI đang đi từ việc trả lời câu hỏi sang trực tiếp hoàn thành công việc. Theo góc nhìn đầu tư của tác giả vào tháng 4/2025, tác tử và mô hình suy luận đang giúp sản phẩm AI mở rộng từ trả lời câu hỏi sang hỗ trợ cả quy trình nghiệp vụ. Tiêu biểu có Harvey xử lý toàn bộ quy trình pháp lý từ rà soát tài liệu, soạn thảo đến phân tích vụ việc; Sierra tự động hóa dịch vụ chăm sóc khách hàng; và Cursor tạo ra cả tính năng phần mềm từ mô tả bằng ngôn ngữ tự nhiên.
+Konstantine Buhler từ Sequoia Capital phân tích danh sách AI 50 năm 2025 và chỉ ra một bước chuyển lớn: AI đang đi từ việc trả lời câu hỏi sang trực tiếp hoàn thành công việc. Nhờ các tác tử (agent) và mô hình suy luận, các công ty trong danh sách không chỉ xử lý từng yêu cầu đơn lẻ mà đảm nhận trọn vẹn cả quy trình nghiệp vụ, biến AI thành một "cỗ máy hành động" trong doanh nghiệp. Tiêu biểu có Harvey xử lý toàn bộ quy trình pháp lý từ rà soát tài liệu, soạn thảo đến phân tích vụ việc; Sierra tự động hóa dịch vụ chăm sóc khách hàng; và Cursor tạo ra cả tính năng phần mềm từ mô tả bằng ngôn ngữ tự nhiên.
 
 Bài viết cũng nhấn mạnh làn sóng robot, nơi các mô hình transformer được kết hợp với phần cứng: Figure AI sản xuất robot hình người với mô hình Helix mới, còn Skild AI phát triển mô hình nền tảng dùng chung cho robot; Nvidia ước tính đây là cơ hội trị giá 50 nghìn tỷ USD. Tác giả xem 2025 là bước ngoặt khi AI bắt đầu đảm nhận những công việc thực sự có giá trị, và dự đoán sang năm 2026, các ứng dụng AI cho người dùng phổ thông sẽ bùng nổ, tự động quản lý lịch, đặt vé du lịch hay sắp xếp tệp tin. Những tiến bộ đang diễn ra trong doanh nghiệp sẽ dần lan tỏa vào đời sống hằng ngày.
 
@@ -75,4 +75,4 @@ Bài viết cũng nhấn mạnh làn sóng robot, nơi các mô hình transforme
 
 ---
 
-*Bài viết đã được viết lại bởi Claude Code với Opus 5.5 vào ngày 27/09/2026; được review và chỉnh sửa bởi Codex với GPT 6.1 Sol vào ngày 09/11/2026.*
+*Bài viết đã được viết lại bởi Claude Code với Opus 5.5 vào ngày 27/09/2026; được review và chỉnh sửa bởi Codex với GPT 6.1 Sol vào ngày 09/11/2026, rà soát lại bởi Claude Code với Sonnet 5.5 vào ngày 16/11/2026.*

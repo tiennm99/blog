@@ -41,7 +41,7 @@ Bài viết đi qua ba loại extended statistics. Loại `dependencies` mô t�
 
 Assel Meher dùng một bài toán cố ý thật đơn giản để mổ xẻ hiệu năng đọc và quét file trong Go: tìm một giá trị `int64` khác 0 nằm ở cuối một file 4 GiB gần như toàn số 0. Không có phân tích cú pháp hay thuật toán phức tạp, nên phép đo phơi bày chi phí thật của từng lớp: Go runtime, thư viện chuẩn, syscall, page cache, bộ nhớ, `mmap`, `pread`, đa luồng và SIMD. Điểm xuất phát là `os.ReadFile` rồi duyệt `range` từng byte, chỉ đạt khoảng 0.75 GB/s vì vừa cấp phát và sao chép 4 GiB vừa xử lý từng byte; `bufio.ReadByte` cũng không khá hơn vì tốn một lời gọi hàm cho mỗi byte.
 
-Bước nhảy lớn đầu tiên đến từ việc bỏ chi phí theo byte: đọc theo khối 1 MiB và quét theo `uint64` đã vượt 13 GB/s. `mmap` không tự động thắng, vì tuy tránh được sao chép nhưng lại phát sinh hơn một triệu minor page fault khi chạm vào từng trang. Song song hóa giúp cải thiện, và `pread` song song vượt hẳn `mmap` song song, vốn chững lại quanh 28 GB/s do tranh chấp page fault, vì sao chép tuần tự theo khối rẻ hơn page fault hàng loạt. SIMD bằng AVX2 hay gói `simd/archsimd` của Go 1.26 làm vòng quét gần như miễn phí, nhưng khi đã chạm trần băng thông bộ nhớ thì chiến lược đọc và mức song song mới là yếu tố quyết định. Trên Ryzen5 9600X/WSL2, cache đã nóng, kết quả đạt khoảng 49 GB/s với `pread` song song và SIMD; muốn nhanh hơn nữa chỉ còn cách đọc ít dữ liệu hơn hoặc đổi phần cứng.
+Bước nhảy lớn đầu tiên đến từ việc bỏ chi phí theo byte: đọc theo khối 1 MiB và quét theo `uint64` đã vượt 13 GB/s. `mmap` không tự động thắng, vì tuy tránh được sao chép nhưng lại phát sinh hơn một triệu minor page fault khi chạm vào từng trang. Song song hóa giúp cải thiện, và `pread` song song vượt hẳn `mmap` song song, vốn chững lại quanh 28 GB/s do tranh chấp page fault, vì sao chép tuần tự theo khối rẻ hơn page fault hàng loạt. SIMD bằng AVX2 hay gói `simd/archsimd` của Go 1.26 làm vòng quét gần như miễn phí, nhưng khi đã chạm trần băng thông bộ nhớ thì chiến lược đọc và mức song song mới là yếu tố quyết định. Trên Ryzen 5 9600X/WSL2, cache đã nóng, kết quả đạt khoảng 49 GB/s với `pread` song song và SIMD; muốn nhanh hơn nữa chỉ còn cách đọc ít dữ liệu hơn hoặc đổi phần cứng.
 
 ## [HTTP caching, a refresher](https://danburzo.ro/http-caching-refresher/)
 
@@ -57,4 +57,4 @@ Phần hữu ích nhất là bảng đối chiếu từ `netstat` sang `ss`: nh�
 
 ---
 
-*Bài viết đã được viết lại bởi Claude Code với Opus 5.5 vào ngày 27/09/2026; được review và chỉnh sửa bởi Codex với GPT 6.1 Sol vào ngày 09/11/2026.*
+*Bài viết đã được viết lại bởi Claude Code với Opus 5.5 vào ngày 27/09/2026; được review và chỉnh sửa bởi Codex với GPT 6.1 Sol vào ngày 09/11/2026, rà soát lại bởi Claude Code với Sonnet 5.5 vào ngày 16/11/2026.*

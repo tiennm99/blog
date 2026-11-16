@@ -17,7 +17,7 @@ Về sản phẩm và con người: định luật Sturgeon (90% mọi thứ đ�
 
 ## [The Curve is Bending: Predictions on near-term AI inference spending](https://grantslatton.com/the-curve-is-bending)
 
-Grant Slatton, người phát triển bộ máy bảng tính Row Zero, cho rằng AI vừa vượt qua điểm uốn: giá trị tạo ra cho công việc lập trình thực tế đã lớn hơn chi phí. Ông nêu chi tiêu 100 USD năm 2023 và mức quy đổi khoảng 5.000 USD/năm tại thời điểm tháng 4/2025. Với ông, o1-pro là mô hình đầu tiên hữu ích ổn định, làm tốt ngang kỹ sư junior với tác vụ gói gọn trong một tệp, như tìm lỗi từ tệp Rust dài kèm diff và kết quả kiểm thử. Ông dùng thư viện prompt của Zed Editor để sinh các hàm bảng tính lặp lại (từ 20 phút xuống 2 phút), tự tạo nhiều công cụ dòng lệnh nhỏ dùng LLM, và dùng Claude Code viết lại toàn bộ backend trang web cá nhân, có lúc chạy ba phiên song song. Việc ước tính mất 100 giờ chỉ còn dưới 10 giờ, tốn vài trăm USD.
+Grant Slatton, người phát triển bộ máy bảng tính Row Zero, cho rằng AI vừa vượt qua điểm uốn: giá trị tạo ra cho công việc lập trình thực tế đã lớn hơn chi phí. Chi tiêu AI của ông tăng từ 100 USD/năm (2023) lên khoảng 5.000 USD/năm (2025). Với ông, o1-pro là mô hình đầu tiên hữu ích ổn định, làm tốt ngang kỹ sư junior với tác vụ gói gọn trong một tệp, như tìm lỗi từ tệp Rust dài kèm diff và kết quả kiểm thử. Ông dùng thư viện prompt của Zed Editor để sinh các hàm bảng tính lặp lại (từ 20 phút xuống 2 phút), tự tạo nhiều công cụ dòng lệnh nhỏ dùng LLM, và dùng Claude Code viết lại toàn bộ backend trang web cá nhân, có lúc chạy ba phiên song song. Việc ước tính mất 100 giờ chỉ còn dưới 10 giờ, tốn vài trăm USD.
 
 Trong dự báo tháng 4/2025, ông ước tính công cụ AI đang tăng năng suất của mình khoảng 1,1 lần và có thể đạt 2–3 lần vào cuối 2026. Mô hình mạnh như o3-pro lúc đầu sẽ rất đắt, nhưng với kỹ sư thu nhập hơn 100 USD/giờ, ngân sách AI 10.000–50.000 USD mỗi năm là hợp lý; theo nghịch lý Jevons, giá rẻ đi chỉ làm tổng chi tiêu tăng. Ông nhận xét mô hình còn thiếu "gu" thiết kế của kỹ sư senior, dự đoán tác nhân viết mã sẽ ngang sinh viên mới tốt nghiệp vào cuối 2026, và khuyên các bạn junior sớm rèn luyện khả năng đánh giá của kỹ sư senior.
 
@@ -43,7 +43,7 @@ Tác giả kể một nhà tuyển dụng vừa liên hệ cho vị trí yêu c�
 
 Tác giả Namanyay cho rằng các LLM sinh mã hiện nay không thật sự hiểu codebase mà chỉ là công cụ tự động hoàn thành tinh vi: chúng quên vị trí tệp, tạo mã trùng lặp và không theo mẫu thiết kế sẵn có vì chỉ thấy cửa sổ ngữ cảnh nhỏ. Kỹ sư junior tập trung vào "cái gì" và "làm thế nào", còn senior tập trung vào "tại sao" và "nếu thì sao", nắm mô hình toàn hệ thống và lường trước tác động dây chuyền; LLM hiện hành xử giống junior hơn. Giải pháp của ông là xem codebase như đồ thị tri thức phân cấp với thuật toán Ranked Recursive Summarization (RRS): bắt đầu từ các tệp lá, xếp hạng mức độ quan trọng rồi tóm tắt dần lên thư mục cha. Vì RRS vẫn bỏ sót chi tiết, ông phát triển Prismatic RRS (PRRS), tóm tắt qua nhiều "lăng kính" như kiến trúc, luồng dữ liệu và bảo mật.
 
-Theo mô tả của tác giả, cách này giúp AI chọn vị trí tệp, bám mẫu có sẵn và hỗ trợ tìm nợ kỹ thuật hoặc vấn đề bảo mật. Bài viết không cung cấp phép đo độc lập chứng minh hệ thống hiểu mã như kỹ sư senior. Ông đóng gói kỹ thuật này thành Giga AI, nhưng cũng gợi ý cách tự làm: viết tóm tắt cho thư mục và tệp quan trọng, nhờ AI cải thiện, tạo tài liệu theo từng lăng kính và đưa tệp liên quan vào ngữ cảnh. Ông tin AI nên khuếch đại sự sáng tạo của con người chứ không thay thế họ.
+Nhờ vậy AI biết đặt tệp mới ở đâu, theo mẫu nào, mở rộng lớp trừu tượng sẵn có thay vì tạo mới, đồng thời làm lộ nợ kỹ thuật, lỗ hổng bảo mật và rút ngắn thời gian làm quen cho người mới. Ông đóng gói kỹ thuật này thành Giga AI, nhưng cũng gợi ý cách tự làm: viết tóm tắt cho thư mục và tệp quan trọng, nhờ AI cải thiện, tạo tài liệu theo từng lăng kính và đưa tệp liên quan vào ngữ cảnh. Ông tin AI nên khuếch đại sự sáng tạo của con người chứ không thay thế họ.
 
 ---
 
@@ -79,4 +79,4 @@ Kết quả cho thấy mô hình thực hiện nhiều bước suy luận trung 
 
 ---
 
-*Bài viết đã được viết lại bởi Claude Code với Opus 5.5 vào ngày 27/09/2026; được review và chỉnh sửa bởi Codex với GPT 6.1 Sol vào ngày 09/11/2026.*
+*Bài viết đã được viết lại bởi Claude Code với Opus 5.5 vào ngày 27/09/2026; được review và chỉnh sửa bởi Codex với GPT 6.1 Sol vào ngày 09/11/2026, rà soát lại bởi Claude Code với Sonnet 5.5 vào ngày 16/11/2026.*

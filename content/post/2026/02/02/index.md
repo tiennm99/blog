@@ -21,7 +21,7 @@ Thông điệp chính là mỗi công cụ có một ranh giới cách ly riêng
 
 ## [Run Your Project in a Dev Container, in Zed](https://zed.dev/blog/dev-containers)
 
-Theo thông báo ngày 07/01/2026, từ v0.218 Zed hỗ trợ làm việc bên trong Dev Containers, một đặc tả mở để thiết lập môi trường phát triển dựa trên Docker. Thay vì truyền miệng hay dựa vào README dễ lỗi thời về phiên bản công cụ, cơ sở dữ liệu hay biến môi trường, nhóm phát triển mô tả môi trường trong tệp `.devcontainer/devcontainer.json` theo hướng hạ tầng dưới dạng mã. Khi mở một dự án có tệp này, Zed hiện thông báo gợi ý mở trong Dev Container; người dùng cũng có thể dùng lệnh `project: open remote`, và Zed tự kết nối lại vào container gần nhất khi mở lại ứng dụng.
+Từ phiên bản v0.218, Zed hỗ trợ làm việc bên trong Dev Containers, một đặc tả mở để thiết lập môi trường phát triển dựa trên Docker. Thay vì truyền miệng hay dựa vào README dễ lỗi thời về phiên bản công cụ, cơ sở dữ liệu hay biến môi trường, nhóm phát triển mô tả môi trường trong tệp `.devcontainer/devcontainer.json` theo hướng hạ tầng dưới dạng mã. Khi mở một dự án có tệp này, Zed hiện thông báo gợi ý mở trong Dev Container; người dùng cũng có thể dùng lệnh `project: open remote`, và Zed tự kết nối lại vào container gần nhất khi mở lại ứng dụng.
 
 Về kỹ thuật, Zed tái sử dụng kiến trúc phát triển từ xa vốn dành cho SSH: một Zed Remote Server chạy trong container lo lưu tệp, làm việc với language server và phân tích cú pháp, còn Zed trên máy cục bộ lo giao diện; hai bên giao tiếp qua đầu vào/đầu ra chuẩn, nên chỉ cần viết thêm một lớp truyền tải dùng `docker exec`. Việc tạo container được giao cho CLI `devcontainer` chính thức (lệnh `devcontainer up`), giúp tính năng ra mắt nhanh nhưng ở thời điểm thông báo chưa hỗ trợ `forwardPorts` và khai báo extension của Zed. Kế hoạch sắp tới gồm hỗ trợ soạn đặc tả ngay trong Zed, khai báo extension trong `devcontainer.json`, và hỗ trợ `forwardPorts` sau khi chuyển sang cách triển khai nội bộ.
 
@@ -53,4 +53,4 @@ Khi nhận phản hồi, trình duyệt tách header khỏi phần thân và đ�
 
 ---
 
-*Bài viết đã được viết lại bởi Claude Code với Opus 5.5 vào ngày 27/09/2026; được review và chỉnh sửa bởi Codex với GPT 6.1 Sol vào ngày 09/11/2026.*
+*Bài viết đã được viết lại bởi Claude Code với Opus 5.5 vào ngày 27/09/2026; được review và chỉnh sửa bởi Codex với GPT 6.1 Sol vào ngày 09/11/2026, rà soát lại bởi Claude Code với Sonnet 5.5 vào ngày 16/11/2026.*

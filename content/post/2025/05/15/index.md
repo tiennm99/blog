@@ -21,7 +21,7 @@ Ba JEP còn lại mang tính dọn dẹp. JEP 486 vô hiệu hóa vĩnh viễn S
 
 ## [JavaOne 2025: Function and Memory Access in Pure Java](https://www.infoq.com/news/2025/04/foreign-function-minborg/)
 
-Bài viết trên InfoQ tường thuật phần trình bày của Per-Åke Minborg (Oracle) tại JavaOne 2025 về Foreign Function & Memory API (FFM, JEP 454), chính thức từ JDK 22. API này cung cấp cách gọi hàm và truy cập bộ nhớ ngoài Java bằng mã Java, giảm nhu cầu viết lớp kết nối JNI bằng C. Cần phân biệt các hạn chế: mức khoảng 2 GB gắn với dung lượng một `ByteBuffer` do chỉ số kiểu `int`, không phải giới hạn địa chỉ chung của JNI. Các giải pháp như JNI, JNA hay JavaCPP có cách sử dụng và đánh đổi riêng.
+Bài viết trên InfoQ tường thuật phần trình bày của Per-Åke Minborg (Oracle) tại JavaOne 2025 về Foreign Function & Memory API (FFM, JEP 454), được chính thức đưa vào JDK 22 trong khuôn khổ Project Panama nhằm thay thế JNI. Theo Minborg, JNI buộc lập trình viên kết hợp Java và C một cách mong manh, tốn kém khi bảo trì và triển khai, truyền dữ liệu cồng kềnh, chỉ hỗ trợ kiểu nguyên thủy và đối tượng Java, không giải phóng bộ nhớ một cách chủ động và chỉ định địa chỉ được khoảng 2 GB khi dùng ByteBuffer. Các thư viện như JNA, JNR hay JavaCPP từng thử khắc phục nhưng không được đón nhận rộng rãi.
 
 Ở phần bộ nhớ, `MemorySegment` đại diện cho một vùng nhớ liên tục với địa chỉ 64-bit, được bảo vệ khỏi truy cập ngoài giới hạn, truy cập sau khi giải phóng và truy cập từ luồng không được phép. Vòng đời vùng nhớ do `Arena` quản lý với bốn loại Global, Auto, Confined và Shared. `ValueLayout` và `MemoryLayout` mô tả dữ liệu theo cấu trúc để lấy ra `VarHandle` thay vì tự tính độ lệch bằng tay, và khai báo các `VarHandle` là `final` rất quan trọng để đạt hiệu năng tốt nhất. Ở phần hàm, công cụ `jextract` tự sinh liên kết Java từ tệp header của thư viện native, chẳng hạn gọi thẳng hàm `qsort` của C từ Java. Tóm lại, FFM mang đến cách truy cập bộ nhớ native an toàn, hiệu quả và gọi hàm native bằng mã Java thuần, không phải viết và duy trì mã C.
 
@@ -33,7 +33,7 @@ Phần khó hơn là tích hợp với các công cụ dựa vào ThreadLocal nh
 
 ## [JDK 24 G1/Parallel/Serial GC Changes](https://tschatzl.github.io/2025/04/01/jdk24-g1-serial-parallel-gc-changes.html)
 
-Thomas Schatzl (Oracle) tổng hợp thay đổi của G1, Parallel và Serial GC trong JDK 24. G1 có cả pha dừng ứng dụng lẫn công việc đồng thời. Parallel GC bỏ một số thao tác đồng bộ trong vòng lặp di tản, còn Serial GC tiếp tục được tái cấu trúc. Với G1, phép đo thực tế đầu tiên giờ thay trực tiếp giá trị dự đoán khởi tạo cũ, giúp thích nghi nhanh hơn với môi trường, đổi lại vài lần đầu có thể vượt mục tiêu tạm dừng. G1 cũng gộp remembered set của thế hệ trẻ để giảm trùng lặp và bộ nhớ native.
+Thomas Schatzl (Oracle) tổng hợp thay đổi của các bộ thu gom rác dừng toàn bộ (stop-the-world) trong JDK 24. Với Parallel GC, một số thao tác đồng bộ không cần thiết trong vòng lặp di tản đã được loại bỏ (JDK-8269870); Serial GC tiếp tục được dọn dẹp và tái cấu trúc. Thay đổi đáng kể nhất nằm ở G1: để đạt mục tiêu thời gian tạm dừng, G1 dự đoán các chi phí như sao chép bộ nhớ hay cập nhật tham chiếu, nhưng giá trị khởi tạo được đo từ lâu trên một máy SPARC cũ nên rất bảo thủ, khiến G1 cần khoảng 30 lần thu gom mới thích nghi. Với JDK-8343189, giá trị đo thực tế đầu tiên ghi đè thẳng lên giá trị mặc định, giúp G1 thích nghi nhanh hơn nhiều, đổi lại có thể vượt mục tiêu tạm dừng ở vài lần đầu. Ngoài ra, G1 giờ quản lý remembered set của cả thế hệ trẻ như một đơn vị duy nhất (JDK-8336086), giảm trùng lặp và tiết kiệm bộ nhớ native.
 
 Tác giả cũng hé lộ lộ trình JDK 25: việc gộp remembered set cho các vùng thế hệ cũ (JDK-8343782) đã được tích hợp, còn rào chắn ghi (write barrier) của G1 được làm lại hoàn toàn, hứa hẹn tăng thông lượng tới 10%, tạm dừng ngắn hơn và sinh mã tốt hơn, đổi lại cần thêm một khối bộ nhớ tĩnh khoảng 0,2% kích thước heap. Ngoài ra còn có thảo luận về việc đưa Automatic Heap Sizing giống ZGC sang các bộ thu gom này với đóng góp từ Microsoft và Google, cũng như biến G1 thành bộ thu gom mặc định thực sự thay cho Serial GC ở môi trường ít tài nguyên.
 
@@ -51,4 +51,4 @@ Vì LLM quá chậm và tốn kém để phục vụ trực tiếp, Pinterest d�
 
 ---
 
-*Bài viết đã được viết lại bởi Claude Code với Opus 5.5 vào ngày 27/09/2026; được review và chỉnh sửa bởi Codex với GPT 6.1 Sol vào ngày 09/11/2026.*
+*Bài viết đã được viết lại bởi Claude Code với Opus 5.5 vào ngày 27/09/2026; được review và chỉnh sửa bởi Codex với GPT 6.1 Sol vào ngày 09/11/2026, rà soát lại bởi Claude Code với Sonnet 5.5 vào ngày 16/11/2026.*

@@ -45,9 +45,9 @@ Bài viết lần lượt bác bỏ các lợi ích mà Conventional Commits h�
 
 ## [Stop using JWTs!](https://gist.github.com/samsch/0d1f3d3b4745d778f78b230cf6061452)
 
-Sam Schlinkert khuyên ưu tiên phiên phía máy chủ cho đăng nhập trình duyệt, vì thu hồi quyền, đăng xuất và quản lý vòng đời thường đơn giản hơn so với tự xây cơ chế JWT không trạng thái. Tuy nhiên, nhận định trong gist rằng đặc tả JWT chỉ dành cho token sống tối đa khoảng năm phút là không chính xác: RFC7519 không đặt giới hạn đó. JWT là định dạng mang các thông tin xác nhận; mức an toàn phụ thuộc giao thức, khóa và cách xác minh, không thể kết luận mọi cách dùng JWT đều không an toàn.
+Sam Schlinkert khuyên ưu tiên phiên phía máy chủ cho đăng nhập trình duyệt, vì thu hồi quyền, đăng xuất và quản lý vòng đời thường đơn giản hơn so với tự xây cơ chế JWT không trạng thái. Tuy nhiên, nhận định trong gist rằng đặc tả JWT chỉ dành cho token sống tối đa khoảng năm phút là không chính xác: RFC 7519 không đặt giới hạn đó. JWT là định dạng mang các thông tin xác nhận; mức an toàn phụ thuộc giao thức, khóa và cách xác minh, không thể kết luận mọi cách dùng JWT đều không an toàn.
 
-Bài cảnh báo việc lưu thông tin xác thực trong localStorage có thể làm tăng tác động của XSS. Với phiên dùng cookie, Secure và HttpOnly là các lớp bảo vệ hữu ích nhưng vẫn cần xử lý CSRF, XSS và thời hạn phiên theo kiến trúc. RFC8725 yêu cầu giới hạn thuật toán được chấp nhận, kiểm tra chữ ký và các thông tin như bên phát hành, đối tượng nhận phù hợp. Thông điệp thực dụng là dùng cơ chế xác thực được duy trì tốt của framework, xác định nhu cầu thu hồi và ranh giới tin cậy trước khi chọn token; PASETO cũng không tự giải quyết mọi vấn đề quản lý phiên.
+Bài cảnh báo việc lưu thông tin xác thực trong `localStorage` có thể làm tăng tác động của XSS. Với phiên dùng cookie, `Secure` và `HttpOnly` là các lớp bảo vệ hữu ích nhưng vẫn cần xử lý CSRF, XSS và thời hạn phiên theo kiến trúc. Nếu thật sự cần JWT, RFC 8725 yêu cầu giới hạn thuật toán được chấp nhận, kiểm tra chữ ký và các claim như bên phát hành, đối tượng nhận; PASETO được thiết kế an toàn hơn nhưng cũng không tự giải quyết mọi vấn đề quản lý phiên. Với lập trình viên mới, cách thực dụng là bắt đầu từ cơ chế session có sẵn của framework, dùng cookie `Secure` và `HttpOnly` cùng kho lưu phiên như Redis hoặc cơ sở dữ liệu, và chỉ thêm token đặc biệt khi có nhu cầu thu hồi hoặc ranh giới tin cậy rõ ràng.
 
 ### Bonus
 
@@ -65,4 +65,4 @@ Bài cảnh báo việc lưu thông tin xác thực trong localStorage có thể
 
 ---
 
-*Bài viết đã được viết lại bởi Claude Code với Opus 5.5 vào ngày 27/09/2026; được review và chỉnh sửa bởi Codex với GPT 6.1 Sol vào ngày 09/11/2026.*
+*Bài viết đã được viết lại bởi Claude Code với Opus 5.5 vào ngày 27/09/2026; được review và chỉnh sửa bởi Codex với GPT 6.1 Sol vào ngày 09/11/2026, rà soát lại bởi Claude Code với Sonnet 5.5 vào ngày 16/11/2026.*
