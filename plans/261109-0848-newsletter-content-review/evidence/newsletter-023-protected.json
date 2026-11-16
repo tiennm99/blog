@@ -1,0 +1,139 @@
+{
+  "post": "content/post/2025/05/10/index.md",
+  "newsletter": 23,
+  "newsletter_post": true,
+  "note": "*Bài viết đã được viết lại bởi Claude Code với Opus 5.5 vào ngày 27/09/2026.*",
+  "lines": [
+    {
+      "line": 1,
+      "kind": "frontmatter",
+      "text": "---"
+    },
+    {
+      "line": 2,
+      "kind": "frontmatter",
+      "text": "title: \"Newsletter #23\""
+    },
+    {
+      "line": 3,
+      "kind": "frontmatter",
+      "text": "date: 2025-05-10"
+    },
+    {
+      "line": 4,
+      "kind": "frontmatter",
+      "text": "tags: [ \"AI-Assisted\", \"Java\", \"Software Engineering\", \"AI\", \"Career Development\", \"Performance\", \"Database\" ]"
+    },
+    {
+      "line": 5,
+      "kind": "frontmatter",
+      "text": "categories: [ \"Newsletter\" ]"
+    },
+    {
+      "line": 6,
+      "kind": "frontmatter",
+      "text": "---"
+    },
+    {
+      "line": 8,
+      "kind": "italic-note",
+      "text": "*Mời bạn thưởng thức Newsletter #23.*"
+    },
+    {
+      "line": 10,
+      "kind": "heading",
+      "text": "## [LLMs: An Operator's View](https://theengineeringmanager.substack.com/p/llms-an-operators-view)"
+    },
+    {
+      "line": 16,
+      "kind": "heading",
+      "text": "## [The Reality of Tech Interviews in 2025](https://newsletter.pragmaticengineer.com/p/the-reality-of-tech-interviews)"
+    },
+    {
+      "line": 22,
+      "kind": "heading",
+      "text": "## [Senior Developer Skills in the AI Age: Leveraging Experience for Better Results](https://manuel.kiessling.net/2025/03/31/how-seasoned-developers-can-achieve-great-results-with-ai-coding-agents/)"
+    },
+    {
+      "line": 28,
+      "kind": "heading",
+      "text": "## [JEP 483: Ahead-of-Time Class Loading & Linking](https://www.morling.dev/blog/jep-483-aot-class-loading-linking/)"
+    },
+    {
+      "line": 34,
+      "kind": "heading",
+      "text": "## [Specifications in Jakarta Data](https://in.relation.to/2025/03/28/repository-specifications/)"
+    },
+    {
+      "line": 40,
+      "kind": "code",
+      "text": "```java"
+    },
+    {
+      "line": 41,
+      "kind": "code",
+      "text": "library.count((builder, book) ->"
+    },
+    {
+      "line": 42,
+      "kind": "code",
+      "text": "    builder.like(book.get(Book_.title), \"%\" + title + \"%\"));"
+    },
+    {
+      "line": 43,
+      "kind": "code",
+      "text": "```"
+    },
+    {
+      "line": 45,
+      "kind": "code",
+      "text": "```java"
+    },
+    {
+      "line": 46,
+      "kind": "code",
+      "text": "library.find((builder, book) ->"
+    },
+    {
+      "line": 47,
+      "kind": "code",
+      "text": "    builder.and("
+    },
+    {
+      "line": 48,
+      "kind": "code",
+      "text": "        builder.like(book.get(Book_.title), \"%\" + title + \"%\"),"
+    },
+    {
+      "line": 49,
+      "kind": "code",
+      "text": "        builder.lower(book.join(Book_.authors).get(Author_.name))"
+    },
+    {
+      "line": 50,
+      "kind": "code",
+      "text": "            .equalTo(authorName.toLowerCase())"
+    },
+    {
+      "line": 51,
+      "kind": "code",
+      "text": "    ));"
+    },
+    {
+      "line": 52,
+      "kind": "code",
+      "text": "```"
+    },
+    {
+      "line": 54,
+      "kind": "heading",
+      "text": "## [There is no Vibe Engineering](https://serce.me/posts/2025-03-31-there-is-no-vibe-engineering)"
+    },
+    {
+      "line": 60,
+      "kind": "heading",
+      "text": "## [Refining Var-Handles in Valhalla](https://cr.openjdk.org/~jrose/values/atomic-value-access-api.html)"
+    }
+  ],
+  "candidates": []
+}

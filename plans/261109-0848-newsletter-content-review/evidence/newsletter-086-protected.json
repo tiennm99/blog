@@ -1,0 +1,110 @@
+{
+  "post": "content/post/2026/03/01/index.md",
+  "newsletter": 86,
+  "newsletter_post": true,
+  "note": "*Bài viết đã được viết lại bởi Claude Code với Opus 5.5 vào ngày 27/09/2026.*",
+  "lines": [
+    {
+      "line": 1,
+      "kind": "frontmatter",
+      "text": "---"
+    },
+    {
+      "line": 2,
+      "kind": "frontmatter",
+      "text": "title: \"Newsletter #86\""
+    },
+    {
+      "line": 3,
+      "kind": "frontmatter",
+      "text": "date: 2026-03-01"
+    },
+    {
+      "line": 4,
+      "kind": "frontmatter",
+      "text": "tags: [\"AI-Assisted\", \"Newsletter\", \"Software Architecture\", \"Code Review\", \"Performance\", \"AI Adoption\", \"Game Development\"]"
+    },
+    {
+      "line": 5,
+      "kind": "frontmatter",
+      "text": "categories: [\"Newsletter\"]"
+    },
+    {
+      "line": 6,
+      "kind": "frontmatter",
+      "text": "---"
+    },
+    {
+      "line": 8,
+      "kind": "italic-note",
+      "text": "*Mời bạn thưởng thức Newsletter #86.*"
+    },
+    {
+      "line": 10,
+      "kind": "heading",
+      "text": "## [Do Not Surrender to the Tech Tree](https://www.macroscience.org/p/do-not-surrender-to-the-tech-tree)"
+    },
+    {
+      "line": 16,
+      "kind": "heading",
+      "text": "## [How to Make Architecture Decisions: RFCs, ADRs, and Getting Everyone Aligned](https://lukasniessen.medium.com/how-to-make-architecture-decisions-rfcs-adrs-and-getting-everyone-aligned-ab82e5384d2f)"
+    },
+    {
+      "line": 22,
+      "kind": "heading",
+      "text": "## [The cost of a function call](https://lemire.me/blog/2026/02/08/the-cost-of-a-function-call/)"
+    },
+    {
+      "line": 28,
+      "kind": "heading",
+      "text": "## [The PERFECT Code Review: How to Reduce Cognitive Load While Improving Quality](https://bastrich.tech/perfect-code-review/)"
+    },
+    {
+      "line": 34,
+      "kind": "heading",
+      "text": "## [Semantic Search Without Embeddings](https://softwaredoug.com/blog/2026/01/08/semantic-search-without-embeddings.html)"
+    },
+    {
+      "line": 40,
+      "kind": "heading",
+      "text": "## [My AI Adoption Journey](https://mitchellh.com/writing/my-ai-adoption-journey)"
+    },
+    {
+      "line": 46,
+      "kind": "heading",
+      "text": "## [Software Engineering is back](https://blog.alaindichiappari.dev/p/software-engineering-is-back)"
+    },
+    {
+      "line": 52,
+      "kind": "heading",
+      "text": "## [Art of Roads in Games](https://sandboxspirit.com/blog/art-of-roads-in-games/)"
+    },
+    {
+      "line": 58,
+      "kind": "heading",
+      "text": "### Bonus"
+    },
+    {
+      "line": 61,
+      "kind": "asset",
+      "text": "![12 Architectural Concepts Developers Should Know](https://substackcdn.com/image/fetch/w_1100,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F7712ce10-d199-49ef-94f9-e983e47a92d9_2360x2852.png)"
+    }
+  ],
+  "candidates": [
+    {
+      "line": 42,
+      "kind": "first-person",
+      "text": "Mitchell Hashimoto, người tạo ra Vagrant, Terraform và Ghostty, kể lại hành trình tìm ra giá trị của công cụ AI một cách thận trọng. Theo ông, việc làm quen với bất kỳ công cụ nào cũng qua ba giai đoạn: kém hiệu quả, tạm đủ dùng, rồi khám phá thay đổi cách làm việc. Các bước đầu gồm: bỏ chatbot để chuyển sang tác tử (agent) có thể đọc tệp, chạy chương trình và gửi yêu cầu HTTP; tự làm lại mọi commit thủ công bằng tác tử để rút ra nguyên tắc như chia nhỏ nhiệm vụ, tách phiên lập kế hoạch khỏi phiên thực thi, cho tác tử cách tự kiểm chứng; dành 30 phút cuối ngày khởi chạy tác tử cho nghiên cứu sâu, thử ý tưởng còn mơ hồ và phân loại issue/PR; rồi giao cho tác tử những việc chắc chắn làm tốt trong khi mình tập trung việc khác, đồng thời tắt thông báo để tránh chuyển ngữ cảnh."
+    },
+    {
+      "line": 44,
+      "kind": "first-person",
+      "text": "Bước thứ năm là \"kỹ thuật hóa bộ khung\" (harness engineering): mỗi khi tác tử mắc lỗi, bổ sung chỉ dẫn vào AGENTS.md hoặc viết công cụ riêng để lỗi đó không lặp lại. Bước cuối là luôn có một tác tử chạy nền, kết hợp với các mô hình chậm nhưng kỹ lưỡng. Hiện ông chỉ chạy một tác tử, vừa đủ cân bằng giữa công việc thủ công sâu mà ông yêu thích và việc trông chừng máy, và mới đạt mục tiêu này khoảng 10–20% ngày làm việc. Ông nhấn mạnh không chạy tác tử chỉ để chạy, mà chỉ khi có việc thực sự hữu ích, và lưu ý rằng việc đã giao cho tác tử thì mình không còn rèn được kỹ năng ở đó."
+    },
+    {
+      "line": 50,
+      "kind": "first-person",
+      "text": "Theo tác giả, framework giải quyết ba vấn đề. \"Đơn giản hóa\" thực chất là đầu hàng trí tuệ: mua sẵn tư duy của người khác thay vì mài sắc mô hình tư duy của mình, như bọc chân gãy trong lụa. Tự động hóa mã lặp là lý do duy nhất hợp lý, nhưng giờ tác tử khiến việc này rẻ chưa từng có: tác giả tự tạo công cụ nhỏ đúng với bài toán, và một Makefile đơn giản là đủ cho hầu hết nhu cầu. Vấn đề thứ ba, ít ai nói ra, là chi phí nhân sự: doanh nghiệp tuyển \"React Developer\" dễ thay thế thay vì kỹ sư phần mềm. Tác tử lại rất giỏi các công cụ lâu đời như Bash (ra đời năm 1989), thứ đang trở thành bộ chuyển đổi vạn năng. Bài viết kêu gọi ngừng để Google, Meta hay Vercel làm kiến trúc sư thay mình và bắt đầu xây dựng những thứ thực sự thuộc về mình."
+    }
+  ]
+}

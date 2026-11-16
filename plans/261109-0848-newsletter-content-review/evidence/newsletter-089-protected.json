@@ -1,0 +1,105 @@
+{
+  "post": "content/post/2026/03/14/index.md",
+  "newsletter": 89,
+  "newsletter_post": true,
+  "note": "*Bài viết đã được viết lại bởi Claude Code với Opus 5.5 vào ngày 27/09/2026.*",
+  "lines": [
+    {
+      "line": 1,
+      "kind": "frontmatter",
+      "text": "---"
+    },
+    {
+      "line": 2,
+      "kind": "frontmatter",
+      "text": "title: \"Newsletter #89\""
+    },
+    {
+      "line": 3,
+      "kind": "frontmatter",
+      "text": "date: 2026-03-14"
+    },
+    {
+      "line": 4,
+      "kind": "frontmatter",
+      "text": "tags: [\"AI-Assisted\", \"Newsletter\", \"AI Agents\", \"Go\", \"Rate Limiting\", \"Error Handling\", \"Java\"]"
+    },
+    {
+      "line": 5,
+      "kind": "frontmatter",
+      "text": "categories: [\"Newsletter\"]"
+    },
+    {
+      "line": 6,
+      "kind": "frontmatter",
+      "text": "---"
+    },
+    {
+      "line": 8,
+      "kind": "italic-note",
+      "text": "*Mời bạn thưởng thức Newsletter #89.*"
+    },
+    {
+      "line": 10,
+      "kind": "heading",
+      "text": "## [Hybrid Quota-Linear Rate Limiter](https://dotat.at/@/2026-01-12-hqlr.html)"
+    },
+    {
+      "line": 16,
+      "kind": "heading",
+      "text": "## [Go is the Best Language for AI Agents](https://getbruin.com/blog/go-is-the-best-language-for-agents/)"
+    },
+    {
+      "line": 22,
+      "kind": "heading",
+      "text": "## [Your Agent Needs a Harness, Not a Framework](https://x.com/djfarrelly/status/2028556984396452250)"
+    },
+    {
+      "line": 28,
+      "kind": "heading",
+      "text": "## [An Interactive Intro to Quadtrees](https://growingswe.com/blog/quadtrees)"
+    },
+    {
+      "line": 34,
+      "kind": "heading",
+      "text": "## [Agentic Engineering Patterns](https://simonwillison.net/guides/agentic-engineering-patterns/)"
+    },
+    {
+      "line": 40,
+      "kind": "heading",
+      "text": "## ~~[Things I Miss About Spring Boot After Switching to Go](https://sushantdhiman.dev/things-i-miss-about-spring-boot-after-switching-to-go/)~~"
+    },
+    {
+      "line": 46,
+      "kind": "heading",
+      "text": "## [Design-First Collaboration with AI](https://martinfowler.com/articles/reduce-friction-ai/design-first-collaboration.html)"
+    },
+    {
+      "line": 52,
+      "kind": "heading",
+      "text": "## [The Two Kinds of Error](https://evanhahn.com/the-two-kinds-of-error/)"
+    },
+    {
+      "line": 58,
+      "kind": "heading",
+      "text": "## [Secure Go Error Handling Best Practices](https://blog.jetbrains.com/go/2026/03/02/secure-go-error-handling-best-practices/)"
+    },
+    {
+      "line": 64,
+      "kind": "heading",
+      "text": "## [AI Coding Tools, Java & Compounding Engineering](https://www.the-main-thread.com/p/ai-coding-tools-java-compounding-engineering)"
+    },
+    {
+      "line": 70,
+      "kind": "heading",
+      "text": "## [YAML? That's Norway Problem](https://lab174.com/blog/202601-yaml-norway/)"
+    }
+  ],
+  "candidates": [
+    {
+      "line": 36,
+      "kind": "first-person",
+      "text": "Simon Willison ra mắt một hướng dẫn về các mẫu (pattern) giúp khai thác tốt nhất các coding agent như Claude Code và OpenAI Codex. Hướng dẫn phân biệt rõ \"agentic engineering\" với \"vibe coding\": vibe coding là để LLM viết mã mà không cần quan tâm đến mã nguồn, còn agentic engineering là kỹ sư chuyên nghiệp dùng agent để khuếch đại chuyên môn sẵn có của mình chứ không phải thay thế nó. Nội dung được sắp theo từng nhóm: nguyên tắc, làm việc với coding agent (cách agent hoạt động, dùng Git, sub-agent), kiểm thử và đảm bảo chất lượng, hiểu mã nguồn qua các bản hướng dẫn đọc tuần tự và giải thích tương tác, cùng các prompt có chú thích và phụ lục những prompt tác giả thường dùng."
+    }
+  ]
+}

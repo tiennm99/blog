@@ -1,0 +1,74 @@
+{
+  "post": "content/post/2026/07/29/index.md",
+  "newsletter": 127,
+  "newsletter_post": true,
+  "note": "*Bài viết đã được viết lại bởi Claude Code với Opus 5.5 vào ngày 27/09/2026.*",
+  "lines": [
+    {
+      "line": 1,
+      "kind": "frontmatter",
+      "text": "---"
+    },
+    {
+      "line": 2,
+      "kind": "frontmatter",
+      "text": "title: \"Newsletter #127\""
+    },
+    {
+      "line": 3,
+      "kind": "frontmatter",
+      "text": "date: 2026-07-29"
+    },
+    {
+      "line": 4,
+      "kind": "frontmatter",
+      "text": "tags: [\"AI-Assisted\", \"AI Agents\", \"Security\", \"Web Security\", \"Go\", \"Performance\", \"Systems Programming\"]"
+    },
+    {
+      "line": 5,
+      "kind": "frontmatter",
+      "text": "categories: [\"Newsletter\"]"
+    },
+    {
+      "line": 6,
+      "kind": "frontmatter",
+      "text": "---"
+    },
+    {
+      "line": 8,
+      "kind": "italic-note",
+      "text": "*Mời bạn thưởng thức Newsletter #127.*"
+    },
+    {
+      "line": 10,
+      "kind": "heading",
+      "text": "## [A return to two-pizza culture](https://www.allthingsdistributed.com/2026/06/return-to-two-pizza-culture.html)"
+    },
+    {
+      "line": 16,
+      "kind": "heading",
+      "text": "## [A peek into Reddit's anti-spam internals](https://lyra.horse/blog/2026/06/reddit-spam-internals/)"
+    },
+    {
+      "line": 22,
+      "kind": "heading",
+      "text": "## [Understanding the Go Runtime: Profiling](https://internals-for-interns.com/posts/go-runtime-profiling/)"
+    },
+    {
+      "line": 28,
+      "kind": "heading",
+      "text": "## [Incident Report: CVE-2026-LGTM](https://nesbitt.io/2026/06/26/incident-report-cve-2026-lgtm.html)"
+    },
+    {
+      "line": 34,
+      "kind": "heading",
+      "text": "## [CORS: What is it protecting?](https://sanyamserver.online/posts/cors/)"
+    },
+    {
+      "line": 40,
+      "kind": "heading",
+      "text": "## [Data Access Patterns That Makes Your CPU Really Angry](https://blog.weineng.me/posts/slowest_add/)"
+    }
+  ],
+  "candidates": []
+}

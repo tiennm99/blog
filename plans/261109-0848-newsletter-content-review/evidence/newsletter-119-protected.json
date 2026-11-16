@@ -1,0 +1,99 @@
+{
+  "post": "content/post/2026/07/07/index.md",
+  "newsletter": 119,
+  "newsletter_post": true,
+  "note": "*Bài viết đã được viết lại bởi Claude Code với Opus 5.5 vào ngày 27/09/2026.*",
+  "lines": [
+    {
+      "line": 1,
+      "kind": "frontmatter",
+      "text": "---"
+    },
+    {
+      "line": 2,
+      "kind": "frontmatter",
+      "text": "title: \"Newsletter #119\""
+    },
+    {
+      "line": 3,
+      "kind": "frontmatter",
+      "text": "date: 2026-07-07"
+    },
+    {
+      "line": 4,
+      "kind": "frontmatter",
+      "text": "tags: [\"AI-Assisted\", \"Newsletter\", \"AI Agents\", \"AI Engineering\", \"Code Quality\", \"Testing\", \"Go\"]"
+    },
+    {
+      "line": 5,
+      "kind": "frontmatter",
+      "text": "categories: [\"Newsletter\"]"
+    },
+    {
+      "line": 6,
+      "kind": "frontmatter",
+      "text": "---"
+    },
+    {
+      "line": 8,
+      "kind": "italic-note",
+      "text": "*Mời bạn thưởng thức Newsletter #119.*"
+    },
+    {
+      "line": 10,
+      "kind": "heading",
+      "text": "## [Special Cases in Go](https://www.dolthub.com/blog/2026-05-22-special-cases-in-go/)"
+    },
+    {
+      "line": 16,
+      "kind": "heading",
+      "text": "## [Writing Code vs. Shipping Code: Productivity Effects Across Generations of AI Coding Tools](https://muratbuffalo.blogspot.com/2026/06/writing-code-vs-shipping-code.html)"
+    },
+    {
+      "line": 22,
+      "kind": "heading",
+      "text": "## [When Was the Last Time You Did Just One Thing?](https://alifeengineered.substack.com/p/when-was-the-last-time-you-did-just)"
+    },
+    {
+      "line": 28,
+      "kind": "heading",
+      "text": "## [Predicting AI job exposure](https://www.ben-evans.com/benedictevans/2026/5/24/ai-job-exposure)"
+    },
+    {
+      "line": 34,
+      "kind": "heading",
+      "text": "## [Choosing Values for Robust Tests](https://testing.googleblog.com/2026/06/choosing-values-for-robust-tests.html)"
+    },
+    {
+      "line": 40,
+      "kind": "heading",
+      "text": "## [AI demands more engineering discipline. Not less](https://charity.wtf/p/ai-demands-more-engineering-discipline)"
+    },
+    {
+      "line": 46,
+      "kind": "heading",
+      "text": "## [Nine Questions I Now Ask in Interviews That I Wish I'd Asked Five Years Ago](https://louisedeason.substack.com/p/nine-questions-i-now-ask-in-interviews)"
+    },
+    {
+      "line": 52,
+      "kind": "heading",
+      "text": "## [Agentic Testing: Where Agents Fit in the E2E Testing Stack](https://slack.engineering/agentic-testing-where-agents-fit-in-the-e2e-testing-stack/)"
+    },
+    {
+      "line": 58,
+      "kind": "heading",
+      "text": "## [Making Agents Easy: 13 Lessons from Forter's Agentic AI Sprint](https://blog.forter.dev/making-agents-easy-13-lessons-from-forters-agentic-ai-sprint/)"
+    },
+    {
+      "line": 64,
+      "kind": "heading",
+      "text": "## [Agentic Code Review](https://addyosmani.com/blog/agentic-code-review/)"
+    },
+    {
+      "line": 70,
+      "kind": "heading",
+      "text": "## [I Thought Redis Was Just a HashMap](https://mukul0x9.pages.dev/blog/memdb/)"
+    }
+  ],
+  "candidates": []
+}

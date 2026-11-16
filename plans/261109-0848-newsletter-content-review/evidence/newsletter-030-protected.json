@@ -1,0 +1,100 @@
+{
+  "post": "content/post/2025/05/17/index.md",
+  "newsletter": 30,
+  "newsletter_post": true,
+  "note": "*Bài viết đã được viết lại bởi Claude Code với Opus 5.5 vào ngày 27/09/2026.*",
+  "lines": [
+    {
+      "line": 1,
+      "kind": "frontmatter",
+      "text": "---"
+    },
+    {
+      "line": 2,
+      "kind": "frontmatter",
+      "text": "title: \"Newsletter #30\""
+    },
+    {
+      "line": 3,
+      "kind": "frontmatter",
+      "text": "date: 2025-05-17"
+    },
+    {
+      "line": 4,
+      "kind": "frontmatter",
+      "text": "tags: [\"AI-Assisted\", \"Education\", \"LLMs\", \"Caching\", \"JavaScript\", \"Developer Experience\", \"PostgreSQL\"]"
+    },
+    {
+      "line": 5,
+      "kind": "frontmatter",
+      "text": "categories: [\"Newsletter\"]"
+    },
+    {
+      "line": 6,
+      "kind": "frontmatter",
+      "text": "draft: false"
+    },
+    {
+      "line": 7,
+      "kind": "frontmatter",
+      "text": "---"
+    },
+    {
+      "line": 9,
+      "kind": "italic-note",
+      "text": "*Chào mừng bạn đến với Newsletter #30 - Tổng hợp tin tức công nghệ hôm nay.*"
+    },
+    {
+      "line": 11,
+      "kind": "heading",
+      "text": "## [What I'd do as a College Freshman in 2025](https://muratbuffalo.blogspot.com/2025/04/what-id-do-as-college-freshman.html)"
+    },
+    {
+      "line": 19,
+      "kind": "heading",
+      "text": "## [LLMs Are Weird Computers](https://www.phillipcarter.dev/posts/llms-computers)"
+    },
+    {
+      "line": 27,
+      "kind": "heading",
+      "text": "## [Every Caching Strategy Explained in 5 Minutes](https://www.swequiz.com/blog/every-caching-strategy-explained-in-5-minutes)"
+    },
+    {
+      "line": 33,
+      "kind": "heading",
+      "text": "## [Some features that every JavaScript developer should know in 2025](https://waspdev.com/articles/2025-04-06/features-that-every-js-developer-must-know-in-2025)"
+    },
+    {
+      "line": 39,
+      "kind": "heading",
+      "text": "## [What Makes a Great Developer Experience?](https://www.codesimplicity.com/post/what-makes-a-great-developer-experience/)"
+    },
+    {
+      "line": 45,
+      "kind": "heading",
+      "text": "## [When Life Gives You Java](https://oblac.rs/when-life-gives-you-java/)"
+    },
+    {
+      "line": 51,
+      "kind": "heading",
+      "text": "## [Just Throw It Into Postgres](https://simonsafar.com/2025/throw_it_into_postgres/)"
+    }
+  ],
+  "candidates": [
+    {
+      "line": 13,
+      "kind": "first-person",
+      "text": "Murat Demirbas, giáo sư khoa học máy tính, tự hỏi nếu được làm lại sinh viên năm nhất vào năm 2025 thì ông sẽ làm gì, và câu trả lời đầu tiên vẫn là học Khoa học Máy tính. Trái với ý kiến cho rằng \"không ai cần học lập trình nữa\", ông cho rằng công cụ AI không thể thay thế sự thành thạo thật sự: kỹ năng gỡ lỗi, tư duy trừu tượng và khả năng thích nghi nhanh phải tự mình rèn luyện. Ông khuyên xây nền tảng vững ở cả khoa học máy tính lẫn AI, rồi kết hợp AI với một lĩnh vực chuyên sâu như hệ thống, cơ sở dữ liệu hay ngôn ngữ lập trình, hướng tới hình mẫu con người \"hình chữ π\": sâu ở hai mảng và hiểu rộng ở nhiều mảng khác."
+    },
+    {
+      "line": 15,
+      "kind": "first-person",
+      "text": "Bên cạnh chuyên môn, kỹ năng mềm là thứ không thể bỏ qua: giao tiếp rõ ràng giúp làm việc từ xa, chia sẻ công khai và cả làm việc với LLM, còn kỹ năng quản lý bắt đầu từ việc quản lý chính mình. Tác giả vẫn xem Mỹ là bệ phóng tốt nhất cho sự nghiệp công nghệ và đại học là nơi tốt nhất để gặp gỡ người giỏi và cùng nhau làm dự án. Ông mượn hình ảnh của một người bạn: hãy là chiếc Jeep đi được mọi địa hình với tư duy khởi nghiệp, hoặc chiếc Ferrari chuyên sâu và nhanh khi có đường sẵn, nhưng đừng là chiếc Corolla dễ bị thay thế, vì trong thời đại AI đó chính là thứ bị tự động hóa. Cuối cùng, hãy chơi đường dài, tích lũy kỹ năng và các mối quan hệ theo kiểu lãi kép thay vì chạy theo trào lưu."
+    },
+    {
+      "line": 47,
+      "kind": "first-person",
+      "text": "Igor Spasić chia sẻ cách ông viết Java khi buộc phải dùng ngôn ngữ này nhưng vẫn muốn mã nguồn tốt, bằng những bài học mượn từ các ngôn ngữ hàm giàu tính biểu đạt hơn. Ông mặc định để mọi lớp ở phạm vi package-private và chỉ công khai khi thật cần, coi mỗi package như một mô-đun. Khoảng 95% tham chiếu được khai báo `final` để tận dụng tính bất biến, nhờ đó `null` gần như biến mất và chỉ còn xuất hiện trong phạm vi rất hẹp. Ông không còn dùng kế thừa trong mã của mình mà ưu tiên kết hợp đối tượng (composition), dù vẫn phải chấp nhận kế thừa khi tích hợp với thư viện bên ngoài."
+    }
+  ]
+}

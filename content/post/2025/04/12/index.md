@@ -9,7 +9,7 @@ categories: [ "Newsletter" ]
 
 ## [Enabling near real-time data analytics on the data lake](https://engineering.grab.com/enabling-near-realtime-data-analytics)
 
-Grab chia sẻ cách họ đưa dữ liệu lên hồ dữ liệu (data lake) với độ trễ chỉ vài phút, thay vì phải chờ các tác vụ xử lý chạy theo lịch. Giải pháp cũ dựa trên Hive và định dạng Parquet phù hợp cho truy vấn phân tích nhưng xử lý cập nhật rất tốn kém, vì muốn sửa một bản ghi phải đọc và ghi lại toàn bộ dữ liệu. Grab chuyển sang Apache Hudi và cấu hình riêng theo đặc điểm từng nguồn: với nguồn lưu lượng cao như sự kiện Kafka, họ dùng bảng Merge On Read, trong đó Flink ghi nhanh các tệp nhật ký Avro còn Spark định kỳ nén chúng thành Parquet; với nguồn lưu lượng thấp, họ chọn Copy On Write đơn giản hơn, chấp nhận độ trễ khoảng 10–15 phút.
+Grab chia sẻ cách họ đưa dữ liệu lên hồ dữ liệu (data lake) với độ trễ chỉ vài phút, thay vì phải chờ các tác vụ xử lý chạy theo lịch. Giải pháp cũ dựa trên Hive và định dạng Parquet phù hợp cho truy vấn phân tích nhưng xử lý cập nhật rất tốn kém, vì muốn sửa một bản ghi phải đọc và ghi lại toàn bộ dữ liệu. Grab chuyển sang Apache Hudi và cấu hình riêng theo đặc điểm từng nguồn: với nguồn lưu lượng cao như sự kiện Kafka, họ dùng bảng Merge On Read, trong đó Flink ghi nhanh các tệp nhật ký Avro còn Spark định kỳ nén (compaction), hợp nhất chúng vào tệp Parquet; với nguồn lưu lượng thấp, họ chọn Copy On Write đơn giản hơn, chấp nhận độ trễ khoảng 10–15 phút.
 
 Bài viết cũng đi vào nhiều chi tiết thực tế: phân vùng dữ liệu Kafka theo thời gian sự kiện đến từng giờ để tăng tốc ghi và lập kế hoạch nén, dùng Flink CDC để đọc binlog từ cơ sở dữ liệu quan hệ, và chọn Bucket Index vì tính đơn giản dù khó tăng số bucket khi lưu lượng lớn dần. Kết quả là nhà phân tích có chỉ số kinh doanh mới hơn cho các bảng điều khiển vận hành, còn đội chống gian lận có thể truy vấn giao dịch gần như tức thời mà không ảnh hưởng tới các hệ thống đang vận hành.
 
@@ -57,7 +57,7 @@ Tác giả thử yêu cầu bốn nền tảng phổ biến "tạo một ứng d
 
 ## [February - The Rest of the Story - JVM Weekly vol. 119](https://www.jvm-weekly.com/p/february-the-rest-of-the-story-jvm)
 
-Số JVM Weekly này gom các tin đáng chú ý trong tháng Hai chưa kịp đưa vào những số trước. Tin nổi bật là phiên bản LTS tiếp theo của Scala 3, dự kiến ra mắt quý 4/2025, sẽ ngừng hỗ trợ JDK 8; đội Scala đang cân nhắc giữa JDK 11 và 17 làm yêu cầu tối thiểu, chủ yếu vì các phương thức truy cập bộ nhớ trong sun.misc.Unsafe sắp bị loại bỏ, buộc phải thay đổi cách cài đặt lazy val. Bài viết cũng giới thiệu bộ câu hỏi phỏng vấn vị trí Java Lead tại J.P. Morgan, loạt bài về nguyên tắc SOLID trong Kotlin, bản nháp JEP giúp tạo bộ đệm AOT chỉ trong một bước, và một nguyên mẫu tự động song song hóa vòng lặp ở mức bytecode đạt tốc độ nhanh hơn tới 9 lần.
+Số JVM Weekly ngày 27/02/2025 gom các tin đáng chú ý trong tháng Hai chưa kịp đưa vào những số trước. Tin nổi bật là phiên bản LTS tiếp theo của Scala 3, dự kiến ra mắt quý 4/2025, sẽ ngừng hỗ trợ JDK 8; đội Scala đang cân nhắc giữa JDK 11 và 17 làm yêu cầu tối thiểu, chủ yếu vì các phương thức truy cập bộ nhớ trong sun.misc.Unsafe sắp bị loại bỏ, buộc phải thay đổi cách cài đặt lazy val. Bài viết cũng giới thiệu bộ câu hỏi phỏng vấn vị trí Java Lead tại J.P. Morgan, loạt bài về nguyên tắc SOLID trong Kotlin, bản nháp JEP giúp tạo bộ đệm AOT chỉ trong một bước, và một nguyên mẫu tự động song song hóa vòng lặp ở mức bytecode đạt tốc độ nhanh hơn tới 9 lần trong các phép thử của tác giả.
 
 Ngoài ra còn có phần thứ hai của loạt bài về tác tử AI với Quarkus, nơi luồng điều khiển được giao hẳn cho LLM, cùng các bản phát hành mới như KotlinPoet 2.0, Dokka 2.0, Ktor CLI, Pulumi Java 1.0 và CheerpJ 3.1 — máy ảo Java chạy trên WebAssembly.
 
@@ -87,7 +87,7 @@ Mỗi giai đoạn công ty cần một kiểu người khác nhau: startup mớ
 
 ## [LLM Ecosystem Predictions](https://www.moderndescartes.com/essays/llm_predictions/)
 
-Tác giả, một kỹ sư tại Databricks, đưa ra các dự đoán về hệ sinh thái LLM trong 5–10 năm tới. Chi phí LLM ở cùng mức chất lượng đang giảm nhanh gấp ba lần định luật Moore (giảm một nửa sau mỗi sáu tháng) nhờ cải tiến phần cứng, tối ưu kỹ thuật và đột phá khoa học — cả ba đều có lợi cho các công ty lớn, nên chỉ một số ít công ty sẽ phục vụ mô hình nền tảng với biên lợi nhuận mỏng. Giống như ngôn ngữ bậc cao từng thắng C/Java nhờ tốc độ lặp, các tác tử đơn giản sẽ thắng những bộ khung phức tạp: chỉ cần chuyển sang LLM mới nhất mỗi 6–12 tháng, kèm bộ đánh giá đáng tin cậy, là đã cải thiện đáng kể chất lượng và chi phí.
+Brian Kihoon Lee, một kỹ sư tại Databricks, đưa ra các dự đoán về hệ sinh thái LLM trong 5–10 năm tới. Chi phí LLM ở cùng mức chất lượng đang giảm nhanh gấp ba lần định luật Moore (giảm một nửa sau mỗi sáu tháng) nhờ cải tiến phần cứng, tối ưu kỹ thuật và đột phá khoa học — cả ba đều có lợi cho các công ty lớn, nên chỉ một số ít công ty sẽ phục vụ mô hình nền tảng với biên lợi nhuận mỏng. Giống như ngôn ngữ bậc cao từng thắng C/Java nhờ tốc độ lặp, các tác tử đơn giản sẽ thắng những bộ khung phức tạp: chỉ cần chuyển sang LLM mới nhất mỗi 6–12 tháng, kèm bộ đánh giá đáng tin cậy, là đã cải thiện đáng kể chất lượng và chi phí.
 
 Tác giả cũng dự đoán thị trường sẽ phân hóa giữa dịch vụ AI được quản lý và hướng tự làm, với một thứ giống "Excel cho LLM" giúp người ít am hiểu kỹ thuật tự xây dựng quy trình. Chi phí mỗi truy vấn sẽ trải rộng nhiều bậc độ lớn, từ mô hình 100 triệu đến 1.000 tỷ tham số, trong khi giá trị mang lại còn chênh lệch hơn: LLM có thể thay thế những công việc tốn kém như truyền đạt thông tin trong tổ chức, gia sư hay tổng đài, với khả năng phục vụ 24/7 và chất lượng đồng đều. Theo tác giả, thế giới năm 2030 sẽ thay đổi không kém gì bước ngoặt của điện thoại di động và Internet trước đây.
 
@@ -103,4 +103,4 @@ Theo tác giả, sự kiên trì có cấu trúc bên trong phức tạp hơn nh
 
 ---
 
-*Bài viết đã được viết lại bởi Claude Code với Opus 5.5 vào ngày 27/09/2026.*
+*Bài viết đã được viết lại bởi Claude Code với Opus 5.5 vào ngày 27/09/2026; được review và chỉnh sửa bởi Codex với GPT 6.1 Sol vào ngày 09/11/2026, rà soát lại bởi Claude Code với Sonnet 5.5 vào ngày 16/11/2026.*

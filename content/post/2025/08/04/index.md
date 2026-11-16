@@ -51,7 +51,7 @@ Quá trình điều tra dần hé lộ manh mối: các thư bị lỗi đều b
 
 ## [How to Think About Time in Programming](https://shanrauf.com/archive/how-to-think-about-time-in-programming)
 
-Shan Rauf xây dựng một mô hình tư duy rõ ràng để xử lý thời gian trong lập trình. Nền tảng là thời gian tuyệt đối gồm "khoảnh khắc" và "khoảng thời gian", được biểu diễn bằng số giây tính từ một mốc gọi là epoch, như Unix lấy ngày 1/1/1970, giúp so sánh và tính toán chỉ bằng phép toán số học. Con người lại dùng thời gian dân sự theo lịch Gregorian, với các tháng dài ngắn khác nhau. UTC định nghĩa giây theo đồng hồ nguyên tử và thỉnh thoảng chèn giây nhuận để khớp với chuyển động quay của Trái Đất, nên một ngày có thể dài 86401 hoặc 86399 giây; Date của JavaScript bỏ qua giây nhuận. Múi giờ không phải thực thể cố định mà là tập quy tắc có thể thay đổi: khi chuyển giờ mùa hè, có những giờ dân sự bị bỏ qua hoặc lặp lại hai lần, và cơ sở dữ liệu múi giờ IANA (như America/New_York) lưu toàn bộ lịch sử các quy tắc đó.
+Shan Rauf xây dựng một mô hình tư duy rõ ràng để xử lý thời gian trong lập trình. Nền tảng là thời gian tuyệt đối gồm "khoảnh khắc" và "khoảng thời gian": khoảnh khắc được biểu diễn bằng số giây tính từ một mốc gọi là epoch, như Unix lấy ngày 1/1/1970, còn khoảng thời gian là độ dài giữa hai khoảnh khắc, nên so sánh và tính toán chỉ cần phép toán số học. Con người lại dùng thời gian dân sự theo lịch Gregorian, với các tháng dài ngắn khác nhau. UTC định nghĩa giây theo đồng hồ nguyên tử và thỉnh thoảng chèn giây nhuận để khớp với chuyển động quay của Trái Đất, nên một ngày có thể dài 86401 hoặc 86399 giây; Date của JavaScript bỏ qua giây nhuận. Múi giờ không phải thực thể cố định mà là tập quy tắc có thể thay đổi: khi chuyển giờ mùa hè, có những giờ dân sự bị bỏ qua hoặc lặp lại hai lần, và cơ sở dữ liệu múi giờ IANA (như America/New_York) lưu các quy tắc và chuyển đổi đã biết, dù không bảo đảm chính xác cho mọi địa điểm trước năm 1970.
 
 Về thực hành, tin nhắn trò chuyện nên lưu theo UTC rồi hiển thị theo múi giờ người xem. Với sự kiện, cần xét ý định: buổi học ở một địa điểm cụ thể nên lưu giờ địa phương kèm mã múi giờ, còn sự kiện tuyệt đối như nhật thực thì lưu theo UTC. Tác giả khuyên đóng gói sẵn cơ sở dữ liệu IANA và cập nhật định kỳ, dùng dữ liệu Unicode CLDR để hiển thị tên múi giờ thân thiện, và đừng bao giờ coi độ lệch UTC là bất biến. Lời khuyên "cứ dùng UTC" chưa đủ, vì chuyển sang UTC quá sớm sẽ làm mất thông tin về ý định ban đầu của người dùng.
 
@@ -65,4 +65,4 @@ Dòng thời gian cho thấy rõ sự tiến hóa: năm 1947, John Mauchly viế
 
 ---
 
-*Bài viết đã được viết lại bởi Claude Code với Opus 5.5 vào ngày 27/09/2026.*
+*Bài viết đã được viết lại bởi Claude Code với Opus 5.5 vào ngày 27/09/2026; được review và chỉnh sửa bởi Codex với GPT 6.1 Sol vào ngày 09/11/2026, rà soát lại bởi Claude Code với Sonnet 5.5 vào ngày 16/11/2026.*

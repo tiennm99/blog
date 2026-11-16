@@ -1,0 +1,145 @@
+{
+  "post": "content/post/2025/03/24/index.md",
+  "newsletter": 8,
+  "newsletter_post": true,
+  "note": "*Bài viết đã được viết lại bởi Claude Code với Opus 5.5 vào ngày 27/09/2026.*",
+  "lines": [
+    {
+      "line": 1,
+      "kind": "frontmatter",
+      "text": "---"
+    },
+    {
+      "line": 2,
+      "kind": "frontmatter",
+      "text": "title: \"Newsletter #8\""
+    },
+    {
+      "line": 3,
+      "kind": "frontmatter",
+      "text": "date: 2025-03-24"
+    },
+    {
+      "line": 4,
+      "kind": "frontmatter",
+      "text": "tags: [\"AI-Assisted\", \"Newsletter\", \"Distributed Systems\", \"Databases\", \"Microservices\", \"Infrastructure\", \"System Design\"]"
+    },
+    {
+      "line": 5,
+      "kind": "frontmatter",
+      "text": "categories: [ \"Newsletter\" ]"
+    },
+    {
+      "line": 6,
+      "kind": "frontmatter",
+      "text": "---"
+    },
+    {
+      "line": 8,
+      "kind": "italic-note",
+      "text": "*Mời bạn thưởng thức Newsletter \\#8.*"
+    },
+    {
+      "line": 10,
+      "kind": "heading",
+      "text": "## [Let's deadlock all the things](https://info.michael-simons.eu/2025/02/05/lets-deadlock-all-the-things/)"
+    },
+    {
+      "line": 17,
+      "kind": "heading",
+      "text": "## [Engineers who won't commit](https://www.seangoedecke.com/taking-a-position/)"
+    },
+    {
+      "line": 24,
+      "kind": "heading",
+      "text": "## [Patterns for building realtime features](https://zknill.io/posts/patterns-for-building-realtime/)"
+    },
+    {
+      "line": 31,
+      "kind": "heading",
+      "text": "## [Optimizing the databases at Quora](https://quoraengineering.quora.com/Optimizing-the-databases-at-Quora)"
+    },
+    {
+      "line": 38,
+      "kind": "heading",
+      "text": "## [Failure Mitigation for Microservices: An Intro to Aperture](https://careersatdoordash.com/blog/failure-mitigation-for-microservices-an-intro-to-aperture/)"
+    },
+    {
+      "line": 44,
+      "kind": "heading",
+      "text": "## [Zero Configuration Service Mesh with On-Demand Cluster Discovery](https://netflixtechblog.com/zero-configuration-service-mesh-with-on-demand-cluster-discovery-ac6483b52a51)"
+    },
+    {
+      "line": 50,
+      "kind": "heading",
+      "text": "## [The Quest to Understand Metric Movements](https://medium.com/pinterest-engineering/the-quest-to-understand-metric-movements-8ab12ae97cda)"
+    },
+    {
+      "line": 56,
+      "kind": "heading",
+      "text": "## [Meta's Hyperscale Infrastructure: Overview and Insights](https://cacm.acm.org/research/metas-hyperscale-infrastructure-overview-and-insights/)"
+    },
+    {
+      "line": 62,
+      "kind": "heading",
+      "text": "## [Incremental Platforms: Monolithic Modular Architecture](https://newsletter.optimistengineer.com/p/incremental-platforms-monolithic)"
+    },
+    {
+      "line": 68,
+      "kind": "heading",
+      "text": "## Bonus: Vài video hay ho đến từ [ByteByteGo](https://bytebytego.com/)"
+    },
+    {
+      "line": 70,
+      "kind": "asset",
+      "text": "[How the Garbage Collector Works in Java, Python, and Go!](https://www.youtube.com/watch?v=3Kqal7QaCCM)"
+    },
+    {
+      "line": 73,
+      "kind": "heading",
+      "text": "## Bonus 2: Vài hình ảnh hay ho đến từ [ByteByteGo](https://bytebytego.com/)"
+    },
+    {
+      "line": 75,
+      "kind": "asset",
+      "text": "![How to Build Idempotent APIs](https://substack-post-media.s3.amazonaws.com/public/images/c3beec9e-cd04-4748-ae7e-3299b42883f6_2360x2824.png)"
+    },
+    {
+      "line": 76,
+      "kind": "asset",
+      "text": "![12 Algorithms for System Design Interviews](https://substack-post-media.s3.amazonaws.com/public/images/2f632296-4214-4ec8-a1d2-280e9b7f2696_1280x1532.gif)"
+    },
+    {
+      "line": 77,
+      "kind": "asset",
+      "text": "![How Kubernetes Works?](https://substack-post-media.s3.amazonaws.com/public/images/65a92a81-f2c5-4aed-9faa-35a66124cffe_1283x1536.gif)"
+    },
+    {
+      "line": 78,
+      "kind": "asset",
+      "text": "![PostgreSQL 101: The Everything Database](https://substack-post-media.s3.amazonaws.com/public/images/a6903386-4b5f-450e-b64d-839c6fdf8238_1280x1601.gif)"
+    },
+    {
+      "line": 79,
+      "kind": "asset",
+      "text": "![Top 12 Tips for API Security](https://substack-post-media.s3.amazonaws.com/public/images/06c5ad46-faaf-479b-bde3-b5de8033b4e9_1280x1664.gif)"
+    },
+    {
+      "line": 82,
+      "kind": "heading",
+      "text": "## Bonus 3: Vài hình ảnh hay ho đến từ [DesignGurus](https://designgurus.io/)"
+    },
+    {
+      "line": 84,
+      "kind": "asset",
+      "text": "![System Design Master Template](https://www.designgurus.io/_next/image?url=https%3A%2F%2Fstorage.googleapis.com%2Fdownload%2Fstorage%2Fv1%2Fb%2Fdesigngurus-prod.appspot.com%2Fo%2Fee5726e8e29469477b999c100%3Fgeneration%3D1726724098184989%26alt%3Dmedia&w=3840&q=75&dpl=dpl_3Rx6M949Pc1cQKT3QTdj87FcKNdg)"
+    }
+  ],
+  "candidates": [
+    {
+      "line": 14,
+      "kind": "first-person",
+      "text": "Theo tác giả, điều có thể ngăn lỗi này là bớt tự tin thái quá, có thêm một người xem lại mã nguồn và kiểm thử kỹ các trường hợp biên. AI có lẽ giúp sinh dữ liệu kiểm thử nhưng khó phát hiện việc dùng sai API, và ngay cả IntelliJ cũng không cảnh báo. Giải pháp cuối cùng là tạo hai stream độc lập, kết nối chúng bên ngoài cả luồng đọc lẫn luồng ghi, thực hiện việc ghi trên một virtual thread riêng và đóng output stream ngay trong luồng đó. Đây là bài học hữu ích cho lập trình viên mới về việc đọc kỹ tài liệu và hiểu mô hình luồng của API mình sử dụng."
+    }
+  ]
+}

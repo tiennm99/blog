@@ -1,0 +1,110 @@
+{
+  "post": "content/post/2026/06/07/index.md",
+  "newsletter": 110,
+  "newsletter_post": true,
+  "note": "*Bài viết đã được viết lại bởi Claude Code với Opus 5.5 vào ngày 27/09/2026.*",
+  "lines": [
+    {
+      "line": 1,
+      "kind": "frontmatter",
+      "text": "---"
+    },
+    {
+      "line": 2,
+      "kind": "frontmatter",
+      "text": "title: \"Newsletter #110\""
+    },
+    {
+      "line": 3,
+      "kind": "frontmatter",
+      "text": "date: 2026-06-07"
+    },
+    {
+      "line": 4,
+      "kind": "frontmatter",
+      "text": "tags: [\"AI-Assisted\", \"Newsletter\", \"LLMs\", \"Go\", \"System Design\", \"Infrastructure\", \"Engineering Culture\"]"
+    },
+    {
+      "line": 5,
+      "kind": "frontmatter",
+      "text": "categories: [\"Newsletter\"]"
+    },
+    {
+      "line": 6,
+      "kind": "frontmatter",
+      "text": "---"
+    },
+    {
+      "line": 8,
+      "kind": "italic-note",
+      "text": "*Mời bạn thưởng thức Newsletter #110.*"
+    },
+    {
+      "line": 10,
+      "kind": "heading",
+      "text": "## [go podcast() | 086: Just use postgres, man](https://share.transistor.fm/s/5159e8a9)"
+    },
+    {
+      "line": 16,
+      "kind": "heading",
+      "text": "## [That one time I used Go panics for flow control](https://noncrab.net/posts/panic-as-flow-control/)"
+    },
+    {
+      "line": 22,
+      "kind": "heading",
+      "text": "## [The last six months in LLMs in five minutes](https://simonwillison.net/2026/May/19/5-minute-llms/)"
+    },
+    {
+      "line": 28,
+      "kind": "heading",
+      "text": "## [Prompts are technical debt too](https://www.seangoedecke.com/prompts-are-technical-debt-too/)"
+    },
+    {
+      "line": 34,
+      "kind": "heading",
+      "text": "## [We see something that works, and then we understand it](https://lemire.me/blog/2025/12/04/we-see-something-that-works-and-then-we-understand-it/)"
+    },
+    {
+      "line": 40,
+      "kind": "heading",
+      "text": "## [How Vercel Cut Build Wait Times From 90 Seconds To 5](https://blog.bytebytego.com/p/how-vercel-cut-build-wait-times-from)"
+    },
+    {
+      "line": 47,
+      "kind": "heading",
+      "text": "## [The Anatomy of an AI-Native Org](https://ajeygore.in/content/the-anatomy-of-an-ai-native-org)"
+    },
+    {
+      "line": 53,
+      "kind": "heading",
+      "text": "## [How to Stay Resilient in a Difficult Job](https://andiroberts.com/executive-coaching/how-to-stay-resilient-in-a-difficult-job)"
+    },
+    {
+      "line": 59,
+      "kind": "heading",
+      "text": "## [What's Easy Now? What's Hard Now?](https://brooker.co.za/blog/2026/05/18/whats-easy-whats-hard.html)"
+    },
+    {
+      "line": 65,
+      "kind": "heading",
+      "text": "## [Making User-Sequence Data More Cost-Efficient, Faster, and Easier to Use](https://medium.com/pinterest-engineering/making-user-sequence-data-more-cost-efficient-faster-and-easier-to-use-2a56a928cae1)"
+    }
+  ],
+  "candidates": [
+    {
+      "line": 12,
+      "kind": "first-person",
+      "text": "Trong tập podcast này, Dominic St-Pierre và Morten Vistisen xoay quanh một câu hỏi quen thuộc: nên lưu dữ liệu đo lường (telemetry) bằng ClickHouse hay cứ dùng PostgreSQL? Morten muốn thử ClickHouse, còn Dominic chọn cách thực dụng: với dưới khoảng 10 triệu dòng, PostgreSQL cho hiệu năng không kém bao nhiêu, và việc mở rộng quy mô hiếm khi xảy ra chỉ sau một đêm, nên vẫn còn thời gian để chuyển đổi khi thật sự cần. Morten cũng kể việc phải viết lại một thành phần trong dự án DeployQuad vì mã nguồn do LLM sinh ra cho bản thử nghiệm ban đầu không chạy như mong đợi, từ đó nhấn mạnh tầm quan trọng của việc hiểu rõ mã nguồn mình tạo ra."
+    },
+    {
+      "line": 55,
+      "kind": "first-person",
+      "text": "Bài viết đưa ra 7 chiến lược thực tế, dựa trên cơ sở khoa học, để giữ vững sức bền tinh thần khi phải làm một công việc khó khăn, chẳng hạn gặp quản lý kém, làm theo ca bất thường hay căng thẳng kéo dài. Tác giả nhấn mạnh rằng kiên cường ở đây không phải là cố ép mình phải tích cực, cũng không phải tự lừa rằng công việc thú vị, mà là bảo toàn năng lượng, giữ góc nhìn khách quan và duy trì cảm giác mình vẫn kiểm soát được phần nào tình hình, để làm việc tốt, bảo vệ sức khỏe và giữ sự chủ động cho những lựa chọn sau này."
+    },
+    {
+      "line": 57,
+      "kind": "first-person",
+      "text": "Các chiến lược bao gồm: chuẩn bị tâm lý vững vàng từ đầu ngày và ổn định thể trạng bằng ánh sáng, nước và vận động trước giờ làm; tập trung vào những gì mình kiểm soát được và giữ tiêu chuẩn làm việc của bản thân dù hệ thống xung quanh có lỏng lẻo; đặt ranh giới cảm xúc để không mang áp lực về nhà; tìm ít nhất một đồng nghiệp đáng tin cậy để chia sẻ; và luôn hướng tới những bước tiến nhỏ để dần có được một công việc tốt hơn."
+    }
+  ]
+}

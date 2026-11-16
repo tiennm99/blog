@@ -1,0 +1,85 @@
+{
+  "post": "content/post/2026/06/24/index.md",
+  "newsletter": 113,
+  "newsletter_post": true,
+  "note": "*Bài viết đã được viết lại bởi Claude Code với Opus 5.5 vào ngày 27/09/2026.*",
+  "lines": [
+    {
+      "line": 1,
+      "kind": "frontmatter",
+      "text": "---"
+    },
+    {
+      "line": 2,
+      "kind": "frontmatter",
+      "text": "title: \"Newsletter #113\""
+    },
+    {
+      "line": 3,
+      "kind": "frontmatter",
+      "text": "date: 2026-06-24"
+    },
+    {
+      "line": 4,
+      "kind": "frontmatter",
+      "text": "tags: [\"AI-Assisted\", \"Newsletter\", \"Rust\", \"AI Engineering\", \"Infrastructure\", \"Performance\", \"Database\"]"
+    },
+    {
+      "line": 5,
+      "kind": "frontmatter",
+      "text": "categories: [\"Newsletter\"]"
+    },
+    {
+      "line": 6,
+      "kind": "frontmatter",
+      "text": "---"
+    },
+    {
+      "line": 8,
+      "kind": "italic-note",
+      "text": "*Mời bạn thưởng thức Newsletter #113.*"
+    },
+    {
+      "line": 10,
+      "kind": "heading",
+      "text": "## [Migrating from Go to Rust](https://corrode.dev/learn/migration-guides/go-to-rust/)"
+    },
+    {
+      "line": 16,
+      "kind": "heading",
+      "text": "## [AI Engineering for Developers](https://www.lucavallin.com/blog/ai-engineering-for-developers)"
+    },
+    {
+      "line": 22,
+      "kind": "heading",
+      "text": "## [The invisible engineering behind Lambda’s network](https://www.allthingsdistributed.com/2026/04/the-invisible-engineering-behind-lambdas-network.html)"
+    },
+    {
+      "line": 28,
+      "kind": "heading",
+      "text": "## [Selective Test Execution at Stripe: Fast CI for a 50M-line Ruby monorepo](https://stripe.dev/blog/selective-test-execution-at-stripe-fast-ci-for-a-50m-line-ruby-monorepo)"
+    },
+    {
+      "line": 34,
+      "kind": "heading",
+      "text": "## [Being oncall taught me everything](https://yaoyue.org/blog/2026-oncall/)"
+    },
+    {
+      "line": 40,
+      "kind": "heading",
+      "text": "## [Claude as your performance analysis partner](https://developers.redhat.com/articles/2026/05/29/claude-your-performance-analysis-partner)"
+    },
+    {
+      "line": 46,
+      "kind": "heading",
+      "text": "## [Things you didn't know about indexes](https://jon.chrt.dev/2026/04/15/things-you-didnt-know-about-indexes.html)"
+    }
+  ],
+  "candidates": [
+    {
+      "line": 38,
+      "kind": "first-person",
+      "text": "Phần đáng nhớ hơn là bài học về con người. Việc định kỳ khởi động lại Memcached để tránh sập toàn trang đôi khi lại tự gây sự cố, nên tác giả học cách chọn thời điểm ít rủi ro, báo trước cho mọi người và quan trọng nhất là nhận trách nhiệm khi mắc lỗi, vì đó là cách nhanh nhất để lấy lại niềm tin của đồng nghiệp. Nhiều sự cố chỉ được giải quyết nhờ sự kiên trì thu hẹp khả năng và sự giúp đỡ của đồng nghiệp ở mọi mảng hạ tầng: kỹ sư vận hành, kernel, chủ dịch vụ upstream, quản lý và đồng đội cùng trực chiến. Kết luận rất thẳng: kỹ sư chưa thật sự hiểu phần mềm cho tới khi thấy nó chạy và hỏng trong production, và người viết phần mềm không nên nghĩ mình đứng ngoài việc triển khai, giám sát hay gỡ lỗi chính thứ mình tạo ra."
+    }
+  ]
+}

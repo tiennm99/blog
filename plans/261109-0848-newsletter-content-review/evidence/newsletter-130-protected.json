@@ -1,0 +1,85 @@
+{
+  "post": "content/post/2026/09/08/index.md",
+  "newsletter": 130,
+  "newsletter_post": true,
+  "note": "*Bài viết đã được viết lại bởi Claude Code với Opus 5.5 vào ngày 27/09/2026.*",
+  "lines": [
+    {
+      "line": 1,
+      "kind": "frontmatter",
+      "text": "---"
+    },
+    {
+      "line": 2,
+      "kind": "frontmatter",
+      "text": "title: \"Newsletter #130\""
+    },
+    {
+      "line": 3,
+      "kind": "frontmatter",
+      "text": "date: 2026-09-08"
+    },
+    {
+      "line": 4,
+      "kind": "frontmatter",
+      "text": "tags: [\"AI-Assisted\", \"Redis\", \"Linux Kernel\", \"Performance\", \"System Design\", \"Data Structures\", \"Distributed Systems\"]"
+    },
+    {
+      "line": 5,
+      "kind": "frontmatter",
+      "text": "categories: [\"Newsletter\"]"
+    },
+    {
+      "line": 6,
+      "kind": "frontmatter",
+      "text": "---"
+    },
+    {
+      "line": 8,
+      "kind": "italic-note",
+      "text": "*Mời bạn thưởng thức Newsletter #130.*"
+    },
+    {
+      "line": 10,
+      "kind": "heading",
+      "text": "## [How Anthropic runs large-scale code migrations with Claude Code](https://claude.com/blog/ai-code-migration)"
+    },
+    {
+      "line": 16,
+      "kind": "heading",
+      "text": "## [The VFS](https://internals-for-interns.com/posts/linux-kernel-vfs/)"
+    },
+    {
+      "line": 22,
+      "kind": "heading",
+      "text": "## [Text Editor Data Structures](https://cdacamar.github.io/data%20structures/algorithms/benchmarking/text%20editors/c++/editor-data-structures/)"
+    },
+    {
+      "line": 28,
+      "kind": "heading",
+      "text": "## [Scaling to 1 million concurrent sandboxes in seconds](https://modal.com/blog/scaling-to-1-million-concurrent-sandboxes-in-seconds)"
+    },
+    {
+      "line": 34,
+      "kind": "heading",
+      "text": "## [Making 768 servers look like 1](https://planetscale.com/blog/making-768-servers-look-like-1)"
+    },
+    {
+      "line": 40,
+      "kind": "heading",
+      "text": "## [Branch‑Avoidant Programming](https://easylang.online/blog/branchless)"
+    },
+    {
+      "line": 46,
+      "kind": "heading",
+      "text": "## [Your Redis Leaderboard Is Probably Breaking Ties Wrong](https://dev.to/trungdlp/your-redis-leaderboard-is-probably-breaking-ties-wrong-39k4)"
+    }
+  ],
+  "candidates": [
+    {
+      "line": 18,
+      "kind": "first-person",
+      "text": "Bạn đọc một tệp trên ext4, một tệp trong `/proc` chỉ tồn tại trong bộ nhớ nhân, hay một tệp nằm trên máy khác qua NFS — tất cả đều dùng chung những lời gọi hệ thống và cùng ngữ nghĩa file descriptor. Lớp làm nên điều đó là VFS (Virtual File System), nằm giữa tầng syscall và các hệ thống tệp thật. Bài viết giải thích VFS như một ứng dụng của nguyên tắc \"lập trình theo giao diện, không theo hiện thực\", mà trong C thì giao diện chỉ là struct chứa con trỏ hàm. Có bốn đối tượng chính: superblock đại diện cho một hệ thống tệp đã gắn kết, inode là một đối tượng bên trong nó (tệp, thư mục, liên kết), dentry gắn một cái tên với inode — vì bản thân inode không biết tên của mình — và file là một lần mở cụ thể của tiến trình, giữ vị trí đọc riêng. Các bảng `super_operations`, `inode_operations` và `file_operations` chứa hành vi riêng của từng hệ thống tệp; mục nào không cài đặt thì VFS dùng hiện thực mặc định."
+    }
+  ]
+}

@@ -1,0 +1,90 @@
+{
+  "post": "content/post/2026/07/05/index.md",
+  "newsletter": 117,
+  "newsletter_post": true,
+  "note": "*Bài viết đã được viết lại bởi Claude Code với Opus 5.5 vào ngày 27/09/2026.*",
+  "lines": [
+    {
+      "line": 1,
+      "kind": "frontmatter",
+      "text": "---"
+    },
+    {
+      "line": 2,
+      "kind": "frontmatter",
+      "text": "title: \"Newsletter #117\""
+    },
+    {
+      "line": 3,
+      "kind": "frontmatter",
+      "text": "date: 2026-07-05"
+    },
+    {
+      "line": 4,
+      "kind": "frontmatter",
+      "text": "tags: [\"AI-Assisted\", \"Newsletter\", \"Performance\", \"Go\", \"PostgreSQL\", \"Security\", \"Linux\"]"
+    },
+    {
+      "line": 5,
+      "kind": "frontmatter",
+      "text": "categories: [\"Newsletter\"]"
+    },
+    {
+      "line": 6,
+      "kind": "frontmatter",
+      "text": "---"
+    },
+    {
+      "line": 8,
+      "kind": "italic-note",
+      "text": "*Mời bạn thưởng thức Newsletter #117.*"
+    },
+    {
+      "line": 10,
+      "kind": "heading",
+      "text": "## [Should you normalize RGB values by 255 or 256?](https://30fps.net/pages/255-vs-256-division/)"
+    },
+    {
+      "line": 16,
+      "kind": "heading",
+      "text": "## [Jira is Turing-Complete](https://seriot.ch/computation/jira.html)"
+    },
+    {
+      "line": 22,
+      "kind": "heading",
+      "text": "## [USB for Software Developers: An introduction to writing userspace USB drivers](https://werwolv.net/posts/usb_for_sw_devs/)"
+    },
+    {
+      "line": 28,
+      "kind": "heading",
+      "text": "## [Everything you need to know about Sourcemaps](https://neciudan.dev/everything-you-need-to-know-about-sourcemaps)"
+    },
+    {
+      "line": 34,
+      "kind": "heading",
+      "text": "## [Extended Statistics in Postgres](https://www.valerieparhamthompson.com/posts/extended-statistics-postgres/)"
+    },
+    {
+      "line": 40,
+      "kind": "heading",
+      "text": "## [Finding a needle in a 4 GB haystack: from 0.75 GB/s to 49 GB/s in Go](https://segflow.github.io/post/fast-file-search-go/)"
+    },
+    {
+      "line": 46,
+      "kind": "heading",
+      "text": "## [HTTP caching, a refresher](https://danburzo.ro/http-caching-refresher/)"
+    },
+    {
+      "line": 52,
+      "kind": "heading",
+      "text": "## [How to Use ss as a Replacement for netstat to View IPv4 Sockets](https://oneuptime.com/blog/post/2026-03-20-ss-replacement-netstat-ipv4-sockets/view)"
+    }
+  ],
+  "candidates": [
+    {
+      "line": 38,
+      "kind": "first-person",
+      "text": "Bài viết đi qua ba loại extended statistics. Loại `dependencies` mô tả quan hệ phụ thuộc giữa các cột, như mã ZIP gần như xác định bang; sau khi chạy `CREATE STATISTICS ... (dependencies)` và `ANALYZE`, ước lượng số dòng sát thực tế hơn hẳn. Loại `mcv` lưu các tổ hợp giá trị phổ biến trên nhiều cột, hữu ích cho điều kiện `WHERE` kết hợp như danh mục và danh mục con. Loại `ndistinct` giúp planner ước lượng số nhóm khi `GROUP BY` trên nhiều cột, thay vì nhân số giá trị phân biệt của từng cột. Bài học thực tế: khi biết dữ liệu của mình có các cột tương quan, hãy dạy cho planner bằng extended statistics thay vì chỉ nghĩ đến việc thêm index."
+    }
+  ]
+}

@@ -17,7 +17,7 @@ Tác giả cũng thẳng thắn chỉ ra các điểm yếu: p-fast trie tốn b
 
 Abhinav Upadhyay chỉ ra rằng độ phức tạp thuật toán tốt hơn không đảm bảo chạy nhanh hơn trên phần cứng thật. Ông dựa vào "định luật sắt" (Iron Law) về hiệu năng: thời gian chạy phụ thuộc vào số lệnh cần thực thi và số lệnh CPU hoàn thành trong mỗi chu kỳ (IPC). Bài viết so sánh ba thuật toán tìm ước chung lớn nhất (GCD): Euclid dùng phép trừ với O(max(a, b)), Euclid dùng phép chia lấy dư với O(log(max(a, b))), và thuật toán nhị phân của Stein. Với đầu vào rất lớn, bản chia lấy dư nhanh hơn bản phép trừ khoảng 10.000 lần. Nhưng với a = 130000, b = 13, bản phép trừ dù lặp gần 10.000 lần vẫn xong sớm hơn bản chia lấy dư chỉ cần một bước, vì trên Intel Skylake phép cộng/trừ có độ trễ 1 chu kỳ và chạy được 4 lệnh mỗi chu kỳ, còn phép chia số nguyên có độ trễ 42–95 chu kỳ.
 
-Thuật toán Stein thân thiện với phần cứng hơn: thay phép chia bằng phép dịch bit và lệnh đếm số bit 0 ở cuối, nên vừa ít lệnh vừa giữ IPC cao. Khi tính GCD cho các cặp số trong khoảng [1, 100000), Stein nhanh nhất; bản chia lấy dư chạy ít lệnh nhất (13 tỷ) nhưng IPC chỉ 0,15 nên chậm nhất, còn bản phép trừ chạy tới 97 tỷ lệnh mà vẫn xong sớm hơn 1,5 giây. Bài học rút ra: Big O vẫn quan trọng khi dữ liệu lớn, nhưng muốn nhanh thật thì cần hiểu chi phí từng lệnh trên CPU, đo đạc bằng công cụ như perf, và cân nhắc kết hợp thuật toán theo kích thước đầu vào.
+Thuật toán Stein thân thiện với phần cứng hơn: thay phép chia bằng phép dịch bit và lệnh đếm số bit 0 ở cuối, nên vừa ít lệnh vừa giữ IPC cao. Trong phép đo của tác giả trên các cặp số thuộc [1, 100000), bước tăng 5, Stein nhanh nhất; bản chia lấy dư chạy ít lệnh nhất (13 tỷ) nhưng IPC chỉ 0,15 nên chậm nhất, còn bản phép trừ chạy tới 97 tỷ lệnh mà vẫn xong sớm hơn 1,5 giây. Bài học rút ra: Big O vẫn quan trọng khi dữ liệu lớn, nhưng muốn nhanh thật thì cần hiểu chi phí từng lệnh trên CPU, đo đạc bằng công cụ như perf, và cân nhắc kết hợp thuật toán theo kích thước đầu vào.
 
 ## [Claude Code Is All You Need](https://dwyer.co.za/static/claude-code-is-all-you-need.html)
 
@@ -47,4 +47,4 @@ Wilson Lin kể lại hành trình hai tháng tự xây một công cụ tìm ki
 
 ---
 
-*Bài viết đã được viết lại bởi Claude Code với Opus 5.5 vào ngày 27/09/2026.*
+*Bài viết đã được viết lại bởi Claude Code với Opus 5.5 vào ngày 27/09/2026; được review và chỉnh sửa bởi Codex với GPT 6.1 Sol vào ngày 09/11/2026, rà soát lại bởi Claude Code với Sonnet 5.5 vào ngày 16/11/2026.*

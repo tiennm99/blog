@@ -1,0 +1,140 @@
+{
+  "post": "content/post/2025/03/08/index.md",
+  "newsletter": 6,
+  "newsletter_post": true,
+  "note": "*Bài viết đã được viết lại bởi Claude Code với Opus 5.5 vào ngày 27/09/2026.*",
+  "lines": [
+    {
+      "line": 1,
+      "kind": "frontmatter",
+      "text": "---"
+    },
+    {
+      "line": 2,
+      "kind": "frontmatter",
+      "text": "title: \"Newsletter #6\""
+    },
+    {
+      "line": 3,
+      "kind": "frontmatter",
+      "text": "date: 2025-03-08"
+    },
+    {
+      "line": 4,
+      "kind": "frontmatter",
+      "text": "tags: [\"AI-Assisted\", \"Newsletter\", \"LLMs\", \"Java\", \"Redis\", \"Rate Limiting\", \"Problem Solving\"]"
+    },
+    {
+      "line": 5,
+      "kind": "frontmatter",
+      "text": "categories: [ \"Newsletter\" ]"
+    },
+    {
+      "line": 6,
+      "kind": "frontmatter",
+      "text": "---"
+    },
+    {
+      "line": 8,
+      "kind": "html-block",
+      "text": "<i>"
+    },
+    {
+      "line": 9,
+      "kind": "html-block",
+      "text": "Mừng ngày Quốc tế Phụ nữ 8/3, chúc tất cả các bạn nữ một ngày tốt lành, luôn vui tươi và hạnh phúc!"
+    },
+    {
+      "line": 10,
+      "kind": "html-block",
+      "text": "Con gái sinh ra là để yêu thương :>"
+    },
+    {
+      "line": 11,
+      "kind": "html-block",
+      "text": "Chào mừng các bạn đến với Newsletter #6."
+    },
+    {
+      "line": 12,
+      "kind": "html-block",
+      "text": "</i>"
+    },
+    {
+      "line": 14,
+      "kind": "heading",
+      "text": "## [How I use LLMs as a staff engineer](https://www.seangoedecke.com/how-i-use-llms/)"
+    },
+    {
+      "line": 20,
+      "kind": "heading",
+      "text": "## [Software development topics I've changed my mind on after 10 years in the industry](https://chriskiehl.com/article/thoughts-after-10-years)"
+    },
+    {
+      "line": 26,
+      "kind": "heading",
+      "text": "## [Looking Under the Lamppost (On Problem-Solving)](https://edbatista.com/2025/01/looking-under-the-lamppost-on-problem-solving.html)"
+    },
+    {
+      "line": 32,
+      "kind": "heading",
+      "text": "## [Sliding Window Log Rate Limiter (Redis & Java)](https://foojay.io/today/sliding-window-log-rate-limiter-redis-java/)"
+    },
+    {
+      "line": 38,
+      "kind": "heading",
+      "text": "## [Project Loom: Structured Concurrency – Java](https://foojay.io/today/project-loom-structured-concurrency-java/)"
+    },
+    {
+      "line": 44,
+      "kind": "heading",
+      "text": "## [Taking Out the Trash in Java](https://medium.com/@benweidig/taking-out-the-trash-in-java-19bcc0c7bd0c)"
+    },
+    {
+      "line": 50,
+      "kind": "heading",
+      "text": "## [How Precision Time Protocol handles leap seconds](https://engineering.fb.com/2025/02/03/production-engineering/how-precision-time-protocol-ptp-handles-leap-seconds/)"
+    },
+    {
+      "line": 56,
+      "kind": "heading",
+      "text": "## [Developer philosophy](https://qntm.org/devphilo)"
+    },
+    {
+      "line": 62,
+      "kind": "heading",
+      "text": "## Bonus"
+    },
+    {
+      "line": 64,
+      "kind": "heading",
+      "text": "### Bonus 1: Vài video hay ho đến từ [ByteByteGo](https://bytebytego.com/)"
+    },
+    {
+      "line": 66,
+      "kind": "asset",
+      "text": "[System Design: Why Is Docker Important?](https://www.youtube.com/watch?v=QEzbZKtLi-g)"
+    },
+    {
+      "line": 68,
+      "kind": "heading",
+      "text": "### Bonus 2: Vài ảnh hay ho đến từ [ByteByteGo](https://bytebytego.com/)"
+    },
+    {
+      "line": 70,
+      "kind": "asset",
+      "text": "![JWT 101: Key to Stateless Authentication](https://substack-post-media.s3.amazonaws.com/public/images/fc4c9cac-3046-4b45-9dd8-7dccc79b4e2c_1280x1608.gif)"
+    }
+  ],
+  "candidates": [
+    {
+      "line": 18,
+      "kind": "first-person",
+      "text": "Theo anh, giá trị lớn nhất là dùng LLM như một gia sư theo yêu cầu khi học lĩnh vực mới: đặt câu hỏi nối tiếp, tự ghi lại những gì vừa học rồi nhờ mô hình chỉ ra chỗ hiểu sai. Anh cũng nhờ LLM gỡ lỗi như phương án cuối cùng (chỉ hỏi một lần, không dây dưa) và soát lỗi chính tả, lỗi logic trong các tài liệu dài. Ngược lại, anh không để LLM viết trọn một pull request ở mảng mình thành thạo, không để nó viết ADR hay các văn bản kỹ thuật quan trọng, và chưa dùng nó để tìm hiểu các kho mã nguồn lớn."
+    },
+    {
+      "line": 28,
+      "kind": "first-person",
+      "text": "Ed Batista mở đầu bằng một câu chuyện cười cũ: một người tìm chìa khóa dưới cột đèn đường dù đánh rơi ở ngoài sân, chỉ vì \"chỗ này sáng hơn\". Theo ông, đó chính là cách chúng ta hay giải quyết vấn đề: thay vì xử lý vấn đề cần phải giải quyết, ta chọn vấn đề mình muốn giải quyết. Lý do thường rất dễ hiểu: vấn đề thật nằm ngoài chuyên môn; nó cần quá nhiều thời gian trong khi ta muốn cảm thấy \"năng suất\" bằng cách gạch bớt những việc nhỏ; hoặc nó có thể không có lời giải khiến ta sợ thất bại và mất mặt."
+    }
+  ]
+}

@@ -45,9 +45,9 @@ Thách thức mà ông chỉ ra là trước đây người học lập trình t
 
 ## [Pattern-matching across different languages](https://blog.frankel.ch/pattern-matching-different-languages/)
 
-Nicolas Fränkel so sánh cách pattern matching được hỗ trợ trong Java, Scala, Kotlin, Python và Rust, lấy lệnh `switch` kiểu C truyền thống làm điểm xuất phát. Mọi ví dụ dùng chung một hệ phân cấp hình học gồm `Rectangle` và `Circle` với hàm tính chu vi, kết hợp khớp theo kiểu và điều kiện bảo vệ để nhận biết hình chữ nhật nào là hình vuông. Java 23 dùng biểu thức `switch` với cú pháp mũi tên, hỗ trợ khớp kiểu và bộ lọc `when`, các nhánh được xét tuần tự như chuỗi `if else`. Kotlin gần giống Java với biểu thức `when` và phép kiểm tra `is`, nhưng điều kiện bảo vệ vẫn cần cờ biên dịch thử nghiệm. Python bổ sung lệnh `match` từ phiên bản 3.10, có thể phân rã thuộc tính theo tên rất gọn gàng. Rust cần nhiều mã phụ hơn vì việc ép kiểu xuống vướng ràng buộc của mô hình quản lý bộ nhớ, dù khả năng pattern matching tổng thể của Rust vượt xa phạm vi lệnh `switch`.
+Nicolas Fränkel so sánh cách pattern matching được hỗ trợ trong Java, Scala, Kotlin, Python và Rust, lấy lệnh `switch` kiểu C truyền thống làm điểm xuất phát. Mọi ví dụ dùng chung một hệ phân cấp hình học gồm `Rectangle` và `Circle` với hàm tính chu vi, kết hợp khớp theo kiểu và điều kiện bảo vệ để nhận biết hình chữ nhật nào là hình vuông. Java 23 dùng biểu thức `switch` với cú pháp mũi tên, hỗ trợ khớp kiểu và bộ lọc `when`, nhánh khớp đầu tiên được chọn. Kotlin dùng biểu thức `when` và phép kiểm tra `is`; ví dụ trong bài bật cờ thử nghiệm cho điều kiện bảo vệ. Python bổ sung lệnh `match` từ phiên bản 3.10, có thể phân rã thuộc tính theo tên rất gọn gàng. Bản chuyển đổi sang Rust dùng đối tượng trait và ép kiểu xuống nên dài hơn; chính tác giả lưu ý cách này không đại diện cho khả năng pattern matching của Rust.
 
-Scala là ngôn ngữ đầu tiên đưa pattern matching vào mệnh đề `switch` và vẫn nổi bật nhờ khả năng phân rã, trích thuộc tính của lớp ngay trong nhánh khớp mà không cần gán biến thêm; chính nó đã truyền cảm hứng cho các ngôn ngữ khác, và nay Java cùng Kotlin đã bắt kịp về tính năng. Kết luận của tác giả là pattern matching kết hợp với phân rã giúp mã dễ đọc và dễ bảo trì hơn đáng kể, một kỹ thuật đáng học khi làm việc với bất kỳ ngôn ngữ hiện đại nào trong số này.
+Trong các ngôn ngữ được so sánh, Scala hỗ trợ pattern matching sớm và vẫn nổi bật nhờ khả năng phân rã, trích thuộc tính của lớp ngay trong nhánh khớp mà không cần gán biến thêm; chính nó đã truyền cảm hứng cho các ngôn ngữ khác, và tác giả nhận xét Java, Kotlin đã thu hẹp khoảng cách trong ví dụ này. Kết luận của tác giả là pattern matching kết hợp với phân rã giúp mã dễ đọc và dễ bảo trì hơn đáng kể, một kỹ thuật đáng học khi làm việc với bất kỳ ngôn ngữ hiện đại nào trong số này.
 
 ## [A real-world AI coding case sample](https://blog.korny.info/2025/07/18/a-real-world-ai-coding-case-sample)
 
@@ -69,4 +69,4 @@ Bảy hệ thống được đánh giá gồm Gemini 2.5 Pro, o3-pro, o4-mini-hi
 
 ---
 
-*Bài viết đã được viết lại bởi Claude Code với Opus 5.5 vào ngày 27/09/2026.*
+*Bài viết đã được viết lại bởi Claude Code với Opus 5.5 vào ngày 27/09/2026; được review và chỉnh sửa bởi Codex với GPT 6.1 Sol vào ngày 09/11/2026, rà soát lại bởi Claude Code với Sonnet 5.5 vào ngày 16/11/2026.*

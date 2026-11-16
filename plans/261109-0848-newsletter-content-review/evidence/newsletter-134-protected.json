@@ -1,0 +1,123 @@
+{
+  "post": "content/post/2026/10/02/index.md",
+  "newsletter": 134,
+  "newsletter_post": true,
+  "lines": [
+    {
+      "line": 1,
+      "kind": "frontmatter",
+      "text": "---"
+    },
+    {
+      "line": 2,
+      "kind": "frontmatter",
+      "text": "title: \"Newsletter #134\""
+    },
+    {
+      "line": 3,
+      "kind": "frontmatter",
+      "text": "date: 2026-10-02"
+    },
+    {
+      "line": 4,
+      "kind": "frontmatter",
+      "text": "tags: [\"AI-Assisted\", \"PostgreSQL\", \"Database\", \"Performance\", \"Security\", \"Linux\", \"AI Agents\"]"
+    },
+    {
+      "line": 5,
+      "kind": "frontmatter",
+      "text": "categories: [\"Newsletter\"]"
+    },
+    {
+      "line": 6,
+      "kind": "frontmatter",
+      "text": "---"
+    },
+    {
+      "line": 8,
+      "kind": "italic-note",
+      "text": "*Mời bạn thưởng thức Newsletter #134.*"
+    },
+    {
+      "line": 10,
+      "kind": "heading",
+      "text": "## [The startup's Postgres survival guide](https://hatchet.run/blog/postgres-survival-guide)"
+    },
+    {
+      "line": 16,
+      "kind": "heading",
+      "text": "## [What is Orasort? understanding Oracle’s Sorting Aglorithm In Simple Terms](https://deepsystemstuff.com/how-oracles-secret-column-sorting-technique-became-public-after-its-patent-expired-making-sorting-5x-faster/)"
+    },
+    {
+      "line": 22,
+      "kind": "heading",
+      "text": "## [Fornax's Guide To Ridiculously Fast Ethernet](https://docs.pixeldrain.com/posts/2024-03-07_network_optimizations/)"
+    },
+    {
+      "line": 28,
+      "kind": "heading",
+      "text": "## [Parity before cutover](https://alexocallaghan.com/parity-before-cutover)"
+    },
+    {
+      "line": 34,
+      "kind": "heading",
+      "text": "## [The new Go JSON API: twice as fast, or 1.5x slower?](https://lemire.me/blog/2026/08/29/the-new-go-json-api-twice-as-fast-or-1-5x-slower/)"
+    },
+    {
+      "line": 40,
+      "kind": "heading",
+      "text": "## [A deep dive into DeepSec](https://flaviocopes.com/deepsec/)"
+    },
+    {
+      "line": 46,
+      "kind": "heading",
+      "text": "## [imthenachoman/How-To-Secure-A-Linux-Server: An evolving how-to guide for securing a Linux server.](https://github.com/imthenachoman/How-To-Secure-A-Linux-Server)"
+    },
+    {
+      "line": 52,
+      "kind": "heading",
+      "text": "## [Postgres 19: How Our Advice Has Changed Since We Wrote It](https://www.crunchydata.com/blog/postgres-19-how-our-advice-has-changed-since-we-wrote-it)"
+    },
+    {
+      "line": 58,
+      "kind": "heading",
+      "text": "## [How we saved 100 terabytes of memory by optimizing 1.1.1.1’s DNS cache](https://blog.cloudflare.com/dns-cache-memory-optimization-1111/)"
+    },
+    {
+      "line": 64,
+      "kind": "heading",
+      "text": "## [Agentic Code Quality](https://addyo.substack.com/p/agentic-code-quality)"
+    },
+    {
+      "line": 70,
+      "kind": "heading",
+      "text": "### Bonus"
+    },
+    {
+      "line": 72,
+      "kind": "asset",
+      "text": "**Videos:**"
+    },
+    {
+      "line": 73,
+      "kind": "asset",
+      "text": "[JVM thực sự hoạt động như thế nào](https://www.youtube.com/watch?v=bF28LFPjFsI)"
+    },
+    {
+      "line": 76,
+      "kind": "asset",
+      "text": "**Images:**"
+    },
+    {
+      "line": 77,
+      "kind": "asset",
+      "text": "![MCP vs RAG vs AI Agents](https://substackcdn.com/image/fetch/$s_!tsAw!,w_1100,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fb0fa724e-feb3-4ec6-9c53-50437d9cf884_2484x3002.png)"
+    },
+    {
+      "line": 78,
+      "kind": "asset",
+      "text": "![9 Distributed Systems Patterns You Should Know](https://substackcdn.com/image/fetch/$s_!aJjm!,w_1100,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F79e409f6-979a-4756-9366-de84824ab9d8_2484x3002.png)"
+    }
+  ],
+  "candidates": []
+}

@@ -35,7 +35,7 @@ Bài viết mở "hộp đen" chương trình bằng cách biên dịch một ch
 
 Trong thư trả lời một nhà vật lý hỏi cách học thiết kế phần mềm, Matklad cho rằng kỹ năng này học tốt nhất qua thực hành. Các khóa học thiết kế ở đại học với anh chỉ như "trẻ mẫu giáo chơi làm lính cứu hỏa"; điều thực sự dạy anh là việc bất ngờ phải dẫn dắt dự án IntelliJ Rust. Nhận xét thứ hai là định luật Conway: phần mềm lặp lại cấu trúc xã hội của tổ chức làm ra nó. Tác giả trích một câu của neugierig: mã nguồn rốt cuộc ít quan trọng hơn kiến trúc, còn kiến trúc lại ít quan trọng hơn các vấn đề xã hội. Vì thế, chất lượng kém của "mã nguồn khoa học" chủ yếu đến từ hệ thống động cơ, như áp lực phải công bố bài báo trong ba tháng, chứ không phải do thiếu kiến thức.
 
-Có hai lối ra: hiếm hoi lắm mới có dịp thiết kế lại hệ thống động cơ của một dự án, còn thường thì phải chấp nhận ràng buộc và thích nghi. rust-analyzer là ví dụ: phần lõi sâu như một trình biên dịch được giữ dễ xây dựng và bộ kiểm thử chạy trong vài giây để thu hút người đóng góp giỏi; các tính năng rộng thì được tách độc lập, mỗi tính năng được bọc bởi catch_unwind, nên người đóng góp cuối tuần có thể gửi mã chưa hoàn hảo mà lỗi không lan sang phần khác hay làm hỏng dữ liệu. Tác giả không có cuốn sách "chân lý" nào để giới thiệu, nhưng gợi ý bài nói "Boundaries" của Gary Bernhardt, các bài viết của Pieter Hintjens, blog của Ted Kaminski và bài "Reflections on a decade of coding" của Jamii.
+Có hai lối ra: hiếm hoi lắm mới có dịp thiết kế lại hệ thống động cơ của một dự án, còn thường thì phải chấp nhận ràng buộc và thích nghi. rust-analyzer là ví dụ: phần lõi sâu như một trình biên dịch được giữ dễ xây dựng và bộ kiểm thử chạy trong vài giây để thu hút người đóng góp giỏi; các tính năng rộng thì được tách độc lập, mỗi tính năng được bọc bởi catch_unwind và làm việc trên ảnh chụp dữ liệu bất biến, nên người đóng góp cuối tuần có thể gửi mã chưa hoàn hảo mà lỗi không lan sang phần khác hay làm hỏng dữ liệu. Tác giả không có cuốn sách "chân lý" nào để giới thiệu, nhưng gợi ý bài nói "Boundaries" của Gary Bernhardt, các bài viết của Pieter Hintjens, blog của Ted Kaminski và bài "Reflections on a decade of coding" của Jamii.
 
 ## [I'm an introvert. This is how I get myself to speak up.](https://newsletter.weskao.com/p/im-an-introvert-this-is-how-i-get-myself-to-speak-up)
 
@@ -74,4 +74,4 @@ Cuốn sổ mang lại hai lợi ích chính. Thứ nhất là hỗ trợ trí n
 
 ---
 
-*Bài viết đã được viết lại bởi Claude Code với Opus 5.5 vào ngày 27/09/2026.*
+*Bài viết đã được viết lại bởi Claude Code với Opus 5.5 vào ngày 27/09/2026; được review và chỉnh sửa bởi Codex với GPT 6.1 Sol vào ngày 09/11/2026, rà soát lại bởi Claude Code với Sonnet 5.5 vào ngày 16/11/2026.*

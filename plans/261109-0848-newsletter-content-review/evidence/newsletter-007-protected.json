@@ -1,0 +1,90 @@
+{
+  "post": "content/post/2025/03/16/index.md",
+  "newsletter": 7,
+  "newsletter_post": true,
+  "note": "*Bài viết đã được viết lại bởi Claude Code với Opus 5.5 vào ngày 27/09/2026.*",
+  "lines": [
+    {
+      "line": 1,
+      "kind": "frontmatter",
+      "text": "---"
+    },
+    {
+      "line": 2,
+      "kind": "frontmatter",
+      "text": "title: \"Newsletter #7\""
+    },
+    {
+      "line": 3,
+      "kind": "frontmatter",
+      "text": "date: 2025-03-16"
+    },
+    {
+      "line": 4,
+      "kind": "frontmatter",
+      "text": "tags: [\"AI-Assisted\", \"Newsletter\", \"LLMs\", \"AI Coding\", \"Cursor\", \"Security\", \"Engineering Culture\"]"
+    },
+    {
+      "line": 5,
+      "kind": "frontmatter",
+      "text": "categories: [ \"Newsletter\" ]"
+    },
+    {
+      "line": 6,
+      "kind": "frontmatter",
+      "text": "---"
+    },
+    {
+      "line": 8,
+      "kind": "italic-note",
+      "text": "*Mời bạn thưởng thức Newsletter \\#7.*"
+    },
+    {
+      "line": 10,
+      "kind": "heading",
+      "text": "## [The LLM Curve of Impact on Software Engineers](https://serce.me/posts/2025-02-07-the-llm-curve-of-impact-on-software-engineers)"
+    },
+    {
+      "line": 16,
+      "kind": "heading",
+      "text": "## [You are using Cursor AI incorrectly...](https://ghuntley.com/stdlib/)"
+    },
+    {
+      "line": 22,
+      "kind": "heading",
+      "text": "## [How Do You Spend Your Time?](https://brooker.co.za/blog/2024/02/06/time.html)"
+    },
+    {
+      "line": 28,
+      "kind": "heading",
+      "text": "## [We are destroying software](https://antirez.com/news/145)"
+    },
+    {
+      "line": 34,
+      "kind": "heading",
+      "text": "## [Nontraditional Red Teams](https://zachholman.com/posts/red-teams)"
+    },
+    {
+      "line": 40,
+      "kind": "heading",
+      "text": "## [AI or Die](https://www.rkg.blog/ai-or-die.php)"
+    }
+  ],
+  "candidates": [
+    {
+      "line": 24,
+      "kind": "first-person",
+      "text": "Marc Brooker viết cho những ai thấy mình bận rộn, làm được nhiều việc nhưng lại không phải những việc giá trị nhất cho dự án và đội. Cách của ông là đặt \"ngân sách thời gian\": chọn năm, sáu chủ đề công việc cùng tỷ lệ thời gian cho từng chủ đề, linh hoạt trong ngắn hạn nhưng kiên định trong dài hạn, và định kỳ thống nhất với quản lý. Bản thân việc lập ngân sách là phần giá trị nhất, vì nó buộc ta nghĩ nghiêm túc về thế nào là thành công. Các chủ đề của ông gồm công việc cá nhân (viết, đọc, đánh giá mã, gỡ lỗi, tài liệu thiết kế), hướng dẫn và giảng dạy, chiến lược dài hạn, nhịp vận hành hằng ngày, học tập (đọc bài báo khoa học, cài đặt thử thuật toán) và gặp gỡ khách hàng. Cách chia không quan trọng bằng việc làm bài tập này một cách có ý thức."
+    },
+    {
+      "line": 26,
+      "kind": "first-person",
+      "text": "Giữ ngân sách đòi hỏi biết nói \"không\". Brooker cảnh báo vài cái bẫy: chạy theo sự nổi bật hay xu hướng, sa đà vào việc vặt khẩn cấp, và mất kiểm soát thời gian, như một kỹ sư cấp cao dự 20 giờ họp mỗi tuần dù không ai thấy anh đóng góp nhiều, chỉ vì ai cũng nghĩ người khác có lý do chính đáng. Ông còn áp dụng tư duy này cho cả tổ chức. Ông cũng mượn khái niệm \"sở thích bộc lộ\" (revealed preference) trong kinh tế học: hành vi thực tế mới cho thấy ta thật sự ưu tiên gì, giống như bạn nói mình thích salad nhưng lần nào cũng gọi burger."
+    },
+    {
+      "line": 32,
+      "kind": "first-person",
+      "text": "Ông cũng phê phán thói quen đánh giá thấp độ khó khi làm việc với các thư viện phức tạp có sẵn so với tự xây dựng, luôn cho rằng tiêu chuẩn phổ biến tốt hơn giải pháp thiết kế riêng cho nhu cầu của mình, coi chú thích trong mã nguồn là vô dụng, và nhầm tưởng phần mềm là một ngành kỹ thuật thuần túy. Chúng ta còn tạo ra những hệ thống không thể \"thu nhỏ\", trong khi việc đơn giản lẽ ra phải làm được một cách đơn giản, và chạy theo tốc độ viết mã thay vì chất lượng thiết kế. Kết cục là thứ còn lại sẽ không còn mang đến niềm vui của việc \"hacking\"."
+    }
+  ]
+}

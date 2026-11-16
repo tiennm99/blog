@@ -59,13 +59,13 @@ Khi buộc phải đánh giá bằng văn bản, mỗi bình luận nên làm t�
 
 Kirupa giải thích hàm băm (hash function) từ nền tảng: đó là hàm nhận đầu vào bất kỳ như văn bản, tệp hay dữ liệu nhị phân và trả về đầu ra có độ dài cố định, được dùng trong lưu trữ và truy xuất dữ liệu, xác thực mật khẩu, kiểm tra tính toàn vẹn tệp, chữ ký số hay loại bỏ dữ liệu trùng lặp. Một hàm băm tốt cần đáp ứng tám tiêu chí: tất định (cùng đầu vào luôn cho cùng đầu ra), phân bố đều, tính toán nhanh (thường là O(1)), hiệu ứng tuyết lở (thay đổi nhỏ ở đầu vào làm đầu ra thay đổi lớn), kích thước đầu ra cố định, ít va chạm, khó đảo ngược và không có tương quan giữa các đầu vào giống nhau.
 
-Để minh họa, tác giả tự xây dựng một hàm băm bằng JavaScript: cộng mã ký tự của chuỗi rồi giới hạn kết quả theo kích thước bảng là một số nguyên tố như 37. Hàm này nhanh chóng lộ điểm yếu khi "hello" và "olleh" cho cùng một kết quả; thêm trọng số theo vị trí ký tự giúp khắc phục trường hợp đó, nhưng nó vẫn trượt gần hết các tiêu chí. Bài học rút ra là hãy luôn dùng một hàm băm có sẵn; tác giả lấy MD5 để đối chiếu với từng tiêu chí, với đầu ra 128 bit, tương đương 32 ký tự thập lục phân. Hàm băm hiện diện ở khắp nơi, từ bảng băm tốc độ cao đến việc bảo vệ mật khẩu và xác minh tệp tải về.
+Để minh họa, tác giả tự xây dựng một hàm băm bằng JavaScript: cộng mã ký tự của chuỗi rồi giới hạn kết quả theo kích thước bảng là một số nguyên tố như 37. Hàm này nhanh chóng lộ điểm yếu khi "hello" và "olleh" cho cùng một kết quả; thêm trọng số theo vị trí ký tự giúp khắc phục trường hợp đó, nhưng nó vẫn trượt gần hết các tiêu chí. Bài học rút ra là hãy luôn dùng một hàm băm có sẵn; tác giả lấy MD5 để đối chiếu với từng tiêu chí, với đầu ra 128 bit, tương đương 32 ký tự thập lục phân (MD5 hiện không còn phù hợp khi cần chống va chạm, và lưu mật khẩu cần thuật toán chuyên dụng). Hàm băm hiện diện ở khắp nơi, từ bảng băm tốc độ cao đến việc bảo vệ mật khẩu và xác minh tệp tải về.
 
 ## [XOR: A Deep Dive into the Exclusive OR Operation](https://www.chiark.greenend.org.uk/~sgtatham/quasiblog/xor/)
 
 Simon Tatham phân tích sâu về phép toán XOR (hoặc loại trừ) và các ứng dụng của nó trong khoa học máy tính. Về cơ bản, XOR cho kết quả 1 khi hai bit đầu vào khác nhau và 0 khi chúng giống nhau, đồng thời có tính giao hoán và kết hợp. Tác giả đưa ra nhiều cách hiểu tương đương về phép toán này: phép so sánh "không bằng" giữa hai bit, phép đảo bit có điều kiện, phép cộng theo modulo 2, và phép tính chẵn lẻ của số bit 1.
 
-Từ những tính chất đó, bài viết đi qua các ứng dụng thực tế. Trong mật mã học, XOR được dùng để kết hợp bản rõ với dòng khóa, tạo ra cách mã hóa đơn giản mà hiệu quả và là thành phần của nhiều hệ thống mã hóa phức tạp hơn. Trong đồ họa, XOR giúp vẽ và xóa điểm ảnh dễ dàng. Ngoài ra còn có những mẹo quen thuộc như hoán đổi giá trị hai biến mà không cần biến tạm, tính trung bình hai số nguyên hay thực hiện phép cộng không nhớ.
+Từ những tính chất đó, bài viết đi qua nhiều ứng dụng. Trong mật mã học, XOR kết hợp bản rõ với dòng khóa; phần khó nằm ở việc tạo dòng khóa phù hợp, và cơ chế này riêng lẻ chưa bảo vệ tính toàn vẹn thông điệp. Trong đồ họa, áp dụng XOR lần nữa giúp hoàn tác thay đổi điểm ảnh. Tác giả còn giải thích hoán đổi giá trị hai biến, tính trung bình hai số nguyên và phép cộng không nhớ, cho thấy cùng một phép toán có thể được hiểu theo nhiều góc nhìn.
 
 ## Bonus: Vài ảnh hay ho đến từ [ByteByteGo](https://bytebytego.com/)
 
@@ -79,4 +79,4 @@ Từ những tính chất đó, bài viết đi qua các ứng dụng thực t�
 
 ---
 
-*Bài viết đã được viết lại bởi Claude Code với Opus 5.5 vào ngày 27/09/2026.*
+*Bài viết đã được viết lại bởi Claude Code với Opus 5.5 vào ngày 27/09/2026; được review và chỉnh sửa bởi Codex với GPT 6.1 Sol vào ngày 09/11/2026, rà soát lại bởi Claude Code với Sonnet 5.5 vào ngày 16/11/2026.*

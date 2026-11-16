@@ -1,0 +1,114 @@
+{
+  "post": "content/post/2025/04/22/index.md",
+  "newsletter": 13,
+  "newsletter_post": true,
+  "note": "*Bài viết đã được viết lại bởi Claude Code với Opus 5.5 vào ngày 27/09/2026.*",
+  "lines": [
+    {
+      "line": 1,
+      "kind": "frontmatter",
+      "text": "---"
+    },
+    {
+      "line": 2,
+      "kind": "frontmatter",
+      "text": "title: \"Newsletter #13\""
+    },
+    {
+      "line": 3,
+      "kind": "frontmatter",
+      "text": "date: 2025-04-22"
+    },
+    {
+      "line": 4,
+      "kind": "frontmatter",
+      "text": "tags: [\"AI-Assisted\", \"Newsletter\", \"Distributed Systems\", \"Java\", \"Spring Boot\", \"gRPC\", \"Performance\"]"
+    },
+    {
+      "line": 5,
+      "kind": "frontmatter",
+      "text": "categories: [ \"Newsletter\" ]"
+    },
+    {
+      "line": 6,
+      "kind": "frontmatter",
+      "text": "---"
+    },
+    {
+      "line": 8,
+      "kind": "italic-note",
+      "text": "*Mời bạn thưởng thức Newsletter \\#13.*"
+    },
+    {
+      "line": 10,
+      "kind": "heading",
+      "text": "## [Designing a Distributed ID Generator](https://siddharthsabron.in/blog/id-generator/)"
+    },
+    {
+      "line": 16,
+      "kind": "heading",
+      "text": "## [3,200% CPU Utilization](https://josephmate.github.io/2025-02-26-3200p-cpu-util/)"
+    },
+    {
+      "line": 22,
+      "kind": "heading",
+      "text": "## [A map metaphor for architectural diagrams](https://www.giorgiosironi.com/2025/02/maps-metaphor-for-architectural-diagrams.html)"
+    },
+    {
+      "line": 28,
+      "kind": "heading",
+      "text": "## [About \"Developer philosophy\"](https://tryingthings.wordpress.com/2025/02/28/about-developer-philosophy/)"
+    },
+    {
+      "line": 34,
+      "kind": "heading",
+      "text": "## [Team learning session: surviving legacy code by J.B. Rainsberger](https://www.giorgiosironi.com/2025/02/team-learning-session-surviving-legacy.html)"
+    },
+    {
+      "line": 40,
+      "kind": "heading",
+      "text": "## [Trimodal Nature of Tech Compensation in the US, UK and India](https://newsletter.pragmaticengineer.com/p/trimodal)"
+    },
+    {
+      "line": 46,
+      "kind": "heading",
+      "text": "## [9 Software Architecture Patterns for Distributed Systems](https://dev.to/somadevtoo/9-software-architecture-patterns-for-distributed-systems-2o86)"
+    },
+    {
+      "line": 52,
+      "kind": "heading",
+      "text": "## [Extending Java APIs - Add Missing Features Without the Hassle](https://foojay.io/today/extending-java-apis-add-missing-features-without-the-hassle/)"
+    },
+    {
+      "line": 58,
+      "kind": "heading",
+      "text": "## [How Spring Boot Reloads Configuration Without Restart](https://medium.com/@AlexanderObregon/how-spring-boot-reloads-configuration-without-restart-4d9dc9e8b926)"
+    },
+    {
+      "line": 64,
+      "kind": "heading",
+      "text": "## [Building High-Performance RPC Services with gRPC and Spring Boot](https://www.javacodegeeks.com/2025/03/building-high-performance-rpc-services-with-grpc-and-spring-boot.html)"
+    },
+    {
+      "line": 70,
+      "kind": "heading",
+      "text": "## Bonus: Vài ảnh hay ho đến từ [ByteByteGo](https://bytebytego.com/)"
+    },
+    {
+      "line": 72,
+      "kind": "asset",
+      "text": "![Latency and Partition Tolerance in Distributed Systems](https://substack-post-media.s3.amazonaws.com/public/images/39f5b04d-ad39-4bbe-a32f-f47792d4ef62_2250x2682.png)"
+    },
+    {
+      "line": 74,
+      "kind": "heading",
+      "text": "## Bonus 2: Vài video hay ho đến từ [ByteByteGo](https://bytebytego.com/)"
+    },
+    {
+      "line": 76,
+      "kind": "asset",
+      "text": "[8 Most Important Tips for Designing Fault-Tolerant System](https://www.youtube.com/watch?v=3Lis4w4_bBc)"
+    }
+  ],
+  "candidates": []
+}

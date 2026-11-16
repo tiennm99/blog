@@ -1,0 +1,75 @@
+{
+  "post": "content/post/2025/11/25/index.md",
+  "newsletter": 61,
+  "newsletter_post": true,
+  "note": "*Bài viết đã được viết lại bởi Claude Code với Opus 5.5 vào ngày 27/09/2026.*",
+  "lines": [
+    {
+      "line": 1,
+      "kind": "frontmatter",
+      "text": "---"
+    },
+    {
+      "line": 2,
+      "kind": "frontmatter",
+      "text": "title: \"Newsletter #61\""
+    },
+    {
+      "line": 3,
+      "kind": "frontmatter",
+      "text": "date: 2025-11-25"
+    },
+    {
+      "line": 4,
+      "kind": "frontmatter",
+      "text": "tags: [\"AI-Assisted\", \"Open Table Formats\", \"Spec-Driven Development\", \"Agentic Engineering\", \"JIT\", \"Compilers\", \"PostgreSQL\"]"
+    },
+    {
+      "line": 5,
+      "kind": "frontmatter",
+      "text": "categories: [\"Newsletter\"]"
+    },
+    {
+      "line": 6,
+      "kind": "frontmatter",
+      "text": "---"
+    },
+    {
+      "line": 8,
+      "kind": "italic-note",
+      "text": "*'Lặn' đã đâu, nay mới ngoi lên lại. Mời bạn thưởng thức Newsletter #61.*"
+    },
+    {
+      "line": 10,
+      "kind": "heading",
+      "text": "## [Beyond Indexes: How Open Table Formats Optimize Query Performance](https://jack-vanlightly.com/blog/2025/10/8/beyond-indexes-how-open-table-formats-optimize-query-performance/)"
+    },
+    {
+      "line": 16,
+      "kind": "heading",
+      "text": "## [What's The Deal With GitHub Spec Kit](https://den.dev/blog/github-spec-kit/)"
+    },
+    {
+      "line": 23,
+      "kind": "heading",
+      "text": "## [Just Talk To It - the no-bs Way of Agentic Engineering](https://steipete.me/posts/just-talk-to-it)"
+    },
+    {
+      "line": 29,
+      "kind": "heading",
+      "text": "## [JIT: so you want to be faster than an interpreter on modern CPUs](https://www.pinaraf.info/2025/10/jit-so-you-want-to-be-faster-than-an-interpreter-on-modern-cpus/)"
+    },
+    {
+      "line": 35,
+      "kind": "italic-note",
+      "text": "*Bài viết này mình dùng CCR với model `x-ai/grok-4.1-fast:free`. Có vẻ chưa tốt lắm, nhiều phần còn tiếng Anh thô. Mình sẽ cố gắng cải thiện hơn*"
+    }
+  ],
+  "candidates": [
+    {
+      "line": 25,
+      "kind": "first-person",
+      "text": "Peter Steinberger chia sẻ quy trình agentic engineering của mình khi gần như toàn bộ mã nguồn trong dự án đều do AI viết. Thông điệp chính là \"cứ nói chuyện với nó\": thay vì chạy theo framework cầu kỳ, hãy làm việc trực tiếp với một mô hình đủ mạnh, dùng nhiều để hình thành trực giác, và giữ quy trình thật đơn giản. Ông ưu tiên GPT-5-Codex hơn Claude Code vì dùng ngữ cảnh hiệu quả hơn, nhanh hơn, hỗ trợ xếp hàng tin nhắn và đọc nhiều tệp trước khi hành động. Câu lệnh thường chỉ một hai câu kèm ảnh chụp màn hình chỉ đúng chỗ cần sửa. Một khái niệm quan trọng là \"bán kính ảnh hưởng\" (blast radius): ước lượng một thay đổi chạm tới bao nhiêu tệp để chia việc hợp lý, rồi chạy song song nhiều agent trong các ô terminal và commit từng phần nhỏ."
+    }
+  ]
+}

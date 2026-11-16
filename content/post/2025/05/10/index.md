@@ -35,7 +35,7 @@ Với Apache Kafka 4.0, tệp cache nặng khoảng 66MB và thời gian khởi 
 
 Gavin King (Hibernate) hướng dẫn cách tự triển khai mẫu "specifications", vốn phổ biến trong Spring Data, cho Jakarta Data. Specification cho phép thêm điều kiện lọc vào truy vấn một cách linh hoạt bằng JPA Criteria API mà không phải viết nhiều mã nguồn rườm rà. Jakarta Data chưa hỗ trợ sẵn tính năng này, nhưng tác giả cho thấy chỉ cần một interface cha dùng chung là `JpaRepository<T>` với hai phương thức: `session()` trả về `StatelessSession` của Hibernate và `entityClass()` trả về lớp entity. Trên nền đó, hai phương thức `find()` và `count()` nhận một specification dưới dạng `BiFunction<CriteriaBuilder, Root<T>, Predicate>` rồi dựng truy vấn Criteria tương ứng.
 
-Nhờ JPA static metamodel, toàn bộ cách làm này an toàn kiểu (type-safe), lỗi được phát hiện ngay lúc biên dịch. Tác giả cũng cung cấp hàm tiện ích `compose()` để kết hợp nhiều specification, và hé lộ rằng Jakarta Data 1.1 đang chuẩn bị một giải pháp "thú vị hơn nhiều". Hai ví dụ dưới đây lần lượt đếm số sách theo tiêu đề và tìm sách theo cả tiêu đề lẫn tên tác giả:
+Nhờ JPA static metamodel, cách làm này an toàn kiểu (type-safe), giúp phát hiện sai tên thuộc tính hay sai kiểu ngay lúc biên dịch. Tác giả cũng cung cấp hàm tiện ích `compose()` để kết hợp nhiều specification, và hé lộ rằng Jakarta Data 1.1 đang chuẩn bị một giải pháp "thú vị hơn nhiều". Hai ví dụ dưới đây lần lượt đếm số sách theo tiêu đề và tìm sách theo cả tiêu đề lẫn tên tác giả:
 
 ```java
 library.count((builder, book) ->
@@ -65,4 +65,4 @@ Rose đề xuất bỏ phương thức `getValue` hiện tại vì không đáp 
 
 ---
 
-*Bài viết đã được viết lại bởi Claude Code với Opus 5.5 vào ngày 27/09/2026.*
+*Bài viết đã được viết lại bởi Claude Code với Opus 5.5 vào ngày 27/09/2026; được review và chỉnh sửa bởi Codex với GPT 6.1 Sol vào ngày 09/11/2026, rà soát lại bởi Claude Code với Sonnet 5.5 vào ngày 16/11/2026.*

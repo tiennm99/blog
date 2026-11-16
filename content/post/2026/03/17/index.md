@@ -29,7 +29,7 @@ Hàm `findRunnable()` tìm việc theo thứ tự: công việc của GC, cứ l
 
 Tác giả so sánh hiệu năng và mức dùng bộ nhớ của các cách nối chuỗi trong Go, gồm toán tử `+`, `+=`, `fmt.Sprintf()`, `fmt.Sprint()`, `strings.Join()`, `bytes.Buffer` và `strings.Builder` (có và không gọi `Grow()` để cấp phát trước). Bài đo được chia thành hai kịch bản thường gặp: số lượng chuỗi cố định, như khi tạo khóa bộ nhớ đệm từ vài trường dữ liệu, và số lượng chuỗi thay đổi, như khi ghép các điều kiện truy vấn. Toàn bộ mã nguồn và mã đo đạc được công bố để người đọc tự tái hiện kết quả.
 
-Kết luận khá rõ ràng: `strings.Builder` có gọi `Grow()` và `strings.Join()` là hai lựa chọn nhanh và tiết kiệm bộ nhớ nhất trong mọi kịch bản. Với số lượng chuỗi cố định và ít, toán tử `+` đơn giản là hoàn toàn đủ tốt, còn `fmt.Sprintf()` chậm hơn đáng kể. Ở kịch bản 256 chuỗi, hai phương pháp dẫn đầu chỉ mất khoảng 2,6–2,8 micro giây với một lần cấp phát, trong khi dùng `+=` trong vòng lặp mất hơn 37 micro giây, tốn khoảng 185KB bộ nhớ và 255 lần cấp phát, vì mỗi lần nối lại tạo ra một chuỗi mới. Bài học cho lập trình viên trẻ: nối chuỗi trong vòng lặp nên dùng `strings.Builder` hoặc `strings.Join()`.
+Kết luận khá rõ ràng: `strings.Builder` có gọi `Grow()` và `strings.Join()` là hai lựa chọn nhanh và tiết kiệm bộ nhớ nhất trong hầu hết các kịch bản đo. Với số lượng chuỗi cố định và ít, toán tử `+` đơn giản là hoàn toàn đủ tốt, còn `fmt.Sprintf()` chậm hơn đáng kể. Ở kịch bản 256 chuỗi, hai phương pháp dẫn đầu chỉ mất khoảng 2,6–2,8 micro giây với một lần cấp phát, trong khi dùng `+=` trong vòng lặp mất hơn 37 micro giây, tốn khoảng 185KB bộ nhớ và 255 lần cấp phát, vì mỗi lần nối lại tạo ra một chuỗi mới. Bài học cho lập trình viên trẻ: nối chuỗi trong vòng lặp nên dùng `strings.Builder` hoặc `strings.Join()`.
 
 ## [Message Passing Is Shared Mutable State](https://causality.blog/essays/message-passing-is-shared-mutable-state/)
 
@@ -58,4 +58,4 @@ Cách kết hợp đẩy–kéo giải quyết cả hai: pha đẩy chỉ đánh
 
 ---
 
-*Bài viết đã được viết lại bởi Claude Code với Opus 5.5 vào ngày 27/09/2026.*
+*Bài viết đã được viết lại bởi Claude Code với Opus 5.5 vào ngày 27/09/2026; được review và chỉnh sửa bởi Codex với GPT 6.1 Sol vào ngày 09/11/2026, rà soát lại bởi Claude Code với Sonnet 5.5 vào ngày 16/11/2026.*

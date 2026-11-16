@@ -53,7 +53,7 @@ Giá trị nằm ở tín hiệu đi kèm câu trả lời: có cụ thể khôn
 
 Sergii Gorbachov từ Slack chia sẻ kết quả hơn 200 lần chạy kiểm thử đầu cuối bằng agent, nhằm xác định agent nên nằm ở đâu trong hệ thống kiểm thử. Kiểm thử đầu cuối truyền thống ép một hành trình cố định qua giao diện, còn kiểm thử bằng agent bắt đầu từ mục tiêu: agent quan sát trạng thái, tự chọn bước tiếp theo rồi xác minh kết quả. Nhóm so sánh ba cách: agent dùng Playwright MCP, agent dùng Playwright CLI, và bài kiểm thử Playwright do AI sinh ra, trên không gian làm việc thử nghiệm với dữ liệu không phải thật, qua hai luồng: trả lời thread và khám phá tìm kiếm.
 
-Bài kiểm thử được sinh ra chạy nhanh nhất, khoảng 3 phút, nhưng tỷ lệ lỗi tăng vọt lên khoảng 48% ở luồng phức tạp. Agent qua MCP đáng tin nhất, tỷ lệ lỗi từ 0 đến 12%, trong khi CLI ở mức 12 đến 20%, chủ yếu do lỗi đăng nhập và điều hướng ở tầng thực thi. MCP cũng tốn ít lượt tương tác hơn vì gộp thao tác và trả trạng thái trong một vòng. Tuy vậy, mỗi lần chạy bằng agent tốn 15 đến 30 đô la và hơn 5 phút, phần lớn chi phí đến từ việc gửi lại ngữ cảnh cũ. Kết luận: kiểm thử tất định vẫn là nền tảng hồi quy nhanh trong CI, còn kiểm thử bằng agent là lớp bổ sung trên đỉnh kim tự tháp kiểm thử, hợp với việc khám phá hành vi phức tạp, gỡ lỗi luồng chập chờn và tái hiện lỗi từ môi trường thật.
+Bài kiểm thử được sinh ra chạy nhanh nhất, khoảng 3 phút, nhưng tỷ lệ lỗi tăng vọt lên khoảng 48% ở luồng phức tạp. Trong cấu hình Sonnet 4.5 cho agent và Opus 4.6 sinh kiểm thử, MCP có tỷ lệ lỗi thấp nhất, từ 0 đến 12%, trong khi CLI ở mức 12 đến 20%, chủ yếu do lỗi đăng nhập và điều hướng ở tầng thực thi. MCP cũng tốn ít lượt tương tác hơn vì gộp thao tác và trả trạng thái trong một vòng. Tuy vậy, mỗi lần chạy bằng agent tốn 15 đến 30 đô la và hơn 5 phút, phần lớn chi phí đến từ việc gửi lại ngữ cảnh cũ. Kết luận: kiểm thử tất định vẫn là nền tảng hồi quy nhanh trong CI, còn kiểm thử bằng agent là lớp bổ sung trên đỉnh kim tự tháp kiểm thử, hợp với việc khám phá hành vi phức tạp, gỡ lỗi luồng chập chờn và tái hiện lỗi từ môi trường thật.
 
 ## [Making Agents Easy: 13 Lessons from Forter's Agentic AI Sprint](https://blog.forter.dev/making-agents-easy-13-lessons-from-forters-agentic-ai-sprint/)
 
@@ -75,4 +75,4 @@ Tác giả chuyển sang cấu trúc hai mảng: `bucket_array` lưu vị trí d
 
 ---
 
-*Bài viết đã được viết lại bởi Claude Code với Opus 5.5 vào ngày 27/09/2026.*
+*Bài viết đã được viết lại bởi Claude Code với Opus 5.5 vào ngày 27/09/2026; được review và chỉnh sửa bởi Codex với GPT 6.1 Sol vào ngày 09/11/2026, rà soát lại bởi Claude Code với Sonnet 5.5 vào ngày 16/11/2026.*

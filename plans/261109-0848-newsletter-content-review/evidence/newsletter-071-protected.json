@@ -1,0 +1,95 @@
+{
+  "post": "content/post/2025/12/14/index.md",
+  "newsletter": 71,
+  "newsletter_post": true,
+  "note": "*Bài viết đã được viết lại bởi Claude Code với Opus 5.5 vào ngày 27/09/2026.*",
+  "lines": [
+    {
+      "line": 1,
+      "kind": "frontmatter",
+      "text": "---"
+    },
+    {
+      "line": 2,
+      "kind": "frontmatter",
+      "text": "title: \"Newsletter #71\""
+    },
+    {
+      "line": 3,
+      "kind": "frontmatter",
+      "text": "date: 2025-12-14"
+    },
+    {
+      "line": 4,
+      "kind": "frontmatter",
+      "text": "tags: [\"AI-Assisted\", \"Newsletter\", \"SQL\", \"Algorithms\", \"Go\", \"API Design\", \"Code Review\"]"
+    },
+    {
+      "line": 5,
+      "kind": "frontmatter",
+      "text": "categories: [\"Newsletter\"]"
+    },
+    {
+      "line": 6,
+      "kind": "frontmatter",
+      "text": "---"
+    },
+    {
+      "line": 8,
+      "kind": "italic-note",
+      "text": "*Mời bạn thưởng thức Newsletter #71.*"
+    },
+    {
+      "line": 10,
+      "kind": "heading",
+      "text": "## [A modern guide to SQL JOINs](https://kb.databasedesignbook.com/posts/sql-joins/)"
+    },
+    {
+      "line": 16,
+      "kind": "heading",
+      "text": "## [Punycode: My New Favorite Algorithm](https://www.iankduncan.com/engineering/2025-12-01-punycode)"
+    },
+    {
+      "line": 22,
+      "kind": "heading",
+      "text": "## [Evolution and Scale of Uber's Delivery Search Platform](https://www.uber.com/in/en/blog/evolution-and-scale-of-ubers-delivery-search-platform/)"
+    },
+    {
+      "line": 28,
+      "kind": "heading",
+      "text": "## [16 API Gateway Concepts Every Software Engineer Should Know](https://designgurus.substack.com/p/16-api-gateway-concepts-every-software)"
+    },
+    {
+      "line": 34,
+      "kind": "heading",
+      "text": "## [How Reddit Migrated Comments Functionality from Python to Go](https://blog.bytebytego.com/p/how-reddit-migrated-comments-functionality)"
+    },
+    {
+      "line": 40,
+      "kind": "heading",
+      "text": "## [On Idempotency Keys](https://www.morling.dev/blog/on-idempotency-keys/)"
+    },
+    {
+      "line": 46,
+      "kind": "heading",
+      "text": "## [No code reviews by default](https://www.raycast.com/blog/no-code-reviews-by-default)"
+    },
+    {
+      "line": 52,
+      "kind": "heading",
+      "text": "## [Estimates – a necessary evil?](https://thorsell.io/2025/12/07/estimates.html)"
+    }
+  ],
+  "candidates": [
+    {
+      "line": 48,
+      "kind": "first-person",
+      "text": "Thomas Paul Mann, đồng sáng lập Raycast, chia sẻ văn hóa kỹ thuật của công ty: không bắt buộc review mã nguồn. Kỹ sư đẩy thay đổi thẳng lên nhánh main và chỉ yêu cầu review khi thấy cần. Theo tác giả, pull request làm giảm sự tin tưởng trong một đội vốn nên làm việc dựa trên niềm tin, không thực sự ngăn được lỗi vì nhiều vấn đề chỉ lộ ra sau thời gian dài sử dụng, và làm chậm tiến độ vì review hiếm khi là việc được ưu tiên. Thay vào đó, mỗi kỹ sư chịu trách nhiệm trọn vẹn cho tính năng của mình từ lúc lên ý tưởng đến khi bảo trì."
+    },
+    {
+      "line": 50,
+      "kind": "first-person",
+      "text": "Trên thực tế, hệ thống tích hợp liên tục xây dựng và kiểm thử mọi commit, và nhóm phát hành bản nội bộ hằng ngày để mọi người dùng thử và góp ý sớm. Tính năng chưa đạt chất lượng được ẩn sau feature flag. Họ vẫn mở pull request khi đụng vào phần mã nguồn mới, chẳng hạn lần đầu thêm migration cơ sở dữ liệu, hoặc chỉ cần nhắn đồng đội xem lại sau khi đã commit. Lời khuyên cuối bài: đừng áp dụng \"best practice\" một cách giáo điều, hãy tự đặt quy tắc phù hợp với hoàn cảnh của đội mình."
+    }
+  ]
+}

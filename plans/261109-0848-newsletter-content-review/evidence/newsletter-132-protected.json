@@ -1,0 +1,105 @@
+{
+  "post": "content/post/2026/09/10/index.md",
+  "newsletter": 132,
+  "newsletter_post": true,
+  "note": "*Bài viết đã được viết lại bởi Claude Code với Opus 5.5 vào ngày 27/09/2026.*",
+  "lines": [
+    {
+      "line": 1,
+      "kind": "frontmatter",
+      "text": "---"
+    },
+    {
+      "line": 2,
+      "kind": "frontmatter",
+      "text": "title: \"Newsletter #132\""
+    },
+    {
+      "line": 3,
+      "kind": "frontmatter",
+      "text": "date: 2026-09-10"
+    },
+    {
+      "line": 4,
+      "kind": "frontmatter",
+      "text": "tags: [\"AI-Assisted\", \"Software Engineering\", \"AI Agents\", \"Developer Experience\", \"Distributed Systems\", \"Performance\", \"Reliability\"]"
+    },
+    {
+      "line": 5,
+      "kind": "frontmatter",
+      "text": "categories: [\"Newsletter\"]"
+    },
+    {
+      "line": 6,
+      "kind": "frontmatter",
+      "text": "---"
+    },
+    {
+      "line": 8,
+      "kind": "italic-note",
+      "text": "*Mời bạn thưởng thức Newsletter #132.*"
+    },
+    {
+      "line": 10,
+      "kind": "heading",
+      "text": "## [Perfection is not over-engineering](https://var0.xyz/posts/perfection-is-not-over-engineering.html)"
+    },
+    {
+      "line": 16,
+      "kind": "heading",
+      "text": "## [Claude Is Not a Compiler](https://blog.exe.dev/claude-is-not-a-compiler)"
+    },
+    {
+      "line": 22,
+      "kind": "heading",
+      "text": "## [In defense of not understanding your codebase](https://www.seangoedecke.com/in-defense-of-not-understanding-your-codebase/)"
+    },
+    {
+      "line": 28,
+      "kind": "heading",
+      "text": "## [Beyond Happy Path Engineering: the Network](https://blog.gaborkoos.com/posts/2026-07-01-Beyond-Happy-Path-Engineering-the-Network/)"
+    },
+    {
+      "line": 34,
+      "kind": "heading",
+      "text": "## [Beyond Happy Path Engineering: Time](https://blog.gaborkoos.com/posts/2026-07-19-Beyond-Happy-Path-Engineering-Time/)"
+    },
+    {
+      "line": 40,
+      "kind": "heading",
+      "text": "## [Beyond Happy Path Engineering: Databases](https://blog.gaborkoos.com/posts/2026-08-01-Beyond-Happy-Path-Engineering-Databases/)"
+    },
+    {
+      "line": 46,
+      "kind": "heading",
+      "text": "## [Beyond Happy Path Engineering: Storage](https://blog.gaborkoos.com/posts/2026-08-11-Beyond-Happy-Path-Engineering-Storage/)"
+    },
+    {
+      "line": 52,
+      "kind": "heading",
+      "text": "## [Everyone Should Know SIMD](https://mitchellh.com/writing/everyone-should-know-simd)"
+    },
+    {
+      "line": 58,
+      "kind": "heading",
+      "text": "## [htop explained](https://peteris.rocks/blog/htop/)"
+    },
+    {
+      "line": 64,
+      "kind": "heading",
+      "text": "## [The Productivity-Experience Paradox](https://annievella.com/posts/the-productivity-experience-paradox/)"
+    },
+    {
+      "line": 70,
+      "kind": "heading",
+      "text": "## [Prefactoring: Clear the Way for Your New Feature](https://testing.googleblog.com/2026/07/prefactoring-clear-way-for-your-new.html)"
+    }
+  ],
+  "candidates": [
+    {
+      "line": 24,
+      "kind": "first-person",
+      "text": "Kỹ sư phải hiểu kho mã nguồn của mình tới đâu? Sean Goedecke cho rằng câu trả lời tùy vào môi trường. Người làm với kho mã nhỏ như Redis sẽ nói phải hiểu hết; người làm ở hệ thống khổng lồ như Google hay GitHub sẽ nói điều đó bất khả thi. Nhóm đầu áp đảo các cuộc thảo luận trên mạng, nên tác giả đứng ra bảo vệ nhóm sau: với hệ thống lớn, hiểu *một phần* không có gì sai, thậm chí là mức tốt nhất có thể đạt được. Ở quy mô đủ lớn, ai cũng làm việc với một hình dung chưa đúng hẳn, nên kỹ sư giỏi phải dám phỏng đoán có cơ sở."
+    }
+  ]
+}

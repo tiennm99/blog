@@ -1,0 +1,95 @@
+{
+  "post": "content/post/2026/03/02/index.md",
+  "newsletter": 87,
+  "newsletter_post": true,
+  "note": "*Bài viết đã được viết lại bởi Claude Code với Opus 5.5 vào ngày 27/09/2026.*",
+  "lines": [
+    {
+      "line": 1,
+      "kind": "frontmatter",
+      "text": "---"
+    },
+    {
+      "line": 2,
+      "kind": "frontmatter",
+      "text": "title: \"Newsletter #87\""
+    },
+    {
+      "line": 3,
+      "kind": "frontmatter",
+      "text": "date: 2026-03-02"
+    },
+    {
+      "line": 4,
+      "kind": "frontmatter",
+      "text": "tags: [\"AI-Assisted\", \"Newsletter\", \"AI\", \"Engineering Culture\", \"Rate Limiting\", \"AI Agents\", \"Software Engineering\"]"
+    },
+    {
+      "line": 5,
+      "kind": "frontmatter",
+      "text": "categories: [\"Newsletter\"]"
+    },
+    {
+      "line": 6,
+      "kind": "frontmatter",
+      "text": "---"
+    },
+    {
+      "line": 8,
+      "kind": "italic-note",
+      "text": "*Mời bạn thưởng thức Newsletter #87.*"
+    },
+    {
+      "line": 10,
+      "kind": "heading",
+      "text": "## [On cognitive debt](https://www.natemeyvis.com/on-cognitive-debt/)"
+    },
+    {
+      "line": 16,
+      "kind": "heading",
+      "text": "## [Why I'm not worried about AI job loss](https://davidoks.blog/p/why-im-not-worried-about-ai-job-loss)"
+    },
+    {
+      "line": 22,
+      "kind": "heading",
+      "text": "## [Why I don't think AI is a bubble](https://honnibal.dev/blog/ai-bubble)"
+    },
+    {
+      "line": 28,
+      "kind": "heading",
+      "text": "## [I guess I kinda get why people hate AI](https://anthony.noided.media/blog/ai/programming/2026/02/14/i-guess-i-kinda-get-why-people-hate-ai.html)"
+    },
+    {
+      "line": 34,
+      "kind": "heading",
+      "text": "## [Uber's Rate Limiting System](https://www.uber.com/en-IN/blog/ubers-rate-limiting-system/)"
+    },
+    {
+      "line": 40,
+      "kind": "heading",
+      "text": "## [Agents (Feb 2026)](https://calv.info/agents-feb-2026)"
+    },
+    {
+      "line": 46,
+      "kind": "heading",
+      "text": "## [The Software Industrial Revolution](https://cannoneyed.com/essays/software-industrial-revolution)"
+    }
+  ],
+  "candidates": [
+    {
+      "line": 14,
+      "kind": "first-person",
+      "text": "Theo tác giả, người dùng AI giỏi đã biết hạn chế nợ nhận thức và sẽ còn làm tốt hơn. Ông chia sẻ vài kỹ thuật: nhấn mạnh tính đóng gói trong chỉ dẫn khởi tạo dự án cho AI, mô tả rõ các hệ thống con, giao diện giữa chúng và cấu trúc dữ liệu, mạnh dạn tái cấu trúc quy mô lớn với AI (giờ nhẹ nhàng hơn nhiều), và bổ sung kiểm thử ở nơi nợ nhận thức bắt đầu xuất hiện. Thông điệp chính: nợ nhận thức có thật, nhưng ta khắc phục nó bằng cách dùng AI tốt hơn chứ không phải đổ lỗi cho AI về sai lầm của chính mình."
+    },
+    {
+      "line": 42,
+      "kind": "first-person",
+      "text": "Calvin French-Owen, người từng tham gia ra mắt Codex bản web, chia sẻ cách anh dùng coding agent vào tháng 2/2026. Giờ đây thời gian của anh là yếu tố quyết định: anh chọn công cụ theo thời gian mình có và mức tự chủ muốn giao cho agent. Nguyên tắc cốt lõi là hiểu ngữ cảnh: agent chỉ dự đoán token tiếp theo và mọi thứ phải nằm gọn trong cửa sổ ngữ cảnh. Từ đó, công việc cần chia nhỏ, nén ngữ cảnh luôn làm mất thông tin, nên ghi ngữ cảnh ra hệ thống tệp (như tài liệu kế hoạch có các bước đánh dấu), và nên ở trong \"nửa thông minh\" của cửa sổ ngữ cảnh. Opus trong Claude Code làm việc qua nhiều cửa sổ ngữ cảnh rất hiệu quả, hay chạy song song nhiều sub-agent, dùng công cụ tốt và giải thích dễ hiểu. Codex (GPT-5.3) viết mã nguồn ít lỗi hơn hẳn nhưng chậm vì chưa biết phân việc qua nhiều cửa sổ ngữ cảnh. Vì vậy anh lên kế hoạch với Claude Code rồi dùng Codex viết mã."
+    },
+    {
+      "line": 50,
+      "kind": "first-person",
+      "text": "Khi phần mềm rẻ đi nhiều bậc, sẽ có nhiều phần mềm hơn hẳn, nhu cầu kỹ sư có thể còn tăng, kỷ nguyên đầu tư mạo hiểm kiểu cũ khép lại và mô hình kinh doanh bền vững hơn xuất hiện. Bất kỳ ai, từ nhà nghiên cứu ung thư đến chủ doanh nghiệp nhỏ, cũng có thể nhờ AI xây công cụ mình cần, tạo nên sự bùng nổ phần mềm \"may đo\" trong mọi ngành. Dù việc tự tay viết mã đang mất dần giá trị, kỹ năng cốt lõi của kỹ sư như mô hình hóa nghiệp vụ, quản lý độ phức tạp và hiểu tương tác giữa phần mềm với thế giới thực sẽ càng quan trọng hơn."
+    }
+  ]
+}

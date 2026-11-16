@@ -1,0 +1,94 @@
+{
+  "post": "content/post/2026/02/28/index.md",
+  "newsletter": 85,
+  "newsletter_post": true,
+  "note": "*Bài viết đã được viết lại bởi Claude Code với Opus 5.5 vào ngày 27/09/2026.*",
+  "lines": [
+    {
+      "line": 1,
+      "kind": "frontmatter",
+      "text": "---"
+    },
+    {
+      "line": 2,
+      "kind": "frontmatter",
+      "text": "title: \"Newsletter #85\""
+    },
+    {
+      "line": 3,
+      "kind": "frontmatter",
+      "text": "date: 2026-02-28"
+    },
+    {
+      "line": 4,
+      "kind": "frontmatter",
+      "text": "tags: [\"AI-Assisted\", \"Newsletter\", \"Claude Code\", \"Java\", \"Databases\", \"Go\", \"Cloud\"]"
+    },
+    {
+      "line": 5,
+      "kind": "frontmatter",
+      "text": "categories: [\"Newsletter\"]"
+    },
+    {
+      "line": 6,
+      "kind": "frontmatter",
+      "text": "---"
+    },
+    {
+      "line": 8,
+      "kind": "italic-note",
+      "text": "*Mời bạn thưởng thức Newsletter #85.*"
+    },
+    {
+      "line": 10,
+      "kind": "heading",
+      "text": "## [How I Use Claude Code](https://boristane.com/blog/how-i-use-claude-code/)"
+    },
+    {
+      "line": 16,
+      "kind": "heading",
+      "text": "## [Next-Generation DB Ingestion at Pinterest](https://medium.com/pinterest-engineering/next-generation-db-ingestion-at-pinterest-66844b7153b7)"
+    },
+    {
+      "line": 22,
+      "kind": "heading",
+      "text": "## [Thank you, AI](https://www.kraxel.org/blog/2026/01/thank-you-ai/)"
+    },
+    {
+      "line": 28,
+      "kind": "heading",
+      "text": "## [Java UI in 2026: The Complete Guide](https://robintegg.com/2026/02/08/java-ui-in-2026-the-complete-guide)"
+    },
+    {
+      "line": 34,
+      "kind": "heading",
+      "text": "## [Java Full Stack Development in 2026](https://www.ophion.org/2026/02/java-full-stack-development-in-2026/)"
+    },
+    {
+      "line": 40,
+      "kind": "heading",
+      "text": "## [Sharding Databases with Spring Boot: Patterns, Pitfalls, and Failure Modes](https://dev.to/adamthedeveloper/sharding-databases-with-spring-boot-patterns-pitfalls-and-failure-modes-4p37)"
+    },
+    {
+      "line": 46,
+      "kind": "heading",
+      "text": "## [Go Made Me Fast, Rust Made Me Care, AWS Made Me Pay](https://dev.to/tirixa-hub/go-made-me-fast-rust-made-me-care-aws-made-me-pay-2f82)"
+    },
+    {
+      "line": 52,
+      "kind": "heading",
+      "text": "## [The Cloud Is Not Your Computer: Why Go and Rust Developers Secretly Miss the Monolith](https://dev.to/tirixa-hub/the-cloud-is-not-your-computer-why-go-and-rust-developers-secretly-miss-the-monolith-594c)"
+    },
+    {
+      "line": 58,
+      "kind": "heading",
+      "text": "### Bonus"
+    },
+    {
+      "line": 61,
+      "kind": "asset",
+      "text": "![Must-Know Software Architecture Patterns](https://substackcdn.com/image/fetch/$s_!V-F7!,w_1100,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F57c857fb-0db2-4701-93f7-343fac614657_2250x2862.png)"
+    }
+  ],
+  "candidates": []
+}

@@ -9,7 +9,7 @@ categories: [ "Newsletter" ]
 
 ## [Identity Tokens Best Practices](https://www.permit.io/blog/identity-tokens-best-practices)
 
-Gabriel L. Manor (Permit.io) giải thích identity token là gói thông tin do một nhà cung cấp danh tính (identity provider) phát hành để đại diện cho một người dùng hoặc một dịch vụ, thường dựa trên các chuẩn OAuth 2.0, OpenID Connect và định dạng JWT gồm header, payload chứa các claim như `iss`, `exp`, `sub` cùng chữ ký số. Bài viết phân biệt các loại phổ biến: JWT, token của OpenID Connect, opaque token (chuỗi ngẫu nhiên, thông tin chi tiết lưu phía máy chủ) và API key cho giao tiếp giữa các dịch vụ. Lợi ích lớn nhất là ủy thác xác thực: ứng dụng không phải trực tiếp xử lý mật khẩu mà chỉ cần kiểm tra chữ ký của token, nhờ đó dễ làm đăng nhập một lần (single sign-on) và mở rộng hệ thống microservices.
+Gabriel L. Manor (Permit.io) giải thích identity token là gói thông tin do một nhà cung cấp danh tính (identity provider) phát hành để đại diện cho một người dùng hoặc một dịch vụ, thường dựa trên các chuẩn OAuth 2.0, OpenID Connect và định dạng JWT gồm header, payload chứa các claim như `iss`, `exp`, `sub` cùng chữ ký số. Bài viết phân biệt các loại phổ biến: JWT, token của OpenID Connect, opaque token (chuỗi ngẫu nhiên, thông tin chi tiết lưu phía máy chủ) và API key cho giao tiếp giữa các dịch vụ. Lợi ích lớn nhất là ủy thác xác thực: ứng dụng không phải trực tiếp xử lý mật khẩu mà chỉ cần kiểm tra token (chữ ký, nhà phát hành, đối tượng nhận và thời hạn), nhờ đó dễ làm đăng nhập một lần (single sign-on) và mở rộng hệ thống microservices.
 
 Phần đáng đọc nhất là những sai lầm tác giả thường gặp: coi token là nơi quyết định mọi quyền hạn, nhồi quá nhiều dữ liệu (danh sách quyền, URL, cả đối tượng người dùng) vào claim, đặt thời hạn quá ngắn hoặc quá dài, và tách hẳn quy trình cho người dùng với máy. Lời khuyên cốt lõi là tách xác thực (bạn là ai) khỏi phân quyền (bạn được làm gì lúc này), để có thể thay đổi chính sách mà không phải phát hành lại token. Ngoài ra nên giữ token gọn nhẹ, dùng chuẩn mở, cân bằng thời hạn, chuẩn bị sẵn cơ chế thu hồi, luôn truyền qua HTTPS, không để token lọt vào log hay thanh địa chỉ, và luôn xác minh chữ ký JWT. Lưu ý đây là blog của một nhà cung cấp dịch vụ phân quyền nên có xen phần giới thiệu sản phẩm.
 
@@ -51,4 +51,4 @@ Ted Neward cho rằng cuộc tranh luận "làm việc tại nhà (WFH) hay quay
 
 ---
 
-*Bài viết đã được viết lại bởi Claude Code với Opus 5.5 vào ngày 27/09/2026.*
+*Bài viết đã được viết lại bởi Claude Code với Opus 5.5 vào ngày 27/09/2026; được review và chỉnh sửa bởi Codex với GPT 6.1 Sol vào ngày 09/11/2026, rà soát lại bởi Claude Code với Sonnet 5.5 vào ngày 16/11/2026.*

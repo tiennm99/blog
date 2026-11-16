@@ -59,7 +59,7 @@ Khuôn chung gồm năm bước: phát tán (broadcast) hằng số và khởi t
 
 Tác giả thừa nhận suốt một thời gian dài không hiểu hết các con số trên `htop`, chẳng hạn từng nghĩ load average `1.0` trên máy hai nhân nghĩa là CPU bận 50%. Vì vậy anh tra cứu và viết lại tất cả thành một bài rất dài, đi qua từng khu vực của màn hình. Điểm quý là anh luôn truy về nguồn dữ liệu thật: uptime đọc từ `/proc/uptime`, load average đọc từ `/proc/loadavg`, và cách tự tìm ra điều đó là dùng `strace` để xem chương trình mở những tệp nào.
 
-Load average không phải phần trăm CPU mà là số tiến trình đang chạy hoặc chờ chạy, cộng cả tiến trình ngủ không thể ngắt đang chờ đĩa hay mạng. Nó cũng là trung bình suy giảm theo hàm mũ: giá trị một phút gồm khoảng 63% tải của phút vừa qua và 37% phần tích lũy từ lúc khởi động. Bài giải thích tiếp các trạng thái tiến trình (`R` đang chạy, `S` ngủ có thể ngắt, `D` ngủ không thể ngắt, `Z` zombie đã kết thúc nhưng tiến trình cha chưa thu hồi), độ "nice" từ -20 tới 19 với quan hệ `PR = 20 + NI`, cùng các cột bộ nhớ: `VIRT` gồm cả vùng đã xin mà chưa dùng nên ít hữu ích, `RES` là phần nằm trong RAM thật nhưng có thể bị tính trùng do cơ chế sao chép khi ghi, còn `MEM%` là `RES` chia tổng RAM. Cuối bài, anh lần lượt xem từng tiến trình mặc định trên Ubuntu Server để quyết định cái nào có thể gỡ bỏ.
+Load average không phải phần trăm CPU mà là số tiến trình đang chạy hoặc chờ chạy, cộng cả tiến trình ngủ không thể ngắt đang chờ đĩa hay mạng. Nó cũng là trung bình suy giảm theo hàm mũ: giá trị một phút gồm khoảng 63% tải của phút vừa qua và 37% giá trị trung bình trước đó. Bài giải thích tiếp các trạng thái tiến trình (`R` đang chạy, `S` ngủ có thể ngắt, `D` ngủ không thể ngắt, `Z` zombie đã kết thúc nhưng tiến trình cha chưa thu hồi), độ "nice" từ -20 tới 19 với quan hệ `PR = 20 + NI`, cùng các cột bộ nhớ: `VIRT` gồm cả vùng đã xin mà chưa dùng nên ít hữu ích, `RES` là phần nằm trong RAM thật nhưng có thể bị tính trùng do cơ chế sao chép khi ghi, còn `MEM%` là `RES` chia tổng RAM. Cuối bài, anh lần lượt xem từng tiến trình mặc định trên Ubuntu Server để quyết định cái nào có thể gỡ bỏ.
 
 ## [The Productivity-Experience Paradox](https://annievella.com/posts/the-productivity-experience-paradox/)
 
@@ -75,4 +75,4 @@ Lợi ích gồm: tính năng mới lắp vào tự nhiên hơn, rà soát nhanh
 
 ---
 
-*Bài viết đã được viết lại bởi Claude Code với Opus 5.5 vào ngày 27/09/2026.*
+*Bài viết đã được viết lại bởi Claude Code với Opus 5.5 vào ngày 27/09/2026; được review và chỉnh sửa bởi Codex với GPT 6.1 Sol vào ngày 09/11/2026, rà soát lại bởi Claude Code với Sonnet 5.5 vào ngày 16/11/2026.*

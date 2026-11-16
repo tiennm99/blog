@@ -21,7 +21,7 @@ Nguyên tắc thứ ba là chia nhiệm vụ thành các lời nhắc nhỏ theo
 
 ## [Unconventional PostgreSQL Optimizations](https://hakibenita.com/postgresql-unconventional-optimizations)
 
-Haki Benita giới thiệu ba kỹ thuật tối ưu PostgreSQL ít người nghĩ tới. Kỹ thuật đầu tiên là bật `constraint_exclusion` để cơ sở dữ liệu dùng ràng buộc kiểm tra (check constraint) loại bỏ cả một lượt quét bảng. Khi người dùng lỡ viết điều kiện mâu thuẫn với ràng buộc, ví dụ `plan = 'Pro'` thay vì `'pro'`, PostgreSQL mặc định vẫn quét toàn bộ bảng (khoảng 627 ms trong ví dụ), còn khi bật tùy chọn này thì truy vấn trả về gần như tức thì. Tùy chọn mặc định chỉ áp dụng cho bảng phân vùng vì tốn thêm chi phí lập kế hoạch, nên phù hợp nhất với môi trường báo cáo nơi người dùng tự viết truy vấn.
+Haki Benita giới thiệu ba kỹ thuật tối ưu PostgreSQL ít người nghĩ tới. Kỹ thuật đầu tiên là bật `constraint_exclusion` để cơ sở dữ liệu dùng ràng buộc kiểm tra (check constraint) loại bỏ cả một lượt quét bảng. Khi người dùng lỡ viết điều kiện mâu thuẫn với ràng buộc, ví dụ `plan = 'Pro'` thay vì `'pro'`, PostgreSQL mặc định vẫn quét toàn bộ bảng (khoảng 7,4 ms trong ví dụ), còn khi bật tùy chọn này thì truy vấn trả về gần như tức thì. Mặc định `partition` chủ yếu xét trường hợp phân vùng qua kế thừa và `UNION ALL` vì tốn thêm chi phí lập kế hoạch, nên phù hợp nhất với môi trường báo cáo nơi người dùng tự viết truy vấn.
 
 Kỹ thuật thứ hai là lập chỉ mục trên biểu thức có ít giá trị khác nhau hơn: thay vì chỉ mục B-Tree trên toàn bộ cột timestamp (214 MB), chỉ mục trên phần ngày qua `date_trunc` chỉ còn 66 MB, nhỏ hơn 3 lần và truy vấn cũng nhanh hơn. Điểm yếu là mọi người phải viết đúng biểu thức mới dùng được chỉ mục, nên tác giả đề xuất kết hợp với cột sinh ảo (virtual generated column) của PostgreSQL 18. Kỹ thuật thứ ba là đảm bảo tính duy nhất cho giá trị lớn như URL bằng chỉ mục băm: PostgreSQL không cho tạo chỉ mục băm duy nhất, nhưng có thể dùng ràng buộc loại trừ (exclusion constraint) trên chỉ mục băm, giúp giảm kích thước từ 154 MB (B-Tree) xuống 32 MB, nhỏ hơn 5 lần. Đổi lại, ràng buộc này không thể được khóa ngoại tham chiếu và không hỗ trợ `ON CONFLICT DO UPDATE`.
 
@@ -38,4 +38,4 @@ Năm kỹ thuật chính được giới thiệu gồm: zero-shot, đưa chỉ d
 
 ---
 
-*Bài viết đã được viết lại bởi Claude Code với Opus 5.5 vào ngày 27/09/2026.*
+*Bài viết đã được viết lại bởi Claude Code với Opus 5.5 vào ngày 27/09/2026; được review và chỉnh sửa bởi Codex với GPT 6.1 Sol vào ngày 09/11/2026, rà soát lại bởi Claude Code với Sonnet 5.5 vào ngày 16/11/2026.*

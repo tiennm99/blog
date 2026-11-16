@@ -23,7 +23,7 @@ Về cảm nhận chung, 91% người tham gia hài lòng khi làm việc với 
 
 Tác giả, một người đến từ Rust, chia sẻ cảm nhận ban đầu sau vài tháng viết Go với những dự án nhỏ. Điểm mạnh nổi bật nhất là xử lý đồng thời: goroutine và channel được tích hợp sẵn vào ngôn ngữ, dễ dùng và tránh được vấn đề "hàm có màu" (colored functions) mà nhiều mô hình đồng thời khác gặp phải. Hệ thống kiểu cố ý giữ đơn giản, không có cây kế thừa phức tạp; struct embedding thực chất chỉ là cú pháp rút gọn. Một kiểu dữ liệu không cần khai báo tường minh việc hiện thực một interface, nhờ đó các hàm như `Printf` hay thư viện template trở nên dễ viết mà không cần macro. Tác giả cũng thích cú pháp gọn và quy tắc dùng chữ hoa, chữ thường để quyết định phạm vi truy cập.
 
-Ngược lại, Go có những điểm yếu đáng kể. Ngôn ngữ không có kiểu liệt kê (enum) thực sự: cách thay thế bằng hằng số và `iota` không đảm bảo giá trị nằm trong một tập đóng, còn câu lệnh `switch` cũng không kiểm tra đã xét đủ mọi trường hợp. Go thiếu tính bất biến đúng nghĩa, vì `const` chỉ nhận giá trị xác định lúc biên dịch, còn biến khai báo bằng `var` và được xuất ra khỏi package thì ai cũng có thể sửa. Cuối cùng, kiểu `error` chỉ là một interface với phương thức `Error()`, nên thông tin chi tiết về lỗi thường bị che giấu, buộc người dùng đôi khi phải phân tích chuỗi thông báo để biết loại lỗi. So với Rust có enum và kiểu tổng (sum type), lỗi trong Go vẫn là giá trị nhưng không thật sự hữu ích.
+Ngược lại, Go có những điểm yếu đáng kể. Ngôn ngữ không có kiểu liệt kê (enum) thực sự: cách thay thế bằng hằng số và `iota` không đảm bảo giá trị nằm trong một tập đóng, còn câu lệnh `switch` cũng không kiểm tra đã xét đủ mọi trường hợp. Go thiếu tính bất biến đúng nghĩa, vì `const` chỉ nhận giá trị xác định lúc biên dịch, còn biến khai báo bằng `var` và được xuất ra khỏi package thì ai cũng có thể sửa. Cuối cùng, kiểu `error` chỉ là một interface với phương thức `Error()`, nên thông tin chi tiết về lỗi dễ bị che giấu; dù có thể kiểm tra bằng `errors.Is`/`errors.As`, tác giả vẫn thấy lỗi trong Go kém hữu ích hơn enum và kiểu tổng (sum type) của Rust.
 
 ## [The challenges of soft delete](https://atlas9.dev/blog/soft-delete.html)
 
@@ -58,4 +58,4 @@ Bạn cũng có thể dùng nó để điều hướng, đổi tên bằng `..re
 
 ---
 
-*Bài viết đã được viết lại bởi Claude Code với Opus 5.5 vào ngày 27/09/2026.*
+*Bài viết đã được viết lại bởi Claude Code với Opus 5.5 vào ngày 27/09/2026; được review và chỉnh sửa bởi Codex với GPT 6.1 Sol vào ngày 09/11/2026, rà soát lại bởi Claude Code với Sonnet 5.5 vào ngày 16/11/2026.*

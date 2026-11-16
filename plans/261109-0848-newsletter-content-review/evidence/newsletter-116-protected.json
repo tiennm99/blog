@@ -1,0 +1,84 @@
+{
+  "post": "content/post/2026/07/04/index.md",
+  "newsletter": 116,
+  "newsletter_post": true,
+  "note": "*Bài viết đã được viết lại bởi Claude Code với Opus 5.5 vào ngày 27/09/2026.*",
+  "lines": [
+    {
+      "line": 1,
+      "kind": "frontmatter",
+      "text": "---"
+    },
+    {
+      "line": 2,
+      "kind": "frontmatter",
+      "text": "title: \"Newsletter #116\""
+    },
+    {
+      "line": 3,
+      "kind": "frontmatter",
+      "text": "date: 2026-07-04"
+    },
+    {
+      "line": 4,
+      "kind": "frontmatter",
+      "text": "tags: [\"AI-Assisted\", \"Newsletter\", \"AI Engineering\", \"DevOps\", \"Performance\", \"Go\", \"Security\"]"
+    },
+    {
+      "line": 5,
+      "kind": "frontmatter",
+      "text": "categories: [\"Newsletter\"]"
+    },
+    {
+      "line": 6,
+      "kind": "frontmatter",
+      "text": "---"
+    },
+    {
+      "line": 8,
+      "kind": "italic-note",
+      "text": "*Mời bạn thưởng thức Newsletter #116.*"
+    },
+    {
+      "line": 10,
+      "kind": "heading",
+      "text": "## [8 myths on software engineering and AI](https://newsletter.getdx.com/p/8-myths-on-software-engineering-and)"
+    },
+    {
+      "line": 16,
+      "kind": "heading",
+      "text": "## [You Don't Love systemd Timers Enough](https://blog.tjll.net/you-dont-love-systemd-timers-enough/)"
+    },
+    {
+      "line": 22,
+      "kind": "heading",
+      "text": "## [Life is too short for a slow terminal](https://mijndertstuij.nl/posts/life-is-too-short-for-a-slow-terminal/)"
+    },
+    {
+      "line": 28,
+      "kind": "heading",
+      "text": "## [OpenCodeReview](https://github.com/alibaba/open-code-review)"
+    },
+    {
+      "line": 34,
+      "kind": "heading",
+      "text": "## [Golang code review notes II](https://www.elttam.com/blog/golang-code-review-notes-ii)"
+    },
+    {
+      "line": 40,
+      "kind": "heading",
+      "text": "## [Thoughts on starting new projects with LLM agents](https://eli.thegreenplace.net/2026/thoughts-on-starting-new-projects-with-llm-agents/)"
+    },
+    {
+      "line": 46,
+      "kind": "heading",
+      "text": "## [The History of Pets vs Cattle and How to Use the Analogy Properly](https://cloudscaling.com/blog/cloud-computing/the-history-of-pets-vs-cattle/)"
+    },
+    {
+      "line": 52,
+      "kind": "heading",
+      "text": "## [Every byte matters](https://fzakaria.com/2026/06/01/every-byte-matters)"
+    }
+  ],
+  "candidates": []
+}

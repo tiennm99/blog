@@ -1,0 +1,130 @@
+{
+  "post": "content/post/2025/12/02/index.md",
+  "newsletter": 62,
+  "newsletter_post": true,
+  "note": "*Bài viết đã được viết lại bởi Claude Code với Opus 5.5 vào ngày 27/09/2026.*",
+  "lines": [
+    {
+      "line": 1,
+      "kind": "frontmatter",
+      "text": "---"
+    },
+    {
+      "line": 2,
+      "kind": "frontmatter",
+      "text": "title: \"Newsletter #62\""
+    },
+    {
+      "line": 3,
+      "kind": "frontmatter",
+      "text": "date: 2025-12-02"
+    },
+    {
+      "line": 4,
+      "kind": "frontmatter",
+      "text": "tags: [\"AI-Assisted\", \"Claude Skills\", \"Environment Variables\", \"Documentation\", \"Multi-Core\", \"Performance\", \"AI Coding\"]"
+    },
+    {
+      "line": 5,
+      "kind": "frontmatter",
+      "text": "categories: [\"Newsletter\"]"
+    },
+    {
+      "line": 6,
+      "kind": "frontmatter",
+      "text": "---"
+    },
+    {
+      "line": 8,
+      "kind": "italic-note",
+      "text": "*Mời bạn thưởng thức Newsletter #62. ~~Bài viết này được thực hiện bởi VSCode Chat + OpenRouter + xAI: Grok 4.1 Fast (free)~~*"
+    },
+    {
+      "line": 10,
+      "kind": "heading",
+      "text": "## [Claude Skills are awesome, maybe a bigger deal than MCP](https://simonwillison.net/2025/Oct/16/claude-skills/)"
+    },
+    {
+      "line": 16,
+      "kind": "heading",
+      "text": "## [Environment variables are a legacy mess: Let's dive deep into them](https://allvpv.org/haotic-journey-through-envvars/)"
+    },
+    {
+      "line": 22,
+      "kind": "heading",
+      "text": "## [Examples are the best documentation](https://rakhim.exotext.com/examples-are-the-best-documentation)"
+    },
+    {
+      "line": 26,
+      "kind": "code",
+      "text": "```"
+    },
+    {
+      "line": 27,
+      "kind": "code",
+      "text": "max(4, 6) # → 6"
+    },
+    {
+      "line": 28,
+      "kind": "code",
+      "text": "max([1, 2, 3]) # → 3"
+    },
+    {
+      "line": 29,
+      "kind": "code",
+      "text": "max(['x', 'y', 'abc'], key=len) # → 'abc'"
+    },
+    {
+      "line": 30,
+      "kind": "code",
+      "text": "max([]) # ValueError"
+    },
+    {
+      "line": 31,
+      "kind": "code",
+      "text": "max([], default=5) # → 5"
+    },
+    {
+      "line": 32,
+      "kind": "code",
+      "text": "```"
+    },
+    {
+      "line": 36,
+      "kind": "heading",
+      "text": "## [Hazardous States and Accidents](https://entropicthoughts.com/hazardous-states-and-accidents)"
+    },
+    {
+      "line": 42,
+      "kind": "heading",
+      "text": "## [Multi-Core By Default](https://www.dgtlgrove.com/p/multi-core-by-default)"
+    },
+    {
+      "line": 48,
+      "kind": "heading",
+      "text": "## [Vibing a Non-Trivial Ghostty Feature](https://mitchellh.com/writing/non-trivial-vibing)"
+    },
+    {
+      "line": 54,
+      "kind": "heading",
+      "text": "## Bonus: Vài ảnh hay ho đến từ [ByteByteGo](https://bytebytego.com/)"
+    },
+    {
+      "line": 56,
+      "kind": "asset",
+      "text": "![A Guide to Microservices Architecture for Building Scalable Systems](https://substackcdn.com/image/fetch/$s_!lKZF!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fde422306-ef24-4d81-ac91-cb24ff284706_2250x2624.heic)"
+    },
+    {
+      "line": 58,
+      "kind": "italic-note",
+      "text": "*Kết quả của combo này mình đánh giá khoảng 4-6đ, cấu trúc ổn, chốt được nội dung cốt lõi tuy nhiên còn dùng nhiều từ tiếng Anh. Ưu điểm là sẵn có trong VSCode, tận dụng được built-in feature của VSCode, không phải chạy thêm Terminal*"
+    }
+  ],
+  "candidates": [
+    {
+      "line": 52,
+      "kind": "first-person",
+      "text": "Quy trình của ông gồm: lập kế hoạch cùng \"oracle\", chia việc thành phần nhỏ, dành các phiên riêng để dọn dẹp, viết tài liệu và tái cấu trúc mã nguồn, tạo kịch bản mô phỏng để kiểm thử các luồng cập nhật, nối backend với frontend, và cuối cùng luôn hỏi agent còn gì cần cải thiện. Ông nhấn mạnh phần viết tay và việc tự rà soát kỹ trước khi hợp nhất là bắt buộc, không bao giờ phát hành mã nguồn mình không hiểu. Tổng cộng có 16 phiên, chi phí token 15,98 USD và khoảng 8 giờ làm việc; tác giả cho rằng cách này nhanh hơn tự làm, nhất là khi tinh chỉnh giao diện SwiftUI, và AI có thể làm việc trong lúc ông bận việc khác."
+    }
+  ]
+}

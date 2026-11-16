@@ -1,0 +1,90 @@
+{
+  "post": "content/post/2025/07/28/index.md",
+  "newsletter": 38,
+  "newsletter_post": true,
+  "note": "*Bài viết đã được viết lại bởi Claude Code với Opus 5.5 vào ngày 27/09/2026.*",
+  "lines": [
+    {
+      "line": 1,
+      "kind": "frontmatter",
+      "text": "---"
+    },
+    {
+      "line": 2,
+      "kind": "frontmatter",
+      "text": "title: \"Newsletter #38\""
+    },
+    {
+      "line": 3,
+      "kind": "frontmatter",
+      "text": "date: 2025-07-28"
+    },
+    {
+      "line": 4,
+      "kind": "frontmatter",
+      "text": "tags: [\"AI-Assisted\", \"Cursor\", \"Prompt Engineering\", \"AI Coding\", \"Java\", \"Machine Code\", \"SQL\"]"
+    },
+    {
+      "line": 5,
+      "kind": "frontmatter",
+      "text": "categories: [\"Newsletter\"]"
+    },
+    {
+      "line": 6,
+      "kind": "frontmatter",
+      "text": "---"
+    },
+    {
+      "line": 8,
+      "kind": "italic-note",
+      "text": "*Do vẫn chưa xong phần task với ~~Claude Code + Serena MCP~~ trong bài hôm qua, nên nay lại quay lại chuỗi Newsletter nhàm chán với AI nhé!! Mời bạn thưởng thức Newsletter #38 hehe :>*"
+    },
+    {
+      "line": 10,
+      "kind": "heading",
+      "text": "## [9 Lessons From Cursor's System Prompt](https://byteatatime.dev/posts/cursor-prompt-analysis/)"
+    },
+    {
+      "line": 16,
+      "kind": "heading",
+      "text": "## [My AI Skeptic Friends Are All Nuts](https://fly.io/blog/youre-all-nuts/)"
+    },
+    {
+      "line": 22,
+      "kind": "heading",
+      "text": "## [Claude 4 Best Practices](https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/claude-prompting-best-practices)"
+    },
+    {
+      "line": 28,
+      "kind": "heading",
+      "text": "## [Stop Over-thinking AI Subscriptions](https://steipete.me/posts/2025/stop-overthinking-ai-subscriptions)"
+    },
+    {
+      "line": 34,
+      "kind": "heading",
+      "text": "## ~~[Tests Should Not Contain Logic](https://blog.snork.dev/posts/tests-should-not-contain-logic.html)~~"
+    },
+    {
+      "line": 40,
+      "kind": "heading",
+      "text": "## [Do You Really Know Java?](https://blog.jetbrains.com/idea/2025/05/do-you-really-know-java/)"
+    },
+    {
+      "line": 46,
+      "kind": "heading",
+      "text": "## [Machine Code Isn't Scary](https://jimmyhmiller.com/machine-code-isnt-scary)"
+    },
+    {
+      "line": 52,
+      "kind": "heading",
+      "text": "## [The Art of SQL Query Optimization](https://jnidzwetzki.github.io/2025/06/03/art-of-query-optimization.html)"
+    }
+  ],
+  "candidates": [
+    {
+      "line": 20,
+      "kind": "first-person",
+      "text": "Ông lần lượt phản bác các lập luận khác. Bạn vẫn luôn chịu trách nhiệm với những gì mình hợp nhất vào nhánh `main`, nên hãy đọc mã do AI viết như đọc mã của đồng nghiệp. Mã \"tầm thường\" không đáng lo, vì không phải đoạn mã nào cũng cần tinh xảo, và LLM nâng \"mặt sàn\" chất lượng lên. Chuyện LLM viết Rust kém phần nhiều do công cụ, còn Go lại rất hợp với LLM. Với lập luận về tay nghề, ông nhắc rằng lập trình viên chuyên nghiệp giải quyết vấn đề thực tế cho mọi người bằng mã nguồn, chứ trong công việc hằng ngày chúng ta không phải nghệ nhân. Ông cũng thừa nhận LLM có thể khiến nhiều lập trình viên mất việc, và rằng những người hoài nghi kia rất giỏi: khi họ bắt tay vào dùng, các agent lập trình sẽ còn hiệu quả hơn nhiều."
+    }
+  ]
+}

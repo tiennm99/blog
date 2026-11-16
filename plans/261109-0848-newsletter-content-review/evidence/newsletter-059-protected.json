@@ -1,0 +1,100 @@
+{
+  "post": "content/post/2025/10/03/index.md",
+  "newsletter": 59,
+  "newsletter_post": true,
+  "note": "*Bài viết đã được viết lại bởi Claude Code với Opus 5.5 vào ngày 27/09/2026.*",
+  "lines": [
+    {
+      "line": 1,
+      "kind": "frontmatter",
+      "text": "---"
+    },
+    {
+      "line": 2,
+      "kind": "frontmatter",
+      "text": "title: \"Newsletter #59\""
+    },
+    {
+      "line": 3,
+      "kind": "frontmatter",
+      "text": "date: 2025-10-03"
+    },
+    {
+      "line": 4,
+      "kind": "frontmatter",
+      "text": "tags: [\"AI-Assisted\", \"Compression\", \"Branchless Programming\", \"Performance\", \"AI Coding\", \"Future of Programming\", \"Engineering Taste\"]"
+    },
+    {
+      "line": 5,
+      "kind": "frontmatter",
+      "text": "categories: [\"Newsletter\"]"
+    },
+    {
+      "line": 6,
+      "kind": "frontmatter",
+      "text": "---"
+    },
+    {
+      "line": 8,
+      "kind": "italic-note",
+      "text": "*Mời bạn thưởng thức Newsletter #59.*"
+    },
+    {
+      "line": 10,
+      "kind": "heading",
+      "text": "## [Taking a Look at Compression Algorithms](https://cefboud.com/posts/compression/)"
+    },
+    {
+      "line": 16,
+      "kind": "heading",
+      "text": "## [90%](https://lucumr.pocoo.org/2025/9/29/90-percent/)"
+    },
+    {
+      "line": 22,
+      "kind": "heading",
+      "text": "## [The Weird Concept of Branchless Programming](https://sanixdk.xyz/blogs/the-weird-concept-of-branchless-programming)"
+    },
+    {
+      "line": 28,
+      "kind": "heading",
+      "text": "## [AI Coding Assistants: Building Apps for 30 Hours Straight](https://threadreaderapp.com/thread/1972793278744461627.html)"
+    },
+    {
+      "line": 34,
+      "kind": "heading",
+      "text": "## [Development Gets Better with Age](https://www.allthingsdistributed.com/2025/10/better-with-age.html)"
+    },
+    {
+      "line": 40,
+      "kind": "heading",
+      "text": "## [Programming Deflation](https://tidyfirst.substack.com/p/programming-deflation)"
+    },
+    {
+      "line": 46,
+      "kind": "heading",
+      "text": "## [What is \"good taste\" in software engineering?](https://www.seangoedecke.com/taste/)"
+    },
+    {
+      "line": 52,
+      "kind": "heading",
+      "text": "## Bonus: Một vài ảnh thú vị đến từ [ByteByteGo](https://bytebytego.com/)"
+    },
+    {
+      "line": 54,
+      "kind": "asset",
+      "text": "![Service Discovery 101: The Phonebook for Distributed Systems](https://substackcdn.com/image/fetch/$s_!CEQb!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F30caf720-4b66-4f5f-84d2-72c578969944_2250x2624.heic)"
+    },
+    {
+      "line": 56,
+      "kind": "italic-note",
+      "text": "*Bài viết trong kho của mình đã hết rồi. Có lẽ phải chờ một thời gian để mình tích luỹ lại sau đó mới tiếp tục được nhé. Hẹn gặp lại các bạn sau.*"
+    }
+  ],
+  "candidates": [
+    {
+      "line": 18,
+      "kind": "first-person",
+      "text": "Armin Ronacher cho biết với thành phần hạ tầng ông khởi xướng tại công ty mới, hơn 90% mã nguồn do AI viết. Đó là một dịch vụ Go gửi và nhận email, có REST API tương thích OpenAPI cùng SDK cho Python và TypeScript, tổng cộng khoảng 40.000 dòng. Dù vậy, ông vẫn coi từng dòng là trách nhiệm của mình: tự thiết kế hệ thống, lược đồ cơ sở dữ liệu và kiến trúc, chỉ dùng AI như một \"con vịt cao su\" để phản biện. AI giúp ông theo đuổi những lựa chọn trước đây quá tốn công khi làm tay, như viết SQL thô thay cho ORM để dễ gỡ lỗi, hay đặt đặc tả OpenAPI làm nguồn chuẩn rồi sinh mã cho cả phía máy khách lẫn máy chủ. Ông dùng Claude Code để gỡ lỗi và Codex để rà soát mã."
+    }
+  ]
+}

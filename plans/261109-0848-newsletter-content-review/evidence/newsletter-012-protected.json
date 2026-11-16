@@ -1,0 +1,145 @@
+{
+  "post": "content/post/2025/04/20/index.md",
+  "newsletter": 12,
+  "newsletter_post": true,
+  "note": "*Bài viết đã được viết lại bởi Claude Code với Opus 5.5 vào ngày 27/09/2026.*",
+  "lines": [
+    {
+      "line": 1,
+      "kind": "frontmatter",
+      "text": "---"
+    },
+    {
+      "line": 2,
+      "kind": "frontmatter",
+      "text": "title: \"Newsletter #12\""
+    },
+    {
+      "line": 3,
+      "kind": "frontmatter",
+      "text": "date: 2025-04-20"
+    },
+    {
+      "line": 4,
+      "kind": "frontmatter",
+      "text": "tags: [\"AI-Assisted\", \"Newsletter\", \"Software Architecture\", \"Distributed Systems\", \"Java\", \"Networking\", \"System Design\"]"
+    },
+    {
+      "line": 5,
+      "kind": "frontmatter",
+      "text": "categories: [ \"Newsletter\" ]"
+    },
+    {
+      "line": 6,
+      "kind": "frontmatter",
+      "text": "---"
+    },
+    {
+      "line": 8,
+      "kind": "italic-note",
+      "text": "*Mời bạn thưởng thức Newsletter \\#12.*"
+    },
+    {
+      "line": 10,
+      "kind": "heading",
+      "text": "## [Fundamental Techniques for Software Architects](https://www.workingsoftware.dev/fundamental-techniques-for-software-architects/)"
+    },
+    {
+      "line": 16,
+      "kind": "heading",
+      "text": "## [The End of Programming as We Know It](https://www.oreilly.com/radar/the-end-of-programming-as-we-know-it/)"
+    },
+    {
+      "line": 22,
+      "kind": "heading",
+      "text": "## [In defense of simple architectures](https://danluu.com/simple-architectures/)"
+    },
+    {
+      "line": 28,
+      "kind": "heading",
+      "text": "## [The trouble with \"good enough\"](https://newsletter.weskao.com/p/the-trouble-with-good-enough)"
+    },
+    {
+      "line": 34,
+      "kind": "heading",
+      "text": "## [Should managers still code?](https://theengineeringmanager.substack.com/p/should-managers-still-code)"
+    },
+    {
+      "line": 40,
+      "kind": "heading",
+      "text": "## [What is Saga Pattern in Distributed Systems?](https://newsletter.scalablethread.com/p/what-is-saga-pattern-in-distributed)"
+    },
+    {
+      "line": 46,
+      "kind": "heading",
+      "text": "## [What would happen if we didn't use TCP or UDP?](https://github.com/Hawzen/hdp)"
+    },
+    {
+      "line": 52,
+      "kind": "heading",
+      "text": "## [Scoped Values in Java 24 - Inside Java Newscast #86](https://www.youtube.com/watch?v=7tfUJLUbZiM)"
+    },
+    {
+      "line": 56,
+      "kind": "heading",
+      "text": "## [Java 24 - Better Language, Better APIs, Better Runtime](https://www.youtube.com/watch?v=2NTyzL-9Bfo)"
+    },
+    {
+      "line": 60,
+      "kind": "heading",
+      "text": "## Bonus: Vài ảnh hay ho đến từ [ByteByteGo](https://bytebytego.com/)"
+    },
+    {
+      "line": 62,
+      "kind": "asset",
+      "text": "![30 Free APIs for Developers](https://substack-post-media.s3.amazonaws.com/public/images/f112df94-df52-4140-98ec-873e5b74d988_1280x1601.gif)"
+    },
+    {
+      "line": 63,
+      "kind": "asset",
+      "text": "![The Generative AI Learning Roadmap](https://substack-post-media.s3.amazonaws.com/public/images/c3bf4776-744b-4e87-85f8-6dddd6d85597_1280x1566.gif)"
+    },
+    {
+      "line": 64,
+      "kind": "asset",
+      "text": "![HTTP/1 -> HTTP/2 -> HTTP/3](https://substack-post-media.s3.amazonaws.com/public/images/c1dbb32e-8d1b-4c13-ae48-fe485ad92191_1280x1601.gif)"
+    },
+    {
+      "line": 65,
+      "kind": "asset",
+      "text": "![Structure of URL](https://substack-post-media.s3.amazonaws.com/public/images/d864f35c-537c-4571-8644-ce20d1a0caa5_1280x1427.gif)"
+    },
+    {
+      "line": 67,
+      "kind": "heading",
+      "text": "## Bonus 2: Vài video hay ho đến từ [ByteByteGo](https://bytebytego.com/)"
+    },
+    {
+      "line": 69,
+      "kind": "asset",
+      "text": "[8 Most Important Tips for Designing Fault-Tolerant System](https://www.youtube.com/watch?v=3Lis4w4_bBc)"
+    },
+    {
+      "line": 71,
+      "kind": "heading",
+      "text": "## Bonus 3: Vài tài liệu hay ho đến từ [Redis.io](https://redis.io/)"
+    },
+    {
+      "line": 73,
+      "kind": "asset",
+      "text": "[Cache and Message Broker for Microservices](https://redis.io/resources/cache-and-message-broker-for-microservices-solution-brief.pdf)"
+    },
+    {
+      "line": 75,
+      "kind": "asset",
+      "text": "[Caching at Scale With Redis](https://redis.io/wp-content/uploads/2021/12/caching-at-scale-with-redis-updated-2021-12-04.pdf)"
+    }
+  ],
+  "candidates": [
+    {
+      "line": 32,
+      "kind": "first-person",
+      "text": "Tác giả đưa ra ví dụ: một tính năng chỉ \"đủ tốt\" khi thực sự mang lại giá trị cho khách hàng, chứ không phải khi quản lý gật đầu cho phát hành; một email chỉ đạt khi nội dung đủ thuyết phục, chứ không phải khi đã bấm gửi. Nâng chất lượng không có nghĩa là bỏ ra 30 giờ cho mọi việc, mà là dịch chuyển thêm một chút trên thang chất lượng ở những việc có đòn bẩy cao nhất. Bài viết kết thúc bằng vài câu hỏi tự vấn giúp bạn nhận ra mình đang tuyên bố \"đủ tốt\" quá sớm ở đâu và nên nâng chuẩn ở chỗ nào."
+    }
+  ]
+}

@@ -1,0 +1,130 @@
+{
+  "post": "content/post/2025/12/27/index.md",
+  "newsletter": 74,
+  "newsletter_post": true,
+  "note": "*Bài viết đã được viết lại bởi Claude Code với Opus 5.5 vào ngày 27/09/2026.*",
+  "lines": [
+    {
+      "line": 1,
+      "kind": "frontmatter",
+      "text": "---"
+    },
+    {
+      "line": 2,
+      "kind": "frontmatter",
+      "text": "title: \"Newsletter #74\""
+    },
+    {
+      "line": 3,
+      "kind": "frontmatter",
+      "text": "date: 2025-12-27"
+    },
+    {
+      "line": 4,
+      "kind": "frontmatter",
+      "text": "tags: [\"AI-Assisted\", \"Newsletter\", \"Software Architecture\", \"Databases\", \"Cloud Cost\", \"Performance\", \"API Design\"]"
+    },
+    {
+      "line": 5,
+      "kind": "frontmatter",
+      "text": "categories: [\"Newsletter\"]"
+    },
+    {
+      "line": 6,
+      "kind": "frontmatter",
+      "text": "---"
+    },
+    {
+      "line": 8,
+      "kind": "italic-note",
+      "text": "*Lâu rồi chưa pay 1 cái gì liên quan đến AI (từ thời Claude subscription để thử nghiệm Claude Code). Nay mới mua thử gói [GLM Coding Plan](https://z.ai/subscribe) của [Z.ai](https://z.ai) để trải nghiệm. Gói này hiện cho phép dùng model mới nhất của Z.ai là GLM-4.7. Từ nay mình sẽ tranh thủ dùng [Claude Code](https://claude.com/product/claude-code) với [Z.ai API](https://z.ai/model-api) để 'bào' cho xứng đáng số tiền bỏ ra^^. Mời bạn thưởng thức Newsletter #74.*"
+    },
+    {
+      "line": 10,
+      "kind": "heading",
+      "text": "## [Goodbye Microservices: From 100s of problem children to 1 superstar](https://www.twilio.com/en-us/blog/developers/best-practices/goodbye-microservices)"
+    },
+    {
+      "line": 16,
+      "kind": "heading",
+      "text": "## [5 engineering dogmas it's time to retire](https://newsletter.manager.dev/p/5-engineering-dogmas-its-time-to)"
+    },
+    {
+      "line": 22,
+      "kind": "heading",
+      "text": "## [What Does a Database for SSDs Look Like?](https://brooker.co.za/blog/2025/12/15/database-for-ssd.html)"
+    },
+    {
+      "line": 28,
+      "kind": "heading",
+      "text": "## [The Economics of System Design: FinOps, Auto-Scaling, and Spot Instances](https://designgurus.substack.com/p/cloud-cost-optimization-101-5-strategies)"
+    },
+    {
+      "line": 34,
+      "kind": "heading",
+      "text": "## [The Big-O Complexity of Vibe Coders](https://www.shiveesh.com/thoughts-and-ideas/the-big-o-complexity-of-vibe-coders)"
+    },
+    {
+      "line": 40,
+      "kind": "heading",
+      "text": "## [Design is more than code](https://linear.app/now/design-is-more-than-code)"
+    },
+    {
+      "line": 46,
+      "kind": "heading",
+      "text": "## [How we saved 70% CPU and 60% memory in Refinery](https://www.honeycomb.io/blog/how-we-saved-70-cpu-60-memory-refinery)"
+    },
+    {
+      "line": 52,
+      "kind": "heading",
+      "text": "## [From Junior to Senior: 7 API Design Patterns That Scale](https://designgurus.substack.com/p/from-junior-to-senior-7-api-design)"
+    },
+    {
+      "line": 58,
+      "kind": "heading",
+      "text": "## Bonus"
+    },
+    {
+      "line": 60,
+      "kind": "heading",
+      "text": "### Images"
+    },
+    {
+      "line": 62,
+      "kind": "asset",
+      "text": "![Evolution of HTTP](https://substackcdn.com/image/fetch/$s_!3GQA!,w_1100,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F82f1e76a-8fbf-4e8f-b030-e20037c66f70_3000x3900.png)"
+    },
+    {
+      "line": 63,
+      "kind": "asset",
+      "text": "![System Performance Metrics Every Engineer Should Know](https://substackcdn.com/image/fetch/$s_!Zyn0!,w_1100,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F063ae714-8714-4695-8b0e-16a765c5c1a8_2360x2960.png)"
+    },
+    {
+      "line": 64,
+      "kind": "asset",
+      "text": "![Why Is Nginx So Popular?](https://substackcdn.com/image/fetch/$s_!ta7a!,w_1100,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fe42382d5-9be5-443a-9f75-56ecfa22569c_2360x2960.png)"
+    },
+    {
+      "line": 65,
+      "kind": "asset",
+      "text": "![Network Debugging Commands Every Engineer Should Know](https://substackcdn.com/image/fetch/$s_!sXIK!,w_1100,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fa25e1401-cc6f-49f1-9ed1-6f093a01ac6c_2360x2664.png)"
+    },
+    {
+      "line": 66,
+      "kind": "asset",
+      "text": "![Hub, Switch, & Router Explained](https://substackcdn.com/image/fetch/$s_!BXWB!,w_1100,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F09a8b52f-2b80-4762-92cd-c5d18d5a7a3c_2360x2960.png)"
+    },
+    {
+      "line": 68,
+      "kind": "author-note",
+      "text": "**Đánh giá**: *Z.ai xử lý 1 url tương đối nhanh, ban đầu mình cũng thấy khá ok, tuy nhiên thêm càng nhiều thì có vẻ càng bị dài & lạm dụng tiếng Anh. Mình đã phải yêu cầu tóm gọn lại một xíu. Hi vọng sẽ cải thiện được sau (vì lỡ mua rùi và non-refundable hiuhiu)*"
+    }
+  ],
+  "candidates": [
+    {
+      "line": 20,
+      "kind": "first-person",
+      "text": "Thứ tư, \"mọi thay đổi đều nên nằm sau feature flag\": khi bị lạm dụng, hàng trăm cờ đang bật khiến mã nguồn phức tạp, khó kiểm thử và còn tạo cảm giác an toàn giả; đôi khi chỉ cần kiểm thử kỹ trên môi trường staging rồi phát hành. Thứ năm, \"cần chú thích nghĩa là mã quá phức tạp\": cực đoan kiểu nào cũng không hợp lý, vì một hai dòng chú thích có thể tiết kiệm hàng giờ cho người đến sau. Tác giả kết luận rằng không quan điểm nào hoàn toàn vô lý, nhưng người quản lý kỹ thuật giỏi cần biết cân bằng chúng với thực tế của đội mình."
+    }
+  ]
+}

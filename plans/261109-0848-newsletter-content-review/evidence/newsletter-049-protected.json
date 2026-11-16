@@ -1,0 +1,200 @@
+{
+  "post": "content/post/2025/08/08/index.md",
+  "newsletter": 49,
+  "newsletter_post": true,
+  "note": "*Bài viết đã được viết lại bởi Claude Code với Opus 5.5 vào ngày 27/09/2026.*",
+  "lines": [
+    {
+      "line": 1,
+      "kind": "frontmatter",
+      "text": "---"
+    },
+    {
+      "line": 2,
+      "kind": "frontmatter",
+      "text": "title: \"Newsletter #49\""
+    },
+    {
+      "line": 3,
+      "kind": "frontmatter",
+      "text": "date: 2025-08-08"
+    },
+    {
+      "line": 4,
+      "kind": "frontmatter",
+      "text": "tags: [\"AI-Assisted\", \"PostgreSQL\", \"LLM\", \"AI Coding\", \"Virtual-Threads\", \"Developer-Survey\", \"Technology-Selection\"]"
+    },
+    {
+      "line": 5,
+      "kind": "frontmatter",
+      "text": "categories: [\"Newsletter\"]"
+    },
+    {
+      "line": 6,
+      "kind": "frontmatter",
+      "text": "---"
+    },
+    {
+      "line": 8,
+      "kind": "italic-note",
+      "text": "*Mời bạn thưởng thức Newsletter #49.*"
+    },
+    {
+      "line": 10,
+      "kind": "heading",
+      "text": "## [PostgreSQL at Scale: Database Schema Changes Without Downtime](https://medium.com/paypal-tech/postgresql-at-scale-database-schema-changes-without-downtime-20d3749ed680)"
+    },
+    {
+      "line": 16,
+      "kind": "heading",
+      "text": "## [The Big LLM Architecture Comparison: From DeepSeek-V3 to Kimi K2](https://magazine.sebastianraschka.com/p/the-big-llm-architecture-comparison)"
+    },
+    {
+      "line": 22,
+      "kind": "heading",
+      "text": "## [From Async/Await to Virtual Threads](https://lucumr.pocoo.org/2025/7/26/virtual-threads/)"
+    },
+    {
+      "line": 28,
+      "kind": "code",
+      "text": "```python"
+    },
+    {
+      "line": 29,
+      "kind": "code",
+      "text": "def download_all(urls):"
+    },
+    {
+      "line": 30,
+      "kind": "code",
+      "text": "    results = {}"
+    },
+    {
+      "line": 31,
+      "kind": "code",
+      "text": "    with ThreadGroup(max_concurrency=8) as g:"
+    },
+    {
+      "line": 32,
+      "kind": "code",
+      "text": "        for url in urls:"
+    },
+    {
+      "line": 33,
+      "kind": "code",
+      "text": "            g.spawn(partial(download_and_store, results, url))"
+    },
+    {
+      "line": 34,
+      "kind": "code",
+      "text": "    return results"
+    },
+    {
+      "line": 35,
+      "kind": "code",
+      "text": "```"
+    },
+    {
+      "line": 37,
+      "kind": "heading",
+      "text": "## ~~[Six Principles for Production AI Agents](https://www.app.build/blog/six-principles-production-ai-agents)~~"
+    },
+    {
+      "line": 39,
+      "kind": "struck",
+      "text": "~~Với sự phát triển mạnh mẽ của các AI Agent trong thực tế, việc đưa chúng vào sản xuất đòi hỏi những nguyên tắc thiết kế chắc chắn. Bài viết này trình bày 6 nguyên tắc cốt lõi để xây dựng AI Agent hoạt động ổn định trong môi trường sản xuất:~~"
+    },
+    {
+      "line": 41,
+      "kind": "struck",
+      "text": "~~**1. Đầu tư vào System Prompt**: Tập trung vào hướng dẫn rõ ràng, trực tiếp. Các mô hình hiện đại chỉ cần ngữ cảnh chi tiết và không mâu thuẫn, không cần các thủ thuật phức tạp.~~"
+    },
+    {
+      "line": 43,
+      "kind": "struck",
+      "text": "~~**2. Tách biệt Ngữ cảnh**: Cung cấp kiến thức ban đầu tối thiểu, cho phép các công cụ lấy thêm ngữ cảnh khi cần. Sử dụng \"nén ngữ cảnh\" để quản lý độ phức tạp.~~"
+    },
+    {
+      "line": 45,
+      "kind": "struck",
+      "text": "~~**3. Thiết kế Công cụ Cẩn thận**: Tạo các công cụ tập trung, được kiểm thử kỹ lưỡng. Giới hạn số lượng công cụ với tham số rõ ràng và đảm bảo tính idempotency.~~"
+    },
+    {
+      "line": 47,
+      "kind": "struck",
+      "text": "~~**4. Thiết kế Vòng phản hồi**: Sử dụng phương pháp actor-critic, cho phép tạo ra sáng tạo nhưng có kiểm chứng nghiêm ngặt. Bao gồm kiểm chứng chuyên biệt cho từng lĩnh vực.~~"
+    },
+    {
+      "line": 49,
+      "kind": "struck",
+      "text": "~~**5. Phân tích Lỗi bằng LLM**: Sử dụng nhiều agent để phân tích log và quỹ đạo hoạt động, dùng LLM để xác định các khu vực cần cải thiện.~~"
+    },
+    {
+      "line": 51,
+      "kind": "struck",
+      "text": "~~**6. Nhận diện Hành vi gây bực xúc như Lỗi hệ thống**: Hiểu rằng agent có thể \"hack\" các hướng dẫn. Debug thiết kế hệ thống trước khi đổ lỗi cho mô hình.~~"
+    },
+    {
+      "line": 53,
+      "kind": "struck",
+      "text": "~~Kết luận quan trọng: \"Xây dựng AI Agent hiệu quả không phải là tìm giải pháp vạn năng... mà là thiết kế hệ thống và kỹ thuật phần mềm đúng đắn.\"~~"
+    },
+    {
+      "line": 55,
+      "kind": "heading",
+      "text": "## [Working Effectively with AI Coding Tools like Claude Code](https://sajalsharma.com/posts/effective-ai-coding/)"
+    },
+    {
+      "line": 61,
+      "kind": "heading",
+      "text": "## [When Software Engineers Think They Need More Focus Time](https://jola.dev/posts/enough-focus-time)"
+    },
+    {
+      "line": 67,
+      "kind": "heading",
+      "text": "## [Making Postgres 42,000x slower because I am unemployed](https://byteofdev.com/posts/making-postgres-slow/)"
+    },
+    {
+      "line": 73,
+      "kind": "heading",
+      "text": "## [Stack Overflow Developer Survey 2025](https://survey.stackoverflow.co/2025/)"
+    },
+    {
+      "line": 79,
+      "kind": "heading",
+      "text": "## [Choose Boring Technology, Revisited](https://www.brethorsting.com/blog/2025/07/choose-boring-technology,-revisited/)"
+    },
+    {
+      "line": 85,
+      "kind": "heading",
+      "text": "## [Agentic Coding Things That Didn't Work](https://lucumr.pocoo.org/2025/7/30/things-that-didnt-work/)"
+    },
+    {
+      "line": 91,
+      "kind": "heading",
+      "text": "## [Vibe Code is Legacy Code](https://blog.val.town/vibe-code)"
+    }
+  ],
+  "candidates": [
+    {
+      "line": 63,
+      "kind": "first-person",
+      "text": "Bài viết của Jola thách thức niềm tin phổ biến rằng kỹ sư phần mềm luôn cần thêm thời gian tập trung không bị gián đoạn để viết mã. Theo tác giả, công việc của lập trình viên là tạo ra tác động, giải quyết vấn đề và mang lại giá trị thực sự, và phần giá trị cao nhất thường diễn ra bên ngoài trình soạn thảo: phát hiện một giả định sai trong buổi họp sản phẩm trước khi cả dự án đi chệch hướng, đặt một câu hỏi làm rõ giúp nhóm tiết kiệm nhiều tuần công sức, lập trình cặp với một đồng nghiệp junior đang bế tắc, hay xem xét tài liệu thiết kế trước khi bắt tay vào triển khai. Người luôn khóa kín lịch để viết mã một mình dễ bỏ lỡ chính những cơ hội hợp tác như vậy."
+    },
+    {
+      "line": 65,
+      "kind": "first-person",
+      "text": "Tác giả không phủ nhận vai trò của thời gian tập trung mà khuyên dùng nó có chủ đích: đo năng suất bằng giá trị mang lại thay vì số giờ viết mã, thông báo rõ lịch làm việc (ví dụ buổi sáng làm việc sâu, buổi chiều sẵn sàng hỗ trợ), liên tục tự hỏi mình có đang giải đúng bài toán hay không, và nhớ rằng tác động của một kỹ sư không chỉ nằm ở mã nguồn. Tinh thần cốt lõi của bài có thể tóm lại trong một câu: mục tiêu không phải là viết mã, mục tiêu là giải quyết vấn đề."
+    },
+    {
+      "line": 83,
+      "kind": "first-person",
+      "text": "Vấn đề mới là trợ lý AI có thể sinh mã trông rất chuyên nghiệp cho bất kỳ ngăn xếp công nghệ nào, tạo ra cảm giác tự tin giả. Khi ghép nhiều công nghệ lạ với mã do AI viết, bạn gần như không thể kiểm chứng: không biết lựa chọn framework có phù hợp hay không, cũng không biết cần canh chừng những kiểu lỗi nào. Vì vậy, trước khi đưa một công nghệ mới vào dự án, hãy tự hỏi liệu mình có đủ khả năng xem xét mã AI viết cho công nghệ đó không; dành thời gian hiểu sâu công cụ mới đủ để kiểm tra lại gợi ý của AI; và đừng lấy AI làm lý do để học nhiều công nghệ lạ cùng lúc. Theo tác giả, AI nên là bộ khuếch đại cho những công nghệ bạn đã hiểu, chứ không phải chiếc nạng cho những công nghệ bạn chưa hiểu."
+    },
+    {
+      "line": 87,
+      "kind": "first-person",
+      "text": "Khác với các bài chia sẻ thành công, Armin Ronacher kể về những cách tự động hóa khi lập trình với AI agent mà ông đã thử rồi bỏ. Loạt lệnh slash tự viết đều không trụ lại: `/fix-bug` không tốt hơn việc dán đường dẫn issue trên GitHub kèm suy nghĩ của mình, `/commit` sinh thông điệp không bao giờ đúng văn phong của ông, `/add-tests` và `/fix-nits` kém hơn hoặc thừa so với chỉ dẫn thông thường, còn `/next-todo` gần như không được dùng. Hook khó điều khiển và chạy formatter sau mỗi lần sửa thay vì cuối phiên, nên ông chuyển sang chặn lệnh qua PATH cho đơn giản; print mode (90% mã xác định, 10% suy luận) rất hứa hẹn nhưng còn chậm và khó gỡ lỗi; sub-agent giúp song song hóa nhưng gây rối khi vừa đọc vừa ghi, nên ông thường mở phiên mới hoặc chia sẻ suy nghĩ qua tệp markdown."
+    }
+  ]
+}

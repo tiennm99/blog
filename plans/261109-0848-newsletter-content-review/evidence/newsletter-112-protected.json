@@ -1,0 +1,100 @@
+{
+  "post": "content/post/2026/06/23/index.md",
+  "newsletter": 112,
+  "newsletter_post": true,
+  "note": "*Bài viết đã được viết lại bởi Claude Code với Opus 5.5 vào ngày 27/09/2026.*",
+  "lines": [
+    {
+      "line": 1,
+      "kind": "frontmatter",
+      "text": "---"
+    },
+    {
+      "line": 2,
+      "kind": "frontmatter",
+      "text": "title: \"Newsletter #112\""
+    },
+    {
+      "line": 3,
+      "kind": "frontmatter",
+      "text": "date: 2026-06-23"
+    },
+    {
+      "line": 4,
+      "kind": "frontmatter",
+      "text": "tags: [\"AI-Assisted\", \"Newsletter\", \"Software Engineering\", \"Rust\", \"Kubernetes\", \"Claude Code\", \"Performance\"]"
+    },
+    {
+      "line": 5,
+      "kind": "frontmatter",
+      "text": "categories: [\"Newsletter\"]"
+    },
+    {
+      "line": 6,
+      "kind": "frontmatter",
+      "text": "---"
+    },
+    {
+      "line": 8,
+      "kind": "italic-note",
+      "text": "*Mời bạn thưởng thức Newsletter #112.*"
+    },
+    {
+      "line": 10,
+      "kind": "heading",
+      "text": "## [A few interesting modern pixel fonts](https://unsung.aresluna.org/a-few-interesting-modern-pixel-fonts/)"
+    },
+    {
+      "line": 16,
+      "kind": "heading",
+      "text": "## [The Best Engineers Write Less Code](https://shvetsm.github.io/posts/the-best-engineers-write-less-code/)"
+    },
+    {
+      "line": 22,
+      "kind": "heading",
+      "text": "## [Fast is better than slow](https://dubroy.com/blog/fast-is-better-than-slow/)"
+    },
+    {
+      "line": 28,
+      "kind": "heading",
+      "text": "## [Java Cheat Sheet](https://tms-outsource.com/cs/java-cheat-sheet/)"
+    },
+    {
+      "line": 34,
+      "kind": "heading",
+      "text": "## [Swapping Go for Rust: 10x Cheaper K8s Ingress](https://dev.to/syedahmershah/swapping-go-for-rust-10x-cheaper-k8s-ingress-2b4p)"
+    },
+    {
+      "line": 40,
+      "kind": "heading",
+      "text": "## [Persistent multiplayer state without chaos](https://packagemain.tech/p/persistent-multiplayer-state-without)"
+    },
+    {
+      "line": 46,
+      "kind": "heading",
+      "text": "## [We're in the Over-engineering Game Now](https://plc.vc/cdx)"
+    },
+    {
+      "line": 52,
+      "kind": "heading",
+      "text": "## [Package managers that package package managers](https://nesbitt.io/2026/05/28/package-managers-that-package-package-managers.html)"
+    },
+    {
+      "line": 58,
+      "kind": "heading",
+      "text": "## [Beyond the Prompt: Claude Code](https://arps18.github.io/posts/claude-code-mastery/)"
+    },
+    {
+      "line": 64,
+      "kind": "heading",
+      "text": "## [How's Linear so fast? A technical breakdown](https://performance.dev/how-is-linear-so-fast-a-technical-breakdown)"
+    }
+  ],
+  "candidates": [
+    {
+      "line": 56,
+      "kind": "first-person",
+      "text": "Bài viết cũng nêu những hệ quả đáng chú ý cho chuỗi cung ứng phần mềm. 25 trên 42 công cụ tự phát hành chính mình qua registry của mình. Một CVE của pip có thể được ghi dưới `pkg:pypi/pip` hay `pkg:deb/python3-pip`, nhưng các bản pip trong Homebrew, conda-forge, nixpkgs hay Spack cũng mang cùng lỗi và mỗi bên phải tự ánh xạ advisory, nên truy vết lỗ hổng về đúng upstream khó hơn nhiều. Tìm package theo tên cũng không đáng tin, vì các tên ngắn trên registry không gian tên phẳng thường đã bị dự án không liên quan chiếm, và liên kết ngược tới repository nguồn cho kết quả sạch hơn. Tác giả còn dựng một chuỗi cài đặt dài 14 bước, từ máy Arch tới trình biên dịch Elm."
+    }
+  ]
+}

@@ -1,0 +1,114 @@
+{
+  "post": "content/post/2026/02/18/index.md",
+  "newsletter": 81,
+  "newsletter_post": true,
+  "note": "*Bài viết đã được viết lại bởi Claude Code với Opus 5.5 vào ngày 27/09/2026.*",
+  "lines": [
+    {
+      "line": 1,
+      "kind": "frontmatter",
+      "text": "---"
+    },
+    {
+      "line": 2,
+      "kind": "frontmatter",
+      "text": "title: \"Newsletter #81\""
+    },
+    {
+      "line": 3,
+      "kind": "frontmatter",
+      "text": "date: 2026-02-18"
+    },
+    {
+      "line": 4,
+      "kind": "frontmatter",
+      "text": "tags: [\"AI-Assisted\", \"Newsletter\", \"Java\", \"Go\", \"Performance\", \"AI Agents\", \"Code Quality\"]"
+    },
+    {
+      "line": 5,
+      "kind": "frontmatter",
+      "text": "categories: [\"Newsletter\"]"
+    },
+    {
+      "line": 6,
+      "kind": "frontmatter",
+      "text": "---"
+    },
+    {
+      "line": 8,
+      "kind": "italic-note",
+      "text": "*Mời bạn thưởng thức Newsletter #81.*"
+    },
+    {
+      "line": 10,
+      "kind": "heading",
+      "text": "## [Java Interview Question - Why you should not use static initializers?](https://javabulletin.substack.com/p/java-interview-question-why-you-should)"
+    },
+    {
+      "line": 16,
+      "kind": "heading",
+      "text": "## [How to Write High-Performance Code](https://blog.bytebytego.com/p/how-to-write-high-performance-code)"
+    },
+    {
+      "line": 22,
+      "kind": "heading",
+      "text": "## [Introducing Moltworker: a self-hosted personal AI agent, minus the minis](https://blog.cloudflare.com/moltworker-self-hosted-ai-agent/)"
+    },
+    {
+      "line": 28,
+      "kind": "heading",
+      "text": "## [Building a High-Performance Rotating Bloom Filter in Java](https://medium.com/@udaysagar.2177/building-a-high-performance-rotating-bloom-filter-in-java-a9e75de993bf)"
+    },
+    {
+      "line": 34,
+      "kind": "heading",
+      "text": "## [What Every Java Developer Should Know About Thread Pools](https://dev.to/realnamehidden1_61/what-every-java-developer-should-know-about-thread-pools-4jam)"
+    },
+    {
+      "line": 40,
+      "kind": "heading",
+      "text": "## [Goodbye Java, Hello Go!](https://wso2.com/library/blogs/goodbye-java-hello-go)"
+    },
+    {
+      "line": 46,
+      "kind": "heading",
+      "text": "## [TBM 399: 10 Prioritization Traps](https://cutlefish.substack.com/p/tbm-399-10-prioritization-traps)"
+    },
+    {
+      "line": 52,
+      "kind": "heading",
+      "text": "## [Assessing internal quality while coding with an agent](https://martinfowler.com/articles/exploring-gen-ai/ccmenu-quality.html)"
+    },
+    {
+      "line": 58,
+      "kind": "heading",
+      "text": "## [A \"Pure Go\" Linux environment, ported by Claude, inspired by Fabrice Bellard](https://www.jtolio.com/2026/01/tinyemu-go/)"
+    },
+    {
+      "line": 64,
+      "kind": "heading",
+      "text": "### Bonus"
+    },
+    {
+      "line": 68,
+      "kind": "asset",
+      "text": "![How to Scale An API](https://substackcdn.com/image/fetch/w_1100,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F36412c2b-8782-476e-9db4-aaf794629b74_2250x2624.png)"
+    },
+    {
+      "line": 69,
+      "kind": "asset",
+      "text": "![HTTP/2 over TCP vs HTTP/3 over QUIC](https://substackcdn.com/image/fetch/$s_!4V7B!,w_1100,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fc9589feb-6f59-4971-9da4-26712d1a2ca1_2360x2960.png)"
+    },
+    {
+      "line": 70,
+      "kind": "asset",
+      "text": "![How Git Really Stores Your Data](https://substackcdn.com/image/fetch/$s_!ihnd!,w_1100,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Ffe954900-e8d8-40d0-a4b1-2f8e14068882_2360x2960.png)"
+    },
+    {
+      "line": 71,
+      "kind": "asset",
+      "text": "![How NAT Works](https://substackcdn.com/image/fetch/$s_!5SHy!,w_1100,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fcbddfb5f-a652-4749-b0b9-210102774f4f_2360x2960.png)"
+    }
+  ],
+  "candidates": []
+}

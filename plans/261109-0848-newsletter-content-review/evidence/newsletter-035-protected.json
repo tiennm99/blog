@@ -1,0 +1,129 @@
+{
+  "post": "content/post/2025/07/24/index.md",
+  "newsletter": 35,
+  "newsletter_post": true,
+  "note": "*Bài viết đã được viết lại bởi Claude Code với Opus 5.5 vào ngày 27/09/2026.*",
+  "lines": [
+    {
+      "line": 1,
+      "kind": "frontmatter",
+      "text": "---"
+    },
+    {
+      "line": 2,
+      "kind": "frontmatter",
+      "text": "title: \"Newsletter #35\""
+    },
+    {
+      "line": 3,
+      "kind": "frontmatter",
+      "text": "date: 2025-07-24"
+    },
+    {
+      "line": 4,
+      "kind": "frontmatter",
+      "text": "tags: [ \"AI-Assisted\", \"Redis\", \"Valkey\", \"Open Source\", \"Testing\", \"SOLID\", \"WebAssembly\" ]"
+    },
+    {
+      "line": 5,
+      "kind": "frontmatter",
+      "text": "categories: [ \"Newsletter\" ]"
+    },
+    {
+      "line": 6,
+      "kind": "frontmatter",
+      "text": "---"
+    },
+    {
+      "line": 8,
+      "kind": "italic-note",
+      "text": "*Mời bạn thưởng thức Newsletter #35.*"
+    },
+    {
+      "line": 10,
+      "kind": "heading",
+      "text": "## [The magic of software; or, what makes a good engineer also makes a good engineering organization](https://moxie.org/2024/09/23/a-good-engineer.html)"
+    },
+    {
+      "line": 16,
+      "kind": "heading",
+      "text": "## [Redis Is Open Source Again. But Is It Too Late?](https://blog.abhimanyu-saharan.com/posts/redis-is-open-source-again-but-is-it-too-late)"
+    },
+    {
+      "line": 22,
+      "kind": "heading",
+      "text": "## [Write the most clever code you possibly can](https://buttondown.com/hillelwayne/archive/write-the-most-clever-code-you-possibly-can)"
+    },
+    {
+      "line": 28,
+      "kind": "heading",
+      "text": "## [Semantic Unit Testing](https://www.alexmolas.com/2025/04/09/semantic-unit-testing.html)"
+    },
+    {
+      "line": 34,
+      "kind": "code",
+      "text": "```python"
+    },
+    {
+      "line": 35,
+      "kind": "code",
+      "text": "def multiply(x: int, y: int) -> int:"
+    },
+    {
+      "line": 36,
+      "kind": "code",
+      "text": "    \"\"\"Nhân x với y\"\"\""
+    },
+    {
+      "line": 37,
+      "kind": "code",
+      "text": "    return x + y  # Triển khai cố ý sai"
+    },
+    {
+      "line": 38,
+      "kind": "code",
+      "text": ""
+    },
+    {
+      "line": 39,
+      "kind": "code",
+      "text": "tester = suite(model_name=\"openai/o3-mini\")"
+    },
+    {
+      "line": 40,
+      "kind": "code",
+      "text": "result = tester(multiply)"
+    },
+    {
+      "line": 41,
+      "kind": "code",
+      "text": "# LLM phát hiện triển khai không khớp với docstring"
+    },
+    {
+      "line": 42,
+      "kind": "code",
+      "text": "```"
+    },
+    {
+      "line": 44,
+      "kind": "heading",
+      "text": "## [SOLID Principles in Java (With Real life Examples)](https://dev.to/chhavirana/understanding-solid-principles-in-java-with-real-life-examples-1ked)"
+    },
+    {
+      "line": 50,
+      "kind": "heading",
+      "text": "## [A year on, Valkey charts path to v9 after break from Redis](https://www.theregister.com/software/2025/05/15/a-year-on-valkey-charts-path-to-v9-after-break-from-redis/852499)"
+    },
+    {
+      "line": 56,
+      "kind": "heading",
+      "text": "## [Stack Overflow is almost dead](https://blog.pragmaticengineer.com/stack-overflow-is-almost-dead)"
+    },
+    {
+      "line": 62,
+      "kind": "heading",
+      "text": "## [Why I use WebAssembly](https://nasso.dev/blog/why-i-use-wasm)"
+    }
+  ],
+  "candidates": []
+}

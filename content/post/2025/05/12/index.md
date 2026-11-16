@@ -19,13 +19,13 @@ Về sản phẩm và con người: định luật Sturgeon (90% mọi thứ đ�
 
 Grant Slatton, người phát triển bộ máy bảng tính Row Zero, cho rằng AI vừa vượt qua điểm uốn: giá trị tạo ra cho công việc lập trình thực tế đã lớn hơn chi phí. Chi tiêu AI của ông tăng từ 100 USD/năm (2023) lên khoảng 5.000 USD/năm (2025). Với ông, o1-pro là mô hình đầu tiên hữu ích ổn định, làm tốt ngang kỹ sư junior với tác vụ gói gọn trong một tệp, như tìm lỗi từ tệp Rust dài kèm diff và kết quả kiểm thử. Ông dùng thư viện prompt của Zed Editor để sinh các hàm bảng tính lặp lại (từ 20 phút xuống 2 phút), tự tạo nhiều công cụ dòng lệnh nhỏ dùng LLM, và dùng Claude Code viết lại toàn bộ backend trang web cá nhân, có lúc chạy ba phiên song song. Việc ước tính mất 100 giờ chỉ còn dưới 10 giờ, tốn vài trăm USD.
 
-Ông ước tính công cụ AI hiện tăng năng suất khoảng 1,1 lần và có thể đạt 2–3 lần vào cuối 2026. Mô hình mạnh như o3-pro lúc đầu sẽ rất đắt, nhưng với kỹ sư thu nhập hơn 100 USD/giờ, ngân sách AI 10.000–50.000 USD mỗi năm là hợp lý; theo nghịch lý Jevons, giá rẻ đi chỉ làm tổng chi tiêu tăng. Ông nhận xét mô hình còn thiếu "gu" thiết kế của kỹ sư senior, dự đoán tác nhân viết mã sẽ ngang sinh viên mới tốt nghiệp vào cuối 2026, và khuyên các bạn junior sớm rèn luyện khả năng đánh giá của kỹ sư senior.
+Trong dự báo tháng 4/2025, ông ước tính công cụ AI đang tăng năng suất của mình khoảng 1,1 lần và có thể đạt 2–3 lần vào cuối 2026. Mô hình mạnh như o3-pro lúc đầu sẽ rất đắt, nhưng với kỹ sư thu nhập hơn 100 USD/giờ, ngân sách AI 10.000–50.000 USD mỗi năm là hợp lý; theo nghịch lý Jevons, giá rẻ đi chỉ làm tổng chi tiêu tăng. Ông nhận xét mô hình còn thiếu "gu" thiết kế của kỹ sư senior, dự đoán tác nhân viết mã sẽ ngang sinh viên mới tốt nghiệp vào cuối 2026, và khuyên các bạn junior sớm rèn luyện khả năng đánh giá của kỹ sư senior.
 
 ---
 
 ## [Open-Source is Just That: Understanding Boundaries in Open Source](https://vale.rocks/posts/open-source-entitlement)
 
-Declan Chidlow lên tiếng về thái độ đòi hỏi như thể đó là quyền lợi của người dùng đối với các nhà phát triển mã nguồn mở tình nguyện. Theo tác giả, mã nguồn mở chỉ có nghĩa là mã nguồn được công khai và bạn được hưởng những quyền giấy phép cho phép; nó không mặc định là dự án nhận đóng góp, có hỗ trợ, phải đáp ứng yêu cầu tính năng hay nợ bạn thời gian, và bạn vẫn bị ràng buộc bởi giấy phép. Được dùng phần mềm đã là đặc ân chứ không phải quyền. Ông phê phán những người spam issue, đòi hỗ trợ hung hăng, những ai bênh vực họ, và nhất là các công ty kiếm lời từ mã nguồn mở mà không đóng góp lại, trong khi lẽ ra nên hỗ trợ tài chính cho người bảo trì.
+Declan Chidlow lên tiếng về thái độ đòi hỏi như thể đó là quyền lợi của người dùng đối với các nhà phát triển mã nguồn mở tình nguyện. Theo tác giả, phần mềm mã nguồn mở trao những quyền được quy định bởi giấy phép, còn chỉ công khai mã nguồn chưa đủ để gọi là mã nguồn mở; nó không mặc định là dự án nhận đóng góp, có hỗ trợ, phải đáp ứng yêu cầu tính năng hay nợ bạn thời gian, và bạn vẫn bị ràng buộc bởi giấy phép. Quyền sử dụng theo giấy phép không kéo theo quyền đòi hỏi người bảo trì cung cấp dịch vụ ngoài cam kết. Ông phê phán những người spam issue, đòi hỗ trợ hung hăng, những ai bênh vực họ, và nhất là các công ty kiếm lời từ mã nguồn mở mà không đóng góp lại, trong khi lẽ ra nên hỗ trợ tài chính cho người bảo trì.
 
 Với dự án có hỗ trợ, cách xin giúp đỡ đúng mực là: tự tìm trong issue và tài liệu trước, cung cấp đủ thông tin ngay từ đầu, kiên nhẫn và lịch sự, dùng đúng kênh chính thức, và tự sửa lỗi nhỏ hoặc cải thiện tài liệu nếu có thể; kể cả khi đã trả tiền thì "tiền không thay được phép lịch sự". Ông khuyến khích cộng đồng bảo vệ người bảo trì một cách tôn trọng, người bảo trì thì nên đặt ranh giới rõ ràng, đồng thời cảnh báo việc gửi pull request hay issue do AI sinh ra thiếu suy nghĩ. Thông điệp chốt: được truy cập mã nguồn không đồng nghĩa với quyền đòi hỏi thời gian và sức lao động của người khác.
 
@@ -79,4 +79,4 @@ Kết quả cho thấy mô hình thực hiện nhiều bước suy luận trung 
 
 ---
 
-*Bài viết đã được viết lại bởi Claude Code với Opus 5.5 vào ngày 27/09/2026.*
+*Bài viết đã được viết lại bởi Claude Code với Opus 5.5 vào ngày 27/09/2026; được review và chỉnh sửa bởi Codex với GPT 6.1 Sol vào ngày 09/11/2026, rà soát lại bởi Claude Code với Sonnet 5.5 vào ngày 16/11/2026.*

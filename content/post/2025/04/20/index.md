@@ -39,19 +39,19 @@ Với những quản lý vẫn muốn viết mã, tác giả gợi ý vài cách
 
 ## [What is Saga Pattern in Distributed Systems?](https://newsletter.scalablethread.com/p/what-is-saga-pattern-in-distributed)
 
-Trong hệ thống microservices, một yêu cầu như đặt hàng có thể đi qua nhiều dịch vụ (kho hàng, thanh toán, vận chuyển), mỗi dịch vụ lại có cơ sở dữ liệu riêng, nên giao dịch ACID truyền thống không còn áp dụng được. Saga Pattern giải quyết bài toán này bằng cách chia một giao dịch lớn thành chuỗi các giao dịch cục bộ nhỏ; nếu một bước thất bại, hệ thống chạy các giao dịch bù trừ (compensating transaction) để hoàn tác những bước đã thực hiện trước đó.
+Trong hệ thống microservices, một yêu cầu như đặt hàng có thể đi qua nhiều dịch vụ (kho hàng, thanh toán, vận chuyển), mỗi dịch vụ lại có cơ sở dữ liệu riêng, nên giao dịch ACID truyền thống không còn áp dụng được. Saga Pattern giải quyết bài toán này bằng cách chia một giao dịch lớn thành chuỗi các giao dịch cục bộ nhỏ; nếu một bước thất bại, hệ thống chạy các giao dịch bù trừ (compensating transaction) để bù đắp về mặt nghiệp vụ cho những bước đã thực hiện trước đó.
 
-Bài viết so sánh hai cách triển khai. Orchestration dùng một bộ điều phối trung tâm nắm toàn bộ luồng xử lý, giúp xử lý lỗi và giám sát dễ dàng nhưng dễ tạo ra sự phụ thuộc chặt. Choreography để các dịch vụ tự giao tiếp với nhau qua sự kiện, không có điểm lỗi đơn lẻ nhưng logic xử lý lỗi bị phân tán và phức tạp hơn. Tác giả cũng tóm tắt ưu điểm (nhất quán dữ liệu, khả năng mở rộng, linh hoạt) và nhược điểm (độ phức tạp, khó xử lý lỗi, tốn thêm chi phí hiệu năng) của mẫu thiết kế này.
+Bài viết so sánh hai cách triển khai. Orchestration dùng một bộ điều phối trung tâm nắm toàn bộ luồng xử lý, giúp xử lý lỗi và giám sát dễ dàng nhưng dễ tạo ra sự phụ thuộc chặt. Choreography để các dịch vụ tự giao tiếp với nhau qua sự kiện, không cần bộ điều phối trung tâm nhưng logic xử lý lỗi bị phân tán và phức tạp hơn. Tác giả cũng tóm tắt ưu điểm (nhất quán dữ liệu, khả năng mở rộng, linh hoạt) và nhược điểm (độ phức tạp, khó xử lý lỗi, tốn thêm chi phí hiệu năng) của mẫu thiết kế này.
 
 ## [What would happen if we didn't use TCP or UDP?](https://github.com/Hawzen/hdp)
 
 Tác giả tự hỏi: điều gì xảy ra nếu gửi gói tin bằng một giao thức tầng vận chuyển tự chế, không phải TCP, UDP hay ICMP? Anh thiết kế giao thức HDP, viết máy khách và máy chủ bằng Rust sử dụng raw socket, rồi thử gửi qua giao diện loopback trên macOS với lần lượt các giá trị của trường Protocol trong gói IP. Phần lớn đều thành công, nhưng các số 1, 2, 6 bị hệ điều hành chặn trước khi tới máy chủ, 50 và 51 (thuộc IPSec) bị từ chối gửi đi, còn 256 vượt quá giới hạn 8 bit. Khi chạy lại trên Linux, kết quả khác hẳn, cho thấy mỗi hệ điều hành xử lý raw socket theo một kiểu riêng.
 
-Thử nghiệm qua Internet còn "kỳ quặc" hơn: gửi tới máy chủ Digital Ocean chỉ có đúng một gói lọt qua, mọi gói sau đều biến mất, vì nhà cung cấp này không hỗ trợ giao thức IP phi chuẩn, còn các thiết bị NAT vốn dựa vào số cổng. Giữa hai máy AWS đặt gần nhau thì HDP chạy được, độ trễ chênh lệch với UDP không đáng kể; bản cập nhật sau đó cho thấy dùng IPv6 (không qua NAT) cũng thành công. Kết luận: về kỹ thuật là làm được, nhưng hãy dùng TCP hoặc UDP, và đây cũng là lý do các giao thức mới như QUIC chọn chạy trên nền UDP.
+Thử nghiệm qua Internet còn "kỳ quặc" hơn: gửi tới máy chủ Digital Ocean chỉ có đúng một gói lọt qua, mọi gói sau đều biến mất; tác giả cho rằng nhà cung cấp này không hỗ trợ giao thức IP phi chuẩn, còn các thiết bị NAT vốn dựa vào số cổng. Gửi từ máy Mac tới máy chủ AWS cũng chỉ qua được một gói, nhưng giữa hai máy AWS đặt gần nhau thì HDP chạy được, độ trễ chênh lệch với UDP không đáng kể; bản cập nhật ngày 01/03/2025 cho thấy dùng IPv6 (không qua NAT) cũng thành công. Kết luận: về kỹ thuật là làm được trong một số môi trường, nhưng hãy dùng TCP hoặc UDP, và đây cũng là lý do các giao thức mới như QUIC chọn chạy trên nền UDP.
 
 ## [Scoped Values in Java 24 - Inside Java Newscast #86](https://www.youtube.com/watch?v=7tfUJLUbZiM)
 
-Video thuộc loạt Inside Java Newscast giới thiệu Scoped Values trong Java 24, cơ chế cho phép chia sẻ dữ liệu bất biến giữa các phương thức và các luồng con một cách an toàn, gọn gàng và hiệu quả. Nhờ gắn dữ liệu với một phạm vi thực thi xác định, Scoped Values giúp tránh phải dùng biến toàn cục hay ThreadLocal, từ đó mã nguồn dễ mở rộng và bảo trì hơn.
+Video Inside Java Newscast #86 giới thiệu Scoped Values, API ở lần xem trước thứ tư trong Java 24, cho phép chia sẻ dữ liệu bất biến giữa các phương thức một cách an toàn, gọn gàng và hiệu quả bằng cách gắn giá trị với một phạm vi thực thi xác định. Video so sánh cách này với ThreadLocal và giải thích việc các luồng con tạo qua StructuredTaskScope kế thừa ràng buộc, nhờ đó tránh được biến toàn cục và mã nguồn dễ bảo trì hơn.
 
 ## [Java 24 - Better Language, Better APIs, Better Runtime](https://www.youtube.com/watch?v=2NTyzL-9Bfo)
 
@@ -76,4 +76,4 @@ Video tổng hợp các cải tiến nổi bật của Java từ phiên bản 22
 
 ---
 
-*Bài viết đã được viết lại bởi Claude Code với Opus 5.5 vào ngày 27/09/2026.*
+*Bài viết đã được viết lại bởi Claude Code với Opus 5.5 vào ngày 27/09/2026; được review và chỉnh sửa bởi Codex với GPT 6.1 Sol vào ngày 09/11/2026, rà soát lại bởi Claude Code với Sonnet 5.5 vào ngày 16/11/2026.*

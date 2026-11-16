@@ -1,0 +1,115 @@
+{
+  "post": "content/post/2026/08/28/index.md",
+  "newsletter": 128,
+  "newsletter_post": true,
+  "note": "*Bài viết đã được viết lại bởi Claude Code với Opus 5.5 vào ngày 27/09/2026.*",
+  "lines": [
+    {
+      "line": 1,
+      "kind": "frontmatter",
+      "text": "---"
+    },
+    {
+      "line": 2,
+      "kind": "frontmatter",
+      "text": "title: \"Newsletter #128\""
+    },
+    {
+      "line": 3,
+      "kind": "frontmatter",
+      "text": "date: 2026-08-28"
+    },
+    {
+      "line": 4,
+      "kind": "frontmatter",
+      "text": "tags: [\"AI-Assisted\", \"AI Agents\", \"AI Coding\", \"AI Economics\", \"Software Design\", \"Product Management\", \"Soft Skills\"]"
+    },
+    {
+      "line": 5,
+      "kind": "frontmatter",
+      "text": "categories: [\"Newsletter\"]"
+    },
+    {
+      "line": 6,
+      "kind": "frontmatter",
+      "text": "---"
+    },
+    {
+      "line": 8,
+      "kind": "italic-note",
+      "text": "*Mời bạn thưởng thức Newsletter #128.*"
+    },
+    {
+      "line": 10,
+      "kind": "heading",
+      "text": "## [Some new agentic patterns](https://blog.fsck.com/2026/07/05/new-patterns/)"
+    },
+    {
+      "line": 15,
+      "kind": "heading",
+      "text": "## [Why I Stopped Arguing With People](https://wangcong.org/2026-06-30-why-i-stopped-arguing-with-people.html)"
+    },
+    {
+      "line": 21,
+      "kind": "heading",
+      "text": "## [Understanding is the new bottleneck](https://www.geoffreylitt.com/2026/07/02/understanding-is-the-new-bottleneck.html)"
+    },
+    {
+      "line": 27,
+      "kind": "heading",
+      "text": "## [When to repeat yourself](https://newsletter.francofernando.com/p/when-to-repeat-yourself)"
+    },
+    {
+      "line": 33,
+      "kind": "heading",
+      "text": "## [Let AI Burn](https://www.wheresyoured.at/let-ai-burn/)"
+    },
+    {
+      "line": 38,
+      "kind": "heading",
+      "text": "## [When AI Costs More Than the Engineer](https://tomtunguz.com/ai-spend-breakeven-2029/)"
+    },
+    {
+      "line": 44,
+      "kind": "heading",
+      "text": "## [The best code is the one you shift+delete](https://ayende.com/blog/204067-a/the-best-code-is-the-one-you-shift-delete/)"
+    },
+    {
+      "line": 50,
+      "kind": "heading",
+      "text": "### Bonus"
+    },
+    {
+      "line": 53,
+      "kind": "asset",
+      "text": "[Chia sẻ suy nghĩ về sản phẩm và người làm sản phẩm](https://zalo.me/vi/founder)"
+    }
+  ],
+  "candidates": [
+    {
+      "line": 17,
+      "kind": "first-person",
+      "text": "Cong Wang, một kỹ sư phần mềm, kể lại hành trình từ chỗ thích tranh luận để chứng minh mình đúng về kỹ thuật đến lúc nhận ra phần lớn các cuộc tranh luận ấy chẳng đạt được mục đích. Anh mượn ý từ Đạo Đức Kinh của Lão Tử: \"có\" và \"không\" sinh ra nhau, nên hễ có người đúng thì phải có người sai rõ ràng đứng cạnh. Thắng một cuộc tranh luận nghĩa là tạo ra một kẻ thua, và chiến thắng đó rỗng tuếch. Theo anh, đa số tranh luận không bảo vệ ý tưởng mà bảo vệ cái tôi: khi đối phương thấy mình bị tấn công cá nhân, họ sẽ càng cố thủ, và lập luận càng sắc bén thì quan điểm của họ càng cứng lại."
+    },
+    {
+      "line": 19,
+      "kind": "first-person",
+      "text": "Tác giả cũng chỉ ra rằng con người cảm nhận trước rồi mới tìm lý lẽ bào chữa cho cảm nhận đó, nên logic gần như bất lực trước một quan điểm xuất phát từ cảm xúc. Người ta hiếm khi học từ lời khuyên không được yêu cầu; họ học từ hậu quả, và việc sửa sai người khác thường chỉ để lại sự oán giận. Ngoại lệ duy nhất là khi ai đó chủ động nhờ giúp: lúc ấy hàng phòng thủ hạ xuống và việc học mới thật sự diễn ra. Thay vì cố thắng, anh khuyên xem sự bất đồng như một lợi thế cạnh tranh, vì cơ hội kinh doanh thường nằm đúng ở chỗ mọi người chưa đồng ý với nhau. Cuối cùng, người duy nhất ta thay đổi được là chính mình, bằng cách khiêm tốn xin góp ý và thật lòng tiếp thu nó."
+    },
+    {
+      "line": 29,
+      "kind": "first-person",
+      "text": "Franco Fernando đặt lại câu hỏi về nguyên tắc DRY (Don't Repeat Yourself): gộp mã nguồn trùng lặp luôn có chi phí ẩn mà nhiều lập trình viên bỏ qua. Lớn nhất là \"thuế phối hợp\": khi nhiều đội dùng chung một đoạn mã, mỗi thay đổi đều kéo theo họp thống nhất, duyệt thiết kế và thương lượng lúc gộp nhánh, trong khi một đội sửa bản riêng của mình thì rất nhanh. Vì vậy câu hỏi đúng là chi phí phối hợp một thành phần chung có đắt hơn chi phí để các bản sao dần lệch nhau hay không. Tác giả phân biệt trùng lặp ngẫu nhiên, tức những đoạn mã trông giống nhau nhưng thuộc hai nghiệp vụ khác nhau và sẽ tiến hoá theo hai hướng, với trùng lặp bản chất, tức cùng một quy tắc nghiệp vụ bị lặp ở nhiều nơi; chỉ loại sau mới đáng gộp."
+    },
+    {
+      "line": 48,
+      "kind": "first-person",
+      "text": "Trường hợp thứ hai ngược lại: refactor cách thực thi truy vấn trong Corax, loại mã sẽ nằm trong sản phẩm hàng chục năm. Ở đây mô hình viết còn ông cầm lái và duyệt từng dòng. Ông cảnh báo rằng sau vài giờ thử, hoàn tác rồi thử lại, bạn rất dễ ngẩng lên và thấy hai nghìn dòng thay đổi mà mình chưa thực sự viết. Để giữ quyền tác giả, ông dựa vào kiểm thử hồi quy cho hành vi cũ, kiểm thử mới cho hành vi mới, cùng một harness dùng xong vứt chạy song song bản cũ và bản mới rồi trực quan hoá kết quả. Những công cụ tạm như vậy trước đây tốn vài giờ đến nhiều tuần, nay chỉ còn vài phút."
+    },
+    {
+      "line": 54,
+      "kind": "first-person",
+      "text": "> Vương Quang Khải, nhà sáng lập Zalo, chia sẻ góc nhìn về sản phẩm: ba giá trị phổ quát là hữu ích, thẩm mỹ và trực quan, còn Zalo chọn thêm đơn giản, tin cậy và riêng tư, và việc khó nhất là đánh đổi giữa những giá trị tốt nhưng xung đột nhau. Với người làm sản phẩm, ông đề cao ba năng lực thấu hiểu người dùng, ra quyết định đánh đổi và chăm chút tiểu tiết, tỏ ra dè dặt với việc ra quyết định thuần theo dữ liệu hay thử nghiệm A/B, và nhấn mạnh rằng trên hết phải thật lòng yêu sản phẩm mình làm."
+    }
+  ]
+}

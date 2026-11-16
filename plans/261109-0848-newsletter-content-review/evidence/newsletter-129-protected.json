@@ -1,0 +1,124 @@
+{
+  "post": "content/post/2026/09/07/index.md",
+  "newsletter": 129,
+  "newsletter_post": true,
+  "note": "*Bài viết đã được viết lại bởi Claude Code với Opus 5.5 vào ngày 27/09/2026.*",
+  "lines": [
+    {
+      "line": 1,
+      "kind": "frontmatter",
+      "text": "---"
+    },
+    {
+      "line": 2,
+      "kind": "frontmatter",
+      "text": "title: \"Newsletter #129\""
+    },
+    {
+      "line": 3,
+      "kind": "frontmatter",
+      "text": "date: 2026-09-07"
+    },
+    {
+      "line": 4,
+      "kind": "frontmatter",
+      "text": "tags: [\"AI-Assisted\", \"Performance\", \"Distributed Systems\", \"Web Development\", \"Go\", \"Java\", \"Developer Culture\"]"
+    },
+    {
+      "line": 5,
+      "kind": "frontmatter",
+      "text": "categories: [\"Newsletter\"]"
+    },
+    {
+      "line": 6,
+      "kind": "frontmatter",
+      "text": "---"
+    },
+    {
+      "line": 8,
+      "kind": "italic-note",
+      "text": "*Mời bạn thưởng thức Newsletter #129.*"
+    },
+    {
+      "line": 10,
+      "kind": "heading",
+      "text": "## [Hacking the Method Name](https://maxxedev.github.io/2026/08/05/hacking-the-method-name.html)"
+    },
+    {
+      "line": 16,
+      "kind": "heading",
+      "text": "## [Control the ideas, not the code](https://antirez.com/news/169)"
+    },
+    {
+      "line": 22,
+      "kind": "heading",
+      "text": "## [Good Tools Are Invisible](https://www.gingerbill.org/article/2026/07/10/good-tools-are-invisible/)"
+    },
+    {
+      "line": 28,
+      "kind": "heading",
+      "text": "## [Mysteries of Telegram DC](https://dev.moe/en/3025)"
+    },
+    {
+      "line": 34,
+      "kind": "heading",
+      "text": "## [How I use HTMX with Go](https://www.alexedwards.net/blog/how-i-use-htmx-with-go)"
+    },
+    {
+      "line": 40,
+      "kind": "heading",
+      "text": "## [Quadrupling code performance with a \"useless\" if](https://purplesyringa.moe/blog/quadrupling-code-performance-with-a-useless-if/)"
+    },
+    {
+      "line": 46,
+      "kind": "heading",
+      "text": "## [Reverse Engineering ChatGPT Web: How OpenAI Built for a Billion Users](https://performance.dev/chatgpt)"
+    },
+    {
+      "line": 52,
+      "kind": "heading",
+      "text": "## [Broker-Visible vs Client-Local Parallelism](https://jack-vanlightly.com/blog/2026/6/3/broker-visible-vs-client-local-parallelism)"
+    },
+    {
+      "line": 58,
+      "kind": "heading",
+      "text": "## [Work Loudly](https://ben.balter.com/2026/07/14/work-loudly/)"
+    },
+    {
+      "line": 64,
+      "kind": "heading",
+      "text": "## [Building Service Topology at Scale: Architecture, Challenges, and Lessons Learned](https://netflixtechblog.com/building-service-topology-at-scale-architecture-challenges-and-lessons-learned-f4b792f3f0d8)"
+    },
+    {
+      "line": 70,
+      "kind": "heading",
+      "text": "### Bonus"
+    },
+    {
+      "line": 72,
+      "kind": "asset",
+      "text": "**Images:**"
+    },
+    {
+      "line": 73,
+      "kind": "asset",
+      "text": "![MCP vs A2A vs ACP: How AI Agents Actually Talk to Each Other](https://substackcdn.com/image/fetch/$s_!lpxK!,w_1100,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Ff9fb99a2-ec71-476d-a9cb-6c1a43339d90_2484x3002.png)"
+    },
+    {
+      "line": 74,
+      "kind": "asset",
+      "text": "![LLM vs RAG vs Agent evals](https://substackcdn.com/image/fetch/$s_!LZtJ!,w_1100,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F6456348c-5d92-4524-8dd6-d75b4dc7feaf_1280x1547.png)"
+    },
+    {
+      "line": 75,
+      "kind": "asset",
+      "text": "![How Distributed Tracing Works at the High Level?](https://substackcdn.com/image/fetch/$s_!ULeT!,w_1100,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fe81b4572-820e-4790-8861-8efe14f38700_2252x2752.png)"
+    },
+    {
+      "line": 76,
+      "kind": "asset",
+      "text": "![The Life of a Redis Query](https://substackcdn.com/image/fetch/$s_!6UyI!,w_1100,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F9f8ea7bf-2170-4466-92f3-edd7eab11de4_3000x3900.png)"
+    }
+  ],
+  "candidates": []
+}

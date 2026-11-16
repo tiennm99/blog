@@ -1,0 +1,99 @@
+{
+  "post": "content/post/2025/08/02/index.md",
+  "newsletter": 43,
+  "newsletter_post": true,
+  "note": "*Bài viết đã được viết lại bởi Claude Code với Opus 5.5 vào ngày 27/09/2026.*",
+  "lines": [
+    {
+      "line": 1,
+      "kind": "frontmatter",
+      "text": "---"
+    },
+    {
+      "line": 2,
+      "kind": "frontmatter",
+      "text": "title: \"Newsletter #43\""
+    },
+    {
+      "line": 3,
+      "kind": "frontmatter",
+      "text": "date: 2025-08-02"
+    },
+    {
+      "line": 4,
+      "kind": "frontmatter",
+      "text": "tags: [ \"AI-Assisted\", \"AI Coding\", \"Coding Agents\", \"LLM\", \"Database\", \"Caching\", \"Testing\" ]"
+    },
+    {
+      "line": 5,
+      "kind": "frontmatter",
+      "text": "categories: [ \"Newsletter\" ]"
+    },
+    {
+      "line": 6,
+      "kind": "frontmatter",
+      "text": "---"
+    },
+    {
+      "line": 8,
+      "kind": "italic-note",
+      "text": "*~~Bài này mình thay đổi tool sử dụng thành Qwen Code và model sử dụng là Qwen 3 Coder, dùng qua api của OpenRouter. Thử nghiệm một tí xem thế nào.~~ Mời bạn thưởng thức Newsletter #43.*"
+    },
+    {
+      "line": 10,
+      "kind": "heading",
+      "text": "## [Augmented Coding: Beyond the Vibes](https://tidyfirst.substack.com/p/augmented-coding-beyond-the-vibes)"
+    },
+    {
+      "line": 16,
+      "kind": "italic-note",
+      "text": "*Với combo trên sau khi viết được 1 bài đầu thì đang bị nó bị loop, gửi request 3-4 lần gì đến OpenRouter sau đó stuck luôn. Và bài đầu thì cũng rất mất thời gian. Tiếp theo mình thử Qwen Code với Kimi K2*"
+    },
+    {
+      "line": 18,
+      "kind": "italic-note",
+      "text": "*Update, có vẻ Qwen Code không dùng với Kimi K2 được, mình gặp lỗi `API Error: Internal Server Error` :v Sau đây mình thử Cline với Qwen 3 Coder nhé*"
+    },
+    {
+      "line": 20,
+      "kind": "heading",
+      "text": "## [Coding agents have crossed a chasm](https://blog.singleton.io/posts/2025-06-14-coding-agents-cross-a-chasm/)"
+    },
+    {
+      "line": 26,
+      "kind": "heading",
+      "text": "## [How Databases Store Your Tables on Disk](https://www.deepintodev.com/blog/how-databases-store-your-tables-on-disk)"
+    },
+    {
+      "line": 32,
+      "kind": "heading",
+      "text": "## [Software engineering with LLMs in 2025: reality check](https://newsletter.pragmaticengineer.com/p/software-engineering-with-llms-in-2025)"
+    },
+    {
+      "line": 38,
+      "kind": "italic-note",
+      "text": "*Nhìn chung thì combo Cline với Qwen 3 Coder chạy được, nhưng hơi lâu, output thì hơi loằng quằng, bảo tóm tắt nhưng viết rất dài (cái này có thể do mình chưa tối ưu prompt, vì mình bảo nó đọc file CLAUDE.MD thôi). Tiếp theo mình thử Cline với Kimi K2 nhé*"
+    },
+    {
+      "line": 40,
+      "kind": "heading",
+      "text": "## [Continuous AI](https://www.seangoedecke.com/continuous-ai/)"
+    },
+    {
+      "line": 46,
+      "kind": "heading",
+      "text": "## [Caching is an abstraction, not an optimization](https://buttondown.com/jaffray/archive/caching-is-an-abstraction-not-an-optimization/)"
+    },
+    {
+      "line": 52,
+      "kind": "heading",
+      "text": "## [You should delete tests](https://andre.arko.net/2025/06/30/you-should-delete-tests/)"
+    },
+    {
+      "line": 58,
+      "kind": "italic-note",
+      "text": "*Mình thấy Cline+Kimi K2 cũng gen dài (có thể do prompt như đã nói ở trên), nhưng được cái là response khá nhanh, vì vậy ít ra không phải đợi lâu. Phần prompt mình sẽ thử cải thiện trong tương lai \"xa\". Còn mai mình sẽ thử Roo Code + Qwen 3 Coder/Kimi K2 trước. Hẹn gặp lại các bạn ở post ngày mai nhé*"
+    }
+  ],
+  "candidates": []
+}
