@@ -194,6 +194,48 @@ protected.
 the post still contains every snapshot line, in order, and prints
 `{ post, ok, missing }`; exit 1 when anything is missing.
 
+### `translation-status [--lang en] [--category <name>] [path...]`
+
+Lists Vietnamese sources (`index.md`, `_index.md`) under `content/` (or the
+given paths) whose translation `index.<lang>.md` is missing or stale. `--category`
+keeps only posts whose frontmatter `categories` names it.
+
+```json
+{
+  "lang": "en",
+  "total": 205,
+  "translated": 203,
+  "missing": ["content/post/2026/11/16/index.md"],
+  "stale": [
+    {
+      "source": "content/post/2026/10/07/index.md",
+      "translation": "content/post/2026/10/07/index.en.md",
+      "since": "f94bac3…"
+    }
+  ]
+}
+```
+
+A translation is **stale** when its source's last commit is newer than its own,
+or the source has uncommitted changes while the translation does not. `since` is
+the translation's last commit, so `git diff <since> -- <source>` shows what to
+mirror.
+
+### `translation-check <index.md> [--lang en]`
+
+Checks that `index.<lang>.md` keeps the source's structure and prints
+`{ source, translation, newsletter, ok, problems }`; exit 2 when `problems` is
+not empty. It requires:
+
+- the same frontmatter keys, with identical values except `title`,
+  `description` and `summary`;
+- the same link and image targets, ignoring in-page anchors, treating `/<lang>/…`
+  as `/…` and bundle-relative paths as `/<bundle path>/…`;
+- the same number of fenced code blocks;
+- for newsletters, every `## [Title](url)` heading and `![label](url)` line
+  byte-identical and in the same order (struck entries are covered by the link
+  check).
+
 ## Tests
 
 ```bash

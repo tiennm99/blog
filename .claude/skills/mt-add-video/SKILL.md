@@ -48,10 +48,12 @@ A clean YouTube URL (passed by `mt-add-url`, or given directly).
    - If `### Bonus` doesn't exist yet, create it (there's now an asset to put in it).
    - If `**Videos:**` already exists, append the new entry under it; otherwise create the `**Videos:**` subsection.
 
-6. **Report:**
+6. **Translate** — mirror the new entry into `index.en.md` per post-mechanics §7 (the English entry uses the original video title).
+
+7. **Report:**
    ```
    ✅ Video added to Newsletter #[number] (Bonus → Videos)
-   📄 content/post/YYYY/MM/DD/index.md
+   📄 content/post/YYYY/MM/DD/index.md (+ index.en.md)
    🎬 [Vietnamese title] — [clean_url]
    📊 [tally]
    ```
@@ -63,4 +65,5 @@ A clean YouTube URL (passed by `mt-add-url`, or given directly).
 - [ ] Title localized per step 2 (Vietnamese with proper nouns kept, or original when it is mostly proper nouns)
 - [ ] 1-2 sentence Vietnamese summary present
 - [ ] Entry under Bonus → **Videos** (section/subsection created if missing)
+- [ ] English entry mirrored, `translation-check` ok (post-mechanics §7)
 - [ ] Vietnamese content ≥99%

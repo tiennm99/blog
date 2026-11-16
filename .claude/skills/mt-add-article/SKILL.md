@@ -31,10 +31,12 @@ Trust `route: article`; skip if `duplicate`; for `accessible: false` follow post
 [Tóm tắt tiếng Việt — ≤300 từ, xem post-mechanics §5]
 ```
 
-5. **Report**:
+5. **Translate** — mirror the new entry into `index.en.md` per post-mechanics §7.
+
+6. **Report**:
 ```
 ✅ Article added to Newsletter #[number]
-📄 content/post/YYYY/MM/DD/index.md
+📄 content/post/YYYY/MM/DD/index.md (+ index.en.md)
 🔗 [clean_url]
 📊 [tally]
 ```
@@ -51,3 +53,4 @@ The `📊` line uses the post-mechanics §4a (*Post tally*) format.
 - [ ] Summary ≤300 words by awk NF count (target 280-298), per post-mechanics §5
 - [ ] Vietnamese content ≥99%, grammar correct
 - [ ] Article inserted before the Bonus section
+- [ ] English entry mirrored, `translation-check` ok (post-mechanics §7)
