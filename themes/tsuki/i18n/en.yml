@@ -130,3 +130,6 @@
 
 - id: table
   translation: "Table"
+
+- id: language
+  translation: "Language"

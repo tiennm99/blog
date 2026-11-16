@@ -38,6 +38,19 @@
 <link rel="alternate" hreflang="{{ .Language.Lang }}" href="{{ .Permalink }}">
 {{- end }}
 {{- with site.Home }}<link rel="alternate" hreflang="x-default" href="{{ .Permalink }}">{{- end }}
+{{- /* Open the translation in the language the reader last picked (js/lang-switcher.js stores it) */}}
+{{- if gt (len .AllTranslations) 1 }}
+<script>
+(function () {
+  try {
+    var want = localStorage.getItem('tsuki-lang');
+    if (!want || want === {{ .Language.Lang }}) return;
+    var alt = document.querySelector('link[rel="alternate"][hreflang="' + want + '"]');
+    if (alt) location.replace(alt.href + location.search + location.hash);
+  } catch (e) {}
+})();
+</script>
+{{- end }}
 {{- end }}
 
 {{/* Pagination prev/next for SEO — only on pages whose template paginates (see head/pager.html) */}}

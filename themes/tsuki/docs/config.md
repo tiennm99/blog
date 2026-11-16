@@ -185,8 +185,11 @@ A post gets a TOC when all of these hold: `params.toc.enable` is not `false`, th
 
 A single-language site needs only `languageCode` and `defaultContentLanguage` from the required block. For more than one language, add a `languages:` map to the site config (see [Hugo's multilingual docs](https://gohugo.io/content-management/multilingual/)); the theme then:
 
-- renders a language switcher in the header that links to the current page's translation, or to that language's home when the page has none;
+- renders a language dropdown in the header that lists only the languages the current page exists in, so an untranslated post shows just its own language;
+- remembers the reader's pick in `localStorage` (`tsuki-lang`) and, on later visits, opens the page's translation in that language when one exists;
 - emits `<link rel="alternate" hreflang>` for every translation plus `x-default` pointing at the site home.
+
+A post's translation is a sibling file in its bundle, such as `index.en.md` next to `index.md`; it is served under `/<lang>/`. Each extra language also needs its own `_index.<lang>.md` for the home, `archives` and `search` sections, so its header menu and search page exist.
 
 The theme bundles `i18n/vi.yml` and `i18n/en.yml`. To change a string, or to add another language, put a file with the same keys in the site's `i18n/` (for example `i18n/ja.yml`); site files override the theme's.
 

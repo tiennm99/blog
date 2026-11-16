@@ -1,30 +1,26 @@
 {{- /*
-  Inline language switcher. Auto-hidden on single-language sites.
-  Lists every configured language; marks the active one with aria-current="page".
-  Falls back to the localised home for languages where the current page has no translation.
+  Language dropdown. Hidden on single-language sites.
+  Lists only the languages the current page exists in (the page plus its
+  translations), so a post with no translation shows just its own language.
+  js/lang-switcher.js stores the chosen language; the inline script in
+  head.html sends later visits to that language's translation when one exists.
 */ -}}
 {{- if hugo.IsMultilingual -}}
-{{- $currentLang := .Language.Lang -}}
-{{- $page := . -}}
-<ul class="lang-switcher" aria-label="Languages">
-  {{- range site.Languages -}}
-  {{- $lang := .Lang -}}
-  {{- /* Resolve the target URL: prefer the translated page; otherwise the language home */ -}}
-  {{- $href := "" -}}
-  {{- if eq $lang $currentLang -}}
-    {{- $href = $page.Permalink -}}
-  {{- else -}}
-    {{- range $page.AllTranslations -}}
-      {{- if eq .Language.Lang $lang -}}{{- $href = .Permalink -}}{{- end -}}
-    {{- end -}}
-    {{- if not $href -}}{{- $href = (printf "/%s/" $lang) | relLangURL -}}{{- end -}}
-  {{- end -}}
-  <li>
-    <a href="{{ $href }}" lang="{{ $lang }}"
-      {{- if eq $lang $currentLang }} aria-current="page"{{ end }}>
-      {{ .LanguageName | default (upper $lang) }}
-    </a>
-  </li>
-  {{- end -}}
-</ul>
+{{- $current := .Language.Lang -}}
+<details class="lang-switcher" data-lang-switcher>
+  <summary aria-label="{{ i18n "language" | default "Language" }}: {{ .Language.LanguageName }}">
+    {{ partial "icon.html" "globe" }}<span class="lang-switcher-current">{{ upper $current }}</span>
+  </summary>
+  <ul class="lang-switcher-menu">
+    {{- range .AllTranslations }}
+    {{- $lang := .Language.Lang }}
+    <li>
+      <a href="{{ .RelPermalink }}" hreflang="{{ $lang }}" lang="{{ $lang }}" data-lang="{{ $lang }}"
+        {{- if eq $lang $current }} aria-current="page"{{ end }}>
+        {{- .Language.LanguageName | default (upper $lang) -}}
+      </a>
+    </li>
+    {{- end }}
+  </ul>
+</details>
 {{- end -}}
