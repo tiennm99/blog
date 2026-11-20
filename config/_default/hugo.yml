@@ -1,6 +1,8 @@
 baseurl: https://miti99.com/
 languageCode: vi
-theme: tsuki
+module:
+  imports:
+    - path: github.com/tiennm99/nocturne
 title: miti99
 defaultContentLanguage: vi
 hasCJKLanguage: false
