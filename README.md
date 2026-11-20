@@ -1,6 +1,6 @@
 # blog
 
-Source of [miti99.com](https://miti99.com) — personal blog (VN/EN) built with [Hugo](https://gohugo.io) and the tsuki theme, vendored in `themes/tsuki/`.
+Source of [miti99.com](https://miti99.com) — personal blog (VN/EN) built with [Hugo](https://gohugo.io) and the [nocturne](https://github.com/tiennm99/nocturne) theme, imported as a Hugo Module.
 
 ## Quick start
 
@@ -34,12 +34,12 @@ content/
 
 Site config lives in `config/_default/` (Hugo config directory split):
 
-- `params.yml` — tsuki options: footer, license, comments (Giscus), search, prev/next navigation
+- `params.yml` — nocturne options: footer, license, comments (Giscus), search, prev/next navigation
 - `hugo.yml`, `markup.yml`, `permalinks.yml` — site, Markdown and URL settings
 - `data/profile.yaml`, `data/projects.yaml` — home page profile and featured projects
 - `layouts/` — template overrides; `layouts/_partials/head/custom.html` holds the analytics tags
 
-The tsuki theme is vendored in `themes/tsuki/` (no submodule) and is edited there directly; its docs are in [themes/tsuki/README.md](themes/tsuki/README.md) and [themes/tsuki/docs/](themes/tsuki/docs/); record theme changes in [themes/tsuki/CHANGELOG.md](themes/tsuki/CHANGELOG.md). Posts keep their content-path URLs (`/post/YYYY/MM/DD/`).
+The theme lives in its own repo, [`tiennm99/nocturne`](https://github.com/tiennm99/nocturne), with its docs and CHANGELOG; make theme changes there. The blog imports it as a Hugo Module (needs [Go](https://go.dev/doc/install)), pinned to a commit in `go.mod`. To pull the latest theme `main`, run `hugo mod get -u github.com/tiennm99/nocturne` and commit `go.mod` and `go.sum`. To try local theme edits against the blog, run `HUGO_MODULE_REPLACEMENTS="github.com/tiennm99/nocturne -> ../nocturne" hugo server` with the theme cloned next to this repo. Posts keep their content-path URLs (`/post/YYYY/MM/DD/`).
 
 ## Working with AI tools
 

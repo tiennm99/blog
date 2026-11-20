@@ -5,7 +5,7 @@ Canonical instructions for AI coding tools (Claude Code, OpenCode, Codex) workin
 ## Project Info
 
 - **Type**: Hugo static site with Vietnamese tech content
-- **Theme**: tsuki, vendored in `themes/tsuki/` (no submodule; edit it there; docs in [themes/tsuki/README.md](themes/tsuki/README.md) and [themes/tsuki/docs/](themes/tsuki/docs/); log theme changes in [themes/tsuki/CHANGELOG.md](themes/tsuki/CHANGELOG.md))
+- **Theme**: nocturne, its own repo [`tiennm99/nocturne`](https://github.com/tiennm99/nocturne), imported as a Hugo Module pinned in `go.mod` (needs Go). Make theme changes and CHANGELOG entries in that repo, then bump the blog with `hugo mod get -u github.com/tiennm99/nocturne`; preview unpushed theme edits with `HUGO_MODULE_REPLACEMENTS="github.com/tiennm99/nocturne -> ../nocturne" hugo server`
 - **Post content language**: Vietnamese (with common English tech words)
 - **Site languages**: Vietnamese (default, at `/`) and English (under `/en/`), set in `config/_default/languages.yml`. A post's English translation is `index.en.md` in the same bundle; posts without one show only Vietnamese in the language dropdown
 - **User communication**: English by default; use another language only when the user explicitly requests it

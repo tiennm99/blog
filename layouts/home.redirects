@@ -7,9 +7,9 @@
 
   Posts keep their Stack URLs (/post/YYYY/MM/DD/), so they need no rules.
   Stack paginated the home page with 5 posts per page. Those pages (/page/N/)
-  go to /, since tsuki's home page is not paginated. The page section's second
+  go to /, since nocturne's home page is not paginated. The page section's second
   page (/page/page/2/) and Stack's first-page aliases (/page/page/1/,
-  /categories/page/1/, /tags/page/N/) go to their list pages, since tsuki does
+  /categories/page/1/, /tags/page/N/) go to their list pages, since nocturne does
   not paginate those lists. Only /tags/page/:n/ is a placeholder rule; the rest
   are exact paths, so /page/ and /page/index.xml are left alone. The count
   is computed from the current posts, so it covers every old page and only

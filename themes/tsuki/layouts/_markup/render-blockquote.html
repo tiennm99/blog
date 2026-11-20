@@ -1,9 +1,0 @@
-{{- /*
-  Blockquote render hook. Keeps Markdown attributes ({.class}) on the
-  element. Alert syntax (> [!note]) renders as a plain blockquote.
-*/ -}}
-<blockquote
-  {{- range $k, $v := .Attributes }} {{ $k }}="{{ $v }}"{{ end -}}
->
-  {{ .Text }}
-</blockquote>
