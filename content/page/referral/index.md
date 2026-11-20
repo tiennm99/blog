@@ -1,7 +1,7 @@
 ---
 title: Referral
 description: Referral links for tech services I use
-tags: ["Referral", "AI Tools", "AI Gateway", "LLM API", "OrcaRouter", "Hermes Agent", "Claude Code", "Cloud Storage", "Cloud Computing", "Alibaba Cloud", "Database", "Aiven"]
+tags: ["Referral", "AI Tools", "AI Gateway", "LLM API", "OrcaRouter", "Hermes Agent", "Claude Code", "Cloud Storage", "Cloud Computing", "Alibaba Cloud", "Database", "Aiven", "NanoGPT", "Lovable", "Bolt", "Railway", "DigitalOcean", "Runpod"]
 aliases:
   - invite
 menu:
@@ -104,6 +104,16 @@ LLM Gateway is an open-source gateway that routes requests to many LLM providers
 
 Sign up through my referral link: https://llmgateway.io/?ref=jdsmz02j3nmaB9BqziZt
 
+### [NanoGPT](https://nano-gpt.com/r/KRRRwQj4)
+
+NanoGPT is a pay-as-you-go gateway to every major model with no markup over list prices, plus an optional $12/month subscription with 60 million included input tokens per week on open models.
+
+Sign up through my link to get **5% off** eligible usage.
+
+Referral code: `KRRRwQj4`
+
+Link: https://nano-gpt.com/r/KRRRwQj4
+
 ### [Alibaba Cloud](https://www.alibabacloud.com/campaign/benefits?referral_code=A92LU5)
 
 Alibaba Cloud Model Studio gives one-stop access to the full Qwen series and leading third-party LLMs through OpenAI-compatible APIs, with multimodal support. Its **Token Plan** bundles Qwen and third-party models such as DeepSeek and GLM for coding tools in one monthly subscription.
@@ -113,6 +123,54 @@ Sign up via the referral link as a new user to try Model Studio and Token Plan.
 Referral code: `A92LU5`
 
 Link: https://www.alibabacloud.com/campaign/benefits?referral_code=A92LU5
+
+## AI App Builders
+
+### [Lovable](https://lovable.dev/invite/F2BPEOE)
+
+Lovable builds full-stack web apps from a chat prompt, with preview and one-click deploy.
+
+Sign up through my link to get **10 credits**.
+
+Link: https://lovable.dev/invite/F2BPEOE
+
+### [Bolt.new](https://bolt.cello.so/G2EUTJII7XU)
+
+Bolt.new builds, runs, and deploys full-stack apps in the browser from a prompt.
+
+Sign up through my link to get **20% off**.
+
+Link: https://bolt.cello.so/G2EUTJII7XU
+
+## Cloud Computing
+
+### [Railway](https://railway.com?referralCode=otNjpD)
+
+Railway deploys apps, databases, and cron jobs from a GitHub repo or Docker image, with usage-based pricing.
+
+Sign up through my link to get **$20 in credits**.
+
+Referral code: `otNjpD`
+
+Link: https://railway.com?referralCode=otNjpD
+
+### [DigitalOcean](https://m.do.co/c/2bff83fffe9a)
+
+DigitalOcean offers simple cloud servers (Droplets), managed databases, Kubernetes, and App Platform.
+
+Sign up through my link to start on DigitalOcean.
+
+Link: https://m.do.co/c/2bff83fffe9a
+
+### [Runpod](https://runpod.io?ref=jpu0zh3f)
+
+Runpod rents GPUs by the second, as pods or serverless endpoints, for AI training and inference.
+
+Sign up through my link and add $10 for the first time to get a one-time credit bonus from **$5 to $500**, plus instant access to Runpod's GPU resources.
+
+Per Runpod's referral terms, the bonus needs a first-time account created with Google sign-in.
+
+Link: https://runpod.io?ref=jpu0zh3f
 
 ## Managed Data Platforms
 
