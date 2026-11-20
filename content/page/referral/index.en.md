@@ -42,18 +42,17 @@ Sign up through my referral link: https://www.orcarouter.ai/ref/ref_3976ba42abf3
 
 Referral code: `ref_3976ba42abf37dc55c1d`
 
-**TL;DR — current offers checked Oct 2, 2026 (UTC+7):**
+**TL;DR — current offers checked Nov 20, 2026 (UTC+7):**
 
-- **Tencent Hy4 Preview:** Get a 100% deposit match, up to $200, on top-ups of $20 or more when you join before **Oct 29**. Credit is usable on Hy4 Preview only.
-- **GPT-6 Astra:** Get a 100% deposit match, up to $100, on top-ups of $20 or more before **Oct 5**; a payment card is required and the offer is waitlisted.
+- **Always-free models:** DeepSeek V4.1 Flash, DeepSeek V4 Flash, GLM-5.3-Flash, Tencent Hy4 Preview, Tencent Hy3, plus the `orcarouter/free` router. They need a linked GitHub account with some history, or any paid purchase.
+- **DeepSeek V4.1 Flash:** Get a 100% deposit match, with no cap listed, on top-ups of $20 or more when you enroll by **Dec 18**. Match credit expires Jan 17, 2027.
+- **Fable 5.2:** Get a 100% deposit match, up to about $200, on top-ups of $10 or more when you enroll by **Dec 11**. Match credit expires Jan 10, 2027.
 
 Offers can change quickly, so check the [live offers page](https://www.orcarouter.ai/offers) before claiming.
 
 ### [Z.ai](https://z.ai/subscribe?ic=PLKIAYEIPW)
 
 🚀 You've been invited to join the GLM Coding Plan! Enjoy full support for Claude Code, Cline, and 20+ top coding tools — starting at just $18/month. Subscribe now and grab the limited-time deal! Link： https://z.ai/subscribe?ic=PLKIAYEIPW
-
-Until **Oct 7, 2026**, all-day usage is billed at the off-peak rate, and GLM-5.3-Flash is unlimited from 23:00 to 09:00.
 
 ### [Kimi](https://kimi-bot.com/activities/viral-referral/share?scenario=invite&from=share_poster&invitation_code=C8CJ6F)
 
@@ -64,26 +63,11 @@ Boost me and we both win! Sign up or subscribe to Kimi (Moonshot AI) and we each
 
 Invitation code: `C8CJ6F`
 
-### [MiniMax](https://platform.minimax.io/subscribe/token-plan?code=CAQ5sxHAq6&source=link)
-
-🎁 MiniMax Token Plan Referral Program — Token Plan starts at $20/month (Plus), with Max at $50 and Ultra at $120.
-
-**How it works:**
-
-- **For Referred Users:** Use a referral link to get **10% off** any Token Plan subscription or upgrade, and join the MiniMax Developer Community as a Builder.
-- **For Referrers:** Earn **10% back in API credits** for every successful paid referral, valid for 90 days and usable across all MiniMax models. [View details](https://platform.minimax.io/docs/token-plan/faq)
-
-[![minimax](minimax.png)](https://platform.minimax.io/subscribe/token-plan?code=CAQ5sxHAq6&source=link)
-
-Referral code: `CAQ5sxHAq6`
-
-Link: https://platform.minimax.io/subscribe/token-plan?code=CAQ5sxHAq6&source=link
-
 ### [Synthetic](https://synthetic.new/?referral=CNBFyw28zF0dZoj)
 
 Thanks for helping us grow!
 
-Invite your friends to Synthetic and both of you will receive $10.00 off the first month when they subscribe! Subscriptions start at $30/month, with usage-based pricing as an alternative.
+Invite your friends to Synthetic and when they subscribe, both of you will receive **$10.00** in subscription credit if they choose the Standard plan or higher, or **$3.00** if they choose the Go plan. This discount won't stack with other offers.
 
 Share Your Referral Link
 
@@ -101,38 +85,30 @@ Link: https://portal.nousresearch.com/r/tien-nguyen-minh
 
 ### [Xiaomi MiMo](https://platform.xiaomimimo.com?ref=T8ESAY)
 
-Xiaomi MiMo Open Platform — running Xiaomi's flagship MiMo V2.6 Pro and the rest of the lineup. Sign up with my code and you'll instantly get **$2** in API credits, plus **10% off** your first paid Token Plan order.
+Invite builders to try MiMo V2.6, Xiaomi's flagship model.
 
-Enter the code within 3 days of signing up, at the bottom-left of the console. Credits valid **40 days**.
+- **Friend:** signs up and gets **10% off** their first paid Token Plan order, applied automatically at checkout.
+- **Me:** earns 10% back in credits on that order, valid for 40 days.
 
-Referral code: `T8ESAY`
+Auto-bind via the link, or enter the code in the console sidebar after signup.
+
+Invite code: `T8ESAY`
 
 Link: https://platform.xiaomimimo.com?ref=T8ESAY
 
 [![mimo](mimo.png)](https://platform.xiaomimimo.com?ref=T8ESAY)
 
-### [ModelArk](https://www.byteplus.com/activity/codingplan?ac=MMAUCIS9NT1S&rc=2739UWRE)
+### [LLM Gateway](https://llmgateway.io/?ref=jdsmz02j3nmaB9BqziZt)
 
-BytePlus ModelArk Coding Plan bundles Dola-Seed-2.0-pro, GLM-5.3-Flash, and the DeepSeek V4 series for Claude Code, Cursor, Cline, and other coding tools. Subscribe through my link to get **10% off** your first Coding Plan subscription.
+LLM Gateway is an open-source gateway that routes requests to many LLM providers through one OpenAI- and Anthropic-compatible API. Bring your own keys for free, pay as you go, or pick a **DevPass** plan for coding agents (Lite $29, Pro $79, Max $179 a month), each including twice its price in model usage.
 
-https://www.byteplus.com/activity/codingplan?ac=MMAUCIS9NT1S&rc=2739UWRE
-
-[![modelark](modelark.png)](https://www.byteplus.com/activity/codingplan?ac=MMAUCIS9NT1S&rc=2739UWRE)
-
-## Cloud Computing
+Sign up through my referral link: https://llmgateway.io/?ref=jdsmz02j3nmaB9BqziZt
 
 ### [Alibaba Cloud](https://www.alibabacloud.com/campaign/benefits?referral_code=A92LU5)
 
-Alibaba Cloud is one of the world's largest cloud computing platforms — offering 50+ products including ECS, OSS, RDS, Redis, MongoDB, and networking.
+Alibaba Cloud Model Studio gives one-stop access to the full Qwen series and leading third-party LLMs through OpenAI-compatible APIs, with multimodal support. Its **Token Plan** bundles Qwen and third-party models such as DeepSeek and GLM for coding tools in one monthly subscription.
 
-**New user benefits (via referral):**
-
-- Up to **$1,700** in free trial credits (individual) or **$8,500** (enterprise)
-- **12-month free** ECS (Elastic Compute Service) trial
-- **50+** products available in free trial
-- New-user coupons and discounts on first orders
-
-**How it works:** Sign up via the referral link as a new user → complete identity verification → access free trials and promotions.
+Sign up via the referral link as a new user to try Model Studio and Token Plan.
 
 Referral code: `A92LU5`
 
