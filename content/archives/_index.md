@@ -1,6 +1,7 @@
 ---
 title: "Archives"
 description: "Toàn bộ bài viết theo năm và tháng."
+outputs: [html]
 menu:
   main:
     weight: -70
