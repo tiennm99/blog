@@ -20,8 +20,8 @@ Dù không biết người ta star vì điều gì nữa 🤡🤡
 
 | Name | Description | Stars | URL |
 | --- | --- | --- | --- |
-| [awesome-ai-dev-tools](https://github.com/tiennm99/awesome-ai-dev-tools) | Daily-updated ranking of open-source AI coding agents and developer tools by GitHub stars, with a dashboard | 4 | [awesome-ai-dev-tools.pages.dev](https://awesome-ai-dev-tools.pages.dev/) |
 | [genshin-repository](https://github.com/tiennm99/genshin-repository) | Genshin Impact direct download links and Sophon build data for every version, updated daily by a Go fetcher | 4 | — |
+| [awesome-ai-dev-tools](https://github.com/tiennm99/awesome-ai-dev-tools) | Daily-updated ranking of open-source AI coding agents and developer tools by GitHub stars, with a dashboard | 4 | [awesome-ai-dev-tools.pages.dev](https://awesome-ai-dev-tools.pages.dev/) |
 | [penny-pincher-provider](https://github.com/tiennm99/penny-pincher-provider) | Curated list of affordable + free LLM API providers — coding-plan subs, free-tier APIs. | 2 | [tiennm99.github.io/penny-pincher-provider](https://tiennm99.github.io/penny-pincher-provider/) |
 | [cheahjs-free-llm-api-resources](https://github.com/tiennm99/cheahjs-free-llm-api-resources) | A list of free LLM inference resources accessible via API | 2 | [free-llm-api-resources.pages.dev](https://free-llm-api-resources.pages.dev) |
 | [ghglance](https://github.com/tiennm99/ghglance) | Go CLI, GitHub Action and web UI that generate SVG cards summarizing a GitHub user's profile | 1 | [ghglance.miti99.dev](https://ghglance.miti99.dev) |
@@ -50,16 +50,17 @@ Vài có URL để bấm vào xem trực tiếp (demo). URL có thể là:
 
 | Name | Description | URL |
 | --- | --- | --- |
-| [cv](https://github.com/tiennm99/cv) | My CV as one YAML file, rendered to a Svelte landing site and a Typst PDF | [tiennm99.github.io/cv](https://tiennm99.github.io/cv/) |
+| [bkfcduchoa/bkfcduchoa.github.io](https://github.com/bkfcduchoa/bkfcduchoa.github.io) |  | [bkfcduchoa.github.io](https://bkfcduchoa.github.io/) |
+| [aboutme](https://github.com/tiennm99/aboutme) | A draggable floating 'about me' bubble for any website: one script tag shows your blog, GitHub, CV and socials. No framework, no cookies, free to host. | [tiennm99.github.io/aboutme](https://tiennm99.github.io/aboutme/) |
 | [awesome-ai-dev-tools](https://github.com/tiennm99/awesome-ai-dev-tools) | Daily-updated ranking of open-source AI coding agents and developer tools by GitHub stars, with a dashboard | [awesome-ai-dev-tools.pages.dev](https://awesome-ai-dev-tools.pages.dev/) |
+| [tiennm99](https://github.com/tiennm99/tiennm99) | Config files for my GitHub profile. | [github.com/tiennm99](https://github.com/tiennm99) |
+| [blog](https://github.com/tiennm99/blog) | Source of miti99.com, a Vietnamese and English personal blog built with Hugo and the nocturne theme | [miti99.com](https://miti99.com) |
+| [cv](https://github.com/tiennm99/cv) | My CV as one YAML file, rendered to a Svelte landing site and a Typst PDF | [tiennm99.github.io/cv](https://tiennm99.github.io/cv/) |
 | [penny-pincher-provider](https://github.com/tiennm99/penny-pincher-provider) | Curated list of affordable + free LLM API providers — coding-plan subs, free-tier APIs. | [tiennm99.github.io/penny-pincher-provider](https://tiennm99.github.io/penny-pincher-provider/) |
 | [ngamtheproject/ngamtheproject.github.io](https://github.com/ngamtheproject/ngamtheproject.github.io) | Website for Ngăm - a charity organization founded by high school students. | [ngamtheproject.github.io](https://ngamtheproject.github.io/) |
-| [bkfcduchoa/bkfcduchoa.github.io](https://github.com/bkfcduchoa/bkfcduchoa.github.io) |  | [bkfcduchoa.github.io](https://bkfcduchoa.github.io/) |
-| [blog](https://github.com/tiennm99/blog) | Source of miti99.com, a Vietnamese and English personal blog built with Hugo and the nocturne theme | [miti99.com](https://miti99.com) |
 | [nocturne](https://github.com/tiennm99/nocturne) | Hugo blog and portfolio theme with Vietnamese-first typography, dark mode, Pagefind search and Giscus comments | [tiennm99.github.io/nocturne](https://tiennm99.github.io/nocturne/) |
 | [iammiti99](https://github.com/tiennm99/iammiti99) | Personal link-in-bio page — a self-hosted Linktree alternative built with Hugo and the banyan theme. | [tiennm99.github.io/iammiti99](https://tiennm99.github.io/iammiti99/) |
 | [banyan](https://github.com/tiennm99/banyan) | A minimalist Hugo theme for link-in-bio pages, named after the banyan (cây đa) of Vietnam: one root, many branches. | [tiennm99.github.io/banyan](https://tiennm99.github.io/banyan/) |
-| [tiennm99](https://github.com/tiennm99/tiennm99) | Config files for my GitHub profile. | [github.com/tiennm99](https://github.com/tiennm99) |
 | [loldle](https://github.com/tiennm99/loldle) | LoLdle-style League of Legends daily champion guessing game: SvelteKit web app and weekly Go data scraper | [tiennm99.github.io/loldle](https://tiennm99.github.io/loldle/) |
 | [tiennm99bot](https://github.com/tiennm99/tiennm99bot) | Plug-n-play Telegram bot framework in Go, self-hosted on Coolify with MongoDB Atlas: games, schedules, paper trading | [t.me/tiennm99bot](https://t.me/tiennm99bot) |
 | [gamesrebirth/gamesrebirth.github.io](https://github.com/gamesrebirth/gamesrebirth.github.io) | Homepage of Games Rebirth, non-commercial fan remakes of old J2ME and PC games, served by GitHub Pages | [gamesrebirth.github.io/gamesrebirth.github.io](https://gamesrebirth.github.io/gamesrebirth.github.io/) |
@@ -102,25 +103,25 @@ Project của người khác/tổ chức khác mà mình gửi PR và được m
 | Name | Description | Merged PRs | Stars |
 | --- | --- | --- | --- |
 | [zfoo-project/zfoo](https://github.com/zfoo-project/zfoo) | 💡Extremely fast enterprise server framework, can be used in RPC,  game server,  web server. | 12 | 2005 |
-| [iluwatar/java-design-patterns](https://github.com/iluwatar/java-design-patterns) | Design patterns implemented in Java | 6 | 94893 |
-| [is-a-dev/register](https://github.com/is-a-dev/register) | Grab your own sweet-looking '.is-a.dev' subdomain. | 4 | 11867 |
-| [is-a-good-dev/register](https://github.com/is-a-good-dev/register) | Register for your is-a-good.dev domain! | 4 | 645 |
-| [open-domains/register](https://github.com/open-domains/register) | Free subdomains for personal sites, open-source projects, and more. | 4 | 2607 |
-| [coollabsio/coolify](https://github.com/coollabsio/coolify) | An open-source, self-hostable PaaS alternative to Vercel, Heroku & Netlify that lets you easily deploy static sites, databases, full-stack applications and 360+ one-click services on your own servers. | 3 | 66305 |
+| [iluwatar/java-design-patterns](https://github.com/iluwatar/java-design-patterns) | Design patterns implemented in Java | 6 | 94896 |
+| [is-a-dev/register](https://github.com/is-a-dev/register) | Grab your own sweet-looking '.is-a.dev' subdomain. | 4 | 11871 |
+| [is-a-good-dev/register](https://github.com/is-a-good-dev/register) | Register for your is-a-good.dev domain! | 4 | 646 |
+| [open-domains/register](https://github.com/open-domains/register) | Free subdomains for personal sites, open-source projects, and more. | 4 | 2609 |
+| [coollabsio/coolify](https://github.com/coollabsio/coolify) | An open-source, self-hostable PaaS alternative to Vercel, Heroku & Netlify that lets you easily deploy static sites, databases, full-stack applications and 360+ one-click services on your own servers. | 3 | 66330 |
 | [tarampampam/domains](https://github.com/tarampampam/domains) |  | 3 | 807 |
 | [datafaker-net/datafaker](https://github.com/datafaker-net/datafaker) | Generating fake data for the JVM (Java, Kotlin, Groovy) has never been easier! | 2 | 1810 |
 | [old-free-domains/register](https://github.com/old-free-domains/register) | Free subdomains for personal sites, open-source projects, and more. | 2 | 602 |
-| [ripienaar/free-for-dev](https://github.com/ripienaar/free-for-dev) | A list of SaaS, PaaS and IaaS offerings that have free tiers of interest to devops and infradev | 1 | 143279 |
-| [oraios/serena](https://github.com/oraios/serena) | A powerful MCP toolkit for coding, providing semantic retrieval and editing capabilities  - the IDE for your agent | 1 | 31556 |
-| [kaitranntt/ccs](https://github.com/kaitranntt/ccs) | Switch between Claude accounts, Gemini, Copilot, OpenRouter (300+ models) via CLIProxyAPI OAuth proxy. Visual dashboard, remote proxy support, WebSearch fallback. Zero-config to production-ready. | 1 | 2906 |
-| [sirmalloc/ccstatusline](https://github.com/sirmalloc/ccstatusline) | 🚀 Beautiful highly customizable statusline for Claude Code CLI with powerline support, themes, and more. | 1 | 13653 |
+| [ripienaar/free-for-dev](https://github.com/ripienaar/free-for-dev) | A list of SaaS, PaaS and IaaS offerings that have free tiers of interest to devops and infradev | 1 | 143337 |
+| [oraios/serena](https://github.com/oraios/serena) | A powerful MCP toolkit for coding, providing semantic retrieval and editing capabilities  - the IDE for your agent | 1 | 31581 |
+| [kaitranntt/ccs](https://github.com/kaitranntt/ccs) | Switch between Claude accounts, Gemini, Copilot, OpenRouter (300+ models) via CLIProxyAPI OAuth proxy. Visual dashboard, remote proxy support, WebSearch fallback. Zero-config to production-ready. | 1 | 2907 |
+| [sirmalloc/ccstatusline](https://github.com/sirmalloc/ccstatusline) | 🚀 Beautiful highly customizable statusline for Claude Code CLI with powerline support, themes, and more. | 1 | 13654 |
 | [Bogdanp/awesome-advent-of-code](https://github.com/Bogdanp/awesome-advent-of-code) | A collection of awesome resources related to the yearly Advent of Code challenge. | 1 | 3233 |
 | [onyx-dot-app/documentation](https://github.com/onyx-dot-app/documentation) | Documentation for the Onyx Software | 1 | 34 |
 | [projectlombok/lombok](https://github.com/projectlombok/lombok) | Very spicy additions to the Java programming language. | 1 | 13484 |
-| [HugoBlox/kit](https://github.com/HugoBlox/kit) | 🧱 Describe your site, AI builds it, you own it as Markdown. Snap together Tailwind blocks like Lego — landing pages, blogs, portfolios, docs & more. No AI slop. Free to deploy anywhere 👇 | 1 | 9795 |
+| [HugoBlox/kit](https://github.com/HugoBlox/kit) | 🧱 Describe your site, AI builds it, you own it as Markdown. Snap together Tailwind blocks like Lego — landing pages, blogs, portfolios, docs & more. No AI slop. Free to deploy anywhere 👇 | 1 | 9796 |
 | [tkowalcz/tjahzi](https://github.com/tkowalcz/tjahzi) | Java clients, log4j2 and logback appenders for Grafana Loki | 1 | 141 |
 | [dhyeythumar/awesome-readme-tools](https://github.com/dhyeythumar/awesome-readme-tools) | A curated list of awesome readme tools. ✌ | 1 | 280 |
-| [thedev-id/thedev.id](https://github.com/thedev-id/thedev.id) | Identity for developers on the web. | 1 | 1827 |
+| [thedev-id/thedev.id](https://github.com/thedev-id/thedev.id) | Identity for developers on the web. | 1 | 1828 |
 | [is-amazing/register](https://github.com/is-amazing/register) | Register your is-amaz.ing project domain here! | 1 | 149 |
 | [DavidNiessen/SimpleGuicePlugin](https://github.com/DavidNiessen/SimpleGuicePlugin) | An example for dependency injection (Google Guice) in a Spigot plugin | 1 | 2 |
 
