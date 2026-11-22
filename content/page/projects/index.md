@@ -50,11 +50,11 @@ Vài có URL để bấm vào xem trực tiếp (demo). URL có thể là:
 
 | Name | Description | URL |
 | --- | --- | --- |
-| [bkfcduchoa/bkfcduchoa.github.io](https://github.com/bkfcduchoa/bkfcduchoa.github.io) |  | [bkfcduchoa.github.io](https://bkfcduchoa.github.io/) |
-| [aboutme](https://github.com/tiennm99/aboutme) | A draggable floating 'about me' bubble for any website: one script tag shows your blog, GitHub, CV and socials. No framework, no cookies, free to host. | [tiennm99.github.io/aboutme](https://tiennm99.github.io/aboutme/) |
 | [awesome-ai-dev-tools](https://github.com/tiennm99/awesome-ai-dev-tools) | Daily-updated ranking of open-source AI coding agents and developer tools by GitHub stars, with a dashboard | [awesome-ai-dev-tools.pages.dev](https://awesome-ai-dev-tools.pages.dev/) |
 | [tiennm99](https://github.com/tiennm99/tiennm99) | Config files for my GitHub profile. | [github.com/tiennm99](https://github.com/tiennm99) |
 | [blog](https://github.com/tiennm99/blog) | Source of miti99.com, a Vietnamese and English personal blog built with Hugo and the nocturne theme | [miti99.com](https://miti99.com) |
+| [bkfcduchoa/bkfcduchoa.github.io](https://github.com/bkfcduchoa/bkfcduchoa.github.io) |  | [bkfcduchoa.github.io](https://bkfcduchoa.github.io/) |
+| [aboutme](https://github.com/tiennm99/aboutme) | A draggable floating 'about me' bubble for any website: one script tag shows your blog, GitHub, CV and socials. No framework, no cookies, free to host. | [tiennm99.github.io/aboutme](https://tiennm99.github.io/aboutme/) |
 | [cv](https://github.com/tiennm99/cv) | My CV as one YAML file, rendered to a Svelte landing site and a Typst PDF | [tiennm99.github.io/cv](https://tiennm99.github.io/cv/) |
 | [penny-pincher-provider](https://github.com/tiennm99/penny-pincher-provider) | Curated list of affordable + free LLM API providers — coding-plan subs, free-tier APIs. | [tiennm99.github.io/penny-pincher-provider](https://tiennm99.github.io/penny-pincher-provider/) |
 | [ngamtheproject/ngamtheproject.github.io](https://github.com/ngamtheproject/ngamtheproject.github.io) | Website for Ngăm - a charity organization founded by high school students. | [ngamtheproject.github.io](https://ngamtheproject.github.io/) |
@@ -103,25 +103,26 @@ Project của người khác/tổ chức khác mà mình gửi PR và được m
 | Name | Description | Merged PRs | Stars |
 | --- | --- | --- | --- |
 | [zfoo-project/zfoo](https://github.com/zfoo-project/zfoo) | 💡Extremely fast enterprise server framework, can be used in RPC,  game server,  web server. | 12 | 2005 |
-| [iluwatar/java-design-patterns](https://github.com/iluwatar/java-design-patterns) | Design patterns implemented in Java | 6 | 94896 |
-| [is-a-dev/register](https://github.com/is-a-dev/register) | Grab your own sweet-looking '.is-a.dev' subdomain. | 4 | 11871 |
+| [iluwatar/java-design-patterns](https://github.com/iluwatar/java-design-patterns) | Design patterns implemented in Java | 6 | 94899 |
+| [datafaker-net/datafaker](https://github.com/datafaker-net/datafaker) | Generating fake data for the JVM (Java, Kotlin, Groovy) has never been easier! | 4 | 1810 |
+| [is-a-dev/register](https://github.com/is-a-dev/register) | Grab your own sweet-looking '.is-a.dev' subdomain. | 4 | 11874 |
 | [is-a-good-dev/register](https://github.com/is-a-good-dev/register) | Register for your is-a-good.dev domain! | 4 | 646 |
-| [open-domains/register](https://github.com/open-domains/register) | Free subdomains for personal sites, open-source projects, and more. | 4 | 2609 |
-| [coollabsio/coolify](https://github.com/coollabsio/coolify) | An open-source, self-hostable PaaS alternative to Vercel, Heroku & Netlify that lets you easily deploy static sites, databases, full-stack applications and 360+ one-click services on your own servers. | 3 | 66330 |
+| [open-domains/register](https://github.com/open-domains/register) | Free subdomains for personal sites, open-source projects, and more. | 4 | 2608 |
+| [coollabsio/coolify](https://github.com/coollabsio/coolify) | An open-source, self-hostable PaaS alternative to Vercel, Heroku & Netlify that lets you easily deploy static sites, databases, full-stack applications and 360+ one-click services on your own servers. | 3 | 66370 |
 | [tarampampam/domains](https://github.com/tarampampam/domains) |  | 3 | 807 |
-| [datafaker-net/datafaker](https://github.com/datafaker-net/datafaker) | Generating fake data for the JVM (Java, Kotlin, Groovy) has never been easier! | 2 | 1810 |
+| [imfing/hextra](https://github.com/imfing/hextra) | 🔯 Modern, batteries-included Hugo theme for creating beautiful doc, blog and static websites | 2 | 2422 |
 | [old-free-domains/register](https://github.com/old-free-domains/register) | Free subdomains for personal sites, open-source projects, and more. | 2 | 602 |
-| [ripienaar/free-for-dev](https://github.com/ripienaar/free-for-dev) | A list of SaaS, PaaS and IaaS offerings that have free tiers of interest to devops and infradev | 1 | 143337 |
-| [oraios/serena](https://github.com/oraios/serena) | A powerful MCP toolkit for coding, providing semantic retrieval and editing capabilities  - the IDE for your agent | 1 | 31581 |
+| [ripienaar/free-for-dev](https://github.com/ripienaar/free-for-dev) | A list of SaaS, PaaS and IaaS offerings that have free tiers of interest to devops and infradev | 1 | 143392 |
+| [oraios/serena](https://github.com/oraios/serena) | A powerful MCP toolkit for coding, providing semantic retrieval and editing capabilities  - the IDE for your agent | 1 | 31612 |
 | [kaitranntt/ccs](https://github.com/kaitranntt/ccs) | Switch between Claude accounts, Gemini, Copilot, OpenRouter (300+ models) via CLIProxyAPI OAuth proxy. Visual dashboard, remote proxy support, WebSearch fallback. Zero-config to production-ready. | 1 | 2907 |
-| [sirmalloc/ccstatusline](https://github.com/sirmalloc/ccstatusline) | 🚀 Beautiful highly customizable statusline for Claude Code CLI with powerline support, themes, and more. | 1 | 13654 |
+| [sirmalloc/ccstatusline](https://github.com/sirmalloc/ccstatusline) | 🚀 Beautiful highly customizable statusline for Claude Code CLI with powerline support, themes, and more. | 1 | 13662 |
 | [Bogdanp/awesome-advent-of-code](https://github.com/Bogdanp/awesome-advent-of-code) | A collection of awesome resources related to the yearly Advent of Code challenge. | 1 | 3233 |
 | [onyx-dot-app/documentation](https://github.com/onyx-dot-app/documentation) | Documentation for the Onyx Software | 1 | 34 |
 | [projectlombok/lombok](https://github.com/projectlombok/lombok) | Very spicy additions to the Java programming language. | 1 | 13484 |
-| [HugoBlox/kit](https://github.com/HugoBlox/kit) | 🧱 Describe your site, AI builds it, you own it as Markdown. Snap together Tailwind blocks like Lego — landing pages, blogs, portfolios, docs & more. No AI slop. Free to deploy anywhere 👇 | 1 | 9796 |
+| [HugoBlox/kit](https://github.com/HugoBlox/kit) | 🧱 Describe your site, AI builds it, you own it as Markdown. Snap together Tailwind blocks like Lego — landing pages, blogs, portfolios, docs & more. No AI slop. Free to deploy anywhere 👇 | 1 | 9800 |
 | [tkowalcz/tjahzi](https://github.com/tkowalcz/tjahzi) | Java clients, log4j2 and logback appenders for Grafana Loki | 1 | 141 |
 | [dhyeythumar/awesome-readme-tools](https://github.com/dhyeythumar/awesome-readme-tools) | A curated list of awesome readme tools. ✌ | 1 | 280 |
-| [thedev-id/thedev.id](https://github.com/thedev-id/thedev.id) | Identity for developers on the web. | 1 | 1828 |
+| [thedev-id/thedev.id](https://github.com/thedev-id/thedev.id) | Identity for developers on the web. | 1 | 1833 |
 | [is-amazing/register](https://github.com/is-amazing/register) | Register your is-amaz.ing project domain here! | 1 | 149 |
 | [DavidNiessen/SimpleGuicePlugin](https://github.com/DavidNiessen/SimpleGuicePlugin) | An example for dependency injection (Google Guice) in a Spigot plugin | 1 | 2 |
 
