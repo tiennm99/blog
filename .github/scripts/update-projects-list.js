@@ -24,7 +24,10 @@ import {
   resolveUrl,
 } from "./lib/render-projects.js";
 
-const PAGE = "content/page/projects/index.md";
+const pages = [
+  { language: "vi", file: "content/page/projects/index.md" },
+  { language: "en", file: "content/page/projects/index.en.md" },
+];
 
 // Namespaces whose deployments are previews of work in progress, so linking to
 // them as a demo would misrepresent them. They still qualify for the other two
@@ -70,19 +73,25 @@ async function main() {
     .filter((c) => !ownedLogins.has(c.repo.owner.toLowerCase()))
     .sort((a, b) => b.mergedPrs - a.mergedPrs || byRecentPush(a.repo, b.repo));
 
-  const file = path.resolve(PAGE);
-  const current = await fs.readFile(file, "utf8");
-  let next = injectBlock(current, "PROJECTS_STARRED", renderStarred(starred, user));
-  next = injectBlock(next, "PROJECTS_DEMO", renderDemo(demo, user));
-  next = injectBlock(next, "PROJECTS_CONTRIBUTED", renderContributed(contributed));
+  const updates = await Promise.all(pages.map(async ({ file, language }) => {
+    const filename = path.resolve(file);
+    const current = await fs.readFile(filename, "utf8");
+    let next = injectBlock(current, "PROJECTS_STARRED", renderStarred(starred, user, language));
+    next = injectBlock(next, "PROJECTS_DEMO", renderDemo(demo, user, language));
+    next = injectBlock(next, "PROJECTS_CONTRIBUTED", renderContributed(contributed, language));
+    return { file, filename, current, next };
+  }));
 
   const summary = `${starred.length} starred, ${demo.length} demo, ${contributed.length} contributed`;
-  if (next === current) {
+  const changed = updates.filter(({ next, current }) => next !== current);
+  if (changed.length === 0) {
     console.log(`No changes (${summary}).`);
     return;
   }
-  await fs.writeFile(file, next);
-  console.log(`Updated ${PAGE} (${summary}).`);
+  for (const { file, filename, next } of changed) {
+    await fs.writeFile(filename, next);
+    console.log(`Updated ${file} (${summary}).`);
+  }
 }
 
 main().catch((err) => {

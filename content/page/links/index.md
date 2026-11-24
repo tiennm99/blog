@@ -1,5 +1,6 @@
 ---
-title: Links
+title: Liên kết
+slug: links
 menu:
     main:
         weight: -50
@@ -9,5 +10,5 @@ menu:
 comments: false
 ---
 
-- [Web CV](https://tiennm99.github.io/webcv/): CV bản web, xem online
-- [PDF CV](https://tiennm99.github.io/cv/miti99.pdf): CV dạng file, có thể download
+- [Xem CV trên web](https://tiennm99.github.io/cv/)
+- [Tải CV (PDF)](https://tiennm99.github.io/cv/miti99.pdf)

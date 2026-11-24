@@ -1,6 +1,6 @@
 ---
-title: "Search"
-description: "Tìm kiếm bài viết trên miti99."
+title: "Tìm kiếm"
+description: "Tìm bài viết trên miti99."
 outputs: [html]
 menu:
   main:
