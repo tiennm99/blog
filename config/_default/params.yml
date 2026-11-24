@@ -19,7 +19,7 @@ editURL: https://github.com/tiennm99/blog/edit/main/content/
 
 footer:
   since: 2020
-  customText: "Made by miti99 with ❤️"
+  customText: 'Made by <a href="https://miti99.com">miti99</a> with ❤️'
 
 search:
   enable: true
