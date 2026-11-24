@@ -1,6 +1,7 @@
 ---
-title: Projects
-description: Danh sách projects mình sở hữu hoặc đóng góp
+title: Dự án
+slug: projects
+description: Các dự án mình xây dựng và những dự án mã nguồn mở mình từng đóng góp.
 aliases:
   - pages
 menu:
@@ -10,15 +11,15 @@ menu:
       icon: list
 ---
 
-Vài projects mình làm, và có đóng góp. Xem thử nếu hứng thú nhé :D
+Đây là những dự án mình làm hoặc từng đóng góp. Bạn có thể [xem các dự án nổi bật trên trang chủ](/#home-projects-heading) hoặc mở một dự án trong mục bên dưới để dùng thử.
 
-## Project nổi bật (có star)
+## Dự án được cộng đồng gắn sao {#project-nổi-bật-có-star}
 
-Dù không biết người ta star vì điều gì nữa 🤡🤡
+Các kho mã nguồn có ít nhất một lượt sao trên GitHub, xếp theo số lượt sao.
 
 <!-- PROJECTS_STARRED_START -->
 
-| Name | Description | Stars | URL |
+| Tên | Mô tả | Lượt sao | Liên kết |
 | --- | --- | --- | --- |
 | [genshin-repository](https://github.com/tiennm99/genshin-repository) | Genshin Impact direct download links and Sophon build data for every version, updated daily by a Go fetcher | 4 | — |
 | [awesome-ai-dev-tools](https://github.com/tiennm99/awesome-ai-dev-tools) | Daily-updated ranking of open-source AI coding agents and developer tools by GitHub stars, with a dashboard | 4 | [awesome-ai-dev-tools.pages.dev](https://awesome-ai-dev-tools.pages.dev/) |
@@ -37,18 +38,13 @@ Dù không biết người ta star vì điều gì nữa 🤡🤡
 
 <!-- PROJECTS_STARRED_END -->
 
-## Project có demo
+## Dự án có bản chạy trực tuyến {#project-có-demo}
 
-Vài có URL để bấm vào xem trực tiếp (demo). URL có thể là:
-
-- Website tĩnh / app host trên [GitHub Pages](https://pages.github.com/), [Cloudflare Pages](https://pages.cloudflare.com/), [Vercel](https://vercel.com/), [Netlify](https://www.netlify.com/)...
-- [Cloudflare Workers](https://workers.cloudflare.com/) hoặc serverless endpoint khác
-- Telegram bot ([t.me/...](https://t.me/))
-- Custom domain, hoặc một số hình thức deploy khác
+Dùng cột Liên kết để mở website, ứng dụng hoặc bot.
 
 <!-- PROJECTS_DEMO_START -->
 
-| Name | Description | URL |
+| Tên | Mô tả | Liên kết |
 | --- | --- | --- |
 | [awesome-ai-dev-tools](https://github.com/tiennm99/awesome-ai-dev-tools) | Daily-updated ranking of open-source AI coding agents and developer tools by GitHub stars, with a dashboard | [awesome-ai-dev-tools.pages.dev](https://awesome-ai-dev-tools.pages.dev/) |
 | [tiennm99](https://github.com/tiennm99/tiennm99) | Config files for my GitHub profile. | [github.com/tiennm99](https://github.com/tiennm99) |
@@ -94,13 +90,13 @@ Vài có URL để bấm vào xem trực tiếp (demo). URL có thể là:
 
 <!-- PROJECTS_DEMO_END -->
 
-## Project đã đóng góp
+## Đóng góp mã nguồn mở {#project-đã-đóng-góp}
 
-Project của người khác/tổ chức khác mà mình gửi PR và được merge. Một số khá là đỉnh đấy :D
+Các dự án của người khác đã chấp nhận pull request của mình.
 
 <!-- PROJECTS_CONTRIBUTED_START -->
 
-| Name | Description | Merged PRs | Stars |
+| Tên | Mô tả | PR đã hợp nhất | Lượt sao |
 | --- | --- | --- | --- |
 | [zfoo-project/zfoo](https://github.com/zfoo-project/zfoo) | 💡Extremely fast enterprise server framework, can be used in RPC,  game server,  web server. | 12 | 2005 |
 | [iluwatar/java-design-patterns](https://github.com/iluwatar/java-design-patterns) | Design patterns implemented in Java | 6 | 94899 |
