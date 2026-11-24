@@ -1,9 +1,13 @@
 name: "miti99"
 handle: "tiennm99"
-tagline: "A developer wants to be magician."
+tagline: "A developer who wants to be a magician."
 avatar: "img/avatar.png"
 bio: |
-  Vietnamese developer. Writing about code, work, and the small things in between.
+  Hi, I’m miti99. I write about software development, Linux, and what I learn from building and self-hosting side projects.
+vi:
+  tagline: "Một lập trình viên muốn làm ảo thuật gia."
+  bio: |
+    Chào bạn, mình là miti99. Mình viết về lập trình, Linux và những gì mình học được khi làm dự án cá nhân và tự vận hành dịch vụ.
 
 links:
   - icon: github

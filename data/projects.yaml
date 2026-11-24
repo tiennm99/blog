@@ -2,36 +2,48 @@
 # The full, bot-refreshed list lives on content/page/projects/index.md.
 featured:
   - title: "awesome-ai-dev-tools"
-    tagline: "Daily-refreshed ranking of open-source AI developer tools by GitHub stars, with 7-day deltas and star-history charts."
+    tagline: "A daily ranking of open-source AI coding tools by GitHub stars, with weekly changes and star history."
+    vi:
+      tagline: "Bảng xếp hạng công cụ AI mã nguồn mở cho lập trình viên, cập nhật mỗi ngày theo lượt sao GitHub và có biểu đồ theo dõi."
     repo: https://github.com/tiennm99/awesome-ai-dev-tools
     demo: https://awesome-ai-dev-tools.pages.dev/
     tags: [go, ai, cloudflare-pages]
 
   - title: "noitu"
-    tagline: "Vietnamese word-chain game (nối từ) on the web: play a bot or 2–4 players online."
+    tagline: "Play Vietnamese word chain against a bot or in a room for 2–4 players."
+    vi:
+      tagline: "Chơi nối từ tiếng Việt với bot hoặc lập phòng từ 2 đến 4 người."
     repo: https://github.com/tiennm99/noitu
     demo: https://noitu.miti99.dev
     tags: [go, sveltekit, websocket]
 
   - title: "ghglance"
-    tagline: "SVG cards that summarize a GitHub user's profile, written in Go."
+    tagline: "Generate SVG cards that summarize a GitHub profile."
+    vi:
+      tagline: "Tạo thẻ SVG tóm tắt thông tin hồ sơ GitHub."
     repo: https://github.com/tiennm99/ghglance
     demo: https://ghglance.miti99.dev
     tags: [go, svg, github-action]
 
   - title: "tiennm99bot"
-    tagline: "Plug-n-play Telegram bot framework in Go, self-hosted on Coolify with MongoDB Atlas."
+    tagline: "A modular Telegram bot framework in Go with games, reminders, and scheduled tasks."
+    vi:
+      tagline: "Framework viết bot Telegram bằng Go, có mô-đun trò chơi, nhắc việc và chạy tác vụ theo lịch."
     repo: https://github.com/tiennm99/tiennm99bot
     demo: https://t.me/tiennm99bot
     tags: [go, telegram, mongodb]
 
   - title: "loldle"
-    tagline: "LoLdle-style daily League of Legends champion guessing game."
+    tagline: "Guess a different League of Legends champion every day."
+    vi:
+      tagline: "Đoán tướng Liên Minh Huyền Thoại mỗi ngày."
     repo: https://github.com/tiennm99/loldle
     demo: https://tiennm99.github.io/loldle/
     tags: [sveltekit, go, game]
 
   - title: "traefik-cloudflare-dns"
-    tagline: "Go daemon that keeps Cloudflare DNS records in sync with the Traefik hosts of your Docker containers."
+    tagline: "Keep Cloudflare DNS records in sync with the hostnames Traefik serves for Docker containers."
+    vi:
+      tagline: "Đồng bộ bản ghi DNS trên Cloudflare với tên miền mà Traefik định tuyến tới các container Docker."
     repo: https://github.com/tiennm99/traefik-cloudflare-dns
     tags: [go, cloudflare, traefik]

@@ -1,0 +1,16 @@
+{{- /* Keep the theme's data schema and select Vietnamese copy on the homepage. */ -}}
+{{- $data := dict -}}
+{{- if ge hugo.Version "0.156.0" -}}
+  {{- $data = hugo.Data -}}
+{{- else -}}
+  {{- $data = site.Data -}}
+{{- end -}}
+{{- if and .IsHome (eq site.Language.Lang "vi") -}}
+  {{- $profile := merge $data.profile ($data.profile.vi | default dict) -}}
+  {{- $featured := slice -}}
+  {{- range $data.projects.featured -}}
+    {{- $featured = $featured | append (merge . (.vi | default dict)) -}}
+  {{- end -}}
+  {{- $data = merge $data (dict "profile" $profile "projects" (dict "featured" $featured)) -}}
+{{- end -}}
+{{- return $data -}}

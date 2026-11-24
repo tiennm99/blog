@@ -36,7 +36,8 @@ Site config lives in `config/_default/` (Hugo config directory split):
 
 - `params.yml` — nocturne options: footer, license, comments (Giscus), search, prev/next navigation
 - `hugo.yml`, `markup.yml`, `permalinks.yml` — site, Markdown and URL settings
-- `data/profile.yaml`, `data/projects.yaml` — home page profile and featured projects
+- `data/profile.yaml`, `data/projects.yaml` — homepage profile and featured projects, with Vietnamese copy selected by `layouts/_partials/compat/data.html`
+- `content/page/projects/` — bilingual project directory. The [refresh workflow](.github/workflows/update-projects.yml) updates the marked tables in both languages.
 - `layouts/` — template overrides; `layouts/_partials/head/custom.html` holds the analytics tags
 
 The theme lives in its own repo, [`tiennm99/nocturne`](https://github.com/tiennm99/nocturne), with its docs and CHANGELOG; make theme changes there. The blog imports it as a Hugo Module (needs [Go](https://go.dev/doc/install)), pinned to a commit in `go.mod`. To pull the latest theme `main`, run `hugo mod get -u github.com/tiennm99/nocturne` and commit `go.mod` and `go.sum`. To try local theme edits against the blog, run `HUGO_MODULE_REPLACEMENTS="github.com/tiennm99/nocturne -> ../nocturne" hugo server` with the theme cloned next to this repo. Posts keep their content-path URLs (`/post/YYYY/MM/DD/`).
