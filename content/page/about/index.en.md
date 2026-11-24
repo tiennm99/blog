@@ -1,6 +1,6 @@
 ---
 title: About
-description: About me
+description: A little about me and why I write this blog.
 aliases:
   - about-me
   - contact
@@ -10,24 +10,16 @@ menu:
     params:
       icon: user
 ---
+Hi, I’m Minh Tiến. The name `miti99` comes from my name and birth year. I started studying computer science at Ho Chi Minh City University of Technology (HCMUT) in 2017. I now work on game software at VNG.
 
+I like Linux, especially Arch Linux, and open-source projects. I use this blog to write down what I learn from building software, self-hosting services, and working on side projects. I also collect things worth reading in the newsletter.
 
-Hello, and welcome to my blog.
+You can [browse my projects](/en/projects/), [explore the archives](/en/archives/), or [view my CV](/en/links/).
 
-My name is Minh Tiến, born in 1999 (hence the name miti99 :)))), a Computer Science major from the class of 2017 at Ho Chi Minh City University of Technology (HCMUT). I currently work at VNG.
-
-I'm a fan of Linux (especially Arch Linux) and open-source projects. My current job is in gaming, so I no longer use Linux on the desktop, though I still tinker with it on VMs and in the cloud.
-
-I started this blog to share my experiences and how I solve technical problems that come up at work and in personal projects.
-
-Useful links can be found on my [home page](/en/).
-
-You can reach me through any of the following channels:
+## Contact
 
 - [Gmail](mailto:minhtienit99@gmail.com)
 - [Outlook](mailto:tiennm99@outlook.com)
 - [LinkedIn](https://linkedin.com/in/miti99)
 - [Facebook](https://fb.com/tiennm99)
-- [Fanpage](https://fb.com/miti99)
-
-I hope you enjoy the blog.
+- [Blog Facebook page](https://fb.com/miti99)

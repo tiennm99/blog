@@ -9,5 +9,5 @@ menu:
 comments: false
 ---
 
-- [Web CV](https://tiennm99.github.io/webcv/): Web version of my CV, view online
-- [PDF CV](https://tiennm99.github.io/cv/miti99.pdf): PDF version of my CV, downloadable
+- [View my CV online](https://tiennm99.github.io/cv/)
+- [Download my CV (PDF)](https://tiennm99.github.io/cv/miti99.pdf)
