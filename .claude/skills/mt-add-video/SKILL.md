@@ -24,7 +24,7 @@ A clean YouTube URL (passed by `mt-add-url`, or given directly).
    Confirm `route: youtube`; skip if `duplicate`; for `accessible: false` follow `docs/newsletter/post-mechanics.md` §6. Use `clean_url` (canonical `watch?v=ID`), `title` and `author` (channel).
    - If `title` is missing (oEmbed failed), take the `videoDetails` `"title"` from the same watch-page curl as step 3, not WebFetch.
 
-2. **Localize title** (intentional exception to the keep-source-language rule for article titles and image labels — see AGENTS.md) — keep the original title when it is mostly proper nouns, product names or a code identifier; otherwise translate it into Vietnamese and keep the proper nouns (product/company/channel names) as-is.
+2. **Localize title** (intentional exception to the keep-source-language rule for article titles and image labels — see CLAUDE.md) — keep the original title when it is mostly proper nouns, product names or a code identifier; otherwise translate it into Vietnamese and keep the proper nouns (product/company/channel names) as-is.
 
 3. **Write a 1-2 sentence Vietnamese summary.** Source for the summary content, in order:
    1. The watch page's player JSON (WebFetch usually returns no description):

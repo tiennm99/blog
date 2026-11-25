@@ -102,7 +102,7 @@ When the post has a translation (`index.en.md` or another `index.<lang>.md`), wr
 
 ## Proactive behavior (before commit)
 
-Before any git commit (the AGENTS.md pre-commit rule), list every new or modified post, staged or not:
+Before any git commit (the CLAUDE.md pre-commit rule), list every new or modified post, staged or not:
 
 ```bash
 git status --porcelain -uall -- 'content/post/*/index.md'

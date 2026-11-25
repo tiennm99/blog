@@ -44,7 +44,7 @@ The theme lives in its own repo, [`tiennm99/nocturne`](https://github.com/tiennm
 
 ## Working with AI tools
 
-Instructions live in `AGENTS.md`, skills in `.claude/skills/`, mirrored into `.agents/skills/` by symlinks. Claude Code and any agent that reads `AGENTS.md` and `.agents/` work out of the box. They share one engine (`scripts/newsletter/`, Node — run `npm ci` once, then `node scripts/newsletter <command>`; see [docs/newsletter/engine-commands.md](docs/newsletter/engine-commands.md)). Layout and adding a skill: [docs/multi-tool-usage.md](docs/multi-tool-usage.md).
+Instructions live in `CLAUDE.md` and skills in `.claude/skills/`. `AGENTS.md` and `.agents/skills` are symlinks to them, so Claude Code and any agent that reads `AGENTS.md` and `.agents/` work out of the box. They share one engine (`scripts/newsletter/`, Node — run `npm ci` once, then `node scripts/newsletter <command>`; see [docs/newsletter/engine-commands.md](docs/newsletter/engine-commands.md)). Layout and adding a skill: [docs/multi-tool-usage.md](docs/multi-tool-usage.md).
 
 ## License
 

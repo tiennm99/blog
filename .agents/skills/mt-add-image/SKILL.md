@@ -1,1 +1,0 @@
-../../../.claude/skills/mt-add-image/SKILL.md
