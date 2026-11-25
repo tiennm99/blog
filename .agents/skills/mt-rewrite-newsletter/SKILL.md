@@ -1,1 +1,0 @@
-../../../.claude/skills/mt-rewrite-newsletter/SKILL.md

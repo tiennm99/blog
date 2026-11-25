@@ -1,1 +1,0 @@
-../../../.claude/skills/mt-fetch-url/SKILL.md

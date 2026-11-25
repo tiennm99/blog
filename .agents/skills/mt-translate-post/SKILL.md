@@ -1,1 +1,0 @@
-../../../.claude/skills/mt-translate-post/SKILL.md

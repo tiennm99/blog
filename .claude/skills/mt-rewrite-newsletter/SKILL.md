@@ -68,7 +68,7 @@ Anything else that is not an AI summary paragraph — a blank-line separator, a 
 
       *Bài viết đã được viết lại bởi <Tool> với <Model> vào ngày DD/MM/YYYY.*
       ```
-      `<Tool>` = the running tool (`Claude Code`, `Codex`, `OpenCode`); date = today in Asia/Ho_Chi_Minh. If an old note exists (`*Bài viết đã được review và cập nhật bởi …*` or an earlier `viết lại` note), **replace that line** — one note per post — and reuse its `---` rule; otherwise append the rule and note. Example: `*Bài viết đã được viết lại bởi Claude Code với Opus 5.5 vào ngày 27/09/2026.*`
+      `<Tool>` = the running tool's product name (for example `Claude Code`, `Codex`); date = today in Asia/Ho_Chi_Minh. If an old note exists (`*Bài viết đã được review và cập nhật bởi …*` or an earlier `viết lại` note), **replace that line** — one note per post — and reuse its `---` rule; otherwise append the rule and note. Example: `*Bài viết đã được viết lại bởi Claude Code với Opus 5.5 vào ngày 27/09/2026.*`
 
    d. **Verify** — both must pass before moving on:
       ```bash

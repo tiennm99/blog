@@ -4,7 +4,7 @@
 //	node scripts/newsletter <command> [args]
 //
 // Repo-relative paths (content/post) resolve from the working directory, so the
-// repo-root invocation contract from AGENTS.md still applies.
+// repo-root invocation contract from CLAUDE.md still applies.
 
 const USAGE = `Usage: node scripts/newsletter <command> [args]
 

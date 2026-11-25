@@ -11,7 +11,7 @@ Shared scripts: `scripts/newsletter/`. Shared procedure: `docs/newsletter/post-m
 
 **Label priority:** figure caption → source post title → your typed input.
 
-**Label language:** keep the source language per `AGENTS.md` / post-mechanics §5; preserve user-typed labels exactly as entered.
+**Label language:** keep the source language per `CLAUDE.md` / post-mechanics §5; preserve user-typed labels exactly as entered.
 
 ## Input
 

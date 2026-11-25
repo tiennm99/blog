@@ -1,29 +1,30 @@
-# Multi-tool usage (Claude Code · OpenCode · Codex)
+# AI agent support
 
-This repo is usable from three AI coding tools off **one shared engine**. The newsletter engine lives in `scripts/newsletter/` (Node ESM) and every tool calls it as `node scripts/newsletter <command>` from the repo root — the commands are documented once in [newsletter/engine-commands.md](newsletter/engine-commands.md). Project instructions live once in `AGENTS.md`.
+The repo supports two config formats:
 
-## Per-tool setup & invocation
+- **Claude Code**: `CLAUDE.md` and `.claude/`.
+- **Agents**: `AGENTS.md` and `.agents/`. Any agent that reads them works; other formats are not maintained.
 
-| Tool | Instruction file | How the workflow surfaces | Setup | Invocation example |
-|------|------------------|---------------------------|-------|--------------------|
-| **Claude Code** | `CLAUDE.md` → imports `AGENTS.md` | Native skill auto-dispatch from `.claude/skills/` | `npm ci` once | Paste a URL; `mt-add-url` auto-runs |
-| **OpenCode** | `AGENTS.md` (auto-read) | `.claude/skills/` auto-discovered via the `skill` tool, governed by `opencode.json` | `npm ci` once; `opencode.json` is committed | Ask to add a URL; pick/`skill` `mt-add-url` |
-| **Codex** | `AGENTS.md` (auto-read) | Repository skills discovered from `.agents/skills/` | `npm ci` once; network access enabled | Ask to add a URL or invoke `$mt-add-url` |
+The Claude format holds the real files and the Agents format is symlinks to it, so every instruction and skill exists once.
 
-**Shared engine:** all three call `node scripts/newsletter <command>` from repo root — no per-tool script copies. It has npm dependencies, so run `npm ci` once after cloning.
+Every agent runs the newsletter engine the same way, `node scripts/newsletter <command>` from the repo root, documented in [newsletter/engine-commands.md](newsletter/engine-commands.md). It has npm dependencies, so run `npm ci` once after cloning.
 
-### Notes per tool
+## Layout
 
-- **Claude Code** — `CLAUDE.md` is a thin file that imports `AGENTS.md` (`@AGENTS.md`); all instruction content lives in `AGENTS.md`. No Claude permission file is committed; per-user permissions go in the gitignored `.claude/settings.local.json`.
-- **OpenCode** — reads `.claude/skills/<name>/SKILL.md` natively (multi-location search up the worktree), so the same `mt-*` skills work with zero duplication. `opencode.json` is the only committed permission policy: it allows the engine (`node scripts/newsletter`), read-only and commit git commands, `hugo`, `curl`, agent-browser and basic file/text utilities; everything else asks. Rules are last-match-wins, so keep `"*": "ask"` first. No MCP block — relies on OpenCode's built-in web fetch/search. Restart OpenCode after editing `opencode.json` (config is not hot-reloaded).
-- **Codex** — reads repository skills from `.agents/skills/` and can invoke them explicitly (`$mt-add-url`) or implicitly from their descriptions. Each `.agents/skills/<name>/SKILL.md` is a **symlink** to its `.claude/skills/` counterpart, so there is one file to edit and nothing that can drift. If a checkout cannot follow symlinks (Windows without developer mode), replace them with thin pointer files that say "read and follow `.claude/skills/<name>/SKILL.md`". The engine and the fetch tiers need outbound network: run Codex with network enabled (e.g. `sandbox_workspace_write.network_access = true` in your Codex config), or approve the escalation when prompted.
+| Path | Role |
+|------|------|
+| `CLAUDE.md` | The only instruction file. All content goes here |
+| `AGENTS.md` | Symlink to `CLAUDE.md` |
+| `.claude/skills/<name>/SKILL.md` | Skills |
+| `.agents/skills` | Symlink to `.claude/skills` |
+| `.claude/settings.local.json` | Personal Claude Code settings, gitignored |
 
-## Teardown — pick one, remove the rest
+Claude Code reads `CLAUDE.md` and `.claude/skills/`, and does not read `AGENTS.md` while a `CLAUDE.md` exists, so it loads the instructions once. Skills name Claude Code tools; `CLAUDE.md` maps them for other agents. Agents with a sandbox need outbound network for the engine and the fetch tiers.
 
-Once you commit to one tool, delete the others' config. There are no committed Claude settings; `.claude/settings.local.json` is personal and gitignored.
+## Adding a skill
 
-- **Keep Claude Code only** → remove `opencode.json` and `.agents/`. Keep `.claude/` and `docs/newsletter/`.
-- **Keep OpenCode only** → remove `.agents/`. **Keep `.claude/skills/`** — OpenCode reads it. If you want to drop the `.claude/` dir entirely, first move skills to `.opencode/skills/` (scripts are path-neutral in `scripts/newsletter/`, so the move breaks nothing). Optionally make `AGENTS.md` the only instruction file (delete `CLAUDE.md`).
-- **Keep Codex only** → keep `.agents/skills/`, `AGENTS.md`, `scripts/newsletter/`, `docs/newsletter/`, and the canonical `.claude/skills/` files the Codex skills symlink to. You may remove `opencode.json`.
+Write `.claude/skills/<name>/SKILL.md` with `name` and `description` frontmatter, and add it to the skill list in `CLAUDE.md`. The `.agents/skills` symlink makes it visible to other agents with no extra step.
 
-In every case: **keep `scripts/newsletter/`, `.claude/skills/`, `docs/newsletter/`, and `AGENTS.md`** — they are the shared engine, canonical workflows, shared documentation, and instructions.
+## Checkouts without symlinks
+
+Git checks symlinks out as small text files holding the target path when symlinks are off (Windows without developer mode, or `core.symlinks=false`). Then other agents see neither the instructions nor the skills. Turn on developer mode and set `git config core.symlinks true` before cloning.
