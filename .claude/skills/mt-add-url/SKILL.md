@@ -62,7 +62,7 @@ Act on the user's choice. If they choose add/update, proceed to design that skil
 Close with the target post's TL;DR tally, then the per-URL detail. Read the tally from the post itself so it reflects everything the post now holds, not just this batch:
 
 ```bash
-node scripts/newsletter post-stats content/post/YYYY/MM/DD/index.vi.md
+node scripts/newsletter post-stats content/posts/YYYY/MM/DD/index.vi.md
 ```
 
 Aggregate across all URLs:

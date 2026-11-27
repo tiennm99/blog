@@ -55,7 +55,7 @@ const UNKNOWN_IMG =
 /**
  * Cases are [id, engine args, working directory]. The working directory is how
  * content-scanning commands are pointed at a fixture tree: both engines resolve
- * content/post from the process CWD, so no test-only config knob exists.
+ * content/posts from the process CWD, so no test-only config knob exists.
  * @type {[string, string[], string][]}
  */
 const CLI_CASES = [
@@ -94,9 +94,9 @@ const CLI_CASES = [
   ["find-newsletter-number-year-fallback", ["find-newsletter-number"], FALLBACK],
   // plain text, count right-aligned in six columns, ties in first-seen order
   ["list-existing-tags-main", ["list-existing-tags"], MAIN],
-  ["post-stats-full", ["post-stats", "content/post/2026/09/10/index.vi.md"], MAIN],
-  ["post-stats-empty-bonus", ["post-stats", "content/post/2026/09/11/empty-bonus.md"], MAIN],
-  ["post-stats-no-bonus", ["post-stats", "content/post/2026/09/11/no-bonus.md"], MAIN],
+  ["post-stats-full", ["post-stats", "content/posts/2026/09/10/index.vi.md"], MAIN],
+  ["post-stats-empty-bonus", ["post-stats", "content/posts/2026/09/11/empty-bonus.md"], MAIN],
+  ["post-stats-no-bonus", ["post-stats", "content/posts/2026/09/11/no-bonus.md"], MAIN],
 ];
 
 /**

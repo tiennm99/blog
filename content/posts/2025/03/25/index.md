@@ -24,10 +24,10 @@ _If you aren't a tech person, feel free to skip ahead to the [next section](#for
 
 I've uploaded the processed files right below so you can use them directly as web links.
 
-[Arc 1](/post/2025/03/25/data/Arc%201.txt)
-[Arc 2](/post/2025/03/25/data/Arc%202.txt)
-[Arc 3](/post/2025/03/25/data/Arc%203.txt)
-[Others](/post/2025/03/25/data/Others.txt)
+[Arc 1](data/Arc%201.txt)
+[Arc 2](data/Arc%202.txt)
+[Arc 3](data/Arc%203.txt)
+[Others](data/Others.txt)
 
 Or you can access them via the following Google Drive folder:
 

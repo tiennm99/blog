@@ -86,7 +86,7 @@ Mirror the new entry into `index.md` per post-mechanics §7 (the label stays ver
 ### 7. Report
 ```
 ✅ Image added to Newsletter #[number] (Bonus → Images)
-📄 content/post/YYYY/MM/DD/index.vi.md (+ index.md)
+📄 content/posts/YYYY/MM/DD/index.vi.md (+ index.md)
 🏷️  label: "[label]"  (source: candidate-pick | caption | user-input; post: [postTitle])
 🖼️  [clean_image_url]
 📊 [tally]

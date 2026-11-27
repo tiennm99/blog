@@ -17,18 +17,18 @@ hugo && npx pagefind --site public --serve
 
 ## Content structure
 
-Posts live under `content/post/YYYY/MM/DD/`. Each post is a Hugo leaf bundle: the Vietnamese source `index.vi.md`, its English translation `index.md` (English is the default language, served at `/`; Vietnamese is under `/vi/`), and images and assets in the same directory. A post's "Updated" date comes only from a `lastmod` field in its front matter; without one it equals the publish date.
+Posts live under `content/posts/YYYY/MM/DD/`. Each post is a Hugo leaf bundle: the Vietnamese source `index.vi.md`, its English translation `index.md` (English is the default language, served at `/`; Vietnamese is under `/vi/`), and images and assets in the same directory. A post's "Updated" date comes only from a `lastmod` field in its front matter; without one it equals the publish date.
 
 ```
 content/
-  post/
+  posts/
     2024/
       03/
         15/
           index.vi.md  ← post content (Vietnamese source)
           index.md     ← English translation
           cover.jpg    ← optional cover image
-  page/                ← standalone pages (about, projects, …)
+  about/, projects/, … ← standalone pages, one bundle each at the content root
 ```
 
 ## Theme customization
@@ -36,12 +36,12 @@ content/
 Site config lives in `config/_default/` (Hugo config directory split):
 
 - `params.yml` — nocturne options: footer, license, comments (Giscus), search, prev/next navigation
-- `hugo.yml`, `markup.yml`, `permalinks.yml` — site, Markdown and URL settings
+- `hugo.yml`, `markup.yml` — site and Markdown settings
 - `data/profile.yaml`, `data/projects.yaml` — homepage profile and featured projects, with Vietnamese copy selected by `layouts/_partials/compat/data.html`
 - `content/projects/` — bilingual project directory. The [refresh workflow](.github/workflows/update-projects.yml) updates the marked tables in both languages.
 - `layouts/` — template overrides; `layouts/_partials/head/custom.html` holds the analytics tags
 
-The theme lives in its own repo, [`tiennm99/nocturne`](https://github.com/tiennm99/nocturne), with its docs and CHANGELOG; make theme changes there. The blog imports it as a Hugo Module (needs [Go](https://go.dev/doc/install)), pinned to a commit in `go.mod`. To pull the latest theme `main`, run `hugo mod get -u github.com/tiennm99/nocturne` and commit `go.mod` and `go.sum`. To try local theme edits against the blog, run `HUGO_MODULE_REPLACEMENTS="github.com/tiennm99/nocturne -> ../../nocturne" hugo server` with the theme cloned next to this repo; Hugo resolves the path from `themes/`, hence `../../`. Posts keep their content-path URLs (`/post/YYYY/MM/DD/`).
+The theme lives in its own repo, [`tiennm99/nocturne`](https://github.com/tiennm99/nocturne), with its docs and CHANGELOG; make theme changes there. The blog imports it as a Hugo Module (needs [Go](https://go.dev/doc/install)), pinned to a commit in `go.mod`. To pull the latest theme `main`, run `hugo mod get -u github.com/tiennm99/nocturne` and commit `go.mod` and `go.sum`. To try local theme edits against the blog, run `HUGO_MODULE_REPLACEMENTS="github.com/tiennm99/nocturne -> ../../nocturne" hugo server` with the theme cloned next to this repo; Hugo resolves the path from `themes/`, hence `../../`. Posts are served at their content-path URLs (`/posts/YYYY/MM/DD/`); the old `/post/` URLs 301 there through `layouts/home.redirects`.
 
 ## Working with AI tools
 

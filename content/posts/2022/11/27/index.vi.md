@@ -24,7 +24,7 @@ Bạn sẽ nhận được 3 bức ảnh với watermark như này:
 
 ![Kết quả với watermark](img/3.png)
 
-2. Truy cập Inspect, bằng cách chuột phải -> chọn Inspect hoặc nhấn phím tắt (F12), hoặc Ctrl + Shift + I. Sau đó chọn tab Elements. Ở đây tìm đến tag <div> có id __MazeSolution__ Đoạn mình gạch dưới như hình dưới là link của image.
+2. Truy cập Inspect, bằng cách chuột phải -> chọn Inspect hoặc nhấn phím tắt (F12), hoặc Ctrl + Shift + I. Sau đó chọn tab Elements. Ở đây tìm đến tag `<div>` có id __MazeSolution__ Đoạn mình gạch dưới như hình dưới là link của image.
 
 ![Inspect](img/4.png)
 

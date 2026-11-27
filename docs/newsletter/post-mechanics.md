@@ -7,7 +7,7 @@ The shared engine lives in `scripts/newsletter/` — see [engine-commands.md](en
 - Hugo static site, theme nocturne (Hugo Module `github.com/tiennm99/nocturne`)
 - Language: Vietnamese (99%) + minimal English tech terms (1%)
 - Timezone: Asia/Ho_Chi_Minh (UTC+7)
-- Content path: `content/post/YYYY/MM/DD/index.vi.md`
+- Content path: `content/posts/YYYY/MM/DD/index.vi.md`
 
 ## 1. Find / create the target post
 
@@ -16,9 +16,9 @@ The target defaults to today's date but the user can pin a different one.
 **Target date resolution:**
 - Default: current date in `YYYY-MM-DD` (UTC+7).
 - **Pinned target:** when the user names a post or date to keep working on — typically an unpublished draft started on an earlier day ("keep adding to the 7/9 post") — that post is the target for the rest of the session, including across a date rollover mid-session. Do not silently start a new post for the new day; if a pin might have lapsed, ask before creating one.
-- **Backfill:** when the user names a past date for a **new** newsletter ("the day after #134"), that date is the target. Create `content/post/<YYYY>/<MM>/<DD>/index.vi.md` with `date: <that date>` — never today's date — and treat it as pinned for the rest of the session, exactly like a pinned draft. Commits still happen at real time.
+- **Backfill:** when the user names a past date for a **new** newsletter ("the day after #134"), that date is the target. Create `content/posts/<YYYY>/<MM>/<DD>/index.vi.md` with `date: <that date>` — never today's date — and treat it as pinned for the rest of the session, exactly like a pinned draft. Commits still happen at real time.
 
-Check `content/post/YYYY/MM/DD/index.vi.md` for the resolved target date:
+Check `content/posts/YYYY/MM/DD/index.vi.md` for the resolved target date:
 - **Exists** → update this file.
 - **Missing** → create it (new newsletter number; template below). Create directories as needed.
 
@@ -97,7 +97,7 @@ When a subsection (e.g. `**Videos:**`) already exists, append under it; otherwis
 After every successful insertion, report the target post's running totals so the user can see what the post now holds:
 
 ```bash
-node scripts/newsletter post-stats content/post/YYYY/MM/DD/index.vi.md
+node scripts/newsletter post-stats content/posts/YYYY/MM/DD/index.vi.md
 ```
 Output (JSON): `{ post, newsletter, articles, images, videos, documents, total }`.
 
@@ -111,7 +111,7 @@ Use the counts the command returns — do not tally by hand. This is a **report-
 
 ## 5. Post content language guidelines
 
-These rules apply only to text written into `content/post/**/index.vi.md`. Keep user-facing questions, status updates, reports, and final responses in English unless the user explicitly requests another language.
+These rules apply only to text written into `content/posts/**/index.vi.md`. Keep user-facing questions, status updates, reports, and final responses in English unless the user explicitly requests another language.
 
 **Primary**: Vietnamese (99%) | **Secondary**: English (1% — unavoidable technical terms only)
 
@@ -133,7 +133,7 @@ These rules apply only to text written into `content/post/**/index.vi.md`. Keep 
 
 **Summary length:** article summaries are 1–2 prose paragraphs of at most 300 words, aiming for 280–298. A word is a whitespace-separated token, so each Vietnamese syllable counts as one. Check after inserting with an exact heading match:
 ```bash
-awk -v h='## [Title](url)' '$0==h{f=1;next} /^##/{f=0} f{n+=NF} END{print n}' content/post/YYYY/MM/DD/index.vi.md
+awk -v h='## [Title](url)' '$0==h{f=1;next} /^##/{f=0} f{n+=NF} END{print n}' content/posts/YYYY/MM/DD/index.vi.md
 ```
 or before inserting with `printf '%s\n' "$SUMMARY" | awk '{n+=NF} END{print n}'`. Over 300 → trim and recount. Video blockquote summaries are 1–2 sentences.
 
@@ -145,7 +145,7 @@ This table owns the skip rules; handlers defer to it.
 
 | Problem | Action |
 |-------|--------|
-| Duplicate URL | Skip and name where it already is: `grep -rlF '<scheme://host/path>' content/post` (for Substack images, grep the image UUID instead), read that post's `title`, and report `duplicate (Newsletter #N, content/post/YYYY/MM/DD/index.vi.md)` |
+| Duplicate URL | Skip and name where it already is: `grep -rlF '<scheme://host/path>' content/posts` (for Substack images, grep the image UUID instead), read that post's `title`, and report `duplicate (Newsletter #N, content/posts/YYYY/MM/DD/index.vi.md)` |
 | Dead URL (404/410) | Skip immediately, note in report |
 | `accessible: false` (403, 429, challenge, HEAD rejected, 000) | Not a skip — continue; for articles try WebFetch, then the `mt-fetch-url` chain |
 | Extraction fails | Skip and report only after WebFetch and every `mt-fetch-url` tier fail |

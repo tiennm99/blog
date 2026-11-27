@@ -42,7 +42,7 @@ categories: ["Newsletter"]
 
 ## [Some Article](https://example.com/a)
 
-The author explains \`x](y\` and the [next section](#part-two), see [the file](/post/2025/03/16/data/a.txt) or [home](/en/).
+The author explains \`x](y\` and the [next section](#part-two), see [the file](/posts/2025/03/16/data/a.txt) or [home](/en/).
 
 \`\`\`go
 break outer // exit the outer loop
@@ -56,7 +56,7 @@ break outer // exit the outer loop
 ![Some Diagram](https://example.com/d.png)
 `;
 
-const OPTS = { bundleUrl: "/post/2025/03/16/", lang: "en" };
+const OPTS = { bundleUrl: "/posts/2025/03/16/", lang: "en" };
 
 test("a faithful translation passes", () => {
   assert.deepEqual(compareTranslation(VI, EN, OPTS).problems, []);
@@ -88,9 +88,9 @@ test("a dropped code block is reported", () => {
 });
 
 test("paths", () => {
-  assert.equal(translationPath("content/post/2025/03/16/index.vi.md", "en"), "content/post/2025/03/16/index.md");
+  assert.equal(translationPath("content/posts/2025/03/16/index.vi.md", "en"), "content/posts/2025/03/16/index.md");
   assert.equal(translationPath("content/_index.vi.md", "en"), "content/_index.md");
-  assert.equal(translationPath("content/post/2025/03/16/index.vi.md", "ja"), "content/post/2025/03/16/index.ja.md");
-  assert.equal(bundleUrl("content/post/2025/03/16/index.vi.md"), "/post/2025/03/16/");
+  assert.equal(translationPath("content/posts/2025/03/16/index.vi.md", "ja"), "content/posts/2025/03/16/index.ja.md");
+  assert.equal(bundleUrl("content/posts/2025/03/16/index.vi.md"), "/posts/2025/03/16/");
   assert.equal(bundleUrl("content/_index.vi.md"), "/");
 });

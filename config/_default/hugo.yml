@@ -15,7 +15,8 @@ frontmatter:
   lastmod: [lastmod, date, publishDate]
 
 # Cloudflare Pages `_redirects` file, built from layouts/home.redirects: old
-# Stack-theme pagination, front-matter aliases and the old /en/ prefix.
+# Stack-theme pagination, front-matter aliases, the old /post/ section and the
+# old /en/ prefix.
 mediaTypes:
   text/redirects:
     delimiter: ""

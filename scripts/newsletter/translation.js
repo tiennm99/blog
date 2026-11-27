@@ -33,8 +33,8 @@ export function translationPath(source, lang) {
 }
 
 /**
- * @param {string} source e.g. content/post/2025/03/25/index.vi.md
- * @returns {string} the bundle's URL path, e.g. /post/2025/03/25/
+ * @param {string} source e.g. content/posts/2025/03/25/index.vi.md
+ * @returns {string} the bundle's URL path, e.g. /posts/2025/03/25/
  */
 export function bundleUrl(source) {
   const dir = dirname(source).replace(/^(\.\/)?content\/?/, "");
@@ -123,7 +123,7 @@ const INLINE_CODE_RE = /`[^`]*`/g;
  * source or translation language is dropped, bundle-relative paths become root-relative, and in-page anchors
  * (which follow the translated headings) are skipped.
  * @param {string[]} lines
- * @param {string} bundleUrl e.g. "/post/2025/03/25/"
+ * @param {string} bundleUrl e.g. "/posts/2025/03/25/"
  * @param {string} lang
  * @returns {string[]}
  */

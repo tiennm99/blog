@@ -3,7 +3,7 @@
 //
 //	node scripts/newsletter <command> [args]
 //
-// Repo-relative paths (content/post) resolve from the working directory, so the
+// Repo-relative paths (content/posts) resolve from the working directory, so the
 // repo-root invocation contract from CLAUDE.md still applies.
 
 const USAGE = `Usage: node scripts/newsletter <command> [args]

@@ -103,7 +103,7 @@ Trong bản so sánh ngày 02/11, Orca được mô tả là workspace desktop x
 
 **Tailscale và cloudflared** chia việc với nhau: Tunnel cùng Access phục vụ đăng nhập từ xa và giao diện web, còn Tailscale lo các kết nối khác giữa thiết bị của mình. Mình chọn cách này vì thấy đơn giản hơn WARP-to-WARP. Với GNOME Remote Desktop, phần khảo sát phân biệt đăng nhập từ xa ở màn hình đăng nhập với chia sẻ desktop sau khi đã đăng nhập; mình chưa có kết quả kiểm thử được ghi lại cho phần này.
 
-**Gitea cùng gitea-mirror** chạy từ repo composes, làm nơi sao lưu GitHub trên DeskMini. Chuyện crawler ghé vào Gitea mình đã kể trong [bài ngày 29/10/2026](/post/2026/10/29/).
+**Gitea cùng gitea-mirror** chạy từ repo composes, làm nơi sao lưu GitHub trên DeskMini. Chuyện crawler ghé vào Gitea mình đã kể trong [bài ngày 29/10/2026](/posts/2026/10/29/).
 
 Phần sao lưu cũng từng vướng: ngưỡng chờ mặc định của Gitea cắt ngang các lần clone nhiều GB, còn Bun fetch ngắt kết nối không có dữ liệu trong năm phút, để lại repo làm dở. Mình tăng ngưỡng chờ để xử lý. Health check gọi GitHub API không có token quá thường xuyên cũng chạm giới hạn yêu cầu ẩn danh, nên mình giảm tần suất. CLI tea được thay bằng gt khi tea bị archive ở upstream và gt lên 1.0.0. Còn lý do chuyển chỗ sao lưu về nhà thì mình không ghi lại, nên không thể quy nó cho một sự cố cụ thể.
 

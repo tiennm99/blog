@@ -17,7 +17,7 @@ Vietnamese language requirements apply only to prose written into Hugo posts, in
 ## Directory Structure
 
 ```
-content/post/
+content/posts/
 └── YYYY/
     └── MM/
         └── DD/
@@ -85,6 +85,6 @@ Skills name Claude Code tools; other tools map them as follows. `WebFetch` → t
 
 ## Git Workflow Rules
 
-**Before any git commit**, run the `mt-add-tags` pre-commit check on every staged or new `content/post/YYYY/MM/DD/index.vi.md` (the skill defines what counts as minimal tags), then run `node scripts/newsletter translation-status` and bring every changed post's English version in sync with `mt-translate-post`. Commit each `index.vi.md` together with its `index.md`.
+**Before any git commit**, run the `mt-add-tags` pre-commit check on every staged or new `content/posts/YYYY/MM/DD/index.vi.md` (the skill defines what counts as minimal tags), then run `node scripts/newsletter translation-status` and bring every changed post's English version in sync with `mt-translate-post`. Commit each `index.vi.md` together with its `index.md`.
 
 Stage only the post files you changed, because unrelated local edits may be present; never `git add -A`. Commit as `docs(newsletter): add newsletter N`. A daily bot commit (`chore(projects): refresh projects list`, from `.github/workflows/update-projects.yml`) often lands on main first, so push with `git pull --rebase --autostash && git push`.

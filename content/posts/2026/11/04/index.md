@@ -103,7 +103,7 @@ In my November 2 comparison notes, Orca is described as a desktop workspace buil
 
 **Tailscale and `cloudflared`** split responsibilities cleanly: Cloudflare Tunnel + Access handle remote sign-in and web UIs, while Tailscale handles direct traffic between my own devices. I went with this split because I found it simpler than setting up WARP-to-WARP. For GNOME Remote Desktop, my research notes distinguish between remote login at the GDM login screen and desktop sharing after logging in, though I don't have recorded test results for that part yet.
 
-**Gitea and `gitea-mirror`** run from my `composes` repo as my local GitHub backup on the DeskMini. I already told the story of AI crawlers discovering my Gitea instance in [the October 29, 2026 post](/post/2026/10/29/).
+**Gitea and `gitea-mirror`** run from my `composes` repo as my local GitHub backup on the DeskMini. I already told the story of AI crawlers discovering my Gitea instance in [the October 29, 2026 post](/posts/2026/10/29/).
 
 Setting up the mirror had its own hiccups: Gitea's default timeouts cut off multi-gigabyte clones mid-transfer, and Bun's `fetch` aborted connections after five minutes without data, leaving half-imported repos behind. Bumping the timeouts fixed that. Health checks polling the GitHub API without a token also hit anonymous rate limits until I lowered their frequency. And in the CLI tooling, I replaced `tea` with `gt` after `tea` was archived upstream and `gt` hit `1.0.0`. As for why I moved the backup instance from the cloud server to my home DeskMini, I didn't write the reason down, so I won't attribute it to a specific incident.
 
