@@ -1,9 +1,11 @@
 {{- /*
-  TEMPORARY (added 2026-10-04): 301 redirects for the old Stack-theme home
-  pagination, written to public/_redirects for Cloudflare Pages.
-  Delete this file and the matching block in config/_default/hugo.yml once the
-  old URLs no longer get traffic (review at 3, 6 or 12 months after the
-  migration ships).
+  Cloudflare Pages redirects, written to public/_redirects: the old Stack-theme
+  pagination, front-matter aliases, and the old /en/ prefix.
+
+  The Stack pagination rules are TEMPORARY (added 2026-10-04): delete them once
+  the old URLs no longer get traffic (review at 3, 6 or 12 months after the
+  migration ships). Keep this file and the matching block in
+  config/_default/hugo.yml for the other rules.
 
   Posts keep their Stack URLs (/post/YYYY/MM/DD/), so they need no rules.
   Stack paginated the home page with 5 posts per page. Those pages (/page/N/)

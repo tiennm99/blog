@@ -14,11 +14,8 @@ timeZone: Asia/Ho_Chi_Minh
 frontmatter:
   lastmod: [lastmod, date, publishDate]
 
-# TEMPORARY (added 2026-10-04): Cloudflare Pages `_redirects` file that sends
-# the old Stack-theme home pagination (/page/N/) to the home page. Posts kept
-# their Stack URLs, so they need no redirects. Remove this block and
-# layouts/home.redirects together once the old URLs no longer get traffic
-# (review at 3, 6 or 12 months after the migration ships).
+# Cloudflare Pages `_redirects` file, built from layouts/home.redirects: old
+# Stack-theme pagination, front-matter aliases and the old /en/ prefix.
 mediaTypes:
   text/redirects:
     delimiter: ""
