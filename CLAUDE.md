@@ -25,6 +25,8 @@ content/posts/
             └── index.md      ← English translation (default language, served at /)
 ```
 
+Start a regular post with `hugo new content posts/YYYY/MM/DD`, which copies `archetypes/posts/` into a new bundle with `index.vi.md` only; write `index.md` with `mt-translate-post`. The archetype sets `draft: true`: publish by deleting the `draft` line, not by writing `draft: false`. Its `date` is today's, so a backfilled post sets `date` by hand. Newsletters keep their own template (`docs/newsletter/post-mechanics.md` §3).
+
 ## Starting Local Development Server
 
 ```bash
