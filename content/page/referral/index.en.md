@@ -15,6 +15,12 @@ I may earn credits or a commission if you sign up or make a purchase through the
 
 ## Coding Agent Tools {#claude-ecosystem}
 
+### [Claude Code Guest Pass](https://claude.ai/referral/ZkoAngod1A)
+
+A guest pass gives a friend a free week of Claude Code. If they subscribe afterwards, I get extra usage.
+
+Link: https://claude.ai/referral/ZkoAngod1A
+
 ### [AgentKit](https://agentkit.best/?ref=BWA910UK)
 
 AgentKit, formerly ClaudeKit, provides skills, commands, and workflows for coding agents such as Claude Code, Codex, and GitHub Copilot.
