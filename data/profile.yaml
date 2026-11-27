@@ -2,8 +2,8 @@ name: "miti99"
 handle: "tiennm99"
 tagline: "A developer who wants to be a magician."
 avatar: "img/avatar.png"
-# JSON-LD author URL on posts.
-url: "https://miti99.com/about/"
+# Author URL on posts (JSON-LD and article:author); relative, so it follows the baseURL.
+url: "/about/"
 bio: |
   Hi, I’m miti99. I write about software development, Linux, and what I learn from building and self-hosting side projects.
 vi:
