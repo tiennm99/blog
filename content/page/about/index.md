@@ -15,7 +15,7 @@ Hi, I’m Minh Tiến. The name `miti99` comes from my name and birth year. I st
 
 I like Linux, especially Arch Linux, and open-source projects. I use this blog to write down what I learn from building software, self-hosting services, and working on side projects. I also collect things worth reading in the newsletter.
 
-You can [browse my projects](/projects/), [explore the archives](/archives/), or [view my CV](/links/).
+You can [browse my projects](/page/projects/), [explore the archives](/archives/), or [view my CV](/page/links/).
 
 ## Contact
 
