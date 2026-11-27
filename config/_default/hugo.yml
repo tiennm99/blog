@@ -1,11 +1,9 @@
-baseurl: https://miti99.com/
-languageCode: en
+baseURL: https://miti99.com/
 module:
   imports:
     - path: github.com/tiennm99/nocturne
 title: miti99
 defaultContentLanguage: en
-hasCJKLanguage: false
 enableRobotsTXT: true
 timeZone: Asia/Ho_Chi_Minh
 # A post's modified date comes from its front matter `lastmod`, else its

@@ -4,14 +4,10 @@
 en:
   languageName: English
   languageCode: en
-  languagedirection: ltr
-  title: miti99
   weight: 1
 vi:
   languageName: Tiếng Việt
   languageCode: vi
-  languagedirection: ltr
-  title: miti99
   weight: 2
   params:
     # Vietnamese copies of the English strings in params.yml.
