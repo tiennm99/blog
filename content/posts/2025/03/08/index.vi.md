@@ -5,11 +5,9 @@ tags: ["AI-Assisted", "Newsletter", "LLMs", "Java", "Redis", "Rate Limiting", "P
 categories: [ "Newsletter" ]
 ---
 
-<i>
-Mừng ngày Quốc tế Phụ nữ 8/3, chúc tất cả các bạn nữ một ngày tốt lành, luôn vui tươi và hạnh phúc!
+*Mừng ngày Quốc tế Phụ nữ 8/3, chúc tất cả các bạn nữ một ngày tốt lành, luôn vui tươi và hạnh phúc!
 Con gái sinh ra là để yêu thương :>
-Chào mừng các bạn đến với Newsletter #6.
-</i>
+Chào mừng các bạn đến với Newsletter #6.*
 
 ## [How I use LLMs as a staff engineer](https://www.seangoedecke.com/how-i-use-llms/)
 

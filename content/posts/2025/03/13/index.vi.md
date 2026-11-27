@@ -30,7 +30,7 @@ nano /config/www/nextcloud/config/config.php
 'overwriteprotocol' => 'https',
 ```
 
-*Thay <code>yourdomain.com</code> bằng domain của bạn.*
+*Thay `yourdomain.com` bằng domain của bạn.*
 
 4. Save lại file và restart Nextcloud.
 

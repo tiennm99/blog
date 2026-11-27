@@ -5,9 +5,7 @@ tags: ["AI-Assisted", "Newsletter", "Java", "Reliability", "Soft Skills", "Engin
 categories: [ "Newsletter" ]
 ---
 
-<i>
-Chào các bạn, cuối tuần rồi MiTi hơi lười nên không lên bài. Mời các bạn thưởng thức Newsletter #5 nhé!
-</i>
+*Chào các bạn, cuối tuần rồi MiTi hơi lười nên không lên bài. Mời các bạn thưởng thức Newsletter #5 nhé!*
 
 ## [5 Advanced Java Reflection Techniques for Dynamic Programming](https://dev.to/nithinbharathwaj/5-advanced-java-reflection-techniques-for-dynamic-programming-4ph1)
 

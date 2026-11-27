@@ -5,15 +5,13 @@ tags: ["AI-Assisted", "Newsletter", "Databases", "Java", "JVM", "Performance", "
 categories: [ "Newsletter" ]
 ---
 
-<i>
-Hello everyone, here I am returning to blogging after another long lazy streak :D
+*Hello everyone, here I am returning to blogging after another long lazy streak :D*
 
-One problem I've noticed about myself—but have been too lazy to fix—is that I read a lot of blog posts and tinker with plenty of tools, yet rarely dive seriously enough into any single topic to turn it into a high-quality standalone post. And even when I do find something I really like, I'm too lazy to write a full post about it.
+*One problem I've noticed about myself—but have been too lazy to fix—is that I read a lot of blog posts and tinker with plenty of tools, yet rarely dive seriously enough into any single topic to turn it into a high-quality standalone post. And even when I do find something I really like, I'm too lazy to write a full post about it.*
 
-So I'm trying a different format: rounding up the interesting blog posts I've stumbled upon and read over the past week into a weekly newsletter. I hope you'll support it.
+*So I'm trying a different format: rounding up the interesting blog posts I've stumbled upon and read over the past week into a weekly newsletter. I hope you'll support it.*
 
-Without further ado, here is my Newsletter #1.
-</i>
+*Without further ado, here is my Newsletter #1.*
 
 ## [Seconds Since the Epoch](https://aphyr.com/posts/378-seconds-since-the-epoch)
 

@@ -5,11 +5,9 @@ tags: ["AI-Assisted", "Newsletter", "Databases", "Redis", "Rate Limiting", "Clou
 categories: [ "Newsletter" ]
 ---
 
-<i>
-Hello everyone, right on schedule, here is my Newsletter #2. I went on a weekend trip to Xuyên Mộc and just got back today, which is why this issue is going up a bit late.
+*Hello everyone, right on schedule, here is my Newsletter #2. I went on a weekend trip to Xuyên Mộc and just got back today, which is why this issue is going up a bit late.*
 
-Without further ado, let's jump straight into MiTi's Newsletter #2.
-</i>
+*Without further ado, let's jump straight into MiTi's Newsletter #2.*
 
 ## [Some things to expect in 2025](https://lwn.net/Articles/1003780/)
 

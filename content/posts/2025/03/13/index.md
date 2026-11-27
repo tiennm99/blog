@@ -30,7 +30,7 @@ nano /config/www/nextcloud/config/config.php
 'overwriteprotocol' => 'https',
 ```
 
-*Replace <code>yourdomain.com</code> with your actual domain.*
+*Replace `yourdomain.com` with your actual domain.*
 
 4. Save the file and restart Nextcloud.
 

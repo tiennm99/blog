@@ -5,15 +5,13 @@ tags: ["AI-Assisted", "Newsletter", "Databases", "Java", "JVM", "Performance", "
 categories: [ "Newsletter" ]
 ---
 
-<i>
-Xin chào các bạn, đây lại là một lần mình quay viết blog sau chuỗi ngày lười biếng :D
+*Xin chào các bạn, đây lại là một lần mình quay viết blog sau chuỗi ngày lười biếng :D*
 
-Một vấn đề mình nhận ra nhưng lười sửa đổi đó là mình đọc nhiều blog, nghịch nhiều tool, nhưng không có cái nào mình thật sự nghiêm túc, đủ để viết thành một blog chất lượng cả. Nếu có gì tâm đắc thì mình cũng quá lười để viết lại.
+*Một vấn đề mình nhận ra nhưng lười sửa đổi đó là mình đọc nhiều blog, nghịch nhiều tool, nhưng không có cái nào mình thật sự nghiêm túc, đủ để viết thành một blog chất lượng cả. Nếu có gì tâm đắc thì mình cũng quá lười để viết lại.*
 
-Vì vậy mình chuyển sang thử một hình thức khác, đó là tổng hợp lại những bài blog hay mà mình đã tìm thấy, đọc được trong tuần vừa qua và tổng hợp lại thành một bản newsletter hàng tuần. Mong được mọi người ủng hộ.
+*Vì vậy mình chuyển sang thử một hình thức khác, đó là tổng hợp lại những bài blog hay mà mình đã tìm thấy, đọc được trong tuần vừa qua và tổng hợp lại thành một bản newsletter hàng tuần. Mong được mọi người ủng hộ.*
 
-Không lòng vòng nữa, sau đây là Newsletter #1 của mình.
-</i>
+*Không lòng vòng nữa, sau đây là Newsletter #1 của mình.*
 
 ## [Seconds Since the Epoch](https://aphyr.com/posts/378-seconds-since-the-epoch)
 

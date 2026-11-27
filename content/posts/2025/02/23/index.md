@@ -5,9 +5,7 @@ tags: ["AI-Assisted", "Newsletter", "Java", "JVM", "Redis", "Database Sharding",
 categories: [ "Newsletter" ]
 ---
 
-<i>
-Hello everyone, another weekend has rolled around—sit back, relax, and enjoy MiTi's Newsletter #3.
-</i>
+*Hello everyone, another weekend has rolled around—sit back, relax, and enjoy MiTi's Newsletter #3.*
 
 ## [Java's Plans for 2025 - Inside Java Newscast #83](https://www.youtube.com/watch?v=y26XGt8d_kI)
 

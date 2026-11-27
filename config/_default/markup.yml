@@ -11,8 +11,6 @@ goldmark:
         inline:
           - - \(
             - \)
-  renderer:
-    unsafe: true
 
 tableOfContents:
   endLevel: 4

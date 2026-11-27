@@ -5,9 +5,7 @@ tags: ["AI-Assisted", "Newsletter", "Java", "Reliability", "Soft Skills", "Engin
 categories: [ "Newsletter" ]
 ---
 
-<i>
-Hello everyone, MiTi was a bit lazy last weekend and didn't put out a post. Enjoy Newsletter #5!
-</i>
+*Hello everyone, MiTi was a bit lazy last weekend and didn't put out a post. Enjoy Newsletter #5!*
 
 ## [5 Advanced Java Reflection Techniques for Dynamic Programming](https://dev.to/nithinbharathwaj/5-advanced-java-reflection-techniques-for-dynamic-programming-4ph1)
 

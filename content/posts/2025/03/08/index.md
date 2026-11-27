@@ -5,11 +5,9 @@ tags: ["AI-Assisted", "Newsletter", "LLMs", "Java", "Redis", "Rate Limiting", "P
 categories: [ "Newsletter" ]
 ---
 
-<i>
-Happy International Women's Day (March 8)! Wishing all the ladies a wonderful day, and may you always stay joyful and happy!
+*Happy International Women's Day (March 8)! Wishing all the ladies a wonderful day, and may you always stay joyful and happy!
 Girls are meant to be loved :>
-Welcome to Newsletter #6.
-</i>
+Welcome to Newsletter #6.*
 
 ## [How I use LLMs as a staff engineer](https://www.seangoedecke.com/how-i-use-llms/)
 

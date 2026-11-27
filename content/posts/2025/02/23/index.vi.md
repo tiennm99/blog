@@ -5,9 +5,7 @@ tags: ["AI-Assisted", "Newsletter", "Java", "JVM", "Redis", "Database Sharding",
 categories: [ "Newsletter" ]
 ---
 
-<i>
-Chào các bạn, lại một cuối tuần nữa trôi qua, mời các bạn chill chill cùng Newsletter #3 của MiTi.
-</i>
+*Chào các bạn, lại một cuối tuần nữa trôi qua, mời các bạn chill chill cùng Newsletter #3 của MiTi.*
 
 ## [Java's Plans for 2025 - Inside Java Newscast #83](https://www.youtube.com/watch?v=y26XGt8d_kI)
 

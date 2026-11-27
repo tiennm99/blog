@@ -5,9 +5,7 @@ tags: ["AI-Assisted", "Newsletter", "Java", "Programming Languages", "Redis", "E
 categories: [ "Newsletter" ]
 ---
 
-<i>
-Chào các bạn, tuần rồi mình có tìm thấy kha khá bài, nhưng cho vào cùng một newsletter thì lại quá dài. Nên hôm nay mình đăng thêm 1 newsletter giữa tuần nữa nhé ^^.
-</i>
+*Chào các bạn, tuần rồi mình có tìm thấy kha khá bài, nhưng cho vào cùng một newsletter thì lại quá dài. Nên hôm nay mình đăng thêm 1 newsletter giữa tuần nữa nhé ^^.*
 
 ## [Management Mantras](https://blog.staysaasy.com/p/management-mantras)
 

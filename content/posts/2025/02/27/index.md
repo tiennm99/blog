@@ -5,9 +5,7 @@ tags: ["AI-Assisted", "Newsletter", "Java", "Programming Languages", "Redis", "E
 categories: [ "Newsletter" ]
 ---
 
-<i>
-Hello everyone, I found quite a lot of articles last week, and cramming them all into a single issue would have made it way too long. So today I'm posting an extra mid-week newsletter ^^.
-</i>
+*Hello everyone, I found quite a lot of articles last week, and cramming them all into a single issue would have made it way too long. So today I'm posting an extra mid-week newsletter ^^.*
 
 ## [Management Mantras](https://blog.staysaasy.com/p/management-mantras)
 

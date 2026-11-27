@@ -5,11 +5,9 @@ tags: ["AI-Assisted", "Newsletter", "Databases", "Redis", "Rate Limiting", "Clou
 categories: [ "Newsletter" ]
 ---
 
-<i>
-Chào các bạn, đến hẹn lại lên, đây là Newsletter #2 của mình. Cuối tuần này mình đi chơi ở Xuyên Mộc, vừa về hôm nay thôi nên giờ mới lên bài.
+*Chào các bạn, đến hẹn lại lên, đây là Newsletter #2 của mình. Cuối tuần này mình đi chơi ở Xuyên Mộc, vừa về hôm nay thôi nên giờ mới lên bài.*
 
-Thôi không vòng vo nữa, vào ngay Newsletter #2 của MiTi nào.
-</i>
+*Thôi không vòng vo nữa, vào ngay Newsletter #2 của MiTi nào.*
 
 ## [Some things to expect in 2025](https://lwn.net/Articles/1003780/)
 
