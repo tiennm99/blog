@@ -2,10 +2,9 @@
   Cloudflare Pages redirects, written to public/_redirects: the old Stack-theme
   pagination, front-matter aliases, the old /post/ section and the old /en/ prefix.
 
-  The Stack pagination rules are TEMPORARY (added 2026-10-04): delete them once
-  the old URLs no longer get traffic (review at 3, 6 or 12 months after the
-  migration ships). Keep this file and the matching block in
-  config/_default/hugo.yml for the other rules.
+  TEMPORARY: every rule here is removed on or after 2027-01-01, together with
+  the redirects block in config/_default/hugo.yml and the front-matter aliases
+  (see TODO.md).
 
   Posts moved from /post/YYYY/MM/DD/ to /posts/YYYY/MM/DD/ (and the same under
   /vi/), so the rules above the /en/ catch-all send the old post URLs there.
