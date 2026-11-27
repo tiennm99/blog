@@ -8,7 +8,11 @@ defaultContentLanguage: en
 hasCJKLanguage: false
 enableRobotsTXT: true
 timeZone: Asia/Ho_Chi_Minh
-enableGitInfo: true
+# A post's modified date comes from its front matter `lastmod`, else its
+# publish date. Git commit dates are not used, so bulk commits (renames,
+# translations) never mark every post as updated.
+frontmatter:
+  lastmod: [lastmod, date, publishDate]
 
 # TEMPORARY (added 2026-10-04): Cloudflare Pages `_redirects` file that sends
 # the old Stack-theme home pagination (/page/N/) to the home page. Posts kept
