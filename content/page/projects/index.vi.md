@@ -11,7 +11,7 @@ menu:
       icon: list
 ---
 
-Đây là những dự án mình làm hoặc từng đóng góp. Bạn có thể [xem các dự án nổi bật trên trang chủ](/vi/#home-projects-heading) hoặc mở một dự án trong mục bên dưới để dùng thử.
+Đây là những dự án mình làm hoặc từng đóng góp. Bạn có thể [xem các dự án nổi bật trên trang chủ](/#home-projects-heading) hoặc mở một dự án trong mục bên dưới để dùng thử.
 
 ## Dự án được cộng đồng gắn sao {#project-nổi-bật-có-star}
 

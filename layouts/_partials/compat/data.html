@@ -5,7 +5,7 @@
 {{- else -}}
   {{- $data = site.Data -}}
 {{- end -}}
-{{- if and .IsHome (eq site.Language.Lang "vi") -}}
+{{- if and .IsHome (eq site.Language.Name "vi") -}}
   {{- $profile := merge $data.profile ($data.profile.vi | default dict) -}}
   {{- $featured := slice -}}
   {{- range $data.projects.featured -}}

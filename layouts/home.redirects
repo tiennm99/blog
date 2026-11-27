@@ -1,9 +1,11 @@
 {{- /*
-  TEMPORARY (added 2026-10-04): 301 redirects for the old Stack-theme home
-  pagination, written to public/_redirects for Cloudflare Pages.
-  Delete this file and the matching block in config/_default/hugo.yml once the
-  old URLs no longer get traffic (review at 3, 6 or 12 months after the
-  migration ships).
+  Cloudflare Pages redirects, written to public/_redirects: the old Stack-theme
+  pagination, front-matter aliases, and the old /en/ prefix.
+
+  The Stack pagination rules are TEMPORARY (added 2026-10-04): delete them once
+  the old URLs no longer get traffic (review at 3, 6 or 12 months after the
+  migration ships). Keep this file and the matching block in
+  config/_default/hugo.yml for the other rules.
 
   Posts keep their Stack URLs (/post/YYYY/MM/DD/), so they need no rules.
   Stack paginated the home page with 5 posts per page. Those pages (/page/N/)
@@ -16,7 +18,8 @@
   adds harmless rules as posts are added.
 */ -}}
 {{- /* Cloudflare reads only the root _redirects, so other languages get an empty file. */ -}}
-{{- if eq .Language.Lang site.Sites.Default.Language.Lang -}}
+{{- $defaultLang := (partial "compat/sites.html" .).Default.Language.Name -}}
+{{- if eq .Language.Name $defaultLang -}}
 {{- $posts := where site.RegularPages "Section" "post" -}}
 {{- $pages := int (math.Ceil (div (float (len $posts)) 5.0)) -}}
 {{- range seq $pages }}
@@ -26,6 +29,24 @@
 /page/page/2/ /page/ 301
 /categories/page/1/ /categories/ 301
 /tags/page/:n/ /tags/ 301
+{{- /* Front-matter aliases as server-side 301s; Hugo still writes the meta-refresh
+  alias pages as a fallback. Each source is the path Hugo writes that page to: a
+  relative alias sits beside the page (in its parent directory, so under the
+  language prefix), an absolute alias is used as written with no language
+  prefix, and only an alias without a file extension gets a trailing slash.
+  Default-language aliases also get their old /en/ form, which must sit above
+  the /en/* catch-all to skip a 301 -> meta-refresh chain. */}}
+{{- range $p := site.AllPages }}{{ range $p.Aliases }}
+{{- $a := . }}
+{{- if not (strings.HasPrefix $a "/") }}
+{{- $a = path.Join (path.Dir (strings.TrimSuffix "/" $p.RelPermalink)) $a }}
+{{- end }}
+{{- $a = printf "/%s" (strings.Trim $a "/") }}
+{{- if not (path.Ext $a) }}{{ $a = printf "%s/" $a }}{{ end }}
+{{ $a }} {{ $p.RelPermalink }} 301
+{{- if eq $p.Language.Name $defaultLang }}
+/en{{ $a }} {{ $p.RelPermalink }} 301
+{{- end }}{{ end }}{{ end }}
 {{- /* English moved from /en/ to the site root when it became the default language.
   Hugo still writes the English sitemap to /en/sitemap.xml, so serve it before the catch-all. */}}
 /en/sitemap.xml /en/sitemap.xml 200

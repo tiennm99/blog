@@ -5,7 +5,7 @@ Instructions for AI coding agents working with this Hugo blog. This file is `CLA
 ## Project Info
 
 - **Type**: Hugo static site with Vietnamese tech content
-- **Theme**: nocturne, its own repo [`tiennm99/nocturne`](https://github.com/tiennm99/nocturne), imported as a Hugo Module pinned in `go.mod` (needs Go). Make theme changes and CHANGELOG entries in that repo, then bump the blog with `hugo mod get -u github.com/tiennm99/nocturne`; preview unpushed theme edits with `HUGO_MODULE_REPLACEMENTS="github.com/tiennm99/nocturne -> ../nocturne" hugo server`
+- **Theme**: nocturne, its own repo [`tiennm99/nocturne`](https://github.com/tiennm99/nocturne), imported as a Hugo Module pinned in `go.mod` (needs Go). Make theme changes and CHANGELOG entries in that repo, then bump the blog with `hugo mod get -u github.com/tiennm99/nocturne`; preview unpushed theme edits with `HUGO_MODULE_REPLACEMENTS="github.com/tiennm99/nocturne -> ../../nocturne" hugo server` (the path resolves from `themes/`, so `../../nocturne` is the clone next to this repo)
 - **Post content language**: Vietnamese (with common English tech words)
 - **Site languages**: English (default, at `/`) and Vietnamese (under `/vi/`), set in `config/_default/languages.yml`. Posts are still written in Vietnamese first: the source is `index.vi.md` and its English translation is the sibling `index.md`, which Hugo assigns to the default language because it has no language suffix
 - **Author names**: Use `miti99` in site copy and `MiTi` when referring to the author in posts. The author's real name belongs on the About page only.
@@ -21,7 +21,8 @@ content/post/
 └── YYYY/
     └── MM/
         └── DD/
-            └── index.vi.md
+            ├── index.vi.md   ← Vietnamese source, served under /vi/
+            └── index.md      ← English translation (default language, served at /)
 ```
 
 ## Starting Local Development Server
