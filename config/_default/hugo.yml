@@ -9,7 +9,7 @@ timeZone: Asia/Ho_Chi_Minh
 
 # Cloudflare Pages `_redirects` file, built from layouts/home.redirects: old
 # Stack-theme pagination, front-matter aliases, the old /post/ section and the
-# old /en/ prefix.
+# old /en/ prefix. TEMPORARY: removed on or after 2027-01-01 (see TODO.md).
 mediaTypes:
   text/redirects:
     delimiter: ""
