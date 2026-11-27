@@ -9,11 +9,10 @@
 
   Posts keep their Stack URLs (/post/YYYY/MM/DD/), so they need no rules.
   Stack paginated the home page with 5 posts per page. Those pages (/page/N/)
-  go to /, since nocturne's home page is not paginated. The page section's second
-  page (/page/page/2/) and Stack's first-page aliases (/page/page/1/,
-  /categories/page/1/, /tags/page/N/) go to their list pages, since nocturne does
-  not paginate those lists. Only /tags/page/:n/ is a placeholder rule; the rest
-  are exact paths, so /page/ and /page/index.xml are left alone. The count
+  go to /, since nocturne's home page is not paginated. Stack's first-page
+  aliases (/categories/page/1/, /tags/page/N/) go to their list pages, since
+  nocturne does not paginate those lists. Only /tags/page/:n/ is a placeholder
+  rule; the rest are exact paths. The count
   is computed from the current posts, so it covers every old page and only
   adds harmless rules as posts are added.
 */ -}}
@@ -25,8 +24,8 @@
 {{- range seq $pages }}
 /page/{{ . }}/ / 301
 {{- end }}
-/page/page/1/ /page/ 301
-/page/page/2/ /page/ 301
+/page/page/1/ / 301
+/page/page/2/ / 301
 /categories/page/1/ /categories/ 301
 /tags/page/:n/ /tags/ 301
 {{- /* Front-matter aliases as server-side 301s; Hugo still writes the meta-refresh
@@ -47,6 +46,12 @@
 {{- if eq $p.Language.Name $defaultLang }}
 /en{{ $a }} {{ $p.RelPermalink }} 301
 {{- end }}{{ end }}{{ end }}
+{{- /* The standalone pages moved from content/page/ to the content root, so the
+  page section and its list (/page/, /vi/page/) no longer exist. */}}
+/page/ / 301
+/page/index.xml /index.xml 301
+/vi/page/ /vi/ 301
+/vi/page/index.xml /vi/index.xml 301
 {{- /* English moved from /en/ to the site root when it became the default language.
   Hugo still writes the English sitemap to /en/sitemap.xml, so serve it before the catch-all. */}}
 /en/sitemap.xml /en/sitemap.xml 200

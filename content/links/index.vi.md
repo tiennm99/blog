@@ -1,6 +1,5 @@
 ---
 title: Liên kết
-slug: links
 menu:
     main:
         weight: -50

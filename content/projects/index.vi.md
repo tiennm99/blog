@@ -1,6 +1,5 @@
 ---
 title: Dự án
-slug: projects
 description: Các dự án mình xây dựng và những dự án mã nguồn mở mình từng đóng góp.
 aliases:
   - pages

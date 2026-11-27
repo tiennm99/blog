@@ -1,6 +1,5 @@
 ---
 title: Referral
-slug: referral
 description: Referral links for AI tools, hosting, databases, and cloud storage.
 tags: ["Referral", "AI Tools", "AI Gateway", "LLM API", "OrcaRouter", "Hermes Agent", "Claude Code", "Cloud Storage", "Cloud Computing", "Alibaba Cloud", "Database", "Aiven", "NanoGPT", "Lovable", "Bolt", "Railway", "DigitalOcean", "Runpod"]
 aliases:

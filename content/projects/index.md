@@ -1,6 +1,5 @@
 ---
 title: Projects
-slug: projects
 description: Projects I’ve built and open-source projects I’ve contributed to.
 aliases:
   - pages
