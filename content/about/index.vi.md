@@ -1,6 +1,5 @@
 ---
 title: Giới thiệu
-slug: about
 description: Vài dòng về mình và lý do mình viết blog.
 aliases:
   - about-me
@@ -15,7 +14,7 @@ Chào bạn, mình là Minh Tiến. Cái tên `miti99` ghép từ tên mình và
 
 Mình thích Linux, nhất là Arch Linux, và các dự án mã nguồn mở. Blog là nơi mình ghi lại những gì học được khi viết phần mềm, tự vận hành dịch vụ và làm dự án cá nhân. Mình cũng tổng hợp những bài đáng đọc trong các số newsletter.
 
-Bạn có thể xem [các dự án mình làm](/page/projects/), [đọc các bài viết đã đăng](/archives/) hoặc [xem CV](/page/links/).
+Bạn có thể xem [các dự án mình làm](/projects/), [đọc các bài viết đã đăng](/archives/) hoặc [xem CV](/links/).
 
 ## Liên hệ
 

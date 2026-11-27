@@ -1,6 +1,5 @@
 ---
 title: Ưu đãi giới thiệu
-slug: referral
 description: Liên kết giới thiệu cho công cụ AI, dịch vụ triển khai, cơ sở dữ liệu và lưu trữ đám mây.
 tags: ["Referral", "AI Tools", "AI Gateway", "LLM API", "OrcaRouter", "Hermes Agent", "Claude Code", "Cloud Storage", "Cloud Computing", "Alibaba Cloud", "Database", "Aiven", "NanoGPT", "Lovable", "Bolt", "Railway", "DigitalOcean", "Runpod"]
 aliases:

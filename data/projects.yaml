@@ -1,5 +1,5 @@
 # Hand-picked projects for the home page grid (schema: docs/data-schemas.md in tiennm99/nocturne).
-# The full, bot-refreshed list lives on content/page/projects/index.md.
+# The full, bot-refreshed list lives on content/projects/index.md.
 featured:
   - title: "awesome-ai-dev-tools"
     tagline: "A daily ranking of open-source AI coding tools by GitHub stars, with weekly changes and star history."
