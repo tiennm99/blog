@@ -6,11 +6,6 @@ title: miti99
 defaultContentLanguage: en
 enableRobotsTXT: true
 timeZone: Asia/Ho_Chi_Minh
-# A post's modified date comes from its front matter `lastmod`, else its
-# publish date. Git commit dates are not used, so bulk commits (renames,
-# translations) never mark every post as updated.
-frontmatter:
-  lastmod: [lastmod, date, publishDate]
 
 # Cloudflare Pages `_redirects` file, built from layouts/home.redirects: old
 # Stack-theme pagination, front-matter aliases, the old /post/ section and the

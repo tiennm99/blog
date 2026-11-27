@@ -17,7 +17,7 @@ hugo && npx pagefind --site public --serve
 
 ## Content structure
 
-Posts live under `content/posts/YYYY/MM/DD/`. Each post is a Hugo leaf bundle: the Vietnamese source `index.vi.md`, its English translation `index.md` (English is the default language, served at `/`; Vietnamese is under `/vi/`), and images and assets in the same directory. A post's "Updated" date comes only from a `lastmod` field in its front matter; without one it equals the publish date.
+Posts live under `content/posts/YYYY/MM/DD/`. Each post is a Hugo leaf bundle: the Vietnamese source `index.vi.md`, its English translation `index.md` (English is the default language, served at `/`; Vietnamese is under `/vi/`), and images and assets in the same directory. A post's "Updated" date comes only from a `lastmod` field in its front matter; without one it equals the publish date. That holds because `enableGitInfo` is off: turning it on would let git commit dates drive "Updated".
 
 ```
 content/
