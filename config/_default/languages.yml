@@ -15,7 +15,7 @@ vi:
   weight: 2
   params:
     # Vietnamese copies of the English strings in params.yml.
-    description: Lập trình viên người Việt, viết về code, công việc và những điều nhỏ nhặt thường ngày.
+    description: Lập trình viên người Việt, viết về code, công việc và những chuyện nhỏ thường ngày.
     license: Cấp phép theo CC BY-NC-SA 4.0
     comments:
       giscus:
