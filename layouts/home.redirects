@@ -26,4 +26,8 @@
 /page/page/2/ /page/ 301
 /categories/page/1/ /categories/ 301
 /tags/page/:n/ /tags/ 301
+{{- /* English moved from /en/ to the site root when it became the default language.
+  Hugo still writes the English sitemap to /en/sitemap.xml, so serve it before the catch-all. */}}
+/en/sitemap.xml /en/sitemap.xml 200
+/en/* /:splat 301
 {{- end }}

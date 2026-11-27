@@ -1,108 +1,108 @@
 ---
-title: "Khi AI crawler đi dạo khắp Gitea tự host của mình"
+title: "When AI Crawlers Went Strolling Through My Self-Hosted Gitea"
 date: 2026-10-29
 tags: ["AI-Assisted", "Cloudflare", "Self-hosted", "Gitea", "AI Crawler", "Security"]
 categories: ["Sharing"]
 ---
 
-Mình tự host Gitea trên một máy chủ OCI Always Free để lưu bản sao các repo trên GitHub. Cứ nghĩ đây là góc nhỏ chỉ có mình lui tới, cho đến khi phát hiện ba "vị khách" ghé thăm đều đặn: ClaudeBot, GPTBot và Reflectionbot. Từ vài dấu hiệu bất thường trong log, mình lần ra một repo private bị công khai ngoài ý muốn, rồi tìm cách chặn crawler mà vẫn giữ các ứng dụng hoạt động bình thường. Đây là câu chuyện từ lúc phát hiện đến khi xử lý và theo dõi sau đó.
+I self-host Gitea on an OCI Always Free server to keep mirrors of my GitHub repositories. I always thought of it as a quiet little corner only I ever visited — until I discovered three regular "guests" dropping by: ClaudeBot, GPTBot, and Reflectionbot. Starting from a few unusual signs in the logs, I tracked down a private repository that had unintentionally been made public, then figured out how to block the crawlers while keeping all my other apps running smoothly. Here is the full story, from discovery to mitigation and follow-up monitoring.
 
-## Phát hiện
+## Discovery
 
-Sáng 29/10/2026, mình thấy máy chủ chạy Gitea ở Nhật bận bất thường. Mở nhật ký truy cập (access log) của Traefik, mình mới biết log xoay vòng nhanh đến mức phần còn giữ lại chỉ bao phủ khoảng 4,5 tiếng, từ 17:55 đến 22:22 UTC ngày 28/10. Chỉ trong khoảng thời gian đó đã có **86.765 request**.
+On the morning of October 29, 2026, I noticed that the server running Gitea in Japan was unusually busy. When I opened Traefik's access log, I realized the logs were rotating so fast that the retained portion only covered about 4.5 hours — from 17:55 to 22:22 UTC on October 28. In just that window, there were **86,765 requests**.
 
-| User agent | Số request |
+| User agent | Requests |
 | --- | --- |
-| ClaudeBot (Anthropic) | 39.860 |
-| GPTBot (OpenAI) | 26.901 |
-| Reflectionbot (Reflection AI) | 16.412 |
-| Bun (chính gitea-mirror của mình đang sync) | 3.587 |
-| Còn lại (DuckDuckBot, OAI-SearchBot) | 5 |
+| ClaudeBot (Anthropic) | 39,860 |
+| GPTBot (OpenAI) | 26,901 |
+| Reflectionbot (Reflection AI) | 16,412 |
+| Bun (my own `gitea-mirror` syncing) | 3,587 |
+| Others (DuckDuckBot, OAI-SearchBot) | 5 |
 
-Khoảng 95% phản hồi HTTP 200 đến từ các trang `src`, `commit`, `raw` của 86 repo mirror. Các crawler lần qua **từng commit của từng repo**, mà mỗi commit lại có vài trang để đọc. Cộng dồn lại, lượng truy cập tăng lên rất nhanh.
+Around 95% of the HTTP 200 responses came from `src`, `commit`, and `raw` pages across 86 mirrored repositories. The crawlers were walking through **every single commit of every single repo**, and each commit had multiple pages to fetch. Added together, the request volume snowballed fast.
 
-Nhìn lại số liệu cả tháng, mình thấy lưu lượng gần như bằng 0 cho đến ngày 10/10. Từ 11/10, nó tăng vọt và liên tục duy trì ở mức cao:
+Looking back at the full month's metrics, traffic was virtually zero until October 10. Starting October 11, it spiked and stayed consistently high:
 
-![Số request theo ngày, từ 30/9 đến 28/10](requests-by-day.png)
+![Daily request count from September 30 to October 28](requests-by-day.png)
 
-Tổng cộng là gần **13,9 triệu request** và **1,48 TB** băng thông, chỉ để phục vụ một Gitea vốn có mỗi mình sử dụng:
+In total, that came out to nearly **13.9 million requests** and **1.48 TB** of bandwidth — all to serve a Gitea instance meant for an audience of one:
 
-![Tổng quan traffic: request, unique visitor, băng thông, error rate, P95 latency](traffic-overview.png)
+![Traffic overview: requests, unique visitors, bandwidth, error rate, and P95 latency](traffic-overview.png)
 
-**Nếu tự host trên VPS, bạn nên để ý cả chi phí băng thông.** Lượng dữ liệu bot tải về vẫn tính vào lưu lượng của máy chủ. Tùy nhà cung cấp và gói dịch vụ, vượt hạn mức có thể khiến bạn phải trả thêm phí hoặc bị giới hạn tốc độ. Mình may mắn vì hạn mức băng thông của OCI khá rộng rãi, nên đợt này chưa phát sinh thêm chi phí. Nhưng với một VPS có hạn mức thấp hơn, 1,48 TB chỉ từ crawler có thể trở thành khoản tiền ngoài dự tính.
+**If you self-host on a VPS, keep a close eye on bandwidth costs.** Data downloaded by bots still counts toward your server's outbound transfer quota. Depending on your provider and plan, going over your allowance can mean surprise overage charges or throttled speeds. I got lucky because OCI's outbound bandwidth allowance is very generous, so this incident didn't cost me anything extra. On a VPS with a tighter cap, though, 1.48 TB from crawlers alone could easily turn into an unexpected bill.
 
-Gần như toàn bộ lượt truy cập là từ bot, với nguồn truy cập cũng gần như hoàn toàn ở Mỹ:
+Nearly all of the traffic came from bots, and almost all of it originated in the United States:
 
-![Tỉ lệ loại client: gần như toàn bộ là Bot](client-types.png)
+![Client type breakdown: almost entirely Bots](client-types.png)
 
-![Traffic theo quốc gia: United States chiếm 13,51 triệu request](traffic-by-country.png)
+![Traffic by country: United States accounts for 13.51 million requests](traffic-by-country.png)
 
-Riêng ClaudeBot đã chiếm 10,82 triệu request và 1,4 TB băng thông. GPTBot cũng đóng góp thêm 2,52 triệu request:
+ClaudeBot alone accounted for 10.82 million requests and 1.4 TB of bandwidth. GPTBot chipped in another 2.52 million requests:
 
-![Bảng AI agents & bots: ClaudeBot và GPTBot](ai-bots.png)
+![AI agents & bots table: ClaudeBot and GPTBot](ai-bots.png)
 
-## Đoán nguyên nhân
+## Figuring Out the Cause
 
-Điều đầu tiên mình lo là tài khoản có bị lộ hay không. Kiểm tra lại log, mình thấy:
+My first worry was whether my account had been compromised. Checking the logs, I found:
 
-- Toàn bộ request đều ẩn danh, không có request nào đăng nhập.
-- Không có ứng dụng bên ngoài nào gửi POST, PATCH, push hay gọi API. Mọi thao tác ghi đều đến từ chính máy chủ, do gitea-mirror đang đồng bộ.
-- Cả ba crawler đều có nguồn gốc xác thực: IP của GPTBot nằm trong danh sách OpenAI công bố, ClaudeBot thuộc dải IP của Anthropic, còn Reflectionbot có DNS ngược trỏ về `reflection.ai`.
+- Every single request was anonymous — none of them were authenticated.
+- No external client sent any POST, PATCH, push, or API requests. All write operations came from the server itself via `gitea-mirror` running its sync jobs.
+- All three crawlers were legitimate: GPTBot's IPs matched OpenAI's published ranges, ClaudeBot came from Anthropic's IP space, and Reflectionbot's reverse DNS resolved back to `reflection.ai`.
 
-![Kiểm chứng ba crawler: Reflectionbot, GPTBot và ClaudeBot đều là bot thật](crawler-verification.png)
+![Verifying the three crawlers: Reflectionbot, GPTBot, and ClaudeBot are all genuine bots](crawler-verification.png)
 
-Những dấu hiệu này không cho thấy tài khoản bị xâm nhập. Các bot đang truy cập những trang mà Gitea công khai cho người dùng ẩn danh: chúng hỏi `/robots.txt` trước, nhận về 404 vì không có tệp này, rồi tiếp tục thu thập các trang trả về HTTP 200. Nhìn lại, mình đã để cửa mở mà không nhận ra; vấn đề cần xử lý trước hết nằm ở cấu hình của chính mình.
+Nothing pointed to an account breach. The bots were simply crawling pages that Gitea left publicly accessible to anonymous visitors: they requested `/robots.txt` first, got a 404 because none existed, and proceeded to scrape every page returning HTTP 200. Looking back, I had left the front door wide open without realizing it; the primary issue to fix was my own configuration.
 
-Trong lúc kiểm tra, mình phát hiện chuyện đáng lo hơn: **một repo private đã bị lộ**. Repo gốc trên GitHub là private, nhưng bản mirror trên Gitea lại **public**, và Reflectionbot đã lấy 48 trang từ đó. Lần theo quá trình đồng bộ, mình tìm được nguyên nhân ở một bản ghi cũ mà gitea-mirror vẫn dùng lại:
+While auditing further, I uncovered something much more concerning: **one private repository had been exposed**. The source repo on GitHub was private, but its mirror on Gitea was **public**, and Reflectionbot had already fetched 48 pages from it. Tracing the sync history led me to a stale record that `gitea-mirror` had reused:
 
-1. Ban đầu, tên này thuộc về một repo public. Khi nhập repo, gitea-mirror lưu cờ `is_private = 0`.
-2. Sau đó, repo public được chuyển sang namespace khác.
-3. Mình tạo một repo **private** mới với tên cũ. Bản ghi trong gitea-mirror vẫn trỏ đến URL ấy và giữ cờ public. Vì coi đây là cùng một repo, công cụ không kiểm tra lại quyền hiển thị.
-4. Gitea tiếp tục kéo bản mirror từ URL đó bằng GitHub token. Kết quả là nội dung của repo private mới được đồng bộ vào bản mirror public trên Gitea.
+1. Originally, that repository name belonged to a public repo. When importing it the first time, `gitea-mirror` saved the flag `is_private = 0`.
+2. Later, that public repo was moved to a different namespace.
+3. I created a new **private** repository under the old name. The existing record in `gitea-mirror` still pointed to that URL and kept the public flag. Because the tool treated it as the same repository, it never re-checked its visibility.
+4. Gitea kept pulling updates from that URL using my GitHub token. As a result, the contents of the new private repo were synced straight into the public mirror on Gitea.
 
-Cấu hình `visibility: "private"` của gitea-mirror cũng không ngăn được tình huống này. Nó chỉ áp dụng cho các tổ chức mà công cụ tạo ra; quyền hiển thị của từng repo vẫn dựa trên cờ private lấy từ GitHub ở thời điểm nhập ban đầu.
+Even setting `visibility: "private"` in `gitea-mirror` didn't prevent this: that setting only applies to organizations created by the tool, whereas individual repository visibility is still taken from the GitHub private flag captured at the initial import.
 
-Mình rà soát toàn bộ và tìm thấy 105 repo có thể đọc mà không cần đăng nhập, tất cả đều thuộc tài khoản cá nhân trên Gitea. Các tổ chức còn lại đều private. Trong 105 repo công khai ấy, chỉ repo vừa phát hiện có nguồn private trên GitHub.
+I audited everything and found 105 repositories readable without signing in, all under my personal Gitea account. All other organizations were private. Out of those 105 public mirrors, only the one I had just caught corresponded to a private repo on GitHub.
 
-Còn lý do Cloudflare không chặn các bot thì đơn giản hơn: mọi bản ghi DNS của ứng dụng đều là bản ghi `A` ở chế độ **DNS only** (mây xám). Bot đi thẳng đến máy chủ gốc (origin), nên các request này không hề qua Cloudflare để được lọc.
+Why Cloudflare hadn't blocked the bots was even simpler: every DNS record for my apps was an `A` record set to **DNS only** (grey cloud). Bots were hitting the origin server directly, so their requests never passed through Cloudflare to be filtered in the first place.
 
-## Xử lý
+## Mitigation
 
-**Việc đầu tiên là ngăn lộ thêm dữ liệu.** Mình dừng Gitea cùng gitea-mirror, rồi chuyển repo bị lộ về private.
+**Step one was stopping any further data exposure.** I stopped both Gitea and `gitea-mirror`, then switched the exposed repository to private.
 
-Ban đầu, mình định đưa toàn bộ ứng dụng ra sau Cloudflare Tunnel và Cloudflare Access. Nhưng phương án này kéo theo khá nhiều việc: đổi địa chỉ trên Coolify sang `http://`, cấu hình lại từng ứng dụng, rồi xử lý webhook. Mình tạm để lại cho sau và chọn bước ít thay đổi hơn: **bật proxy (mây cam)** cho các bản ghi DNS. Chúng vẫn trỏ về IP cũ, Traefik và Coolify vẫn giữ nguyên cách chạy, còn Cloudflare đứng giữa để lọc bot.
+Initially, I considered putting all my applications behind Cloudflare Tunnel and Cloudflare Access. However, that approach would have required quite a bit of rework: changing URLs in Coolify to `http://`, reconfiguring each app, and sorting out webhooks. I set that aside for later and chose a less invasive first step: **enabling the Cloudflare proxy (orange cloud)** on my DNS records. They still point to the same IP, Traefik and Coolify keep working the same way, and Cloudflare sits in the middle to filter out bots.
 
-Chiều 29/10, mình triển khai lần lượt như sau:
+On the afternoon of October 29, I rolled out the changes step by step:
 
-1. **Chuyển SSL/TLS từ Full sang Full (strict).** Traefik tiếp tục dùng chứng chỉ Let's Encrypt và gia hạn qua HTTP-01 khi bật proxy. Mình tránh chế độ Flexible vì Traefik đã chuyển hướng HTTP sang HTTPS; kết hợp hai bên sẽ gây vòng lặp chuyển hướng.
-2. **Thử trước với một ứng dụng ít rủi ro**, là một terminal trên web. Mình kiểm tra header `server: cloudflare`, khả năng tải trang và kết nối WebSocket.
-3. **Thiết lập các lớp chặn bot** có sẵn trên gói Free:
-   - **AI bot policies**: đặt Training, Agent và Search thành Block, vì mình không cần các ứng dụng này xuất hiện trong kết quả tìm kiếm của AI.
-   - **Bot Preference Sync** (`robots.txt` do Cloudflare quản lý): tự chèn các dòng `Disallow` dành cho bot AI vào `robots.txt`, hoặc phục vụ tệp này nếu ứng dụng chưa có.
-   - **Một quy tắc WAF tùy chỉnh** để chặn thêm những trường hợp chính sách trên có thể bỏ sót:
+1. **Switched SSL/TLS from Full to Full (strict).** Traefik continues using its Let's Encrypt certificates and renews them via HTTP-01 even with the proxy enabled. I avoided Flexible mode because Traefik already redirects HTTP to HTTPS; combining the two would cause an infinite redirect loop.
+2. **Tested on a low-risk app first** — a web-based terminal. I verified the `server: cloudflare` response header, page loading, and WebSocket connectivity.
+3. **Enabled the bot-blocking layers** available on the Cloudflare Free plan:
+   - **AI bot policies**: set Training, Agent, and Search to Block, since I have no reason for these self-hosted apps to show up in AI search results.
+   - **Bot Preference Sync** (Cloudflare-managed `robots.txt`): automatically injects `Disallow` rules for AI bots into `robots.txt`, or serves one if the app doesn't have its own.
+   - **A custom WAF rule** to catch anything the built-in policies might miss:
 
      ```text
      (cf.verified_bot_category in {"AI Crawler" "AI Assistant" "AI Search"})
      or (http.user_agent contains "Reflectionbot")
      ```
 
-4. **Bật proxy cho bản ghi wildcard** `*.miti99.dev`. Một lần chuyển là áp dụng cho gần 20 ứng dụng; các ứng dụng mới dùng bản ghi wildcard này cũng được proxy mặc định. Nếu cần quay lại cấu hình cũ, mình chỉ việc tắt proxy.
-5. **Bật proxy cho Coolify sau cùng**, rồi kiểm tra webhook triển khai khi push lên GitHub, số liệu Sentinel gửi từ máy chủ thứ hai, MCP và kết nối WebSocket thời gian thực.
-6. **Cấu hình Traefik tin cậy dải IP của Cloudflare** qua `forwardedHeaders.trustedIPs`, để ứng dụng nhận được IP thật của người dùng thay vì chỉ thấy IP của Cloudflare.
+4. **Enabled the proxy on the wildcard record** `*.miti99.dev`. Flipping that single switch covered nearly 20 apps at once, and any new app using the wildcard record will be proxied by default. If I ever need to roll back, I can just toggle the proxy off.
+5. **Enabled the proxy on Coolify last**, then tested GitHub push deployment webhooks, Sentinel metrics coming from my second server, MCP, and real-time WebSocket connections.
+6. **Configured Traefik to trust Cloudflare's IP ranges** via `forwardedHeaders.trustedIPs`, so backend applications see the real visitor IP instead of Cloudflare's edge IP.
 
-Mình cũng chủ động **không bật Bot Fight Mode**. Trên gói Free, cơ chế thử thách của tính năng này có thể cản các ứng dụng truy cập tự động, trong khi quy tắc WAF không cho phép tạo ngoại lệ để bỏ qua nó. Với hệ thống của mình, bật lên có nguy cơ làm gián đoạn webhook GitHub, Sentinel, MCP, đồng bộ Nextcloud và cả Git.
+I also deliberately **left Bot Fight Mode turned off**. On the Free plan, its challenge mechanism can block legitimate automated traffic, and WAF rules aren't allowed to bypass it. For my setup, turning it on risked breaking GitHub webhooks, Sentinel, MCP, Nextcloud sync, and even Git operations over HTTP.
 
-Kiểm tra bằng `curl`, request mang user agent của trình duyệt nhận HTTP 200, còn request mang user agent GPTBot, ClaudeBot hoặc Reflectionbot nhận HTTP 403 ngay tại Cloudflare. Sau bước này, mình bật lại Gitea phía sau proxy.
+Testing with `curl`, requests with a normal browser user agent returned HTTP 200, while requests spoofing GPTBot, ClaudeBot, or Reflectionbot user agents received an immediate HTTP 403 at Cloudflare's edge. Once that was confirmed, I started Gitea back up behind the proxy.
 
-Dù vậy, đưa lưu lượng qua Cloudflare vẫn có những giới hạn cần lưu ý:
+Even so, routing traffic through Cloudflare comes with a few limitations to keep in mind:
 
-- Phần thân request vượt 100 MB sẽ bị từ chối. Nextcloud tải lên theo từng phần nhỏ nên không vướng giới hạn này.
-- Request chờ phản hồi quá lâu, khoảng 100 giây, có thể gặp lỗi 524. Các lời gọi LLM kéo dài mà không truyền kết quả dần là trường hợp cần chú ý.
-- **IP máy chủ gốc vẫn truy cập được.** Bot đã biết IP có thể gọi thẳng vào Traefik. Proxy giúp lọc crawler đi qua Cloudflare, nhưng chưa thay thế được việc kiểm soát quyền truy cập.
+- Request bodies larger than 100 MB are rejected. Nextcloud uses chunked uploads, so it isn't affected by this limit.
+- Requests that take longer than ~100 seconds without sending data can hit an HTTP 524 timeout. Long-running LLM calls that don't stream responses are something to watch out for.
+- **The origin server IP is still reachable directly.** Any bot that already knows the origin IP can talk straight to Traefik. Proxying filters crawlers that resolve via DNS through Cloudflare, but it doesn't replace proper access control.
 
-## Theo dõi
+## Follow-Up Monitoring
 
-Log sau khi chuyển đổi cho thấy rõ giới hạn cuối cùng này. Mình bật proxy cho Gitea lúc 09:14 UTC, tức 16:14 giờ Việt Nam, rồi lọc access log trên máy chủ gốc để xem ba bot còn truy cập hay không:
+The post-cutover logs illustrated that last point clearly. I enabled the proxy for Gitea at 09:14 UTC (16:14 Vietnam time), then filtered the access log on the origin server to see whether the three bots were still getting through:
 
 ```bash
 for ua in GPTBot ClaudeBot Reflectionbot; do
@@ -110,24 +110,24 @@ for ua in GPTBot ClaudeBot Reflectionbot; do
 done
 ```
 
-- **ClaudeBot** dừng hẳn lúc 09:14:20, gần như ngay sau khi đổi bản ghi DNS.
-- **Reflectionbot** tiếp tục truy cập rải rác khoảng 6 phút, có thể do bộ nhớ đệm DNS.
-- **GPTBot** vẫn gửi thẳng đến IP máy chủ gốc thêm **7.056 request trong một tiếng**, đến 10:14 mới dừng. Trường `ClientAddr` ghi nhận IP của OpenAI thay vì Cloudflare. Mình nghi bot giữ kết quả DNS trong bộ nhớ đệm lâu hơn TTL.
-- Từ thời điểm đó đến lúc viết bài, khoảng 4 tiếng, máy chủ gốc ghi nhận **0 request** từ cả ba bot.
+- **ClaudeBot** stopped completely at 09:14:20 — almost immediately after the DNS change.
+- **Reflectionbot** trickled in for about 6 more minutes, likely due to DNS caching.
+- **GPTBot** kept sending requests directly to the origin IP — another **7,056 requests over the next hour** — before finally stopping at 10:14. The `ClientAddr` field showed OpenAI's IPs rather than Cloudflare's. My guess is that the bot caches DNS responses longer than the record's TTL.
+- From that point until the time of writing — about 4 hours — the origin server recorded **0 requests** from all three bots.
 
-Để biết cấu hình này có tiếp tục hiệu quả hay không, mình sẽ theo dõi thêm:
+To make sure this setup stays effective, here's what I'll continue monitoring:
 
-- **Security → Events** trên Cloudflare: kiểm tra bot AI có tiếp tục bị chặn và có user agent lạ nào cần bổ sung vào quy tắc WAF hay không.
-- **Access log của Traefik trên máy chủ gốc**: lọc theo cách trên. Nếu crawler xuất hiện trở lại với `ClientAddr` nằm ngoài dải IP Cloudflare, nó đang truy cập trực tiếp. Khi đó, mình sẽ cân nhắc tường lửa chỉ cho phép Cloudflare kết nối vào, hoặc quay lại phương án tunnel.
-- **`robots.txt` của từng host**: dùng `curl https://<app>.example.com/robots.txt` để kiểm tra các dòng `Disallow` dành cho bot AI mà Cloudflare thêm vào.
-- **Ứng dụng mới**: Coolify tạo bản ghi DNS ở chế độ DNS only. Host có bản ghi riêng cần được bật proxy thủ công; nếu bỏ sót, bot lại có đường truy cập trực tiếp.
-- **Dải IP của Cloudflare**: dù ít thay đổi, mình vẫn cần cập nhật `trustedIPs` của Traefik khi có thay đổi.
+- **Security → Events** in Cloudflare: verify that AI bots continue to be blocked and check whether any new user agents need to be added to the WAF rule.
+- **Traefik access logs on the origin server**: filter using the snippet above. If a crawler reappears with a `ClientAddr` outside Cloudflare's IP ranges, it's hitting the origin IP directly. At that point, I'll either lock the firewall down to allow only Cloudflare IPs or revisit the Cloudflare Tunnel approach.
+- **`robots.txt` on each host**: run `curl https://<app>.example.com/robots.txt` to confirm Cloudflare's AI bot `Disallow` rules are present.
+- **New applications**: Coolify creates new DNS records in DNS-only mode by default. Any host with its own dedicated record needs the proxy toggled on manually; forgetting one leaves a direct path open again.
+- **Cloudflare IP ranges**: although they rarely change, I still need to keep Traefik's `trustedIPs` list updated when they do.
 
-Mình vẫn còn một số việc phải làm: bật `REQUIRE_SIGNIN_VIEW` để yêu cầu đăng nhập trước khi xem các trang Gitea, dọn bỏ toàn bộ mirror và thay GitHub token của gitea-mirror. Trong đó, yêu cầu đăng nhập mới trực tiếp giải quyết việc người ngoài đọc được repo; proxy chỉ là lớp bảo vệ bổ sung. Mình cũng đang cân nhắc gửi yêu cầu xóa dữ liệu đã thu thập tới Reflection AI, OpenAI và Anthropic.
+I still have a few follow-up tasks left: enabling `REQUIRE_SIGNIN_VIEW` so Gitea requires authentication before viewing any page, wiping the existing mirrors, and rotating the GitHub token used by `gitea-mirror`. Requiring sign-in is what truly stops outsiders from reading repositories; the Cloudflare proxy is just an extra layer of defense in front. I'm also considering sending data deletion requests to Reflection AI, OpenAI, and Anthropic.
 
-## Bài học
+## Takeaways
 
-- **Đã công khai thì phải tính đến chuyện bị thu thập dữ liệu rất kỹ.** Bot AI có thể lần qua từng commit, chứ không dừng ở trang chủ.
-- **Cần kiểm tra lại quyền hiển thị khi đồng bộ giữa các hệ thống.** Một bản ghi cũ trùng tên đã đủ khiến nội dung repo private xuất hiện trong bản mirror public.
-- **Muốn Cloudflare lọc lưu lượng thì phải đưa lưu lượng qua proxy.** Với hệ thống tự host nhỏ của mình, đây là bước đầu phù hợp để chặn crawler, trước khi cân nhắc tunnel.
-- **Cần xem lại các kết nối tự động trước khi bật Bot Fight Mode.** Máy chủ còn nhận webhook và phục vụ các ứng dụng ngoài trình duyệt, nên chặn bot cũng phải tính đến những luồng truy cập này.
+- **Anything public on the internet will eventually be scraped thoroughly.** AI crawlers don't stop at your homepage — they will walk through every single commit.
+- **Double-check visibility settings when syncing across systems.** A single stale record under a reused repo name was enough to mirror a private GitHub repository into a public Gitea repo.
+- **If you want Cloudflare to filter traffic, traffic actually has to go through the proxy.** For my small self-hosted setup, flipping on the proxy was a practical first step before moving to tunnels.
+- **Audit your automated integrations before enabling Bot Fight Mode.** When your server also receives webhooks and serves non-browser clients, bot protection has to account for those workflows too.

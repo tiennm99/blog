@@ -4,22 +4,22 @@ date: 2020-05-08
 tags: [ "Arch", "Linux", "Systemd" ]
 ---
 
-Đây là một service nhằm tạo ra swap động theo thời gian. Khởi tạo ban đầu chỉ có 512MiB thôi, nhưng sẽ tăng lên một cách **tự động** khi bạn sử dụng. Cài đặt như sau:
+This is a service that creates dynamic swap space over time. It starts out at just 512MiB, but grows **automatically** as you use your system. Install it as follows:
 
 ```shell
 yay -S systemd-swap
 ```
 
-Trong file `/etc/systemd/swap.conf` cài đặt như sau:
+In `/etc/systemd/swap.conf`, configure it as follows:
 
 ```shell
 swapfc_enabled=1
 ```
 
-Sau đó enable service systemd-swap:
+Then enable the `systemd-swap` service:
 
 ```shell
 sudo systemctl enable systemd-swap
 ```
 
-Vậy là xong!!!
+And that's it!!!

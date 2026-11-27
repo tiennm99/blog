@@ -1,44 +1,44 @@
 ---
-title: "Tweaks nho nhỏ cho Firefox"
+title: "Small Tweaks for Firefox"
 date: 2020-04-18
 tags: [ "Arch", "Linux", "Firefox" ]
 ---
 
 ## Cache on RAM
 
-Mặc định thì Firefox sẽ lưu cache trong cả RAM và đĩa, khi lưu trên RAM sẽ giúp cho truy xuất cache nhanh hơn, đồng thời giảm số lần ghi đĩa (đặc biệt tốt cho SSD nhé) thì làm như sau:
-Gõ vào đường dẫn url của firefox: `about:config`  
-Đặt `browser.cache.disk.enable` thành `false`  
-Đảm bảo `browser.cache.memory.enable` là `true`  
-Bạn cũng có thể chỉnh lượng RAM mà Firefox sẽ dùng để lưu cache trong mục `browser.cache.memory.capacity`, để mặc định là -1 Firefox sẽ tự động lựa chọn dung lượng.
+By default, Firefox stores its cache on both RAM and disk. Moving the cache entirely to RAM speeds up cache access and reduces disk writes (which is especially great for SSDs). Here's how to do it:
+Type `about:config` into Firefox's address bar  
+Set `browser.cache.disk.enable` to `false`  
+Make sure `browser.cache.memory.enable` is set to `true`  
+You can also adjust how much RAM Firefox uses for caching via `browser.cache.memory.capacity`—leaving it at the default `-1` lets Firefox automatically pick the capacity based on your total RAM.
 
-## Tắt Pocket
+## Disabling Pocket
 
-Pocket mặc định đi kèm Firefox nhưng mình chả mấy sử dụng, nên tắt thôi :D, cũng trong `about:config` ở trên, tìm `extensions.pocket.enabled` và đặt thành false thôi !😀
+Pocket comes bundled with Firefox by default, but I barely ever use it, so I just disable it :D. In `about:config` as above, search for `extensions.pocket.enabled` and set it to `false`! 😀
 
-## Cache toàn bộ profile vào RAM qua tmpfs
+## Caching the Entire Profile in RAM via tmpfs
 
-**Bạn cần đảm bảo có đủ cache để mount profile nhé, không thì sẽ gặp lỗi hết bộ nhớ đó!**
+**Make sure you have enough free RAM to mount your profile, or you'll run into out-of-memory errors!**
 
-Mặc định thì tmpfs (service `tmp.mount`) khởi chạy mặc định rồi, để tận dụng hơn việc mount /tmp qua ram, thì ta có thể cache toàn bộ profile của Firefox vào RAM qua tmpfs luôn. Đầu tiên, cài đặt Profile-sync-daemon:
+Since `tmpfs` (via the `tmp.mount` service) is already enabled by default on Arch, we can take further advantage of having `/tmp` mounted in RAM by caching the entire Firefox profile in RAM via `tmpfs`. First, install `profile-sync-daemon`:
 
 ```shell
 yay -S profile-sync-daemon
 ```
 
-Sau đó sửa file `~/.config/psd/psd.conf` lại, thêm firefox vào list BROWSERS, VD:
+Then edit `~/.config/psd/psd.conf` and add `firefox` to the `BROWSERS` list, for example:
 
 ```shell
 BROWSERS=”firefox”
 ```
 
-Profile-sync-daemon còn hỗ trợ google-chrome, bạn có thể xem thêm ngay trong file ấy, vì vậy có thể thêm browsers bạn dùng vào list trên
-Khởi chạy Profile-sync-daemon cùng hệ thống:
+`profile-sync-daemon` also supports `google-chrome` and several other browsers (you can see the full list right inside that config file), so feel free to add whichever browsers you use to the list.
+Enable `profile-sync-daemon` to start automatically with your session:
 
 ```shell
 systemctl --user enable psd.service
 ```
 
-Vậy là xong rồi, các bạn có thể tham khảo thêm nhiều tweaks khác tại: <https://wiki.archlinux.org/index.php/Firefox/Tweaks>
+And that's it! You can check out plenty of other tweaks at: <https://wiki.archlinux.org/index.php/Firefox/Tweaks>
 
-Hẹn gặp lại trong các bài viết khác nhé!
+See you in future posts!

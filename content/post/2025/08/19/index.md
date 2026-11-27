@@ -1,10 +1,10 @@
 ---
-title: "Siêu tổng hợp ByteByteGo"
+title: "ByteByteGo Mega Roundup"
 date: 2025-08-19
 tags: ["ByteByteGo"]
 ---
 
-*Nếu các bạn để ý thì chắc cũng thấy các Newsletter gần đây vắng bóng mục Bonus: Một số hình ảnh hay ho đến từ [ByteByteGo](https://bytebytego.com/). Và đúng là như vậy, sự thật là vì chèn hình ảnh thì mình chèn bằng tay chứ không nhờ AI Agent, nên là mình skip hết các ảnh mình thấy. Và bây giờ tích cũng khá nhiều rồi nên mình sẽ "xả ảnh" 1 loạt luôn hehe. Nói thể thôi chứ nhiều lắm, có khi sẽ cần P2, P3,... nữa :v Thôi không vòng vo nữa, mời các bạn đến với thế giới ảnh của ByteByteGo đợt này.*
+*If you've been paying attention, you probably noticed that recent Newsletters have been missing the Bonus section featuring cool visuals from [ByteByteGo](https://bytebytego.com/). And that's totally true — the honest reason is that I insert images by hand rather than delegating them to an AI Agent, so I ended up skipping all the visuals I came across. Now that quite a backlog has piled up, I'm doing a massive "image dump" all at once hehe. That said, there are so many of them that we'll probably need a Part 2, Part 3, and so on :v Anyway, without further ado, welcome to this batch of ByteByteGo visuals.*
 
 ![How to Learn API Development?](https://substack-post-media.s3.amazonaws.com/public/images/3eedbbd4-e0a4-4519-be5c-ee0c644df55f_1280x1502.gif)
 
@@ -32,8 +32,8 @@ tags: ["ByteByteGo"]
 
 ![The Fundamental Pillars of Object-Oriented Programming](https://substack-post-media.s3.amazonaws.com/public/images/ea385c61-b3d2-4ecb-8c22-b43587ea85e5_1280x1585.gif)
 
-## Và một số video
+## Plus a Video
 
 [System Design Was HARD - Until You Knew the Trade-Offs](https://www.youtube.com/watch?v=1nENigGr-a0)
 
-*Chà, vẫn còn nhiều. Hẹn các bạn trong các đợt siêu tổng hợp tiếp theo nhé hehe!!*
+*Whew, there's still plenty more. See you in the next mega roundups hehe!!*

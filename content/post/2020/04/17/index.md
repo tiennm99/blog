@@ -1,25 +1,25 @@
 ---
-title: "Một số vấn đề gặp phải"
+title: "Some Issues I Ran Into"
 date: 2020-04-17
 tags: [ "Arch", "Linux", "Trouble" ]
 ---
 
-Đây là bài viết tổng hợp một số vấn đề mình gặp phải và cách giải quyết, đây là những cách mà mình làm thì nó hoạt động nên ở mức độ "just work", mình không đảm bảo là nếu bạn gặp tình huống như mình thì sẽ được. Bài viết sẽ được cập nhật lại trong quá trình sử dụng của mình nhé!
+This post is a collection of issues I've run into along with how I fixed them. These solutions are at the "it just works for me" level, so I can't guarantee they'll work in every single case if you run into the same problem. I'll keep updating this post as I continue using the system!
 
-#### Arch Cinnamon không tắt màn hình sau thời gian đã định
+#### Arch Cinnamon Doesn't Turn Off the Screen After the Configured Timeout
 
-Bạn thử cài đặt gói `light-locker` xem:
+Try installing the `light-locker` package:
 
 ```shell
 yay -S light-locker
 ```
 
-#### Không play được file .mp4 trong Totem và các player khác base-on Totem
+#### Cannot Play `.mp4` Files in Totem and Other Totem-Based Players
 
-Thường thì lỗi này do các bạn thiếu codec cho file này, để cài đặt:
+This error is usually caused by a missing codec for `.mp4` files. To install it:
 
 ```shell
 yay -S gst-libav
 ```
 
-Hẹn gặp lại các bạn trong các bài viết khác nha!
+See you in future posts!

@@ -6,71 +6,71 @@ categories: ["Newsletter"]
 draft: false
 ---
 
-*Đã lâu rồi mình không viết bài. Và thú thật thì những newsletter dạo trước hơi kiểu "chạy KPI", ~~mình cứ cố cho rất nhiều link vào và để AI Agent làm nốt phần còn lại~~. Lần này mình sẽ chọn lọc bài kĩ hơn, ~~còn viết thì vẫn để AI thôi, vì mình lười hehe =)))~~. Mong các bạn sẽ thích. Chào mừng bạn đến với Newsletter #31.*
+*It's been a while since I last wrote a post. And honestly, my earlier newsletters felt a bit like "chasing KPIs"—~~I just stuffed in a ton of links and let an AI Agent do the rest~~. This time I'll curate the articles more carefully, ~~though I'm still letting AI do the writing because I'm lazy hehe =)))~~. Hope you enjoy it. Welcome to Newsletter #31.*
 
 ## [Claude Code: Best Practices for Agentic Coding](https://code.claude.com/docs/en/best-practices)
 
-Đây là tài liệu hướng dẫn chính thức của Anthropic, tổng hợp những cách làm việc hiệu quả với Claude Code - môi trường lập trình dạng agent có thể tự đọc tệp, chạy lệnh, sửa mã nguồn và xử lý vấn đề trong khi bạn quan sát hoặc điều hướng. Hầu hết lời khuyên đều xuất phát từ một giới hạn: cửa sổ ngữ cảnh (context window) đầy lên rất nhanh và chất lượng câu trả lời giảm dần khi nó đầy. Vì vậy, việc quan trọng nhất là cho Claude một cách tự kiểm chứng kết quả, chẳng hạn bộ kiểm thử, lệnh build hay ảnh chụp màn hình để so sánh, để nó tự lặp lại cho tới khi đạt thay vì bạn phải soát từng lỗi. Với tác vụ phức tạp, nên tách thành bốn bước: khám phá, lập kế hoạch (dùng plan mode), triển khai rồi commit; còn việc nhỏ như sửa lỗi chính tả thì cứ yêu cầu làm luôn.
+This is Anthropic's official guide distilling effective workflows for Claude Code—an agentic coding environment that can read files, run commands, edit code, and work through problems while you supervise or steer. Most of its advice stems from a single constraint: the context window fills up fast, and response quality degrades as it fills. That makes giving Claude a way to verify its own work—such as a test suite, a build command, or screenshots to compare against—the single highest-leverage thing you can do, letting it iterate until the check passes instead of forcing you to catch every mistake yourself. For complex tasks, split the work into four phases: explore, plan (using plan mode), implement, and commit; for small fixes like a typo, just ask it to make the change directly.
 
-Tài liệu cũng khuyên viết yêu cầu thật cụ thể (chỉ rõ tệp, tình huống, mẫu có sẵn trong dự án) và cấu hình môi trường hợp lý: tệp `CLAUDE.md` ngắn gọn chứa lệnh, quy ước và lưu ý riêng của dự án; danh sách quyền được phép; công cụ CLI như `gh`; MCP server; hook cho những việc bắt buộc; skill và subagent cho kiến thức chuyên biệt. Trong phiên làm việc, hãy sửa hướng sớm, dùng `/clear` giữa các tác vụ không liên quan, giao việc tìm hiểu cho subagent để giữ ngữ cảnh sạch. Khi đã thành thạo, có thể mở rộng bằng chế độ không tương tác `claude -p`, chạy nhiều phiên song song và thêm bước review độc lập trước khi coi là xong.
+The guide also recommends writing specific prompts (naming files, edge cases, and existing project patterns) and configuring the environment thoughtfully: a concise `CLAUDE.md` with project commands, conventions, and gotchas; an allowlist of safe permissions; CLI tools like `gh`; MCP servers; hooks for deterministic checks; and skills or subagents for specialized knowledge. During a session, course-correct early, run `/clear` between unrelated tasks, and delegate exploratory research to subagents to keep the main context clean. Once you have the basics down, you can scale out with non-interactive `claude -p` runs, parallel sessions, and an independent review pass before considering a task done.
 
 ---
 
 ## [OpenAI, Windsurf, and the future of work](https://www.subtle.so/openai-windsurf-and-the-future-of-ai-workspaces.html)
 
-Bài viết trên Subtle phân tích tin OpenAI muốn mua Windsurf với giá khoảng 3 tỷ USD, sau khi từng nhắm tới Cursor. Về mặt kỹ thuật, tính năng cốt lõi của Windsurf (một bản fork của VS Code kèm AI agent và gợi ý mã nguồn) không quá khó xây dựng, nên giá trị thật nằm ở chỗ khác: những công cụ này có thể trở thành không gian làm việc AI cho cả những việc ngoài lập trình. Chúng cho AI quyền thao tác trực tiếp trên tệp và thư mục, hỗ trợ viết lách, nghiên cứu, quản lý nội dung, lại có sẵn Git để theo dõi phiên bản - điều mà các công cụ năng suất truyền thống chưa làm được. Ví dụ, The Pragmatic Engineer đã nối Windsurf với cơ sở dữ liệu PostgreSQL để hỏi về số liệu kinh doanh bằng ngôn ngữ tự nhiên. Tác giả so sánh xu hướng này với cách IRC từ một công cụ ngách trở thành Slack trị giá 27 tỷ USD.
+This post on Subtle analyzes reports that OpenAI wants to acquire Windsurf for around $3 billion, after previously eyeing Cursor. Technically, Windsurf's core product (a VS Code fork with an AI agent and code autocomplete) isn't uniquely hard to build, so the real value lies elsewhere: tools like this can become general-purpose AI workspaces far beyond coding. They give AI direct access to files and folders to assist with writing, research, and content management, while baking in Git for version history—something traditional productivity suites still lack. For instance, The Pragmatic Engineer connected Windsurf to a PostgreSQL database to query business metrics in plain English. The author compares this trajectory to how IRC evolved from a niche developer tool into Slack's $27 billion business.
 
-Ngoài ra, dữ liệu tương tác từ hàng triệu lượt sử dụng Windsurf là nguồn tín hiệu huấn luyện quý giá, có thể giúp mô hình của OpenAI bắt kịp Anthropic trên các bài đánh giá về lập trình. Bức tranh cạnh tranh cũng khá rối: Microsoft sở hữu cả VS Code lẫn GitHub Copilot và đồng thời đầu tư vào OpenAI, trong khi quỹ đầu tư của OpenAI lại rót vốn vào Cursor. Điều đó cho thấy thị trường công cụ phát triển dùng AI đang hợp nhất rất nhanh và được kỳ vọng sinh lời lớn.
+On top of that, interaction data from millions of Windsurf sessions provides valuable training signal that could help OpenAI's models catch up with Anthropic on coding benchmarks. The competitive web is tangled too: Microsoft owns both VS Code and GitHub Copilot while backing OpenAI, even as OpenAI's startup fund has invested in Cursor. All of it points to a rapidly consolidating AI developer-tools market with massive commercial expectations.
 
 ---
 
 ## [Vibe Coding is Not an Excuse for Low-Quality Work](https://addyo.substack.com/p/vibe-coding-is-not-an-excuse-for)
 
-Addy Osmani lập luận rằng lập trình với AI theo cảm hứng ("vibe coding") là công cụ tăng tốc hữu ích, nhưng không phải lý do để bỏ qua sự chặt chẽ của kỹ thuật phần mềm. AI có thể sinh ra rất nhiều mã nguồn trong thời gian ngắn, song số lượng không đồng nghĩa với chất lượng: các dự án làm theo kiểu này thường thiếu xử lý lỗi, bỏ sót vấn đề bảo mật, khó bảo trì và dễ sụp như "nhà xếp bằng bài". Như tác giả viết, tốc độ chẳng có nghĩa gì nếu bánh xe rời ra giữa đường, vì nợ kỹ thuật sẽ tích tụ nhanh khi không ai giám sát.
+Addy Osmani argues that "vibe coding" with AI is a useful accelerator, but not an excuse to abandon software engineering rigor. AI can generate huge amounts of code in minutes, yet volume does not equal quality: vibe-coded projects routinely skip error handling, miss security flaws, resist maintenance, and collapse like a "house of cards." As Osmani puts it, speed means nothing if the wheels come off mid-drive, because technical debt compounds quickly when nobody is watching the architecture.
 
-Cách tiếp cận được đề xuất là coi AI như một lập trình viên junior làm việc cực nhanh: con người vẫn phải review mọi kết quả, tái cấu trúc khi cần, bổ sung xử lý trường hợp biên và viết kiểm thử đầy đủ. Tác giả đưa ra các nguyên tắc: luôn review mã nguồn do AI sinh ra, áp dụng chuẩn viết mã, dùng AI để tăng tốc chứ không để nó ra quyết định, ưu tiên kiểm thử, lặp và tinh chỉnh, nhận ra lúc nên tự viết tay, và ghi tài liệu cẩn thận. Vibe coding phát huy tốt khi làm nguyên mẫu nhanh, viết script dùng một lần, học công nghệ mới hay sinh mã khuôn mẫu, nhưng không phù hợp với hệ thống doanh nghiệp, phần mềm quan trọng hay dự án cần bảo trì lâu dài. Đó cũng là lý do kỹ sư có kinh nghiệm thường khai thác AI hiệu quả hơn, vì họ đủ hiểu biết để sửa và cải thiện gợi ý của nó.
+His recommended mental model is to treat AI like a blazingly fast junior developer: a human still needs to review every output, refactor when needed, cover edge cases, and write thorough tests. He lays out practical rules: always review AI-generated code, enforce coding standards, use AI for acceleration rather than decision-making, prioritize testing, iterate and refine, recognize when to write code by hand, and document carefully. Vibe coding shines for rapid prototypes, throwaway scripts, learning a new stack, or generating boilerplate, but falls short for enterprise systems, mission-critical software, or long-lived codebases. That is also why experienced engineers get more out of AI—they know enough to spot flaws and refine its suggestions.
 
 ---
 
 ## [Event-Hidden Architectures](https://skiplabs.io/blog/event-hidden-arch)
 
-Charles Zedlewski, cố vấn của SkipLabs, cho rằng kiến trúc hướng sự kiện (event-driven) - vốn được xem là lựa chọn bắt buộc cho ứng dụng phân tán trên cloud - đã lỗi thời, và đề xuất thay bằng kiến trúc "ẩn sự kiện" (event-hidden). Ứng dụng phân tán vẫn sẽ tồn tại, nhưng việc để lập trình viên tự quản lý sự kiện gây ra nhiều khó khăn: phải xử lý luồng bất đồng bộ phức tạp, duy trì hàng đợi và schema, và gỡ lỗi xuyên qua nhiều hệ thống. Theo tác giả, sự phức tạp này từng là cái giá cần thiết vào khoảng năm 2020, nhưng giờ không còn bắt buộc nữa.
+Charles Zedlewski, an advisor to SkipLabs, argues that event-driven architecture—long treated as the default for distributed cloud applications—is showing its age, and proposes replacing it with "event-hidden" architectures. Distributed applications aren't going away, but forcing developers to manage events by hand creates constant friction: juggling complex asynchronous flows, maintaining queues and schemas, and debugging across service boundaries. In his view, that complexity was a necessary tax around 2020, but no longer has to be.
 
-Ba nhóm công nghệ giúp điều đó trở nên khả thi: ở frontend là React cùng các thư viện quản lý trạng thái; ở phía ghi dữ liệu của backend là các hệ thống thực thi bền vững (durable execution) như Temporal, Restate, DBOS, đảm bảo tính đúng đắn khi đi qua ranh giới giữa các service; ở phía đọc dữ liệu là các framework phản ứng như Skip để tổng hợp dữ liệu phân tán hiệu quả. Điểm chung của chúng là che đi chi tiết hạ tầng, xử lý phần bất đồng bộ một cách trong suốt và coi trạng thái là mối quan tâm hàng đầu. Nhờ vậy, lập trình viên viết mã nguồn đơn giản, dễ bảo trì hơn, đồng thời có thêm lợi ích như dễ quan sát, quản lý trạng thái tốt hơn và có thể phát lại hoạt động của ứng dụng. Tác giả dự đoán kiến trúc ẩn sự kiện sẽ trở thành kiến trúc mặc định cho ứng dụng web trong 10 năm tới.
+Three categories of technology make this shift possible: on the frontend, React and modern state-management libraries; on the backend write path, durable execution engines like Temporal, Restate, and DBOS that guarantee correctness across service boundaries; and on the read path, reactive frameworks like Skip that aggregate distributed data efficiently. What they share is hiding infrastructure plumbing, handling asynchrony transparently, and treating state as a first-class concern. That lets developers write simpler, more maintainable code while gaining better observability, cleaner state management, and the ability to replay application execution. Zedlewski predicts event-hidden architectures will become the default for web applications over the next decade.
 
 ---
 
 ## ~~[Lessons from Distributed Systems](https://www.16elt.com/2025/04/19/lessons-from-distributed-systems/)~~
 
-~~Bài viết từ 16elt.com chia sẻ những bài học thực tế từ việc xây dựng và vận hành distributed systems ở quy mô lớn. Tác giả tổng hợp những kinh nghiệm xương máu về các vấn đề thường gặp và cách giải quyết khi làm việc với hệ thống phân tán.~~
+~~This post from 16elt.com shares practical lessons from building and operating distributed systems at scale. The author distills hard-won experience around common failure modes and how to handle them when working with distributed architectures.~~
 
-~~**Điểm chính:**~~
-~~- Tách riêng cache clusters: tránh chia sẻ một cache cluster cho nhiều services vì workload nặng từ Service A có thể evict dữ liệu quan trọng của Service B, gây ra performance issues khó chẩn đoán~~
-~~- Sử dụng message queues: queues giúp quản lý traffic spikes và service load, cung cấp buffering và resilience giữa các services như "một người trưởng thành có trách nhiệm" ngăn chặn service overload~~
-~~- Đo lường end-to-end latency: không chỉ xem xét service response times mà còn cả "dequeue latency" - thời gian messages chờ trong queue trước khi được xử lý~~
-~~- Design for failure: expect và plan cho network và service failures tiềm tàng, implement retry policies, circuit breakers, dead-letter queues cho failed messages~~
-~~- Đảm bảo idempotency: assume message duplicates sẽ xảy ra, thiết kế hệ thống handle repeated events một cách graceful vì message queues guarantee 'at least once' delivery~~
-~~- Distributed systems đòi hỏi proactive design, robust monitoring và resilient architecture để quản lý complexity và potential failure points~~
-~~- Monitoring và observability là chìa khóa để hiểu được hành vi thực của hệ thống trong production environment~~
+~~**Key takeaways:**~~
+~~- Isolate cache clusters: avoid sharing a single cache cluster across multiple services because a heavy workload from Service A can evict critical data needed by Service B, causing hard-to-diagnose performance issues~~
+~~- Use message queues: queues absorb traffic spikes and smooth service load, providing buffering and resilience between services like "a responsible adult in the room" that prevents service overload~~
+~~- Measure end-to-end latency: look beyond service response times to include "dequeue latency"—how long messages sit waiting in a queue before processing begins~~
+~~- Design for failure: expect and plan for network and service failures by implementing retry policies, circuit breakers, and dead-letter queues for failed messages~~
+~~- Ensure idempotency: assume duplicate messages will happen and design handlers to process repeated events gracefully, since message queues typically guarantee "at least once" delivery~~
+~~- Distributed systems demand proactive design, robust monitoring, and resilient architecture to keep complexity and failure points under control~~
+~~- Monitoring and observability are key to understanding how a system actually behaves in production~~
 
 ---
 
 ## ~~[Better error handling](https://meowbark.dev/Better-error-handling)~~
 
-~~Bài viết từ meowbark.dev khám phá các phương pháp xử lý lỗi hiện đại trong software development, từ traditional try/catch cho đến các kỹ thuật tiên tiến như Go-style error handling và monadic Result types. Tác giả phân tích ưu nhược điểm của từng approach và đưa ra khuyến nghị về cách chọn lựa phương pháp phù hợp.~~
+~~This post from meowbark.dev explores modern error-handling approaches in software development, from traditional try/catch blocks to Go-style error returns and monadic Result types. The author weighs the pros and cons of each style and offers guidance on choosing the right fit.~~
 
-~~**Điểm chính:**~~
-~~- Ba approaches chính cho error handling: traditional try/catch, Go-style return tuples, và monadic Result types~~
-~~- Challenges của error handling truyền thống: thiếu type safety, unpredictable error control flow, limited type system integration~~
-~~- Go-style approach: return errors như part của tuple, explicitly handle failure scenarios, cung cấp clear error context~~
-~~- Monadic Result approach: treat errors as values, sử dụng container types như `Result<T,E>`, enable functional-style error chaining~~
-~~- Best practices quan trọng: phân biệt recoverable và unrecoverable errors, wrap external library errors sớm, sử dụng type-safe error handling mechanisms~~
-~~- Cân nhắc performance và developer experience khi chọn strategy~~
-~~- Recommended techniques: sử dụng libraries như `neverthrow` cho robust error management, implement error mapping và transformation~~
-~~- Tạo centralized error handling layers để quản lý lỗi một cách systematic~~
-~~- Chọn error handling strategy cân bằng giữa type safety, readability, và team expertise~~
-~~- Duy trì clear error communication và recovery mechanisms trong suốt application~~
+~~**Key takeaways:**~~
+~~- Three main approaches to error handling: traditional try/catch, Go-style return tuples, and monadic Result types~~
+~~- Challenges of traditional error handling: lack of type safety, unpredictable control flow, and limited integration with the type system~~
+~~- Go-style approach: return errors as part of a tuple, handle failure scenarios explicitly, and attach clear error context~~
+~~- Monadic Result approach: treat errors as values using container types like `Result<T,E>`, enabling functional-style error chaining~~
+~~- Core best practices: distinguish recoverable from unrecoverable errors, wrap external library errors early, and use type-safe error-handling mechanisms~~
+~~- Weigh performance and developer experience when picking a strategy~~
+~~- Recommended techniques: use libraries like `neverthrow` for structured error management, and implement error mapping and transformation~~
+~~- Build centralized error-handling layers to manage failures systematically~~
+~~- Choose an error-handling strategy that balances type safety, readability, and team familiarity~~
+~~- Maintain clear error communication and recovery paths across the application~~
 
 ---
 
-*Bài viết đã được viết lại bởi Claude Code với Opus 5.5 vào ngày 27/09/2026.*
+*This post was rewritten by Claude Code with Opus 5.5 on 27/09/2026.*

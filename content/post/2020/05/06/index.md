@@ -1,20 +1,20 @@
 ---
-title: "Tăng tốc độ makepkg"
+title: "Speeding Up makepkg"
 date: 2020-05-05
 tags: [ "Arch", "Linux", "AUR" ]
 ---
 
-Bài viết mình sẽ giới thiệu cách tinh chỉnh để quá trình build file từ AUR được nhanh hơn. Tuy nhiên cái lợi cũng có cái nguy cơ đi kèm, có khả năng là bạn sẽ gặp phải một lỗi gì đó, ở đâu đấy trong vài trường hợp :v
+In this post, I'll show you how to tweak your setup to make building packages from the AUR faster. However, every benefit comes with its own risks—there's a chance you might run into some random error somewhere in a few edge cases :v
 
-Để nhanh gọn, tránh dài dòng, mình sẽ hướng dẫn các bạn kiểu 'mì ăn liền' luôn nha!
+To keep things quick and to the point, I'll give you the "instant noodles" version right away!
 
-Cài đặt một số package cần thiết:
+Install a few required packages:
 
 ```shell
 yay -S ccache lzop xz pigz pbzip2 zstd
 ```
 
-Sau đó mở file `/etc/makepkg.conf`, tìm kiếm các chữ IN HOA, và sửa lại giống với dưới đây:
+Next, open `/etc/makepkg.conf`, look for the UPPERCASE variables, and update them to match the following:
 
 ```shell
 CFLAGS="-march=native -O2 -pipe -fstack-protector-strong -fno-plt"
@@ -29,6 +29,6 @@ BUILDENV=(!distcc color ccache check !sign)
 MAKEFLAGS="-j$(nproc)"
 ```
 
-Tham khảo tại : <https://wiki.archlinux.org/index.php/Makepkg>
+Reference: <https://wiki.archlinux.org/index.php/Makepkg>
 
-Chúc các bạn thành công!
+Good luck!

@@ -1,17 +1,17 @@
 ---
-title: "Mock thời gian trong Java: cách đơn giản để test logic phụ thuộc vào thời gian"
+title: "Mocking Time in Java: A Simple Way to Test Time-Dependent Logic"
 date: 2026-04-11
 tags: ["AI-Assisted", "Java", "Testing", "Clean Code"]
 categories: ["Sharing"]
 ---
 
-Khi viết code Java, có lẽ ai cũng từng gặp tình huống: logic nghiệp vụ phụ thuộc vào thời gian hiện tại — đơn hàng hết hạn sau 30 phút, voucher chỉ áp dụng trong giờ vàng, cron job chạy lúc nửa đêm, token refresh sau 1 giờ... Khi viết unit test cho những đoạn code này, bạn làm sao để "tua" thời gian tới trước hay lùi lại?
+Anyone who writes Java has probably run into this situation: business logic that depends on the current time — an order expires after 30 minutes, a voucher is only valid during happy hour, a cron job runs at midnight, a token refreshes after an hour... When writing unit tests for code like that, how do you "fast-forward" or "rewind" time?
 
-Bài này mình chia sẻ cách mình đang dùng trong dự án [mitisrv](https://github.com/tiennm99/mitisrv) — cực kỳ đơn giản, không cần framework nặng nề nào. Cảm hứng từ bài viết [Mock Java Date/Time for Testing](https://dzone.com/articles/mock-java-datetime-for-testing) trên DZone.
+In this post, I'm sharing the approach I use in my project [mitisrv](https://github.com/tiennm99/mitisrv) — super simple, with no heavy frameworks required. It was inspired by the article [Mock Java Date/Time for Testing](https://dzone.com/articles/mock-java-datetime-for-testing) on DZone.
 
-## Vấn đề
+## The Problem
 
-Giả sử bạn có đoạn code như này:
+Suppose you have a piece of code like this:
 
 ```java
 public boolean isExpired(Order order) {
@@ -19,19 +19,19 @@ public boolean isExpired(Order order) {
 }
 ```
 
-Khi test, bạn sẽ phải:
+When writing tests, you have to:
 
-- Tạo order với `expiredAt` là quá khứ → test case expired ✓
-- Tạo order với `expiredAt` là tương lai → test case còn hạn ✓
-- Nhưng còn test case "đúng thời điểm hết hạn" thì sao? Hoặc test logic chạy vào đúng 00:00 ngày mai?
+- Create an order with `expiredAt` in the past → expired test case ✓
+- Create an order with `expiredAt` in the future → still-valid test case ✓
+- But what about the test case "at the exact moment of expiration"? Or testing logic that only runs at 00:00 tomorrow?
 
-Việc gọi trực tiếp `LocalDateTime.now()` biến code thành **non-deterministic** — test chạy lúc 11h59 có thể pass, nhưng chạy lúc 00h01 lại fail. Đây là cơn ác mộng của CI/CD.
+Calling `LocalDateTime.now()` directly makes your code **non-deterministic** — a test run at 11:59 PM might pass, while the same test run at 12:01 AM fails. That's a CI/CD nightmare.
 
-## Các cách tiếp cận phổ biến
+## Common Approaches
 
-### 1. Inject `java.time.Clock`
+### 1. Injecting `java.time.Clock`
 
-Java 8+ khuyến nghị dùng `Clock` và inject vào chỗ cần:
+Java 8+ recommends using `Clock` and injecting it wherever needed:
 
 ```java
 public class OrderService {
@@ -47,9 +47,9 @@ public class OrderService {
 }
 ```
 
-Trong test, dùng `Clock.fixed(...)` để cố định thời gian. **Ưu điểm:** sạch sẽ, đúng chuẩn. **Nhược điểm:** phải sửa toàn bộ code base để inject `Clock` vào từng class, rất phiền nếu dự án đã lớn.
+In tests, you use `Clock.fixed(...)` to pin the time. **Pros:** clean and idiomatic. **Cons:** you have to touch the entire codebase to inject `Clock` into every class that needs it, which is a pain in a large existing project.
 
-### 2. Mock static với PowerMock/Mockito
+### 2. Static Mocking with PowerMock/Mockito
 
 ```java
 try (MockedStatic<LocalDateTime> mocked = mockStatic(LocalDateTime.class)) {
@@ -58,15 +58,15 @@ try (MockedStatic<LocalDateTime> mocked = mockStatic(LocalDateTime.class)) {
 }
 ```
 
-**Ưu điểm:** không cần sửa code production. **Nhược điểm:** static mocking chậm, dễ leak giữa các test, và `mockStatic` chỉ support từ Mockito 3.4+. Nếu code gọi `LocalDate.now()`, `Instant.now()`, `ZonedDateTime.now()` xen kẽ thì phải mock từng cái.
+**Pros:** no changes to production code. **Cons:** static mocking is slow, easy to leak across tests if you're not careful, and `mockStatic` requires Mockito 3.4+. Plus, if your code mixes `LocalDate.now()`, `Instant.now()`, and `ZonedDateTime.now()`, you have to mock each one separately.
 
-### 3. Custom Time utility với delta offset
+### 3. Custom `Time` Utility with a Delta Offset
 
-Đây là cách mà mình chọn cho mitisrv. Ý tưởng: tạo một class `Time` thay thế cho tất cả cách lấy thời gian hiện tại, và bên trong lưu một `deltaMillis` — độ lệch giữa "thời gian giả" và thời gian thật của hệ thống.
+This is the approach I chose for mitisrv. The idea: create a `Time` class that replaces all calls to get the current time, and internally store a `deltaMillis` — the offset between "mock time" and the actual system time.
 
-## Implementation trong mitisrv
+## Implementation in mitisrv
 
-Đây là toàn bộ file [`Time.java`](https://github.com/tiennm99/mitisrv/blob/main/src/main/java/com/miti99/mitisrv/util/time/Time.java):
+Here is the complete [`Time.java`](https://github.com/tiennm99/mitisrv/blob/main/src/main/java/com/miti99/mitisrv/util/time/Time.java) file:
 
 ```java
 package com.miti99.mitisrv.util.time;
@@ -123,16 +123,16 @@ public class Time {
 }
 ```
 
-Một vài điểm đáng chú ý:
+A few notable details:
 
-- **Tất cả các API lấy thời gian** (`currentDate`, `currentDateTime`, `currentInstant`, v.v.) đều chạy qua một hàm duy nhất: `currentTimeMillis()`. Chỉ cần một chỗ "mock" là cả hệ thống đồng bộ.
-- **`deltaMillis` là `volatile`** để đảm bảo thay đổi được thấy ngay lập tức giữa các thread — quan trọng khi test trên môi trường multi-thread.
-- **`useMockTime()` không đóng băng** thời gian, mà chỉ **dịch chuyển** nó. Nghĩa là sau khi set mock tới `2026-01-01 00:00:00`, nếu chờ 5 giây thật thì `Time.currentDateTime()` sẽ trả về `2026-01-01 00:00:05`. Đây là điểm khác biệt quan trọng so với `Clock.fixed()` — time vẫn "chảy" nhưng từ một điểm bắt đầu khác.
-- **`useSystemDefaultZoneClock()` reset** về thời gian thật, gọi ở `@AfterEach` để test case không ảnh hưởng nhau.
+- **Every time-fetching API** (`currentDate`, `currentDateTime`, `currentInstant`, etc.) funnels through a single method: `currentTimeMillis()`. Mocking that one place keeps the entire system in sync.
+- **`deltaMillis` is `volatile`** to ensure changes are immediately visible across threads — important when testing in multi-threaded environments.
+- **`useMockTime()` doesn't freeze time** — it **shifts** it. That means if you mock the time to `2026-01-01 00:00:00` and wait 5 real seconds, `Time.currentDateTime()` will return `2026-01-01 00:00:05`. That's an important difference from `Clock.fixed()` — time still flows naturally, just starting from a different point.
+- **`useSystemDefaultZoneClock()` resets** back to real system time; call it in `@AfterEach` so test cases don't bleed into one another.
 
-## Cách dùng
+## How to Use It
 
-Trong code production, thay vì gọi `LocalDateTime.now()` thì gọi `Time.currentDateTime()`:
+In production code, instead of calling `LocalDateTime.now()`, call `Time.currentDateTime()`:
 
 ```java
 public boolean isExpired(Order order) {
@@ -140,7 +140,7 @@ public boolean isExpired(Order order) {
 }
 ```
 
-Trong test:
+In your test:
 
 ```java
 @Test
@@ -148,7 +148,7 @@ void orderShouldBeExpiredAfter30Minutes() {
   Order order = new Order();
   order.setExpiredAt(LocalDateTime.of(2026, 1, 1, 12, 30, 0));
 
-  // "Tua" thời gian tới 12:31
+  // "Fast-forward" time to 12:31
   Time.useMockTime(
       LocalDateTime.of(2026, 1, 1, 12, 31, 0),
       ZoneId.systemDefault()
@@ -160,7 +160,7 @@ void orderShouldBeExpiredAfter30Minutes() {
 }
 ```
 
-Dùng `@AfterEach` để đảm bảo reset đúng cách:
+Use `@AfterEach` to make sure it always resets cleanly:
 
 ```java
 @AfterEach
@@ -169,35 +169,35 @@ void tearDown() {
 }
 ```
 
-## So sánh các approach
+## Comparing the Approaches
 
-| Tiêu chí | `Clock` inject | `mockStatic` | Custom `Time` util |
+| Criterion | `Clock` injection | `mockStatic` | Custom `Time` util |
 |---|---|---|---|
-| Cần sửa code production | Nhiều (inject Clock) | Không | Một lần (replace `.now()`) |
-| Phụ thuộc framework | Không | Mockito 3.4+ | Không |
-| Test speed | Nhanh | Chậm | Nhanh |
-| Hỗ trợ time trôi | Không (Clock.fixed) | Không | Có |
-| Thread-safe | Có | Có (trong scope) | Có (volatile) |
-| Đúng "Java way" | ✓✓✓ | ✓ | ✓ |
+| Production code changes | Heavy (inject Clock everywhere) | None | One-off (replace `.now()`) |
+| Framework dependency | None | Mockito 3.4+ | None |
+| Test speed | Fast | Slow | Fast |
+| Time continues flowing | No (`Clock.fixed`) | No | Yes |
+| Thread-safe | Yes | Yes (scoped) | Yes (`volatile`) |
+| Idiomatic "Java way" | ✓✓✓ | ✓ | ✓ |
 
-## Nhược điểm của custom `Time` util
+## Downsides of the Custom `Time` Util
 
-Không có cách nào hoàn hảo. Cách này cũng có vài điểm yếu:
+No approach is perfect, and this one has a few trade-offs too:
 
-- **Global state**: `deltaMillis` là `static`, nên nếu chạy test song song trong cùng JVM (parallel test), các test sẽ "giẫm chân" nhau. Nếu cần parallel, phải cấu hình test framework chạy mỗi class trong JVM riêng, hoặc dùng `ThreadLocal` thay cho `volatile`.
-- **Phải sửa toàn bộ code** để không gọi trực tiếp `LocalDateTime.now()` nữa. Nếu lỡ có thư viện bên thứ ba gọi `.now()` thì util này không control được.
-- **Không chuẩn Java**: người mới vào dự án có thể ngạc nhiên khi thấy `Time.currentDateTime()` thay vì `LocalDateTime.now()`.
+- **Global state**: `deltaMillis` is `static`, so if you run tests in parallel within the same JVM, tests will step on each other's toes. If you need parallel execution, you either have to configure your test runner to fork a separate JVM per class, or replace `volatile` with `ThreadLocal`.
+- **Requires codebase-wide discipline** not to call `LocalDateTime.now()` directly anymore. And if a third-party library calls `.now()` internally, this utility won't control it.
+- **Not standard Java**: newcomers to the project might be surprised to see `Time.currentDateTime()` instead of `LocalDateTime.now()`.
 
-## Khi nào nên dùng cách nào?
+## When Should You Use Which?
 
-- **Dự án mới, nhỏ, team quen DI**: dùng `Clock` inject cho đúng chuẩn.
-- **Dự án legacy, không muốn refactor lớn**: dùng `mockStatic` cục bộ cho từng test, chấp nhận chậm.
-- **Dự án muốn vừa đơn giản vừa kiểm soát được time flow, chạy test sequential**: dùng custom `Time` util như mitisrv.
+- **New or small project, team comfortable with DI**: use `Clock` injection for the clean, standard approach.
+- **Legacy project where you want to avoid a big refactor**: use `mockStatic` locally in individual tests and accept the slower execution.
+- **Project where you want both simplicity and flowing time, running tests sequentially**: use a custom `Time` util like in mitisrv.
 
-Với mình, `Time` util đơn giản, dễ hiểu, dễ maintain, và không cần học thêm framework. Trade-off là phải kỷ luật khi viết code — luôn gọi `Time.xxx()` thay vì `LocalDateTime.now()`. Một lint rule đơn giản trong PR review là đủ để giữ được quy tắc này.
+For me, the `Time` utility is simple, easy to understand, easy to maintain, and doesn't require learning another framework. The trade-off is maintaining discipline when writing code — always calling `Time.xxx()` instead of `LocalDateTime.now()`. A simple lint rule or check during PR review is enough to keep that habit intact.
 
-## Tham khảo
+## References
 
 - [Mock Java Date/Time for Testing - DZone](https://dzone.com/articles/mock-java-datetime-for-testing)
-- [`Time.java` trong mitisrv](https://github.com/tiennm99/mitisrv/blob/main/src/main/java/com/miti99/mitisrv/util/time/Time.java)
+- [`Time.java` in mitisrv](https://github.com/tiennm99/mitisrv/blob/main/src/main/java/com/miti99/mitisrv/util/time/Time.java)
 - [Java `Clock` documentation](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/time/Clock.html)

@@ -149,13 +149,13 @@ as a local-stage failure, so the proxy still gets its turn.
 | 1 | both stages failed |
 | 2 | bad arguments |
 
-### `post-stats <path/to/index.md>`
+### `post-stats <path/to/index.vi.md>`
 
 Counts what a post already holds, so a handler can report a running tally.
 
 ```json
 {
-  "post": "content/post/2026/09/10/index.md",
+  "post": "content/post/2026/09/10/index.vi.md",
   "newsletter": 132,
   "articles": 8,
   "images": 3,
@@ -167,7 +167,7 @@ Counts what a post already holds, so a handler can report a running tally.
 
 `newsletter` is `0` when the post carries no `Newsletter #N` heading.
 
-### `protected-lines <path/to/index.md> [--against <snapshot.json>]`
+### `protected-lines <path/to/index.vi.md> [--against <snapshot.json>]`
 
 Lists the lines a rewrite (`mt-rewrite-newsletter`) must keep byte-for-byte:
 frontmatter, headings (except `###` sub-headings inside a summary), HTML blocks
@@ -180,7 +180,7 @@ protected.
 
 ```json
 {
-  "post": "content/post/2025/03/16/index.md",
+  "post": "content/post/2025/03/16/index.vi.md",
   "newsletter": 7,
   "newsletter_post": true,
   "note": "*Bài viết đã được review và cập nhật bởi Claude Code với Opus 4.7 (1M context).*",
@@ -196,8 +196,8 @@ the post still contains every snapshot line, in order, and prints
 
 ### `translation-status [--lang en] [--category <name>] [path...]`
 
-Lists Vietnamese sources (`index.md`, `_index.md`) under `content/` (or the
-given paths) whose translation `index.<lang>.md` is missing or stale. `--category`
+Lists Vietnamese sources (`index.vi.md`, `_index.vi.md`) under `content/` (or the
+given paths) whose translation (`index.md` for English, `index.<lang>.md` otherwise) is missing or stale. `--category`
 keeps only posts whose frontmatter `categories` names it.
 
 ```json
@@ -205,11 +205,11 @@ keeps only posts whose frontmatter `categories` names it.
   "lang": "en",
   "total": 205,
   "translated": 203,
-  "missing": ["content/post/2026/11/16/index.md"],
+  "missing": ["content/post/2026/11/16/index.vi.md"],
   "stale": [
     {
-      "source": "content/post/2026/10/07/index.md",
-      "translation": "content/post/2026/10/07/index.en.md",
+      "source": "content/post/2026/10/07/index.vi.md",
+      "translation": "content/post/2026/10/07/index.md",
       "since": "f94bac3…"
     }
   ]
@@ -221,9 +221,9 @@ or the source has uncommitted changes while the translation does not. `since` is
 the translation's last commit, so `git diff <since> -- <source>` shows what to
 mirror.
 
-### `translation-check <index.md> [--lang en]`
+### `translation-check <index.vi.md> [--lang en]`
 
-Checks that `index.<lang>.md` keeps the source's structure and prints
+Checks that the translation keeps the source's structure and prints
 `{ source, translation, newsletter, ok, problems }`; exit 2 when `problems` is
 not empty. It requires:
 

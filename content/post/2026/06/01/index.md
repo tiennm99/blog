@@ -1,20 +1,20 @@
 ---
-title: "Thử viết newsletter bằng nhiều AI coding tool khác nhau"
+title: "Trying Different AI Coding Tools to Write My Newsletter"
 date: 2026-06-01
 tags: ["AI-Assisted", "Claude Code", "Codex", "OpenCode", "DeepSeek", "Gemini CLI", "Antigravity"]
 categories: ["Sharing"]
 ---
 
-Từ hôm nay, mình sẽ thử viết newsletter bằng nhiều AI coding tool khác nhau: **Claude Code**, **Codex**, **OpenCode** và **Gemini CLI / Antigravity**. Lý do là để **tận dụng tối đa giá trị các gói subscription** mình đang trả tiền. Thay vì chỉ dùng một công cụ rồi để các gói khác "nằm không", mình sẽ ưu tiên xài tất cả các gói mình đã mua, nhất gói nào còn dư usage nhiều để tránh lãng phí.
+Starting today, I'm going to rotate through several AI coding tools to write my newsletter: **Claude Code**, **Codex**, **OpenCode**, and **Gemini CLI / Antigravity**. The goal is to **get the most value out of my active subscriptions**. Instead of relying on a single tool while leaving the others idle, I'll spread the work across all the plans I've paid for—prioritizing whichever subscription has the most remaining quota so nothing goes to waste.
 
 ## OpenCode + OpenCode Go
 
-Với **OpenCode**, mình dùng **OpenCode Go** làm provider. Provider này có sẵn khá nhiều model Trung Quốc, nên mình có thêm lựa chọn để thử nghiệm các model khác nhau. Model hiện tại mình dùng trong gói này là **DeepSeek V4 Pro**. Nghe bảo DeepSeek vừa ngon lại vừa rẻ, để thử xem thế nào nhé! 😉
+For **OpenCode**, I'm using **OpenCode Go** as the provider. It includes a solid lineup of Chinese models, giving me more options to experiment with. Right now, I'm using **DeepSeek V4 Pro** on this plan. Word is that DeepSeek is both capable and affordable, so let's see how it holds up! 😉
 
 ## Gemini CLI → Antigravity
 
-Mình cũng dùng **Gemini CLI** — AI coding tool từ Google. Tuy nhiên, Google đã [thông báo deprecate Gemini CLI từ 19/5](https://blog.google/technology/developers/antigravity/), và sẽ **ngừng phục vụ từ 18/6/2026**. Thay thế là **Antigravity CLI** (`agy`) — viết lại bằng Go, nhanh hơn, hỗ trợ multi-agent workflow tốt hơn. Mình đã bắt đầu chuyển sang Antigravity rồi.
+I've also been using **Gemini CLI**—Google's AI coding tool. However, Google [announced the deprecation of Gemini CLI on May 19](https://blog.google/technology/developers/antigravity/), and it will be **shut down on June 18, 2026**. Its replacement is **Antigravity CLI** (`agy`), rewritten in Go for faster performance and better multi-agent workflow support. I've already started migrating over to Antigravity.
 
-## Tiếp theo
+## What's Next
 
-Mình sẽ chia sẻ thêm cảm nhận sau một thời gian xoay vòng giữa các công cụ. Stay tuned!
+I'll share more thoughts after rotating through these tools for a while. Stay tuned!

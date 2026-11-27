@@ -1,39 +1,39 @@
 ---
-title: "Nhận ảnh kết quả miễn phí từ mazebrite.com"
+title: "Getting Free Result Images from mazebrite.com"
 date: 2022-11-27
 tags: [ "Tip", "Trick" ]
 ---
 
-[mazebrite.com](https://mazebrite.com/) là một trang web tạo ra mê cung với thông điệp ẩn khá hay ho. Nhưng mazebrite sẽ lấy phí là $0.99 cho mỗi kết quả. Như này:
+[mazebrite.com](https://mazebrite.com/) is a pretty cool website that generates mazes with hidden messages. However, Mazebrite charges $0.99 for each result, like this:
 
-![Mazebrite tính phí](img/1.png)
+![Mazebrite pricing](img/1.png)
 
-Nên post này sẽ giới thiệu cách nhận ảnh kết quả miễn phí từ [mazebrite.com](https://mazebrite.com/).
+So in this post, I'll show you how to get the result images from [mazebrite.com](https://mazebrite.com/) for free.
 
 #### Note:
-1. Trick này hoạt động được trong thời điểm hiện tại (28/11/2022), còn tương lai thì chưa biết :D
-2. MiTi giới thiệu trick lấy được ảnh, còn bản quyền này nọ thì bạn tự chịu trách nhiệm nhé :D
+1. This trick works as of right now (28/11/2022), no guarantees about the future :D
+2. MiTi is just sharing the trick to grab the images; as for copyright and whatnot, you're on your own :D
 
 #### Let's go!
 
-1. Truy cập [mazebrite.com](https://mazebrite.com/) và tạo mê cung như bình thường.
+1. Go to [mazebrite.com](https://mazebrite.com/) and generate a maze as usual.
 
-![Tạo mê cung](img/2.png)
+![Create a maze](img/2.png)
 
-Bạn sẽ nhận được 3 bức ảnh với watermark như này:
+You will get 3 watermarked images like this:
 
-![Kết quả với watermark](img/3.png)
+![Watermarked results](img/3.png)
 
-2. Truy cập Inspect, bằng cách chuột phải -> chọn Inspect hoặc nhấn phím tắt (F12), hoặc Ctrl + Shift + I. Sau đó chọn tab Elements. Ở đây tìm đến tag <div> có id __MazeSolution__ Đoạn mình gạch dưới như hình dưới là link của image.
+2. Open Inspect by right-clicking -> selecting Inspect, or pressing the shortcut key (F12) or Ctrl + Shift + I. Then switch to the Elements tab. Find the `<div>` tag with the id __MazeSolution__. The underlined part in the screenshot below is the image link.
 
 ![Inspect](img/4.png)
 
-Giờ mình bỏ từ _Tester_, sau đó ghép với cụm mazebrite.com, ta được link ảnh kết quả. VD: như với hình trên, Tiến được 3 link sau:
+Now, remove the word _Tester_ and prepend `mazebrite.com` to get the full result image URLs. For example, from the screenshot above, I got these 3 links:
 - [https://www.mazebrite.com/SavedMazes/j0uo5hMITI*VIVIhPINK-Solution.png](https://www.mazebrite.com/SavedMazes/j0uo5hMITI*VIVIhPINK-Solution.png)
-![Kết quả 1](img/5.png)
+![Result 1](img/5.png)
 - [https://www.mazebrite.com/SavedMazes/j0uo5hMITI*VIVIhPINK-Clues.png](https://www.mazebrite.com/SavedMazes/j0uo5hMITI*VIVIhPINK-Clues.png)
-![Kết quả 2](img/6.png)
+![Result 2](img/6.png)
 - [https://www.mazebrite.com/SavedMazes/j0uo5hMITI*VIVIhPINK-Bare.png](https://www.mazebrite.com/SavedMazes/j0uo5hMITI*VIVIhPINK-Bare.png)
-![Kết quả 3](img/7.png)
+![Result 3](img/7.png)
 
-Chúc các bạn thành công. Ủng hộ MiTi tại site này và [Facebook](https://www.facebook.com/tiennm99) nhé.
+Good luck! Support MiTi on this site and on [Facebook](https://www.facebook.com/tiennm99).

@@ -25,8 +25,8 @@ import {
 } from "./lib/render-projects.js";
 
 const pages = [
-  { language: "vi", file: "content/page/projects/index.md" },
-  { language: "en", file: "content/page/projects/index.en.md" },
+  { language: "vi", file: "content/page/projects/index.vi.md" },
+  { language: "en", file: "content/page/projects/index.md" },
 ];
 
 // Namespaces whose deployments are previews of work in progress, so linking to

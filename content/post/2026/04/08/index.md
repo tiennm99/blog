@@ -1,23 +1,23 @@
 ---
-title: "Fix Gradle test crash do hết RAM: config maxHeapSize"
+title: "Fixing Gradle Test Crashes Due to Out of Memory: Configuring maxHeapSize"
 date: 2026-04-08
 tags: ["AI-Assisted", "Gradle", "Java", "Testing"]
 categories: ["Sharing"]
 ---
 
-Một mẹo nhỏ mình tìm ra lâu rồi nhưng giờ mới có dịp chia sẻ lại.
+A quick tip I figured out a long time ago and am finally getting around to sharing.
 
-## Vấn đề
+## Problem
 
-Khi chạy `./gradlew test`, thỉnh thoảng test bị crash giữa chừng với `OutOfMemoryError` hoặc worker process "disappeared unexpectedly". Chạy lại thì khi pass khi fail, rất flaky.
+When running `./gradlew test`, tests occasionally crash mid-run with an `OutOfMemoryError` or a message that the worker process "disappeared unexpectedly". Re-running them sometimes passes and sometimes fails — super flaky.
 
-## Nguyên nhân
+## Cause
 
-Gradle chạy test trong một JVM worker riêng, và heap size mặc định khá nhỏ (thường chỉ 512MB). Test suite nặng (Spring context, H2, nhiều test data...) sẽ dễ đụng trần.
+Gradle runs tests in a separate JVM worker process whose default heap size is fairly small (usually just 512MB). A heavy test suite (Spring context, H2, lots of test data, etc.) can easily hit that ceiling.
 
-## Cách fix
+## How to Fix
 
-Thêm vào `build.gradle`:
+Add this to `build.gradle`:
 
 ```groovy
 test {
@@ -25,7 +25,7 @@ test {
 }
 ```
 
-Hoặc `build.gradle.kts`:
+Or in `build.gradle.kts`:
 
 ```kotlin
 tasks.test {
@@ -33,4 +33,4 @@ tasks.test {
 }
 ```
 
-Xong. Nếu vẫn crash thì tăng lên `"2048m"`.
+Done. If it still crashes, bump it up to `"2048m"`.

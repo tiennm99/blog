@@ -4,12 +4,12 @@ date: 2020-04-20
 tags: [ "Arch", "Linux", "SSD" ]
 ---
 
-Package `util-linux` cung cấp `fstrim.service` và `fstrim.timer` trong `systemd` rồi, nên để sử dụng bạn chỉ cần chạy `fstrim.timer` là đủ. Thực hiện như sau:
+The `util-linux` package already provides `fstrim.service` and `fstrim.timer` for `systemd`, so all you need to do is enable `fstrim.timer`. Run the following command:
 
 ```shell
 sudo systemctl enable fstrim.timer
 ```
 
-Thời gian mặc định là 1 tuần
+By default, it runs once a week.
 
-Hẹn gặp lại!
+See you next time!

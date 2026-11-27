@@ -1,97 +1,97 @@
 ---
-title: "Lần đầu build một bộ PC"
+title: "Building a PC for the First Time"
 date: 2021-11-17
 tags: [ "PC" ]
 ---
 
-__Hiện MiTi cũng mới nhận được máy hôm nay thôi, nên còn bận cài máy, mà háo hức quá nên tối nay viết tạm bợ một bài, trong vài ngày tới sẽ chỉnh sửa lại cho hoàn thiện hơn__
+__MiTi just received the PC today and is still busy setting it up, but I'm so excited that I'm throwing together a quick draft tonight and will polish it up over the next few days__
 
-Đã lâu rồi, gần 1 năm rưỡi từ blog cũ và 1 tháng rưỡi kể từ bài chuyển blog mà chẳng có thêm bài viết nào. Sẵn tiện MiTi vừa build 1 con PC xong, MiTi sẽ kể các bạn nghe chuyện "Lần đầu mình build một bộ PC"
+It's been a long time—nearly a year and a half since my old blog and a month and a half since the blog migration post—with no new posts at all. Since MiTi just finished building a PC, I'll tell you the story of "Building a PC for the first time".
 
-__Bài viết do một Amateur vừa nhập môn build PC nên có không vừa ý điểm nào xin gạch đá nhẹ tay__
+__This post is written by an amateur who just got into PC building, so if anything seems off, please go easy on me__
 
-__Tác giả cũng là một người học văn rất dở, nên câu cú lủng củng, dàn ý không lôi cuốn, xin gạch đá nhẹ tay__
+__The author was also terrible at literature in school, so if the phrasing is awkward and the outline isn't captivating, please go easy on me__
 
-__(Nói thế chứ nếu chán thì hẳn đã tắt tab trình duyệt luôn cho rồi :))))__
+__(That said, if you find it boring, you've probably closed the browser tab already :))))__
 
-__Bài viết khá dài, hài và xàm (do phần bình luận trong ngoặc như này), nên rất cảm ơn nếu bạn chịu khó đọc đến cuối__
+__This post is pretty long, silly, and rambly (mostly because of parenthetical side comments like this one), so thank you very much if you make it all the way to the end__
 
-# Khởi nguồn
-Là một thằng học IT, thì ghiền PC với mình như một lẽ thường tình. Đã thích lâu rồi, nhưng không có điều kiện thui. Sẵn mấy tháng dịch chi tiêu dè sẻn có dành dụm được tí tiền, nên muốn làm 1 con PC để thoả mãn đam mê. (Mê tới nỗi từ ngày lên đơn hàng đến lúc được giao PC ngày nào cũng mở lên viết bài này, thành ra nó mới dài như vầy đó :v Này phải làm Vlog hẳn hoi chắc sẽ xịn hơn, nhưng MiTi lại là người thích chơi với chữ hơn là hình ảnh (khó khăn lắm mới chịu khó bỏ ảnh vào bài viết đó nha :v)) Sau gần 1 tháng tìm hiểu về lĩnh vực này, thì cũng biết chút đỉnh về linh kiện này nọ.
+# How It Started
+As an IT guy, being obsessed with PCs comes naturally to me. I've wanted one for a long time, I just couldn't afford it. After a few months of spending frugally during the pandemic lockdown, I managed to save up a bit of money and wanted to build a PC to satisfy my passion. (I was so hyped that from the day I placed the order until the day the PC was delivered, I opened this draft every single day to write—which is why it turned out this long :v Doing a proper vlog would probably be cooler, but MiTi prefers playing with words over visuals (it took a lot of effort just to bother putting photos into this post :v)) After nearly a month of researching the topic, I finally knew a thing or two about components and specs.
 
-# Định hình cấu hình
-Với tình hình VGA còn đang trong thời bão giá, nên cũng không định mua vì cũng không cần thiết lắm, mua về kẻo lại "cài game vào để test card màn hình" :))) (mà lí do thật ra là khá ngán tiền :v) Sẵn hóng hớt thấy AMD có ra dòng APU Ryzen 5 5600G với Ryzen 7 5700G không card màn hình, mà hiệu năng cũng ngang ngửa GTX 1030, thấy cũng khoái. Chấm ngay con Ryzen 7 5700G làm yếu tố tiên quyết (chơi thì chơi lớn tí, mốt có muốn nâng cấp gì thêm lại đỡ phải đổi con CPU). Thế là đỡ được phần tiền VGA, khỏi phải lo nghĩ cân nhắc mua VGA cùi rồi nâng cấp sau hay chơi lớn mua cái thiệt xịn gì đó rồi lại trả góp hay đổ nợ :'(. Nhưng rồi lại phải chắm thêm cặp RAM 2x16GB 3200Mhz cho cân xứng, để tối ưu được hiệu năng (hồi Work Frome Home con Macbook 16GB RAM vừa chạy IDE vừa chạy giả lập bị hụt RAM luôn @@ nên sẵn chơi lớn cho đã :D), sắp build lại thấy Kingston có quà tặng kèm khi mua RAM, thế là chấm ngay cặp RAM Kingston Fury Beast (không dám lên Renegade tại cũng ngán tiền). Mainboard thì cắm dòng B550 support AM4 mà giá tầm trung là được rồi, chứ dòng Z tầm cao quá lại với không tới :| Còn ổ cứng thì SSD là tiên quyết rồi, mà sẵn chơi thì cũng tính chơi luôn một con SSD M2 cho nó... nhanh :))) Samsung EVO khá là hot, top tốc độ nhưng nhìn tầm giá Kingston vừa túi hơn, lại đang khuyến mãi quà, nên lao theo Kingston luôn (kẻ bị quà dụ :'()
+# Figuring Out the Specs
+With GPU prices still sky-high, I didn't plan on buying one since I didn't really need it anyway—buying one might just give me an excuse to "install games to test the graphics card" :))) (though the real reason is that my wallet was crying :v). Snooping around, I saw that AMD had released the Ryzen 5 5600G and Ryzen 7 5700G APUs with integrated graphics performing roughly on par with a GTX 1030, which looked pretty sweet. I immediately locked in the Ryzen 7 5700G as my core component (if I'm doing this, might as well go big so I won't have to swap out the CPU when upgrading later). That saved me the GPU money and spared me the headache of debating whether to buy a cheap placeholder GPU now and upgrade later, or splurge on a high-end card and end up paying installments in debt :'(. Next, I had to pair it with 2x16GB 3200MHz RAM to match and get optimal performance (back when I was working from home, my 16GB RAM MacBook ran out of memory running an IDE and an emulator at the same time @@ so I figured I'd go all out for peace of mind :D). Right as I was planning the build, I saw Kingston offering freebies with RAM purchases, so I immediately picked the Kingston Fury Beast kit (didn't dare step up to the Renegade line because, again, money). For the motherboard, a mid-range B550 board supporting AM4 was plenty—high-end series were way out of reach :| As for storage, an SSD was a must, and while I was at it, I figured I'd go with an M.2 SSD for... speed :))) The Samsung EVO is super popular and top-tier in speed, but Kingston fit my budget better and also came with promotional freebies, so I jumped on Kingston too (a total sucker for free gifts :'()
 
-# Dự định các phần cứng
-Sau một thời gian thì thấy người ta chơi ITX phê quá, cũng muốn đầu tư, đi dạo trên mạng, tổng hợp thông tin, thì thích mê con Cooler Master MasterBox NR200P (bản MAX thích hơn do có kèm tản nhiệt với nguồn, mà thấy tại VN chẳng có bán) với con NZXT H210. Định là cửa hàng có bán case nào thì sẽ chơi full combo nguồn với tản nhiệt hãng đó luôn, vì CM lẫn NZXT đều nổi tiếng cả. Mà tản nhiệt thì phải là tản nhiệt nước AIO, để tận hưởng cái đẹp :D. Hi sinh vì cái đẹp là xứng đáng UwU
-- CM MB NR200P thì mua nguồn SFX (loại size nhỏ cho ITX), giá khá chát; tản nhiệt
-- NZXT H210 thì mua nguồn full modular của NZXT, giá cũng chát luôn, cơ mà case thì được cái chịu được nguồn của ATX, nhưng giá nguồn vẫn mắc -_-
+# Planned Hardware
+After looking around for a while, I saw people building ITX rigs and fell in love. Wanting to invest in one myself, I browsed the web, gathered info, and fell head over heels for the Cooler Master MasterBox NR200P (I liked the MAX version even more since it bundles a cooler and PSU, but it didn't seem to be sold in Vietnam) and the NZXT H210. My plan was that whichever case the store had in stock, I'd go with a full matching PSU and cooler combo from that same brand, since both CM and NZXT are well-known. And the cooler had to be an AIO liquid cooler, just to enjoy the aesthetics :D. Sacrificing for aesthetics is totally worth it UwU
+- For the CM MB NR200P, I'd need an SFX PSU (the compact size for ITX), which is pretty pricey; plus a cooler.
+- For the NZXT H210, I'd get an NZXT full modular PSU, also pricey, though at least the case supports standard ATX PSUs—still expensive though -_-
 
-Rồi nhìn lại nếu vậy thì Mainboard cũng phải size ITX, chứ size ATX với m-ATX thì sẽ không vừa, giá mấy mainboard ITX này thì cũng khá là chua so với main thông thường, mà, vì cái đẹp nên hi sinh tí cũng được :v
+Then I realized that going this route meant the motherboard also had to be ITX, since ATX and m-ATX wouldn't fit. ITX motherboards are quite steep compared to regular ones, but hey, a little sacrifice for aesthetics is fine :v
 
-## Tổng kết thì hình dung hòm hòm cấu hình nó như sau
+## In summary, the rough build in my head looked like this
 - CPU: AMD Ryzen 7 5700G
 - RAM: Kingston Fury Beast 2x16G
-- Mainboad: 1 trong 3:
+- Motherboard: 1 of the following 3:
   + ASROCK B550M-ITX/ac
   + ASUS ROG STRIX B550-I GAMING
   + GIGABYTE B550I AORUS PRO AX
-- Ổ cứng: SSD SSD Kingston NV1 500GB M.2 PCIe NVMe
-- Case: NZXT H210 (i cũng được) hoặc Cooler Master MasterBox NR200P
-- PSU: Tuỳ case mà sẽ của CM dòng SFX hoặc NZXT, từ 650-750W
-- Tản nhiệt nước AIO: Tuỳ case mà sẽ là Cooler Master MASTERLIQUID ML240L V2 ARGB hoặc Tản nhiệt nước NZXT AIO Kraken X53
+- Storage: Kingston NV1 500GB M.2 PCIe NVMe SSD
+- Case: NZXT H210 (the i version works too) or Cooler Master MasterBox NR200P
+- PSU: Depending on the case, either a CM SFX series or NZXT, 650-750W
+- AIO Liquid Cooler: Depending on the case, either a Cooler Master MASTERLIQUID ML240L V2 ARGB or NZXT AIO Kraken X53
 
-# Lựa chọn cửa hàng để mua
-Đây cũng là một vấn đề nan giải, vì chưa có kinh nghiệm mua lần nào nên không có định hướng lắm. Cũng cân nhắc nhiều nơi nổi tiếng đã biết từ trước:
-- Phong Vũ: xưa giờ mua đồ ở đây khá nhiều, lần bảo hành laptop cũng ok phết
-- GearVN: có kênh Youtube khá là xịn xò, mình học hỏi từ kênh này cũng rất nhiều, đã từng mua chuột và bàn phím hồi mới đi làm, xài khá tốt
-- Hà Nội Computer
-- An Phát PC
+# Choosing Where to Buy
+This was another tough puzzle—since I had zero prior buying experience, I didn't really know where to start. I considered several famous stores I already knew about:
+- Phong Vu: I've bought quite a lot of stuff here over the years, and the one time I had a laptop serviced under warranty went pretty smoothly
+- GearVN: They have a really slick YouTube channel that I learned a ton from, and I bought a mouse and keyboard from them when I first started working, which have held up well
+- Hanoi Computer
+- An Phat PC
 -...
-Cả mấy chỗ vừa mới biết đến khi đang tìm hiểu qua diễn đàn, Youtube,... nữa:
-- Tin học ngôi sao (lên diễn đàn nghe nói chỗ này bán rẻ lắm, mà khâu bảo hành phốt lại nhiều :'()
-- Nguyễn Công PC (biết qua kênh Youtube AMTech)
-- TNC Store (cũng Youtube)
-- Tân Doanh
-- Tân Thành Danh
+Along with several places I just discovered while browsing forums, YouTube, etc.:
+- Tin Hoc Ngoi Sao (heard on forums that their prices are super cheap, but there are lots of warranty horror stories :'()
+- Nguyen Cong PC (found via the AMTech YouTube channel)
+- TNC Store (also YouTube)
+- Tan Doanh
+- Tan Thanh Danh
 -...
-Trong đó có mấy chỗ tìm hiểu xong mới biết nó chỉ có cửa hàng ở Hà Nội nữa @@
+Only after researching did I realize a few of those only had stores in Hanoi @@
 
-Rốt cuộc mình chốt là GearVN, vì các lý do:
-- Khá nổi tiếng, phần marketing làm quá tốt luôn (và nổi tiếng thật, bữa đi mua ở đây chờ hàng dài luôn, do GVN có cơ chế làm là vào mua hàng sẽ có 1 nhân viên phụ trách tư vấn, lên đơn, bán hàng,... chứ không như nhiều chỗ khác, rồi còn dịch nữa, nên khá hạn chế mặt này, may bữa đi buổi chiều chứ không chịu nắng chảy mỡ luôn @@)
-- Uy tín, hàng mới, chính hãng, không fake (cái này chắc là trùng lặp dòng trên rồi :D)
-- Các linh kiện mình liệt kê bên trên đều còn hàng (ít nhất là trên website để như vậy, còn sự thật thì... chờ đọc phần đi mua hàng nhé :))))
-- Phần chăm sóc khách hàng được đánh giá khá tốt (và bữa gọi điện cũng thấy tốt thật, tí nữa kể sau), như một cái bảo hiểm vậy, đầu tư để đó chứ không cần dùng đến vẫn hơn (như mua BHYT hay BHTN mấy ai mong mình bệnh tật hay tai nạn để được hoàn tiền đâu nào :|, chỉ là có việc cần đến bệnh viện thì lấy ra dùng sẽ đỡ được một phần tiền thôi)
-- Showroom đẹp mắt, đi vào mua sẵn xem ké cho lác con mắt (đợt mua chuột với bàn phím hơi bị ghiền đó)
+In the end, I settled on GearVN for these reasons:
+- Pretty famous, and their marketing is top-notch (they really are famous—when I went there to buy, the line was super long because GearVN assigns one staff member per customer to handle consultation, ordering, sales, etc., unlike many other shops, plus pandemic restrictions slowed things down; thankfully I went in the afternoon or I would've melted in the sun @@)
+- Reputable, brand-new, genuine parts, no fakes (this probably overlaps with the point above :D)
+- All the components I listed above were in stock (at least according to their website; as for the reality... wait till you read the store visit section :))))
+- Their customer service gets great reviews (and when I called them later, it really was great—more on that in a bit). It's like insurance: better to invest in it and not need it than the other way around (just like buying health or accident insurance—nobody wishes to get sick or have an accident just to get a payout :|, it's just there to save you money if you ever need to go to the hospital)
+- Eye-catching showroom—great for window shopping and feasting my eyes while buying (I was low-key hooked back when I bought my mouse and keyboard there)
 
-# Đến cửa hàng
-Hôm mình ghé showroom GearVN trên đường Hoàng Hoa Thám thì là tầm hơn 4h chiều, từ quê chạy lên trọ sẵn ghé qua luôn (đi đường Cộng Hoà ghé vào xíu là tới ấy mà), do dịch nên GearVN dùng đoạn ở trước showroom làm chỗ xếp hàng (y như sắp hàng trong mấy khu vui chơi vậy :v), không cho đậu xe ở trước nữa mà phải chạy vào con hẻm đối diện gửi xe (cũng khá xa đó, chạy gần tới cuối hẻm mới thấy, bữa tưởng đi lộn hay gì rồi). Gửi xe này thì miễn phí, hơi khổ nỗi đi bộ xa, tới rồi thì xếp hàng, quét mã QR khai báo y tế (mấy thủ tục này dạo này đi đâu cũng thế thôi), hết hàng chờ bên ngoài rồi còn vào cửa hàng, rửa tay sát khuẩn rồi mới ngồi trên hàng ghế gaming đợi bạn tư vấn tới dắt đi nữa (y như cho ngồi thử ghế êm không vậy, mà công nhận là êm thật :v, êm hơn hẳn mấy ghế văn phòng, cơ mà chẳng có tiền đâu mà mua :v). Xong được anh tư vấn viên đẹp trai (nói thế thôi chứ ai cũng đeo khẩu trang mà, biết ảnh đẹp trai thế quái nào được) dắt đến chỗ bàn máy tính để check qua linh kiện còn hàng tại HCM.
+# Visiting the Store
+I dropped by the GearVN showroom on Hoang Hoa Tham street a little after 4 PM, stopping by on my way back to my rented room from my hometown (it's just a quick turn off Cong Hoa street). Because of the pandemic, GearVN used the space in front of the showroom as a queuing area (just like queuing at an amusement park :v) and didn't allow parking out front anymore; instead, you had to ride into the alley across the street to park (which was pretty far inside—I had to ride almost to the end of the alley to find it, and thought I'd gone the wrong way). Parking was free, though walking back was a bit of a trek. Once there, I lined up, scanned the QR code for the health declaration (standard procedure everywhere these days), finished waiting outside, went inside the store, sanitized my hands, and sat in a row of gaming chairs waiting for a consultant to come guide me (felt like a free trial to see how comfy the chairs were—and I have to admit they were super comfy :v, way comfier than office chairs, though I have no money to buy one :v). Then a handsome consultant (I say that, but everyone was wearing masks, so how the heck would I know if he was handsome) led me to a desk to check which components were in stock in Ho Chi Minh City.
 
-Vào đề mình nói thẳng luôn về nhu cầu và yêu cầu của mình: cấu hình phần "ruột" thì không đổi được, còn phần "hình thức" thì tuỳ biến. May mà phần ruột thì khá ok, trừ cái phần RAM không có ram Kingston, nên đổi qua cặp ram Corsair Vengeance RS RGB. Cũng 2x16GB 3200Mhz nên mình cũng không ý kiến gì mấy Mọi thứ cũng tương đối suôn sẻ cho đến khi tới phần mainboard, chẳng còn cái main ITX nào tại HCM cả :'( Thế là mọi thứ đổ bể, có 2 phương án nhưng toàn ITX, hoàn toàn không nghĩ đến trường hợp này. Thế là mình nói anh ấy chuyển qua mục tiêu build một PC sao cho đẹp một cách tinh tế, không cần hầm hố, và cũng bảo là nếu được thì full combo NZXT luôn đi. Sau một hồi lựa chọn và khóc thầm (vì mấy cái mình thích đều hết, còn mấy cái cũng ngon nghẻ mà giá chát quá :'() thế là được bộ cấu hình như sau:
+Getting straight to the point, I laid out my needs and requirements: the "internal" specs were non-negotiable, while the "aesthetics" were flexible. Thankfully the internals were mostly fine, except Kingston RAM was out of stock, so I switched to Corsair Vengeance RS RGB. It was also 2x16GB 3200MHz so I didn't mind much. Everything went relatively smoothly until we got to the motherboard—there wasn't a single ITX motherboard left in stock in HCM :'( Just like that, my whole plan fell apart. I had two backup plans, but both were ITX, and I hadn't anticipated this scenario at all. So I told him to pivot to building a PC that looked sleek and understated rather than aggressive, and said if possible, let's just go full NZXT combo. After a while of picking parts and crying inside (because everything I wanted was out of stock, and the nice alternatives were eye-wateringly expensive :'(), I ended up with the following build:
 
 
-Đến đây thì hẳn bạn sẽ thắc mắc thế phần dự định bên trên để làm gì? Thật tiếc nếu bạn đọc phần đó, như bạn cũng thấy _"người tính không bằng trời tính"_ thực tế khác với dự định. Đừng cáu nếu lỡ đọc rồi nhé, tại mình mê mà không build được nên thuốc cho bạn mua đấy :)))
+At this point, you might be wondering: what was the point of the whole "Planned Hardware" section above? Sorry if you read all that—as the saying goes, _"man proposes, God disposes,"_ and reality turned out quite different from the plan. Don't be mad if you already read it; since I loved that ITX build so much and couldn't build it myself, I'm just baiting you into buying it instead :)))
 
-# Sau khi mua
-Ngay sau khi đặt mua, mình về nhà rồi mới lên trang chủ của GearVN xem lại, thì đúng là cái Corsair C750W được giảm giá 200k lận. Mà quá giờ làm việc rồi, thế là ngay hôm sau gọi điện lên cho CSKH, sau đó được anh tư vấn gọi lại ngay, bảo là cái đó shop mới sửa giá lại trong ngày, mong mình thông cảm, và sẽ hoàn lại tiền cho mình, mình cũng ậm ừ (dù biết tỏng vì đã điều tra kĩ rằng giá này đã tồn tại từ trước đó rồi :))). Chờ mãi sang hôm sau cũng không thấy động tĩnh gì, cũng hơi quan ngại, tại hôm qua gọi chỉ là anh đó nói suông thôi, lời nói gió bay ai mà tin được, chẳng có chứng từ cụ thể gì cả. Ai dè hôm sau nữa (tức 2 ngày sau khi đặt hàng), có một chị CSKH gọi lại báo là có mail cho mình mà không để ý (mà không biết GearVN trước nay có spam gì không mà bị bộ lọc mail của Outlook cho vào Junk luôn :v). Xong mail lại
+# After Buying
+Right after placing the order and getting home, I checked GearVN's website again and noticed the Corsair C750W PSU had been discounted by 200k VND. It was already past business hours, so first thing the next day I called Customer Support. Shortly after, my consultant called me right back, explaining that the shop had just updated the price that day, asking for my understanding, and promising to refund the difference. I just nodded along (even though I knew full well from my thorough research that the discounted price had already been there before :))). I waited all through the next day without hearing anything and started getting a bit worried—after all, yesterday's phone call was just verbal, and words are wind without any written proof. To my surprise, the day after that (2 days after ordering), a lady from Customer Support called to let me know they had emailed me, which I hadn't noticed (no idea if GearVN sent spam in the past or what, because Outlook's filter threw it straight into Junk :v). Then I replied to the email.
 
-3 ngày sau khi mình đặt mua, mình lên lại web và lại phát hiện phần ram mình mua đã được giảm xuống 500k. Thật sự cay cú, cứ như là GearVN đợi mình mua xong rồi giảm giá thì phải :))) Nhưng không được như lần trước, lần này mình chỉ được bảo là giá đó là do lô hàng mới giá RAM giảm rồi, hồi chốt giá thì không thay đổi được nữa :| Thui thì cũng... đành chịu, cơ mà ít ra gọi còn được bắt máy là vui rồi :))) Đánh giá rất cao mảng CSKH của GearVN nhé.
+Three days after placing my order, I checked the website again and discovered the RAM I bought had dropped in price by 500k VND. I was honestly salty—it felt like GearVN waited for me to finish buying before slashing prices :))) Unlike last time, though, I was told the lower price was for a new shipment of RAM and my locked-in order price couldn't be changed anymore :| Well... I just had to accept it, though at least they picked up the phone when I called, which was nice :))) Big props to GearVN's Customer Support team.
 
-Rồi cũng tới ngày nhận được máy... :D Cùng xem qua một số đánh giá nho nhỏ của mình ở phần dưới nhé!
+Then the day finally came when I received the PC... :D Let's take a look at a few of my mini-reviews below!
 
-# Đánh giá
-Do thay đổi quyết định ngay trong lúc mua chủ yếu là 3 yếu tố mainboard, case với ram là chính nên sẽ chỉ đi sâu vào phân tích 3 cái này thôi. Cái tản nhiệt NZXT X63 thì lớn hơn X53 (và giá cũng lớn hơn :v) chứ không khác nhau nhiều.
+# Review
+Since my last-minute changes at the store mainly came down to three parts—motherboard, case, and RAM—I'll only dive into analyzing those three. The NZXT X63 cooler is just larger than the X53 (with a larger price tag too :v) without much else differing.
 
-## Mainboard NZXT N7 B550
-So với các mainboard B550 khác của ASUS, GIGABYTE hay MSI thì mình thấy NZXT thật sự hợp gu thẩm mỹ của mình, vì cảm giác nó sang trọng nhưng không hầm hố, lại đồng bộ style với nhiều thành phần của case (do cùng hãng sản xuất thôi mà). Một số điểm mạnh thì Số cổng kết nối thì nhiều vãi... Còn nhược điểm thì nghe dân tình bảo NZXT mới dấn thân vào mảng mainboard nói chung và cho chip AMD nói riêng nên chắc còn khá "non tay", BIOS không được đánh giá cao, cảm giác phần giao diện web chỗ dùng để tải driver còn để kèm với manual khá là lộn xộn.
+## NZXT N7 B550 Motherboard
+Compared to other B550 motherboards from ASUS, GIGABYTE, or MSI, I find NZXT really fits my aesthetic taste—it feels clean and classy without being overly flashy, and matches the style of the case components seamlessly (since they're made by the same brand, after all). On the plus side, the number of ports is insane... On the downside, word on the street is that NZXT is still pretty new to making motherboards in general and AMD boards in particular, so they're a bit "green"—the BIOS isn't rated very highly, and the web page where you download drivers mixed in with manuals feels pretty cluttered.
 
-## Case NZXT H510 Elite
-Mình khẳng định luôn, nếu không phải lúc đó case NZXT H510 hết hàng thì chẳng đời nào mình chọn case này, vốn mình quan tâm hiệu suất hơn chứ không quan trọng về hình thức, nếu là case ITX thì còn định bỏ lên mặt bàn, chứ case tầm mid-tower như này thì còn tính bỏ gầm bàn nữa là. Đem về dùng mình cũng dùng phần mềm CAM tắt hết led RGB đi thôi. Nên có thể nói: phần tiền dành cho đèn đóm có sẵn, quạt led RGB, mặt kính phía trước để show led đều phế cả rồi :'( Điểm cộng của nó chắc là để chụp hình khoe hàng vài lần như này thôi.
+## NZXT H510 Elite Case
+I'll say it straight: if the standard NZXT H510 hadn't been out of stock at the time, there's no way I would have picked this case. I care way more about performance than looks—if it were an ITX case, I would've put it on my desk, whereas a mid-tower like this might even end up under the desk. Once I brought it home, I even used the CAM software to turn off all the RGB LEDs anyway. So basically, all the extra money spent on built-in lighting, RGB fans, and the front glass panel to show off the LEDs went to waste :'( Its only real plus is probably looking good for a few flex photos like this.
 
-## Ram Corsair
-Như đã nói ở trên, mình chú trọng phần hiệu năng, nên led có sẵn của mấy thanh ram cũng không dùng đến là mấy, còn 32GB 3200Mhz trong tầm 4-5 triệu thì cũng rẻ hơn cặp ram Kingston ban đầu mình định chọn, còn hiệu năng như nào thì chắc sử dụng mới biết (mà chắc cũng chẳng cảm nhận được, vì có cái gì đâu mà so với chả sánh :v)
+## Corsair RAM
+As mentioned above, I prioritize performance, so the built-in RGB on the RAM sticks doesn't get much use either. That said, getting 32GB 3200MHz in the 4–5 million VND range was cheaper than the Kingston kit I originally planned to pick. As for how it performs, I'll only know with use (though I probably won't even feel the difference, since I have nothing to compare it against anyway :v).
 
-# Tổng kết
-Đánh giá trên thang điểm 10 thì lần đi mua hàng này của mình nằm đâu đó khoảng 8đ, gọi là tốt nhưng vẫn cứ tiếc mãi case ITX mà không có, lại dồn tiền vào một cái case khá là mắc với những tính năng không dùng tới nữa :|, mà hi sinh vì cái đẹp cũng đáng, hehe. Dù sao thì chuyện cũng đã qua, mọi thứ còn lại là kinh nghiệm và trải nghiệm. Mình vẫn sẽ trân quý bộ PC lần đầu tiên mình build này, nhưng hẳn là sau này (chắc là còn lâu hoặc sẽ chẳng bao giờ tới luôn) mình sẽ đổi, nâng cấp lên một bộ PC khác; có lẽ là khi dư dả (không dư dả ai lại mang tiền đi build PC hoài @@). Cũng đã trải nghiệm qua thực tế thì thấy CSKH của GearVN khá là tốt, nên tương lai có nâng cấp hay mua mới gì thì mình cũng sẽ ủng hộ GearVN tiếp!^^
+# Conclusion
+On a scale of 10, this buying experience was around an 8/10—pretty good overall, though I still regret missing out on an ITX case and ending up pouring money into a rather expensive case with features I don't even use :|. Still, sacrificing for aesthetics is worth it, hehe. Either way, it's in the past now, and what remains is the experience. I'll still cherish this very first PC I built, though someday in the future (probably a long time from now, or maybe never) I'll swap or upgrade to another rig—probably when I have plenty of spare cash (nobody keeps throwing money at building PCs unless they're loaded @@). Having experienced it firsthand, I found GearVN's customer service to be quite solid, so if I upgrade or buy new gear in the future, I'll gladly support GearVN again!^^
 
-_Do đang cài máy và còn phải "test hiệu năng" bằng vài ván game :))) nên sẽ cập nhật lại bài viết trong thời gian tới. Nếu bạn đọc được tới dòng này thì thật sự cảm ơn nhé!^^_
+_Since I'm still setting up the machine and need to "benchmark performance" with a few rounds of games :))), I'll update this post in the near future. If you read all the way to this line, thank you so much!^^_

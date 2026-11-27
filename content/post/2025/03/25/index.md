@@ -1,62 +1,62 @@
 ---
-title: "Hướng dẫn sử dụng NotebookLM của Google để hỏi đáp về Anh trai nhân vật chính"
+title: "How to Use Google's NotebookLM for Q&A on The Main Character's Older Brother"
 date: 2025-03-25
 tags: [ "NotebookLM", "Hako", "ATNVC"]
 ---
 
-Gần đây mới mua được Anh trai nhân vật chính tập 2. Nhưng chợt nhận ra vì đọc quá nhiều truyện nên có nhiều nhân vật mình không nhớ hoặc kể cả là... cốt truyện. Gần đây với sự bùng nổ của AI, Google cũng cung cấp NotebookLM miễn phí cho mọi người. Nên sẵn tiện mình tranh thủ giới thiệu cách dùng NotebookLM để hỏi đáp về nội dung của Anh trai nhân vật chính.
+I recently bought Volume 2 of *Anh trai nhân vật chính* (*The Main Character's Older Brother*). However, I suddenly realized that because I read so many series, I'd forgotten plenty of characters—and even parts of the plot. Lately, with the AI boom, Google has made NotebookLM available to everyone for free. So I'm taking this opportunity to share how to use NotebookLM to ask questions about the story of *Anh trai nhân vật chính*.
 
-__Note 1: Mình là dev, nên một số phần thiên về tech mình cũng lười giải thích. Tuy nhiên cũng sẽ cố gắng hướng dẫn thân thiện, dễ làm với mọi người. Nhưng không tránh khỏi sai sót, nếu có chỗ nào chưa rõ có thể comment hoặc inbox mình trao đổi thêm nhé. Mình khá bận nên trả lời nhanh hay chậm cũng hên xui__
+__Note 1: I'm a developer, so I'm a bit lazy about explaining some of the more technical parts. Still, I'll try my best to keep this guide friendly and easy for everyone to follow. Mistakes are bound to happen though, so if anything is unclear, feel free to leave a comment or message me to discuss. I'm pretty busy, so my reply speed is a bit hit-or-miss.__
 
-__Note 2: Ở đây nội dung mình sử dụng để hỏi đáp đến từ bản web novel đăng trên [Hako](https://ln.hako.vn/), sẽ có một số khác biệt nhất định so với bản sách giấy nhé!__
+__Note 2: The content I'm using here for Q&A comes from the web novel version posted on [Hako](https://ln.hako.vn/), which has some differences compared to the printed light novel!__
 
-## Chuẩn bị data
+## Preparing the Data
 
-### Dành cho techie
-_Nếu bạn không phải dân tech, có thể chuyển đến [mục kế tiếp](#dành-cho-non-tech), mình đã chuẩn bị sẵn data sẵn cho bạn. Phần này để các bạn thích tech mày mò thêm thôi._
+### For techies
+_If you aren't a tech person, feel free to skip ahead to the [next section](#for-non-tech-readers), where I've already prepared the data for you. This part is just for tech folks who want to tinker on their own._
 
-1. Bạn clone repo này của mình: https://github.com/tiennm99/atnvc-crawler. Làm theo hướng dẫn trong file README để setup và crawl data.
-   __Note:__ Script này mình viết đã lâu, gần đây có thấy Hako bị block, hãy đảm bảo máy của bạn truy cập được https://ln.hako.vn/ trước khi tiến hành nhé. Có thể dùng VPN hoặc Cloudflare WARP để bypass.
-2. Mặc định NotebookLM giới hạn số lượng file cũng như kích thước file cho 1 notebook. Mà hiện tại theo như bản web novel Anh trai nhân vật chính trên Hako đã có đến 133 chương rồi. Vì vậy chúng ta sẽ dùng tool để merge các chap lại với nhau, mình gợi ý là ghép các chap cùng 1 arc lại cho dễ quản lý nhé. Bước này bạn dùng gì cũng được, tự viết cũng ok. Mình thì DIY bằng [script này](https://github.com/tiennm99/utils/raw/refs/heads/main/join.bat).
-3. (Tuỳ thích) Đặt lại tên cho các file đã merge.
+1. Clone my repo here: https://github.com/tiennm99/atnvc-crawler. Follow the instructions in the README to set it up and crawl the data.
+   __Note:__ I wrote this script a while ago, and lately Hako has been blocked by some ISPs, so make sure your machine can access https://ln.hako.vn/ before starting. You can use a VPN or Cloudflare WARP to bypass the block.
+2. By default, NotebookLM limits both the number of files and the file size per notebook. Currently, the web novel version of *Anh trai nhân vật chính* on Hako has 133 chapters. So we'll use a tool to merge the chapters together—I recommend grouping chapters from the same arc into a single file to make them easier to manage. You can use whatever tool you like for this step, or write your own. I DIY'd mine with [this script](https://github.com/tiennm99/utils/raw/refs/heads/main/join.bat).
+3. (Optional) Rename the merged files.
 
-### Dành cho non tech
+### For non-tech readers
 
-Mình có upload sẵn các file mình đã xử lý ở bên dưới. Bạn có thể dùng như trang web nhé.
+I've uploaded the processed files right below so you can use them directly as web links.
 
-[Arc 1](data/Arc%201.txt)
-[Arc 2](data/Arc%202.txt)
-[Arc 3](data/Arc%203.txt)
-[Others](data/Others.txt)
+[Arc 1](/post/2025/03/25/data/Arc%201.txt)
+[Arc 2](/post/2025/03/25/data/Arc%202.txt)
+[Arc 3](/post/2025/03/25/data/Arc%203.txt)
+[Others](/post/2025/03/25/data/Others.txt)
 
-Hoặc có thể dùng thông qua link Google Drive sau:
+Or you can access them via the following Google Drive folder:
 
 https://drive.google.com/drive/folders/1r85mnSVMGtEz2WBMq3fUBUIcOKqUpc7N?usp=sharing
 
-_Mình hay dọn dẹp nên có khi quên mất và delete thư mục share. Nếu gặp vấn đề thì gì thì hú mình nhé_
+_I clean up my Drive pretty often, so I might accidentally forget and delete the shared folder. If you run into any issues, just give me a shout._
 
-__Hiện tại mình mới update đến chương 133 theo như trên Hako thôi nhé. Có thể mình sẽ update thêm trong tương lai nếu có nhiều bạn hứng thú__
+__Currently, I've only updated it up to Chapter 133 on Hako. I may update it further in the future if enough people are interested.__
 
-## Setup NotebookLM
+## Setting Up NotebookLM
 
-1. Truy cập trang NotebookLM: https://notebooklm.google.com/
-2. Đăng nhập bằng account Google
-3. Tạo sổ ghi chú mới. Đặt tên tuỳ thích, mà nên đặt tên gợi nhớ để dễ phân biệt
-3. Up các file đã tạo ở phần chuẩn bị data lên.
-   - Nếu bạn dùng web mình tạo sẵn thì chọn mục Liên kết/Trang web
-   - Nếu bạn dùng thư mục Google Drive của mình thì chọn Google Drive/Google Tài liệu/Được chia sẻ với tôi
-4. Bắt đầu sử dụng thôi :D
+1. Go to NotebookLM: https://notebooklm.google.com/
+2. Sign in with your Google account
+3. Create a new notebook. Name it whatever you like, ideally something memorable so it's easy to tell apart
+4. Upload the files prepared in the data step:
+   - If you're using the web links I hosted above, choose Link -> Website
+   - If you're using my Google Drive folder, choose Google Drive -> Google Docs -> Shared with me
+5. Start using it :D
 
-_Tips: Đôi khi bạn sẽ muốn biết thông tin về arc bạn đã đọc rồi thôi, tránh bị spoil. Như ở trên mình có khuyên gom nhóm lại thành arc. Không muốn NotebookLM biết arc nào thì trong phần `Nguồn` bỏ tick arc đó đi là được_
+_Tip: Sometimes you only want answers based on the arcs you've already read to avoid spoilers. That's why I recommended grouping chapters by arc above. If you don't want NotebookLM to know about a specific arc, simply uncheck that arc in the `Sources` panel._
 
-## Vài hình ảnh demo
+## A Few Demo Screenshots
 
-![Lai là ai? Sao lại trung thành với Khan như vậy?](img/1.png)
+![Who is Lai? Why is he so loyal to Khan?](img/1.png)
 
-![Lauriel là ai? Khan và Lauriel có phải vợ chồng không?](img/2.png)
+![Who is Lauriel? Are Khan and Lauriel husband and wife?](img/2.png)
 
-![Linh hồn sơ khai là gì? Khan đã sở hữu mấy linh hồn sơ khai? Ngoài Khan ra còn ai khác có linh hồn sơ khai không?](img/3.png)
+![What is a Primordial Soul? How many Primordial Souls does Khan possess? Besides Khan, does anyone else have a Primordial Soul?](img/3.png)
 
-## Mở rộng
+## Going Further
 
-Bài này mình demo với Anh trai nhân vật chính, nhưng thực chất có thể ứng dụng với bất kỳ truyện nào. Mở rộng hơn nữa còn có thể dùng cho document trong công việc, hay các sách báo khác,... Có thể thấy AI đang phát triển mạnh mẽ và có nhiều tiềm năng rất lớn. Một số ông lớn về công nghệ như Google cũng cung cấp các dịch vụ miễn phí như NotebookLM. Dù dùng ở trong công việc hay vui chơi giải trí gì đều rất hữu ích. Mình cũng lo sợ một ngày nào đó AI sẽ cho mình ra chuồng gà mất. Nếu có fuba nào đọc xong và thấy cảm động, xin hãy bao nuôi anh dev này 🥺🥺
+In this post I demoed NotebookLM with *Anh trai nhân vật chính*, but you can actually apply this to any novel or series. Taking it even further, you can use it for work documentation, books, articles, and more. AI is advancing rapidly and holds massive potential, and tech giants like Google are offering powerful free tools like NotebookLM. Whether for work or for fun, it's super handy. I'm honestly a bit worried that one day AI will put me out of a job too. If any rich benefactor reads this and feels moved, please sponsor this dev 🥺🥺

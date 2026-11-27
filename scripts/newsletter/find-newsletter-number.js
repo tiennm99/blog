@@ -60,7 +60,7 @@ export function findMostRecentNewsletter() {
     for (const month of listDirsDesc(yearDir, TWO_DIGIT_DIR_RE)) {
       const monthDir = join(yearDir, month);
       for (const day of listDirsDesc(monthDir, TWO_DIGIT_DIR_RE)) {
-        const n = extractNewsletterNumber(join(monthDir, day, "index.md"));
+        const n = extractNewsletterNumber(join(monthDir, day, "index.vi.md"));
         if (n > maxNumber) maxNumber = n;
       }
     }

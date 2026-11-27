@@ -43,7 +43,7 @@ Output (JSON): `{ original_url, clean_url, http_status, accessible, duplicate, r
 
 Dispatch by calling the Skill tool for the chosen handler with `clean_url` as the argument. The handler completes the write end-to-end.
 
-**Multiple URLs:** dispatch **sequentially** (one handler finishes before the next starts) — handlers edit the same daily `index.md`, so concurrent edits would clobber each other. Process every URL (articles, videos, images) one at a time.
+**Multiple URLs:** dispatch **sequentially** (one handler finishes before the next starts) — handlers edit the same daily `index.vi.md`, so concurrent edits would clobber each other. Process every URL (articles, videos, images) one at a time.
 
 ### 4. Fallback for unsupported types
 
@@ -62,7 +62,7 @@ Act on the user's choice. If they choose add/update, proceed to design that skil
 Close with the target post's TL;DR tally, then the per-URL detail. Read the tally from the post itself so it reflects everything the post now holds, not just this batch:
 
 ```bash
-node scripts/newsletter post-stats content/post/YYYY/MM/DD/index.md
+node scripts/newsletter post-stats content/post/YYYY/MM/DD/index.vi.md
 ```
 
 Aggregate across all URLs:
@@ -83,7 +83,7 @@ Aggregate across all URLs:
    - [url] (route: [route]): [user decision]
 ```
 
-The tally is report-only — never write it into `index.md`. See *Post tally* in `docs/newsletter/post-mechanics.md`.
+The tally is report-only — never write it into `index.vi.md`. See *Post tally* in `docs/newsletter/post-mechanics.md`.
 
 ## Notes
 

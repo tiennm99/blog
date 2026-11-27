@@ -1,10 +1,10 @@
 ---
-title: "Siêu tổng hợp ByteByteGo P2"
+title: "ByteByteGo Mega Roundup P2"
 date: 2025-08-20
 tags: ["ByteByteGo"]
 ---
 
-*Vì còn quá nhiều ảnh của [ByteByteGo](https://bytebytego.com/) nên xin mời các bạn đến với phần 2 hehe. Hiện tại thì mình đã lọc ra bớt, chỉ up những ảnh mình thấy là tâm đắc mà thôi.*
+*Since I still have so many [ByteByteGo](https://bytebytego.com/) visuals saved up, welcome to Part 2 hehe. This time I filtered the list down a bit and only included the ones I personally found most worthwhile.*
 
 ![Synchronous vs Asynchronous](https://substackcdn.com/image/fetch/$s_!5Nbl!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fe369aaeb-f74b-4923-a3d9-410a46ee5594_2250x2624.heic)
 
@@ -40,10 +40,10 @@ tags: ["ByteByteGo"]
 
 ![Top 6 most commonly used Server Types](https://substack-post-media.s3.amazonaws.com/public/images/4cd58a79-de9c-4ac2-a6df-eac95b61d71e_1541x1536.jpeg)
 
-## Và một số video
+## Plus a Few Videos
 
 [System Design Was HARD - Until You Knew the Trade-Offs, Part 2](https://www.youtube.com/watch?v=2g1G8Jr88xU)
 
 [APIs Explained in 6 Minutes!](https://www.youtube.com/watch?v=hltLrjabkiY)
 
-*Và tất nhiên là vẫn còn nhiều ảnh khác. Lại hẹn các bạn trong P3 nha!!*
+*And of course there are still plenty more visuals left. See you again in P3!!*

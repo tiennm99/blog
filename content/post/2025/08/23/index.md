@@ -1,10 +1,10 @@
 ---
-title: "Siêu tổng hợp ByteByteGo P4"
+title: "ByteByteGo Mega Roundup P4"
 date: 2025-08-23
 tags: ["ByteByteGo"]
 ---
 
-*Nốt phần ảnh này của [ByteByteGo](https://bytebytego.com/) sau đó chúng ta sẽ quay lại với Newsletter như mọi khi nhé hehe*
+*Just one last batch of [ByteByteGo](https://bytebytego.com/) visuals, and after this we'll return to our regular Newsletter schedule hehe*
 
 ![A Guide To Database Replication](https://substack-post-media.s3.amazonaws.com/public/images/c102625c-50df-4d7b-b154-ff4284e5fdaf_2250x2624.png)
 
@@ -44,10 +44,10 @@ tags: ["ByteByteGo"]
 
 ![Top Scalability Strategies for Real-World Load](https://substackcdn.com/image/fetch/$s_!STjn!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F71fa35ca-3bb5-4601-831f-f13f46a6f11d_2250x2624.heic)
 
-## Và một số video
+## Plus a Few Videos
 
 [20 System Design Concepts You Must Know - Final Part](https://www.youtube.com/watch?v=uq-JpclPQV4)
 
 [How Does a URL Shortener Work?](https://www.youtube.com/watch?v=HHUi8F_qAXM)
 
-*Hẹn gặp lại các bạn trong newsletter lần sau nha haha!!*
+*See you again in the next newsletter haha!!*

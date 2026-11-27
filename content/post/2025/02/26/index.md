@@ -1,49 +1,49 @@
 ---
-title: "Git LFS: Trường hợp sử dụng, hạn chế, cách gỡ bỏ và các giải pháp thay thế"
+title: "Git LFS: Use Cases, Limitations, How to Remove It, and Alternatives"
 date: 2025-02-25
 tags: [ "Git", "Git LFS" ]
 ---
 
-Ngoài source code, đôi khi chúng ta cũng sẽ lưu trữ các assets như hình ảnh, âm thanh, video, file data, output lớn,... trong repository của mình. Các file này có thể rất nặng, và việc lưu trữ chúng trong Git repository sẽ làm tăng kích thước của repository, làm chậm quá trình clone, push, pull, fetch,... Để giải quyết vấn đề này, Git Large File Storage (Git LFS) ra đời. Trong bài viết này, mình sẽ giới thiệu về Git LFS, trường hợp sử dụng, hạn chế, cách gỡ bỏ và các giải pháp thay thế.
+Beyond source code, we sometimes store assets like images, audio, videos, data files, or large build outputs in our repositories. These files can be very heavy, and storing them directly in a Git repository bloats the repo size and slows down cloning, pushing, pulling, and fetching. To solve this problem, Git Large File Storage (Git LFS) was created. In this post, I'll introduce Git LFS, its use cases, its limitations, how to remove it, and alternative solutions.
 
-## 1. Git LFS là gì?
+## 1. What Is Git LFS?
 
-Git LFS là một extension của Git, giúp quản lý các file lớn (large files) trong repository. Thay vì lưu trữ toàn bộ nội dung của file trong repository, Git LFS sẽ lưu trữ file lớn trong một remote server (thường là server riêng của Git LFS) và chỉ lưu trữ metadata của file trong repository. Khi cần sử dụng file, Git LFS sẽ tải file từ remote server về máy local.
+Git LFS is a Git extension that helps manage large files in a repository. Instead of storing the full contents of large files inside the Git repository itself, Git LFS stores the actual files on a remote server (typically a dedicated Git LFS server) and keeps only lightweight pointer metadata in the repository. When you need the files, Git LFS downloads them from the remote server to your local machine.
 
-## 2. Trường hợp sử dụng Git LFS
+## 2. Use Cases for Git LFS
 
-Git LFS thích hợp cho các trường hợp sau:
+Git LFS is well-suited for the following scenarios:
 
-1. **Quản lý file media và dữ liệu lớn:** Khi dự án cần lưu trữ các file hình ảnh, âm thanh, video, dataset hay file phân tích có kích thước lớn, Git LFS giúp quản lý chúng hiệu quả mà không làm tăng đáng kể kích thước repository.
+1. **Managing media files and large datasets:** When a project needs to store large images, audio, video, datasets, or analysis files, Git LFS manages them efficiently without significantly inflating the repository size.
 
-2. **Lưu trữ file nhị phân và build artifacts:** Các file nhị phân, thư viện, file thực thi hoặc build output có thể được lưu trữ trong Git LFS để giảm tải cho repository chính.
+2. **Storing binaries and build artifacts:** Binary files, libraries, executables, or build outputs can be stored in Git LFS to take the load off the main repository.
 
-3. **Dự án với file lớn ít thay đổi:** Đối với các file lớn nhưng ít khi được chỉnh sửa, Git LFS là giải pháp lý tưởng để duy trì khả năng truy cập đồng thời giảm tải cho hoạt động Git thông thường.
+3. **Projects with large files that rarely change:** For large files that are infrequently modified, Git LFS is an ideal way to keep them accessible while keeping everyday Git operations fast.
 
-Lúc trước khi làm website cho [Ngăm](https://ngamtheprojec.github.io), mình đã sử dụng Git LFS để lưu trữ các video của nhóm. Do GitHub giới hạn kích thước file là 100MB, nên muốn lưu trữ video có kích thước lớn, mình đã sử dụng Git LFS. Đây là một sai lầm của mình.
+Previously, when building a website for [Ngăm](https://ngamtheprojec.github.io), I used Git LFS to store the group's videos. Since GitHub limits individual file sizes to 100MB, I turned to Git LFS to host larger video files. That turned out to be a mistake on my part.
 
-## 3. Hạn chế của Git LFS
+## 3. Limitations of Git LFS
 
-Mặc dù Git LFS giúp giảm tải cho repository, nhưng nó cũng có một số hạn chế:
+Although Git LFS reduces repository bloat, it comes with several drawbacks:
 
-1. **Giới hạn bandwidth và storage trên GitHub:** GitHub Free chỉ cung cấp 1GB storage và 1GB bandwidth/tháng cho Git LFS. Vượt quá giới hạn này sẽ phát sinh chi phí bổ sung.
+1. **Bandwidth and storage limits on GitHub:** GitHub Free only provides 1GB of storage and 1GB of bandwidth per month for Git LFS. Exceeding these limits incurs extra charges.
 
-2. **Vấn đề với GitHub Pages:** Khi triển khai GitHub Pages từ repository sử dụng LFS, các file LFS không được xử lý đúng cách, dẫn đến các liên kết bị hỏng và nội dung không hiển thị.
+2. **Issues with GitHub Pages:** When deploying GitHub Pages from a repository that uses LFS, LFS files are not served properly, resulting in broken links and missing content.
 
-3. **Quá trình gỡ bỏ phức tạp:** Sau khi đã sử dụng Git LFS, việc loại bỏ nó khỏi repository là một quá trình khó khăn và tiềm ẩn nhiều rủi ro.
+3. **Complicated removal process:** Once you've adopted Git LFS, removing it from a repository is a tricky and potentially risky process.
 
-Vì bị hạn chế băng thông, nên mình nhớ rằng mình chỉ clone repository vài lần là đã hết băng thông rồi. Điều này khiến mình phải tìm cách gỡ bỏ Git LFS khỏi repository.
+Because of the bandwidth cap, I remember running out of bandwidth after cloning the repository just a few times. That forced me to figure out how to strip Git LFS out of the repository.
 
-## 4. Cách gỡ bỏ Git LFS
+## 4. How to Remove Git LFS
 
-Để gỡ bỏ Git LFS khỏi repository, bạn cần thực hiện các bước sau:
+To remove Git LFS from a repository, follow these steps:
 
 ```shell
 git lfs uninstall
 
-git rm --cached "*.mp4"  # Thay thế bằng các tập tin bạn đã theo dõi với LFS
+git rm --cached "*.mp4"  # Replace with the file patterns you tracked with LFS
 
-# Chỉnh sửa tập tin .gitattributes để loại bỏ các mục có liên quan đến LFS
+# Edit the .gitattributes file to remove any LFS-related entries
 
 git add .gitattributes
 git commit -m "remove: Git LFS"
@@ -51,12 +51,12 @@ git commit -m "remove: Git LFS"
 git push
 ```
 
-**Lưu ý:** Quá trình này có thể phức tạp hơn nếu kho lưu trữ của bạn đã có lịch sử với Git LFS. Trong trường hợp đó, bạn có thể cần phải tạo một kho lưu trữ mới và chuyển lịch sử không LFS của bạn sang đó.
+**Note:** This process can be much more complicated if your repository already has commit history containing Git LFS objects. In that case, you may need to rewrite history or create a fresh repository and migrate your non-LFS history over to it.
 
-Ngoài ra có trường hợp bạn sẽ phải tạo request với GitHub support để xoá các file LFS đã lưu trữ trên Git LFS của repository.
+In some cases, you may also need to open a ticket with GitHub Support to delete the LFS objects stored on GitHub's LFS servers for your repository.
 
-## 5. Giải pháp thay thế
+## 5. Alternatives
 
-Thay vì sử dụng Git hoặc Git LFS cho các tập tin lớn, thì lời khuyên của mình là nên tách source code và các file lớn với nhau. VD: up video lên YouTube, up hình ảnh lên Imgur,... và chia sẻ link trong repository.
+Instead of using Git or Git LFS for large files, my advice is to separate your source code from large assets altogether. For example: upload videos to YouTube, upload images to Imgur, etc., and reference their links in your repository.
 
-Khi làm website cho Ngăm, mình đã chạy tool optimize file size của các video xuống dưới ngưỡng 100MB để có thể lưu trữ trên GitHub. Điều này giúp mình không phải sử dụng Git LFS và không phải lo lắng về vấn đề băng thông.
+When building the website for Ngăm, I ended up running an optimization tool to compress the videos under the 100MB threshold so they could be stored directly on GitHub. That allowed me to avoid Git LFS entirely and stop worrying about bandwidth limits.

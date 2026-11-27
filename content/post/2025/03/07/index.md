@@ -1,30 +1,30 @@
 ---
-title: "Ứng dụng GitHub Actions Cache để giảm thời gian build"
+title: "Using GitHub Actions Cache to Reduce Build Time"
 date: 2025-03-07
 tags: [ "GitHub", "CI/CD", "Hugo", "AI-Assisted" ]
 ---
 
-Gần đây khi đăng Newsletter, mình có đính kèm nhiều hình ảnh, và khi build với Hugo, Hugo sẽ cần process những hình ảnh này (tạo nhiều ảnh với kích thước khác nhau, nhằm tối ưu thời gian load). Và thời gian build của mình đã tăng lên đáng kể (có khi lên đến tận 4 phút). Để giải quyết vấn đề này, mình đã tìm hiểu và ứng dụng GitHub Action Cache để giảm thời gian build.
+Recently, when publishing my Newsletter posts, I've been attaching a lot of images. When building the site with Hugo, Hugo has to process all of these images (generating multiple resized versions to optimize load times). As a result, my build time increased noticeably—sometimes taking up to 4 minutes. To solve this problem, I looked into and applied GitHub Actions Cache to cut down the build time.
 
-## GitHub Actions Cache là gì?
+## What Is GitHub Actions Cache?
 
-GitHub Actions Cache là một tính năng của GitHub Actions cho phép bạn lưu trữ các file hoặc thư mục giữa các lần chạy workflow. Điều này giúp tránh việc phải tải lại hoặc tạo lại các dependencies hoặc các file không thay đổi, từ đó giảm đáng kể thời gian chạy workflow.
+GitHub Actions Cache is a feature in GitHub Actions that lets you persist files or directories between workflow runs. This avoids re-downloading dependencies or regenerating unchanged files from scratch, significantly reducing workflow execution time.
 
-Một số trường hợp thường sử dụng cache:
+Common use cases for caching include:
 
-- Dependencies của dự án (node_modules, vendor, etc.)
-- Output của quá trình build (resources, artifacts, etc.)
-- Database hoặc các file dữ liệu lớn
+- Project dependencies (`node_modules`, `vendor`, etc.)
+- Build outputs (`resources`, `artifacts`, etc.)
+- Databases or large data files
 
-## Tại sao cần tối ưu thời gian build?
+## Why Optimize Build Time?
 
-Thực tế khi build hugo, việc build lại toàn bộ site mỗi khi có thay đổi nhỏ có thể tốn nhiều thời gian như mình mô tả ở phần đầu bài. Trong hầu hết các trường hợp, chỉ có một phần nhỏ của website thay đổi, còn lại các resources như hình ảnh, stylesheet đã được xử lý từ lần build trước.
+In practice, when building a Hugo site, rebuilding the entire site from scratch on every small change can take a lot of time, as I mentioned at the beginning of this post. In most cases, only a small portion of the website changes, while assets like images and stylesheets have already been processed in previous builds.
 
-Đối với Hugo, thư mục `resources` chứa các file đã được xử lý như hình ảnh đã được resize, file SCSS đã được biên dịch thành CSS. Việc cache thư mục này giúp tránh phải xử lý lại các file không thay đổi.
+In Hugo, the `resources` directory stores processed files such as resized images and CSS compiled from SCSS. Caching this directory avoids reprocessing files that haven't changed.
 
-## Triển khai GitHub Actions Cache với Hugo
+## Implementing GitHub Actions Cache with Hugo
 
-Dưới đây là workflow GitHub Actions mình đang sử dụng để triển khai trang web Hugo lên GitHub Pages, với việc áp dụng cache cho thư mục `resources`:
+Below is the GitHub Actions workflow I use to deploy my Hugo site to GitHub Pages, with caching enabled for the `resources` directory:
 
 ```yaml
 name: Deploy site to GitHub Pages
@@ -111,11 +111,11 @@ jobs:
         uses: actions/deploy-pages@v4
 ```
 
-### Chi tiết về cách sử dụng cache
+### Cache Configuration Details
 
-Trong workflow trên, có hai bước liên quan đến cache:
+In the workflow above, there are two steps related to caching:
 
-1. **Restore resources**: Khôi phục cache từ các lần chạy trước
+1. **Restore resources**: Restores the cache from previous workflow runs
 
 ```yaml
 - name: Restore resources
@@ -128,7 +128,7 @@ Trong workflow trên, có hai bước liên quan đến cache:
       ${{ runner.os }}-resources-
 ```
 
-2. **Save resources**: Lưu cache mới sau khi build
+2. **Save resources**: Saves the updated cache after the build completes
 
 ```yaml
 - name: Save resources
@@ -139,39 +139,39 @@ Trong workflow trên, có hai bước liên quan đến cache:
     key: ${{ runner.os }}-resources-${{ github.run_id }}
 ```
 
-### Cách hoạt động của cache key
+### How the Cache Key Works
 
-Các tham số trong phần cache:
+Parameters used in the cache configuration:
 
-- **path**: Đường dẫn đến thư mục hoặc file cần cache, ở đây là thư mục `resources` của Hugo
-- **key**: Khóa duy nhất để xác định cache. Format phổ biến là `${{ runner.os }}-[cache-name]-[hash]`
-- **restore-keys**: Danh sách các prefix key để tìm cache phù hợp nếu không tìm thấy cache chính xác
+- **path**: Path to the directory or file to cache—here, Hugo's `resources` directory
+- **key**: A unique key identifying the cache. A common format is `${{ runner.os }}-[cache-name]-[hash]`
+- **restore-keys**: A list of key prefixes used to find a fallback cache if an exact key match isn't found
 
-Trong ví dụ này:
+In this example:
 
-- `${{ runner.os }}` đảm bảo cache chỉ được sử dụng trên cùng một hệ điều hành
-- `resources` là tên của cache
-- `${{ github.run_id }}` là ID duy nhất của mỗi lần chạy workflow
+- `${{ runner.os }}` ensures the cache is only shared across runs on the same operating system
+- `resources` is the name of the cache
+- `${{ github.run_id }}` is the unique ID of each workflow run
 
-Với cách thiết lập này, nếu không tìm thấy cache chính xác với key `${{ runner.os }}-resources-${{ github.run_id }}`, GitHub Actions sẽ tìm cache gần nhất có prefix `${{ runner.os }}-resources-`.
+With this setup, when an exact match for `${{ runner.os }}-resources-${{ github.run_id }}` isn't found, GitHub Actions falls back to the most recent cache matching the prefix `${{ runner.os }}-resources-`.
 
-## So sánh hiệu suất
+## Performance Comparison
 
-Sau khi áp dụng cache, thời gian build của mình đã giảm đáng kể:
+After enabling the cache, my build time dropped dramatically:
 
-| Trạng thái | Thời gian build trung bình |
+| Status | Average Build Time |
 |------------|----------------------------|
-| Không cache | ~4 phút 19 giây           |
-| Có cache   | ~25 giây                   |
+| Without cache | ~4 minutes 19 seconds      |
+| With cache    | ~25 seconds                |
 
-Với các dự án lớn hơn, sự chênh lệch thời gian có thể lên đến hàng phút hoặc thậm chí hàng chục phút.
+For larger projects, the time saved can easily reach several minutes or even tens of minutes.
 
-![Trước khi cache](img/before.png)
-![Sau khi cache](img/after.png)
+![Before caching](img/before.png)
+![After caching](img/after.png)
 
-## Mở rộng: Cache các dependencies khác
+## Going Further: Caching Other Dependencies
 
-Ngoài việc cache resources của Hugo, bạn có thể áp dụng cách tiếp cận tương tự cho các loại dependencies khác:
+Besides caching Hugo's `resources`, you can apply the same approach to other types of dependencies:
 
 ### Node.js dependencies (node_modules)
 
@@ -199,22 +199,22 @@ Ngoài việc cache resources của Hugo, bạn có thể áp dụng cách tiế
       ${{ runner.os }}-go-
 ```
 
-## Tối ưu hóa cache
+## Cache Optimization Tips
 
-Để sử dụng cache hiệu quả hơn, bạn có thể xem xét các chiến lược sau:
+To get the most out of caching, consider the following strategies:
 
-1. **Cache chọn lọc**: Chỉ cache các file thực sự cần thiết, tránh cache các file tạm thời hoặc file log
-2. **Hash file dependencies**: Sử dụng hash của file như package-lock.json để tạo key, đảm bảo cache được cập nhật khi dependencies thay đổi
-3. **Cache layering**: Sử dụng nhiều cache khác nhau cho các thành phần khác nhau của ứng dụng
+1. **Selective caching**: Only cache files that are genuinely needed, avoiding temporary files or logs
+2. **Hash dependency lockfiles**: Use hashes of lockfiles like `package-lock.json` in your cache key so the cache updates automatically whenever dependencies change
+3. **Cache layering**: Use separate caches for different components of your application
 
-## Kết luận
+## Conclusion
 
-GitHub Actions Cache là một công cụ mạnh mẽ giúp tối ưu quy trình CI/CD của bạn. Với Hugo, việc cache thư mục `resources` giúp giảm đáng kể thời gian build, đặc biệt là khi dự án của bạn có nhiều hình ảnh hoặc stylesheet cần xử lý.
+GitHub Actions Cache is a powerful tool for optimizing your CI/CD pipeline. With Hugo, caching the `resources` directory drastically cuts down build times, especially when your site has lots of images or stylesheets to process.
 
-Đây chỉ là một ví dụ cơ bản về cách sử dụng GitHub Actions Cache. Trong thực tế, tùy thuộc vào dự án cụ thể, bạn có thể cần áp dụng các chiến lược cache phức tạp hơn.
+This is just a basic example of how to use GitHub Actions Cache. Depending on your specific project, you may want to adopt more advanced caching strategies.
 
-Nếu bạn muốn tìm hiểu thêm, có thể tham khảo repository của GitHub Actions Cache: [https://github.com/actions/cache](https://github.com/actions/cache), hoặc trong document sau: [https://docs.github.com/en/actions/guides/caching-dependencies-to-speed-up-workflows](https://docs.github.com/en/actions/guides/caching-dependencies-to-speed-up-workflows).
+If you'd like to learn more, check out the GitHub Actions Cache repository at [https://github.com/actions/cache](https://github.com/actions/cache), or read the official documentation at [https://docs.github.com/en/actions/guides/caching-dependencies-to-speed-up-workflows](https://docs.github.com/en/actions/guides/caching-dependencies-to-speed-up-workflows).
 
-Hy vọng bài viết này sẽ hữu ích cho bạn trong việc tối ưu quy trình CI/CD của dự án. Nếu bạn có bất kỳ câu hỏi hoặc góp ý nào, đừng ngần ngại để lại comment bên dưới.
+I hope this post helps you optimize your project's CI/CD pipeline. If you have any questions or feedback, feel free to leave a comment below.
 
-Toàn bộ workflow mình đang sử dụng có thể tìm thấy trong [repo GitHub của mình](https://github.com/tiennm99/tiennm99.github.io) hoặc bạn có thể copy từ ví dụ trong bài này.
+You can find the full workflow I'm currently using in [my GitHub repo](https://github.com/tiennm99/tiennm99.github.io), or copy it directly from the example in this post.

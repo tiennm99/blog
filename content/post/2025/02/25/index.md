@@ -1,18 +1,18 @@
 ---
-title: "TaskBus - Phân phối task vào executor trong java"
+title: "TaskBus - Dispatching Tasks to Executors in Java"
 date: 2025-02-25
 tags: [ "Java", "Game Server" ]
 ---
 
-Khi phát triển game server, chúng ta thường sử dụng observer pattern để xử lý các task nhỏ lẻ, vd như các request từ client, event từ server,... khi muốn notify sang nhiều module khác nhau
+When developing a game server, we often use the observer pattern to handle small, discrete tasks—such as client requests or server events—when we need to notify multiple modules.
 
-VD khi user thanh toán thành công, chúng ta cần notify sang module resource để cập nhật tài nguyên user đã mua; module segment để update segment pay mới của user; module metric để ghi log;...
+For example, when a user completes a payment, we need to notify the resource module to credit the purchased items, the segment module to update the user's paying segment, the metrics module to log the event, and so on.
 
-Để tối ưu performance, chúng ta có thể sử dụng thread pool với số thread lớn để có thể xử lý task cùng lúc. Tuy nhiên đôi lúc ta sẽ muốn kiểm soát thứ tự thực thi các task của cùng một user, tránh trường hợp task A chạy trước task B mà task B cần dữ liệu từ task A, hoặc gây khó khăn khi xử lý concurrent data. Bài viết này MiTi sẽ giới thiệu về TaskBus, một cách phân phối task vào executor một cách kiểm soát, đảm bảo thứ tự thực thi các task của một user.
+To optimize performance, we can use a thread pool with a large number of threads to process tasks concurrently. However, we often want to control the execution order of tasks belonging to the same user—avoiding situations where task A runs after task B when task B depends on data from task A, or preventing race conditions on concurrent user data. In this post, MiTi will introduce TaskBus, a way to dispatch tasks to executors in a controlled manner that guarantees sequential execution order for each user's tasks.
 
-## Các class cơ bản
+## Core Classes
 
-Đầu tiên chúng ta có `Task` là một interface có method như sau:
+First, we have the `Task` interface with the following methods:
 
 ```java
 public interface Task {
@@ -23,7 +23,7 @@ public interface Task {
 }
 ```
 
-Và `Bus` là một interface có method như sau:
+And the `Bus` interface:
 
 ```java
 public interface Bus {
@@ -34,7 +34,7 @@ public interface Bus {
 
 ### Task implementations
 
-Chúng ta sẽ implement một số class `Task` như sau:
+Let's implement a few `Task` classes as follows:
 
 ```java
 public interface Event extends Task {
@@ -83,7 +83,7 @@ public record SendMessageRequest(int userId, String message) implements Request 
 
 ## Test
 
-Chúng ta sẽ có một test như sau để kiểm tra output của các bus:
+We'll use the following test method to inspect the output of different bus implementations:
 
 ```java
   void submitTasks(Bus bus) {
@@ -102,7 +102,7 @@ Chúng ta sẽ có một test như sau để kiểm tra output của các bus:
 
 ## NormalBus
 
-Thông thường ta sẽ implement một class `NormalBus` như sau:
+Typically, we might implement a `NormalBus` class like this:
 
 ```java
 public class NormalBus implements Bus {
@@ -116,7 +116,7 @@ public class NormalBus implements Bus {
 }
 ```
 
-Và đây là 1 output khi chạy test:
+Here is a sample output when running the test:
 
 ```
 [pool-1-thread-1] INFO com.miti99.taskbus.task.event.UserLoginEvent - User 1 logged in
@@ -131,13 +131,13 @@ Và đây là 1 output khi chạy test:
 [pool-1-thread-4] INFO com.miti99.taskbus.task.event.UserLoginEvent - User 2 logged in
 ```
 
-Có thể thấy các task được thực thi ở nhiều thread khác nhau làm cho task của cùng 1 user không được thực thi theo thứ tự trong output.
+As you can see, tasks are executed across many different threads, causing tasks belonging to the same user to run out of order in the output.
 
-**Lưu ý:** Output của test có thể thay đổi mỗi lần chạy do ảnh hưởng của thread pool.
+**Note:** The test output may vary on each run due to thread pool scheduling.
 
 ## TaskBus
 
-Để cải thiện, chúng ta sẽ cần phân phối task của từng user vào 1 executor, "chỉ đích danh" executor nào sẽ thực thi task của user đó. Để làm được điều này, chúng ta sẽ cần implement một class `TaskBus` như sau:
+To improve this, we need to route all tasks for a given user to a single dedicated executor, pinpointing exactly which executor will handle that user's tasks. To achieve this, we can implement `TaskBus` as follows:
 
 ```java
 public class TaskBus implements Bus {
@@ -164,7 +164,7 @@ public class TaskBus implements Bus {
 }
 ```
 
-Và đây là 1 output khi chạy test:
+And here is the output when running the test:
 
 ```
 [pool-3-thread-1] INFO com.miti99.taskbus.task.event.UserLoginEvent - User 2 logged in
@@ -179,12 +179,12 @@ Và đây là 1 output khi chạy test:
 [pool-2-thread-1] INFO com.miti99.taskbus.task.request.SendMessageRequest - User 1 sent message: msg4
 ```
 
-Có thể thấy task của cùng 1 user sẽ được thực thi trong cùng 1 thread. Trong output này, thread thực thi task của user 1 là `pool-2-thread-1`, còn của user 2 là `pool-3-thread-1`. Mặc dù thứ tự task của các user khác nhau không được đảm bảo, nhưng thứ tự của các task của cùng 1 user sẽ được thực thi theo đúng thứ tự đã submit.
+Now we can see that all tasks for the same user are executed on the exact same thread. In this output, user 1's tasks run on `pool-2-thread-1`, while user 2's tasks run on `pool-3-thread-1`. Although the relative order between different users isn't guaranteed, tasks belonging to the same user are strictly executed in the exact order they were submitted.
 
-## Kết luận
+## Conclusion
 
-Đây chỉ là một implement TaskBus cơ bản, trong thực tế chúng ta còn phải đối mặt nhiều vấn đề khác, vd độ ưu tiên của task, monitor thời gian thực thi task, xử lý khi run task gặp exception,... Ngoài ra cách này cũng đánh đổi thời gian thực thi để đảm bảo thứ tự các task.
+This is just a basic TaskBus implementation. In production, we have to deal with many additional concerns, such as task prioritization, execution time monitoring, exception handling during task execution, and so on. This approach also trades off some raw throughput in exchange for per-user ordering guarantees.
 
-Vẫn rất hi vọng bài viết này sẽ hữu ích với bạn trong việc tìm ra một giải pháp khi muốn giữ thứ tự thực thi task của một user.
+Still, I hope this post helps you find a clean solution when you need to preserve the execution order of a user's tasks.
 
-Toàn bộ source code bạn có thể tìm thấy trên GitHub của mình: [https://github.com/tiennm99/jvm-labs/tree/main/taskbus](https://github.com/tiennm99/jvm-labs/tree/main/taskbus) (trước đây là repo riêng `tiennm99/taskbus`, nay đã gộp vào `jvm-labs`)
+You can find the full source code on my GitHub: [https://github.com/tiennm99/jvm-labs/tree/main/taskbus](https://github.com/tiennm99/jvm-labs/tree/main/taskbus) (previously a standalone `tiennm99/taskbus` repo, now merged into `jvm-labs`).

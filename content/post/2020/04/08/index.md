@@ -1,83 +1,73 @@
 ---
-title: "'Hậu cài đặt' Archlinux"
+title: "Arch Linux 'Post-Installation'"
 date: 2020-04-08
 tags: [ "Arch", "Linux" ]
 ---
 
-Tiếp theo bài cài đặt Arch Linux thì đây là những điều theo mình là nên làm trước khi reboot để dùng.
+Following up on my Arch Linux installation post, here are the things I think you should do before rebooting into your new system.
 
-## Cài đặt giao diện cho Arch Linux
+## Installing a Desktop Environment for Arch Linux
 
-Sau khi hoàn tất các bước ở bài cài đặt, thì bạn đã có thể sử dụng Arch Linux rồi, tuy nhiên đó chỉ là giao diện console
-thôi, để cài đặt môi trường Desktop thì bạn làm như sau: (lúc này vẫn còn ở trong chế độ của `arch-chroot` nha các bạn)
+After finishing the steps in the installation guide, Arch Linux is ready to run, but only in console mode. To install a desktop environment, run the following commands (while still inside `arch-chroot`):
 
 ```shell
 pacman -S xorg-server
 pacman -S cinnamon
 ```
 
-Ở đây mình dùng desktop environment (DE) là cinnamon; sau này các bài hướng dẫn mình cũng hướng dẫn cho cinnamon thôi.
-Arch hỗ trợ rất nhiều DE khác nhau được liệt kê ở <https://wiki.archlinux.org/index.php/Desktop_environment,> các bạn có
-thể chọn một DE khác thích hợp như Gnome, KDE,... Đặc biệt Arch có hỗ trợ i3, một DE có thể nói là 'dành cho lập trình
-viên' rất 'cool', nhưng mình không pro như thế nên chưa dùng được :v Vì cinnamon cũng dựa trên gtk nên các bạn có thể
-cài đặt gnome để có những phần mềm bổ sung thêm khác
+Here I'm using the Cinnamon desktop environment (DE), and my future guides will also focus on Cinnamon. Arch supports plenty of other DEs listed at <https://wiki.archlinux.org/index.php/Desktop_environment,> so feel free to pick whichever one suits you best, such as GNOME, KDE, etc. Arch also supports i3, a super cool "programmer's" window manager, though I'm not pro enough to daily-drive it yet :v Since Cinnamon is based on GTK, you can also install the `gnome` group if you want extra bundled applications.
 
 ```shell
 pacman -S lightdm lightdm-gtk-greeter
 ```
 
-Mình dùng LightDM làm display manager, nếu bạn dùng gnome thì mặc định đã có gdm được cài rồi
+I use LightDM as my display manager; if you use GNOME, GDM is already included by default.
 
 ```shell
 systemctl enable lightdm
 ```
 
-Để service của LightDM khởi động cùng hệ thống, nếu dùng DM khác thì bạn thay tên vào đó
+This enables the LightDM service at boot; if you use a different display manager, substitute its service name here.
 
 ```shell
 systemctl enable NetworkManger
 ```
 
-(đây là service quản lý mạng (chủ yếu là để kết nối wifi dễ dàng hơn))
+(this is the network management service, mainly to make connecting to Wi-Fi much easier)
 
-## Thêm người dùng vào hệ thống
+## Adding a User to the System
 
-Mặc định bạn mới có user root trong hệ thống thôi, để dùng thì mình nên tạo một user khác để đăng nhập vào:
+By default, only the `root` user exists on the system. For everyday use, you should create a regular user account to log in with:
 
 ```shell
 useradd -m -G wheel -s /bin/bash tien
 ```
 
-(-m để hệ thống tạo một thư mục home cho bạn, vd ở đây là /home/tien; -G wheel để thêm bạn vào group wheel, group này
-dùng để cấp quyền sudo cho bạn sau này; -s /bin/bash, shell của bạn, ở đây mình dùng bash, sau này mình viết bài giới
-thiệu cho các bạn về zsh, một shell dễ tùy chỉnh hơn; tien là tên người dùng bạn muốn tạo, mình tên Tiến thì tạo tên
-tien thôi :v)
+(`-m` creates a home directory for the user, e.g. `/home/tien`; `-G wheel` adds the user to the `wheel` group, which we'll use to grant `sudo` privileges next; `-s /bin/bash` sets your default shell to bash—later I'll write a post introducing `zsh`, a much more customizable shell; and `tien` is the username you want to create—my name is Tiến so I just used `tien` :v)
 
-### Cấp quyền sudo
+### Granting sudo Privileges
 
 ```shell
 pacman -S sudo
 ```
 
-(tất nhiên phải có sudo mới cấp quyền chứ :v)
+(obviously we need `sudo` installed before we can grant `sudo` privileges :v)
 
 ```shell
 pacman -S neovim
 ```
 
-(editor mình sẽ dùng để edit, bạn có thể cài vim, vi hay nano,... tùy bạn, mình thích dùng neovim nên cài thôi :))
-`EDITOR=nvim visudo` (mặc định visudo dùng vi nên để dùng neovim mình phải cấu hình lại EDITOR)
+(this is the editor I'll use; you can install `vim`, `vi`, `nano`, or whatever you prefer—I like Neovim so that's what I install :))
+`EDITOR=nvim visudo` (`visudo` uses `vi` by default, so we set `EDITOR` to use Neovim instead)
 
-Bỏ comment ở dòng `wheel ALL=(ALL) ALL`, vậy là được, lưu lại và thoát thôi :D
+Uncomment the line `wheel ALL=(ALL) ALL`, save, and exit—that's it :D
 
-## Cài đặt một terminal
+## Installing a Terminal Emulator
 
-Nếu bạn chỉ cài cinnamon thì ban đầu bạn sẽ chưa có terminal nào, nếu muốn dùng lệnh thì sẽ phải vào TTY khác (Ctrl +
-Alt + Fx(x từ 2 đến 6 ấy). Ở đây mình cài Terminator nhé:
+If you only installed Cinnamon, you won't have a terminal emulator installed by default, meaning you'd have to switch to another TTY (`Ctrl + Alt + Fx`, where `x` is 2 to 6) just to run commands. Here I'll install Terminator:
 
 ```shell
 pacman -S terminator
 ```
 
-Vậy là bạn đã có một hệ thống 'có thể dùng được' rồi đấy, sau này mình sẽ có các bài làm đẹp Arch, tinh chỉnh Arch,..
-nữa. Hẹn gặp lại!!
+And now you have a truly usable system! Later on I'll write more posts on beautifying and tweaking Arch. See you next time!!

@@ -1,6 +1,5 @@
 ---
-title: Liên kết
-slug: links
+title: Links
 menu:
     main:
         weight: -50
@@ -10,5 +9,5 @@ menu:
 comments: false
 ---
 
-- [Xem CV trên web](https://tiennm99.github.io/cv/)
-- [Tải CV (PDF)](https://tiennm99.github.io/cv/miti99.pdf)
+- [View my CV online](https://tiennm99.github.io/cv/)
+- [Download my CV (PDF)](https://tiennm99.github.io/cv/miti99.pdf)

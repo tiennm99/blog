@@ -7,7 +7,7 @@ The shared engine lives in `scripts/newsletter/` — see [engine-commands.md](en
 - Hugo static site, theme nocturne (Hugo Module `github.com/tiennm99/nocturne`)
 - Language: Vietnamese (99%) + minimal English tech terms (1%)
 - Timezone: Asia/Ho_Chi_Minh (UTC+7)
-- Content path: `content/post/YYYY/MM/DD/index.md`
+- Content path: `content/post/YYYY/MM/DD/index.vi.md`
 
 ## 1. Find / create the target post
 
@@ -16,9 +16,9 @@ The target defaults to today's date but the user can pin a different one.
 **Target date resolution:**
 - Default: current date in `YYYY-MM-DD` (UTC+7).
 - **Pinned target:** when the user names a post or date to keep working on — typically an unpublished draft started on an earlier day ("keep adding to the 7/9 post") — that post is the target for the rest of the session, including across a date rollover mid-session. Do not silently start a new post for the new day; if a pin might have lapsed, ask before creating one.
-- **Backfill:** when the user names a past date for a **new** newsletter ("the day after #134"), that date is the target. Create `content/post/<YYYY>/<MM>/<DD>/index.md` with `date: <that date>` — never today's date — and treat it as pinned for the rest of the session, exactly like a pinned draft. Commits still happen at real time.
+- **Backfill:** when the user names a past date for a **new** newsletter ("the day after #134"), that date is the target. Create `content/post/<YYYY>/<MM>/<DD>/index.vi.md` with `date: <that date>` — never today's date — and treat it as pinned for the rest of the session, exactly like a pinned draft. Commits still happen at real time.
 
-Check `content/post/YYYY/MM/DD/index.md` for the resolved target date:
+Check `content/post/YYYY/MM/DD/index.vi.md` for the resolved target date:
 - **Exists** → update this file.
 - **Missing** → create it (new newsletter number; template below). Create directories as needed.
 
@@ -51,7 +51,7 @@ categories: ["Newsletter"]
 
 ## 4. Section insertion (no clobbering)
 
-**Never rewrite the whole `index.md`.** Always insert by anchoring an Edit on an existing string (e.g. `### Bonus`, `**Videos:**`) and prepending/appending around it. Multiple URLs targeting the same day's post must be applied **sequentially** so one edit doesn't clobber another.
+**Never rewrite the whole `index.vi.md`.** Always insert by anchoring an Edit on an existing string (e.g. `### Bonus`, `**Videos:**`) and prepending/appending around it. Multiple URLs targeting the same day's post must be applied **sequentially** so one edit doesn't clobber another.
 
 **Articles go before the `### Bonus` section; Bonus assets go inside it.**
 Article headings must use the original source title. Do not translate/localize article titles; keep the source-language wording, capitalization, punctuation, and proper nouns from metadata.
@@ -97,7 +97,7 @@ When a subsection (e.g. `**Videos:**`) already exists, append under it; otherwis
 After every successful insertion, report the target post's running totals so the user can see what the post now holds:
 
 ```bash
-node scripts/newsletter post-stats content/post/YYYY/MM/DD/index.md
+node scripts/newsletter post-stats content/post/YYYY/MM/DD/index.vi.md
 ```
 Output (JSON): `{ post, newsletter, articles, images, videos, documents, total }`.
 
@@ -107,11 +107,11 @@ Render it as a single TL;DR line in the handler's report, omitting zero counts, 
 📊 Newsletter #N: 4 articles · 2 videos · 1 image
 ```
 
-Use the counts the command returns — do not tally by hand. This is a **report-only** line: never write it into `index.md`.
+Use the counts the command returns — do not tally by hand. This is a **report-only** line: never write it into `index.vi.md`.
 
 ## 5. Post content language guidelines
 
-These rules apply only to text written into `content/post/**/index.md`. Keep user-facing questions, status updates, reports, and final responses in English unless the user explicitly requests another language.
+These rules apply only to text written into `content/post/**/index.vi.md`. Keep user-facing questions, status updates, reports, and final responses in English unless the user explicitly requests another language.
 
 **Primary**: Vietnamese (99%) | **Secondary**: English (1% — unavoidable technical terms only)
 
@@ -133,7 +133,7 @@ These rules apply only to text written into `content/post/**/index.md`. Keep use
 
 **Summary length:** article summaries are 1–2 prose paragraphs of at most 300 words, aiming for 280–298. A word is a whitespace-separated token, so each Vietnamese syllable counts as one. Check after inserting with an exact heading match:
 ```bash
-awk -v h='## [Title](url)' '$0==h{f=1;next} /^##/{f=0} f{n+=NF} END{print n}' content/post/YYYY/MM/DD/index.md
+awk -v h='## [Title](url)' '$0==h{f=1;next} /^##/{f=0} f{n+=NF} END{print n}' content/post/YYYY/MM/DD/index.vi.md
 ```
 or before inserting with `printf '%s\n' "$SUMMARY" | awk '{n+=NF} END{print n}'`. Over 300 → trim and recount. Video blockquote summaries are 1–2 sentences.
 
@@ -145,7 +145,7 @@ This table owns the skip rules; handlers defer to it.
 
 | Problem | Action |
 |-------|--------|
-| Duplicate URL | Skip and name where it already is: `grep -rlF '<scheme://host/path>' content/post` (for Substack images, grep the image UUID instead), read that post's `title`, and report `duplicate (Newsletter #N, content/post/YYYY/MM/DD/index.md)` |
+| Duplicate URL | Skip and name where it already is: `grep -rlF '<scheme://host/path>' content/post` (for Substack images, grep the image UUID instead), read that post's `title`, and report `duplicate (Newsletter #N, content/post/YYYY/MM/DD/index.vi.md)` |
 | Dead URL (404/410) | Skip immediately, note in report |
 | `accessible: false` (403, 429, challenge, HEAD rejected, 000) | Not a skip — continue; for articles try WebFetch, then the `mt-fetch-url` chain |
 | Extraction fails | Skip and report only after WebFetch and every `mt-fetch-url` tier fail |
@@ -153,4 +153,4 @@ This table owns the skip rules; handlers defer to it.
 
 ## 7. English translation
 
-The site is bilingual (Vietnamese at `/`, English under `/en/`), and every newsletter keeps an English sibling `index.en.md`. After each successful insertion into `index.md`, mirror that one entry into English by invoking the **`mt-translate-post`** skill in `entry` mode with the post path and the new entry's heading or URL. It creates `index.en.md` when the post has none yet and verifies the pair with `translation-check`. Report the English file next to the Vietnamese one.
+The site is bilingual (English, the default, at `/`; Vietnamese under `/vi/`), and every newsletter keeps an English sibling `index.md`. After each successful insertion into `index.vi.md`, mirror that one entry into English by invoking the **`mt-translate-post`** skill in `entry` mode with the post path and the new entry's heading or URL. It creates `index.md` when the post has none yet and verifies the pair with `translation-check`. Report the English file next to the Vietnamese one.

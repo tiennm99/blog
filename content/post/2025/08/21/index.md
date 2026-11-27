@@ -1,51 +1,51 @@
 ---
-title: "Cách xử lý HTTP Timeout khi sử dụng Coolify"
+title: "How to Fix HTTP Timeouts When Using Coolify"
 date: 2025-08-21
 tags: ["Coolify", "Traefik", "Issue", "Troubleshooting"]
 ---
 
-*Đăng ảnh của [ByteByteGo](https://bytebytego.com/) được mấy hôm rồi nên nay đổi gió.*
+*After posting [ByteByteGo](https://bytebytego.com/) diagrams for a few days straight, let's switch things up today.*
 
-Đôi khi deploy GitLab hay Gitea lên Coolify và sử dụng bạn sẽ gặp lỗi như sau:
+Sometimes when you deploy GitLab or Gitea on Coolify and try to push to it, you may run into an error like this:
 
 ```
-git -c diff.mnemonicprefix=false -c core.quotepath=false --no-optional-locks push -v <remote của bạn> <nhánh trên local>:<nhánh trên remote>
+git -c diff.mnemonicprefix=false -c core.quotepath=false --no-optional-locks push -v <your-remote> <local-branch>:<remote-branch>
 POST git-receive-pack (chunked)
 error: RPC failed; HTTP 504 curl 22 The requested URL returned error: 504
 send-pack: unexpected disconnect while reading sideband packet
 fatal: the remote end hung up unexpectedly
-Pushing to <url git của bạn>
+Pushing to <your-git-url>
 Everything up-to-date
 Completed with errors, see above.
 ```
 
-Có thể bạn đi search và tìm thấy solution là chỉnh git chunk buffer như này:
+If you search around online, you'll probably come across the common suggestion to increase Git's chunk buffer like this:
 
 ``` shell
-git config --global http.postBuffer <một số gì đó khá là to>
+git config --global http.postBuffer <some-huge-number>
 ```
 
-## Tại sao git config http.postBuffer không hiệu quả?
+## Why Doesn't `git config http.postBuffer` Work?
 
-**Git http.postBuffer là gì?**
-- Đây là buffer size mà git sử dụng khi gửi dữ liệu qua HTTP POST
-- Mặc định git gửi dữ liệu theo từng chunk nhỏ (thường 1MB)
-- Tăng postBuffer có nghĩa là gửi từng chunk lớn hơn, giảm số lần request
+**What is Git `http.postBuffer`?**
+- It's the buffer size Git uses when sending data over HTTP POST
+- By default, Git sends data in small chunks (typically 1MB)
+- Increasing `postBuffer` means sending larger chunks, reducing the number of requests
 
-**Vì sao trong trường hợp này nó không hiệu quả?**
+**Why doesn't it help in this case?**
 
-Vấn đề không nằm ở việc git gửi dữ liệu như thế nào, mà nằm ở **HTTP timeout của proxy Coolify**:
+The issue isn't how Git sends the data — it's the **HTTP timeout on Coolify's proxy**:
 
-1. **Git vẫn gửi được dữ liệu** lên Traefik proxy
-2. **Traefik proxy chờ phản hồi** từ Git server (GitLab/Gitea)
-3. **Git server cần thời gian xử lý** dữ liệu (compress, index, validate...)
-4. **Traefik timeout trước** khi Git server kịp phản hồi → HTTP 504
+1. **Git still sends the data** successfully to the Traefik proxy
+2. **The Traefik proxy waits for a response** from the Git server (GitLab/Gitea)
+3. **The Git server needs time to process** the data (compressing, indexing, validating, etc.)
+4. **Traefik times out before** the Git server finishes responding → HTTP 504
 
-Ngay cả khi git gửi chunk lớn hay nhỏ, thời gian xử lý ở Git server vẫn như vậy. Do đó tăng postBuffer không giải quyết được vấn đề timeout ở proxy layer.
+Whether Git sends large chunks or small ones, the processing time on the Git server stays the same. That's why increasing `postBuffer` doesn't solve a timeout happening at the proxy layer.
 
-## Kiến trúc và nguyên nhân lỗi
+## Architecture and Root Cause
 
-**Luồng hoạt động khi git push:**
+**How a `git push` flows through the stack:**
 
 ```
 Git Client → Traefik Proxy → Git Server (GitLab/Gitea)
@@ -53,43 +53,43 @@ Git Client → Traefik Proxy → Git Server (GitLab/Gitea)
   postBuffer    readTimeout     Processing time
 ```
 
-**Chi tiết từng bước:**
+**Step-by-step breakdown:**
 
-1. **Git client** gửi dữ liệu qua HTTP POST (có thể mất vài giây với repo lớn)
-2. **Traefik proxy** nhận và forward request đến Git server
-3. **Git server** bắt đầu xử lý:
-   - Giải nén objects
-   - Kiểm tra integrity
-   - Cập nhật refs
-   - Chạy git hooks (nếu có)
-4. **Traefik chờ phản hồi** trong thời gian `readTimeout` (mặc định ~30s)
-5. **Nếu Git server xử lý lâu hơn** → Traefik trả về HTTP 504
+1. **Git client** sends data via HTTP POST (can take several seconds for a large repo)
+2. **Traefik proxy** receives and forwards the request to the Git server
+3. **Git server** starts processing:
+   - Unpacking objects
+   - Checking integrity
+   - Updating refs
+   - Running Git hooks (if any)
+4. **Traefik waits for a response** up to `readTimeout` (default ~30s)
+5. **If the Git server takes longer** → Traefik returns HTTP 504
 
-**Tại sao lỗi này xảy ra với Coolify?**
-- Coolify sử dụng Traefik làm reverse proxy
-- Traefik có `readTimeout` mặc định khá thấp
-- Git operations với large files/repos thường cần > 30s để xử lý
-- Lỗi này không chỉ ảnh hưởng git mà còn các HTTP service khác cần xử lý lâu
+**Why does this happen on Coolify?**
+- Coolify uses Traefik as its reverse proxy
+- Traefik's default `readTimeout` is fairly low
+- Git operations with large files or repositories often take more than 30s to process
+- This issue affects not just Git, but any HTTP service that needs long processing times
 
-## Giải pháp
+## Solution
 
-Vào phần `Server > (server của bạn, thường là localhost) > Proxy > Configuration`.
+Go to `Server > (your server, usually localhost) > Proxy > Configuration`.
 
 ![1](img/image.png)
 
-Thêm các dòng sau vào `services.traefik.command`:
+Add the following lines under `services.traefik.command`:
 
 ``` yaml
 - '--entrypoints.http.transport.respondingTimeouts.readTimeout=600s'
 - '--entrypoints.https.transport.respondingTimeouts.readTimeout=600s'
 ```
 
-**Giải thích**:
-- `readTimeout`: Thời gian tối đa Traefik chờ đọc phản hồi từ backend
-- `600s` (10 phút): Thời gian phù hợp cho các tác vụ git push lớn
-- Có thể điều chỉnh tùy theo kích thước repository và tốc độ mạng của bạn
+**Explanation**:
+- `readTimeout`: Maximum time Traefik waits to read a response from the backend
+- `600s` (10 minutes): A reasonable timeout for large `git push` operations
+- You can adjust this depending on your repository size and network speed
 
-Full config (mẫu, có thể thay đổi trong các phiên bản sau của Coolify, bạn chỉ nên tham khảo cách thêm mà thôi):
+Full config (for reference only — this may change in future Coolify releases, so only use it to see where the lines go):
 
 ``` yaml
 name: coolify-proxy
@@ -148,16 +148,16 @@ services:
       - coolify.proxy=true
 ```
 
-## Áp dụng thay đổi
+## Applying the Changes
 
-1. **Save**: Lưu cấu hình Traefik
-2. **Restart Proxy**: Khởi động lại proxy để áp dụng timeout mới
-3. **Kiểm tra**: Đợi proxy hoạt động trở lại (thường mất 30-60 giây)
+1. **Save**: Save the Traefik configuration
+2. **Restart Proxy**: Restart the proxy to apply the new timeout
+3. **Verify**: Wait for the proxy to come back online (usually takes 30–60 seconds)
 
-## Lưu ý quan trọng
+## Important Notes
 
-- **Không nên đặt timeout quá cao**: Có thể gây treo kết nối lâu khi có lỗi thực sự
-- **Test với repository nhỏ trước**: Đảm bảo cấu hình hoạt động đúng
-- **Theo dõi logs**: Kiểm tra logs của Coolify và Traefik để debug nếu cần
+- **Don't set the timeout too high**: It can leave connections hanging for a long time when a real failure occurs
+- **Test with a small repository first**: Make sure the configuration works as expected
+- **Monitor logs**: Check the Coolify and Traefik logs for debugging if needed
 
-Chúc các bạn thành công và sớm push được code nhé!
+Good luck, and hope you get your code pushed soon!

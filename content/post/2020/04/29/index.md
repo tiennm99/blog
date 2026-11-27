@@ -1,14 +1,14 @@
 ---
-title: "Youtube Downloader cho Archlinux"
+title: "YouTube Downloaders for Arch Linux"
 date: 2020-04-29
 tags: [ "Arch", "Linux", "Youtube" ]
 ---
 
-Như tiêu đề thì mình sẽ giới thiệu với các bạn 2 công cụ mình thường dùng để tải video từ Youtube.
+As the title says, I'll introduce two tools I regularly use to download videos from YouTube.
 
 ## Youtube-dl
 
-Khá phổ biến đối với nhiều distro, với nhiều tùy biến câu lệnh, rất là 'professional', tuy nhiên mình thấy tốc độ tải khá là chậm do phần xử lý nó có phần rườm rà sao ấy. Nên thường mình chỉ dùng để download playlist thôi (kiểu paste một lần rồi mình đi code, đi xem phim gì đấy tí nó tự tải xong, mặc kệ nó :v). Để cài đặt:
+Very popular across many distros, packed with command-line options, and super "professional"—though I find its download speed a bit slow, probably because of some overhead in how it processes things. So I mostly use it for downloading entire playlists (where I can just paste the link once, go write some code or watch a movie, and let it finish on its own :v). To install it:
 
 ```shell
 yay -S youtube-dl
@@ -16,10 +16,10 @@ yay -S youtube-dl
 
 ## Clipgrab
 
-Cái tên này nghe mới lạ hơn nên mình giới thiệu luôn. Phần mềm này thì có giao diện, tốc độ tải thì mình đánh giá là cao hơn youtube-dl (chắc đối với mình nó như thế). Để cài đặt:
+This one is a bit less well-known, so I wanted to give it a mention as well. It comes with a GUI, and in my experience its download speeds are faster than `youtube-dl` (at least for me). To install it:
 
 ```shell
 yay -S clipgrab
 ```
 
-Hẹn gặp lại các bạn trong bài viết khác.
+See you in the next post!

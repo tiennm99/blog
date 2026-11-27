@@ -15,12 +15,13 @@ Commands:
   detect-image-source <url>                  detect Substack image + uuid
   find-substack-post --uuid <uuid> [--deep]  find the post embedding an image uuid
   fetch-via-defuddle <url>                   fallback fetch (local defuddle, then defuddle.md)
-  post-stats <path/to/index.md>              count the post's articles/images/videos/documents
-  protected-lines <index.md> [--against <snapshot.json>]
+  post-stats <path/to/index.vi.md>           count the post's articles/images/videos/documents
+  protected-lines <index.vi.md> [--against <snapshot.json>]
                                              lines a rewrite must keep; verify them after
   translation-status [--lang en] [--category <name>] [path...]
                                              list untranslated and stale posts
-  translation-check <index.md> [--lang en]   verify a translation keeps the source's structure
+  translation-check <index.vi.md> [--lang en]
+                                             verify a translation keeps the source's structure
 `;
 
 // A reader that closes early (`… | head -3`) makes the next write fail with
