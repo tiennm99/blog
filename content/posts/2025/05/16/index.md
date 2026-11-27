@@ -3,7 +3,6 @@ title: "Newsletter #29"
 date: 2025-05-16
 tags: ["AI-Assisted", "Process Optimization", "Vibe Coding", "Cloudflare", "Career Development", "Productivity", "MCP"]
 categories: ["Newsletter"]
-draft: false
 ---
 
 *Welcome to Newsletter #29 - Today's tech news roundup.*

@@ -3,7 +3,6 @@ title: "Newsletter #30"
 date: 2025-05-17
 tags: ["AI-Assisted", "Education", "LLMs", "Caching", "JavaScript", "Developer Experience", "PostgreSQL"]
 categories: ["Newsletter"]
-draft: false
 ---
 
 *Chào mừng bạn đến với Newsletter #30 - Tổng hợp tin tức công nghệ hôm nay.*

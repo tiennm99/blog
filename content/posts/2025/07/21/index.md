@@ -3,7 +3,6 @@ title: "Newsletter #32"
 date: 2025-07-21
 tags: ["AI-Assisted", "Claude Code", "AI Coding", "Windsurf", "Vibe Coding", "Web Development", "Software Architecture"]
 categories: ["Newsletter"]
-draft: false
 ---
 
 *It's been a while since I last wrote a post. And honestly, my earlier newsletters felt a bit like "chasing KPIs"—~~I just stuffed in a ton of links and let an AI Agent do the rest~~. This time I'll curate the articles more carefully, ~~though I'm still letting AI do the writing because I'm lazy hehe =)))~~. Hope you enjoy it. Welcome to Newsletter #31.*
