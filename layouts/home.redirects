@@ -26,6 +26,16 @@
 /page/page/2/ /page/ 301
 /categories/page/1/ /categories/ 301
 /tags/page/:n/ /tags/ 301
+{{- /* Front-matter aliases as server-side 301s; Hugo still writes the meta-refresh
+  alias pages as a fallback. .Aliases holds the raw values, so add the language
+  prefix here. Default-language aliases also get their old /en/ form, which
+  must sit above the /en/* catch-all to skip a 301 -> meta-refresh chain. */}}
+{{- range $p := site.AllPages }}{{ range $p.Aliases }}
+{{- $a := printf "%s/%s/" $p.Site.LanguagePrefix (strings.Trim . "/") }}
+{{ $a }} {{ $p.RelPermalink }} 301
+{{- if eq $p.Language.Lang site.Sites.Default.Language.Lang }}
+/en{{ $a }} {{ $p.RelPermalink }} 301
+{{- end }}{{ end }}{{ end }}
 {{- /* English moved from /en/ to the site root when it became the default language.
   Hugo still writes the English sitemap to /en/sitemap.xml, so serve it before the catch-all. */}}
 /en/sitemap.xml /en/sitemap.xml 200
