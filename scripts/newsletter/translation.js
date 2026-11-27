@@ -1,10 +1,11 @@
-// Translation bookkeeping for the bilingual site. Vietnamese `index.md` /
-// `_index.md` is the source; a translation is the sibling `index.<lang>.md`.
+// Translation bookkeeping for the bilingual site. Vietnamese `index.vi.md` /
+// `_index.vi.md` is the source. A translation into the site's default language
+// (English) is the sibling `index.md`; any other language is `index.<lang>.md`.
 //
 //	translation-status [--lang en] [--category <name>] [path...]
 //	    list sources with no translation (missing) or edited after their
 //	    translation was last committed (stale)
-//	translation-check <index.md> [--lang en]
+//	translation-check <index.vi.md> [--lang en]
 //	    verify a translation keeps the source's structure: frontmatter, links,
 //	    code block count, and for newsletters the entry headings and image labels
 
@@ -13,22 +14,26 @@ import { existsSync, readdirSync, readFileSync } from "node:fs";
 import { basename, dirname, join } from "node:path";
 import { printJson } from "./json-out.js";
 
-const SOURCE_NAMES = new Set(["index.md", "_index.md"]);
+const SOURCE_LANG = "vi";
+// The site's default content language; its files carry no language suffix.
+const DEFAULT_LANG = "en";
+const SOURCE_NAMES = new Set([`index.${SOURCE_LANG}.md`, `_index.${SOURCE_LANG}.md`]);
 // Frontmatter keys whose values are prose and get translated; every other key
 // must match the source exactly (tags, categories, date, …).
 const TRANSLATABLE_KEYS = new Set(["title", "description", "summary"]);
 
 /**
- * @param {string} source path to index.md or _index.md
+ * @param {string} source path to index.vi.md or _index.vi.md
  * @param {string} lang
  * @returns {string}
  */
 export function translationPath(source, lang) {
-  return join(dirname(source), basename(source, ".md") + "." + lang + ".md");
+  const stem = basename(source, `.${SOURCE_LANG}.md`);
+  return join(dirname(source), lang === DEFAULT_LANG ? `${stem}.md` : `${stem}.${lang}.md`);
 }
 
 /**
- * @param {string} source e.g. content/post/2025/03/25/index.md
+ * @param {string} source e.g. content/post/2025/03/25/index.vi.md
  * @returns {string} the bundle's URL path, e.g. /post/2025/03/25/
  */
 export function bundleUrl(source) {
@@ -114,8 +119,8 @@ const INLINE_CODE_RE = /`[^`]*`/g;
 
 /**
  * Link and image targets in document order, normalized so a translation may
- * point at the same resource in its own language: the `/<lang>/` prefix is
- * dropped, bundle-relative paths become root-relative, and in-page anchors
+ * point at the same resource in its own language: a `/<lang>/` prefix for the
+ * source or translation language is dropped, bundle-relative paths become root-relative, and in-page anchors
  * (which follow the translated headings) are skipped.
  * @param {string[]} lines
  * @param {string} bundleUrl e.g. "/post/2025/03/25/"
@@ -129,7 +134,8 @@ function linkTargets(lines, bundleUrl, lang) {
     for (const m of line.replace(INLINE_CODE_RE, "").matchAll(LINK_TARGET_RE)) {
       let url = m[1];
       if (url.startsWith("#")) continue;
-      if (url === `/${lang}` || url.startsWith(`/${lang}/`)) url = url.slice(lang.length + 1) || "/";
+      const prefix = [SOURCE_LANG, lang].find((l) => url === `/${l}` || url.startsWith(`/${l}/`));
+      if (prefix !== undefined) url = url.slice(prefix.length + 1) || "/";
       else if (!/^([a-z][a-z0-9+.-]*:|\/)/i.test(url)) url = bundleUrl + url;
       out.push(url);
     }
@@ -334,7 +340,7 @@ export async function runTranslationStatus(args) {
 export async function runTranslationCheck(args) {
   const { lang, paths } = parseArgs(args);
   if (paths.length !== 1) {
-    process.stderr.write("usage: translation-check <index.md> [--lang en]\n");
+    process.stderr.write("usage: translation-check <index.vi.md> [--lang en]\n");
     process.exit(1);
   }
   const source = paths[0];

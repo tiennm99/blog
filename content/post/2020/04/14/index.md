@@ -1,67 +1,60 @@
 ---
-title: "Tinh chỉnh Cinnamon trong Archlinux"
+title: "Tweaking Cinnamon on Arch Linux"
 date: 2020-04-14
 tags: [ "Arch", "Linux", "Cinnamon" ]
 ---
 
-Nhìn sơ thì cũng thấy Cinnamon khi bạn cài đặt Linux Mint thì đẹp hơn nhiều so với cái mà bạn vừa cài đặt, ôi thôi, nó '
-chuối ơi là chuối' luôn. Vì vậy chúng ta sẽ làm cho nó được như trong Mint nha !😀
+At first glance, Cinnamon on Linux Mint looks way better than the bare-bones Cinnamon you get right after installing it on Arch—honestly, the default look is super plain and clunky. So let's make it look just like it does on Mint! 😀
 
 ## Slick-greeter
 
-Đây là greeter của LightDM trong Mint (mặc định khi cài Arch là GTK+ Greeter). Để cài đặt bạn chạy lệnh sau:
+This is the LightDM greeter used in Linux Mint (Arch defaults to the GTK+ Greeter). To install it, run:
 
 ```shell
 yay -S lightdm-slick-greeter
 ```
 
-Và cài thêm cái này để tinh chỉnh bằng giao diện (GUI), không thì mình vẫn có thể 'chơi' với mấy file .conf thôi :v
+And install this package as well so you can configure it via a GUI—otherwise you can always just mess around with the `.conf` files by hand :v
 
 ```shell
 yay -S lightdm-settings
 ```
 
-Sửa file /etc/lightdm/lightdm.conf như sau:
-Ở dưới mục `[Seat:*]` tìm dòng `greeter-session=example-gtk-gnome`, uncomment và sửa
-thành `greeter-session=lightdm-slick-greeter`
+Edit `/etc/lightdm/lightdm.conf` as follows:
+Under the `[Seat:*]` section, find the line `greeter-session=example-gtk-gnome`, uncomment it, and change it to `greeter-session=lightdm-slick-greeter`.
 
-## Themes và icons
+## Themes and Icons
 
-Ban đầu thì Cinnamon dùng Adwaita của Gnome, nhìn khá là thô sơ, giờ chúng ta cài thêm Theme và Icon của Mint vào:
+Out of the box, Cinnamon uses GNOME's Adwaita theme, which looks pretty rough. Let's install Linux Mint's themes and icons:
 
 ```shell
 yay -S mint-themes mint-x-icons mint-y-icons
 ```
 
-Sau đó vào Settings để đổi theme với icon trong mục Appearance -> Themes nhé!
+Then open Settings and switch your theme and icons under Appearance -> Themes!
 
-## Âm thanh
+## Sound Effects
 
-Ban đầu thì chưa có hiệu ứng âm thanh ánh sáng gì hết trơn ấy, mình thêm vào bằng các package như sau:
+By default, there aren't any system sound effects at all. We can add them by installing these packages:
 
 ```shell
 yay -S cinnamon-sound-effects mint-sounds
 ```
 
-Chỉnh lại trong Settings mục Hardware -> Sound tab Sounds để dùng nhé!
-(Nếu không có tác dụng thì bạn thử restart lại cinnamon nha)
+Then enable and configure them in Settings under Hardware -> Sound -> Sounds tab!
+(If they don't take effect right away, try restarting Cinnamon.)
 
-## Phần mềm cần thiết
+## Essential Applications
 
-Khi mới cài hầu như Cinnamon không có gì dùng hết :/, nên mình mới khuyên cài group gnome trước đã rồi hãy cài Cinnamon,
-mấy cái cần thiết thì như là Screenshot, Terminal, Software:
+A fresh Cinnamon installation comes with almost no bundled apps :/, which is why I previously suggested installing the `gnome` group before Cinnamon for essentials like Screenshot, Terminal, and Software:
 
 ```shell
 yay -S gnome-screenshot gnome-terminal gnome-software
 ```
 
-, cơ mà cái gnome thì ‘tặng kèm’ kha khá phần mềm khác nữa :v, mà tiêu chí của Arch là ‘Keep It Simple’ nên nếu không
-cài gnome thì cũng chẳng sao cả, cứ cài cái gì cần thiết thôi.
+That said, the `gnome` group pulls in quite a lot of extra stuff :v, and since Arch's philosophy is "Keep It Simple", skipping `gnome` is totally fine—just install whatever you actually need.
 
-Đó là điều hơi buồn của cinnamon trên Arch, bởi vì các DE khác thì thường có gói extra đi kèm: `deepin`
-có `deepin-extra`, `gnome` có `gnome-extra`, `mate` có `mate-extra`,... đến cả thằng em được mệnh danh là 'gọn
-nhẹ' `xfce4` mà cũng có `xfce4-goodies` nữa.;còn `cinnamon` thì chưa. Nhưng mà nếu cần combo của Cinnamon ư? Thì mình
-nghĩ cài nhiêu đây là cơ bản rồi:
+It's a bit of a shame for Cinnamon on Arch, because most other DEs have a companion `-extra` package group: `deepin` has `deepin-extra`, `gnome` has `gnome-extra`, `mate` has `mate-extra`, and even lightweight `xfce4` has `xfce4-goodies`—whereas `cinnamon` doesn't have one yet. Want the standard Cinnamon app suite anyway? Installing this set covers the basics:
 
 ```shell
 yay -S xed xviewer xreader xplayer pix blueberry
@@ -69,13 +62,12 @@ yay -S xed xviewer xreader xplayer pix blueberry
 
 ## Nemo-fileroller
 
-Đây là package giúp cho bạn có tùy chọn “extract here” trong nemo. Để cài đặt:
+This package adds the handy "Extract Here" context-menu option to Nemo. To install it:
 
 ```shell
 yay -S nemo-fileroller
 ```
 
-Sau đó restart nemo: `nemo -q`
+Then restart Nemo: `nemo -q`
 
-Đây chỉ là cài cho giống Mint thôi, còn để làm Arch Cinnamon độc đáo hơn nữa, màu mè hơn nữa thì mình dành cho bài khác
-nha. Tạm biệt các bạn, hẹn gặp lại.
+This just gets your setup looking and feeling like Linux Mint—I'll save making Arch Cinnamon even more unique and flashy for a future post. Bye for now, and see you next time!

@@ -1,7 +1,6 @@
 ---
-title: Giới thiệu
-slug: about
-description: Vài dòng về mình và lý do mình viết blog.
+title: About
+description: A little about me and why I write this blog.
 aliases:
   - about-me
   - contact
@@ -11,16 +10,16 @@ menu:
     params:
       icon: user
 ---
-Chào bạn, mình là Minh Tiến. Cái tên `miti99` ghép từ tên mình và năm sinh. Mình học Khoa học Máy tính tại Trường Đại học Bách khoa, ĐHQG TP.HCM, khóa 2017. Hiện mình làm phần mềm cho game tại VNG.
+Hi, I’m Minh Tiến. The name `miti99` comes from my name and birth year. I started studying computer science at Ho Chi Minh City University of Technology (HCMUT) in 2017. I now work on game software at VNG.
 
-Mình thích Linux, nhất là Arch Linux, và các dự án mã nguồn mở. Blog là nơi mình ghi lại những gì học được khi viết phần mềm, tự vận hành dịch vụ và làm dự án cá nhân. Mình cũng tổng hợp những bài đáng đọc trong các số newsletter.
+I like Linux, especially Arch Linux, and open-source projects. I use this blog to write down what I learn from building software, self-hosting services, and working on side projects. I also collect things worth reading in the newsletter.
 
-Bạn có thể xem [các dự án mình làm](/projects/), [đọc các bài viết đã đăng](/archives/) hoặc [xem CV](/links/).
+You can [browse my projects](/projects/), [explore the archives](/archives/), or [view my CV](/links/).
 
-## Liên hệ
+## Contact
 
 - [Gmail](mailto:minhtienit99@gmail.com)
 - [Outlook](mailto:tiennm99@outlook.com)
 - [LinkedIn](https://linkedin.com/in/miti99)
 - [Facebook](https://fb.com/tiennm99)
-- [Trang Facebook của blog](https://fb.com/miti99)
+- [Blog Facebook page](https://fb.com/miti99)

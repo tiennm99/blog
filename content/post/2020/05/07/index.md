@@ -1,28 +1,28 @@
 ---
-title: "Giúp pin 'sống' lâu hơn"
+title: "Helping Your Battery 'Live' Longer"
 date: 2020-05-07
 tags: [ "Linux", "Battery" ]
 ---
 
-#### Cài đặt TLP
+#### Install TLP
 
 ```shell
 yay -S tlp tlp-rdw
 ```
 
-Vì mình sử dụng laptop ThinkPad, hơn nữa là dòng mới, nên mình cài thêm 2 package sau:
+Since I use a ThinkPad laptop—and a newer model at that—I also install the following 2 packages:
 
 ```shell
 yay -S acpi_call-dkms tpacpi-bat
 ```
 
-Khởi chạy tlp khi khởi động:
+Start TLP on boot:
 
 ```shell
 systemctl enable tlp-sleep.service
 ```
 
-Vài cài đặt được khuyên dùng khác:
+Some other recommended settings:
 
 ```shell
 systemctl enable NetworkManager-dispatcher.service
@@ -30,6 +30,6 @@ systemctl mask systemd-rfkill.service
 systemctl mask systemd-rfkill.socket
 ```
 
-Vài tool khác cũng thiết thực không kém, bạn nên tìm hiểu thêm như `cpupower` và `thermald`.
+There are also a few other equally useful tools you should look into, such as `cpupower` and `thermald`.
 
-Vậy là xong. Hẹn gặp lại!
+And that's it. See you next time!

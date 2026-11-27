@@ -1,34 +1,34 @@
 ---
-title: "Hibernate merge: lấy ID của entity đúng cách"
+title: "Hibernate merge: Getting the Entity ID the Right Way"
 date: 2026-04-10
 tags: ["AI-Assisted", "Hibernate", "JPA", "Java"]
 categories: ["Sharing"]
 ---
 
-Một lỗi nhỏ mà mình từng mất kha khá thời gian debug.
+A small pitfall that once cost me a fair bit of debugging time.
 
-## Vấn đề
+## Problem
 
-Khi dùng `EntityManager.merge()` để lưu một entity mới, nhiều người có thói quen gọi:
+When using `EntityManager.merge()` to save a new entity, many people are in the habit of writing:
 
 ```java
 entityManager.merge(entity);
-Long id = entity.getId(); // null hoặc giá trị cũ!
+Long id = entity.getId(); // null or stale value!
 ```
 
-Và... `id` không có giá trị như mong đợi.
+And... `id` doesn't have the value you expected.
 
-## Nguyên nhân
+## Cause
 
-`merge()` **không update** object bạn truyền vào. Nó copy state từ object đó sang một **managed instance mới** rồi trả về instance đó. Object gốc vẫn ở trạng thái detached, không được Hibernate gán ID.
+`merge()` **does not update** the object you pass in. Instead, it copies the state from that object into a **new managed instance** and returns that instance. The original object remains detached and is never assigned an ID by Hibernate.
 
-## Cách đúng
+## The Right Way
 
-Dùng **object trả về** từ `merge()`:
+Use the **returned object** from `merge()`:
 
 ```java
 MyEntity managed = entityManager.merge(entity);
 Long id = managed.getId();
 ```
 
-Đơn giản vậy thôi. Khác với `persist()` — cái đó modify trực tiếp object truyền vào nên không có vấn đề này.
+That's all there is to it. Unlike `persist()` — which mutates the passed-in object directly and therefore doesn't have this issue.

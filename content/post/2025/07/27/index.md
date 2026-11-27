@@ -1,36 +1,36 @@
 ---
-title: "Setup Claude Code & Serena MCP trên Windows"
+title: "Setting Up Claude Code & Serena MCP on Windows"
 date: 2025-07-27
 tags: ["Claude", "Claude Code", "Serena", "MCP"]
 ---
 
-_Dạo này mình spam Newsletter viết bằng AI cũng khá nhiều, hơi nhàm. Sẵn gần đây mình có nghịch ngợm thử combo Claude Code & Serena khá ổn, nên nay tự viết một bài chia sẻ để đổi gió vậy._
+_Lately I've been spamming quite a few AI-generated newsletters, which gets a bit repetitive. Since I recently tinkered with the Claude Code & Serena combo and found it pretty solid, I decided to write a post myself for a change of pace._
 
-## Mở đầu
+## Introduction
 
-Gần đây mình bỏ tiền mua gói Claude Pro, có bao gồm Claude Code, nghịch ngợm cũng hay, mình sẽ đánh giá cao hơn các agent khác ở chỗ dùng qua cli, không bắt buộc cài đặt ide mới (Mình thì quen dùng ide của Jetbrains hơn VS Code. Và Cursor hay Windsurf khó chịu ở chỗ là không có đồng bộ settings giữa các máy khác nhau. Claude Code thì có thể share project config). Vả lại mấy model Claude chính chủ của Anthropic nên dùng trong Claude Code chắc sẽ optimize tốt hơn nhiều :v
+Recently I paid for a Claude Pro subscription, which includes Claude Code. Playing around with it has been fun, and I rate it higher than other agents because it works via the CLI without forcing me to install a new IDE (I'm much more used to JetBrains IDEs than VS Code. Plus, Cursor and Windsurf are annoying because they don't sync settings across different machines, whereas Claude Code lets you share project configs). Besides, since Claude models are first-party from Anthropic, using them inside Claude Code is probably much better optimized :v
 
-Trong post này thì mình sẽ hướng dẫn setup Claude Code & Serena cho Windows. Mặc dù [Claude Code đã hỗ trợ Windows](https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md#:~:text=Added%20support%20for%20native%20Windows), tuy nhiên gần đây mình thử thì vẫn hay gặp lỗi khi tạo file mới. Mình đoán có lẽ là do `/` và `\` trong path, nên hiện tại mình vẫn dùng Claude Code thông qua WSL. Ngoài ra thì trong post này mình cũng giới thiệu cách setup Serena cho project java luôn.
+In this post, I'll walk through setting up Claude Code & Serena on Windows. Although [Claude Code already supports Windows natively](https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md#:~:text=Added%20support%20for%20native%20Windows), when I tried it recently I still frequently ran into errors when creating new files. My guess is that it's probably due to `/` and `\` in file paths, so for now I still use Claude Code through WSL. In addition, I'll also show how to set up Serena for a Java project in this post.
 
-Nào, vào việc thôi!!
+Alright, let's get right to it!!
 
-## Cài đặt WSL
+## Installing WSL
 
-Cái này thì dễ, làm theo hướng dẫn ở đây là được: https://learn.microsoft.com/en-us/windows/wsl/install
+This part is easy — just follow the official guide here: https://learn.microsoft.com/en-us/windows/wsl/install
 
-TLDR: Dùng command sau:
+TLDR: Run the following command:
 
 ```
 wsl --install
 ```
 
-Chờ lệnh chạy xong, restart, restart xong sẽ cài Ubuntu, làm theo hướng dẫn setup username & password cho distro.
+Wait for the command to finish, restart your machine, and after rebooting it will install Ubuntu. Follow the prompts to set up a username and password for the distro.
 
-## Cài đặt Claude Code
+## Installing Claude Code
 
-### Cài đặt NodeJS
+### Installing Node.js
 
-Mặc dù hiện tại [Claude Code chỉ yêu cầu NodeJS version 18+](https://docs.anthropic.com/en/docs/claude-code/setup#:~:text=Software%3A%20Node.js%2018%2B) và hiện tại nếu cài WSL thì cũng đã xài Ubuntu 24.04, bản này thì package nodejs mặc định cũng đã là version 18.x, nhưng quan điểm của mình là nên dùng Node JS bản LTS mới nhất (hiện tại là 22.x), biết đâu sau này Claude Code đổi yêu cầu thì mình vẫn còn xài được :v Vì vậy chúng ta sẽ làm theo hướng dẫn ở đây: https://nodesource.com/products/distributions
+Even though [Claude Code currently only requires Node.js 18+](https://docs.anthropic.com/en/docs/claude-code/setup#:~:text=Software%3A%20Node.js%2018%2B) and a fresh WSL install gives you Ubuntu 24.04 (whose default `nodejs` package is already version 18.x), my view is that you should always use the latest Node.js LTS release (currently 22.x) — who knows if Claude Code will bump its requirements later, and this way we'll still be good to go :v So let's follow the instructions here: https://nodesource.com/products/distributions
 
 TLDR:
 
@@ -41,7 +41,7 @@ sudo apt-get install -y nodejs
 node -v
 ```
 
-Sau đó cần setup npm global prefix để config cài đặt package vào thư mục con trong home, tránh lỗi permission khi chạy không có quyền root, theo hướng dẫn ở đây: https://docs.anthropic.com/en/docs/claude-code/troubleshooting#alternative-solution%3A-create-a-user-writable-npm-prefix-for-global-installs
+Next, we need to set up a global npm prefix so packages are installed into a subdirectory in your home folder, avoiding permission errors when running without root privileges, following this guide: https://docs.anthropic.com/en/docs/claude-code/troubleshooting#alternative-solution%3A-create-a-user-writable-npm-prefix-for-global-installs
 
 TLDR:
 
@@ -52,9 +52,9 @@ echo 'export PATH=~/.npm-global/bin:$PATH' >> ~/.bashrc
 source ~/.bashrc
 ```
 
-### Cài đặt Claude Code
+### Installing Claude Code
 
-Làm theo hướng dẫn ở đây: https://docs.anthropic.com/en/docs/claude-code/setup
+Follow the official setup guide here: https://docs.anthropic.com/en/docs/claude-code/setup
 
 TLDR:
 
@@ -62,13 +62,13 @@ TLDR:
 npm install -g @anthropic-ai/claude-code
 ```
 
-Sau đó chạy lệnh `claude`, đăng nhập với account Claude Pro hoặc Anthropic API_KEY
+Then run `claude` and log in with your Claude Pro account or Anthropic `API_KEY`.
 
-## Cài đặt Serena
+## Installing Serena
 
-### Cài đặt uv
+### Installing uv
 
-Theo hướng dẫn ở đây: https://docs.astral.sh/uv/getting-started/installation/
+Follow the installation guide here: https://docs.astral.sh/uv/getting-started/installation/
 
 TLDR:
 
@@ -76,27 +76,27 @@ TLDR:
 curl -LsSf https://astral.sh/uv/install.sh | sh
 ```
 
-### Setup Serena trong project
+### Setting Up Serena in Your Project
 
-Dùng `cd` đến thư mục project và chạy lệnh sau:
+Use `cd` to navigate to your project directory and run the following command:
 
 ```
 claude mcp add -s project serena -- uvx --from git+https://github.com/oraios/serena serena-mcp-server --context ide-assistant --project $(pwd)
 ```
 
-Vậy là xong, mỗi lần chạy `claude` trong project thì Serena MCP sẽ được chạy theo (Nhớ check prompt của Claude khi gọi `claude`, vì có thể Claude Code muốn hỏi sẽ chạy những MCPs nào)
+And that's it! Every time you run `claude` inside the project, the Serena MCP server will start automatically (remember to check Claude's prompt when you run `claude`, since Claude Code may ask you to confirm which MCP servers to launch).
 
-## Cài đặt Serena cho java project
+## Setting Up Serena for a Java Project
 
-Bởi vì hiện tại [Serena đang gặp vấn đề với java project khi chạy trong Linux và MacOS](https://github.com/oraios/serena?tab=readme-ov-file#claude-code:~:text=There%20may%20be%20issues%20with%20java%20on%20macos%20and%20linux), mình đã thử với 1 project dùng gradle, thì rất hay gặp lỗi permission không chạy được lệnh java, mặc dù lệnh đấy call bình thường trong terminal, không bị lỗi path, chmod hay gì cả. Nên hiện tại sẽ có trick lỏ là chạy serena trong Windows, sau đó chạy Serena MCP client và connect bằng SSE. Sau đây là chi tiết:
+Because [Serena currently has issues with Java projects when running on Linux and macOS](https://github.com/oraios/serena?tab=readme-ov-file#claude-code:~:text=There%20may%20be%20issues%20with%20java%20on%20macos%20and%20linux) — I tested it on a Gradle project and kept running into permission errors where it couldn't execute the `java` command, even though calling it directly in the terminal worked fine with no path or `chmod` issues — there's a slightly janky workaround for now: run Serena on Windows, then connect the Serena MCP client from WSL over SSE. Here are the details:
 
-### Trong Windows
+### On Windows
 
-#### Cài Python
+#### Install Python
 
-Phần này thì khá đơn giản rồi. Mọi người vào trang chủ tải về và cài đặt nhé: https://www.python.org/downloads/
+This part is pretty straightforward. Head over to the official site to download and install it: https://www.python.org/downloads/
 
-#### Cài uv
+#### Install uv
 
 TLDR:
 
@@ -104,25 +104,25 @@ TLDR:
 powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex"
 ```
 
-Hoặc:
+Or:
 
 ```
 pip install uv
 ```
 
-#### Chạy Serena Server
+#### Run the Serena Server
 
-Vào thư mục project, mở cmd/powershell lên và chạy lệnh sau:
+Navigate to your project folder, open CMD or PowerShell, and run the following command:
 
 ```
 uvx --from git+https://github.com/oraios/serena serena-mcp-server --context ide-assistant --project . --transport sse --port 9121
 ```
 
-### Trong WSL
+### In WSL
 
-#### Tìm IP host
+#### Find the Host IP
 
-Tìm IP host để access từ WSL theo hướng dẫn sau: https://learn.microsoft.com/en-us/windows/wsl/networking
+Find the Windows host IP to access it from WSL following this guide: https://learn.microsoft.com/en-us/windows/wsl/networking
 
 TLDR:
 
@@ -130,33 +130,33 @@ TLDR:
 ip route show | grep -i default | awk '{ print $3}'
 ```
 
-Ghi nhớ IP trong output. VD của mình đang là `172.21.0.1`.
+Note down the IP in the output. For example, mine is `172.21.0.1`.
 
-**Note**: Với WSL1 thì IP là 127.0.0.1 luôn.
+**Note**: On WSL1, the IP is simply `127.0.0.1`.
 
-#### Setup Serena MCP Client
+#### Set Up the Serena MCP Client
 
-Dùng `cd` đến thư mục project, chạy lệnh sau:
+Use `cd` to go to your project folder and run:
 
 ```
 claude mcp add -s project --transport sse serena http://172.21.0.1:9121/sse
 ```
 
-Các bạn thay `172.21.0.1` bằng IP trong output ở bước trên nhé.
+Replace `172.21.0.1` with the IP from the output in the previous step.
 
-Sau đó chạy `claude` thì sẽ connect được đến MCP Server đang chạy trên host.
+After that, running `claude` will connect to the MCP server running on the Windows host.
 
-**Lưu ý**: Với java project thì Serena setup hơi lâu (có thể lên đến vài phút), nên theo dõi trên dashboard (mặc định là http://127.0.0.1:24282/dashboard/index.html) để xem tiến độ.
+**Note**: For Java projects, Serena takes a while to initialize (sometimes up to a few minutes), so keep an eye on the dashboard (by default at http://127.0.0.1:24282/dashboard/index.html) to monitor its progress.
 
-## Tổng kết
+## Conclusion
 
-Trên đây là hướng dẫn của mình về cách setup Claude Code & Serena MCP trên Windows. Cảm ơn các bạn đã đọc đến đây. Nếu có vấn đề gì hãy comment bên dưới, mình sẽ phản hồi sau nhé. Hẹn gặp các bạn trong các bài tới.
+That wraps up my guide on setting up Claude Code & Serena MCP on Windows. Thanks for reading all the way to the end! If you run into any issues, feel free to leave a comment below and I'll get back to you. See you in future posts!
 
-P/S: Hiện tại mình đang nghịch ngợm Claude Code với một task refactor, nếu làm xong, thấy hiệu quả và siêng năng một chút thì mình sẽ viết bài chia sẻ nhau nhé hehe :v
+P.S.: Right now I'm experimenting with Claude Code on a refactoring task — if it goes well, proves effective, and I'm not too lazy, I'll write a follow-up post to share how it went hehe :v
 
 ## Update 29/07/2025:
 
-Với những project lớn, nên chạy `index-project` trước khi chạy `serena-mcp-server` theo hướng dẫn ở đây: uvx --from git+https://github.com/oraios/serena index-project
+For large projects, you should run `index-project` before starting `serena-mcp-server`, as documented here: uvx --from git+https://github.com/oraios/serena index-project
 
 TLDR:
 

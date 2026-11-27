@@ -1,27 +1,27 @@
 ---
-title: "Theme cho GRUB"
+title: "Theming GRUB"
 date: 2020-05-01
 tags: [ "Arch", "Linux", "GRUB" ]
 ---
 
-Bạn muốn có giao diện GRUB đẹp hơn? Hôm nay mình sẽ chia sẻ cách để tạo giao diện GRUB đẹp hơn một tí. Ở đây mình ví dụ là theme litarvan có sẵn trong repo của Arch:
+Want a nicer-looking GRUB menu? Today I'll share a quick way to spruce up your GRUB interface. Here I'll use the litarvan theme available in the Arch repositories as an example:
 
 ```shell
 yay -S grub-theme-vimix
 ```
 
-Sau đó thêm dòng sau vào file `/etc/default/grub`:
+Next, add the following line to `/etc/default/grub`:
 
 ```shell
 GRUB_THEME=”/usr/share/grub/themes/Vimix/theme.txt”
 ```
 
-Cập nhật grub và khởi động lại tận hưởng nào! 😀
+Update GRUB and reboot to enjoy the new look! 😀
 
 ```shell
 grub-mkconfig -o /boot/grub/grub.cfg
 ```
 
-Nếu bạn không thích theme này thì có thể tự tải theme hoặc tự tạo theme mình thích. Lưu ý là nên để ở thư mục nào đó mà hệ thống có thể truy cập được không cần quỵền người dùng nhé. VD `/usr/share` như trên.
+If this theme isn't your style, you can download another theme or even create your own. Just make sure to place it in a directory that the system can access at boot without needing user-level permissions—such as under `/usr/share` as shown above.
 
-Chúc các bạn có được một GRUB thật đẹp nhé! Hẹn gặp lại.
+Enjoy your newly styled GRUB! See you next time.

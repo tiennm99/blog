@@ -1,6 +1,6 @@
 ---
-title: "Lưu trữ"
-description: "Toàn bộ bài viết theo năm và tháng."
+title: "Archives"
+description: "All posts by year and month."
 outputs: [html]
 menu:
   main:

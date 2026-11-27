@@ -1,7 +1,6 @@
 ---
-title: Dự án
-slug: projects
-description: Các dự án mình xây dựng và những dự án mã nguồn mở mình từng đóng góp.
+title: Projects
+description: Projects I’ve built and open-source projects I’ve contributed to.
 aliases:
   - pages
 menu:
@@ -11,15 +10,15 @@ menu:
       icon: list
 ---
 
-Đây là những dự án mình làm hoặc từng đóng góp. Bạn có thể [xem các dự án nổi bật trên trang chủ](/#home-projects-heading) hoặc mở một dự án trong mục bên dưới để dùng thử.
+Here are projects I’ve built or contributed to. Start with the [featured projects on the homepage](/#home-projects-heading), or pick something to try from the list below.
 
-## Dự án được cộng đồng gắn sao {#project-nổi-bật-có-star}
+## Starred projects
 
-Các kho mã nguồn có ít nhất một lượt sao trên GitHub, xếp theo số lượt sao.
+My repositories with at least one GitHub star, ordered by star count.
 
 <!-- PROJECTS_STARRED_START -->
 
-| Tên | Mô tả | Lượt sao | Liên kết |
+| Name | Description | Stars | Link |
 | --- | --- | --- | --- |
 | [awesome-ai-dev-tools](https://github.com/tiennm99/awesome-ai-dev-tools) | Top 100 open-source AI coding agents and developer tools, ranked by GitHub stars and refreshed daily, with a star-history dashboard | 5 | [awesome-ai-dev-tools.pages.dev](https://awesome-ai-dev-tools.pages.dev/) |
 | [genshin-repository](https://github.com/tiennm99/genshin-repository) | Genshin Impact direct download links and Sophon build data for every version, updated daily by a Go fetcher | 4 | — |
@@ -38,13 +37,13 @@ Các kho mã nguồn có ít nhất một lượt sao trên GitHub, xếp theo s
 
 <!-- PROJECTS_STARRED_END -->
 
-## Dự án có bản chạy trực tuyến {#project-có-demo}
+## Projects with live demos
 
-Dùng cột Liên kết để mở website, ứng dụng hoặc bot.
+Use the Link column to open a website, app, or bot.
 
 <!-- PROJECTS_DEMO_START -->
 
-| Tên | Mô tả | Liên kết |
+| Name | Description | Link |
 | --- | --- | --- |
 | [mitiapps/laisaochodung](https://github.com/mitiapps/laisaochodung) | Browser driving game on Vietnamese traffic law: drive a car or scooter, get scored on real rules with the real fines and licence points | [laisaochodung.tiennm99.workers.dev](https://laisaochodung.tiennm99.workers.dev) |
 | [awesome-ai-dev-tools](https://github.com/tiennm99/awesome-ai-dev-tools) | Top 100 open-source AI coding agents and developer tools, ranked by GitHub stars and refreshed daily, with a star-history dashboard | [awesome-ai-dev-tools.pages.dev](https://awesome-ai-dev-tools.pages.dev/) |
@@ -92,13 +91,13 @@ Dùng cột Liên kết để mở website, ứng dụng hoặc bot.
 
 <!-- PROJECTS_DEMO_END -->
 
-## Đóng góp mã nguồn mở {#project-đã-đóng-góp}
+## Open-source contributions
 
-Các dự án của người khác đã chấp nhận pull request của mình.
+Projects maintained by others that have merged one or more of my pull requests.
 
 <!-- PROJECTS_CONTRIBUTED_START -->
 
-| Tên | Mô tả | PR đã hợp nhất | Lượt sao |
+| Name | Description | Merged PRs | Stars |
 | --- | --- | --- | --- |
 | [zfoo-project/zfoo](https://github.com/zfoo-project/zfoo) | 💡Extremely fast enterprise server framework, can be used in RPC,  game server,  web server. | 12 | 2005 |
 | [iluwatar/java-design-patterns](https://github.com/iluwatar/java-design-patterns) | Design patterns implemented in Java | 6 | 94913 |

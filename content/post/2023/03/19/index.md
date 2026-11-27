@@ -1,7 +1,7 @@
 ---
-title: "Học Netty"
+title: "Learning Netty"
 date: 2023-03-19
 tags: [ "Java", "Netty" ]
 ---
 
-Trong lúc quỡn mình có tìm tòi thử để viết một game server bằng netty 4 và client js. Project của mình ở đây: [https://github.com/tiennm99/try-netty]()
+In my free time, I tinkered around and built a small game server using Netty 4 and a JS client. You can check out my project here: [https://github.com/tiennm99/try-netty]()

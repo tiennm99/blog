@@ -31,12 +31,12 @@ Trust `route: article`; skip if `duplicate`; for `accessible: false` follow post
 [Tóm tắt tiếng Việt — ≤300 từ, xem post-mechanics §5]
 ```
 
-5. **Translate** — mirror the new entry into `index.en.md` per post-mechanics §7.
+5. **Translate** — mirror the new entry into `index.md` per post-mechanics §7.
 
 6. **Report**:
 ```
 ✅ Article added to Newsletter #[number]
-📄 content/post/YYYY/MM/DD/index.md (+ index.en.md)
+📄 content/post/YYYY/MM/DD/index.vi.md (+ index.md)
 🔗 [clean_url]
 📊 [tally]
 ```

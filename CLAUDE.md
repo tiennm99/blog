@@ -7,7 +7,7 @@ Instructions for AI coding agents working with this Hugo blog. This file is `CLA
 - **Type**: Hugo static site with Vietnamese tech content
 - **Theme**: nocturne, its own repo [`tiennm99/nocturne`](https://github.com/tiennm99/nocturne), imported as a Hugo Module pinned in `go.mod` (needs Go). Make theme changes and CHANGELOG entries in that repo, then bump the blog with `hugo mod get -u github.com/tiennm99/nocturne`; preview unpushed theme edits with `HUGO_MODULE_REPLACEMENTS="github.com/tiennm99/nocturne -> ../nocturne" hugo server`
 - **Post content language**: Vietnamese (with common English tech words)
-- **Site languages**: Vietnamese (default, at `/`) and English (under `/en/`), set in `config/_default/languages.yml`. A post's English translation is `index.en.md` in the same bundle; posts without one show only Vietnamese in the language dropdown
+- **Site languages**: English (default, at `/`) and Vietnamese (under `/vi/`), set in `config/_default/languages.yml`. Posts are still written in Vietnamese first: the source is `index.vi.md` and its English translation is the sibling `index.md`, which Hugo assigns to the default language because it has no language suffix
 - **Author names**: Use `miti99` in site copy and `MiTi` when referring to the author in posts. The author's real name belongs on the About page only.
 - **User communication**: English by default; use another language only when the user explicitly requests it
 - **Timezone**: Asia/Ho_Chi_Minh (UTC+7)
@@ -21,7 +21,7 @@ content/post/
 └── YYYY/
     └── MM/
         └── DD/
-            └── index.md
+            └── index.vi.md
 ```
 
 ## Starting Local Development Server
@@ -71,7 +71,7 @@ The newsletter workflow adds URLs (articles, YouTube videos, images) to the targ
 - `mt-add-image` — image → Bonus → Images (labels Substack images via source-post lookup)
 - `mt-add-tags` — add/update tags in post frontmatter
 - `mt-rewrite-newsletter` — rewrite existing newsletter summaries with a newer model, keeping handwritten lines and stamping a rewrite note
-- `mt-translate-post` — create or sync a post's English `index.en.md` from its Vietnamese `index.md`; also lists untranslated and stale posts. The `mt-add-*` handlers and `mt-rewrite-newsletter` call it, so newsletters stay bilingual as they grow
+- `mt-translate-post` — create or sync a post's English `index.md` from its Vietnamese `index.vi.md`; also lists untranslated and stale posts. The `mt-add-*` handlers and `mt-rewrite-newsletter` call it, so newsletters stay bilingual as they grow
 - `mt-fetch-url` — fallback web fetch chain (local defuddle, the defuddle.md proxy, a reader proxy, then a local headless browser via agent-browser); use only when built-in WebFetch is blocked
 
 `mt-add-url` dispatches `article` / `youtube` / `image`; other types (direct video files, documents, unknown) prompt the user to add or extend a handler.
@@ -84,6 +84,6 @@ Skills name Claude Code tools; other tools map them as follows. `WebFetch` → t
 
 ## Git Workflow Rules
 
-**Before any git commit**, run the `mt-add-tags` pre-commit check on every staged or new `content/post/YYYY/MM/DD/index.md` (the skill defines what counts as minimal tags), then run `node scripts/newsletter translation-status` and bring every changed post's English version in sync with `mt-translate-post`. Commit each `index.md` together with its `index.en.md`.
+**Before any git commit**, run the `mt-add-tags` pre-commit check on every staged or new `content/post/YYYY/MM/DD/index.vi.md` (the skill defines what counts as minimal tags), then run `node scripts/newsletter translation-status` and bring every changed post's English version in sync with `mt-translate-post`. Commit each `index.vi.md` together with its `index.md`.
 
 Stage only the post files you changed, because unrelated local edits may be present; never `git add -A`. Commit as `docs(newsletter): add newsletter N`. A daily bot commit (`chore(projects): refresh projects list`, from `.github/workflows/update-projects.yml`) often lands on main first, so push with `git pull --rebase --autostash && git push`.

@@ -1,13 +1,13 @@
 ---
-title: "Chuyển đổi website"
+title: "Moving to a New Website"
 date: 2020-06-06
 tags: [ "Notice" ]
 ---
 
-**Note:** _(Dạo gần đây mình đã đi học lại, và cũng sấp mặt với deadline trên trường, nên hầu như chẳng viết lấy bài nào nữa, nhưng mà sau đợt này có lẽ mình sẽ có thêm "kha khá" kinh nghiệm để chia sẻ cùng các bạn :))))_
+**Note:** _(Lately I've been back at school and buried in university deadlines, so I've barely written any posts at all—but after this wave is over, I'll probably have "quite a bit" more experience to share with you all :))))_
 
-Trước đây mình viết bài trên [trang Wordpress của mình](https://miti99.code.blog) nhưng dạo này mình vọc vạch để xây dựng trang web cho nhóm [BKFC-THPT Đức Hòa](https://www.facebook.com/bkfcduchoalongan/) của chúng mình thì mình thấy [Hugo](https://gohugo.io/) khá là hay, nên quyết định chuyển sang làm web trên Gitlab Pages, là trang này.
+Previously, I wrote posts on [my WordPress site](https://miti99.code.blog), but while tinkering around recently to build a website for our [BKFC-THPT Đức Hòa](https://www.facebook.com/bkfcduchoalongan/) group, I found [Hugo](https://gohugo.io/) pretty neat and decided to move my blog over to GitLab Pages—which is this site right here.
 
-Mong nhận được sự đồng hành từ các bạn. Thân ái!
+I hope to have your continued support along the way. Cheers!
 
-P.S: _Web của nhóm mình tại <https://bkfcduchoa.pages.dev/>, mong các bạn ủng hộ ^^_
+P.S: _Our group's website is at <https://bkfcduchoa.pages.dev/>, hope you'll check it out and support us ^^_

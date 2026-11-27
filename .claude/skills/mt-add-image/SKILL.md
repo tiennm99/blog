@@ -81,12 +81,12 @@ Follow `docs/newsletter/post-mechanics.md` to resolve/create the target post, th
 Create `### Bonus` / `**Images:**` if missing.
 
 ### 6. Translate
-Mirror the new entry into `index.en.md` per post-mechanics §7 (the label stays verbatim).
+Mirror the new entry into `index.md` per post-mechanics §7 (the label stays verbatim).
 
 ### 7. Report
 ```
 ✅ Image added to Newsletter #[number] (Bonus → Images)
-📄 content/post/YYYY/MM/DD/index.md (+ index.en.md)
+📄 content/post/YYYY/MM/DD/index.vi.md (+ index.md)
 🏷️  label: "[label]"  (source: candidate-pick | caption | user-input; post: [postTitle])
 🖼️  [clean_image_url]
 📊 [tally]

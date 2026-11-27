@@ -1,12 +1,12 @@
 ---
-title: "Chuyển sang Voidlinux"
+title: "Switching to Void Linux"
 date: 2020-06-10
 tags: [ "Void", "Linux" ]
 ---
 
-Sau một thời gian sử dụng [Archlinux](https://www.archlinux.org/) cũng khá tâm huyết mình đang chuyển sang dùng thử [Voidlinux](https://voidlinux.org/) *(Người ta dùng thử trên máy ảo, còn mình máy thật :v)*. Tuy vậy, với vốn kiến thức thu được sau khoảng thời gian sử dụng Archlinux thì mình thấy khá thoải mái khi sử dụng Voidlinux.
+After spending quite a dedicated stretch of time using [Archlinux](https://www.archlinux.org/), I'm now switching over to try out [Voidlinux](https://voidlinux.org/) *(Most people test distros in a virtual machine, whereas I do it on bare metal :v)*. Still, with everything I learned during my time on Archlinux, I feel right at home using Voidlinux.
 
-Mà bây giờ mình thấy sử dụng distro nào cũng không ảnh hưởng gì quá lớn đến các công cụ, miễn cài được là ok rồi :))) Vì vậy trong tương lai mình vẫn sẽ viết bài tiếp nhé (mặc dù sẽ thưa thớt, vì trường mình đã vào "mùa" bài tập lớn rồi :v)
+Honestly, at this point I feel like whichever distro I use doesn't make a huge difference to my tools—as long as I can install them, it's all good :))) So I'll still keep writing posts in the future (even if they'll be a bit sparse, since my university has officially entered "major project season" :v).
 
-## Cập nhật 13/06/2020:
-Mình sẽ trở về với Archlinux vì... nhớ pacman và AUR :v
+## Update 13/06/2020:
+I'm going back to Archlinux because... I miss pacman and the AUR :v

@@ -1,9 +1,9 @@
 ---
-title: "Vấn đề với Xfce"
+title: "Issue with Xfce"
 date: 2020-06-29
 tags: [ "Arch", "Linux", "Driver" ]
 ---
 
-Arch của bạn chỉ cài mỗi Xfce và bị "dứng" khi khởi động? Hay khi khởi động LightDM thì bị giật giật?
+Does your Arch install with only Xfce "freeze" on boot? Or does LightDM stutter when starting up?
 
-Hãy cài package `xf86-video-intel`.
+Install the `xf86-video-intel` package.

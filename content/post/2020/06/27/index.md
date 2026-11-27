@@ -1,30 +1,30 @@
 ---
-title: "Những việc cần làm sau khi cài đặt Ubuntu 20.04"
+title: "Things to Do After Installing Ubuntu 20.04"
 date: 2020-06-27
 tags: [ "Ubuntu", "Linux" ]
 ---
 
-**Đây là bài viết tổng hợp những điều cơ bản mình đã làm sau khi cài lại Ubuntu 20.04**
+**This post is a roundup of the basic steps I took after reinstalling Ubuntu 20.04**
 
-1. Cập nhật hệ thống
+1. Update the system
 
 ```shell
 sudo apt update
 sudo apt upgrade
 ```
 
-2. Cài đặt một số phần mềm cần thiết
+2. Install some essential software
 
 ```shell
 sudo apt install gdebi
 ```
 
-Các phần mềm mình đã cài với `gdebi` là:
+The apps I installed using `gdebi` are:
   - [Google Chrome](https://www.google.com/chrome/)
   - [Visual Studio Code](https://code.visualstudio.com/)
   - [Dropbox](https://www.dropbox.com/install)
 
-Một số phần mềm hay ho khác:
+Some other cool software:
 
   - Spotify:
   ```shell
@@ -33,20 +33,20 @@ Một số phần mềm hay ho khác:
   sudo apt-get update && sudo apt-get install spotify-client
   ```
 
-3. Cài đặt `zsh`
+3. Install `zsh`
 
 ```shell
 sudo apt install zsh
 chsh -s /usr/bin/zsh
 ```
 
-Cài đặt công cụ quản lý zsh plugins: `zgen`. Mặc dù `zgen` đã cũ nhưng mà mình thấy trong những công cụ khác trong repository của Ubuntu là `zplug` và `zsh-antigen` thì `zgen` đơn giản và nhẹ hơn nhiều.
+Install the zsh plugin manager `zgen`. Even though `zgen` is old, compared to the other tools available in Ubuntu's repository like `zplug` and `zsh-antigen`, I find `zgen` much simpler and lighter.
 
 ```shell
 sudo apt install zgen
 ```
 
-Chỉnh sửa file `.zshrc` của bạn lại cho phù hợp, ví dụ của mình như sau:
+Edit your `.zshrc` file to suit your setup; for example, here is mine:
 
 ```shell
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
@@ -116,7 +116,7 @@ ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#120299,bg=cyan"
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 ```
 
-4. Cài đặt `tlp`
+4. Install `tlp`
 
 ```shell
 sudo apt install tlp

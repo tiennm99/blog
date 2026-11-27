@@ -14,58 +14,58 @@ tags:
 categories: ["Newsletter"]
 ---
 
-_~~Như đã đề cập, hôm nay mình sẽ thử Newsletter với Roo Code. Các post tiếp theo sẽ dùng Roo Code + Qwen 3 Coder.~~ Mời bạn thưởng thức Newsletter #44._
+_~~As mentioned, today I'll try writing the Newsletter with Roo Code. The first few entries will use Roo Code + Qwen 3 Coder.~~ Enjoy Newsletter #44._
 
 ## [Cursor Unveils Game-Changing Web App for AI Coding Agents](https://opentools.ai/news/cursor-unveils-game-changing-web-app-for-ai-coding-agents)
 
-Anysphere, công ty đứng sau trình soạn thảo AI Cursor, vừa ra mắt một ứng dụng web cho phép quản lý các agent lập trình AI ngay trên trình duyệt. Thay vì phải mở IDE, người dùng có thể giao việc cho agent bằng ngôn ngữ tự nhiên, theo dõi tiến độ và gộp các thay đổi mã nguồn mà agent tạo ra từ bất kỳ thiết bị nào có kết nối Internet. Ứng dụng này bổ sung cho IDE sẵn có chứ không thay thế nó, và khi ra mắt chỉ dành cho người dùng gói Pro trở lên.
+Anysphere, the company behind the AI code editor Cursor, has launched a web app for managing AI coding agents right from the browser. Instead of opening an IDE, users can assign tasks to agents in natural language, track progress, and merge agent-generated code changes from any internet-connected device. The app complements the existing IDE rather than replacing it, and at launch is available only to Pro tier subscribers and above.
 
-Bài viết cũng nêu bối cảnh: Cursor đã đạt hơn 500 triệu USD doanh thu định kỳ hằng năm và được hơn một nửa số công ty trong danh sách Fortune 500 sử dụng, còn CEO của Anysphere dự đoán đến năm 2026, agent AI sẽ đảm nhận khoảng 20% khối lượng công việc của một kỹ sư phần mềm. Dù phản hồi của cộng đồng nhìn chung tích cực, vẫn còn những băn khoăn về khả năng xử lý các kho mã nguồn lớn, về giá cả và quyền riêng tư. Với lập trình viên trẻ, đây là tín hiệu rõ ràng rằng kỹ năng giao việc và kiểm soát agent AI đang dần trở thành một phần của công việc hằng ngày.
+The article also provides context: Cursor has surpassed $500 million in annual recurring revenue and is used by more than half of the Fortune 500, while Anysphere's CEO predicts that by 2026, AI agents will handle roughly 20% of a software engineer's workload. Although community feedback has been broadly positive, questions remain around handling large repositories, pricing, and privacy. For junior developers, this is a clear signal that delegating to and supervising AI agents is steadily becoming part of everyday work.
 
 ## [The Heart of Software Engineering Still Beats](https://annievella.com/posts/the-heart-of-software-engineering-still-beats/)
 
-Annie Vella cho rằng dù các công cụ AI đang thay đổi mạnh mẽ cách chúng ta làm phần mềm, cốt lõi của nghề vẫn còn nguyên giá trị. Theo tác giả, viết mã nguồn thực chất là mô hình hóa: hình thành một mô hình tư duy có cấu trúc về một quy trình, một hệ thống hay một ý tưởng, rồi mã hóa nó thành thứ máy tính thực thi được. Thiết kế cũng không phải một giai đoạn tách biệt mà diễn ra liên tục trong lúc viết mã, kiểm thử, gỡ lỗi và vận hành hệ thống thực tế; chính quá trình tinh chỉnh các lớp trừu tượng đó mới tạo nên tay nghề của người kỹ sư.
+Annie Vella argues that even as AI tools dramatically reshape how we build software, the core of the craft remains intact. In her view, writing code is fundamentally about modeling: forming a structured mental model of a process, system, or idea, and encoding it into something a computer can execute. Design is not a separate phase either, but happens continuously while writing code, testing, debugging, and operating real-world systems; it is this ongoing refinement of abstractions that defines an engineer's craft.
 
-Bài viết thừa nhận AI tạo sinh đang gây ra một cuộc khủng hoảng bản sắc: phần việc mà nhiều kỹ sư tự hào nhất, biến suy nghĩ thành mã nguồn, giờ đã được tự động hóa, khiến không ít người cảm thấy như kẻ đứng ngoài chính công việc của họ. Tuy vậy, tác giả nhìn nhận đây là sự tiến hóa chứ không phải bị thay thế: kỹ năng mô hình hóa đang dịch chuyển lên một tầng cao hơn, từ viết mã sang tổ chức ngữ cảnh cho công cụ AI, hay còn gọi là context engineering. Niềm vui được định hình những hệ thống vô hình và nhìn ý tưởng dần thành hình vẫn còn đó, chỉ là cách thể hiện đã khác.
+The article acknowledges that generative AI is triggering an identity crisis: the part of the job many engineers took the most pride in—turning thoughts into code—is now automated, leaving quite a few feeling like bystanders in their own work. Even so, the author sees this as an evolution rather than replacement: modeling skills are shifting to a higher level, from writing code to organizing context for AI tools, also known as context engineering. The joy of shaping invisible systems and watching ideas take form is still there; only the medium of expression has changed.
 
 ## [Expert Generalist](https://martinfowler.com/articles/expert-generalist.html)
 
-Martin Fowler cùng Unmesh Joshi và Gitanjali Venkatraman cho rằng các tổ chức phần mềm đang quá coi trọng chuyên môn hẹp, trong khi thứ thực sự có giá trị cho việc phát triển phần mềm hiện đại là những "chuyên gia đa năng" (expert generalist): người có kiến thức rộng nhưng vẫn đi sâu vào một vài lĩnh vực chọn lọc. Bài viết mô tả sáu đặc điểm của họ: tò mò tìm hiểu công nghệ và nghiệp vụ mới; sẵn sàng hợp tác và khiêm tốn học hỏi từ chuyên gia khi gặp lĩnh vực lạ; lấy khách hàng làm trọng tâm để định hướng sự tò mò; ưu tiên kiến thức nền tảng như nguyên lý và mẫu thiết kế bền vững hơn là công cụ nhất thời; sở hữu bộ kỹ năng pha trộn, phức tạp hơn mô hình chữ T; và có "sự thấu cảm" với các lĩnh vực liền kề, giống như tay đua hiểu chiếc xe mà không cần là kỹ sư cơ khí.
+Martin Fowler, together with Unmesh Joshi and Gitanjali Venkatraman, argues that software organizations overvalue narrow specialization, whereas what truly drives modern software development is the "expert generalist": someone with broad knowledge who can still go deep into a few selected areas. The article describes six traits of such people: curiosity to explore new technologies and business domains; willingness to collaborate and humility to learn from specialists when entering unfamiliar territory; customer focus to guide their curiosity; prioritizing foundational knowledge like enduring principles and design patterns over fleeting tools; possessing a blended skill set more complex than a simple T-shaped model; and having "empathy" for adjacent disciplines, much like a race car driver who understands the car without needing to be a mechanical engineer.
 
-Về phía tổ chức, các tác giả khuyên nên tuyển dụng dựa trên tốc độ học hỏi và khả năng cộng tác thay vì kinh nghiệm với một công cụ cụ thể, khuyến khích nhân viên luân chuyển qua nhiều mảng, kết hợp chuyên gia đa năng với một vài chuyên gia sâu cho mỗi công nghệ cốt lõi, và xây dựng chương trình đào tạo bài bản không kém đào tạo chuyên gia, chẳng hạn các buổi thực hành tự xây phiên bản thu nhỏ của Kafka, Kubernetes hay Delta Lake để nắm các mẫu thiết kế bên trong. Năng lực đa năng cũng nên được ghi nhận khi xét thăng tiến.
+For organizations, the authors recommend hiring for learning speed and collaboration rather than experience with a specific tool, encouraging staff to rotate across areas, pairing expert generalists with a few deep specialists for each core technology, and building training programs just as rigorous as specialist tracks—such as hands-on workshops building miniature versions of Kafka, Kubernetes, or Delta Lake to grasp their internal design patterns. Generalist capability should also be recognized in promotion criteria.
 
-_Trên đây là các bài dùng Roo Code với Qwen 3 Coder, nhìn chung thì tương đối chậm và tốn khá nhiều request. Sau đây mình sẽ dùng thử Roo Code với Kimi K2_
+_The entries above were written using Roo Code with Qwen 3 Coder; overall it was relatively slow and consumed quite a lot of requests. Next, I'll test Roo Code with Kimi K2._
 
 ## [Writing code was never the bottleneck](https://ordep.dev/posts/writing-code-was-never-the-bottleneck)
 
-Tác giả phản bác quan điểm cho rằng các mô hình ngôn ngữ lớn (LLM) đã giải quyết được bài toán cốt lõi của kỹ thuật phần mềm. Viết mã nguồn chưa bao giờ là nút thắt cổ chai thực sự; những việc tốn thời gian nhất luôn là rà soát mã nguồn, chuyển giao kiến thức, kiểm thử, gỡ lỗi và phối hợp trong nhóm, tức những hoạt động đòi hỏi tư duy và sự hiểu biết chung giữa các thành viên.
+The author pushes back against the claim that large language models (LLMs) have solved the core problem of software engineering. Writing code was never the real bottleneck; the most time-consuming activities have always been code review, knowledge transfer, testing, debugging, and team coordination—activities that demand critical thinking and shared understanding across the team.
 
-LLM giúp tạo mã nhanh hơn nhưng không làm việc kiểm chứng nhanh hơn tương ứng, nên chúng chỉ dịch chuyển nút thắt chứ không gỡ bỏ nó: mã nguồn dễ tạo ra hơn nhưng lại khó xác minh hơn, và cả nhóm chưa chắc đã đi nhanh hơn. Hiểu được mã nguồn chạy thế nào, tìm ra lỗi và giữ chất lượng vẫn tốn nhiều công sức, còn mã sinh tự động đôi khi còn khó đọc và khó rà soát hơn. Khi tốc độ sinh mã vượt quá khả năng trao đổi của nhóm, người rà soát chịu áp lực lớn và chất lượng dễ bị ảnh hưởng. Chi phí viết mã có thể giảm, nhưng chi phí để cả nhóm cùng hiểu hệ thống thì không, và đó mới là nút thắt thực sự.
+LLMs speed up code generation without speeding up verification to match, so they merely shift the bottleneck rather than removing it: code becomes easier to produce but harder to verify, and the team as a whole does not necessarily move faster. Understanding how the code works, finding bugs, and maintaining quality still take substantial effort, and auto-generated code is sometimes even harder to read and review. When code generation outpaces a team's capacity to communicate, reviewers come under heavy pressure and quality easily suffers. The cost of writing code may drop, but the cost of building shared team understanding of the system does not—and that is the true bottleneck.
 
 ## [Building Tiny AI Tools](https://www.seangoedecke.com/building-tiny-ai-tools/)
 
-Sean Goedecke chỉ ra một hướng ứng dụng AI ít được chú ý, bên cạnh lập trình với agent và các sản phẩm AI đại trà: tự xây những công cụ nhỏ, cá nhân hóa để tự động hóa các quy trình lặp đi lặp lại. Tác giả phân biệt "tư duy điều hành" (ra quyết định chiến lược) với "tư duy cơ học" (đọc, phân tích và tóm tắt thông tin), và loại thứ hai giờ đây có thể giao cho AI.
+Sean Goedecke highlights an overlooked area of AI application alongside agentic coding and mass-market AI products: building tiny, personalized tools to automate repetitive workflows. He distinguishes between "executive thought" (making strategic decisions) and "mechanical thought" (reading, analyzing, and summarizing information), noting that the latter can now be handed off to AI.
 
-Hai ví dụ được nêu là gh-standup, một tiện ích mở rộng cho GitHub CLI tự lấy lịch sử commit rồi đưa qua một prompt AI để tạo báo cáo họp standup hữu ích hơn so với tự xem lại thủ công, và một GitHub Action gộp cập nhật của từng kỹ sư thành bản tổng kết tuần cho cả nhóm, giúp tiết kiệm đáng kể thời gian dù chỉ phục vụ riêng công ty. Những công cụ như vậy quá ngách để bán đại trà nhưng lại rất có giá trị nội bộ; dấu hiệu rõ nhất là khi chúng hỏng, đồng nghiệp sẽ lập tức lên tiếng. Tác giả tin rằng khi mô hình ngày càng tốt hơn, kiểu tự động hóa này sẽ phổ biến hơn, và kỹ sư phần mềm là người có lợi thế nhất để xây dựng chúng cho chính nhóm của họ.
+He gives two examples: `gh-standup`, a GitHub CLI extension that pulls commit history and feeds it through an AI prompt to generate a more useful standup report than manual review, and a GitHub Action that aggregates individual engineers' updates into a weekly team summary, saving significant time even though it only serves his own company. Tools like these are too niche to sell commercially yet carry high internal value; the clearest sign is that when they break, coworkers immediately speak up. The author believes that as models continue to improve, this kind of automation will become more widespread, and software engineers are best positioned to build them for their own teams.
 
 ## [Modern Git Commands and Features You Should Be Using](https://martinheinz.dev/blog/109)
 
-Phần lớn chúng ta dùng Git hằng ngày nhưng chỉ quanh quẩn với `add`, `commit`, `push`, `pull` như thể vẫn đang ở năm 2005. Martin Heinz giới thiệu các lệnh hiện đại hơn: `git switch` (Git 2.23) thay `git checkout` trong việc chuyển nhánh, có kiểm tra an toàn để tránh mất dữ liệu và tiện ích như `git switch -` để quay lại nhánh trước; `git restore` gom chức năng khôi phục tệp vốn rải rác ở `reset` và `checkout` với cú pháp rõ ràng hơn; `git sparse-checkout` (Git 2.25) chỉ hiện những thư mục cần thiết trong thư mục làm việc của monorepo lớn, và kết hợp với clone một phần thì còn giảm cả dữ liệu tải về; `git worktree` cho phép mở nhiều nhánh cùng lúc ở các thư mục riêng mà không cần stash hay clone thêm; và `git bisect` dùng tìm kiếm nhị phân để xác định commit gây ra lỗi.
+Most of us use Git every day yet stick to `add`, `commit`, `push`, and `pull` as if it were still 2005. Martin Heinz introduces more modern commands: `git switch` (Git 2.23) replaces `git checkout` for switching branches, adding safety checks to prevent data loss and conveniences like `git switch -` to jump back to the previous branch; `git restore` consolidates file-restoration tasks previously scattered across `reset` and `checkout` with clearer syntax; `git sparse-checkout` (Git 2.25) populates only the needed directories in the working tree of a large monorepo, and when combined with partial clone also reduces downloaded data; `git worktree` lets you check out multiple branches simultaneously in separate directories without stashing or cloning again; and `git bisect` uses binary search to pinpoint the commit that introduced a bug.
 
 ```bash
 git switch other-branch
-git switch -  # Quay lại branch trước đó
-git switch remote-branch  # Chuyển sang remote branch và tự động tracking
+git switch -  # Switch back to the previous branch
+git switch remote-branch  # Switch to a remote branch with automatic tracking
 ```
 
 ```bash
-# Bỏ stage changes
+# Unstage changes
 git restore --staged some-file.py
 
-# Bỏ stage và discard changes
+# Unstage and discard working tree changes
 git restore --staged --worktree some-file.py
 
-# Khôi phục file về commit cụ thể
+# Restore a file to a specific commit
 git restore --source HEAD~2 some-file.py
 ```
 
@@ -73,29 +73,29 @@ git restore --source HEAD~2 some-file.py
 git clone --no-checkout https://github.com/example/monorepo
 cd monorepo
 git sparse-checkout init --cone
-git checkout main  # Chỉ checkout file trong root
-git sparse-checkout set service/common  # Chỉ lấy thư mục cần thiết
+git checkout main  # Only checks out files in the root directory
+git sparse-checkout set service/common  # Only pulls the needed directory
 ```
 
 ```bash
-git worktree add ../hotfix master  # Tạo worktree mới từ master
-cd ../hotfix  # Làm việc độc lập
-git worktree list  # Liệt kê các worktree
+git worktree add ../hotfix master  # Create a new worktree from master
+cd ../hotfix  # Work independently
+git worktree list  # List active worktrees
 ```
 
 ```bash
 git bisect start
-git bisect bad HEAD      # Commit hiện tại bị lỗi
-git bisect good abc123   # Commit cuối cùng hoạt động tốt
-# Git tự động checkout commit ở giữa
-git bisect good/bad      # Test và báo cáo kết quả
-git bisect reset         # Quay lại commit ban đầu
+git bisect bad HEAD      # Current commit is broken
+git bisect good abc123   # Last known good commit
+# Git automatically checks out the midpoint commit
+git bisect good/bad      # Test and mark the result
+git bisect reset         # Return to the original commit
 ```
 
-Bài học tác giả rút ra là khi gặp vấn đề với Git, hãy tra tài liệu chính thức mới nhất thay vì dựa vào các câu trả lời cũ trên StackOverflow, vì Git đã phát triển nhiều và rất có thể đã có cách giải quyết đơn giản, an toàn hơn cho vấn đề của bạn.
+The takeaway is that when you run into a Git problem, consult the latest official documentation rather than relying on old StackOverflow answers—Git has evolved considerably, and there is likely already a simpler, safer way to solve your problem.
 
-_Sau khi trải nghiệm mình nhận thấy Kimi K2 luôn phản hồi nhanh hơn Qwen 3 Coder, dù dùng Cline hay Roo Code, và Roo Code gọi nhiều request hơn Cline, tuy nhiên độ hài lòng về kết quả thì cũng xêm xêm. Vì OpenRouter limit dựa trên số lần request chứ không phải tổng lượng token nên có lẽ mình sẽ chọn Cline + Kimi K2 để dùng tạm mỗi khi Claude Code chạm quota._
+_After testing, I noticed Kimi K2 consistently responds faster than Qwen 3 Coder whether using Cline or Roo Code, and Roo Code makes more requests than Cline, though my satisfaction with the output is roughly the same. Since OpenRouter's rate limit is based on request count rather than total tokens, I'll probably stick with Cline + Kimi K2 as a fallback whenever Claude Code hits its quota._
 
 ---
 
-*Bài viết đã được viết lại bởi Claude Code với Opus 5.5 vào ngày 27/09/2026; được review và chỉnh sửa bởi Codex với GPT 6.1 Sol vào ngày 09/11/2026, rà soát lại bởi Claude Code với Sonnet 5.5 vào ngày 16/11/2026.*
+*This post was rewritten by Claude Code with Opus 5.5 on 27/09/2026; reviewed and edited by Codex with GPT 6.1 Sol on 09/11/2026, and re-verified by Claude Code with Sonnet 5.5 on 16/11/2026.*

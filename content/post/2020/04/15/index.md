@@ -1,66 +1,52 @@
 ---
-title: "Vài phần mềm thiết thực cho Archlinux"
+title: "Practical Software for Arch Linux"
 date: 2020-04-15
 tags: [ "Arch", "Linux" ]
 ---
 
-Bài viết này mình giới thiệu một số phần mềm có thể cần thiết (đối với mình – với vai trò là một sinh viên CNTT sử dụng
-Arch Linux)
+In this post, I'll introduce some useful software you might need (at least from my perspective as an IT student daily-driving Arch Linux).
 
 ## Web Browser
 
-Web browser là một thành phần quan trọng phải không nào, để lướt Facebook hay để xem blog này cũng vậy :v. Mặc dù Edge
-đã xoắn ngôi Firefox để giành vị trí top 2 browser phổ biến, nhưng Edge chưa có bản cho linux, vì vậy có thể nói Chrome
-và Firefox vẫn là 2 browser phổ biến trong thế giới của chúng ta, để cài đặt:  
+A web browser is obviously essential—whether for scrolling through Facebook or reading this blog :v. Even though Edge has overtaken Firefox to claim the #2 spot among the most popular browsers, Edge doesn't have a Linux build yet, so Chrome and Firefox remain the two go-to browsers in our world. To install them:  
 Chrome: `yay -S google-chrome`  
 Firefox: `yay -S firefox`  
-Ngoài ra còn có các browser khác như: Brave (`brave-bin`), Chromium (`chromium`), Opera (`opera`),
-Vivaldi (`vivaldi`),...  
-Bạn xem thêm tại: <https://wiki.archlinux.org/index.php/List_of_applications/Internet#Web_browsers> nhé!
+There are also plenty of other browsers available, such as Brave (`brave-bin`), Chromium (`chromium`), Opera (`opera`), Vivaldi (`vivaldi`),...  
+Check out the full list here: <https://wiki.archlinux.org/index.php/List_of_applications/Internet#Web_browsers>!
 
-## Bộ gõ tiếng Việt
+## Vietnamese Input Method
 
-Từ lâu, bộ gõ tiếng Việt trên Linux đã là một nỗi đau :v, tuy nhiên gần đây mình tìm được một bộ gõ khá là Ok, đó
-là [ibus-bamboo](https://github.com/BambooEngine/ibus-bamboo). Chế độ gõ mặc định thì cũng hao hao giống `ibus-unikey`
-thôi, nhưng bằng việc chuyển chế độ gõ (shortcut là _Shift+~_) thì bạn có thể chuyển sang chế độ gõ khác cho từng phần
-mềm, có tận 7 chế độ, bạn có thể chuyển cho phù hợp. VD mình chọn chế độ 4. ForwardKeyEvent II để viết blog này đấy. Để
-cài đặt:
+For a long time, typing Vietnamese on Linux was a real pain :v, but recently I found a great input method called [ibus-bamboo](https://github.com/BambooEngine/ibus-bamboo). Its default input mode works pretty much like `ibus-unikey`, but by switching input modes (shortcut: _Shift+~_), you can pick a specific input mode per application out of 7 available modes. For example, I use mode 4 (ForwardKeyEvent II) to write this blog. To install it:
 
 ```shell
 yay -S ibus-bamboo
 ```
 
-Bạn vào Ibus Preference để thêm ibus-bamboo là một bộ gõ nhé, sau đó thêm command này vào Startup Application:
+Open IBus Preferences to add `ibus-bamboo` as an input method, then add this command to your Startup Applications:
 
 ```shell
 ibus-daemon -drx
 ```
 
-để Ibus khởi chạy cùng hệ thống nha!
+so that IBus starts automatically with your system!
 
-## Phần mềm chụp màn hình
+## Screenshot Tool
 
-Ngoài `gnome-screenshot` ra thì lúc trước mình có dùng shutter, chẳng may cái này ngừng phát triển rồi, mình cũng tìm
-được một cái khác thay thế là `flameshot`, cũng khá là tiện, bạn có thể chọn khung để chụp, điều chỉnh lại khung sau khi
-đã chọn,... Để cài đặt:
+Aside from `gnome-screenshot`, I used to use Shutter, but unfortunately it's no longer actively developed. I found a great replacement called `flameshot`—it's super convenient, letting you select a capture region, adjust the selection frame afterward, annotate, and more. To install it:
 
 ```shell
 yay -S flameshot
 ```
 
-## Office
+## Office Suite
 
-Hẳn phải cần đến một bộ Office để còn 'làm ăn' với văn bản, bảng tính hay trình chiếu các kiểu chứ. Mình thì thường dùng
-Libre Office, cài đặt cũng dễ thôi, Arch có 2 bản fresh và still, mình thì hay dùng fresh:
+You'll definitely need an office suite to get work done with documents, spreadsheets, and presentations. I usually use LibreOffice, which is easy to install. Arch offers two versions, `fresh` and `still`; I usually go with `fresh`:
 
 ```shell
 yay -S libreoffice-fresh
 ```
 
-Ngoài Libre ra thì Arch còn có kha khá các bản Office khác cho bạn lựa chọn: Calligra (`calligra`), Only
-Office (`onlyoffice-bin`), Open Office (`openoffice`), Softmaker Office (`freeoffice`) và WPS Office (`wps-office`) cùng
-với những phần mềm 'rời', thay thế cho từng phần mềm trong các bộ office. Với LibreOffice thì ibus đã hoạt động khá mượt
-rồi, tuy nhiên với các bộ khác thì mình thấy phải thêm vào `/etc/profile` các dòng sau:
+Besides LibreOffice, Arch has plenty of other office suites to choose from: Calligra (`calligra`), OnlyOffice (`onlyoffice-bin`), OpenOffice (`openoffice`), SoftMaker Office (`freeoffice`), and WPS Office (`wps-office`), as well as standalone apps that can replace individual programs in an office suite. With LibreOffice, IBus works smoothly out of the box, but for some of the other suites I found that you need to add the following lines to `/etc/profile`:
 
 ```shell
 export GTK_IM_MODULE=ibus
@@ -70,111 +56,102 @@ export QT_IM_MODULE=ibus
 
 ## Terminal
 
-Mặc định bạn có thể dùng gnome-terminal cũng được, nhưng mình hay dùng 2 terminal là terminator và guake, mình có hướng
-dẫn cài terminator ở bài hậu cài đặt rồi, nên giờ cài thêm Guake thôi:
+You can stick with `gnome-terminal` by default, but I usually use two terminals: Terminator and Guake. Since I already covered installing Terminator in my post-installation guide, here's how to install Guake:
 
 ```shell
 yay -S guake
 ```
 
-Guake giúp bạn có thể mở nhanh terminal bằng shortcut F12, tinh chỉnh để terminal tự ẩn, tự chạy cùng hệ thống,… rất
-tiện
+Guake lets you quickly drop down a terminal with the F12 shortcut, auto-hide it, start it automatically on login, and more—super handy.
 
-## Nhắn tin tiện lợi hơn
+## All-in-One Messaging
 
-Việc nhắn tin 'all-in-one' rất dễ với Rambox, Rambox giúp chúng ta có thể nhắn tin Messenger, Skype, Telegram... thậm
-chí cả quản lý email như Gmail, Outlook,... Để cài đặt:
+Managing all your chats in one place is super easy with Rambox. It lets you use Messenger, Skype, Telegram, and even manage email accounts like Gmail and Outlook all in one app. To install it:
 
 ```shell
 yay -S rambox-bin
 ```
 
-## Quản lý clipboard
+## Clipboard Manager
 
-Khi bạn... copy code :v rất nhiều và paste một lượt? Bạn không muốn chuyển tab copy xong paste từng đợt? Đó là lúc bạn
-cần đến một phần mềm để quản lý clipboard, ở đây mình dùng CopyQ:
+Ever need to copy a bunch of code snippets :v and paste them all at once without constantly switching tabs back and forth? That's when you need a clipboard manager. Here I use CopyQ:
 
 ```shell
 yay -S copyq
 ```
 
-## Cloud sync
+## Cloud Sync
 
-Tin buồn là 2 cloud lớn với sinh viên là Google Drive và Onedrive (dùng mail sinh viên thì có Google Drive unlimit, còn
-Onedrive thì cho 5TB) thì không hỗ trợ linux một cách chính thức, có nhiều cách thay thế nhưng thay thế thì ai đảm bảo
-đâu, nên mình không dùng. Mình dùng Dropbox:
+The sad news is that the two biggest cloud storage services for students—Google Drive and OneDrive (student emails get unlimited Google Drive storage and 5 TB on OneDrive)—don't have official Linux clients. There are third-party workarounds, but since it's hard to vouch for their reliability, I skip them and use Dropbox instead:
 
 ```shell
 yay -S dropbox
 ```
 
-Ngoài ra thì cũng có nhiều host hỗ trợ linux lắm, như MEGA (`megasync`), Nextcloud (`nextclout-client` nếu bạn dùng host
-của người ta),...
-Bạn có thể tham khảo một số host khác được đề cập tại đây:
+There are also plenty of other cloud providers with native Linux support, such as MEGA (`megasync`), Nextcloud (`nextclout-client` if you use a hosted instance),...
+You can check out more options listed here:
 <https://wiki.archlinux.org/index.php/List_of_applications/Internet#Cloud_synchronization_clients>
 
-## Tools lập trình
+## Programming Tools
 
-Mình đang thử làm quen với NeoVim:
+I'm currently trying to get used to Neovim:
 
 ```shell
 yay -S neovim
 ```
 
-Nhưng trước khi quen được thì VScode vẫn là editor mình đang dùng.
-VScode: editor mình ưng ý nhất hiện tại:
+Until I'm completely comfortable with it, though, VS Code is still my daily driver.
+VS Code—my favorite editor right now:
 
 ```shell
 yay -S visual-studio-code-bin
 ```
 
-## Teamviewer
+## TeamViewer
 
-Teamviewer – kết nối từ xa cho mọi nhà :v
+TeamViewer—remote desktop access for everyone :v
 
 ```shell
 yay -S teamviewer
 ```
 
-Các bạn nhớ enable teamviewerd service để kết nối được nha:
+Remember to enable the `teamviewerd` service so it can connect:
 
 ```shell
 sudo systemctl enable teamviewerd
 ```
 
-rồi restart mới dùng được
+and restart before using it.
 
-## Phần mềm compare file
+## File Comparison Tool
 
 ```shell
 yay -S meld
 ```
 
-## Phần mềm ảo hóa để chạy máy ảo
+## Virtualization Software for Running Virtual Machines
 
-Khi cài nhóm gnome thì bạn đã có sẵn gnome-boxes rồi, tuy nhiên thì mình vẫn thấy VirtualBox là nhất trên Linux :v Lưu ý
-là bạn cần cài thêm linux-headers (nếu bạn dùng kernel mặc định của Arch) để mà cài dkms nhé!
+If you installed the `gnome` group, you already have `gnome-boxes`, but I still think VirtualBox is the best choice on Linux :v Note that you'll also need to install `linux-headers` (assuming you're on Arch's default kernel) for DKMS to work!
 
 ```shell
 yay -S linux-headers
 yay -S virtualbox
 ```
 
-## Phần mềm dọn dẹp rác
+## System Cleaner
 
-Từ lâu BleachBit đã nổi danh sánh vai với Ccleaner trên Windows :). Để cài đặt:
+BleachBit has long been the Linux counterpart to CCleaner on Windows :). To install it:
 
 ```shell
 yay -S bleachbit
 ```
 
-## Phần mềm quản lý download
+## Download Manager
 
-Uget không bằng được Internet Download Manager (IDM) thần thánh trên Windows, nên dùng đỡ nhé, sẵn cài thêm
-plugin `aria2` luôn:
+uGet can't quite match the legendary Internet Download Manager (IDM) on Windows, but it's a solid alternative—make sure to install the `aria2` plugin alongside it:
 
 ```shell
 yay -S uget aria2
 ```
 
-Nếu có phần mềm gì hay mình sẽ cập nhật thêm cũng tại bài viết này luôn nhé! Hẹn gặp lại.
+If I come across more great software, I'll update this post directly! See you next time.

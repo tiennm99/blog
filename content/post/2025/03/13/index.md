@@ -1,39 +1,39 @@
 ---
-title: "Fix lỗi không đăng nhập được Nextcloud từ client khi deploy bằng Coolify"
+title: "Fixing Nextcloud Client Login Issues When Deployed with Coolify"
 date: 2025-03-13
 tags: [ "Nextcloud", "Coolify", "Self-hosted"]
 ---
 
-*Chi tiết về Coolify mình sẽ cân nhắc giới thiệu kĩ hơn trong một bài viết riêng. Hôm nay mình sẽ chỉ tập trung vào giải quyết vấn đề mình gặp phải thôi.*
+*I'll consider writing a dedicated post introducing Coolify in more detail later. Today, I'll just focus on solving a specific issue I ran into.*
 
-## Vấn đề
+## The Problem
 
-Sau khi setup Nextcloud bằng Coolify thành công, bạn đã có thể sử dụng giao diện web bằng ip hoặc domain bình thường. Tuy nhiên khi dùng Nextcloud client để đăng nhập thì sẽ gặp lỗi sau:
+After successfully setting up Nextcloud with Coolify, you can access and use the web interface via IP or domain as usual. However, when trying to log in from the Nextcloud desktop/mobile client, you run into the following error:
 
 *The polling URL does not start with HTTPS despite the login URL started with HTTPS. Login will not be possible because this might be a security issue. Please contact your administrator.*
 
 ![](img/1.png)
 
-## Cách khắc phục
+## The Fix
 
-1. Connect vào termial của Nextcloud.
-2. Chạy lệnh sau để mở file cấu hình Nextcloud:
+1. Connect to the Nextcloud container terminal.
+2. Run the following command to open the Nextcloud configuration file:
 
 ```bash
 nano /config/www/nextcloud/config/config.php
 ```
 
-3. Update lại như sau:
+3. Add or update the following settings:
 
 ```
 'overwrite.cli.url' => 'https://yourdomain.com',
 'overwriteprotocol' => 'https',
 ```
 
-*Thay <code>yourdomain.com</code> bằng domain của bạn.*
+*Replace <code>yourdomain.com</code> with your actual domain.*
 
-4. Save lại file và restart Nextcloud.
+4. Save the file and restart Nextcloud.
 
-5. Thử đăng nhập lại từ client.
+5. Try logging in from the client again.
 
-Cảm ơn bạn đã đọc bài. Chúc bạn thành công!
+Thanks for reading, and good luck!

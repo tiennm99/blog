@@ -1,21 +1,21 @@
 ---
-title: "Cách mở rộng ổ đĩa trong Oracle Cloud Infrastructure (OCI)"
+title: "How to Expand a Disk Volume in Oracle Cloud Infrastructure (OCI)"
 date: 2024-12-01
 tags: [ "Linux", "OCI" ]
 ---
 
-Khi dùng Oracle trên Oracle Cloud, dù lúc setup bạn chọn Boot Volume 200GB nhưng Oracle chỉ nhận 50GB?
+When running an instance on Oracle Cloud, have you ever chosen a 200GB Boot Volume during setup only to find the OS recognizing just 50GB?
 
-Đây là do Oracle Cloud chưa nhận hết dung lượng, bạn cần phải mở rộng ổ đĩa để sử dụng hết dung lượng đã chọn.
+This happens because the OS hasn't claimed the full volume capacity yet—you need to expand the filesystem to use the full disk space you allocated.
 
-## Cách làm
+## How to Do It
 
-Bạn sử dụng lệnh sau:
+Run the following command:
 
 ```bash
 sudo /usr/libexec/oci-growfs -y
 ```
 
-Tham khảo:
+References:
 - [https://docs.oracle.com/en-us/iaas/Content/Block/Tasks/resizingavolume.htm](https://docs.oracle.com/en-us/iaas/Content/Block/Tasks/resizingavolume.htm)
 - [https://docs.oracle.com/en-us/iaas/oracle-linux/oci-utils/index.htm#oci-growfs](https://docs.oracle.com/en-us/iaas/oracle-linux/oci-utils/index.htm#oci-growfs)

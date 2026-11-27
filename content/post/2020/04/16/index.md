@@ -1,45 +1,45 @@
 ---
-title: "Zsh và Antibody"
+title: "Zsh and Antibody"
 date: 2020-04-16
 tags: [ "Arch", "Linux", "Zsh", "Antibody" ]
 ---
 
-Bài viết này mình giới thiệu về zsh, một shell khác với bash, với khả năng tùy biến rất cao, hỗ trợ rất nhiều, nhất là với những bạn hay dùng lệnh.
+In this post, I'll introduce `zsh`, an alternative shell to `bash` that offers high customizability and tons of helpful features, especially if you spend a lot of time in the terminal.
 
-## Cài đặt zsh và đặt làm shell mặc định
+## Installing zsh and Setting It as Your Default Shell
 
-Cài đặt zsh:
+Install `zsh`:
 
 ```shell
 yay -S zsh
 ```
 
-Đặt zsh là shell mặc định:
+Set `zsh` as your default shell:
 
 ```shell
 chsh -s /bin/bash/zsh
 ```
 
-## Tùy biến zsh
+## Customizing zsh
 
-Mặc định thì zsh cũng chỉ là shell bình thường như bash thôi, nhưng tùy biến rồi thì nó thành 'siêu shell' :v
+Out of the box, `zsh` is just a regular shell like `bash`, but once customized, it turns into a "super shell" :v
 
-Là dân pro thì bạn có thể tự tùy chỉnh bằng tay, bằng code để tùy biến zsh theo ý thích. Nhưng mình thì không được như vậy, nên mình sẽ giới thiệu đến các bạn framework oh-my-zsh khá nổi tiếng và plugin manager antibody. Ngày trước thì có antigen, nhưng mình thấy antigen đã không còn được phát triển nữa, thay vào đó là antibody, được so sánh với hiệu năng tốt hơn (mặc dù mình thấy việc tích hợp ohmyzsh vào antibody có phần khập khiễng hơn so với antigen). Các bạn có thể xem thông tin thêm tại trang chủ của mấy cái trên nha:
+If you're a power user, you can hand-craft your own configuration and scripts to customize `zsh` however you like. Since I'm not at that level, I'll introduce the popular `oh-my-zsh` framework along with the `antibody` plugin manager. Back in the day people used `antigen`, but `antigen` is no longer actively developed, and `antibody` is touted as a much faster replacement (even though I find integrating `oh-my-zsh` with `antibody` a bit clunkier than with `antigen`). You can check out their official repositories for more details:
 
 - <https://github.com/robbyrussell/oh-my-zsh>
 - <https://github.com/getantibody/antibody>
 - <https://github.com/zsh-users/antigen>
 
-Để cài antibody cho Arch:
+To install `antibody` on Arch:
 
 ```shell
 yay -S antibody
 ```
 
-(cái này có ghi trong trang chủ luôn rồi^^, đảm bảo nguồn)
+(this is listed right on their official homepage^^, so the source is trustworthy)
 
-Tùy biến antibody: Ở đây mình hướng dẫn cơ bản thôi, zsh thì có file `~/.zshrc` là file source cũng như `~/.bashrc` của bash vậy đó. Nhưng antibody thì khuyến khích viết các plugin ở một file khác, vd như `~./.zsh_plugins.txt`, sau đó thì load antibody bằng 2 cách: tĩnh hoặc động.
-Sau đây là ví dụ về file `~./.zsh_plugins.txt` của mình:
+Configuring `antibody`: Here I'll cover the basics. Just as `bash` uses `~/.bashrc`, `zsh` uses `~/.zshrc` as its configuration file. However, `antibody` recommends listing your plugins in a separate file—such as `~./.zsh_plugins.txt`—and then loading them using either static or dynamic loading.
+Here's an example of my `~./.zsh_plugins.txt` file:
 
 ```shell
 robbyrussell/oh-my-zsh
@@ -87,13 +87,13 @@ zsh-users/zsh-history-substring-search
 robbyrussell/oh-my-zsh path:themes/candy.zsh-theme
 ```
 
-Này chỉ là ví dụ thôi, một vài plugin bạn phải cài thêm tool mới dùng được nha. Rồi, tới phần load. Nôm na thì load tĩnh là bạn chạy antibody thành một file `config.sh`.
+This is just an example—keep in mind that some plugins require extra CLI tools to be installed before they'll work. Now onto loading them. In short, static loading means running `antibody` to generate a single static script file (like `config.sh`).
 
-VD: `antibody bundle < ~/.zsh_plugins.txt > ~/.zsh_plugins.sh`
+For example: `antibody bundle < ~/.zsh_plugins.txt > ~/.zsh_plugins.sh`
 
-Sau đó trong file `~/.zshrc` bạn chỉ cần thêm dòng: `source ~/.zsh_plugins.sh` là được.
+Then in `~/.zshrc`, you just add the line: `source ~/.zsh_plugins.sh`.
 
-Cách này nhanh hơn load động, tuy nhiên load tĩnh không tự cập nhật plugin khi có bản cập nhật. Vì vậy mình dùng load động, mình thấy chậm hơn chẳng bao nhiêu (mà vẫn nhanh hơn antigen), nhưng được cập nhật thường xuyên (mỗi lần chạy là mỗi lần check cập nhật đó). Chỉ cần load trong file `~/.zshrc` như sau là được:
+Static loading is faster than dynamic loading, but it doesn't automatically update plugins when updates are available. That's why I prefer dynamic loading—it's barely any slower in practice (and still faster than `antigen`), while keeping things updated automatically (it checks each time it runs). Just add the following to your `~/.zshrc`:
 
 ```shell
 export ZSH="$(antibody home)/https-COLON--SLASH--SLASH-github.com-SLASH-robbyrussell-SLASH-oh-my-zsh"
@@ -102,15 +102,15 @@ source <(antibody init)
 antibody bundle < ~/.zsh_plugins.txt
 ```
 
-Do mình dùng Oh-My-Zsh mà antibody không hiểu được nên mới cần dòng đâu tiên, antigen thì chỉ cần dùng `antigen use oh-my-zsh` thôi, với lại load plugin của oh-my-zsh trong antibody cũng phiền phức hơn nhiều :/ vì ghi quá trời dòng (này mình không biết cách khác, tại lười thử, với dùng multi edit của vscode sửa cũng nhanh, nên khỏi tốn chất xám mắc công :v)
+Because I use Oh-My-Zsh and `antibody` doesn't natively set `$ZSH` for it, that first `export ZSH=...` line is required (whereas `antigen` only needed `antigen use oh-my-zsh`). Loading Oh-My-Zsh plugins in `antibody` is also a bit more verbose :/ since you have to write out each line in full (I don't know if there's a shorter way because I was too lazy to check, and with VS Code's multi-cursor editing it took no time at all anyway—no need to waste brainpower :v).
 
-Nếu bạn không rành, và cũng chẳng muốn tùy biến thì có thể dùng package grml-zsh-config của Arch:
+If you don't want to bother with manual customization, you can install Arch's `grml-zsh-config` package instead:
 
 ```shell
 yay -S grml-zsh-config
 ```
 
-Package này sẽ tùy biến zsh của bạn như y chang trong bộ cài bạn dùng để cài Arch vậy.
-Tuy nhiên nếu bạn muốn tùy biến thì nên gỡ nó ra, vì nó conflict với vụ dùng theme đấy, có thể chỉnh được mà phiền, nên gỡ quách nó ra cho xong :v
+This package configures your `zsh` to work just like the shell inside the official Arch installation ISO.
+However, if you want to customize `zsh` yourself later, you should remove `grml-zsh-config` because it conflicts with custom themes—you can work around it, but it's a hassle, so it's easier to just uninstall it :v
 
-Tạm biệt các bạn, hẹn gặp lại ở bài viết sau nhé!^^
+Bye for now, and see you in the next post!^^

@@ -1,9 +1,9 @@
 ---
-title: "Trở lại với Ubuntu"
+title: "Back to Ubuntu"
 date: 2020-06-26
 tags: [ "Linux", "Ubuntu" ]
 ---
 
-Sau một khoảng thời gian học hỏi được khá nhiều điều về Linux khi sử dụng Archlinux, mình nghĩ đã đến lúc mình nên trở về với Ubuntu. Bớt vọc vạch để máy tính mình bớt căng... CPU vì mình :)))
+After learning quite a lot about Linux during my time with Archlinux, I think it's time for me to head back to Ubuntu. Less tinkering around so my computer doesn't have to stress its... CPU because of me :)))
 
-Với người dùng Linux thì việc chuyển đổi hệ điều hành chắc không cần giải thích chi nhiều đâu nhỉ :)))
+For Linux users, distro-hopping probably doesn't need much explanation anyway, right? :)))

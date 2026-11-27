@@ -1,33 +1,33 @@
 ---
-title: "Cách tắt tường lửa (firewall) trên Ubuntu trong Oracle Cloud Infrastructure (OCI)"
+title: "How to Disable the Firewall on Ubuntu in Oracle Cloud Infrastructure (OCI)"
 date: 2024-09-25
 tags: [ "Linux", "OCI" ]
 ---
 
-Khi dùng Ubuntu trên Oracle Cloud, đôi khi bạn chạy một service nhưng nó không available ra internet được, đó là do cấu hình firewall mặc định đã block một số kết nối. Hướng dẫn sau sẽ giúp bạn tắt tường lửa trên Ubuntu trong OCI.
+When using Ubuntu on Oracle Cloud, you might occasionally run a service only to find it isn't accessible from the internet. This happens because the default firewall configuration blocks certain connections. The following guide will show you how to disable the firewall on Ubuntu in OCI.
 
-**Lưu ý:** Hướng dẫn sau đây sẽ tắt tường lửa, có thể dẫn đến các vấn đề bảo mật nghiêm trọng. Bạn nên cân nhắc cấu hình tường lửa phù hợp thay vì tắt nó đi hoàn toàn.
+**Note:** The instructions below will disable the firewall completely, which may lead to serious security risks. You should consider configuring appropriate firewall rules instead of turning it off entirely.
 
-## Cách tắt tường lửa
+## How to Disable the Firewall
 
-Tường lửa trên Ubuntu trong OCI sử dụng `iptables`. Để tắt đi, bạn sử dụng các lệnh sau:
+The firewall on Ubuntu in OCI uses `iptables`. To disable it, run the following commands:
 
-1. **Xóa tất cả các rules tường lửa:**
+1. **Flush all firewall rules:**
 
    ```bash
    sudo iptables -F
    ```
 
-   **Giải thích**: Lệnh `iptables -F` xóa toàn bộ các rules hiện tại, cho phép tất cả phương thức kết nối.
+   **Explanation**: The `iptables -F` command clears all current rules, allowing all incoming and outgoing connections.
 
-2. **Lưu lại:**
+2. **Save the changes:**
 
    ```bash
    sudo netfilter-persistent save
    ```
 
-   **Giải thích**: Lệnh này lưu lại bộ rules hiện tại (rỗng), để đảm bảo rằng sau khi khởi động lại, tường lửa sẽ không tự động áp dụng lại các rules cũ.
+   **Explanation**: This command saves the current (empty) rule set, ensuring that the old firewall rules are not automatically reapplied after a reboot.
 
-## Kết luận
+## Conclusion
 
-Việc tắt tường lửa trên Ubuntu cần đi kèm với cấu hình bảo mật tốt tại Oracle Cloud. Hãy đảm bảo `Security Lists` trong `VCN` được cấu hình đúng.
+Disabling the firewall on Ubuntu should always be paired with proper network security settings in Oracle Cloud. Make sure your `Security Lists` in your `VCN` are configured properly.

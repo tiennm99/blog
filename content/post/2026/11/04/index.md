@@ -1,158 +1,158 @@
 ---
-title: "Góc làm việc cuối 2026: DeskMini ở nhà, code-server trên cloud"
+title: "My Late-2026 Workspace Setup: DeskMini at Home, code-server in the Cloud"
 date: 2026-11-04
 tags: ["AI-Assisted", "Self-hosted", "Coolify", "Cloudflare", "Linux", "Ubuntu", "Developer Productivity", "Homelab", "code-server"]
 categories: ["Sharing"]
 ---
 
-Mình muốn mở chỗ làm việc của mình từ bất kỳ thiết bị nào, để coding agent gánh ngày càng nhiều việc, và tận dụng những free tier miễn phí lâu dài. Sau nhiều lần cài thử rồi gỡ, góc làm việc cuối năm 2026 của mình còn lại ba phần:
+I wanted to be able to open my workspace from any device, let coding agents shoulder more and more of the heavy lifting, and make the most of long-term free tiers. After plenty of rounds of installing, testing, and tearing things down, my late-2026 setup has settled into three parts:
 
-- **Trên cloud:** code-server chạy trong container trên OCI Always Free ARM, được Coolify triển khai từ [tiennm99/composes](https://github.com/tiennm99/composes).
-- **Ở nhà:** DeskMini X600 chạy Ubuntu, gánh việc biên dịch, chạy container và coding agent để mình truy cập từ xa.
-- **Mang theo:** ThinkPad giữ nhẹ như một thin client, dùng để nối vào hai nơi kia qua SSH, Tailscale hoặc code-server.
+- **In the cloud:** `code-server` running inside a container on OCI Always Free ARM, deployed via Coolify from [tiennm99/composes](https://github.com/tiennm99/composes).
+- **At home:** an ASRock DeskMini X600 running Ubuntu, handling heavy builds, containers, and coding agents for remote access.
+- **On the go:** a lightweight ThinkPad acting as a thin client to connect to the other two over SSH, Tailscale, or `code-server`.
 
-Để đi tới đây, mình đã thử đủ thứ: đổi image code-server, tìm terminal chạy trong trình duyệt, rồi mất hai tuần loay hoay với desktop từ xa. Có thứ hợp, có thứ chỉ nằm lại trong thư mục archive.
+Getting here took plenty of trial and error: switching `code-server` images, hunting for a good browser-based terminal, and spending two weeks wrestling with remote Linux desktop solutions. Some things stuck; others now live only in my archive folder.
 
-Bài này được AI hỗ trợ tổng hợp từ lịch sử Git, kế hoạch và ghi chú, sau đó mình bổ sung lý do cho các lựa chọn. Mình không kiểm tra trực tiếp DeskMini lúc viết; những gì chưa xác minh hoặc chưa nhớ rõ lý do sẽ được nói rõ ở phần tương ứng.
+This post was drafted with AI assistance from my Git history, plans, and notes, and I then filled in the reasoning behind each decision. I didn't check the DeskMini live while writing; anything unverified or where I no longer remember the exact reason is called out explicitly in the relevant section.
 
-## Điểm xuất phát: code-server trong một container
+## Starting Point: `code-server` in a Container
 
-Mình đã tự host Coolify từ ít nhất tháng 05/2025. Đến 14/08/2026, khi tổ chức lại repo composes, mình thêm code-server bằng image LinuxServer, gọi tắt là lsio. Go, Node và Python được cài qua `DOCKER_MODS`, các gói bổ sung qua `INSTALL_PACKAGES`. Thư mục home của người dùng `abc` nằm ở `/config`.
+I've been self-hosting Coolify since at least May 2025. On August 14, 2026, while reorganizing my `composes` repo, I added `code-server` using the LinuxServer.io image (lsio for short). Go, Node, and Python were installed via `DOCKER_MODS`, and extra packages via `INSTALL_PACKAGES`. The `abc` user's home directory lived at `/config`.
 
-Chạy image này dưới Coolify có vài điểm bất tiện. Mỗi lần triển khai lại, container được tạo mới, các mod tải lại và apt phải giải quyết lại toàn bộ danh sách `INSTALL_PACKAGES`. Mình đã phải rút gọn danh sách gói. Nếu một mod cài lỗi, lỗi chỉ được ghi vào log rồi bỏ qua: trình soạn thảo vẫn mở được nhưng thiếu công cụ. Volume workspace lúc mới tạo còn thuộc root, nên mình phải xử lý quyền bằng Dockerfile.
+Running that image under Coolify had a few annoyances. Every redeploy recreated the container, re-downloaded the mods, and forced `apt` to resolve the entire `INSTALL_PACKAGES` list from scratch — enough that I had to trim the package list down. Worse, if a mod failed to install, the error was simply logged and ignored: the editor still opened, just missing tools. Freshly created workspace volumes were also owned by `root`, which I had to work around in a Dockerfile.
 
-Đó là những vướng mắc mình gặp với lsio. Lý do mình chọn chuyển sang image chính thức của Coder là muốn dùng bản sát upstream hơn. Mình thêm `codercom/code-server` cùng Dockerfile riêng ngày 06/10, rồi gỡ và lưu bản lsio vào archive ngày 12/10.
+Those were the friction points with lsio. The reason I switched to Coder's official image was to stay closer to upstream. I added `codercom/code-server` with a custom Dockerfile on October 6, then removed the lsio setup and moved it to the archive on October 12.
 
-Dockerfile mới gom sẵn các công cụ cần dùng sau khi triển khai: bộ công cụ biên dịch, bubblewrap, các CLI mạng, tìm kiếm, kiểm tra mã và cơ sở dữ liệu, cùng gh, Docker CLI, Compose, Buildx, glab và gt. Nhờ vậy, các lệnh hỗ trợ và tính năng tự hoàn thành cũng có sẵn. Mình dùng `FROM codercom/code-server:latest` vì image không có tag theo phiên bản lớn.
+The new Dockerfile bakes in the tools I need right at build time: build-essential, `bubblewrap`, networking CLIs, search and linting tools, database clients, plus `gh`, Docker CLI, Compose, Buildx, `glab`, and `gt`. That way, helper commands and shell completions are ready out of the box. I use `FROM codercom/code-server:latest` because the official image doesn't publish major-version tags.
 
-Để agent-browser chạy không cần giao diện trên ARM64, image có Chromium từ Debian và các phông chữ cần thiết; mình cũng chỉnh bộ nhớ chia sẻ để Chromium tránh bị văng. GTK/WebKitGTK phục vụ việc biên dịch và kiểm thử Tauri không có màn hình.
+So that `agent-browser` can run headlessly on ARM64, the image includes Debian's Chromium package along with the required fonts, and I tuned shared memory so Chromium wouldn't crash. GTK and WebKitGTK are included for headless Tauri builds and tests.
 
-**Riêng toolchain ngôn ngữ, mình giữ trong home, ngoài image:** fnm, uv, rustup, Go từ tarball và SDKMAN. Cài thêm một bản vào image chỉ làm quá trình build nặng hơn, trong khi bản đó có thể bị bản trong home che khuất. Tách riêng như vậy cũng tránh việc triển khai lại container âm thầm nâng phiên bản công cụ mình đang dùng.
+**Language toolchains, on the other hand, stay in my home directory outside the image:** `fnm`, `uv`, `rustup`, Go from the official tarball, and SDKMAN. Baking another copy into the image would only bloat the build while getting shadowed by the versions in `$HOME` anyway. Keeping them separate also prevents a container redeploy from silently upgrading the compiler or runtime version I'm in the middle of using.
 
-Một vướng mắc còn lại là gõ tiếng Việt trong terminal trình duyệt khi dùng Claude Code. Tới lần ghi nhận ngày 18/10, mình chưa có cách sửa được hỗ trợ chính thức. Phím Backspace và quá trình ghép dấu phải đi qua cả chuỗi trình duyệt, xterm.js, WebSocket rồi PTY. Mình tạm soạn bên ngoài rồi dán vào.
+One remaining annoyance is typing Vietnamese inside the browser terminal when using Claude Code. As of my last notes on October 18, I still haven't found an officially supported fix. Backspace events and diacritic composition have to travel through the entire chain of browser → `xterm.js` → WebSocket → PTY. For now, I just type longer Vietnamese text outside and paste it in.
 
-## Những thứ khảo sát, thử rồi gỡ trên máy chủ
+## Things I Evaluated, Tried, and Removed on the Server
 
-Song song với việc đổi image, mình tìm cách dùng terminal và coding agent ngay trong trình duyệt. Từ tháng 9 đến đầu tháng 11, vài cái tên lần lượt xuất hiện rồi rời khỏi máy chủ:
+Alongside switching the `code-server` image, I looked for ways to use a terminal and coding agents directly in the browser. Between September and early November, several tools came and went on the server:
 
-- **OpenHands:** thử từ 18 đến 19/09, khoảng một ngày.
-- **opencode web:** thử từ 18/09 đến 05/10 để có shell trong trình duyệt.
-- **Paseo:** dùng từ 16/09 đến 03/11, lần chỉnh cuối là 06/10. Daemon này từng có vẻ hợp, nhưng mỗi agent CLI cần cài khoảng 200 MB lúc khởi động. Mình bỏ vì Orca và T3 Code có tính năng và trải nghiệm tốt hơn.
+- **OpenHands:** tried from September 18 to 19 — about a day.
+- **opencode web:** tried from September 18 to October 5 for a browser-based shell.
+- **Paseo:** used from September 16 to November 3 (last tweaked on October 6). This daemon initially seemed like a good fit, but each agent CLI needed around 200 MB installed at startup. I eventually dropped it because Orca and T3 Code offered better features and a smoother experience.
 
-Với OpenHands và opencode web, mình không ghi lại lý do gỡ.
+For OpenHands and opencode web, I didn't write down why I removed them.
 
-Zellij web client là thứ mình thực sự muốn dùng. Mình chạy nó trong container từ 21/10 đến 03/11, nhưng vướng ngay ở phím tắt: trình duyệt giữ Ctrl+T, Ctrl+W, Ctrl+N và Ctrl+Tab, đúng những tổ hợp mình cần cho các chế độ của Zellij. Với cấu hình Unlock-First, Ctrl+G lại mở thanh tìm kiếm của Firefox; đổi sang Alt+G mới dùng được. Mỗi lần mở đường dẫn gốc, Zellij còn tạo một phiên mới mà mình không tự xóa được. Cuối cùng, chuyện phím tắt là lý do khiến mình bỏ nó.
+The Zellij web client was the one I really wanted to make work. I ran it in a container from October 21 to November 3, but immediately ran into keyboard shortcut conflicts: the browser reserves `Ctrl+T`, `Ctrl+W`, `Ctrl+N`, and `Ctrl+Tab` — the exact combinations I needed for Zellij's modes. With the Unlock-First layout, `Ctrl+G` opened Firefox's find bar instead, so I had to rebind it to `Alt+G`. On top of that, opening the root URL always spawned a brand-new session that I couldn't clean up from the UI. Ultimately, the shortcut conflicts were what made me drop it.
 
-Trong lúc dựng, mình từng dùng socat làm relay và gặp cả trường hợp Zellij thoát không báo gì khi thiếu tệp cấu hình.
+While setting it up, I also used `socat` as a relay and ran into a quirk where Zellij exited silently if its config file was missing.
 
-Gõ cũng có lúc bị trễ, nhưng mình chưa chứng minh được đó là lỗi của Zellij. Container gần như không tải; biến `TERM` sai, bộ gõ tiếng Việt qua trình duyệt hay độ trễ mạng đều có thể góp phần. Riêng lỗi `TERM=unknown` làm Backspace chạy sang phải thì mình đã sửa.
+Typing occasionally felt laggy too, though I never proved Zellij was the culprit. The container itself was barely under any load; an incorrect `TERM` variable, Vietnamese IME input through the browser, or network latency could all have played a part. I did fix one specific bug where `TERM=unknown` caused Backspace to move the cursor to the right.
 
-Hướng thay thế mình khảo sát ngày 24/10 là tmux qua ttyd. tmux dùng tiền tố Ctrl+B, nên cấu hình mặc định ít đụng phím trình duyệt hơn cách chia chế độ của Zellij. Nó vẫn phải làm việc trong giới hạn phím mà trình duyệt cho phép.
+An alternative I evaluated on October 24 was `tmux` over `ttyd`. Because `tmux` uses `Ctrl+B` as its prefix, its default bindings clash much less with browser shortcuts than Zellij's modal bindings — though it still has to live within whatever keys the browser allows through.
 
-Mình thêm template ttyd nhưng chưa thực sự dùng thử. Sau đó, Orca và T3 Code đã đáp ứng nhu cầu nên mình bỏ luôn template. Một terminal đơn thuần vẫn thiếu với mình: chỉ muốn xem một tệp thôi mà cũng phải nhờ Claude thì hơi vòng vèo.
+I added a `ttyd` template to the repo but never actually deployed it. Soon after, Orca and T3 Code covered my needs, so I archived the template too. A bare terminal alone still felt too limiting anyway: having to ask Claude just to inspect a single file felt unnecessarily roundabout.
 
-Ngày 03/11, mình đưa Paseo, Zellij và template ttyd vào archive cùng một commit. Bản Zellij container đã được gỡ; phần terminal mình còn dùng là SSH qua trình duyệt trên DeskMini và terminal trong code-server.
+On November 3, I moved Paseo, Zellij, and the `ttyd` template into the archive in a single commit. The Zellij container was removed; the only browser terminals I still use are Cloudflare's browser SSH to the DeskMini and the integrated terminal inside `code-server`.
 
-## Chiếc DeskMini ở nhà
+## The DeskMini at Home
 
-Con máy ở nhà là ASRock DeskMini X600: bo X600M-STX, Ryzen 7 8700G với 8 nhân, 16 luồng, đồ họa tích hợp Radeon 780M và 32 GB RAM. Máy có hai ổ NVMe 500 GB, một cho hệ điều hành, một cho workspace. Ở lần kiểm tra ngày 21/10, nó chạy Ubuntu 26.04 desktop với GNOME trên Wayland.
+The machine sitting at home is an ASRock DeskMini X600: X600M-STX motherboard, Ryzen 7 8700G (8 cores, 16 threads, integrated Radeon 780M graphics), and 32 GB of RAM. It has two 500 GB NVMe drives — one for the OS and one for my workspace. As of my October 21 check, it runs Ubuntu 26.04 Desktop with GNOME on Wayland.
 
-Mình chọn DeskMini vì nó mạnh và có GPU, hợp làm **máy Linux ở nhà để gánh việc nặng và truy cập từ xa**. Desktop Windows của mình còn mạnh hơn, nhưng mình không chọn nó cho vai trò chạy 24/7 vì nó dùng Windows. Khi ở nhà, mình vẫn ngồi desktop Windows; ở chỗ làm, lúc cần homelab mạnh, mình mở Orca trên DeskMini qua Tailscale.
+I picked the DeskMini because it's compact yet powerful and has a capable iGPU, making it a great **always-on home Linux box for heavy workloads and remote access**. My Windows desktop is even more powerful, but I didn't want to run a Windows rig 24/7 for that role. When I'm at home, I still sit at my Windows desktop; when I'm at the office and need a beefy homelab, I open Orca on the DeskMini over Tailscale.
 
-ThinkPad vì thế có thể giữ nhẹ: việc biên dịch, chạy container, toolchain và tác vụ dài đều chuyển sang DeskMini hoặc máy chủ. DeskMini không chạy Coolify; các dịch vụ ở đây dùng Docker Compose thông thường và systemd. Truy cập qua trình duyệt đi qua Cloudflare Tunnel và Access.
+That keeps my ThinkPad light and cool: compiling, running containers, language toolchains, and long-running tasks all happen on the DeskMini or the cloud server. The DeskMini doesn't run Coolify — services there use plain Docker Compose and `systemd`, with browser access routed through Cloudflare Tunnel and Access.
 
-Toolchain được bổ sung dần từ cuối tháng 10: Node qua fnm, Python qua uv, Go từ tarball chính thức với `GOTOOLCHAIN=auto`, Rust qua rustup và Java 21 qua SDKMAN. Máy cũng có gcc, git, gh, Docker, glab và sau đó là gt. Một điểm dễ quên khi viết tác vụ tự động: fnm và SDKMAN được nạp từ cấu hình zsh tương tác, nên cron và systemd không tự thấy chúng.
+I gradually set up its toolchains starting in late October: Node via `fnm`, Python via `uv`, Go from the official tarball with `GOTOOLCHAIN=auto`, Rust via `rustup`, and Java 21 via SDKMAN, alongside `gcc`, `git`, `gh`, Docker, `glab`, and later `gt`. One easy-to-forget gotcha when writing automation scripts: `fnm` and SDKMAN are loaded in interactive `zsh` startup files, so `cron` jobs and `systemd` services won't see them automatically.
 
-Từ 22/10, DeskMini đã có ghi chú riêng trong workspace repo. Lúc đó, vai trò của nó còn gắn với một thứ mình rất muốn làm cho ổn: desktop Linux mở ngay trong trình duyệt bằng Guacamole.
+Since October 22, the DeskMini has had its own dedicated notes in my workspace repo. At that time, its role was also tied to something I really wanted to get working smoothly: opening a full Linux desktop right inside the browser via Apache Guacamole.
 
-## Hai tuần đi tìm desktop trong trình duyệt
+## Two Weeks Chasing a Browser-Based Linux Desktop
 
-Mục tiêu lúc đó rất cụ thể: mở desktop Linux từ bất kỳ đâu bằng trình duyệt, không cần cài gì trên máy đang ngồi. Vì thế, mình tìm đường qua Cloudflare Tunnel và Access, thay vì yêu cầu máy truy cập phải có Tailscale.
+My goal at the time was very specific: open my Linux desktop from anywhere in a browser without installing any client software on the machine in front of me. That meant routing through Cloudflare Tunnel and Access rather than requiring Tailscale on the client machine.
 
-Trong các lựa chọn mình khảo sát ngày 19/10, Guacamole là phương án miễn phí, tự host, không cần cài ứng dụng phía truy cập và hỗ trợ RDP cho cả Linux lẫn Windows. Cloudflare browser RDP đứng sau trong bản so sánh, nhưng mình lại thử nó trước. Ngày 21/10, GNOME Remote Desktop trả về lỗi:
+Among the options I surveyed on October 19, Guacamole stood out as free, self-hosted, clientless, and capable of speaking RDP to both Linux and Windows. Cloudflare's browser RDP ranked lower in my comparison notes, yet I tried it first anyway. On October 21, GNOME Remote Desktop rejected the connection with:
 
 > Client did not advertise support for the Graphics Pipeline, closing connection
 
-GNOME yêu cầu RDP Graphics Pipeline, còn IronRDP phía Cloudflare lúc đó không quảng bá khả năng hỗ trợ nên GNOME đóng kết nối. Tài liệu Cloudflare mình đọc cũng chỉ liệt kê máy Windows là được hỗ trợ. Đường truy cập này vì thế không dùng được với GNOME trong lần thử của mình.
+GNOME requires the RDP Graphics Pipeline extension, and Cloudflare's IronRDP client didn't advertise support for it at the time, causing GNOME to close the connection immediately. Cloudflare's documentation also listed only Windows targets as supported. So that path was a dead end with GNOME in my test.
 
-VNC cũng nằm trong phần khảo sát, nhưng mình chưa cài thử. Với GNOME trên Ubuntu 26.04 trong cấu hình này, mình chỉ còn Wayland và GNOME Remote Desktop phục vụ RDP. Các phương án VNC mình xem cần X11 hoặc wlroots; những hướng dẫn có nút bật VNC trong GNOME không còn khớp với bản đang dùng.
+VNC was also in my survey notes, though I never installed it. With GNOME on Ubuntu 26.04 in this configuration, everything runs on Wayland with GNOME Remote Desktop speaking RDP. The VNC options I looked into required either X11 or `wlroots`, and older guides referencing a VNC toggle in GNOME Settings no longer matched this release.
 
-Mình chuyển sang Guacamole, dựng bằng Docker trên DeskMini trong hai ngày 21–22/10, gồm guacamole, guacd và PostgreSQL. Mình ghim bản 1.6.0 vì đây là bản phát hành đầu hỗ trợ Graphics Pipeline; tag `latest` lúc đó lại là bản phát triển chỉ có amd64.
+So I moved on to Guacamole, deploying `guacamole`, `guacd`, and PostgreSQL via Docker on the DeskMini over October 21–22. I pinned version `1.6.0` because it was the first release supporting the RDP Graphics Pipeline (and the `latest` tag at the time pointed to an `amd64`-only development build).
 
-Kết nối lên được, nhưng phiên làm việc lại rớt giữa chừng. Lỗi lặp lại dưới cả QUIC lẫn HTTP/2, còn cloudflared không ghi gì tương ứng với những lần rớt. Vì vậy, đổi giao thức tunnel không giải quyết được vấn đề. Trong chuỗi log ghi nhận được, guacd báo `User is not responding.` sau 15 giây im lặng rồi đóng RDP. Các ngưỡng chờ 15 giây này được biên dịch sẵn, không chỉnh qua cấu hình được.
+The desktop connected, but sessions kept dropping mid-use. The drops happened over both QUIC and HTTP/2 tunnels, and `cloudflared` logged no errors corresponding to the disconnects — so switching the tunnel transport didn't help. In the logs I captured, `guacd` reported `User is not responding.` after 15 seconds of silence and closed the RDP connection. Those 15-second timeouts are hardcoded at compile time and cannot be changed via configuration.
 
-**Mình vẫn chưa xác định được nguyên nhân.** Ban đầu mình nghi trình duyệt hạn chế bộ đếm giờ của tab nền, nhưng tab đang mở trước mặt cũng rớt. Giả thuyết phù hợp nhất lúc đó là các lỗi phát sinh ở Guacamole 1.6.0, gồm GUACAMOLE-2118, các báo cáo trùng và GUACAMOLE-2081. Các lỗi này đã được sửa trên nhánh 1.6.1 nhưng bản đó chưa phát hành tại thời điểm khảo sát.
+**I still haven't pinned down the root cause.** At first I suspected the browser was throttling timers in background tabs, but sessions dropped even while the tab was focused right in front of me. The most plausible theory at the time was a set of regressions in Guacamole 1.6.0 — specifically `GUACAMOLE-2118`, its duplicate reports, and `GUACAMOLE-2081`. Those bugs had already been fixed on the `1.6.1` branch, which hadn't been released yet when I investigated.
 
-Dù vậy, mình chưa có kết quả kiểm thử qua LAN để bỏ tunnel ra khỏi đường kết nối. Có lần SSH và RDP cùng đông cứng dù chạy ở hai tiến trình guacd riêng, cũng chưa giải thích gọn được bằng giả thuyết trên.
+Even so, I never ran a pure LAN test to rule out the Cloudflare Tunnel completely. There was also one occasion where both SSH and RDP froze simultaneously despite running in separate `guacd` processes, which that bug theory doesn't neatly explain either.
 
-Với SSH qua Guacamole, hậu quả còn khó chịu hơn: shell gắn vào kết nối trình duyệt, nên một lần rớt có thể làm mất lệnh đang chạy và trạng thái chưa lưu. Mình muốn chuyển phần terminal ra khỏi Guacamole vì thế. Template Zellij đã có từ 21/10, trước lần chẩn đoán này; trải nghiệm rớt SSH càng cho thấy mình cần phiên terminal tồn tại độc lập với tab trình duyệt.
+For SSH through Guacamole, disconnects were even more painful: because the shell was tied directly to the browser connection, a single drop could kill a running command and lose unsaved state. That's what pushed me to move terminal workflows out of Guacamole altogether. I had already drafted the Zellij template on October 21 prior to this debugging session, and the Guacamole SSH drops only reinforced how much I needed terminal sessions that outlive a browser tab.
 
-Ban đầu, mình chọn giữ 1.6.0 để chờ 1.6.1, chỉ hạ về 1.5.5 nếu rớt quá thường xuyên. Phương án hạ bản cần sao lưu PostgreSQL và chuẩn bị lược đồ 1.5.5 vì Guacamole không có migration ngược.
+Initially, I planned to stay on `1.6.0` and wait for `1.6.1`, falling back to `1.5.5` only if the drops became unbearable (downgrading required backing up PostgreSQL and preparing a `1.5.5` schema since Guacamole doesn't support reverse migrations).
 
-Đến 03/11, mình ngừng dùng Guacamole và đưa vào archive vì kết nối thiếu ổn định. SSH qua trình duyệt của Cloudflare đã đủ cho nhu cầu terminal; khi cần desktop, mình dùng Tailscale cùng ứng dụng Windows RDP chính thức. Mục tiêu ban đầu là mọi thứ đều mở bằng trình duyệt, nhưng cuối cùng mình chấp nhận dùng ứng dụng RDP riêng cho phần này.
+By November 3, I stopped using Guacamole and archived its setup because the connection just wasn't reliable enough. Cloudflare's browser-rendered SSH was sufficient for quick terminal access, and whenever I need a full desktop, I use Tailscale with the official Windows RDP app. My original goal was making everything 100% browser-based, but in the end I compromised on using a native RDP client for desktop sessions.
 
-## Những gì đang chạy trên DeskMini bây giờ
+## What's Running on the DeskMini Today
 
-Theo trạng thái được ghi lại lúc viết bài, SSH qua trình duyệt, code-server, T3 Code và Orca đều có đường truy cập qua **Cloudflare Tunnel và Access**. Tailscale nối các thiết bị của mình với nhau.
+As of the state recorded when writing this post, browser SSH, `code-server`, T3 Code, and Orca are all accessible through **Cloudflare Tunnel and Access**, while Tailscale connects my personal devices directly.
 
-**code-server** được cài bằng gói `.deb`, chạy qua systemd và đã có trong ghi chú từ 22/10. Vì không dùng được VS Code Settings Sync, mình dự định giữ cấu hình và danh sách tiện ích mở rộng — Claude Code cùng một theme — trong dotfiles, rồi áp dụng bằng một script chạy tay. Phần dotfiles này chưa được áp dụng lên DeskMini.
+**`code-server`** is installed from the official `.deb` package, runs via `systemd`, and has been in my machine notes since October 22. Since it can't use official VS Code Settings Sync, I plan to keep its configuration and extension list — Claude Code plus a theme — in my dotfiles and apply them via a manual script. I haven't applied those dotfiles to the DeskMini yet.
 
-**Orca và T3 Code** vừa được chuyển từ cách mở ứng dụng desktop sang chạy bằng systemd user service. Mình cài Orca (`stablyai/orca`) từ gói `.deb` ngày 27/10; ngày cài T3 Code thì không còn dấu vết. Theo ghi chú, mục tiêu của lần chuyển đầu tháng 11 là để chúng lên khi khởi động máy mà không cần mở ứng dụng desktop. Riêng Orca, với `--supervise`, dịch vụ sẽ chờ nếu một Orca khác đang phục vụ cùng profile, nên mở ứng dụng desktop trước có thể khiến dịch vụ phải chờ.
+**Orca and T3 Code** were recently migrated from desktop GUI launches to `systemd` user services. I installed Orca (`stablyai/orca`) from its `.deb` package on October 27 (I didn't record the exact date I installed T3 Code). According to my notes, the goal of moving them to user services in early November was having them come up automatically on boot without needing to log into the desktop session first. One quirk with Orca: when run with `--supervise`, the service waits if another Orca instance is already serving the same profile, so launching the desktop app first can make the background service wait.
 
-Trong bản so sánh ngày 02/11, Orca được mô tả là workspace desktop xoay quanh Git worktree, chạy agent CLI trực tiếp trong terminal. T3 Code tổ chức công việc theo luồng hội thoại, điều khiển agent qua adapter và có giao diện truy cập mỏng. Bản so sánh chỉ dựa trên tài liệu, chưa phải kiểm thử hai bên, và đề nghị giữ Orca, thử T3 khi cần điều khiển agent trên máy chủ từ điện thoại hoặc trình duyệt. Hiện cả hai đều chạy dạng dịch vụ, còn Orca là ứng dụng mình dùng nhiều nhất.
+In my November 2 comparison notes, Orca is described as a desktop workspace built around Git worktrees that runs agent CLIs directly inside terminals, whereas T3 Code organizes work around conversation threads, drives agents through adapters, and offers a lightweight web UI. That comparison was based purely on documentation rather than side-by-side testing, and its conclusion was to keep Orca as my primary tool while trying T3 Code for steering agents from a phone or browser. Today, both run as services, and Orca is the app I use the most.
 
-**Tailscale và cloudflared** chia việc với nhau: Tunnel cùng Access phục vụ đăng nhập từ xa và giao diện web, còn Tailscale lo các kết nối khác giữa thiết bị của mình. Mình chọn cách này vì thấy đơn giản hơn WARP-to-WARP. Với GNOME Remote Desktop, phần khảo sát phân biệt đăng nhập từ xa ở màn hình đăng nhập với chia sẻ desktop sau khi đã đăng nhập; mình chưa có kết quả kiểm thử được ghi lại cho phần này.
+**Tailscale and `cloudflared`** split responsibilities cleanly: Cloudflare Tunnel + Access handle remote sign-in and web UIs, while Tailscale handles direct traffic between my own devices. I went with this split because I found it simpler than setting up WARP-to-WARP. For GNOME Remote Desktop, my research notes distinguish between remote login at the GDM login screen and desktop sharing after logging in, though I don't have recorded test results for that part yet.
 
-**Gitea cùng gitea-mirror** chạy từ repo composes, làm nơi sao lưu GitHub trên DeskMini. Chuyện crawler ghé vào Gitea mình đã kể trong [bài ngày 29/10/2026]({{< ref "/post/2026/10/29" >}}).
+**Gitea and `gitea-mirror`** run from my `composes` repo as my local GitHub backup on the DeskMini. I already told the story of AI crawlers discovering my Gitea instance in [the October 29, 2026 post]({{< ref "/post/2026/10/29" >}}).
 
-Phần sao lưu cũng từng vướng: ngưỡng chờ mặc định của Gitea cắt ngang các lần clone nhiều GB, còn Bun fetch ngắt kết nối không có dữ liệu trong năm phút, để lại repo làm dở. Mình tăng ngưỡng chờ để xử lý. Health check gọi GitHub API không có token quá thường xuyên cũng chạm giới hạn yêu cầu ẩn danh, nên mình giảm tần suất. CLI tea được thay bằng gt khi tea bị archive ở upstream và gt lên 1.0.0. Còn lý do chuyển chỗ sao lưu về nhà thì mình không ghi lại, nên không thể quy nó cho một sự cố cụ thể.
+Setting up the mirror had its own hiccups: Gitea's default timeouts cut off multi-gigabyte clones mid-transfer, and Bun's `fetch` aborted connections after five minutes without data, leaving half-imported repos behind. Bumping the timeouts fixed that. Health checks polling the GitHub API without a token also hit anonymous rate limits until I lowered their frequency. And in the CLI tooling, I replaced `tea` with `gt` after `tea` was archived upstream and `gt` hit `1.0.0`. As for why I moved the backup instance from the cloud server to my home DeskMini, I didn't write the reason down, so I won't attribute it to a specific incident.
 
-## Bật máy từ xa: từ RTC đến ổ cắm thông minh
+## Remote Power-On: From RTC Wake to a Smart Plug
 
-Ban đầu, bật máy từ xa nằm ngoài phạm vi mình định làm. Phần khảo sát có gợi ý ESP32 nhận lệnh Telegram để đánh thức PC, nhưng mình chưa triển khai.
+Originally, waking the machine remotely wasn't even in scope. My research notes mentioned using an ESP32 listening to a Telegram bot to send Wake-on-LAN / power signals, though I never built it.
 
-Từ 28/10, mình dùng RTC wake với `rtcwake` qua systemd để hẹn DeskMini tự bật. Điểm yếu là nếu mất điện hoặc bị tắt cứng, máy có thể bỏ qua bước đặt lịch đánh thức.
+Starting October 28, I used RTC wake (`rtcwake`) via a `systemd` unit to schedule the DeskMini to boot itself up. The catch with RTC wake is that a power outage or hard shutdown can cause the machine to miss setting the next wake alarm.
 
-Đến 03/11, mình gỡ lịch RTC phía hệ điều hành và chuyển sang hướng dùng ổ cắm thông minh, dựa vào BIOS tự bật máy khi có điện trở lại. Mình không ghi lại lý do bỏ RTC. Quy trình dự kiến là:
+On November 3, I removed the OS-level RTC wake schedule and switched toward using a smart plug paired with the BIOS "restore on AC power loss" setting. I didn't record the exact trigger for dropping RTC wake, but the planned workflow is:
 
-1. Tắt máy từ hệ điều hành trước, không cắt điện khi PC đang chạy.
-2. Tắt ổ cắm khoảng 30 giây rồi bật lại.
+1. Shut the OS down cleanly first — never cut power while the PC is running.
+2. Turn the smart plug off for about 30 seconds, then turn it back on to trigger boot.
 
-**Phần này vẫn chưa hoàn thành.** Mình còn phải tắt RTC alarm trong BIOS, đặt restore on AC loss thành power on, rồi thử trọn vòng tắt/bật ổ cắm và tình huống mất điện. Vì vậy, chưa thể nói mình đã bật máy từ xa thành công bằng cách này.
+**This part isn't finished yet.** I still need to disable the RTC alarm in the BIOS, set *Restore on AC Power Loss* to *Power On*, and test the full smart-plug power cycle as well as simulated power outages. So I can't claim remote power-on via smart plug is working in production just yet.
 
-## Coolify và hai máy chủ Always Free
+## Coolify and Two Always Free Cloud Servers
 
-Phía cloud, Coolify quản lý hai máy chủ OCI Always Free chạy ARM và Ubuntu 24.04 Minimal, cùng Traefik v3 và Let's Encrypt. Mình chọn OCI vì muốn dùng free tier miễn phí lâu dài. Còn Coolify thay vì Dokploy là vì mình thấy nó ổn định hơn — đây là cảm nhận cá nhân, chưa có số liệu hay phép thử so sánh. Trong các tệp compose, mình vẫn để sẵn phần cho Dokploy.
+On the cloud side, Coolify manages two OCI Always Free ARM servers running Ubuntu 24.04 Minimal, fronted by Traefik v3 and Let's Encrypt. I chose OCI for its generous, non-expiring free tier. Choosing Coolify over Dokploy came down to personal impression — it felt more stable to me in day-to-day use, though I haven't run formal benchmarks comparing the two. In my compose files, I still keep Dokploy-compatible sections ready just in case.
 
-Các cấu hình triển khai chung nằm trong repo composes công khai, dùng giấy phép Apache 2.0. Mỗi dịch vụ có thư mục riêng với `compose.yml`, `README.md` và tệp biến môi trường mẫu, cùng một ứng dụng Coolify có webhook theo dõi riêng để tránh triển khai lại chéo. Chú thích trong cấu hình giải thích nó làm gì, còn README giữ lý do lựa chọn. Các công cụ mình tự viết thì giữ compose ngay trong repo của chúng.
+My shared deployment configs live in the public `composes` repo under the Apache 2.0 license. Each service gets its own folder with a `compose.yml`, a `README.md`, and an `.env.example`, wired up to its own Coolify application with path-filtered webhooks so changes to one service don't trigger redeploys of another. Inline comments explain *what* the config does, while the `README.md` records *why* I chose it. Tools I wrote myself keep their `compose.yml` inside their own repositories.
 
-Thư mục archive giúp nhìn lại mình đã thử gì và gỡ lúc nào. Điểm còn thiếu là lý do: không phải lần nào mình cũng ghi lại vì sao bỏ một thứ.
+The `archive/` directory makes it easy to look back at what I tried and when I retired it. What's occasionally missing is the *why* — I didn't always write down the reason I dropped a tool at the moment I removed it.
 
-## Giữ mọi thứ nhất quán giữa các máy
+## Keeping Everything Consistent Across Machines
 
-Thứ giúp mình và agent không lạc giữa chừng ấy máy là một workspace repo được checkout ở nhiều nơi. Repo bắt đầu ngày 25/07, chỉ để chứa vài skill audit GitHub rồi lớn dần. Đến cuối tháng 10, ghi chú theo từng máy được tổ chức lại để agent đọc đúng ngữ cảnh. Claude Code và Codex dùng chung bộ quy tắc; mình dùng Claude Code là chính. AgentKit CLI cài bộ kit vào thư mục home của từng agent.
+What keeps both me and my coding agents from getting lost across all these machines is a shared workspace repository checked out everywhere. The repo started on July 25 just to hold a few GitHub audit skills and grew organically from there. By late October, I reorganized per-machine notes so agents only load the context relevant to the host they're running on. Claude Code and Codex share the same rule definitions (though I primarily use Claude Code), and my AgentKit CLI installs the kit into each agent's home directory.
 
-Mình chia ngữ cảnh theo cách nó được dùng: quy tắc được nạp mỗi phiên, skill được đọc theo tác vụ, còn memory có một mục lục luôn được nạp để trỏ tới các tệp liên quan. Hook chặn những lỗi tốn kém; ghi chú và kế hoạch giữ việc cần làm; lịch sử Git và tài liệu giữ chuyện đã xảy ra. Memory cũng được theo dõi bằng Git. Điều mình phải nhớ là chỉ quy tắc mới được bảo đảm nạp: để một chỉ dẫn hành vi trong memory thì agent có thể bỏ qua nó.
+I split context by how it gets consumed: **rules** are loaded into every session, **skills** are read on demand per task, and **memory** has an always-loaded index pointing to topic files. Hooks block costly mistakes; notes and plans track upcoming work; Git history and docs preserve what already happened. Memory is tracked in Git too. One important lesson I have to keep in mind: only rules are guaranteed to be loaded — if you put a behavioral instruction inside memory, the agent might never read it.
 
-Phần đồng bộ cấu hình bằng dotfiles thì **chưa áp dụng lên máy nào**. Mình chọn chezmoi trong đợt so sánh ngày 29/10: đây là lựa chọn duy nhất trong nhóm khảo sát có một tệp thực thi chạy trực tiếp trên Windows. Nó hỗ trợ mẫu cấu hình theo máy, hỏi thông tin một lần, tích hợp sops khi áp dụng và cho xem trước thay đổi. dotter đứng sau trong bản so sánh; Ansible cần WSL để điều khiển từ Windows và có phần cấu hình nặng hơn cách quản lý tệp trực tiếp cho nhu cầu của mình.
+Dotfiles synchronization, meanwhile, **hasn't been rolled out to any machine yet**. In my October 29 comparison, I picked `chezmoi`: it was the only tool in the group that ships as a single native binary on Windows, supports per-machine templates, prompts once for machine variables, integrates with `sops` when applying files, and offers a dry-run diff preview. `dotter` came in second, while Ansible required WSL on Windows and felt too heavy compared to managing config files directly.
 
-Kế hoạch toolchain cũng đổi: mình bỏ mise khỏi kế hoạch ngày 30/10, chuyển sang công cụ riêng cho từng hệ — rustup, uv, fnm, SDKMAN hoặc Temurin qua winget, và Go chính thức với `GOTOOLCHAIN=auto`. Mình không ghi nhận lỗi cụ thể nào của mise.
+My toolchain plan evolved too: on October 30, I dropped `mise` from the plan in favor of ecosystem-native managers — `rustup`, `uv`, `fnm`, SDKMAN (or Temurin via `winget` on Windows), and the official Go binary with `GOTOOLCHAIN=auto`. I didn't log any specific bug with `mise` when making that switch.
 
-Với shell, mình dự định dùng zsh, zimfw và Starship thay cho oh-my-zsh cùng powerlevel10k. Trong nhóm được so sánh, zimfw phổ biến nhất trong các lựa chọn ổn định và nhanh nhất ở phép thử được ghi lại; khả năng tự hoàn thành có sẵn cũng phủ gần hết nhu cầu. README của powerlevel10k thì nói mức hỗ trợ rất hạn chế. Đây vẫn là kế hoạch, còn oh-my-zsh vẫn chạy trên máy chủ.
+For the shell, I plan to switch from `oh-my-zsh` + `powerlevel10k` to `zsh` + `zimfw` + Starship. Among the frameworks I compared, `zimfw` was the most popular actively maintained option and the fastest in recorded benchmarks, with built-in completions covering nearly everything I need — whereas `powerlevel10k`'s README explicitly notes that project maintenance is now very limited. That switch is still on the to-do list; the servers are still running `oh-my-zsh` for now.
 
-## Việc còn dở và bài học
+## Unfinished Tasks and Lessons Learned
 
-Tính tới 04/11/2026, hai việc còn dở là:
+As of November 4, 2026, two items are still unfinished:
 
-- Chỉnh BIOS DeskMini và kiểm thử bật máy qua ổ cắm, kể cả sau khi mất điện.
-- Áp dụng dotfiles lên từng máy.
+- Updating the DeskMini BIOS settings and testing smart-plug power-on, including recovery after a power cut.
+- Rolling out the dotfiles repo across my machines.
 
-Nhìn lại các lần thay đổi, mình rút ra mấy điều:
+Looking back over all these iterations, a few lessons stand out:
 
-- **Ghi cả vì sao, đừng chỉ ghi đã làm gì.** Lịch sử Git dựng lại được các lần thay đổi, nhưng không tự giải thích được động cơ. Ghi lý do ngay lúc quyết định sẽ đỡ phải nhớ lại như khi viết bài này.
-- **Desktop qua trình duyệt cần thử với đúng hệ đang dùng.** Với GNOME Wayland của mình, yêu cầu Graphics Pipeline đã chặn một đường RDP, còn các hướng dẫn VNC cũ không còn phù hợp.
-- **Phiên làm việc nên tồn tại qua một lần đóng tab.** Buộc nó vào kết nối trình duyệt khiến một lần rớt có thể kéo theo công việc đang chạy.
-- **Tách toolchain khỏi image giúp kiểm soát việc nâng phiên bản.** Triển khai lại container không nên âm thầm đổi công cụ mình đang dùng.
-- **Chia đường truy cập theo nhu cầu giúp mình dễ dùng hơn.** Tunnel cùng Access cho đăng nhập và giao diện web; Tailscale cho các kết nối khác giữa thiết bị của mình.
+- **Record the *why*, not just the *what*.** Git history reconstructs *what* changed and *when*, but it can't tell you your motivation if you didn't write it down. Jotting down the reason at decision time saves you from having to reconstruct it later like I did for this post.
+- **Browser-based remote desktops have to be tested against your exact display stack.** On my GNOME Wayland setup, the RDP Graphics Pipeline requirement ruled out one browser RDP option right away, and older VNC guides no longer applied.
+- **Terminal sessions should survive closing a browser tab.** Tying a shell's lifecycle directly to a browser connection means a single hiccup can take down whatever command was running.
+- **Separating language toolchains from the container image keeps version upgrades under your control.** Redeploying a container shouldn't silently swap out the compiler or runtime version you're actively working with.
+- **Splitting access paths by use case makes daily life much simpler.** Cloudflare Tunnel + Access handle browser logins and web UIs; Tailscale handles direct device-to-device connections.
 
-Góc làm việc này chắc còn đổi. Hiện tại, mình dùng Orca nhiều nhất, giữ code-server để mở workspace qua trình duyệt, và để DeskMini cùng máy chủ gánh việc nặng. Những thứ đã bỏ giúp mình rõ hơn mình cần gì ở lần cài tiếp theo.
+This setup will surely keep evolving. Right now, I spend most of my time in Orca, keep `code-server` around for opening workspaces in a browser, and let the DeskMini and cloud servers do the heavy lifting. Every tool I tried and retired along the way made it much clearer what I actually need next time.

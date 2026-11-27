@@ -1,23 +1,23 @@
 ---
-title: "Chạy các app cần GUI trong Docker"
+title: "Running GUI Apps Inside Docker"
 date: 2020-05-09
 tags: [ "Linux", "Docker" ]
 ---
 
-Trường hợp của mình là mình lập trình app Python có sử dụng thư viện `matplotlib`. Để mình có thể sử dụng được giao diện thì mình cài đặt xhost trong host Arch trước:
+In my case, I was writing a Python app that uses the `matplotlib` library. To get the GUI working, I first installed `xhost` on my Arch host:
 
 ```shell
 yay -S xorg-xhost
 ```
 
-`xhost local:root` hoặc `xhost +` (cái này mình không rõ, nó cho phép hết tất cả truy cập vào màn hình luôn, còn phân chia cho từng app cụ thế thì mình không biết)
+Run `xhost local:root` or `xhost +` (I'm not entirely sure about the details here—it grants everything access to the display, and I don't know how to restrict it to specific apps).
 
-Sau đó chạy Docker với tham số bổ sung là `–env="DISPLAY"`. VD:
+Then run Docker with the extra `–env="DISPLAY"` flag. For example:
 
 ```shell
 docker run -it –rm –net=host –env="DISPLAY" –workdir=/workspace –volume="$HOME/Dropbox/PP:/workspace:rw" ubuntu bash
 ```
 
-Sau đó trong Docker, mình cài thêm gói `python3-pip` nữa.
+After that, inside the Docker container, I also installed the `python3-pip` package.
 
-Chúc các bạn thành công!!
+Good luck!!

@@ -1,35 +1,24 @@
 ---
-title: "Cài đặt Archlinux trong chế độ boot UEFI"
+title: "Installing Arch Linux in UEFI Boot Mode"
 date: 2020-04-07
 tags: [ "Arch", "Linux" ]
 ---
 
-## Giới thiệu
+## Introduction
 
-Trước khi bắt đầu, thì mình cũng xin nói trước là mình biết nếu bạn là "dân chơi" dám thử cài Arch Linux thì hẳn bạn
-không phải "tay mơ" rồi, và bạn có thể tự cài mà không cần hướng dẫn của mình. Bài viết của mình chủ yếu mang mục đích
-là chia sẻ kinh nghiệm cài Arch của mình thôi, chứ không mang tính hướng dẫn hay giúp đỡ gỡ rối gì. Nếu bạn gặp khó
-khăn, hãy comment bên dưới bài viết, mình sẽ xem và hỗ trợ bạn nếu có thể. Còn nếu bạn là người mới hoặc có ý định bước
-vào thế giới Linux, mình khuyên bạn nên thử dùng các phiên bản dành cho người mới trước
-như [Ubuntu](https://ubuntu.com/) hay nếu bạn nguốn trải nghiệm sơ bộ Arch thì [Manjaro](https://manjaro.org/) cũng là
-một lựa chọn không tồi (base on Arch và đứng top bảng xếp hạng nhiều lần mà) trước khi bắt đầu thử Arch. Sau đây là các
-bước tiến hành:
+Before we begin, I know that if you're brave enough to try installing Arch Linux, you're probably not a complete beginner, and you could easily install it on your own without my guide. This post is mainly meant to share my own experience installing Arch, rather than serving as a strict tutorial or troubleshooting guide. If you run into any issues, feel free to leave a comment below and I'll take a look and help if I can. On the other hand, if you're new to Linux or just thinking about stepping into the Linux world, I recommend starting with beginner-friendly distributions like [Ubuntu](https://ubuntu.com/), or if you want a taste of Arch first, [Manjaro](https://manjaro.org/) is a great choice (it's based on Arch and has topped the rankings many times) before diving into vanilla Arch. Here are the steps:
 
-## Tạo bộ cài
+## Creating the Installation Media
 
-Ở đây mình hướng dẫn tạo bộ cài qua USB, nếu bạn dùng đĩa thì có thể tự tìm hiểu và làm.
+Here I'll show you how to create a bootable USB drive; if you're using a CD/DVD, you can look that up on your own.
 
-Đầu tiên các bạn tải file cài đặt mới nhất tại trang chủ của Arch Linux: <https://www.archlinux.org/download/>
+First, download the latest installation image from the official Arch Linux website: <https://www.archlinux.org/download/>
 
-Nếu bạn dùng Windows thì sử dụng Rufus để tạo bộ cài (các bạn chọn chế độ boot BIOS mặc định là được, bộ cài sẽ nhận cả
-2 chuẩn BIOS lẫn UEFI luôn, còn nếu chọn UEFI thôi thì có khi lại không được :v). Nếu bạn dùng Linux thì có thể dùng
-lệnh: `dd if=<đường dẫn đến file .iso> of=/dev/sdX bs=1MB` (với sdX là ổ USB) hoặc dùng GUI tools như
-Disks (`gnome-disks`) -> Restore Disk Image...
+If you're on Windows, use Rufus to create the bootable USB (just keep the default BIOS boot mode—the installer supports both BIOS and UEFI out of the box, whereas picking UEFI-only might actually fail :v). If you're on Linux, you can run: `dd if=<path to .iso file> of=/dev/sdX bs=1MB` (where `sdX` is your USB drive), or use a GUI tool like Disks (`gnome-disks`) -> Restore Disk Image...
 
-## Thiết lập mạng
+## Setting Up the Network
 
-Sau khi boot vào Live boot, bạn khởi động các service sau: `systemctl start dhcpcd`. Nếu bạn dùng mạng dây thì như vậy
-là được, nhưng nếu bạn dùng wifi như laptop chẳng hạn, thì chạy thêm các lệnh sau:
+After booting into the live environment, start the following service: `systemctl start dhcpcd`. If you're using a wired connection, that's all you need. If you're on Wi-Fi (for example, on a laptop), run these additional commands:
 
 ```shell
 systemctl start iwd
@@ -37,51 +26,48 @@ iwctl
 device list
 ```
 
-Lúc này sẽ hiện ra tên các thiết bị wifi của bạn, giả sử là `wlan0`, nếu không phải thì thay `wlan0` ở các lệnh sau bằng
-tên thích hợp của máy bạn:
+This will list your Wi-Fi devices. Suppose yours is `wlan0` (if not, replace `wlan0` in the commands below with your actual device name):
 
 ```shell
 station wlan0 scan
 station wlan0 get-networks
 ```
 
-Lúc này sẽ hiện ra tên các điểm truy cập wifi, giả sử như là `SSID`, kết nối bằng lệnh sau:
+This will display the available Wi-Fi networks. Assuming your network name is `SSID`, connect to it with:
 
 ```shell
 station wlan0 connect SSID
 ```
 
-Lúc này sẽ yêu cầu bạn nhập mật khẩu wifi (nếu có). Sau đó bạn có thể tiếp tục các bước tiếp theo:
-Thử kết nối với internet bằng lệnh: `ping google.com -c2`
+You'll be prompted for the Wi-Fi password (if any). Once connected, you can move on to the next steps.
+Test your internet connection with: `ping google.com -c2`
 
-## Cập nhật ngày giờ hệ thống
+## Updating the System Clock
 
 `timedatectl set-ntp true`
 
-## Phân vùng ổ đĩa
+## Partitioning the Disk
 
-Ở đây mình dùng lệnh `fdisk`, bạn có thể dùng lệnh khác.  
-**Lưu ý:** Arch Linux khuyến khích phân vùng EFI từ 260-512MiB; phân vùng SWAP từ 512MiB. SWAP là cần thiết, tuy nhiên
-sau khi cài mình sẽ dùng swap file nên không tạo phân vùng này.
+Here I use `fdisk`, though you can use any partitioning tool you prefer.  
+**Note:** Arch Linux recommends an EFI partition of 260–512 MiB and a SWAP partition of at least 512 MiB. SWAP is important, but I plan to use a swap file after installation, so I won't create a swap partition here.
 
 ```shell
 fdisk -l
 fdisk /dev/sda</code
 ```
 
-(Bạn gõ `m` sau đó xem trong hướng dẫn thêm nhé!)
+(Type `m` inside `fdisk` if you need help with the commands!)
 
-### Định dạng các phân vùng
+### Formatting the Partitions
 
 ```shell
 mkfs.fat -F32 /dev/sda1
 mkfs.ext4 /dev/sda2
 ```
 
-### Mount các phân vùng
+### Mounting the Partitions
 
-**Lưu ý:** Arch Linux khuyến khích mount phân vùng EFI vào mount point `/efi` thay vì `/boot/efi` như nhiều hệ điều hành
-khác hiện tại (chẳng hạn Ubuntu).
+**Note:** Arch Linux recommends mounting the EFI partition at `/efi` rather than `/boot/efi` as many other distributions (such as Ubuntu) currently do.
 
 ```shell
 mount /dev/sda2 /mnt
@@ -89,47 +75,40 @@ mkdir /mnt/efi
 mount /dev/sda1 /mnt/efi
 ```
 
-## Tiến hành cài đặt
+## Installing the System
 
-Hihi, sau nhiều bước "khởi động" thì cuối cùng cũng đến bước tiến hành cài đặt.
+Hehe, after all those "warm-up" steps, we finally get to the actual installation.
 
-Đầu tiên chúng ta nên thiết lập mirror servers để có tốc độ mạng hiệu quả. Vì chúng ta ở Việt Nam nên dùng mirror của
-archlinuxvn là hiệu quả. Thực hiện các lệnh sau: `nano /etc/pacman.d/mirrorlist`. Thêm dòng sau vào trước dòng đầu
-tiên: `Server = http://f.archlinuxvn.org/archlinux/$repo/os/$arch`
+First, we should configure the mirror servers for better download speeds. Since we're in Vietnam, using the `archlinuxvn` mirror works great. Run `nano /etc/pacman.d/mirrorlist` and add the following line right at the top: `Server = http://f.archlinuxvn.org/archlinux/$repo/os/$arch`
 
-Sau đó lưu (_Ctrl+O_, _Enter_) và thoát (_Ctrl+X_)
+Then save (_Ctrl+O_, _Enter_) and exit (_Ctrl+X_).
 
-Cài các gói cần thiết bằng lệnh sau: `pacstrap /mnt base linux linux-firmware`
+Install the essential packages with: `pacstrap /mnt base linux linux-firmware`
 
-## Thiết lập hệ thống
+## Configuring the System
 
-Sau đây là các tinh chỉnh để hệ thống hoạt động.
+Next are the tweaks needed to get the system up and running.
 
-### Tạo file fstab
+### Generating the fstab File
 
-Để mount các phân vùng khi khởi động: `genfstab -U /mnt >> /mnt/etc/fstab` (có thể thay `-U` bằng `-L`, nghĩa là thay vì
-định nghĩa bằng UUID thì định nghĩa bằng label của phân vùng)
+To mount partitions automatically on boot: `genfstab -U /mnt >> /mnt/etc/fstab` (you can replace `-U` with `-L` if you prefer defining partitions by label instead of UUID).
 
-#### Change root vào hệ thống mới
+#### Chrooting into the New System
 
 `arch-chroot /mnt`
 
-#### Thiết lập time zone
+#### Setting the Time Zone
 
-Chúng ta ở Việt Nam sẽ chọn thành phố Hồ Chí Minh: `ln -sf /usr/share/zoneinfo/Asia/Ho_Chi_Minh /etc/localtime`. Đồng bộ
-giờ: `hwclock --systohc`
+Since we're in Vietnam, we'll select Ho Chi Minh City: `ln -sf /usr/share/zoneinfo/Asia/Ho_Chi_Minh /etc/localtime`. Then synchronize the hardware clock: `hwclock --systohc`
 
-#### Định dạng vùng
+#### Localization
 
-Đầu tiên nên cài đặt vim để có thể chỉnh sửa file văn bản: `pacman -S vim`. Sau đó sửa file sau: `vim /etc/locale.gen`
-Uncomment dòng _en_us.UTF-8 UTF-8_ (và dòng _vi_VN UTF-8_ nếu thích :v) (bạn nhấn phím _i_ để vào chế độ insert mới sửa
-được), lưu lại và thoát (_Esc_, sau đó gõ `:wq` sau đó chạy lệnh: `locale-gen`. Tiếp tục sửa một file
-khác: `vim /etc/locale.conf`. Thêm vào đây dòng sau _LANG=en_US.UTF-8_
+First, install `vim` so we can edit text files: `pacman -S vim`. Then edit `/etc/locale.gen`: `vim /etc/locale.gen`
+Uncomment the line _en_us.UTF-8 UTF-8_ (and _vi_VN UTF-8_ if you like :v) (press _i_ to enter insert mode so you can edit), save and exit (_Esc_, then type `:wq`), and run: `locale-gen`. Next, edit `/etc/locale.conf`: `vim /etc/locale.conf` and add the line _LANG=en_US.UTF-8_
 
-#### Thiết lập tên máy tính trong mạng
+#### Setting the Hostname
 
-Sửa file `/etc/hostname`, _myhostname_ vào đó (với _myhostname_ là tên bạn muốn đặt cho máy tính của bạn). Tương tự, sửa
-file `/etc/hosts` với các thông số như sau:
+Edit `/etc/hostname` and put _myhostname_ in it (where _myhostname_ is whatever name you want to give your computer). Similarly, edit `/etc/hosts` with the following entries:
 
 ```shell
 127.0.0.1   localhost
@@ -137,48 +116,42 @@ file `/etc/hosts` với các thông số như sau:
 127.0.1.1   myhostname.localdomain  myhostname
 ```
 
-#### Khởi tạo Initramfs
+#### Initializing Initramfs
 
-(thông thường bước này không cần thiết)
+(usually this step isn't necessary)
 
 `mkinitcpio -P`
 
-#### Đặt mật khẩu cho root
+#### Setting the Root Password
 
-Gõ: `passwd`. Sau đó điền mật khẩu 2 lần.
+Type `passwd`, then enter your new password twice.
 
-#### Cài đặt microcode (tùy chọn)
+#### Installing Microcode (Optional)
 
-Tùy vào bạn sử dụng CPU Intel hay AMD mà cài gói cho phù hợp. `pacman -S amd-ucode` (nếu bạn dùng AMD)
-hoặc `pacman -S intel-ucode` (nếu bạn dùng Intel)
+Depending on whether you use an Intel or AMD CPU, install the matching package: `pacman -S amd-ucode` (for AMD) or `pacman -S intel-ucode` (for Intel).
 
-#### Cài đặt boot loader
+#### Installing the Boot Loader
 
-Ở đây mình dùng `grub` (khá phổ biến, nhiều tùy chọn, tùy chỉnh), và gói `efibootmgr` (mình đang cài trong chế độ UEFI
-mà :D):
+Here I use `grub` (popular, flexible, and highly customizable) along with `efibootmgr` (since I'm installing in UEFI mode :D):
 
 ```shell
 pacman -S grub efibootmgr
 grub-install --target=x86_64-efi --efi-directory=/efi --bootloader-id=Archlinux
 ```
 
-Nếu bạn mount phân vùng EFI giống mình thì làm như trên, không thì đổi `/efi` thành mount point EFI của bạn. "Archlinux"
-trong lệnh trên có thể đổi thành cái khác nếu bạn thích, nó sẽ hiển thị trong Boot Options trong BIOS của bạn (nếu bạn
-không lock Boot Order, máy ThinkPad của mình có chức năng này).
+If you mounted your EFI partition the same way I did, run the command as shown; otherwise, replace `/efi` with your EFI mount point. You can also change "Archlinux" in that command to whatever name you like—it will show up in your BIOS Boot Options (assuming you haven't locked the Boot Order; my ThinkPad has that feature).
 
-Cập nhật GRUB: `grub-mkconfig -o /boot/grub/grub.cfg`
+Update GRUB: `grub-mkconfig -o /boot/grub/grub.cfg`
 
-Vậy là bạn đã hoàn thành cài Arch Linux lên máy rồi đấy, giờ thì có thể reboot ngay để trải nghiệm thôi:
+And that's it—you've finished installing Arch Linux on your machine! You can reboot right away to try it out:
 
 ```shell
 umount -R /mnt
 reboot
 ```
 
-Tuy nhiên mình khuyên bạn nên làm theo các bước "hậu cài đặt" trước khi reboot để có trải nghiệm tốt nhất, vì bạn chỉ
-mới có các gói cơ bản trên máy thôi, nên chưa thể dùng như Desktop được đâu. Mình sẽ viết bài cho điều này sớm nhất. Hẹn
-gặp lại các bạn.
+However, I recommend going through a few "post-installation" steps before rebooting for the best experience, because right now you only have the bare-bones base packages installed and can't use it like a proper desktop yet. I'll write a follow-up post on that very soon. See you next time!
 
-Tham khảo tại nguồn: <https://wiki.archlinux.org/index.php/Installation_guide>
+Reference: <https://wiki.archlinux.org/index.php/Installation_guide>
 
-Chúc các bạn thành công! Nếu có gặp khó khăn gì, bạn có thể comment bên dưới, mình sẽ cố gắng giúp đỡ.
+Good luck! If you run into any trouble, feel free to drop a comment below and I'll do my best to help.

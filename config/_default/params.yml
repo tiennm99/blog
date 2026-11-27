@@ -49,7 +49,7 @@ comments:
     reactionsEnabled: "1"
     inputPosition: bottom
     theme: preferred_color_scheme
-    lang: vi
+    lang: en
 
 # Show a TOC on every post that has headings, as Stack did.
 toc:

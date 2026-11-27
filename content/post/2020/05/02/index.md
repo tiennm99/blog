@@ -1,20 +1,20 @@
 ---
-title: "Kích hoạt Numlock khi khởi động với LightDM"
+title: "Enabling Numlock on Boot with LightDM"
 date: 2020-05-02
 tags: [ "Linux", "Display Manager" ]
 ---
 
-Cài đặt numlockx:
+Install `numlockx`:
 
 ```shell
 yay -S numlockx
 ```
 
-Mở file `/etc/lightdm/lightdm.conf`, thêm dòng như sau:
+Open `/etc/lightdm/lightdm.conf` and add the following under `[Seat:*]`:
 
 ```shell
 [Seat:*]
 greeter-setup-script=/usr/bin/numlockx on
 ```
 
-Vậy là xong!!
+And you're done!!

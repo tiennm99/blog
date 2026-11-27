@@ -14,7 +14,7 @@ const TAGS_LINE_RE = /^tags:\s*\[([^\]]*)\]/m;
 const QUOTED_TAG_RE = /"([^"]+)"/g;
 
 /**
- * extractTags pulls quoted tag strings from an index.md frontmatter tags array.
+ * extractTags pulls quoted tag strings from an index.vi.md frontmatter tags array.
  * @param {string} path
  * @returns {string[]}
  */
@@ -43,7 +43,7 @@ export async function runListExistingTags(_args) {
   const index = new Map();
 
   for (const path of collectMarkdown(contentDir())) {
-    if (basename(path) !== "index.md") continue;
+    if (basename(path) !== "index.vi.md") continue;
     for (const tag of extractTags(path)) {
       const at = index.get(tag);
       if (at !== undefined) counts[at].count++;

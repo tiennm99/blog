@@ -1,41 +1,30 @@
 ---
-title: "Cài đặt package trong AUR cho Archlinux"
+title: "Installing AUR Packages on Arch Linux"
 date: 2020-04-13
 tags: [ "Arch", "Linux", "yay", "AUR" ]
 ---
 
-Arch User Repository (AUR) là nơi để người dùng nào cũng có thể tạo các package cho riêng mình và chia sẻ với những
-người khác cùng sử dụng; một lí do khiến cho Arch trở nên rất tiện lợi với người dùng, một trong những lí do để họ chọn
-Arch là distro để dùng.
+The Arch User Repository (AUR) is a community-driven repository where anyone can create their own packages and share them with other users. It's one of the main reasons Arch is so convenient and why so many people choose Arch as their daily distro.
 
-Có thể nói hầu hết các gói bạn có thể tìm ở các distro khác đều có thể có ở Official Repositories hoặc trong AUR. Và
-những package "được biết đến" cũng sẽ có bản trong AUR. VD như `ibus-bamboo` - bộ gõ yêu thích của mình cũng có trong
-đây.
+Pretty much any package you can find on other distros is available either in the Official Repositories or in the AUR. Well-known software almost always has an AUR package—for instance, `ibus-bamboo`, my favorite Vietnamese input method, is right there in the AUR.
 
-Hơn nữa, với những phần mềm open source hay cung cấp source code cho người dùng tự build (như trên GitHub chẳng hạn),
-thì việc cài đặt từ AUR dễ dàng hơn nhiều, và cũng dễ quản lý hơn nữa.
+Moreover, for open-source projects that only provide source code for users to build themselves (such as projects on GitHub), installing from the AUR is much easier and makes package management a breeze.
 
-Ở thời điểm mình viết bài này, mặc dù trong Official repositories có 11278 (một con số cũng rất ấn tượng rồi), nhưng
-trong AUR có đến tận 59729 packages, một con số rất 'khủng' phải không :D
+At the time of writing, while the Official Repositories already have an impressive 11,278 packages, the AUR has a whopping 59,729 packages—pretty massive, right? :D
 
-Và điểm mạnh trên cũng chính là điểm yếu của nó, vì ai cũng có thể thêm package vào đó, nên vẫn hay bị "mang tiếng" là
-dễ bị tác giả "tặng kèm" vài con virus hay malware,... vào máy :v. Vì vậy các bạn nên cẩn thận, lựa chọn package có
-nguồn đáng tin cậy để cài đặt thôi nhé, chẳng hạn như package được đề cập trong Arch Wiki, từ trang chủ của gói đó, vd
-như ibus-bamboo có ghi rõ gói AUR dành cho Arch và các distro base-on Arch; hoặc các package có votes cao, popularity
-nhiều,...
+Of course, that strength is also its weakness: since anyone can upload packages to the AUR, it has a reputation for potentially coming with a few "free" viruses or malware courtesy of the package author :v. So be careful and stick to packages from trusted sources—such as packages mentioned on the Arch Wiki, linked directly from the project's official homepage (for example, `ibus-bamboo` explicitly lists its AUR package for Arch and Arch-based distros), or packages with high vote counts and popularity scores.
 
-## Hướng dẫn cài đặt package từ AUR (yay)
+## How to Install Packages from the AUR (yay)
 
-Ở đây mình sẽ hướng dẫn cài yay (một AUR helper khá nổi), vì hướng dẫn cơ bản nên các bước config build,... mình sẽ bỏ
-qua, chỉ hướng dẫn 3 bước chính
+Here I'll walk you through installing `yay` (a very popular AUR helper). Since this is a basic guide, I'll skip advanced build configurations and just cover the 3 main steps.
 
-Trước tiên thì bạn nên cài đặt gói base-devel trước, đây là gói chứa nhiều công cụ dùng để build package:
+First, install the `base-devel` package group, which contains the essential tools needed to build packages:
 
 ```shell
 sudo pacman -S base-devel
 ```
 
-Sau đó clone package từ link của AUR về, ở đây mình ví dụ là yay (<https://aur.archlinux.org/packages/yay/):>
+Next, clone the package repository from its AUR link—here I'm using `yay` (<https://aur.archlinux.org/packages/yay/):>
 
 ```shell
 git clone https://aur.archlinux.org/yay.git`
@@ -43,24 +32,14 @@ cd yay
 makepkg -si
 ```
 
-Vậy là xong rồi đó :D, quá đơn giản phải không nào, package này sẽ có thể dễ dàng quản lý được bằng pacman như một
-package thông thường, tuy nhiên pacman sẽ không thể cập nhật những package trong AUR được, nếu muốn bạn phải theo dõi và
-cập nhật bằng tay bằng cách làm lại các bước trên. Để khắc phục sự bất tiện này, chúng ta cần sự trợ giúp từ các AUR
-helpers, và ở đây mình sẽ dùng yay.
+And that's it :D Super simple, right? Once installed, the package can be managed by `pacman` just like any regular package. However, `pacman` cannot automatically update AUR packages—if you want to update them manually, you'd have to track updates yourself and repeat the steps above. To get around that inconvenience, we use AUR helpers, and here I use `yay`.
 
 ## yay (Yet another Yogurt)
 
-Như đã nói ở trên, việc cài đặt package từ AUR có thể nói là rất đơn giản, qua 3 bước chính; tuy nhiên lại không tự cập
-nhật,... được. Vì vậy mình giới thiệu đến các bạn yay, với yay, việc cài đặt package từ AUR chỉ cần 1 lệnh y chang
-pacman thôi :v (vì yay là một trong những Pacman wrappers mà :D), và quá trình cài chỉ khác một chút là có thêm bước
-build package nên lâu hơn thông thường mà thôi. Hơn nữa yay là 'tinh hoa tổng hợp' từ yaourt, apacman và pacaur (những
-cái tên khá là 'cộm cán' nếu bạn biết đến chúng :v, dù yaourt đã bị 'chết', bởi vậy yay mới là sự thay thế cho nó).
+As mentioned above, installing a package from the AUR only takes 3 simple steps, but it doesn't handle automatic updates. That's why I'm introducing `yay`: with `yay`, installing an AUR package takes just a single command, identical to `pacman` :v (since `yay` is a Pacman wrapper, after all :D). The only difference during installation is an extra build step, so it takes a bit longer than usual. On top of that, `yay` combines the best ideas from `yaourt`, `apacman`, and `pacaur` (pretty big names if you've been around Arch for a while :v—though `yaourt` is now discontinued, which is why `yay` stepped in to replace it).
 
-Không dài dòng nữa, bên trên đã là cách cài đặt yay rồi nên mình không giới thiệu nữa :v
+Without further ado, I already showed how to install `yay` above, so I won't repeat myself :v
 
-Và cách sử dụng... Hmm, vì yay có cú pháp giống pacman nên cũng khỏi giới thiệu luôn :v, muốn cài package X
-cứ `yay -S X` thôi :v, và các tùy chọn sau thì bạn cứ xem thử nó báo gì rồi chọn, nếu lười thì cứ Enter mãi thôi, 9/10
-là bạn sẽ cài được package :v
+As for how to use it... well, since `yay` uses the exact same syntax as `pacman`, there's barely anything to explain :v. If you want to install package `X`, just run `yay -S X` :v, read the prompts to pick whichever options you want, or if you're feeling lazy, just keep hitting Enter—9 times out of 10 it'll install just fine :v
 
-À, tip nhỏ, đó là để cập nhật hệ thống bạn chỉ cần dùng lệnh `yay` thôi (nó sẽ thay cho `yay -Syyu`, giống
-với `sudo pacman -Syyu` luôn đó :v), vì vậy không cần phức tạp, cứ `yay` thôi :D
+Oh, one quick tip: to update your entire system, all you need to run is `yay` (it acts as a shorthand for `yay -Syyu`, just like `sudo pacman -Syyu` :v). No need to overcomplicate things—just type `yay` :D

@@ -1,10 +1,10 @@
 ---
-title: "Siêu tổng hợp ByteByteGo P3"
+title: "ByteByteGo Mega Roundup P3"
 date: 2025-08-22
 tags: ["ByteByteGo"]
 ---
 
-*Hôm nay hơi lười nên chúng ta lại quay lại series ảnh của [ByteByteGo](https://bytebytego.com/) nhé. Bạn thích thì mình viết, bạn không thích thì mình cũng viết hehe*
+*Feeling a bit lazy today, so we're back to the [ByteByteGo](https://bytebytego.com/) visual series! If you like it, I'll post it — and even if you don't, I'll still post it hehe*
 
 ![SQL vs NoSQL: Choosing the Right Database](https://substack-post-media.s3.amazonaws.com/public/images/074eba32-d415-4ed1-a60e-d193918f0df2_2250x2624.png)
 
@@ -32,8 +32,8 @@ tags: ["ByteByteGo"]
 
 ![5 Database Normal Forms Every Developer Should Know](https://substack-post-media.s3.amazonaws.com/public/images/a793a9c6-86e1-426a-a774-b78785966e9c_2360x2770.png)
 
-## Và một số video
+## Plus a Video
 
 [Trillions of Web Pages: Where Does Google Store Them?](https://www.youtube.com/watch?v=nBvDtj-p6VM)
 
-*Hẹn gặp lại các bạn trong các phần sau nữa nha haha!!*
+*See you again in the upcoming parts haha!!*

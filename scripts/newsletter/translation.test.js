@@ -88,8 +88,9 @@ test("a dropped code block is reported", () => {
 });
 
 test("paths", () => {
-  assert.equal(translationPath("content/post/2025/03/16/index.md", "en"), "content/post/2025/03/16/index.en.md");
-  assert.equal(translationPath("content/_index.md", "en"), "content/_index.en.md");
-  assert.equal(bundleUrl("content/post/2025/03/16/index.md"), "/post/2025/03/16/");
-  assert.equal(bundleUrl("content/_index.md"), "/");
+  assert.equal(translationPath("content/post/2025/03/16/index.vi.md", "en"), "content/post/2025/03/16/index.md");
+  assert.equal(translationPath("content/_index.vi.md", "en"), "content/_index.md");
+  assert.equal(translationPath("content/post/2025/03/16/index.vi.md", "ja"), "content/post/2025/03/16/index.ja.md");
+  assert.equal(bundleUrl("content/post/2025/03/16/index.vi.md"), "/post/2025/03/16/");
+  assert.equal(bundleUrl("content/_index.vi.md"), "/");
 });

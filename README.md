@@ -17,7 +17,7 @@ hugo && npx pagefind --site public --serve
 
 ## Content structure
 
-Posts live under `content/post/YYYY/MM/DD/index.md`. Each post is a Hugo leaf bundle — images and assets sit next to `index.md` in the same directory.
+Posts live under `content/post/YYYY/MM/DD/`. Each post is a Hugo leaf bundle: the Vietnamese source `index.vi.md`, its English translation `index.md` (English is the default language, served at `/`; Vietnamese is under `/vi/`), and images and assets in the same directory.
 
 ```
 content/
@@ -25,7 +25,8 @@ content/
     2024/
       03/
         15/
-          index.md     ← post content (Vietnamese / English)
+          index.vi.md  ← post content (Vietnamese source)
+          index.md     ← English translation
           cover.jpg    ← optional cover image
   page/                ← standalone pages (about, projects, …)
 ```

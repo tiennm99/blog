@@ -1,18 +1,18 @@
 ---
-title: "Pin không sạc đầy"
+title: "Battery Not Charging to Full"
 date: 2020-05-20
 tags: [ "Linux", "Battery" ]
 ---
 
-Ở đây các bạn cần phân biệt với chai pin nhé!
+First, make sure not to confuse this with battery wear!
 
-Chai pin là khi sạc đạt 100% nhưng nó không đạt được như thiết kế của nhà sản xuất, các bạn có thể chạy thử lệnh sau để kiểm tra nhé:
+Battery wear is when your battery charges to 100%, but its actual full capacity no longer reaches the manufacturer's original design capacity. You can run the following command to check:
 
 ```shell
 sudo tlp-stat -b
 ```
 
-Ví dụ output hiện tại của mình như sau:
+For example, here is my current output:
 
 ```shell
 ---TLP 1.3.1 --------------------------------------------
@@ -36,14 +36,14 @@ Charge = 100.0 [%]
 Capacity = 85.1 [%]
 ```
 
-Ở đây theo thiết kế thì pin của mình đạt 45000 mWh nhưng hiện tại khi sạc đến 100% thì chỉ được 38280 mWh thôi, ở phần dưới cùng tlp-stat có tổng kết lại cho mình là pin của mình đã chai đi khoảng 14.9% so với ban đầu rồi (mình thấy cũng bình thường thôi, tại mình dùng được 1 năm rồi, và thời gian cũng có chơi game nhiều, khá là nóng máy).
+Here, my battery's design capacity is 45000 mWh, but right now when it charges to 100%, it only reaches 38280 mWh. At the bottom, `tlp-stat` summarizes that my battery has worn down by about 14.9% compared to when it was new (which I think is pretty normal, since I've been using it for a year and played quite a lot of games, which got the laptop pretty hot).
 
-Đó là chai pin, trường hợp của mình thì thấy vẫn ổn, nhưng nếu chai đến tận 90% rồi chẳng hạn thì chỉ có cách là thay pin mới khắc phục được thôi. Mà pin thiết kế ra là... cũng để chai thôi mà :v
+That's battery wear. In my case, it's still fine, though if it ever wears down by, say, 90%, the only fix is to replace the battery. Then again, batteries are designed to... eventually wear out anyway :v
 
-Sau đây là trường hợp mình muốn nói với các bạn: Pin chỉ sạc đến một khoảng nào đó rồi ngừng, không sạc tiếp. Trường hợp này nếu tầm 90-95% là bình thường, vì một số máy thiết kế chỉ đạt đến mức đó thôi là ngừng rồi. Tuy nhiên nếu chỉ tầm 60% hay 80% (trường hợp mình gặp là 79%) thì là "bất thường" rồi. Mình không biết nguyên nhân nhưng khắc phục như sau:
+Now here is the actual issue I want to talk about: the battery only charges up to a certain percentage and then stops, refusing to charge any further. If it stops around 90–95%, that's normal, because some laptops are designed to stop charging around that level. However, if it stops around 60% or 80% (in my case, it stopped at 79%), then something is "abnormal". I don't know the exact cause, but here is how to fix it:
 
 ```shell
 sudo tlp fullcharge
 ```
 
-Chúc các bạn thành công và có một viên pin đi cùng chiếc máy :)))
+Good luck, and may your battery live a long life alongside your laptop :)))
