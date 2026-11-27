@@ -1,5 +1,6 @@
 ---
 title: About
+slug: about
 description: A little about me and why I write this blog.
 aliases:
   - about-me

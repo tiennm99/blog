@@ -1,5 +1,6 @@
 ---
 title: Links
+slug: links
 menu:
     main:
         weight: -50
