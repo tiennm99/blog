@@ -21,7 +21,7 @@ can still succeed. The other subcommands need no dependencies.
 
 ## Invocation
 
-Always from the repo root — repo-relative paths (`content/post`) resolve from the
+Always from the repo root — repo-relative paths (`content/posts`) resolve from the
 process working directory:
 
 ```bash
@@ -76,7 +76,7 @@ Classifies and deduplicates one URL — the single entry point per URL.
 
 ### `find-newsletter-number`
 
-Prints the next newsletter number (plain text). Scans `content/post/YYYY/MM/DD/`
+Prints the next newsletter number (plain text). Scans `content/posts/YYYY/MM/DD/`
 newest-year-first and stops at the first year that holds a `Newsletter #N`
 heading, so a stale higher number in an older year does not win. An empty tree
 yields `1`.
@@ -155,7 +155,7 @@ Counts what a post already holds, so a handler can report a running tally.
 
 ```json
 {
-  "post": "content/post/2026/09/10/index.vi.md",
+  "post": "content/posts/2026/09/10/index.vi.md",
   "newsletter": 132,
   "articles": 8,
   "images": 3,
@@ -180,7 +180,7 @@ protected.
 
 ```json
 {
-  "post": "content/post/2025/03/16/index.vi.md",
+  "post": "content/posts/2025/03/16/index.vi.md",
   "newsletter": 7,
   "newsletter_post": true,
   "note": "*Bài viết đã được review và cập nhật bởi Claude Code với Opus 4.7 (1M context).*",
@@ -205,11 +205,11 @@ keeps only posts whose frontmatter `categories` names it.
   "lang": "en",
   "total": 205,
   "translated": 203,
-  "missing": ["content/post/2026/11/16/index.vi.md"],
+  "missing": ["content/posts/2026/11/16/index.vi.md"],
   "stale": [
     {
-      "source": "content/post/2026/10/07/index.vi.md",
-      "translation": "content/post/2026/10/07/index.md",
+      "source": "content/posts/2026/10/07/index.vi.md",
+      "translation": "content/posts/2026/10/07/index.md",
       "since": "f94bac3…"
     }
   ]

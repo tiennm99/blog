@@ -53,7 +53,7 @@ A clean YouTube URL (passed by `mt-add-url`, or given directly).
 7. **Report:**
    ```
    ✅ Video added to Newsletter #[number] (Bonus → Videos)
-   📄 content/post/YYYY/MM/DD/index.vi.md (+ index.md)
+   📄 content/posts/YYYY/MM/DD/index.vi.md (+ index.md)
    🎬 [Vietnamese title] — [clean_url]
    📊 [tally]
    ```

@@ -1,13 +1,14 @@
 {{- /*
   Cloudflare Pages redirects, written to public/_redirects: the old Stack-theme
-  pagination, front-matter aliases, and the old /en/ prefix.
+  pagination, front-matter aliases, the old /post/ section and the old /en/ prefix.
 
   The Stack pagination rules are TEMPORARY (added 2026-10-04): delete them once
   the old URLs no longer get traffic (review at 3, 6 or 12 months after the
   migration ships). Keep this file and the matching block in
   config/_default/hugo.yml for the other rules.
 
-  Posts keep their Stack URLs (/post/YYYY/MM/DD/), so they need no rules.
+  Posts moved from /post/YYYY/MM/DD/ to /posts/YYYY/MM/DD/ (and the same under
+  /vi/), so the rules above the /en/ catch-all send the old post URLs there.
   Stack paginated the home page with 5 posts per page. Those pages (/page/N/)
   go to /, since nocturne's home page is not paginated. Stack's first-page
   aliases (/categories/page/1/, /tags/page/N/) go to their list pages, since
@@ -19,7 +20,7 @@
 {{- /* Cloudflare reads only the root _redirects, so other languages get an empty file. */ -}}
 {{- $defaultLang := (partial "compat/sites.html" .).Default.Language.Name -}}
 {{- if eq .Language.Name $defaultLang -}}
-{{- $posts := where site.RegularPages "Section" "post" -}}
+{{- $posts := where site.RegularPages "Section" "in" site.MainSections -}}
 {{- $pages := int (math.Ceil (div (float (len $posts)) 5.0)) -}}
 {{- range seq $pages }}
 /page/{{ . }}/ / 301
@@ -52,6 +53,14 @@
 /page/index.xml /index.xml 301
 /vi/page/ /vi/ 301
 /vi/page/index.xml /vi/index.xml 301
+{{- /* Posts moved from the post section to posts. The bare paths come first, as
+  static rules go before dynamic ones; /en/post/* must sit above the /en/* catch-all. */}}
+/post /posts/ 301
+/vi/post /vi/posts/ 301
+/en/post /posts/ 301
+/en/post/* /posts/:splat 301
+/post/* /posts/:splat 301
+/vi/post/* /vi/posts/:splat 301
 {{- /* English moved from /en/ to the site root when it became the default language.
   Hugo still writes the English sitemap to /en/sitemap.xml, so serve it before the catch-all. */}}
 /en/sitemap.xml /en/sitemap.xml 200

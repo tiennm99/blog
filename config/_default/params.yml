@@ -1,9 +1,6 @@
 # Fallback meta description (home page, og:description, twitter:description).
 description: Vietnamese developer. Writing about code, work, and the small things in between.
 
-mainSections:
-  - post
-
 # Full post content in RSS, not just the summary.
 rssFullContent: true
 favicon: /favicon.png

@@ -7,7 +7,7 @@ description: 'Rewrite existing Hugo blog newsletter posts with a newer model (e.
 
 `mt-rewrite-newsletter` re-summarizes already-published newsletter posts with the model named by the user. It is a **rewrite** workflow: it never adds or removes entries, never changes URLs, titles, tags, or order. For adding new URLs use `mt-add-url`.
 
-This skill handles: posts under `content/post/**/index.vi.md` whose frontmatter `categories` contains `Newsletter`. It does **not** handle: regular blog posts, reviews, tag changes (`mt-add-tags`), or new content.
+This skill handles: posts under `content/posts/**/index.vi.md` whose frontmatter `categories` contains `Newsletter`. It does **not** handle: regular blog posts, reviews, tag changes (`mt-add-tags`), or new content.
 
 Shared engine: `scripts/newsletter/` ([engine-commands.md](../../../docs/newsletter/engine-commands.md)). Writing rules for summaries: `docs/newsletter/post-mechanics.md` §4–5 — **follow them**.
 
@@ -25,9 +25,9 @@ Classified by `node scripts/newsletter protected-lines <post>`:
 |------|---------|
 | `frontmatter` | the whole `---` block |
 | `heading` | `## [Source Title](url)`, `### Bonus`, `## Bonus: Vài ảnh hay ho…` |
-| `html-block` | `<i> … </i>` greetings and intros |
+| `html-block` | raw HTML blocks (`<div>`, `<blockquote>` …); posts no longer use them, since the renderer drops raw HTML |
 | `author-note` | `**Đánh giá:** *…*` — the author's verdict on the tool/model used for the post |
-| `italic-note` | `*Mời bạn thưởng thức Newsletter #7.*`, author notes in italics |
+| `italic-note` | `*Mời bạn thưởng thức Newsletter #7.*`, italic greetings and intros, author notes in italics |
 | `struck` | `~~…~~` lines — entries the author struck out stay struck and unchanged |
 | `asset` | `![label](url)`, `[video title](url)`, `**Images:**` |
 | `code` | fenced code blocks in a summary — keep content verbatim, placed after the prose they illustrate; when the block sat inside a list, de-indent the whole block to column 0 (the check allows re-indenting) |
@@ -42,7 +42,7 @@ Anything else that is not an AI summary paragraph — a blank-line separator, a 
 
 1. **Resolve targets** — list newsletters in scope:
    ```bash
-   grep -rl --include=index.vi.md -E '^categories:.*Newsletter' content/post | sort
+   grep -rl --include=index.vi.md -E '^categories:.*Newsletter' content/posts | sort
    ```
    Drop posts whose frontmatter `tags` lack `AI-Assisted` (the author wrote them by hand — nothing to rewrite, and a rewrite note would be false), posts whose `protected-lines` output has `newsletter_post: false`, and (unless `--force`) posts whose `note` already credits the chosen model. Show the count and the first/last post; for scope `all` or more than 10 posts, confirm with the user before editing.
 
@@ -50,8 +50,8 @@ Anything else that is not an AI summary paragraph — a blank-line separator, a 
 
    a. **Snapshot** the protected lines into the scratchpad:
       ```bash
-      node scripts/newsletter protected-lines content/post/YYYY/MM/DD/index.vi.md > <scratchpad>/YYYY-MM-DD.json
-      node scripts/newsletter post-stats content/post/YYYY/MM/DD/index.vi.md
+      node scripts/newsletter protected-lines content/posts/YYYY/MM/DD/index.vi.md > <scratchpad>/YYYY-MM-DD.json
+      node scripts/newsletter post-stats content/posts/YYYY/MM/DD/index.vi.md
       ```
       Keep the `post-stats` counts for step d.
 
@@ -72,8 +72,8 @@ Anything else that is not an AI summary paragraph — a blank-line separator, a 
 
    d. **Verify** — both must pass before moving on:
       ```bash
-      node scripts/newsletter protected-lines content/post/YYYY/MM/DD/index.vi.md --against <scratchpad>/YYYY-MM-DD.json
-      node scripts/newsletter post-stats content/post/YYYY/MM/DD/index.vi.md
+      node scripts/newsletter protected-lines content/posts/YYYY/MM/DD/index.vi.md --against <scratchpad>/YYYY-MM-DD.json
+      node scripts/newsletter post-stats content/posts/YYYY/MM/DD/index.vi.md
       ```
       `ok: false` → restore each `missing` line exactly (or `git checkout` the file and redo the post). `post-stats` counts must equal the snapshot counts.
 

@@ -24,7 +24,7 @@ Shared engine: `scripts/newsletter/` — `translation-status` and `translation-c
 ```bash
 node scripts/newsletter translation-status                       # whole site
 node scripts/newsletter translation-status --category Newsletter # newsletters only
-node scripts/newsletter translation-status content/post/2026/10  # one subtree
+node scripts/newsletter translation-status content/posts/2026/10  # one subtree
 ```
 
 `missing` → create the translation (step 2). `stale` → sync it (step 3). Process newsletters before other posts. For more than 10 posts, show the count and the first and last path and confirm before editing.
@@ -38,8 +38,8 @@ Read the whole Vietnamese source, then `Write` the new `index.md` following the 
 Find what changed in the source since the translation was last committed (`since` from `translation-status`):
 
 ```bash
-git diff <since> -- content/post/YYYY/MM/DD/index.vi.md   # committed changes
-git diff HEAD -- content/post/YYYY/MM/DD/index.vi.md      # uncommitted ones
+git diff <since> -- content/posts/YYYY/MM/DD/index.vi.md   # committed changes
+git diff HEAD -- content/posts/YYYY/MM/DD/index.vi.md      # uncommitted ones
 ```
 
 Mirror only those changes into `index.md` with anchored `Edit` calls: a new entry is translated and inserted at the matching position, a removed entry is removed, a rewritten summary is re-translated, a tag change is copied. Leave untouched English text alone. If the diff rewrote most of the post, re-translate the whole file instead.
@@ -49,7 +49,7 @@ For `entry` mode, the handler has just inserted one entry: if `index.md` does no
 ### 4. Verify
 
 ```bash
-node scripts/newsletter translation-check content/post/YYYY/MM/DD/index.vi.md
+node scripts/newsletter translation-check content/posts/YYYY/MM/DD/index.vi.md
 ```
 
 `ok: true` is required. It checks that frontmatter keys other than `title`, `description` and `summary` match the source byte for byte, that every link and image target is kept, that code blocks are kept, and, for newsletters, that every `## [Title](url)` heading and `![label](url)` line is identical and in the same order. Fix each listed problem and re-run.
@@ -58,8 +58,8 @@ node scripts/newsletter translation-check content/post/YYYY/MM/DD/index.vi.md
 
 ```
 ✅ Translated 3 posts to English, synced 2 stale ones
-   + content/post/2026/11/16/index.md (Newsletter #140)
-   ~ content/post/2026/10/07/index.md: 1 entry added, tags synced
+   + content/posts/2026/11/16/index.md (Newsletter #140)
+   ~ content/posts/2026/10/07/index.md: 1 entry added, tags synced
 ⚠️ Needs review: 2026/10/03 line 42 (source summary ambiguous, translated literally)
 ```
 
@@ -93,8 +93,8 @@ Do not commit. Commit the English file together with the Vietnamese change it mi
 
 - **Video titles** (Bonus → Videos): the Vietnamese file holds a localized title; the English file uses the video's original title from `node scripts/newsletter add-url <url>` (oEmbed `title`). Translate the `>` summary.
 - **Struck entries** (`~~…~~`): keep them struck. A struck heading that holds a source title stays as is; one the author wrote in Vietnamese gets the original source title.
-- **HTML blocks** (`<i> … </i>` intros): keep the tags, translate the text. Keep the author's voice: "mình" is "I", the reader is "you".
-- **Links inside the site:** a root-relative link to a Vietnamese page drops its `/vi` prefix (`/vi/` → `/`, `/vi/post/…/` → `/post/…/`) when the page has an English version. A bundle-relative resource (`data/a.txt`, `img/x.png`) stays as it is, since both languages share the bundle's files. An in-page anchor (`#dành-cho-non-tech`) is rewritten to the slug of the translated heading.
+- **Italic intros** (`*…*` greetings): keep the `*…*` on every line, translate the text. Keep the author's voice: "mình" is "I", the reader is "you". Never write them as raw HTML such as `<i>`: the renderer drops it.
+- **Links inside the site:** a root-relative link to a Vietnamese page drops its `/vi` prefix (`/vi/` → `/`, `/vi/posts/…/` → `/posts/…/`) when the page has an English version. A bundle-relative resource (`data/a.txt`, `img/x.png`) stays as it is, since both languages share the bundle's files. An in-page anchor (`#dành-cho-non-tech`) is rewritten to the slug of the translated heading.
 - **Regular (non-newsletter) posts:** translate headings too; everything else above still applies.
 
 Do not add a translation note to the English file; the provenance note, if any, is the translated Vietnamese one.

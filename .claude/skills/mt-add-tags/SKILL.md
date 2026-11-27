@@ -8,7 +8,7 @@ description: "Add or update tags in Hugo blog post frontmatter by analyzing post
 This skill analyzes Hugo blog post content and generates a relevant list of tags, then writes them to the post's frontmatter.
 
 **Project context:**
-- Blog: Vietnamese tech content at `content/post/YYYY/MM/DD/index.vi.md`
+- Blog: Vietnamese tech content at `content/posts/YYYY/MM/DD/index.vi.md`
 - Tags: Mix of English (tech terms, tools, concepts) and Vietnamese where natural
 - Target: **2-3 tags** for regular posts, **6-7 tags** for newsletter posts
 - User-facing questions and reports: English unless the user explicitly requests another language
@@ -19,7 +19,7 @@ This skill analyzes Hugo blog post content and generates a relevant list of tags
 
 If the user specifies a post (date, path, or title), use that. If the session has been working on a pinned post (an unpublished draft from an earlier day), use that one. Otherwise, use today's post:
 ```
-content/post/YYYY/MM/DD/index.vi.md  (today's date in Asia/Ho_Chi_Minh UTC+7)
+content/posts/YYYY/MM/DD/index.vi.md  (today's date in Asia/Ho_Chi_Minh UTC+7)
 ```
 
 If no post exists for the target date, tell the user and stop.
@@ -105,13 +105,13 @@ When the post has a translation (the English `index.md`, or another `index.<lang
 Before any git commit (the CLAUDE.md pre-commit rule), list every new or modified post, staged or not:
 
 ```bash
-git status --porcelain -uall -- 'content/post/*/index.vi.md'
+git status --porcelain -uall -- 'content/posts/*/index.vi.md'
 ```
 
 Git's `*` matches across `/`, so this covers untracked new posts and modified ones. Check every listed post, not just one, so a batch of backfilled newsletters is covered.
 
 A post's tags are **minimal** when they are empty, only `AI-Assisted` and/or `Newsletter`, or below target (2-3 for regular posts, 6-7 for newsletters, `AI-Assisted` included). For each minimal post, say:
 
-> "Post `content/post/.../index.vi.md` only has these tags: [...]. Add richer tags before committing? [Y/n]"
+> "Post `content/posts/.../index.vi.md` only has these tags: [...]. Add richer tags before committing? [Y/n]"
 
 Default is **yes** — proceed to generate tags, then confirm them with AskUserQuestion before writing (step 5), unless the user declines.

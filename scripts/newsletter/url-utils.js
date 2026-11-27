@@ -16,7 +16,7 @@ const EXACT_TRACKING = new Set([
  * @returns {string}
  */
 export function contentDir() {
-  return join("content", "post");
+  return join("content", "posts");
 }
 
 /**

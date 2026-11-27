@@ -36,7 +36,7 @@ Trust `route: article`; skip if `duplicate`; for `accessible: false` follow post
 6. **Report**:
 ```
 ✅ Article added to Newsletter #[number]
-📄 content/post/YYYY/MM/DD/index.vi.md (+ index.md)
+📄 content/posts/YYYY/MM/DD/index.vi.md (+ index.md)
 🔗 [clean_url]
 📊 [tally]
 ```
