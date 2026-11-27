@@ -16,6 +16,12 @@ Mình có thể nhận tín dụng hoặc hoa hồng nếu bạn đăng ký hay 
 
 ## Công cụ cho trợ lý lập trình {#claude-ecosystem}
 
+### [Claude Code Guest Pass](https://claude.ai/referral/ZkoAngod1A)
+
+Thẻ khách tặng bạn bè một tuần dùng thử Claude Code miễn phí. Nếu bạn đăng ký gói trả phí sau đó, mình nhận thêm hạn mức sử dụng.
+
+Liên kết: https://claude.ai/referral/ZkoAngod1A
+
 ### [AgentKit](https://agentkit.best/?ref=BWA910UK)
 
 AgentKit, trước đây là ClaudeKit, cung cấp kỹ năng, lệnh và quy trình làm việc cho các trợ lý lập trình như Claude Code, Codex và GitHub Copilot.
