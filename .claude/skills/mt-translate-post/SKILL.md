@@ -93,7 +93,7 @@ Do not commit. Commit the English file together with the Vietnamese change it mi
 
 - **Video titles** (Bonus → Videos): the Vietnamese file holds a localized title; the English file uses the video's original title from `node scripts/newsletter add-url <url>` (oEmbed `title`). Translate the `>` summary.
 - **Struck entries** (`~~…~~`): keep them struck. A struck heading that holds a source title stays as is; one the author wrote in Vietnamese gets the original source title.
-- **HTML blocks** (`<i> … </i>` intros): keep the tags, translate the text. Keep the author's voice: "mình" is "I", the reader is "you".
+- **Italic intros** (`*…*` greetings): keep the `*…*` on every line, translate the text. Keep the author's voice: "mình" is "I", the reader is "you". Never write them as raw HTML such as `<i>`: the renderer drops it.
 - **Links inside the site:** a root-relative link to a Vietnamese page drops its `/vi` prefix (`/vi/` → `/`, `/vi/posts/…/` → `/posts/…/`) when the page has an English version. A bundle-relative resource (`data/a.txt`, `img/x.png`) stays as it is, since both languages share the bundle's files. An in-page anchor (`#dành-cho-non-tech`) is rewritten to the slug of the translated heading.
 - **Regular (non-newsletter) posts:** translate headings too; everything else above still applies.
 

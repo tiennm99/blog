@@ -25,9 +25,9 @@ Classified by `node scripts/newsletter protected-lines <post>`:
 |------|---------|
 | `frontmatter` | the whole `---` block |
 | `heading` | `## [Source Title](url)`, `### Bonus`, `## Bonus: Vài ảnh hay ho…` |
-| `html-block` | `<i> … </i>` greetings and intros |
+| `html-block` | raw HTML blocks (`<div>`, `<blockquote>` …); posts no longer use them, since the renderer drops raw HTML |
 | `author-note` | `**Đánh giá:** *…*` — the author's verdict on the tool/model used for the post |
-| `italic-note` | `*Mời bạn thưởng thức Newsletter #7.*`, author notes in italics |
+| `italic-note` | `*Mời bạn thưởng thức Newsletter #7.*`, italic greetings and intros, author notes in italics |
 | `struck` | `~~…~~` lines — entries the author struck out stay struck and unchanged |
 | `asset` | `![label](url)`, `[video title](url)`, `**Images:**` |
 | `code` | fenced code blocks in a summary — keep content verbatim, placed after the prose they illustrate; when the block sat inside a list, de-indent the whole block to column 0 (the check allows re-indenting) |

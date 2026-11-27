@@ -137,7 +137,7 @@ awk -v h='## [Title](url)' '$0==h{f=1;next} /^##/{f=0} f{n+=NF} END{print n}' co
 ```
 or before inserting with `printf '%s\n' "$SUMMARY" | awk '{n+=NF} END{print n}'`. Over 300 → trim and recount. Video blockquote summaries are 1–2 sentences.
 
-**Markdown only:** write emphasis and code with Markdown (`*…*`, backticks), never raw HTML such as `<i>` or `<code>`: the renderer drops raw HTML. Put a literal tag name like `<div>` in a code span.
+**Markdown only:** write emphasis and code with Markdown (`*…*`, backticks), never raw HTML such as `<i>` or `<code>`: the renderer drops raw HTML. Put a literal tag name like `<div>` in a code span. A multi-line italic intro wraps every line in its own `*…*`, so `protected-lines` keeps each line.
 
 **Content requirements:** audience = junior developers; tone = professional, clear, accessible; verify content is ≥99% Vietnamese before saving.
 
