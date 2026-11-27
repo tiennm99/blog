@@ -1,7 +1,7 @@
 ---
 title: "Siêu tổng hợp ByteByteGo"
 date: 2025-08-19
-tags: ["ByteByteGo"]
+tags: ["ByteByteGo", "System Design"]
 ---
 
 *Nếu các bạn để ý thì chắc cũng thấy các Newsletter gần đây vắng bóng mục Bonus: Một số hình ảnh hay ho đến từ [ByteByteGo](https://bytebytego.com/). Và đúng là như vậy, sự thật là vì chèn hình ảnh thì mình chèn bằng tay chứ không nhờ AI Agent, nên là mình skip hết các ảnh mình thấy. Và bây giờ tích cũng khá nhiều rồi nên mình sẽ "xả ảnh" 1 loạt luôn hehe. Nói thể thôi chứ nhiều lắm, có khi sẽ cần P2, P3,... nữa :v Thôi không vòng vo nữa, mời các bạn đến với thế giới ảnh của ByteByteGo đợt này.*

@@ -1,7 +1,7 @@
 ---
 title: "Moving to a New Website"
 date: 2020-06-06
-tags: [ "Notice" ]
+tags: ["Notice", "Blog", "Hugo"]
 ---
 
 **Note:** _(Lately I've been back at school and buried in university deadlines, so I've barely written any posts at all—but after this wave is over, I'll probably have "quite a bit" more experience to share with you all :))))_

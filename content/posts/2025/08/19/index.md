@@ -1,7 +1,7 @@
 ---
 title: "ByteByteGo Mega Roundup"
 date: 2025-08-19
-tags: ["ByteByteGo"]
+tags: ["ByteByteGo", "System Design"]
 ---
 
 *If you've been paying attention, you probably noticed that recent Newsletters have been missing the Bonus section featuring cool visuals from [ByteByteGo](https://bytebytego.com/). And that's totally true — the honest reason is that I insert images by hand rather than delegating them to an AI Agent, so I ended up skipping all the visuals I came across. Now that quite a backlog has piled up, I'm doing a massive "image dump" all at once hehe. That said, there are so many of them that we'll probably need a Part 2, Part 3, and so on :v Anyway, without further ado, welcome to this batch of ByteByteGo visuals.*

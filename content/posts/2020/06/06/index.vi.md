@@ -1,7 +1,7 @@
 ---
 title: "Chuyển đổi website"
 date: 2020-06-06
-tags: [ "Notice" ]
+tags: ["Notice", "Blog", "Hugo"]
 ---
 
 **Note:** _(Dạo gần đây mình đã đi học lại, và cũng sấp mặt với deadline trên trường, nên hầu như chẳng viết lấy bài nào nữa, nhưng mà sau đợt này có lẽ mình sẽ có thêm "kha khá" kinh nghiệm để chia sẻ cùng các bạn :))))_

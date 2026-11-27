@@ -1,7 +1,7 @@
 ---
 title: "My PC and Its OS"
 date: 2021-11-17
-tags: [ "PC" ]
+tags: ["PC", "Linux", "Windows"]
 ---
 
 If you've been reading my blog for a while, you probably know I'm a Linux fan (I say "fan" to sound cool, but really I just tag along and tinker—I barely know anything, sob). Ever since I started working full-time, I've needed a "stable" system, so I haven't tinkered with Linux as much as I used to; work keeps me busy, and breaking things just means wasting time reinstalling over and over.

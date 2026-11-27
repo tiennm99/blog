@@ -1,7 +1,7 @@
 ---
 title: "ByteByteGo Mega Roundup P2"
 date: 2025-08-20
-tags: ["ByteByteGo"]
+tags: ["ByteByteGo", "System Design"]
 ---
 
 *Since I still have so many [ByteByteGo](https://bytebytego.com/) visuals saved up, welcome to Part 2 hehe. This time I filtered the list down a bit and only included the ones I personally found most worthwhile.*

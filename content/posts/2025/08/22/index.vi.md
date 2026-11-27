@@ -1,7 +1,7 @@
 ---
 title: "Siêu tổng hợp ByteByteGo P3"
 date: 2025-08-22
-tags: ["ByteByteGo"]
+tags: ["ByteByteGo", "System Design"]
 ---
 
 *Hôm nay hơi lười nên chúng ta lại quay lại series ảnh của [ByteByteGo](https://bytebytego.com/) nhé. Bạn thích thì mình viết, bạn không thích thì mình cũng viết hehe*

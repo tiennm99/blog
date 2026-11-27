@@ -1,7 +1,7 @@
 ---
 title: "ByteByteGo Mega Roundup P3"
 date: 2025-08-22
-tags: ["ByteByteGo"]
+tags: ["ByteByteGo", "System Design"]
 ---
 
 *Feeling a bit lazy today, so we're back to the [ByteByteGo](https://bytebytego.com/) visual series! If you like it, I'll post it — and even if you don't, I'll still post it hehe*

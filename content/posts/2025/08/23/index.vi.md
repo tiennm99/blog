@@ -1,7 +1,7 @@
 ---
 title: "Siêu tổng hợp ByteByteGo P4"
 date: 2025-08-23
-tags: ["ByteByteGo"]
+tags: ["ByteByteGo", "System Design"]
 ---
 
 *Nốt phần ảnh này của [ByteByteGo](https://bytebytego.com/) sau đó chúng ta sẽ quay lại với Newsletter như mọi khi nhé hehe*

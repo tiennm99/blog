@@ -1,7 +1,7 @@
 ---
 title: "Unable to Access the Router Login Page (e.g., Inet Center)"
 date: 2020-05-13
-tags: [ "Issue" ]
+tags: ["Issue", "Docker", "Networking"]
 ---
 
 I'm currently staying at Dormitory Area A of VNU-HCM and using the Inet Center network. After moving back to the dorm, I bought an internet card, but I couldn't access the login page anymore, so I couldn't get online. It kept throwing `ERR_CONNECTION_REFUSED`. Here's how I solved it in my case.

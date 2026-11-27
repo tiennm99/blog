@@ -1,7 +1,7 @@
 ---
 title: "Không vào được trang đăng nhập của router (VD: Inet Center)"
 date: 2020-05-13
-tags: [ "Issue" ]
+tags: ["Issue", "Docker", "Networking"]
 ---
 
 Hiện tại mình đang ở KTX khu A của ĐHQG TpHCM, mình sử dụng mạng của Inet Center, sau khi xuống KTX thì mình mua thẻ nhưng không vào được trang đăng nhập nữa, nên không dùng internet được. Nó bị lỗi `ERR_CONNECTION_REFUSED`. Mình sẽ chỉ bạn cách giải quyết trong trường hợp của mình.

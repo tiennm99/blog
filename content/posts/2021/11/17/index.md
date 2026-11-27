@@ -1,7 +1,7 @@
 ---
 title: "Building a PC for the First Time"
 date: 2021-11-17
-tags: [ "PC" ]
+tags: ["PC", "Hardware"]
 ---
 
 __MiTi just received the PC today and is still busy setting it up, but I'm so excited that I'm throwing together a quick draft tonight and will polish it up over the next few days__
