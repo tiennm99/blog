@@ -80,7 +80,8 @@ jobs:
               --cacheDir "${{ runner.temp }}/hugo_cache"
           else
             # Preview of the dev branch on miti99.dev: drafts and future posts
-            # included, and kept out of search engines.
+            # included, and kept out of search engines by a noindex header.
+            # robots.txt stays open, since a crawler blocked there never sees it.
             hugo \
               --gc \
               --minify \
@@ -89,7 +90,6 @@ jobs:
               --baseURL "https://miti99.dev/" \
               --cacheDir "${{ runner.temp }}/hugo_cache"
             printf '/*\n  X-Robots-Tag: noindex\n' >> public/_headers
-            printf 'User-agent: *\nDisallow: /\n' > public/robots.txt
           fi
       - name: Build the search index
         run: npx pagefind --site public
