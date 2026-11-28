@@ -1,7 +1,7 @@
 ---
 title: Referral
 description: Referral links for AI tools, hosting, databases, and cloud storage.
-tags: ["Referral", "AI Tools", "AI Gateway", "LLM API", "OrcaRouter", "Hermes Agent", "Claude Code", "Cloud Storage", "Cloud Computing", "Alibaba Cloud", "Database", "Aiven", "NanoGPT", "Lovable", "Bolt", "Railway", "DigitalOcean", "Runpod"]
+tags: ["Referral", "AI Tools", "AI Gateway", "LLM API", "OrcaRouter", "Hermes Agent", "Claude Code", "Cloud Storage", "Cloud Computing", "Alibaba Cloud", "Database", "Aiven", "NanoGPT", "Lovable", "Bolt", "Tripo", "Railway", "DigitalOcean", "Runpod"]
 aliases:
   - invite
 menu:
@@ -82,6 +82,14 @@ Lovable builds web apps from a prompt, with preview and deployment in the tool. 
 ### [Bolt.new](https://bolt.cello.so/G2EUTJII7XU)
 
 Bolt.new builds, runs, and deploys apps from a prompt in the browser. The invite link gives **20% off**.
+
+## AI 3D Generation
+
+### [Tripo](https://studio.tripo3d.ai/?utm_source=creator_invite&utm_medium=linkcopy&utm_campaign=referral_landing_page&invite_code=Z2IMIN&uid=2251799817986546)
+
+Tripo Studio generates 3D models from text prompts or images. Sign up through the invite link and we each get **300 credits**. Offers and pricing vary by country.
+
+Invite code: `Z2IMIN`.
 
 ## Cloud Computing
 
