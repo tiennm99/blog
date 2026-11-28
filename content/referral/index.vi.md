@@ -1,7 +1,7 @@
 ---
 title: Ưu đãi giới thiệu
 description: Liên kết giới thiệu cho công cụ AI, dịch vụ triển khai, cơ sở dữ liệu và lưu trữ đám mây.
-tags: ["Referral", "AI Tools", "AI Gateway", "LLM API", "OrcaRouter", "Hermes Agent", "Claude Code", "Cloud Storage", "Cloud Computing", "Alibaba Cloud", "Database", "Aiven", "NanoGPT", "Lovable", "Bolt", "Railway", "DigitalOcean", "Runpod"]
+tags: ["Referral", "AI Tools", "AI Gateway", "LLM API", "OrcaRouter", "Hermes Agent", "Claude Code", "Cloud Storage", "Cloud Computing", "Alibaba Cloud", "Database", "Aiven", "NanoGPT", "Lovable", "Bolt", "Tripo", "Railway", "DigitalOcean", "Runpod"]
 aliases:
   - invite
 menu:
@@ -82,6 +82,14 @@ Lovable tạo ứng dụng web từ mô tả, cho phép xem trước và triển
 ### [Bolt.new](https://bolt.cello.so/G2EUTJII7XU)
 
 Bolt.new cho phép tạo, chạy thử và triển khai ứng dụng từ mô tả ngay trong trình duyệt. Liên kết mời giảm **20%**.
+
+## Tạo mô hình 3D bằng AI {#ai-3d-generation}
+
+### [Tripo](https://studio.tripo3d.ai/?utm_source=creator_invite&utm_medium=linkcopy&utm_campaign=referral_landing_page&invite_code=Z2IMIN&uid=2251799817986546)
+
+Tripo Studio tạo mô hình 3D từ mô tả bằng chữ hoặc hình ảnh. Khi bạn đăng ký qua liên kết mời, mỗi người nhận **300 tín dụng**. Ưu đãi và giá có thể khác nhau tùy quốc gia.
+
+Mã mời: `Z2IMIN`.
 
 ## Hạ tầng đám mây {#cloud-computing}
 
